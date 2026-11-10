@@ -1,0 +1,17 @@
+server:
+  port: 8081
+  servlet:
+    session:
+      cookie:
+        name: CSUCAMPUSCRAFT_ADMIN_SESSION
+
+spring:
+  application:
+    name: csucampuscraft-admin
+  datasource:
+    url: "${CSUCAMPUSCRAFT_DB_URL:jdbc:postgresql://127.0.0.1:5432/csucampuscraft}"
+    username: "${CSUCAMPUSCRAFT_DB_USER:csucampuscraft}"
+    password: "${CSUCAMPUSCRAFT_DB_PASSWORD:}"
+  sql:
+    init:
+      mode: never
