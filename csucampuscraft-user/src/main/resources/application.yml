@@ -9,9 +9,13 @@ spring:
   application:
     name: csucampuscraft-user
   datasource:
-    url: "${CSUCAMPUSCRAFT_DB_URL:jdbc:postgresql://127.0.0.1:5432/csucampuscraft}"
+    url: "${CSUCAMPUSCRAFT_DB_URL:jdbc:mysql://127.0.0.1:3306/csucampuscraft}"
     username: "${CSUCAMPUSCRAFT_DB_USER:csucampuscraft}"
     password: "${CSUCAMPUSCRAFT_DB_PASSWORD:}"
+    hikari:
+      data-source-properties:
+        connectionTimeZone: "+00:00"
+        forceConnectionTimeZoneToSession: "true"
   sql:
     init:
       mode: never
