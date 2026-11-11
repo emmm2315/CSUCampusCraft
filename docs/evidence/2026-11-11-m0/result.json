@@ -1,0 +1,178 @@
+{
+  "date": "2026-11-11T23:41:58.495948+08:00",
+  "baseline_git_sha": "ae6f47f995fef790b5a2f513574ed2129e4409b3",
+  "source_state": "baseline plus two uncommitted spring-security-crypto POM additions; documentation excluded from runtime manifest",
+  "checks": {
+    "csucampuscraft-user-crypto-packaged": {
+      "passed": true,
+      "detail": [
+        "spring-security-crypto-6.5.11.jar"
+      ]
+    },
+    "csucampuscraft-admin-crypto-packaged": {
+      "passed": true,
+      "detail": [
+        "spring-security-crypto-6.5.11.jar"
+      ]
+    },
+    "INIT-01-build": {
+      "passed": true,
+      "detail": "Both Maven verify exits were zero; executable JARs produced; no src/test present"
+    },
+    "private-mysql-initialized": {
+      "passed": true,
+      "detail": "New isolated datadir; existing MySQL service not used"
+    },
+    "private-mysql-identity": {
+      "passed": true,
+      "detail": "UUID matched isolated datadir and selected port"
+    },
+    "INIT-02-structure": {
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "INIT-02-demo": {
+      "passed": true,
+      "detail": [
+        4,
+        15,
+        60,
+        100,
+        10,
+        10,
+        20
+      ]
+    },
+    "INIT-02-hierarchy": {
+      "passed": true,
+      "detail": "Each second-level category has six products"
+    },
+    "INIT-02-order-totals": {
+      "passed": true,
+      "detail": "All order totals equal snapshot lines"
+    },
+    "INIT-02-seed-rollback": {
+      "passed": true,
+      "detail": "Forced precommit count assertion failed; seven DDL tables remain and all seed rows rolled back"
+    },
+    "INIT-02-checks-csucampuscraft_structure": {
+      "passed": true,
+      "detail": "35 exact SQL names; all enforced"
+    },
+    "INIT-02-checks-csucampuscraft": {
+      "passed": true,
+      "detail": "35 exact SQL names; all enforced"
+    },
+    "INIT-02-check-predicates-identical": {
+      "passed": true,
+      "detail": "Two independently imported schemas have byte-identical ordered table/name/predicate/enforcement metadata"
+    },
+    "INIT-03-empty": {
+      "passed": true,
+      "detail": "HTTP200 empty state on structure-only DB"
+    },
+    "INIT-03-empty-admin": {
+      "passed": true,
+      "detail": "HTTP200 admin empty state on structure-only DB"
+    },
+    "INIT-03-user-alone": {
+      "passed": true,
+      "detail": "User standalone HTTP200 and five themes"
+    },
+    "INIT-03-admin-alone": {
+      "passed": true,
+      "detail": "Admin standalone HTTP200 and five themes"
+    },
+    "INIT-03-both-8080": {
+      "passed": true,
+      "detail": "HTTP200 simultaneous"
+    },
+    "INIT-03-both-8081": {
+      "passed": true,
+      "detail": "HTTP200 simultaneous"
+    },
+    "INIT-03-shared-change-8080": {
+      "passed": true,
+      "detail": "Both ports read same committed name"
+    },
+    "INIT-03-shared-change-8081": {
+      "passed": true,
+      "detail": "Both ports read same committed name"
+    },
+    "INIT-04-restart": {
+      "passed": true,
+      "detail": "Both restarted applications retain shared change and seven table counts"
+    },
+    "INIT-04-restored": {
+      "passed": true,
+      "detail": "Original name restored in DB and both pages"
+    },
+    "INIT-05-8080": {
+      "passed": true,
+      "detail": {
+        "http": 200,
+        "content_type": "image/svg+xml",
+        "sha256": "9151b70c1e3d0d924c158f8a4791c226c481d2e5b6c7783b983f81933349710c"
+      }
+    },
+    "INIT-05-8081": {
+      "passed": true,
+      "detail": {
+        "http": 200,
+        "content_type": "image/svg+xml",
+        "sha256": "9151b70c1e3d0d924c158f8a4791c226c481d2e5b6c7783b983f81933349710c"
+      }
+    },
+    "csucampuscraft-user-crypto-compile": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-user-crypto-runtime": {
+      "passed": true,
+      "detail": "BCrypt PASS four seeds positive and negative plus cost10 encode"
+    },
+    "csucampuscraft-admin-crypto-compile": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-admin-crypto-runtime": {
+      "passed": true,
+      "detail": "BCrypt PASS four seeds positive and negative plus cost10 encode"
+    },
+    "csucampuscraft-user-mapper-compile": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-user-mapper-autoid-and-utc": {
+      "passed": true,
+      "detail": "Real Spring/MyBatis mapper insert/get and LAST_INSERT_ID match; UTC session; inserted fixture rolled back"
+    },
+    "csucampuscraft-admin-mapper-compile": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-admin-mapper-autoid-and-utc": {
+      "passed": true,
+      "detail": "Real Spring/MyBatis mapper insert/get and LAST_INSERT_ID match; UTC session; inserted fixture rolled back"
+    },
+    "M0-mapper-fixtures-rolled-back": {
+      "passed": true,
+      "detail": "Original seed counts retained"
+    }
+  },
+  "runtime_manifest_sha256": "7675b25acb6544a13e37cf5187cedfd0ff372613e2442f30772a8a882df772b1",
+  "csucampuscraft-user_jar_sha256": "263dd75d50d756f3e5840d2c27c32e6dd04b5ae62e60cfeac21c73ea469ee1f0",
+  "csucampuscraft-admin_jar_sha256": "68c787f2c9578bf3692d0d66ed7644d1ba3adf46cfcba2bdd37d67f7d0d500e1",
+  "mysql_version": "8.4.9",
+  "mysql_port": 58333,
+  "overall": "PASS",
+  "tracked_processes_stopped": true
+}

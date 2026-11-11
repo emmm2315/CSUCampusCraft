@@ -1,0 +1,94 @@
+{
+  "date": "2026-11-11T23:00:59.725673+08:00",
+  "baseline_git_sha": "ae6f47f995fef790b5a2f513574ed2129e4409b3",
+  "source_state": "baseline plus two uncommitted spring-security-crypto POM additions; documentation excluded from runtime manifest",
+  "checks": {
+    "csucampuscraft-user-crypto-packaged": {
+      "passed": true,
+      "detail": [
+        "spring-security-crypto-6.5.11.jar"
+      ]
+    },
+    "csucampuscraft-admin-crypto-packaged": {
+      "passed": true,
+      "detail": [
+        "spring-security-crypto-6.5.11.jar"
+      ]
+    },
+    "INIT-01-build": {
+      "passed": true,
+      "detail": "Both Maven verify exits were zero; executable JARs produced; no src/test present"
+    },
+    "private-mysql-initialized": {
+      "passed": true,
+      "detail": "New isolated datadir; existing MySQL service not used"
+    },
+    "private-mysql-identity": {
+      "passed": true,
+      "detail": "UUID matched isolated datadir and selected port"
+    },
+    "INIT-02-structure": {
+      "passed": true,
+      "detail": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "INIT-02-demo": {
+      "passed": true,
+      "detail": [
+        4,
+        15,
+        60,
+        100,
+        10,
+        10,
+        20
+      ]
+    },
+    "INIT-02-hierarchy": {
+      "passed": true,
+      "detail": "Each second-level category has six products"
+    },
+    "INIT-02-order-totals": {
+      "passed": true,
+      "detail": "All order totals equal snapshot lines"
+    },
+    "INIT-02-seed-rollback": {
+      "passed": true,
+      "detail": "Forced precommit count assertion failed; seven DDL tables remain and all seed rows rolled back"
+    },
+    "INIT-03-empty": {
+      "passed": true,
+      "detail": "HTTP200 empty state on structure-only DB"
+    },
+    "INIT-03-user-alone": {
+      "passed": true,
+      "detail": "User standalone HTTP200 and five themes"
+    },
+    "INIT-03-admin-alone": {
+      "passed": true,
+      "detail": "Admin standalone HTTP200 and five themes"
+    },
+    "INIT-03-both-8080": {
+      "passed": true,
+      "detail": "HTTP200 simultaneous"
+    },
+    "INIT-03-both-8081": {
+      "passed": true,
+      "detail": "HTTP200 simultaneous"
+    }
+  },
+  "runtime_manifest_sha256": "7675b25acb6544a13e37cf5187cedfd0ff372613e2442f30772a8a882df772b1",
+  "csucampuscraft-user_jar_sha256": "7f054a862745378b48f3b97867ba334f70ae69c1b1d03d5542092a8e4abdfe43",
+  "csucampuscraft-admin_jar_sha256": "1355e2af0fdb99881411526aea2da2a04c0b6f7f87c39533e1a0a7e3ad8a4a07",
+  "mysql_version": "8.4.9",
+  "mysql_port": 57128,
+  "overall": "FAIL",
+  "error": "ERROR 1046 (3D000) at line 1: No database selected\r\n"
+}

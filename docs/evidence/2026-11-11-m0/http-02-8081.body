@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSUCampusCraft 管理端</title>
+    <style>
+        body { margin: 0; color: #1c312a; background: #f5f8f4; font: 1rem/1.6 system-ui, sans-serif; }
+        main { max-width: 44rem; margin: 3rem auto; padding: 0 1.25rem; }
+        h1 { margin-block: .25rem; }
+        section { margin-top: 1.75rem; padding: 1rem 1.5rem; border: 1px solid #d3dfd2; background: white; }
+        section h2 { margin-top: 0; }
+    </style>
+</head>
+<body data-csucampuscraft-app="admin">
+<main>
+    <header>
+        <small>校园文创商城 · 工程初始化</small>
+        <h1>CSUCampusCraft 管理端</h1>
+        <p>CSUCampusCraft 管理端工程已接入共享商品分类。当前展示数据库中的一级主题。</p>
+    </header>
+    <section aria-labelledby="themes-heading">
+        <h2 id="themes-heading">校园主题</h2>
+        <p data-theme-count="0">
+            共 <span>0</span> 个一级主题
+        </p>
+        <p>暂无主题。请确认演示数据已导入。</p>
+        
+    </section>
+</main>
+</body>
+</html>

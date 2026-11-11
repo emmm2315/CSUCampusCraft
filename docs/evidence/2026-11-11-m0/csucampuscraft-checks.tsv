@@ -1,0 +1,35 @@
+cart_item	ck_cart_quantity	(`quantity` between 1 and 99)	YES
+cart_item	ck_cart_version	(`version` >= 0)	YES
+category	ck_category_code	(char_length(trim(`code`)) > 0)	YES
+category	ck_category_name	(char_length(trim(`name`)) > 0)	YES
+category	ck_category_sort	(`sort_order` >= 0)	YES
+product	ck_product_cover	(char_length(trim(`cover_image`)) > 0)	YES
+product	ck_product_name	(char_length(trim(`name`)) > 0)	YES
+product	ck_product_price	(`price` > 0)	YES
+product	ck_product_sku	(char_length(trim(`sku`)) > 0)	YES
+product	ck_product_sort	(`sort_order` >= 0)	YES
+product	ck_product_status	(`status` in (_utf8mb4\'DRAFT\',_utf8mb4\'ON_SALE\'))	YES
+product	ck_product_stock	(`stock` >= 0)	YES
+product	ck_product_version	(`version` >= 0)	YES
+product_image	ck_image_path	(char_length(trim(`image_path`)) > 0)	YES
+product_image	ck_image_sort	(`sort_order` >= 0)	YES
+sales_order	ck_order_cancel_time	(((`status` = _utf8mb4\'CANCELLED\') and (`cancelled_at` is not null)) or ((`status` <> _utf8mb4\'CANCELLED\') and (`cancelled_at` is null)))	YES
+sales_order	ck_order_complete_time	(((`status` = _utf8mb4\'COMPLETED\') and (`completed_at` is not null)) or ((`status` <> _utf8mb4\'COMPLETED\') and (`completed_at` is null)))	YES
+sales_order	ck_order_no	(char_length(trim(`order_no`)) > 0)	YES
+sales_order	ck_order_payment_info	(((`status` in (_utf8mb4\'PENDING_PAYMENT\',_utf8mb4\'CANCELLED\')) and (`payment_method` is null) and (`payment_no` is null) and (`paid_at` is null)) or ((`status` in (_utf8mb4\'PAID\',_utf8mb4\'SHIPPED\',_utf8mb4\'COMPLETED\')) and (`payment_method` is not null) and (`payment_method` = _utf8mb4\'MOCK\') and (`payment_no` is not null) and (char_length(trim(`payment_no`)) > 0) and (`paid_at` is not null)))	YES
+sales_order	ck_order_receiver	((char_length(trim(`receiver_name`)) > 0) and (char_length(trim(`receiver_phone`)) > 0) and (char_length(trim(`receiver_address`)) > 0))	YES
+sales_order	ck_order_ship_time	(((`status` in (_utf8mb4\'SHIPPED\',_utf8mb4\'COMPLETED\')) and (`shipped_at` is not null)) or ((`status` not in (_utf8mb4\'SHIPPED\',_utf8mb4\'COMPLETED\')) and (`shipped_at` is null)))	YES
+sales_order	ck_order_status	(`status` in (_utf8mb4\'PENDING_PAYMENT\',_utf8mb4\'PAID\',_utf8mb4\'SHIPPED\',_utf8mb4\'COMPLETED\',_utf8mb4\'CANCELLED\'))	YES
+sales_order	ck_order_time_sequence	(((`paid_at` is null) or (`paid_at` >= `created_at`)) and ((`cancelled_at` is null) or (`cancelled_at` >= `created_at`)) and ((`shipped_at` is null) or (`shipped_at` >= `paid_at`)) and ((`completed_at` is null) or (`completed_at` >= `shipped_at`)))	YES
+sales_order	ck_order_total	(`total_amount` > 0)	YES
+sales_order_item	ck_order_item_amount	((`line_amount` > 0) and (`line_amount` = (`unit_price` * `quantity`)))	YES
+sales_order_item	ck_order_item_cover	(char_length(trim(`cover_image_snapshot`)) > 0)	YES
+sales_order_item	ck_order_item_name	(char_length(trim(`product_name_snapshot`)) > 0)	YES
+sales_order_item	ck_order_item_price	(`unit_price` > 0)	YES
+sales_order_item	ck_order_item_quantity	(`quantity` between 1 and 99)	YES
+sales_order_item	ck_order_item_sku	(char_length(trim(`sku_snapshot`)) > 0)	YES
+store_user	ck_user_display_name	(char_length(trim(`display_name`)) > 0)	YES
+store_user	ck_user_password	(char_length(trim(`password_hash`)) > 0)	YES
+store_user	ck_user_role	(`role` in (_utf8mb4\'CUSTOMER\',_utf8mb4\'ADMIN\'))	YES
+store_user	ck_user_status	(`status` in (_utf8mb4\'ENABLED\',_utf8mb4\'DISABLED\'))	YES
+store_user	ck_user_username	(char_length(trim(`username`)) > 0)	YES

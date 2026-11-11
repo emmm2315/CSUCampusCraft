@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSUCampusCraft 用户端</title>
+    <style>
+        body { margin: 0; color: #1c312a; background: #f5f8f4; font: 1rem/1.6 system-ui, sans-serif; }
+        main { max-width: 44rem; margin: 3rem auto; padding: 0 1.25rem; }
+        h1 { margin-block: .25rem; }
+        section { margin-top: 1.75rem; padding: 1rem 1.5rem; border: 1px solid #d3dfd2; background: white; }
+        section h2 { margin-top: 0; }
+    </style>
+</head>
+<body data-csucampuscraft-app="user">
+<main>
+    <header>
+        <small>校园文创商城 · 工程初始化</small>
+        <h1>CSUCampusCraft 用户端</h1>
+        <p>面向购买者的校园文创商城。当前展示共享商品分类中的一级主题。</p>
+    </header>
+    <section aria-labelledby="themes-heading">
+        <h2 id="themes-heading">校园主题</h2>
+        <p data-theme-count="5">
+            共 <span>5</span> 个一级主题
+        </p>
+        
+        <ul>
+            <li data-theme-code="LANDMARK">校园地标</li>
+            <li data-theme-code="COLLEGE">学院风采</li>
+            <li data-theme-code="CLUB">社团活动</li>
+            <li data-theme-code="SPORTS">校园运动</li>
+            <li data-theme-code="GRADUATION">毕业纪念</li>
+        </ul>
+    </section>
+</main>
+</body>
+</html>

@@ -6,3 +6,6 @@
 .env
 .env.*
 *.log
+
+# Keep reviewed acceptance logs with the project documentation.
+!docs/evidence/**/*.log
