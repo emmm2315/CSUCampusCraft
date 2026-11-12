@@ -39,3 +39,7 @@ M0 基线为 022f50196ceb7b89880dabe1c369360e8f6136c3。首次实现提交 b35b0
 verify_step02.py、FoundationChecks.java、verify_browser.cjs 是最后一轮验证工具源，依赖本机外部 verification/runtime 布局与已构建仓库 JAR，不应直接在证据目录运行。新一轮需选择新的 attemptN 并显式设置 STEP02_TESTED_CODE_SHA 为完整受测实现 SHA。所有本次跟踪 Java 和隔离 MySQL 均已停止。
 
 本步只证明 STEP02 基础设施。TST-04、TST-05、TST-31 的商品/登录/业务写入部分仍待实施，不将无业务探针当作这些完整用例通过。
+
+## Git 归档字节
+
+仓库 .gitattributes 仅对本目录禁用文本换行转换，使 HTTP 响应、日志及其 SHA-256 在 Git 提交和拉取后保持原始脱敏字节。此项只影响证据存储，不改变运行源码；evidence-files.json 记录当前归档文件的摘要。
