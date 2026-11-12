@@ -7,7 +7,7 @@
     <input type="text" th:id="${id}" th:name="${name}" th:value="${value}"
            th:classappend="${hasError ? 'input-error' : ''}"
            th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}">
-    <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors[name]}">请检查输入。</p>
+    <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors.get(name)}">请检查输入。</p>
 </div>
 <div th:fragment="number(id, name, label, value, min, max, step, errors)" class="form-field"
      th:with="hasError=${errors != null and errors.containsKey(name)}">
@@ -16,7 +16,7 @@
            th:min="${min}" th:max="${max}" th:step="${step}"
            th:classappend="${hasError ? 'input-error' : ''}"
            th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}">
-    <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors[name]}">请检查输入。</p>
+    <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors.get(name)}">请检查输入。</p>
 </div>
 <input th:fragment="csrf" type="hidden" name="_csrf" th:value="${csrfToken}">
 </body>
