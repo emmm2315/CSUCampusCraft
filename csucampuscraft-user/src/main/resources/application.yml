@@ -1,4 +1,9 @@
 server:
+  error:
+    include-exception: false
+    include-message: never
+    include-stacktrace: never
+    include-binding-errors: never
   port: 8080
   servlet:
     session:

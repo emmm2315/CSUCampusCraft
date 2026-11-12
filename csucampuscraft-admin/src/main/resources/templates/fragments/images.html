@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<body>
+<img th:fragment="image(path, altText)" class="catalog-image" width="400" height="300" loading="lazy"
+     th:with="fallback=${defaultCoverImage ?: 'images/catalog-placeholder.svg'},safePath=${path != null and #strings.startsWith(path, 'images/') and !#strings.contains(path, '..') and !#strings.contains(path, ':') and !#strings.contains(path, '%') and !#strings.contains(path, '?') and !#strings.contains(path, '#') ? path : fallback}"
+     th:src="@{${'/' + safePath}}" th:alt="${altText ?: '校园文创商品'}"
+     th:attr="data-image-fallback=@{${'/' + fallback}}">
+</body>
+</html>

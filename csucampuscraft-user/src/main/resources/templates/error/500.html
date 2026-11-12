@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('暂时无法完成请求', ~{::errorContent})}">
+<head><title>暂时无法完成请求</title></head>
+<body>
+<section th:fragment="errorContent" class="panel error-page" aria-labelledby="error-title" data-error-status="500">
+    <p class="error-number">500</p>
+    <h1 id="error-title">暂时无法完成请求</h1>
+    <p>服务暂时不可用，请稍后重试。</p>
+    <p class="muted">请稍后重新访问，或回到首页。</p>
+    <p class="error-code">错误代码：<span>INTERNAL_ERROR</span></p>
+
+    <div class="button-row"><a class="button" th:href="@{/}">返回首页</a></div>
+</section>
+</body>
+</html>

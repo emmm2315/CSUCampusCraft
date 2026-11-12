@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('公共基础验证', ~{::mainContent})}">
+<body><section th:fragment="mainContent" class="panel" aria-labelledby="verification-title">
+<h1 id="verification-title">公共基础验证</h1>
+<p>此页面仅在 verification 配置启用，无业务数据写入。</p>
+<p id="escaped-text" th:text="${echoText}">普通文本</p>
+<form method="post" data-submit-state th:action="@{/__verification/submit}">
+    <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+    <div th:replace="~{fragments/alerts :: summary(${fieldErrors})}"></div>
+    <div th:replace="~{fragments/fields :: text('probeText','probeText','文本验证',${echoText},${fieldErrors})}"></div>
+    <div th:replace="~{fragments/fields :: number('probeNumber','probeNumber','数量验证',1,0,99,1,${fieldErrors})}"></div>
+    <button type="submit" class="button">验证提交</button>
+    <button type="button" class="button" disabled>不可用</button>
+</form>
+<div th:replace="~{fragments/images :: image('images/verification-missing.svg','验证缺图回退')}"></div>
+</section></body></html>

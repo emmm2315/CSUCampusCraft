@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('请求未获允许', ~{::errorContent})}">
+<head><title>请求未获允许</title></head>
+<body>
+<section th:fragment="errorContent" class="panel error-page" aria-labelledby="error-title" data-error-status="403">
+    <p class="error-number">403</p>
+    <h1 id="error-title">请求未获允许</h1>
+    <p th:text="${errorMessage ?: '当前请求无法通过校验。'}">当前请求无法通过校验。</p>
+    <p class="muted">请刷新页面后重新操作，或回到首页。</p>
+    <p class="error-code">错误代码：<span th:text="${errorCode ?: 'FORBIDDEN'}">FORBIDDEN</span></p>
+
+    <div class="button-row"><a class="button" th:href="@{/}">返回首页</a></div>
+</section>
+</body>
+</html>

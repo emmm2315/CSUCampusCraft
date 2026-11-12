@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" th:fragment="page(pageTitle, pageContent)">
+<head th:fragment="head(pageTitle)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${pageTitle}">CSUCampusCraft</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+    <script defer th:src="@{/js/app.js}"></script>
+</head>
+<body th:attr="data-csucampuscraft-app=${appId}">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" th:href="@{/}" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span th:text="${siteName ?: 'CSUCampusCraft'}">CSUCampusCraft</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a th:href="@{/}">首页</a>
+            <span class="app-label" th:text="${appId == 'admin' ? '管理端' : '用户端'}">用户端</span>
+            <span class="nav-placeholder" th:if="${appId == 'user'}"
+                  th:attr="aria-label=${'购物车，' + (cartQuantity ?: 0) + ' 件'}">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           th:attr="data-cart-quantity=${cartQuantity ?: 0}" th:text="${cartQuantity ?: 0}">0</span>
+            </span>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    <th:block th:replace="~{fragments/alerts :: global}"></th:block>
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <th:block th:replace="${pageContent}"></th:block>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

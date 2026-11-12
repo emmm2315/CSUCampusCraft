@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('请求参数有误', ~{::errorContent})}">
+<head><title>请求参数有误</title></head>
+<body>
+<section th:fragment="errorContent" class="panel error-page" aria-labelledby="error-title" data-error-status="400">
+    <p class="error-number">400</p>
+    <h1 id="error-title">请求参数有误</h1>
+    <p th:text="${errorMessage ?: '请检查输入内容后重新提交。'}">请检查输入内容后重新提交。</p>
+    <p class="muted">返回原表单修正输入，或回到首页继续浏览。</p>
+    <p class="error-code">错误代码：<span th:text="${errorCode ?: 'BAD_REQUEST'}">BAD_REQUEST</span></p>
+    <section th:if="${fieldErrors != null and !fieldErrors.isEmpty()}" class="alert alert-danger" aria-label="字段提示">
+        <ul><li th:each="item : ${fieldErrors}" th:text="${item.value}">请检查输入。</li></ul>
+    </section>
+    <div class="button-row"><a class="button" th:href="@{/}">返回首页</a></div>
+</section>
+</body>
+</html>

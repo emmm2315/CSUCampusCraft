@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('当前数据已变化', ~{::errorContent})}">
+<head><title>当前数据已变化</title></head>
+<body>
+<section th:fragment="errorContent" class="panel error-page" aria-labelledby="error-title" data-error-status="409">
+    <p class="error-number">409</p>
+    <h1 id="error-title">当前数据已变化</h1>
+    <p th:text="${errorMessage ?: '当前操作与数据状态冲突。'}">当前操作与数据状态冲突。</p>
+    <p class="muted">请重新读取原页面的数据，确认后再次操作。</p>
+    <p class="error-code">错误代码：<span th:text="${errorCode ?: 'CONFLICT'}">CONFLICT</span></p>
+
+    <div class="button-row"><a class="button" th:href="@{/}">返回首页</a></div>
+</section>
+</body>
+</html>

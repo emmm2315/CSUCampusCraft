@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="global">
+    <div th:if="${globalMessage != null}" class="alert alert-success" role="status">
+        <p th:text="${globalMessage}">操作已完成。</p>
+    </div>
+    <div th:if="${globalError != null}" class="alert alert-danger" role="alert">
+        <p th:text="${globalError}">请检查操作结果。</p>
+    </div>
+</th:block>
+<section th:fragment="summary(errors)" th:if="${errors != null and !errors.isEmpty()}"
+         class="alert alert-danger error-summary" role="alert" aria-labelledby="error-summary-title" tabindex="-1">
+    <h2 id="error-summary-title">请修正以下输入</h2>
+    <ul>
+        <li th:each="item : ${errors}">
+            <a th:href="${'#' + item.key}" th:text="${item.value}">请检查输入。</a>
+        </li>
+    </ul>
+</section>
+</body>
+</html>
