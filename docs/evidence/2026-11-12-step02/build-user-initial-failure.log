@@ -1,0 +1,36 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< org.csucampuscraft:csucampuscraft-user >---------------
+[INFO] Building CSUCampusCraft Storefront 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ csucampuscraft-user ---
+[INFO] Copying 14 resources from src\main\resources to target\classes
+[INFO] Copying 1 resource from ..\assets to target\classes\static
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ csucampuscraft-user ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 16 source files with javac [debug parameters release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /D:/Github Projects/CSUCampusCraft/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/verification/FoundationVerificationController.java:[30,16] switch ����ʽû���κν������ʽ
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.882 s
+[INFO] Finished at: 2026-11-12T23:21:34+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project csucampuscraft-user: Compilation failure
+[ERROR] /D:/Github Projects/CSUCampusCraft/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/verification/FoundationVerificationController.java:[30,16] switch ����ʽû���κν������ʽ
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

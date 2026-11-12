@@ -1,0 +1,1126 @@
+{
+  "date": "2026-11-12T23:31:55.196289+08:00",
+  "baseline_git_sha": "022f50196ceb7b89880dabe1c369360e8f6136c3",
+  "tested_code_sha": "5d9271d7e32634f947eb9f6077e7a4f3d98806a7",
+  "source_state": "exact implementation commit; documentation and verification evidence will be committed separately",
+  "checks": {
+    "tested-code-head": {
+      "passed": true,
+      "detail": "Exact implementation commit based on user-supplied M0 baseline"
+    },
+    "build-user": {
+      "passed": true,
+      "detail": "Root ran actual repository Maven verify with exit 0"
+    },
+    "build-admin": {
+      "passed": true,
+      "detail": "Root ran actual repository Maven verify with exit 0"
+    },
+    "version-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "version-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-user-only-crypto": {
+      "passed": true,
+      "detail": "No security filter-chain starter packaged"
+    },
+    "csucampuscraft-admin-only-crypto": {
+      "passed": true,
+      "detail": "No security filter-chain starter packaged"
+    },
+    "isolated-mysql-created": {
+      "passed": true,
+      "detail": "New private datadir; no existing MySQL service"
+    },
+    "isolated-mysql-identity": {
+      "passed": true,
+      "detail": "UUID and bound port match private datadir before mutation"
+    },
+    "csucampuscraft-user-empty-home": {
+      "passed": true,
+      "detail": "Original M0 empty wording preserved"
+    },
+    "csucampuscraft-admin-empty-home": {
+      "passed": true,
+      "detail": "Original M0 empty wording preserved"
+    },
+    "csucampuscraft-user-default-home": {
+      "passed": true,
+      "detail": "Both app marker and five themes"
+    },
+    "csucampuscraft-user-default-404-___verification_foundation": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-___verification_counter": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-___verification_errors_500": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-___verification_validation?kind=integer&value=1": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-_not-a-route": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-_login": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-_products": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-_categories": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-_cart": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-_orders": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-home": {
+      "passed": true,
+      "detail": "Both app marker and five themes"
+    },
+    "csucampuscraft-admin-default-404-___verification_foundation": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-___verification_counter": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-___verification_errors_500": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-___verification_validation?kind=integer&value=1": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-_not-a-route": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-_login": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-_products": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-_categories": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-_cart": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-_orders": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csrf-form-token-8080": {
+      "passed": true,
+      "detail": "Exactly one hidden token, raw value excluded"
+    },
+    "csucampuscraft-user-labels": {
+      "passed": true,
+      "detail": "for/id references exist"
+    },
+    "csucampuscraft-user-csrf-hidden": {
+      "passed": true,
+      "detail": "One shared-fragment hidden token"
+    },
+    "csucampuscraft-user-field-error-visible": {
+      "passed": true,
+      "detail": "Field error text, description reference and summary anchor rendered correctly"
+    },
+    "csucampuscraft-user-escaped-text": {
+      "passed": true,
+      "detail": "Text escaped with visible quote payload"
+    },
+    "csucampuscraft-user-error-400": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-user-error-403": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-user-error-404": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-user-error-409": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-user-error-500": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-user-technical-redaction": {
+      "passed": true,
+      "detail": "No sentinel, stack or SQL details in response"
+    },
+    "csucampuscraft-user-validation-integer-45": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-integer-46": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-integer-47": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-money-48": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-money-49": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-money-50": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-enum-51": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-enum-52": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-length-53": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "counter-http-8080": {
+      "passed": true,
+      "detail": "Verification-only read"
+    },
+    "csucampuscraft-user-csrf-absent-missing": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-absent-missing": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-absent-missing": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-absent-wrong": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-absent-wrong": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-absent-wrong": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-absent-other-session": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-absent-other-session": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-absent-other-session": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-absent-duplicate": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-absent-duplicate": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-absent-duplicate": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-absent-header-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-absent-header-only": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-absent-header-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-absent-query-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-absent-query-only": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-absent-query-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-absent-non-get-HEAD": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-counter-absent-non-get-HEAD": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-absent-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-absent-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-absent-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-absent-non-get-PUT": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-absent-non-get-PUT": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-absent-non-get-PUT": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-absent-non-get-PATCH": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-absent-non-get-PATCH": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-absent-non-get-PATCH": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-absent-non-get-DELETE": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-absent-non-get-DELETE": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-absent-non-get-DELETE": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-html-missing": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-html-missing": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-html-missing": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-html-wrong": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-html-wrong": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-html-wrong": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-html-other-session": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-html-other-session": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-html-other-session": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-html-duplicate": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-html-duplicate": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-html-duplicate": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-html-header-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-html-header-only": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-html-header-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-html-query-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-html-query-only": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-html-query-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-html-non-get-HEAD": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-counter-html-non-get-HEAD": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-html-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-html-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-html-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-html-non-get-PUT": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-html-non-get-PUT": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-html-non-get-PUT": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-html-non-get-PATCH": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-html-non-get-PATCH": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-html-non-get-PATCH": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-html-non-get-DELETE": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-html-non-get-DELETE": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-html-non-get-DELETE": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-json-missing": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-json-missing": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-json-missing": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-json-wrong": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-json-wrong": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-json-wrong": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-json-other-session": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-json-other-session": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-json-other-session": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-json-duplicate": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-json-duplicate": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-json-duplicate": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-json-header-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-json-header-only": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-json-header-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-json-query-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-json-query-only": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-json-query-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-json-non-get-HEAD": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-counter-json-non-get-HEAD": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-json-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-json-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-json-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-json-non-get-PUT": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-json-non-get-PUT": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-json-non-get-PUT": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-json-non-get-PATCH": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-json-non-get-PATCH": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-json-non-get-PATCH": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-json-non-get-DELETE": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-html-json-non-get-DELETE": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-user-csrf-counter-json-non-get-DELETE": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-valid": {
+      "passed": true,
+      "detail": "Valid token reaches non-business POST and sees 303"
+    },
+    "csucampuscraft-user-csrf-valid-counter": {
+      "passed": true,
+      "detail": "Exactly one accepted handler call"
+    },
+    "csucampuscraft-user-css": {
+      "passed": true,
+      "detail": "CSS response equals checked-in resource"
+    },
+    "csucampuscraft-user-shared-svg": {
+      "passed": true,
+      "detail": "Shared asset unchanged"
+    },
+    "csrf-form-token-8081": {
+      "passed": true,
+      "detail": "Exactly one hidden token, raw value excluded"
+    },
+    "csucampuscraft-admin-labels": {
+      "passed": true,
+      "detail": "for/id references exist"
+    },
+    "csucampuscraft-admin-csrf-hidden": {
+      "passed": true,
+      "detail": "One shared-fragment hidden token"
+    },
+    "csucampuscraft-admin-field-error-visible": {
+      "passed": true,
+      "detail": "Field error text, description reference and summary anchor rendered correctly"
+    },
+    "csucampuscraft-admin-escaped-text": {
+      "passed": true,
+      "detail": "Text escaped with visible quote payload"
+    },
+    "csucampuscraft-admin-error-400": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-admin-error-403": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-admin-error-404": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-admin-error-409": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-admin-error-500": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-admin-technical-redaction": {
+      "passed": true,
+      "detail": "No sentinel, stack or SQL details in response"
+    },
+    "csucampuscraft-admin-validation-integer-166": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-integer-167": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-integer-168": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-money-169": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-money-170": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-money-171": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-enum-172": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-enum-173": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-length-174": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "counter-http-8081": {
+      "passed": true,
+      "detail": "Verification-only read"
+    },
+    "csucampuscraft-admin-csrf-absent-missing": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-absent-missing": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-absent-missing": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-absent-wrong": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-absent-wrong": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-absent-wrong": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-absent-other-session": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-absent-other-session": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-absent-other-session": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-absent-duplicate": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-absent-duplicate": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-absent-duplicate": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-absent-header-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-absent-header-only": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-absent-header-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-absent-query-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-absent-query-only": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-absent-query-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-absent-non-get-HEAD": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-counter-absent-non-get-HEAD": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-absent-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-absent-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-absent-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-absent-non-get-PUT": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-absent-non-get-PUT": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-absent-non-get-PUT": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-absent-non-get-PATCH": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-absent-non-get-PATCH": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-absent-non-get-PATCH": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-absent-non-get-DELETE": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-absent-non-get-DELETE": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-absent-non-get-DELETE": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-html-missing": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-html-missing": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-html-missing": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-html-wrong": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-html-wrong": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-html-wrong": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-html-other-session": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-html-other-session": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-html-other-session": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-html-duplicate": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-html-duplicate": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-html-duplicate": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-html-header-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-html-header-only": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-html-header-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-html-query-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-html-query-only": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-html-query-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-html-non-get-HEAD": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-counter-html-non-get-HEAD": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-html-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-html-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-html-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-html-non-get-PUT": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-html-non-get-PUT": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-html-non-get-PUT": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-html-non-get-PATCH": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-html-non-get-PATCH": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-html-non-get-PATCH": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-html-non-get-DELETE": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-html-non-get-DELETE": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-html-non-get-DELETE": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-json-missing": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-json-missing": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-json-missing": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-json-wrong": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-json-wrong": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-json-wrong": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-json-other-session": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-json-other-session": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-json-other-session": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-json-duplicate": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-json-duplicate": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-json-duplicate": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-json-header-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-json-header-only": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-json-header-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-json-query-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-json-query-only": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-json-query-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-json-non-get-HEAD": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-counter-json-non-get-HEAD": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-json-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-json-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-json-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-json-non-get-PUT": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-json-non-get-PUT": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-json-non-get-PUT": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-json-non-get-PATCH": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-json-non-get-PATCH": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-json-non-get-PATCH": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-json-non-get-DELETE": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-html-json-non-get-DELETE": {
+      "passed": true,
+      "detail": "SSR 403 required regardless of Accept negotiation"
+    },
+    "csucampuscraft-admin-csrf-counter-json-non-get-DELETE": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-valid": {
+      "passed": true,
+      "detail": "Valid token reaches non-business POST and sees 303"
+    },
+    "csucampuscraft-admin-csrf-valid-counter": {
+      "passed": true,
+      "detail": "Exactly one accepted handler call"
+    },
+    "csucampuscraft-admin-css": {
+      "passed": true,
+      "detail": "CSS response equals checked-in resource"
+    },
+    "csucampuscraft-admin-shared-svg": {
+      "passed": true,
+      "detail": "Shared asset unchanged"
+    }
+  },
+  "profile_boundaries": {
+    "default": "verification probes absent",
+    "verification": "non-business probes only"
+  },
+  "branch": "feat/step02-foundation",
+  "runtime_manifest_sha256": "9b10df92681a3761c6ce35948b86bb30db9bca81971b7c3b524191da0591fce1",
+  "runtime_file_count": 65,
+  "csucampuscraft-user_jar_sha256": "9f0dcdf63873eb71a076a85988e25734790c1a31fdcc61af66a97c31d7ba1cd5",
+  "csucampuscraft-admin_jar_sha256": "94e2df9af4d4019c6a84e797cda3d116c2663a34b7446238d3cc0e9bd899e185",
+  "mysql_version": "8.4.9",
+  "mysql_port": 52217,
+  "overall": "FAIL",
+  "error": "TimeoutExpired: Command '['C:\\\\Program Files\\\\WindowsApps\\\\OpenAI.CodexPrimaryRuntime.v26-1111-574-0_26.1111.574.0_x64__3k8sg7r9htsxt\\\\dependencies\\\\node\\\\bin\\\\node.exe', 'C:\\\\Users\\\\Starmetor\\\\.codex\\\\visualizations\\\\2026\\\\11\\\\10\\\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\\\step02-foundation\\\\verify_browser.cjs']' timed out after 90 seconds",
+  "tracked_processes_stopped": true
+}

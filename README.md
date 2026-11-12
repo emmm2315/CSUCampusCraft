@@ -9,7 +9,7 @@ CSUCampusCraft 是《软件开发架构平台》实验一的双端商城项目�
 
 ## 当前阶段
 
-M0 工程初始化已完成，M1 业务开发尚未开工。两个应用已分别启动，根页 `GET /` 能读取同一 MySQL 库的一级主题，两个端口也能读取同一份共享图片。登录、购物车、订单和后台业务按后续步骤开发。P0 管理端包括真实控制台、分类维护、商品资料、上下架、增量补货、商品相册、普通顾客查询与启停、关联订单以及查单发货；REST 接口仅作设计预留。新增需求已进入文档，尚未实现。
+M0 工程初始化与 STEP02 公共页面和安全基础已完成，STEP03/STEP04 业务功能待开发。两个应用已分别启动，根页 `GET /` 能读取同一 MySQL 库的一级主题，两个端口也能读取同一份共享图片。登录、购物车、订单和后台业务按后续步骤开发。P0 管理端包括真实控制台、分类维护、商品资料、上下架、增量补货、商品相册、普通顾客查询与启停、关联订单以及查单发货；REST 接口仅作设计预留。新增需求已进入文档，尚未实现。
 
 MySQL 8.4（InnoDB）是项目数据库基线。首版范围与交付标准见[项目立项与范围](docs/项目立项与范围.md)。
 
@@ -112,4 +112,30 @@ M0 已完成本地独立目录复现与 INIT-01 至 INIT-05 核对，详细版�
 
 推送前用 `git status --short` 核对两端源码、SQL、共享素材、七份文档、指导书与归档证据均纳入提交。`docs/evidence/` 下经过检查的 `.log` 属于验收资料；构建 `target/`、本机口令文件和普通运行日志继续忽略。提交后可记录新的完整 SHA，保留本轮「基线 SHA + 工作区快照」证据的原始身份，不把它改写成该新提交已测试。
 
-由你完成本地提交及 GitHub 推送后，组员从 [STEP02 公共页面与安全基础](docs/开发计划与任务.md#step02-公共页面与安全基础) 开始认领。新成员先按 README 在自己的环境复现 STEP01，随后按 STEP02 至 STEP14 的依赖推进。
+STEP02 已完成基础设施交付，组员可按计划并行认领 STEP03 的公开目录和 STEP04 的身份模块。新成员先按 README 在自己的环境复现 STEP01，并阅读下方 STEP02 交接约定；后台及交易写入口须等 STEP04 鉴权通过。
+
+## STEP02 工具链与公共基础交接
+
+STEP02 受测代码提交为 `5d9271d7e32634f947eb9f6077e7a4f3d98806a7`，验证使用 Microsoft JDK 21.0.12.1、Maven 3.9.16，Java 编译目标继续为 17。先在 PowerShell 设置 JDK 并核对 Maven 的 Java 与版本，再执行上面的双端 `verify`。Maven 3.9.16 需已加入本机 PATH。
+
+```powershell
+$env:JAVA_HOME = 'C:\Users\Starmetor\.jdks\ms-21.0.12.1'
+$env:Path = "$env:JAVA_HOME\bin;$env:Path"
+java -version
+mvn -v
+```
+
+两端 `foundation/` 下提供异常映射、字段校验、303 响应、密码库和会话级 CSRF。公共模板约定为 `layout::page(pageTitle,pageContent)`、`fields::text(id,name,label,value,errors)`、`fields::number(id,name,label,value,min,max,step,errors)`、`fields::csrf`、`alerts::summary(errors)` 和 `images::image(path,altText)`。调用带错误摘要的字段时使 `id` 与 `name` 相同，错误 Map 键使用同一名称，摘要链接才能定位输入。普通文本用 `th:text`，字段值用 `th:value`；密码不回显。
+
+POST 表单复用 `fields::csrf`，可加 `data-submit-state` 启用「处理中」反馈。成功写后使用 `HttpResponses.seeOther(readPath)` 返回 303。`BusinessException` 的消息只放可展示文案，技术异常交给通用 500。`InputChecks.money` 默认检查完整有符号 DECIMAL(12,2) 列范围，返回两位小数且不舍入；价格正值等业务限制由调用方传入 min/max。用户导航 `cartQuantity` 当前固定为 0，STEP07 再接查询。
+
+日常启动使用默认 profile，验证专用入口不会注册。复现本步探针时，在已经设置同库环境变量的两个终端分别运行：
+
+```powershell
+java -jar csucampuscraft-user/target/csucampuscraft-user-0.0.1-SNAPSHOT.jar --spring.profiles.active=verification
+java -jar csucampuscraft-admin/target/csucampuscraft-admin-0.0.1-SNAPSHOT.jar --spring.profiles.active=verification
+```
+
+每个终端只执行对应端命令。`GET /__verification/foundation` 展示公共片段，`GET /__verification/errors/{status}` 检查错误页，`POST /__verification/submit` 只增加非持久化计数并返回 303，不操作业务表。运行与脱敏证据见[STEP02 基础设施实测记录](docs/测试与验收用例.md#step02-基础设施实测记录)。
+
+本轮按任务要求对所有非 GET 请求先校验会话级表单 `_csrf`，HEAD/OPTIONS 也包括在内。现有 HLD/BR-01 对未来未登录业务写请求规定先进入登录页，两者的身份/CSRF 顺序留在 STEP04 接入时协调；STEP02 没有实现这些业务入口。返回地址白名单仅约束跳转，不注册未来 GET 路由。

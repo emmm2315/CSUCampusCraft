@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>公共基础验证</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="admin">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 管理端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <span class="app-label">管理端</span>
+            
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <section class="panel" aria-labelledby="verification-title">
+<h1 id="verification-title">公共基础验证</h1>
+<p>此页面仅在 verification 配置启用，无业务数据写入。</p>
+<p id="escaped-text">&lt;script&gt;alert(&quot;quote&quot;)&lt;/script&gt;</p>
+<form method="post" data-submit-state action="/__verification/submit">
+    <input type="hidden" name="_csrf" value="[REDACTED]">
+    <section class="alert alert-danger error-summary" role="alert" aria-labelledby="error-summary-title" tabindex="-1">
+    <h2 id="error-summary-title">请修正以下输入</h2>
+    <ul>
+        <li>
+            <a href="#probeText">请修改此验证字段</a>
+        </li>
+    </ul>
+</section>
+    <div class="form-field">
+    <label for="probeText">文本验证</label>
+    <input type="text" id="probeText" name="probeText" value="&lt;script&gt;alert(&quot;quote&quot;)&lt;/script&gt;"
+           aria-invalid="true" aria-describedby="probeText-error" class="input-error">
+    <p class="field-error" id="probeText-error">请修改此验证字段</p>
+</div>
+    <div class="form-field">
+    <label for="probeNumber">数量验证</label>
+    <input type="number" id="probeNumber" name="probeNumber" value="1"
+           min="0" max="99" step="1"
+           aria-invalid="false">
+    
+</div>
+    <button type="submit" class="button">验证提交</button>
+    <button type="button" class="button" disabled>不可用</button>
+</form>
+<img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/verification-missing.svg" alt="验证缺图回退" data-image-fallback="/images/catalog-placeholder.svg">
+</section>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

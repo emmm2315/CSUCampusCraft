@@ -1,0 +1,226 @@
+{
+  "review_status": "FAIL_FULL_STEP02_ACCEPTANCE",
+  "reviewed_tested_code_sha": "b35b0a48a0fb0e60919a41ddfe4496c96ee236b0",
+  "automated_attempt1_result_preserved": "result.json remains unchanged; 134 automated checks passed but did not cover these rendering conditions",
+  "findings": [
+    {
+      "id": "STEP02-REVIEW-01",
+      "issue": "CSRF rejection with absent Accept negotiated Boot JSON instead of required SSR 403 page",
+      "evidence": [
+        {
+          "body_file": "http-043-8080.body",
+          "method": "POST",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-045-8080.body",
+          "method": "POST",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-047-8080.body",
+          "method": "POST",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-049-8080.body",
+          "method": "POST",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-051-8080.body",
+          "method": "POST",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-053-8080.body",
+          "method": "POST",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-055-8080.body",
+          "method": "HEAD",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": false
+        },
+        {
+          "body_file": "http-057-8080.body",
+          "method": "OPTIONS",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-059-8080.body",
+          "method": "PUT",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-061-8080.body",
+          "method": "PATCH",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-063-8080.body",
+          "method": "DELETE",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-087-8081.body",
+          "method": "POST",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-089-8081.body",
+          "method": "POST",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-091-8081.body",
+          "method": "POST",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-093-8081.body",
+          "method": "POST",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-095-8081.body",
+          "method": "POST",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-097-8081.body",
+          "method": "POST",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-099-8081.body",
+          "method": "HEAD",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": false
+        },
+        {
+          "body_file": "http-101-8081.body",
+          "method": "OPTIONS",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-103-8081.body",
+          "method": "PUT",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-105-8081.body",
+          "method": "PATCH",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        },
+        {
+          "body_file": "http-107-8081.body",
+          "method": "DELETE",
+          "status": 403,
+          "content_type": "application/json",
+          "renders_html_error_page": false,
+          "json_body_observed": true
+        }
+      ]
+    },
+    {
+      "id": "STEP02-REVIEW-02",
+      "issue": "field-error p existed but text was empty; original assertion checked labels/ids only",
+      "evidence": [
+        {
+          "body_file": "http-025-8080.body",
+          "id": "probeText-error",
+          "rendered_text": ""
+        },
+        {
+          "body_file": "http-026-8080.body",
+          "id": "probeText-error",
+          "rendered_text": ""
+        },
+        {
+          "body_file": "http-042-8080.body",
+          "id": "probeText-error",
+          "rendered_text": ""
+        },
+        {
+          "body_file": "http-069-8081.body",
+          "id": "probeText-error",
+          "rendered_text": ""
+        },
+        {
+          "body_file": "http-070-8081.body",
+          "id": "probeText-error",
+          "rendered_text": ""
+        },
+        {
+          "body_file": "http-086-8081.body",
+          "id": "probeText-error",
+          "rendered_text": ""
+        }
+      ]
+    }
+  ],
+  "next_action": "Correct production rendering, strengthen HTTP and browser assertions, verify independently in attempt2 on new recorded code SHA"
+}

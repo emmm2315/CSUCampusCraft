@@ -1,0 +1,122 @@
+[
+  {
+    "port": 8080,
+    "width": 1366,
+    "kind": "home",
+    "app": "user",
+    "count": "5",
+    "font": "16px",
+    "h1": "28px",
+    "overflow": false,
+    "passed": true
+  },
+  {
+    "port": 8080,
+    "width": 1920,
+    "kind": "home",
+    "app": "user",
+    "count": "5",
+    "font": "16px",
+    "h1": "28px",
+    "overflow": false,
+    "passed": true
+  },
+  {
+    "port": 8080,
+    "kind": "fields",
+    "inlineErrorText": true,
+    "errorAssociation": true,
+    "allLabelsMatch": true,
+    "csrfCount": 1,
+    "imageFallback": true,
+    "focus": {
+      "width": "2px",
+      "style": "solid"
+    },
+    "passed": true
+  },
+  {
+    "port": 8080,
+    "kind": "submitting",
+    "active": true,
+    "label": true,
+    "enabled": true,
+    "aria": true,
+    "submitterRetained": true,
+    "csrfFieldPresent": true,
+    "navigationPreventedByVerifier": true,
+    "passed": true
+  },
+  {
+    "port": 8080,
+    "kind": "error",
+    "status": 404,
+    "passed": true
+  },
+  {
+    "port": 8080,
+    "kind": "error",
+    "status": 500,
+    "passed": true
+  },
+  {
+    "port": 8081,
+    "width": 1366,
+    "kind": "home",
+    "app": "admin",
+    "count": "5",
+    "font": "16px",
+    "h1": "28px",
+    "overflow": false,
+    "passed": true
+  },
+  {
+    "port": 8081,
+    "width": 1920,
+    "kind": "home",
+    "app": "admin",
+    "count": "5",
+    "font": "16px",
+    "h1": "28px",
+    "overflow": false,
+    "passed": true
+  },
+  {
+    "port": 8081,
+    "kind": "fields",
+    "inlineErrorText": true,
+    "errorAssociation": true,
+    "allLabelsMatch": true,
+    "csrfCount": 1,
+    "imageFallback": true,
+    "focus": {
+      "width": "2px",
+      "style": "solid"
+    },
+    "passed": true
+  },
+  {
+    "port": 8081,
+    "kind": "submitting",
+    "active": true,
+    "label": true,
+    "enabled": true,
+    "aria": true,
+    "submitterRetained": true,
+    "csrfFieldPresent": true,
+    "navigationPreventedByVerifier": true,
+    "passed": true
+  },
+  {
+    "port": 8081,
+    "kind": "error",
+    "status": 404,
+    "passed": true
+  },
+  {
+    "port": 8081,
+    "kind": "error",
+    "status": 500,
+    "passed": true
+  }
+]

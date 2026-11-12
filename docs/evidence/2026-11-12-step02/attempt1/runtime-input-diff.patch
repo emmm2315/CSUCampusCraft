@@ -1,0 +1,2316 @@
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/CsrfFilter.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/CsrfFilter.java
+new file mode 100644
+index 0000000..10d6a03
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/CsrfFilter.java
+@@ -0,0 +1,80 @@
++package org.csucampuscraft.admin.foundation.security;
++
++import jakarta.servlet.FilterChain;
++import jakarta.servlet.ServletException;
++import jakarta.servlet.http.HttpServletRequest;
++import jakarta.servlet.http.HttpServletResponse;
++import java.io.IOException;
++import java.net.URLDecoder;
++import java.nio.charset.StandardCharsets;
++import java.security.MessageDigest;
++import org.springframework.core.Ordered;
++import org.springframework.core.annotation.Order;
++import org.springframework.stereotype.Component;
++import org.springframework.web.filter.OncePerRequestFilter;
++
++/** Protects every external non-GET request, including login forms added in STEP04. */
++@Component
++@Order(Ordered.HIGHEST_PRECEDENCE + 20)
++public final class CsrfFilter extends OncePerRequestFilter {
++    private final CsrfTokenService tokens;
++
++    public CsrfFilter(CsrfTokenService tokens) { this.tokens = tokens; }
++
++    @Override
++    protected boolean shouldNotFilter(HttpServletRequest request) {
++        return "GET".equals(request.getMethod());
++    }
++
++    @Override
++    protected boolean shouldNotFilterErrorDispatch() { return true; }
++
++    @Override
++    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
++                                    FilterChain chain) throws ServletException, IOException {
++        if (!valid(request)) {
++            request.setAttribute("foundation.errorCode", "CSRF_REJECTED");
++            request.setAttribute("foundation.errorMessage", "请求校验失败，请重新打开页面后提交。");
++            response.sendError(HttpServletResponse.SC_FORBIDDEN);
++            return;
++        }
++        chain.doFilter(request, response);
++    }
++
++    private boolean valid(HttpServletRequest request) {
++        String expected = tokens.getExisting(request);
++        if (expected == null || queryContainsToken(request.getQueryString())) {
++            return false;
++        }
++        String contentType = request.getContentType();
++        // This step supports ordinary HTML forms; no multipart/upload flow is in scope.
++        if (contentType == null || !contentType.split(";", 2)[0].trim()
++                .equalsIgnoreCase("application/x-www-form-urlencoded")) {
++            return false;
++        }
++        String[] submitted = request.getParameterValues(CsrfTokenService.PARAMETER_NAME);
++        if (submitted == null || submitted.length != 1 || submitted[0] == null
++                || !submitted[0].matches("[0-9a-f]{64}")) {
++            return false;
++        }
++        return MessageDigest.isEqual(expected.getBytes(StandardCharsets.US_ASCII),
++                submitted[0].getBytes(StandardCharsets.US_ASCII));
++    }
++
++    private boolean queryContainsToken(String query) {
++        if (query == null) {
++            return false;
++        }
++        try {
++            for (String part : query.split("&")) {
++                String key = part.split("=", 2)[0];
++                if (CsrfTokenService.PARAMETER_NAME.equals(URLDecoder.decode(key, StandardCharsets.UTF_8))) {
++                    return true;
++                }
++            }
++            return false;
++        } catch (IllegalArgumentException malformed) {
++            return true;
++        }
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/CsrfTokenService.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/CsrfTokenService.java
+new file mode 100644
+index 0000000..b951112
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/CsrfTokenService.java
+@@ -0,0 +1,43 @@
++package org.csucampuscraft.admin.foundation.security;
++
++import jakarta.servlet.http.HttpServletRequest;
++import jakarta.servlet.http.HttpSession;
++import java.security.SecureRandom;
++import java.util.HexFormat;
++import org.springframework.stereotype.Service;
++
++/** A session token is deliberately separate from login identity and confirmation tokens. */
++@Service
++public final class CsrfTokenService {
++    public static final String PARAMETER_NAME = "_csrf";
++    private static final String SESSION_ATTRIBUTE = CsrfTokenService.class.getName() + ".TOKEN";
++    private final SecureRandom random = new SecureRandom();
++
++    public String getOrCreate(HttpServletRequest request) {
++        HttpSession session = request.getSession(true);
++        synchronized (session) {
++            Object existing = session.getAttribute(SESSION_ATTRIBUTE);
++            if (existing instanceof String token) {
++                return token;
++            }
++            byte[] bytes = new byte[32];
++            random.nextBytes(bytes);
++            String token = HexFormat.of().formatHex(bytes);
++            session.setAttribute(SESSION_ATTRIBUTE, token);
++            return token;
++        }
++    }
++
++    public String getExisting(HttpServletRequest request) {
++        HttpSession session = request.getSession(false);
++        if (session == null) {
++            return null;
++        }
++        try {
++            Object token = session.getAttribute(SESSION_ATTRIBUTE);
++            return token instanceof String text ? text : null;
++        } catch (IllegalStateException expired) {
++            return null;
++        }
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/PasswordService.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/PasswordService.java
+new file mode 100644
+index 0000000..1f4a737
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/PasswordService.java
+@@ -0,0 +1,26 @@
++package org.csucampuscraft.admin.foundation.security;
++
++import java.nio.charset.StandardCharsets;
++import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
++import org.springframework.stereotype.Service;
++
++/** Raw passwords and hashes must never be placed in a view model or a log. */
++@Service
++public final class PasswordService {
++    private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10);
++
++    public boolean matches(String raw, String hash) {
++        if (raw == null || hash == null || raw.getBytes(StandardCharsets.UTF_8).length > 72
++                || !hash.matches("\\$2[aby]\\$10\\$[./A-Za-z0-9]{53}")) {
++            return false;
++        }
++        return encoder.matches(raw, hash);
++    }
++
++    public String hash(String raw) {
++        if (raw == null || raw.getBytes(StandardCharsets.UTF_8).length > 72) {
++            throw new IllegalArgumentException("Password must fit BCrypt's 72-byte UTF-8 limit");
++        }
++        return encoder.encode(raw);
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/ReturnUrlPolicy.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/ReturnUrlPolicy.java
+new file mode 100644
+index 0000000..4606b9a
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/ReturnUrlPolicy.java
+@@ -0,0 +1,55 @@
++package org.csucampuscraft.admin.foundation.security;
++
++import java.net.URI;
++import java.net.URISyntaxException;
++import java.net.URLDecoder;
++import java.nio.charset.StandardCharsets;
++import java.util.List;
++import java.util.regex.Pattern;
++import org.springframework.stereotype.Component;
++
++/** Navigation allowlist only: listing a GET destination does not register its controller. */
++@Component
++public final class ReturnUrlPolicy {
++    private static final List<Pattern> READ_PATHS = List.of(
++            Pattern.compile("/"),
++            Pattern.compile("/categories(?:/new|/[1-9][0-9]*/edit)?"),
++            Pattern.compile("/products(?:/new|/[1-9][0-9]*/(?:edit|images))?"),
++            Pattern.compile("/orders(?:/[A-Za-z0-9_-]{1,40})?"),
++            Pattern.compile("/customers(?:/[1-9][0-9]*)?")
++    );
++
++    public String resolve(String returnUrl, String defaultPath) {
++        String fallback = allowed(defaultPath) ? defaultPath : "/";
++        return allowed(returnUrl) ? returnUrl : fallback;
++    }
++
++    private boolean allowed(String value) {
++        if (value == null || value.isEmpty() || !value.equals(value.strip())
++                || value.contains("\\") || value.contains("..") || value.contains("//")
++                || value.chars().anyMatch(c -> c <= 32 || c == 127)) {
++            return false;
++        }
++        try {
++            URI uri = new URI(value);
++            if (uri.isAbsolute() || uri.getRawAuthority() != null || uri.getRawFragment() != null
++                    || !value.startsWith("/") || uri.getRawPath() == null
++                    || uri.getRawPath().contains("%")) {
++                return false;
++            }
++            String query = uri.getRawQuery();
++            if (query != null) {
++                // Inspect one decoded query layer, but preserve the original URL for navigation.
++                String decoded = URLDecoder.decode(query, StandardCharsets.UTF_8);
++                if (decoded.contains("..") || decoded.contains("\\") || decoded.contains("//")
++                        || decoded.chars().anyMatch(c -> c < 32 || c == 127)
++                        || decoded.matches("(?is).*%(?:0[0-9a-f]|1[0-9a-f]|2e|2f|5c|7f|25).*")) {
++                    return false;
++                }
++            }
++            return READ_PATHS.stream().anyMatch(pattern -> pattern.matcher(uri.getPath()).matches());
++        } catch (URISyntaxException | IllegalArgumentException invalid) {
++            return false;
++        }
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/validation/InputChecks.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/validation/InputChecks.java
+new file mode 100644
+index 0000000..70fd145
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/validation/InputChecks.java
+@@ -0,0 +1,91 @@
++package org.csucampuscraft.admin.foundation.validation;
++
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import java.math.BigDecimal;
++import java.math.RoundingMode;
++import java.util.Map;
++import org.springframework.http.HttpStatus;
++
++/** Type/range primitives; callers supply business-specific minimums and maximums. */
++public final class InputChecks {
++    public static final BigDecimal MAX_MONEY = new BigDecimal("9999999999.99");
++    private InputChecks() { }
++
++    public static String requiredText(String field, String raw, int maxLength) {
++        return text(field, raw, 1, maxLength);
++    }
++
++    public static String text(String field, String raw, int minLength, int maxLength) {
++        if (minLength < 0 || maxLength < minLength) {
++            throw new IllegalArgumentException("Invalid text limits");
++        }
++        String value = raw == null ? "" : raw.strip();
++        int length = value.codePointCount(0, value.length());
++        if (length < minLength || length > maxLength) {
++            throw invalid(field, "INVALID_LENGTH", "请检查文字是否填写及其长度。");
++        }
++        return value;
++    }
++
++    public static int integer(String field, String raw, int minimum, int maximum) {
++        return (int) longInteger(field, raw, minimum, maximum);
++    }
++
++    public static long longInteger(String field, String raw, long minimum, long maximum) {
++        if (minimum > maximum) {
++            throw new IllegalArgumentException("Invalid integer limits");
++        }
++        String value = raw == null ? "" : raw.strip();
++        try {
++            if (!value.matches("-?[0-9]+")) {
++                throw new NumberFormatException();
++            }
++            long parsed = Long.parseLong(value);
++            if (parsed < minimum || parsed > maximum) {
++                throw new NumberFormatException();
++            }
++            return parsed;
++        } catch (NumberFormatException invalid) {
++            throw invalid(field, "INVALID_INTEGER", "请输入允许范围内的整数。");
++        }
++    }
++
++    public static <E extends Enum<E>> E enumeration(String field, String raw, Class<E> type) {
++        try {
++            if (raw == null) {
++                throw new IllegalArgumentException();
++            }
++            return Enum.valueOf(type, raw.strip());
++        } catch (IllegalArgumentException invalid) {
++            throw invalid(field, "INVALID_ENUM", "请选择允许的选项。");
++        }
++    }
++
++    public static BigDecimal money(String field, String raw) {
++        return money(field, raw, MAX_MONEY.negate(), MAX_MONEY);
++    }
++
++    public static BigDecimal money(String field, String raw, BigDecimal minimum, BigDecimal maximum) {
++        if (minimum == null || maximum == null || minimum.compareTo(maximum) > 0
++                || minimum.compareTo(MAX_MONEY.negate()) < 0 || maximum.compareTo(MAX_MONEY) > 0) {
++            throw new IllegalArgumentException("Invalid money limits");
++        }
++        String value = raw == null ? "" : raw.strip();
++        try {
++            if (value.length() > 32 || !value.matches("-?[0-9]+(?:\\.[0-9]{1,2})?")) {
++                throw new NumberFormatException();
++            }
++            BigDecimal parsed = new BigDecimal(value).setScale(2, RoundingMode.UNNECESSARY);
++            if (parsed.compareTo(minimum) < 0 || parsed.compareTo(maximum) > 0) {
++                throw new NumberFormatException();
++            }
++            return parsed;
++        } catch (ArithmeticException | NumberFormatException invalid) {
++            throw invalid(field, "INVALID_MONEY", "请输入范围内且最多两位小数的金额。");
++        }
++    }
++
++    private static BusinessException invalid(String field, String code, String message) {
++        return new BusinessException(HttpStatus.BAD_REQUEST, code, message, Map.of(field, message));
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/view/ImagePaths.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/view/ImagePaths.java
+new file mode 100644
+index 0000000..6afda44
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/view/ImagePaths.java
+@@ -0,0 +1,7 @@
++package org.csucampuscraft.admin.foundation.view;
++
++/** Relative classpath resource; templates add the current application's leading slash. */
++public final class ImagePaths {
++    public static final String DEFAULT_COVER = "images/catalog-placeholder.svg";
++    private ImagePaths() { }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/BusinessException.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/BusinessException.java
+new file mode 100644
+index 0000000..685f19b
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/BusinessException.java
+@@ -0,0 +1,38 @@
++package org.csucampuscraft.admin.foundation.web;
++
++import java.util.Map;
++import java.util.Objects;
++import java.util.Set;
++import org.springframework.http.HttpStatus;
++
++/** A deliberate, publicly displayable failure; never populate it with exception details. */
++public final class BusinessException extends RuntimeException {
++    private static final Set<HttpStatus> SUPPORTED = Set.of(HttpStatus.BAD_REQUEST,
++            HttpStatus.FORBIDDEN, HttpStatus.NOT_FOUND, HttpStatus.CONFLICT,
++            HttpStatus.INTERNAL_SERVER_ERROR);
++    private final HttpStatus status;
++    private final String code;
++    private final Map<String, String> fieldErrors;
++
++    public BusinessException(HttpStatus status, String code, String message) {
++        this(status, code, message, Map.of());
++    }
++
++    public BusinessException(HttpStatus status, String code, String message,
++                             Map<String, String> fieldErrors) {
++        super(Objects.requireNonNull(message, "Display message is required"));
++        if (!SUPPORTED.contains(status)) {
++            throw new IllegalArgumentException("Unsupported page error status");
++        }
++        if (code == null || !code.matches("[A-Z][A-Z0-9_]{0,63}")) {
++            throw new IllegalArgumentException("Stable error code is required");
++        }
++        this.status = status;
++        this.code = code;
++        this.fieldErrors = Map.copyOf(fieldErrors);
++    }
++
++    public HttpStatus getStatus() { return status; }
++    public String getCode() { return code; }
++    public Map<String, String> getFieldErrors() { return fieldErrors; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/GlobalExceptionHandler.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/GlobalExceptionHandler.java
+new file mode 100644
+index 0000000..c37ad44
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/GlobalExceptionHandler.java
+@@ -0,0 +1,89 @@
++package org.csucampuscraft.admin.foundation.web;
++
++import jakarta.servlet.http.HttpServletRequest;
++import jakarta.servlet.http.HttpServletResponse;
++import java.io.IOException;
++import java.util.LinkedHashMap;
++import java.util.Map;
++import org.springframework.beans.TypeMismatchException;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.converter.HttpMessageNotReadableException;
++import org.springframework.validation.BindException;
++import org.springframework.web.ErrorResponse;
++import org.springframework.web.bind.ServletRequestBindingException;
++import org.springframework.web.bind.annotation.ControllerAdvice;
++import org.springframework.web.bind.annotation.ExceptionHandler;
++import org.springframework.web.servlet.ModelAndView;
++
++/** Maps expected failures without reflecting submitted values or technical exception messages. */
++@ControllerAdvice
++public final class GlobalExceptionHandler {
++    private final PageModelAdvice pageModels;
++
++    public GlobalExceptionHandler(PageModelAdvice pageModels) { this.pageModels = pageModels; }
++
++    @ExceptionHandler(BusinessException.class)
++    public ModelAndView business(BusinessException exception, HttpServletRequest request) {
++        return page(request, exception.getStatus(), exception.getCode(), exception.getMessage(),
++                exception.getFieldErrors());
++    }
++
++    @ExceptionHandler(BindException.class)
++    public ModelAndView binding(BindException exception, HttpServletRequest request) {
++        Map<String, String> fields = new LinkedHashMap<>();
++        exception.getBindingResult().getFieldErrors().forEach(error ->
++                fields.putIfAbsent(error.getField(), "请检查输入格式与范围。"));
++        return page(request, HttpStatus.BAD_REQUEST, "INVALID_FIELDS", "请检查并修正表单内容。", fields);
++    }
++
++    @ExceptionHandler({TypeMismatchException.class, ServletRequestBindingException.class,
++            HttpMessageNotReadableException.class})
++    public ModelAndView parameters(Exception exception, HttpServletRequest request) {
++        return page(request, HttpStatus.BAD_REQUEST, "INVALID_REQUEST", "请求参数不完整或格式不正确。", Map.of());
++    }
++
++    @ExceptionHandler(Exception.class)
++    public ModelAndView unexpected(Exception exception, HttpServletRequest request,
++                                   HttpServletResponse response) throws IOException {
++        if (exception instanceof ErrorResponse failure) {
++            int status = failure.getStatusCode().value();
++            if (status == 400) {
++                return page(request, HttpStatus.BAD_REQUEST, "INVALID_REQUEST", "请求参数不完整或格式不正确。", Map.of());
++            }
++            if (status == 403) {
++                return page(request, HttpStatus.FORBIDDEN, "ACCESS_DENIED", "当前请求无法执行。", Map.of());
++            }
++            if (status == 404) {
++                return page(request, HttpStatus.NOT_FOUND, "RESOURCE_NOT_FOUND", "未找到请求的页面或资源。", Map.of());
++            }
++            if (status == 409) {
++                return page(request, HttpStatus.CONFLICT, "REQUEST_CONFLICT", "页面数据已变化，请刷新后重新确认。", Map.of());
++            }
++            if (status >= 400 && status < 500) {
++                // Preserve framework statuses such as 405/415 through Boot's /error fallback.
++                response.sendError(status);
++                return new ModelAndView();
++            }
++        }
++        return page(request, HttpStatus.INTERNAL_SERVER_ERROR, "INTERNAL_ERROR",
++                "服务暂时不可用，请稍后重试。", Map.of());
++    }
++
++    private ModelAndView page(HttpServletRequest request, HttpStatus status, String code,
++                              String message, Map<String, String> fields) {
++        ModelAndView view = new ModelAndView("error/" + status.value());
++        view.setStatus(status);
++        view.addAllObjects(pageModels.commonModel(request));
++        // Even deliberately thrown 500 BusinessExceptions must not disclose supplied details.
++        if (status.is5xxServerError()) {
++            code = "INTERNAL_ERROR";
++            message = "服务暂时不可用，请稍后重试。";
++            fields = Map.of();
++        }
++        view.addObject("errorStatus", status.value());
++        view.addObject("errorCode", code);
++        view.addObject("errorMessage", message);
++        view.addObject("fieldErrors", fields);
++        return view;
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/HttpResponses.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/HttpResponses.java
+new file mode 100644
+index 0000000..7fd6080
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/HttpResponses.java
+@@ -0,0 +1,21 @@
++package org.csucampuscraft.admin.foundation.web;
++
++import org.csucampuscraft.admin.foundation.security.ReturnUrlPolicy;
++import java.net.URI;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++
++/** POST handlers use this after successful work; the browser follows with a new GET. */
++public final class HttpResponses {
++    private static final ReturnUrlPolicy RETURNS = new ReturnUrlPolicy();
++    private HttpResponses() { }
++
++    public static ResponseEntity<Void> seeOther(String readPath) {
++        String destination = RETURNS.resolve(readPath, "/");
++        if (!destination.equals(readPath)) {
++            throw new BusinessException(HttpStatus.BAD_REQUEST, "INVALID_RETURN_URL",
++                    "返回地址不可用，请返回本站首页。");
++        }
++        return ResponseEntity.status(HttpStatus.SEE_OTHER).location(URI.create(destination)).build();
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/PageModelAdvice.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/PageModelAdvice.java
+new file mode 100644
+index 0000000..4a04764
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/PageModelAdvice.java
+@@ -0,0 +1,47 @@
++package org.csucampuscraft.admin.foundation.web;
++
++import org.csucampuscraft.admin.foundation.security.CsrfTokenService;
++import org.csucampuscraft.admin.foundation.view.ImagePaths;
++import jakarta.servlet.RequestDispatcher;
++import jakarta.servlet.http.HttpServletRequest;
++import java.util.LinkedHashMap;
++import java.util.Map;
++import org.springframework.ui.Model;
++import org.springframework.web.bind.annotation.ControllerAdvice;
++import org.springframework.web.bind.annotation.ModelAttribute;
++
++/** Shared presentation values only; authentication and cart queries belong to later steps. */
++@ControllerAdvice
++public final class PageModelAdvice {
++    private final CsrfTokenService csrfTokens;
++
++    public PageModelAdvice(CsrfTokenService csrfTokens) { this.csrfTokens = csrfTokens; }
++
++    @ModelAttribute
++    public void contribute(Model model, HttpServletRequest request) {
++        model.addAllAttributes(commonModel(request));
++    }
++
++    /** Also used when MVC resolves a resource error without invoking a controller. */
++    public Map<String, Object> commonModel(HttpServletRequest request) {
++        Map<String, Object> values = new LinkedHashMap<>();
++        values.put("appId", "admin");
++        values.put("siteName", "CSUCampusCraft 管理端");
++        values.put("cartQuantity", 0);
++        values.put("defaultCoverImage", ImagePaths.DEFAULT_COVER);
++        // An invalid write must not create a new session while rendering the rejection.
++        values.put("csrfToken", "GET".equals(request.getMethod())
++                ? csrfTokens.getOrCreate(request) : csrfTokens.getExisting(request));
++        values.put("fieldErrors", Map.of());
++        Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
++        values.put("errorStatus", status instanceof Integer code ? code : 0);
++        values.put("errorCode", publicAttribute(request, "foundation.errorCode"));
++        values.put("errorMessage", publicAttribute(request, "foundation.errorMessage"));
++        return values;
++    }
++
++    private String publicAttribute(HttpServletRequest request, String name) {
++        Object value = request.getAttribute(name);
++        return value instanceof String text ? text : "";
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/verification/FoundationVerificationController.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/verification/FoundationVerificationController.java
+new file mode 100644
+index 0000000..82b5c25
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/verification/FoundationVerificationController.java
+@@ -0,0 +1,65 @@
++package org.csucampuscraft.admin.verification;
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import org.csucampuscraft.admin.foundation.web.HttpResponses;
++import org.csucampuscraft.admin.foundation.validation.InputChecks;
++import org.springframework.context.annotation.Profile;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.stereotype.Controller;
++import org.springframework.ui.Model;
++import org.springframework.web.bind.annotation.*;
++import java.util.Map;
++import java.util.concurrent.atomic.AtomicLong;
++
++/** Nonpersistent probes for STEP02 acceptance. No production or business routes. */
++@Controller
++@Profile("verification")
++@RequestMapping("/__verification")
++public class FoundationVerificationController {
++    private final AtomicLong acceptedPosts = new AtomicLong();
++
++    @GetMapping("/foundation")
++    public String foundation(@RequestParam(defaultValue = "普通文本") String text, Model model) {
++        model.addAttribute("echoText", text);
++        model.addAttribute("fieldErrors", Map.of("probeText", "请修改此验证字段"));
++        return "verification/foundation";
++    }
++
++    @GetMapping("/errors/{status}")
++    public String error(@PathVariable int status, @RequestParam(defaultValue = "验证请求无法完成") String text) {
++        switch (status) {
++            case 400, 403, 404, 409 -> throw new BusinessException(HttpStatus.valueOf(status),
++                    "VERIFICATION_" + status, text);
++            case 500 -> throw new IllegalStateException("VERIFICATION_SQL_PASSWORD_STACK_SENTINEL");
++            default -> throw new BusinessException(HttpStatus.BAD_REQUEST, "VERIFICATION_STATUS",
++                    "验证状态无效");
++        }
++    }
++
++    @PostMapping("/submit")
++    public ResponseEntity<Void> submit() {
++        acceptedPosts.incrementAndGet();
++        return HttpResponses.seeOther("/");
++    }
++
++    @GetMapping("/counter")
++    @ResponseBody
++    public Map<String, Long> counter() {
++        return Map.of("acceptedPosts", acceptedPosts.get());
++    }
++
++    @GetMapping("/validation")
++    @ResponseBody
++    public Map<String, Object> validation(@RequestParam String kind, @RequestParam String value) {
++        Object checked = switch (kind) {
++            case "integer" -> InputChecks.integer("probeNumber", value, 0, 99);
++            case "money" -> InputChecks.money("probeAmount", value);
++            case "length" -> InputChecks.requiredText("probeText", value, 4);
++            case "enum" -> InputChecks.enumeration("probeState", value, ProbeState.class);
++            default -> throw new BusinessException(HttpStatus.BAD_REQUEST, "VERIFICATION_KIND",
++                    "验证类型无效");
++        };
++        return Map.of("checked", checked.toString());
++    }
++    public enum ProbeState { FIRST, SECOND }
++}
+diff --git a/csucampuscraft-admin/src/main/resources/application.yml b/csucampuscraft-admin/src/main/resources/application.yml
+index f595a58..f53f32a 100644
+--- a/csucampuscraft-admin/src/main/resources/application.yml
++++ b/csucampuscraft-admin/src/main/resources/application.yml
+@@ -1,4 +1,9 @@
+ server:
++  error:
++    include-exception: false
++    include-message: never
++    include-stacktrace: never
++    include-binding-errors: never
+   port: 8081
+   servlet:
+     session:
+diff --git a/csucampuscraft-admin/src/main/resources/static/css/app.css b/csucampuscraft-admin/src/main/resources/static/css/app.css
+new file mode 100644
+index 0000000..09a8423
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/static/css/app.css
+@@ -0,0 +1,133 @@
++:root {
++    --color-bg: #F5F8F4;
++    --color-surface: #FFFFFF;
++    --color-text: #1C312A;
++    --color-muted: #52655D;
++    --color-primary: #225B46;
++    --color-on-primary: #FFFFFF;
++    --color-border: #D3DFD2;
++    --color-focus: #1468AD;
++    --color-success: #226644;
++    --color-warning: #785300;
++    --color-danger: #9F2929;
++    --font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
++    --font-size: 16px;
++    --font-size-small: 14px;
++    --font-size-title: 28px;
++    --space-1: 4px;
++    --space-2: 8px;
++    --space-3: 12px;
++    --space-4: 16px;
++    --space-6: 24px;
++    --space-8: 32px;
++    --radius: 8px;
++}
++* { box-sizing: border-box; }
++html { color-scheme: light; }
++body {
++    margin: 0;
++    color: var(--color-text);
++    background: var(--color-bg);
++    font: var(--font-size)/1.6 var(--font-family);
++    min-height: 100vh;
++    display: flex;
++    flex-direction: column;
++}
++a { color: var(--color-primary); text-underline-offset: 3px; }
++a:hover { text-decoration-thickness: 2px; }
++:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
++h1, h2, h3, p { margin: 0; }
++h1 { font-size: var(--font-size-title); line-height: 1.35; font-weight: 700; }
++h2 { font-size: 20px; line-height: 1.4; }
++h3 { font-size: 18px; line-height: 1.4; }
++p + p { margin-top: var(--space-3); }
++small, .small { font-size: var(--font-size-small); }
++.muted { color: var(--color-muted); }
++.container { width: min(100% - 48px, 1120px); margin-inline: auto; }
++.main-content { flex: 1; padding-block: var(--space-8); }
++.site-header { background: var(--color-surface); border-bottom: 1px solid var(--color-border); }
++.site-header-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); min-height: 80px; padding-block: var(--space-4); }
++.site-brand { display: inline-flex; align-items: center; gap: var(--space-3); font-weight: 700; color: var(--color-text); text-decoration: none; }
++.brand-mark { display: grid; place-items: center; width: 44px; height: 44px; border-radius: var(--radius); background: var(--color-primary); color: var(--color-on-primary); font-size: 14px; letter-spacing: 1px; }
++.site-nav { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-6); }
++.site-nav > a { padding-block: var(--space-2); }
++.app-label { color: var(--color-muted); font-size: var(--font-size-small); }
++.nav-placeholder { display: inline-flex; align-items: center; gap: var(--space-2); }
++.quantity-badge { display: inline-grid; place-items: center; min-width: 24px; min-height: 24px; padding-inline: var(--space-2); color: var(--color-primary); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 999px; font-size: var(--font-size-small); }
++.global-alerts:has(.alert) { padding-top: var(--space-6); }
++.page-heading { display: grid; gap: var(--space-3); margin-bottom: var(--space-6); }
++.eyebrow { color: var(--color-primary); font-size: var(--font-size-small); font-weight: 600; }
++.panel { padding: var(--space-6); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); }
++.panel > h2 { margin-bottom: var(--space-3); }
++.theme-list { list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-3); padding: 0; margin: var(--space-6) 0 0; }
++.theme-list > li { padding: var(--space-4); border: 1px solid var(--color-border); background: var(--color-bg); border-radius: var(--radius); overflow-wrap: anywhere; }
++.empty-state { padding: var(--space-6); color: var(--color-muted); border: 1px dashed var(--color-border); border-radius: var(--radius); margin-top: var(--space-4); }
++.site-footer { border-top: 1px solid var(--color-border); padding-block: var(--space-6); font-size: var(--font-size-small); }
++.site-footer > .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3); }
++.skip-link { position: fixed; left: var(--space-4); top: var(--space-4); z-index: 20; transform: translateY(-200%); padding: var(--space-3) var(--space-4); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); }
++.skip-link:focus { transform: translateY(0); }
++.button, button, input[type="submit"] {
++    display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
++    min-height: 44px; padding: var(--space-2) var(--space-4); border: 1px solid var(--color-primary);
++    border-radius: var(--radius); background: var(--color-primary); color: var(--color-on-primary);
++    font: inherit; font-weight: 600; text-decoration: none; cursor: pointer;
++}
++.button:hover, button:hover, input[type="submit"]:hover { filter: brightness(.93); }
++.button-secondary { background: var(--color-surface); color: var(--color-primary); }
++.button-danger { background: var(--color-danger); border-color: var(--color-danger); color: var(--color-on-primary); }
++button:disabled, input[type="submit"]:disabled, .button[aria-disabled="true"] { opacity: .55; cursor: not-allowed; filter: none; }
++form.is-submitting [type="submit"], [aria-busy="true"] [type="submit"] { opacity: .65; cursor: progress; filter: none; }
++.button-row { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
++.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
++.form-field { display: grid; align-content: start; gap: var(--space-2); min-width: 0; margin-bottom: var(--space-4); }
++label { font-weight: 600; }
++input:not([type="hidden"]):not([type="submit"]):not([type="checkbox"]):not([type="radio"]), select, textarea {
++    width: 100%; min-height: 44px; padding: var(--space-2) var(--space-3); border: 1px solid var(--color-border);
++    border-radius: var(--radius); color: var(--color-text); background: var(--color-surface); font: inherit;
++}
++textarea { min-height: 120px; resize: vertical; }
++input:disabled, select:disabled, textarea:disabled { opacity: .65; cursor: not-allowed; background: var(--color-bg); }
++input[readonly], textarea[readonly] { background: var(--color-bg); }
++input.input-error, select.input-error, textarea.input-error, [aria-invalid="true"] { border-color: var(--color-danger); }
++.field-error { color: var(--color-danger); font-size: var(--font-size-small); }
++.field-help { color: var(--color-muted); font-size: var(--font-size-small); }
++.alert { padding: var(--space-4); border: 1px solid currentColor; border-radius: var(--radius); background: var(--color-surface); margin-bottom: var(--space-4); }
++.alert p { overflow-wrap: anywhere; }
++.alert-success { color: var(--color-success); }
++.alert-warning { color: var(--color-warning); }
++.alert-danger { color: var(--color-danger); }
++.alert[aria-busy="true"], .alert.is-loading { opacity: .75; cursor: progress; }
++.error-summary h2 { font-size: 18px; }
++.error-summary ul { padding-left: var(--space-6); margin-block: var(--space-2) 0; }
++.error-summary a { color: inherit; }
++.error-page { max-width: 760px; margin-inline: auto; }
++.error-number { font-size: 40px; font-weight: 700; color: var(--color-muted); }
++.error-page h1 { margin-block: var(--space-2) var(--space-4); }
++.error-page .error-code { margin-top: var(--space-4); color: var(--color-muted); font-size: var(--font-size-small); overflow-wrap: anywhere; }
++.error-page .error-summary { margin-top: var(--space-6); }
++.table-container { max-width: 100%; overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-surface); }
++table { width: 100%; border-collapse: collapse; text-align: left; }
++caption { padding: var(--space-4); text-align: left; font-weight: 600; }
++th, td { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-border); vertical-align: top; }
++th { font-weight: 600; background: var(--color-bg); }
++tbody tr:last-child td { border-bottom: 0; }
++tbody tr:hover { background: var(--color-bg); }
++tbody tr[aria-disabled="true"] { color: var(--color-muted); background: var(--color-bg); }
++.table-container[aria-busy="true"] { opacity: .7; cursor: progress; }
++.catalog-image { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius); }
++@media (max-width: 900px) {
++    .theme-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
++}
++@media (max-width: 600px) {
++    .container { width: calc(100% - 32px); }
++    .site-header-inner { align-items: flex-start; flex-direction: column; gap: var(--space-3); }
++    .site-nav { width: 100%; gap: var(--space-4); }
++    .main-content { padding-block: var(--space-6); }
++    .panel { padding: var(--space-4); }
++    .theme-list, .form-grid { grid-template-columns: 1fr; }
++    .button-row { align-items: stretch; }
++    .button-row > .button { flex: 1; }
++}
++@media (prefers-reduced-motion: reduce) {
++    *, *::before, *::after { scroll-behavior: auto !important; }
++}
+diff --git a/csucampuscraft-admin/src/main/resources/static/js/app.js b/csucampuscraft-admin/src/main/resources/static/js/app.js
+new file mode 100644
+index 0000000..eb451cd
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/static/js/app.js
+@@ -0,0 +1,64 @@
++(() => {
++    "use strict";
++
++    function showImageFallback(image) {
++        if (!(image instanceof HTMLImageElement) || !image.hasAttribute("data-image-fallback")
++                || image.dataset.imageFallbackUsed === "true") return;
++        const fallback = image.getAttribute("data-image-fallback");
++        if (!fallback || !fallback.startsWith("/") || fallback.startsWith("//")) return;
++        image.dataset.imageFallbackUsed = "true";
++        image.src = fallback;
++    }
++
++    document.addEventListener("error", (event) => showImageFallback(event.target), true);
++
++    function resetForm(form) {
++        delete form.dataset.submitting;
++        form.classList.remove("is-submitting");
++        form.removeAttribute("aria-busy");
++        form.querySelectorAll("[data-submitting-control]").forEach((control) => {
++            control.removeAttribute("aria-disabled");
++            control.removeAttribute("data-submitting-control");
++            if (control.hasAttribute("data-original-label")) {
++                control.textContent = control.dataset.originalLabel;
++                control.removeAttribute("data-original-label");
++            }
++        });
++    }
++
++    document.addEventListener("submit", (event) => {
++        const form = event.target;
++        if (!(form instanceof HTMLFormElement) || !form.hasAttribute("data-submit-state")
++                || event.defaultPrevented) return;
++        if (form.dataset.submitting === "true") {
++            event.preventDefault();
++            return;
++        }
++        form.dataset.submitting = "true";
++        form.classList.add("is-submitting");
++        form.setAttribute("aria-busy", "true");
++        const submitter = event.submitter;
++        if (submitter instanceof HTMLElement) {
++            // Retain the enabled control so its name/value remains in the POST.
++            submitter.setAttribute("aria-disabled", "true");
++            submitter.setAttribute("data-submitting-control", "");
++            if (submitter instanceof HTMLButtonElement) {
++                submitter.dataset.originalLabel = submitter.textContent;
++                submitter.textContent = submitter.dataset.submitLabel || "处理中…";
++            }
++        }
++    });
++
++    function checkImages() {
++        document.querySelectorAll("img[data-image-fallback]").forEach((image) => {
++            if (image.complete && image.naturalWidth === 0) showImageFallback(image);
++        });
++    }
++    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", checkImages);
++    else checkImages();
++
++    window.addEventListener("pageshow", () => {
++        document.querySelectorAll("form[data-submit-state]").forEach(resetForm);
++        checkImages();
++    });
++})();
+diff --git a/csucampuscraft-admin/src/main/resources/templates/error/400.html b/csucampuscraft-admin/src/main/resources/templates/error/400.html
+new file mode 100644
+index 0000000..0883c95
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/error/400.html
+@@ -0,0 +1,18 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('请求参数有误', ~{::errorContent})}">
++<head><title>请求参数有误</title></head>
++<body>
++<section th:fragment="errorContent" class="panel error-page" aria-labelledby="error-title" data-error-status="400">
++    <p class="error-number">400</p>
++    <h1 id="error-title">请求参数有误</h1>
++    <p th:text="${errorMessage ?: '请检查输入内容后重新提交。'}">请检查输入内容后重新提交。</p>
++    <p class="muted">返回原表单修正输入，或回到首页继续浏览。</p>
++    <p class="error-code">错误代码：<span th:text="${errorCode ?: 'BAD_REQUEST'}">BAD_REQUEST</span></p>
++    <section th:if="${fieldErrors != null and !fieldErrors.isEmpty()}" class="alert alert-danger" aria-label="字段提示">
++        <ul><li th:each="item : ${fieldErrors}" th:text="${item.value}">请检查输入。</li></ul>
++    </section>
++    <div class="button-row"><a class="button" th:href="@{/}">返回首页</a></div>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/error/403.html b/csucampuscraft-admin/src/main/resources/templates/error/403.html
+new file mode 100644
+index 0000000..6492196
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/error/403.html
+@@ -0,0 +1,16 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('请求未获允许', ~{::errorContent})}">
++<head><title>请求未获允许</title></head>
++<body>
++<section th:fragment="errorContent" class="panel error-page" aria-labelledby="error-title" data-error-status="403">
++    <p class="error-number">403</p>
++    <h1 id="error-title">请求未获允许</h1>
++    <p th:text="${errorMessage ?: '当前请求无法通过校验。'}">当前请求无法通过校验。</p>
++    <p class="muted">请刷新页面后重新操作，或回到首页。</p>
++    <p class="error-code">错误代码：<span th:text="${errorCode ?: 'FORBIDDEN'}">FORBIDDEN</span></p>
++
++    <div class="button-row"><a class="button" th:href="@{/}">返回首页</a></div>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/error/404.html b/csucampuscraft-admin/src/main/resources/templates/error/404.html
+new file mode 100644
+index 0000000..5ba25fe
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/error/404.html
+@@ -0,0 +1,16 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('页面未找到', ~{::errorContent})}">
++<head><title>页面未找到</title></head>
++<body>
++<section th:fragment="errorContent" class="panel error-page" aria-labelledby="error-title" data-error-status="404">
++    <p class="error-number">404</p>
++    <h1 id="error-title">页面未找到</h1>
++    <p th:text="${errorMessage ?: '没有找到你要访问的内容。'}">没有找到你要访问的内容。</p>
++    <p class="muted">请检查地址，或回到首页继续浏览。</p>
++    <p class="error-code">错误代码：<span th:text="${errorCode ?: 'NOT_FOUND'}">NOT_FOUND</span></p>
++
++    <div class="button-row"><a class="button" th:href="@{/}">返回首页</a></div>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/error/409.html b/csucampuscraft-admin/src/main/resources/templates/error/409.html
+new file mode 100644
+index 0000000..afa7a07
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/error/409.html
+@@ -0,0 +1,16 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('当前数据已变化', ~{::errorContent})}">
++<head><title>当前数据已变化</title></head>
++<body>
++<section th:fragment="errorContent" class="panel error-page" aria-labelledby="error-title" data-error-status="409">
++    <p class="error-number">409</p>
++    <h1 id="error-title">当前数据已变化</h1>
++    <p th:text="${errorMessage ?: '当前操作与数据状态冲突。'}">当前操作与数据状态冲突。</p>
++    <p class="muted">请重新读取原页面的数据，确认后再次操作。</p>
++    <p class="error-code">错误代码：<span th:text="${errorCode ?: 'CONFLICT'}">CONFLICT</span></p>
++
++    <div class="button-row"><a class="button" th:href="@{/}">返回首页</a></div>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/error/500.html b/csucampuscraft-admin/src/main/resources/templates/error/500.html
+new file mode 100644
+index 0000000..a01bdbc
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/error/500.html
+@@ -0,0 +1,16 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('暂时无法完成请求', ~{::errorContent})}">
++<head><title>暂时无法完成请求</title></head>
++<body>
++<section th:fragment="errorContent" class="panel error-page" aria-labelledby="error-title" data-error-status="500">
++    <p class="error-number">500</p>
++    <h1 id="error-title">暂时无法完成请求</h1>
++    <p>服务暂时不可用，请稍后重试。</p>
++    <p class="muted">请稍后重新访问，或回到首页。</p>
++    <p class="error-code">错误代码：<span>INTERNAL_ERROR</span></p>
++
++    <div class="button-row"><a class="button" th:href="@{/}">返回首页</a></div>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html b/csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html
+new file mode 100644
+index 0000000..0099a48
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html
+@@ -0,0 +1,22 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
++<body>
++<th:block th:fragment="global">
++    <div th:if="${globalMessage != null}" class="alert alert-success" role="status">
++        <p th:text="${globalMessage}">操作已完成。</p>
++    </div>
++    <div th:if="${globalError != null}" class="alert alert-danger" role="alert">
++        <p th:text="${globalError}">请检查操作结果。</p>
++    </div>
++</th:block>
++<section th:fragment="summary(errors)" th:if="${errors != null and !errors.isEmpty()}"
++         class="alert alert-danger error-summary" role="alert" aria-labelledby="error-summary-title" tabindex="-1">
++    <h2 id="error-summary-title">请修正以下输入</h2>
++    <ul>
++        <li th:each="item : ${errors}">
++            <a th:href="${'#' + item.key}" th:text="${item.value}">请检查输入。</a>
++        </li>
++    </ul>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/fragments/fields.html b/csucampuscraft-admin/src/main/resources/templates/fragments/fields.html
+new file mode 100644
+index 0000000..ffb26e1
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/fragments/fields.html
+@@ -0,0 +1,23 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
++<body>
++<div th:fragment="text(id, name, label, value, errors)" class="form-field"
++     th:with="hasError=${errors != null and errors.containsKey(name)}">
++    <label th:for="${id}" th:text="${label}">字段</label>
++    <input type="text" th:id="${id}" th:name="${name}" th:value="${value}"
++           th:classappend="${hasError ? 'input-error' : ''}"
++           th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}">
++    <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors[name]}">请检查输入。</p>
++</div>
++<div th:fragment="number(id, name, label, value, min, max, step, errors)" class="form-field"
++     th:with="hasError=${errors != null and errors.containsKey(name)}">
++    <label th:for="${id}" th:text="${label}">数量</label>
++    <input type="number" th:id="${id}" th:name="${name}" th:value="${value}"
++           th:min="${min}" th:max="${max}" th:step="${step}"
++           th:classappend="${hasError ? 'input-error' : ''}"
++           th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}">
++    <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors[name]}">请检查输入。</p>
++</div>
++<input th:fragment="csrf" type="hidden" name="_csrf" th:value="[REDACTED]">
++</body>
++</html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/fragments/images.html b/csucampuscraft-admin/src/main/resources/templates/fragments/images.html
+new file mode 100644
+index 0000000..8bf03e3
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/fragments/images.html
+@@ -0,0 +1,9 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
++<body>
++<img th:fragment="image(path, altText)" class="catalog-image" width="400" height="300" loading="lazy"
++     th:with="fallback=${defaultCoverImage ?: 'images/catalog-placeholder.svg'},safePath=${path != null and #strings.startsWith(path, 'images/') and !#strings.contains(path, '..') and !#strings.contains(path, ':') and !#strings.contains(path, '%') and !#strings.contains(path, '?') and !#strings.contains(path, '#') ? path : fallback}"
++     th:src="@{${'/' + safePath}}" th:alt="${altText ?: '校园文创商品'}"
++     th:attr="data-image-fallback=@{${'/' + fallback}}">
++</body>
++</html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html b/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html
+new file mode 100644
+index 0000000..4c327b9
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html
+@@ -0,0 +1,42 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" th:fragment="page(pageTitle, pageContent)">
++<head th:fragment="head(pageTitle)">
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1">
++    <title th:text="${pageTitle}">CSUCampusCraft</title>
++    <link rel="stylesheet" th:href="@{/css/app.css}">
++    <script defer th:src="@{/js/app.js}"></script>
++</head>
++<body th:attr="data-csucampuscraft-app=${appId}">
++<a class="skip-link" href="#main-content">跳到主要内容</a>
++<header class="site-header">
++    <div class="container site-header-inner">
++        <a class="site-brand" th:href="@{/}" aria-label="CSUCampusCraft 首页">
++            <span class="brand-mark" aria-hidden="true">CSU</span>
++            <span th:text="${siteName ?: 'CSUCampusCraft'}">CSUCampusCraft</span>
++        </a>
++        <nav class="site-nav" aria-label="站点导航">
++            <a th:href="@{/}">首页</a>
++            <span class="app-label" th:text="${appId == 'admin' ? '管理端' : '用户端'}">用户端</span>
++            <span class="nav-placeholder" th:if="${appId == 'user'}"
++                  th:attr="aria-label=${'购物车，' + (cartQuantity ?: 0) + ' 件'}">
++                购物车 <span id="cart-quantity" class="quantity-badge"
++                           th:attr="data-cart-quantity=${cartQuantity ?: 0}" th:text="${cartQuantity ?: 0}">0</span>
++            </span>
++        </nav>
++    </div>
++</header>
++<div class="container global-alerts" aria-label="全局提示区">
++    <th:block th:replace="~{fragments/alerts :: global}"></th:block>
++</div>
++<main id="main-content" class="container main-content" tabindex="-1">
++    <th:block th:replace="${pageContent}"></th:block>
++</main>
++<footer class="site-footer">
++    <div class="container">
++        <span>CSUCampusCraft 校园文创商城</span>
++        <span class="muted">课程实验 · 教学模拟</span>
++    </div>
++</footer>
++</body>
++</html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/home.html b/csucampuscraft-admin/src/main/resources/templates/home.html
+index 94a219c..d60c245 100644
+--- a/csucampuscraft-admin/src/main/resources/templates/home.html
++++ b/csucampuscraft-admin/src/main/resources/templates/home.html
+@@ -1,34 +1,24 @@
+ <!DOCTYPE html>
+-<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+-<head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport" content="width=device-width, initial-scale=1">
+-    <title>CSUCampusCraft 管理端</title>
+-    <style>
+-        body { margin: 0; color: #1c312a; background: #f5f8f4; font: 1rem/1.6 system-ui, sans-serif; }
+-        main { max-width: 44rem; margin: 3rem auto; padding: 0 1.25rem; }
+-        h1 { margin-block: .25rem; }
+-        section { margin-top: 1.75rem; padding: 1rem 1.5rem; border: 1px solid #d3dfd2; background: white; }
+-        section h2 { margin-top: 0; }
+-    </style>
+-</head>
+-<body data-csucampuscraft-app="admin">
+-<main>
+-    <header>
+-        <small>校园文创商城 · 工程初始化</small>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('CSUCampusCraft 管理端', ~{::mainContent})}">
++<head><title>CSUCampusCraft 管理端</title></head>
++<body>
++<div th:fragment="mainContent">
++    <header class="page-heading">
++        <small class="eyebrow">校园文创商城 · 工程初始化</small>
+         <h1>CSUCampusCraft 管理端</h1>
+-        <p>CSUCampusCraft 管理端工程已接入共享商品分类。当前展示数据库中的一级主题。</p>
++        <p class="muted">CSUCampusCraft 管理端工程已接入共享商品分类。当前展示数据库中的一级主题。</p>
+     </header>
+-    <section aria-labelledby="themes-heading">
++    <section class="panel" aria-labelledby="themes-heading">
+         <h2 id="themes-heading">校园主题</h2>
+-        <p th:attr="data-theme-count=${#lists.size(themes)}">
++        <p class="muted" th:attr="data-theme-count=${#lists.size(themes)}">
+             共 <span th:text="${#lists.size(themes)}">0</span> 个一级主题
+         </p>
+-        <p th:if="${#lists.isEmpty(themes)}">暂无主题。请确认演示数据已导入。</p>
+-        <ul th:unless="${#lists.isEmpty(themes)}">
++        <p class="empty-state" th:if="${#lists.isEmpty(themes)}">暂无主题。请确认演示数据已导入。</p>
++        <ul class="theme-list" th:unless="${#lists.isEmpty(themes)}">
+             <li th:each="theme : ${themes}" th:attr="data-theme-code=${theme.code}" th:text="${theme.name}"></li>
+         </ul>
+     </section>
+-</main>
++</div>
+ </body>
+ </html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/verification/foundation.html b/csucampuscraft-admin/src/main/resources/templates/verification/foundation.html
+new file mode 100644
+index 0000000..5ad25ce
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/verification/foundation.html
+@@ -0,0 +1,17 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('公共基础验证', ~{::mainContent})}">
++<body><section th:fragment="mainContent" class="panel" aria-labelledby="verification-title">
++<h1 id="verification-title">公共基础验证</h1>
++<p>此页面仅在 verification 配置启用，无业务数据写入。</p>
++<p id="escaped-text" th:text="${echoText}">普通文本</p>
++<form method="post" data-submit-state th:action="@{/__verification/submit}">
++    <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++    <div th:replace="~{fragments/alerts :: summary(${fieldErrors})}"></div>
++    <div th:replace="~{fragments/fields :: text('probeText','probeText','文本验证',${echoText},${fieldErrors})}"></div>
++    <div th:replace="~{fragments/fields :: number('probeNumber','probeNumber','数量验证',1,0,99,1,${fieldErrors})}"></div>
++    <button type="submit" class="button">验证提交</button>
++    <button type="button" class="button" disabled>不可用</button>
++</form>
++<div th:replace="~{fragments/images :: image('images/verification-missing.svg','验证缺图回退')}"></div>
++</section></body></html>
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/CsrfFilter.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/CsrfFilter.java
+new file mode 100644
+index 0000000..154721b
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/CsrfFilter.java
+@@ -0,0 +1,80 @@
++package org.csucampuscraft.storefront.foundation.security;
++
++import jakarta.servlet.FilterChain;
++import jakarta.servlet.ServletException;
++import jakarta.servlet.http.HttpServletRequest;
++import jakarta.servlet.http.HttpServletResponse;
++import java.io.IOException;
++import java.net.URLDecoder;
++import java.nio.charset.StandardCharsets;
++import java.security.MessageDigest;
++import org.springframework.core.Ordered;
++import org.springframework.core.annotation.Order;
++import org.springframework.stereotype.Component;
++import org.springframework.web.filter.OncePerRequestFilter;
++
++/** Protects every external non-GET request, including login forms added in STEP04. */
++@Component
++@Order(Ordered.HIGHEST_PRECEDENCE + 20)
++public final class CsrfFilter extends OncePerRequestFilter {
++    private final CsrfTokenService tokens;
++
++    public CsrfFilter(CsrfTokenService tokens) { this.tokens = tokens; }
++
++    @Override
++    protected boolean shouldNotFilter(HttpServletRequest request) {
++        return "GET".equals(request.getMethod());
++    }
++
++    @Override
++    protected boolean shouldNotFilterErrorDispatch() { return true; }
++
++    @Override
++    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
++                                    FilterChain chain) throws ServletException, IOException {
++        if (!valid(request)) {
++            request.setAttribute("foundation.errorCode", "CSRF_REJECTED");
++            request.setAttribute("foundation.errorMessage", "请求校验失败，请重新打开页面后提交。");
++            response.sendError(HttpServletResponse.SC_FORBIDDEN);
++            return;
++        }
++        chain.doFilter(request, response);
++    }
++
++    private boolean valid(HttpServletRequest request) {
++        String expected = tokens.getExisting(request);
++        if (expected == null || queryContainsToken(request.getQueryString())) {
++            return false;
++        }
++        String contentType = request.getContentType();
++        // This step supports ordinary HTML forms; no multipart/upload flow is in scope.
++        if (contentType == null || !contentType.split(";", 2)[0].trim()
++                .equalsIgnoreCase("application/x-www-form-urlencoded")) {
++            return false;
++        }
++        String[] submitted = request.getParameterValues(CsrfTokenService.PARAMETER_NAME);
++        if (submitted == null || submitted.length != 1 || submitted[0] == null
++                || !submitted[0].matches("[0-9a-f]{64}")) {
++            return false;
++        }
++        return MessageDigest.isEqual(expected.getBytes(StandardCharsets.US_ASCII),
++                submitted[0].getBytes(StandardCharsets.US_ASCII));
++    }
++
++    private boolean queryContainsToken(String query) {
++        if (query == null) {
++            return false;
++        }
++        try {
++            for (String part : query.split("&")) {
++                String key = part.split("=", 2)[0];
++                if (CsrfTokenService.PARAMETER_NAME.equals(URLDecoder.decode(key, StandardCharsets.UTF_8))) {
++                    return true;
++                }
++            }
++            return false;
++        } catch (IllegalArgumentException malformed) {
++            return true;
++        }
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/CsrfTokenService.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/CsrfTokenService.java
+new file mode 100644
+index 0000000..45857c1
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/CsrfTokenService.java
+@@ -0,0 +1,43 @@
++package org.csucampuscraft.storefront.foundation.security;
++
++import jakarta.servlet.http.HttpServletRequest;
++import jakarta.servlet.http.HttpSession;
++import java.security.SecureRandom;
++import java.util.HexFormat;
++import org.springframework.stereotype.Service;
++
++/** A session token is deliberately separate from login identity and confirmation tokens. */
++@Service
++public final class CsrfTokenService {
++    public static final String PARAMETER_NAME = "_csrf";
++    private static final String SESSION_ATTRIBUTE = CsrfTokenService.class.getName() + ".TOKEN";
++    private final SecureRandom random = new SecureRandom();
++
++    public String getOrCreate(HttpServletRequest request) {
++        HttpSession session = request.getSession(true);
++        synchronized (session) {
++            Object existing = session.getAttribute(SESSION_ATTRIBUTE);
++            if (existing instanceof String token) {
++                return token;
++            }
++            byte[] bytes = new byte[32];
++            random.nextBytes(bytes);
++            String token = HexFormat.of().formatHex(bytes);
++            session.setAttribute(SESSION_ATTRIBUTE, token);
++            return token;
++        }
++    }
++
++    public String getExisting(HttpServletRequest request) {
++        HttpSession session = request.getSession(false);
++        if (session == null) {
++            return null;
++        }
++        try {
++            Object token = session.getAttribute(SESSION_ATTRIBUTE);
++            return token instanceof String text ? text : null;
++        } catch (IllegalStateException expired) {
++            return null;
++        }
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/PasswordService.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/PasswordService.java
+new file mode 100644
+index 0000000..831575e
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/PasswordService.java
+@@ -0,0 +1,26 @@
++package org.csucampuscraft.storefront.foundation.security;
++
++import java.nio.charset.StandardCharsets;
++import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
++import org.springframework.stereotype.Service;
++
++/** Raw passwords and hashes must never be placed in a view model or a log. */
++@Service
++public final class PasswordService {
++    private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10);
++
++    public boolean matches(String raw, String hash) {
++        if (raw == null || hash == null || raw.getBytes(StandardCharsets.UTF_8).length > 72
++                || !hash.matches("\\$2[aby]\\$10\\$[./A-Za-z0-9]{53}")) {
++            return false;
++        }
++        return encoder.matches(raw, hash);
++    }
++
++    public String hash(String raw) {
++        if (raw == null || raw.getBytes(StandardCharsets.UTF_8).length > 72) {
++            throw new IllegalArgumentException("Password must fit BCrypt's 72-byte UTF-8 limit");
++        }
++        return encoder.encode(raw);
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/ReturnUrlPolicy.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/ReturnUrlPolicy.java
+new file mode 100644
+index 0000000..855ad79
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/ReturnUrlPolicy.java
+@@ -0,0 +1,55 @@
++package org.csucampuscraft.storefront.foundation.security;
++
++import java.net.URI;
++import java.net.URISyntaxException;
++import java.net.URLDecoder;
++import java.nio.charset.StandardCharsets;
++import java.util.List;
++import java.util.regex.Pattern;
++import org.springframework.stereotype.Component;
++
++/** Navigation allowlist only: listing a GET destination does not register its controller. */
++@Component
++public final class ReturnUrlPolicy {
++    private static final List<Pattern> READ_PATHS = List.of(
++            Pattern.compile("/"),
++            Pattern.compile("/products(?:/[1-9][0-9]*)?"),
++            Pattern.compile("/cart"),
++            Pattern.compile("/checkout"),
++            Pattern.compile("/orders(?:/[A-Za-z0-9_-]{1,40}(?:/payment)?)?")
++    );
++
++    public String resolve(String returnUrl, String defaultPath) {
++        String fallback = allowed(defaultPath) ? defaultPath : "/";
++        return allowed(returnUrl) ? returnUrl : fallback;
++    }
++
++    private boolean allowed(String value) {
++        if (value == null || value.isEmpty() || !value.equals(value.strip())
++                || value.contains("\\") || value.contains("..") || value.contains("//")
++                || value.chars().anyMatch(c -> c <= 32 || c == 127)) {
++            return false;
++        }
++        try {
++            URI uri = new URI(value);
++            if (uri.isAbsolute() || uri.getRawAuthority() != null || uri.getRawFragment() != null
++                    || !value.startsWith("/") || uri.getRawPath() == null
++                    || uri.getRawPath().contains("%")) {
++                return false;
++            }
++            String query = uri.getRawQuery();
++            if (query != null) {
++                // Inspect one decoded query layer, but preserve the original URL for navigation.
++                String decoded = URLDecoder.decode(query, StandardCharsets.UTF_8);
++                if (decoded.contains("..") || decoded.contains("\\") || decoded.contains("//")
++                        || decoded.chars().anyMatch(c -> c < 32 || c == 127)
++                        || decoded.matches("(?is).*%(?:0[0-9a-f]|1[0-9a-f]|2e|2f|5c|7f|25).*")) {
++                    return false;
++                }
++            }
++            return READ_PATHS.stream().anyMatch(pattern -> pattern.matcher(uri.getPath()).matches());
++        } catch (URISyntaxException | IllegalArgumentException invalid) {
++            return false;
++        }
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/validation/InputChecks.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/validation/InputChecks.java
+new file mode 100644
+index 0000000..a0af1f6
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/validation/InputChecks.java
+@@ -0,0 +1,91 @@
++package org.csucampuscraft.storefront.foundation.validation;
++
++import org.csucampuscraft.storefront.foundation.web.BusinessException;
++import java.math.BigDecimal;
++import java.math.RoundingMode;
++import java.util.Map;
++import org.springframework.http.HttpStatus;
++
++/** Type/range primitives; callers supply business-specific minimums and maximums. */
++public final class InputChecks {
++    public static final BigDecimal MAX_MONEY = new BigDecimal("9999999999.99");
++    private InputChecks() { }
++
++    public static String requiredText(String field, String raw, int maxLength) {
++        return text(field, raw, 1, maxLength);
++    }
++
++    public static String text(String field, String raw, int minLength, int maxLength) {
++        if (minLength < 0 || maxLength < minLength) {
++            throw new IllegalArgumentException("Invalid text limits");
++        }
++        String value = raw == null ? "" : raw.strip();
++        int length = value.codePointCount(0, value.length());
++        if (length < minLength || length > maxLength) {
++            throw invalid(field, "INVALID_LENGTH", "请检查文字是否填写及其长度。");
++        }
++        return value;
++    }
++
++    public static int integer(String field, String raw, int minimum, int maximum) {
++        return (int) longInteger(field, raw, minimum, maximum);
++    }
++
++    public static long longInteger(String field, String raw, long minimum, long maximum) {
++        if (minimum > maximum) {
++            throw new IllegalArgumentException("Invalid integer limits");
++        }
++        String value = raw == null ? "" : raw.strip();
++        try {
++            if (!value.matches("-?[0-9]+")) {
++                throw new NumberFormatException();
++            }
++            long parsed = Long.parseLong(value);
++            if (parsed < minimum || parsed > maximum) {
++                throw new NumberFormatException();
++            }
++            return parsed;
++        } catch (NumberFormatException invalid) {
++            throw invalid(field, "INVALID_INTEGER", "请输入允许范围内的整数。");
++        }
++    }
++
++    public static <E extends Enum<E>> E enumeration(String field, String raw, Class<E> type) {
++        try {
++            if (raw == null) {
++                throw new IllegalArgumentException();
++            }
++            return Enum.valueOf(type, raw.strip());
++        } catch (IllegalArgumentException invalid) {
++            throw invalid(field, "INVALID_ENUM", "请选择允许的选项。");
++        }
++    }
++
++    public static BigDecimal money(String field, String raw) {
++        return money(field, raw, MAX_MONEY.negate(), MAX_MONEY);
++    }
++
++    public static BigDecimal money(String field, String raw, BigDecimal minimum, BigDecimal maximum) {
++        if (minimum == null || maximum == null || minimum.compareTo(maximum) > 0
++                || minimum.compareTo(MAX_MONEY.negate()) < 0 || maximum.compareTo(MAX_MONEY) > 0) {
++            throw new IllegalArgumentException("Invalid money limits");
++        }
++        String value = raw == null ? "" : raw.strip();
++        try {
++            if (value.length() > 32 || !value.matches("-?[0-9]+(?:\\.[0-9]{1,2})?")) {
++                throw new NumberFormatException();
++            }
++            BigDecimal parsed = new BigDecimal(value).setScale(2, RoundingMode.UNNECESSARY);
++            if (parsed.compareTo(minimum) < 0 || parsed.compareTo(maximum) > 0) {
++                throw new NumberFormatException();
++            }
++            return parsed;
++        } catch (ArithmeticException | NumberFormatException invalid) {
++            throw invalid(field, "INVALID_MONEY", "请输入范围内且最多两位小数的金额。");
++        }
++    }
++
++    private static BusinessException invalid(String field, String code, String message) {
++        return new BusinessException(HttpStatus.BAD_REQUEST, code, message, Map.of(field, message));
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/view/ImagePaths.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/view/ImagePaths.java
+new file mode 100644
+index 0000000..5156a08
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/view/ImagePaths.java
+@@ -0,0 +1,7 @@
++package org.csucampuscraft.storefront.foundation.view;
++
++/** Relative classpath resource; templates add the current application's leading slash. */
++public final class ImagePaths {
++    public static final String DEFAULT_COVER = "images/catalog-placeholder.svg";
++    private ImagePaths() { }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/BusinessException.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/BusinessException.java
+new file mode 100644
+index 0000000..5248e20
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/BusinessException.java
+@@ -0,0 +1,38 @@
++package org.csucampuscraft.storefront.foundation.web;
++
++import java.util.Map;
++import java.util.Objects;
++import java.util.Set;
++import org.springframework.http.HttpStatus;
++
++/** A deliberate, publicly displayable failure; never populate it with exception details. */
++public final class BusinessException extends RuntimeException {
++    private static final Set<HttpStatus> SUPPORTED = Set.of(HttpStatus.BAD_REQUEST,
++            HttpStatus.FORBIDDEN, HttpStatus.NOT_FOUND, HttpStatus.CONFLICT,
++            HttpStatus.INTERNAL_SERVER_ERROR);
++    private final HttpStatus status;
++    private final String code;
++    private final Map<String, String> fieldErrors;
++
++    public BusinessException(HttpStatus status, String code, String message) {
++        this(status, code, message, Map.of());
++    }
++
++    public BusinessException(HttpStatus status, String code, String message,
++                             Map<String, String> fieldErrors) {
++        super(Objects.requireNonNull(message, "Display message is required"));
++        if (!SUPPORTED.contains(status)) {
++            throw new IllegalArgumentException("Unsupported page error status");
++        }
++        if (code == null || !code.matches("[A-Z][A-Z0-9_]{0,63}")) {
++            throw new IllegalArgumentException("Stable error code is required");
++        }
++        this.status = status;
++        this.code = code;
++        this.fieldErrors = Map.copyOf(fieldErrors);
++    }
++
++    public HttpStatus getStatus() { return status; }
++    public String getCode() { return code; }
++    public Map<String, String> getFieldErrors() { return fieldErrors; }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/GlobalExceptionHandler.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/GlobalExceptionHandler.java
+new file mode 100644
+index 0000000..651550b
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/GlobalExceptionHandler.java
+@@ -0,0 +1,89 @@
++package org.csucampuscraft.storefront.foundation.web;
++
++import jakarta.servlet.http.HttpServletRequest;
++import jakarta.servlet.http.HttpServletResponse;
++import java.io.IOException;
++import java.util.LinkedHashMap;
++import java.util.Map;
++import org.springframework.beans.TypeMismatchException;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.converter.HttpMessageNotReadableException;
++import org.springframework.validation.BindException;
++import org.springframework.web.ErrorResponse;
++import org.springframework.web.bind.ServletRequestBindingException;
++import org.springframework.web.bind.annotation.ControllerAdvice;
++import org.springframework.web.bind.annotation.ExceptionHandler;
++import org.springframework.web.servlet.ModelAndView;
++
++/** Maps expected failures without reflecting submitted values or technical exception messages. */
++@ControllerAdvice
++public final class GlobalExceptionHandler {
++    private final PageModelAdvice pageModels;
++
++    public GlobalExceptionHandler(PageModelAdvice pageModels) { this.pageModels = pageModels; }
++
++    @ExceptionHandler(BusinessException.class)
++    public ModelAndView business(BusinessException exception, HttpServletRequest request) {
++        return page(request, exception.getStatus(), exception.getCode(), exception.getMessage(),
++                exception.getFieldErrors());
++    }
++
++    @ExceptionHandler(BindException.class)
++    public ModelAndView binding(BindException exception, HttpServletRequest request) {
++        Map<String, String> fields = new LinkedHashMap<>();
++        exception.getBindingResult().getFieldErrors().forEach(error ->
++                fields.putIfAbsent(error.getField(), "请检查输入格式与范围。"));
++        return page(request, HttpStatus.BAD_REQUEST, "INVALID_FIELDS", "请检查并修正表单内容。", fields);
++    }
++
++    @ExceptionHandler({TypeMismatchException.class, ServletRequestBindingException.class,
++            HttpMessageNotReadableException.class})
++    public ModelAndView parameters(Exception exception, HttpServletRequest request) {
++        return page(request, HttpStatus.BAD_REQUEST, "INVALID_REQUEST", "请求参数不完整或格式不正确。", Map.of());
++    }
++
++    @ExceptionHandler(Exception.class)
++    public ModelAndView unexpected(Exception exception, HttpServletRequest request,
++                                   HttpServletResponse response) throws IOException {
++        if (exception instanceof ErrorResponse failure) {
++            int status = failure.getStatusCode().value();
++            if (status == 400) {
++                return page(request, HttpStatus.BAD_REQUEST, "INVALID_REQUEST", "请求参数不完整或格式不正确。", Map.of());
++            }
++            if (status == 403) {
++                return page(request, HttpStatus.FORBIDDEN, "ACCESS_DENIED", "当前请求无法执行。", Map.of());
++            }
++            if (status == 404) {
++                return page(request, HttpStatus.NOT_FOUND, "RESOURCE_NOT_FOUND", "未找到请求的页面或资源。", Map.of());
++            }
++            if (status == 409) {
++                return page(request, HttpStatus.CONFLICT, "REQUEST_CONFLICT", "页面数据已变化，请刷新后重新确认。", Map.of());
++            }
++            if (status >= 400 && status < 500) {
++                // Preserve framework statuses such as 405/415 through Boot's /error fallback.
++                response.sendError(status);
++                return new ModelAndView();
++            }
++        }
++        return page(request, HttpStatus.INTERNAL_SERVER_ERROR, "INTERNAL_ERROR",
++                "服务暂时不可用，请稍后重试。", Map.of());
++    }
++
++    private ModelAndView page(HttpServletRequest request, HttpStatus status, String code,
++                              String message, Map<String, String> fields) {
++        ModelAndView view = new ModelAndView("error/" + status.value());
++        view.setStatus(status);
++        view.addAllObjects(pageModels.commonModel(request));
++        // Even deliberately thrown 500 BusinessExceptions must not disclose supplied details.
++        if (status.is5xxServerError()) {
++            code = "INTERNAL_ERROR";
++            message = "服务暂时不可用，请稍后重试。";
++            fields = Map.of();
++        }
++        view.addObject("errorStatus", status.value());
++        view.addObject("errorCode", code);
++        view.addObject("errorMessage", message);
++        view.addObject("fieldErrors", fields);
++        return view;
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/HttpResponses.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/HttpResponses.java
+new file mode 100644
+index 0000000..d45feab
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/HttpResponses.java
+@@ -0,0 +1,21 @@
++package org.csucampuscraft.storefront.foundation.web;
++
++import org.csucampuscraft.storefront.foundation.security.ReturnUrlPolicy;
++import java.net.URI;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++
++/** POST handlers use this after successful work; the browser follows with a new GET. */
++public final class HttpResponses {
++    private static final ReturnUrlPolicy RETURNS = new ReturnUrlPolicy();
++    private HttpResponses() { }
++
++    public static ResponseEntity<Void> seeOther(String readPath) {
++        String destination = RETURNS.resolve(readPath, "/");
++        if (!destination.equals(readPath)) {
++            throw new BusinessException(HttpStatus.BAD_REQUEST, "INVALID_RETURN_URL",
++                    "返回地址不可用，请返回本站首页。");
++        }
++        return ResponseEntity.status(HttpStatus.SEE_OTHER).location(URI.create(destination)).build();
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java
+new file mode 100644
+index 0000000..749eaca
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java
+@@ -0,0 +1,47 @@
++package org.csucampuscraft.storefront.foundation.web;
++
++import org.csucampuscraft.storefront.foundation.security.CsrfTokenService;
++import org.csucampuscraft.storefront.foundation.view.ImagePaths;
++import jakarta.servlet.RequestDispatcher;
++import jakarta.servlet.http.HttpServletRequest;
++import java.util.LinkedHashMap;
++import java.util.Map;
++import org.springframework.ui.Model;
++import org.springframework.web.bind.annotation.ControllerAdvice;
++import org.springframework.web.bind.annotation.ModelAttribute;
++
++/** Shared presentation values only; authentication and cart queries belong to later steps. */
++@ControllerAdvice
++public final class PageModelAdvice {
++    private final CsrfTokenService csrfTokens;
++
++    public PageModelAdvice(CsrfTokenService csrfTokens) { this.csrfTokens = csrfTokens; }
++
++    @ModelAttribute
++    public void contribute(Model model, HttpServletRequest request) {
++        model.addAllAttributes(commonModel(request));
++    }
++
++    /** Also used when MVC resolves a resource error without invoking a controller. */
++    public Map<String, Object> commonModel(HttpServletRequest request) {
++        Map<String, Object> values = new LinkedHashMap<>();
++        values.put("appId", "user");
++        values.put("siteName", "CSUCampusCraft 用户端");
++        values.put("cartQuantity", 0);
++        values.put("defaultCoverImage", ImagePaths.DEFAULT_COVER);
++        // An invalid write must not create a new session while rendering the rejection.
++        values.put("csrfToken", "GET".equals(request.getMethod())
++                ? csrfTokens.getOrCreate(request) : csrfTokens.getExisting(request));
++        values.put("fieldErrors", Map.of());
++        Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
++        values.put("errorStatus", status instanceof Integer code ? code : 0);
++        values.put("errorCode", publicAttribute(request, "foundation.errorCode"));
++        values.put("errorMessage", publicAttribute(request, "foundation.errorMessage"));
++        return values;
++    }
++
++    private String publicAttribute(HttpServletRequest request, String name) {
++        Object value = request.getAttribute(name);
++        return value instanceof String text ? text : "";
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/verification/FoundationVerificationController.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/verification/FoundationVerificationController.java
+new file mode 100644
+index 0000000..c216925
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/verification/FoundationVerificationController.java
+@@ -0,0 +1,65 @@
++package org.csucampuscraft.storefront.verification;
++import org.csucampuscraft.storefront.foundation.web.BusinessException;
++import org.csucampuscraft.storefront.foundation.web.HttpResponses;
++import org.csucampuscraft.storefront.foundation.validation.InputChecks;
++import org.springframework.context.annotation.Profile;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.stereotype.Controller;
++import org.springframework.ui.Model;
++import org.springframework.web.bind.annotation.*;
++import java.util.Map;
++import java.util.concurrent.atomic.AtomicLong;
++
++/** Nonpersistent probes for STEP02 acceptance. No production or business routes. */
++@Controller
++@Profile("verification")
++@RequestMapping("/__verification")
++public class FoundationVerificationController {
++    private final AtomicLong acceptedPosts = new AtomicLong();
++
++    @GetMapping("/foundation")
++    public String foundation(@RequestParam(defaultValue = "普通文本") String text, Model model) {
++        model.addAttribute("echoText", text);
++        model.addAttribute("fieldErrors", Map.of("probeText", "请修改此验证字段"));
++        return "verification/foundation";
++    }
++
++    @GetMapping("/errors/{status}")
++    public String error(@PathVariable int status, @RequestParam(defaultValue = "验证请求无法完成") String text) {
++        switch (status) {
++            case 400, 403, 404, 409 -> throw new BusinessException(HttpStatus.valueOf(status),
++                    "VERIFICATION_" + status, text);
++            case 500 -> throw new IllegalStateException("VERIFICATION_SQL_PASSWORD_STACK_SENTINEL");
++            default -> throw new BusinessException(HttpStatus.BAD_REQUEST, "VERIFICATION_STATUS",
++                    "验证状态无效");
++        }
++    }
++
++    @PostMapping("/submit")
++    public ResponseEntity<Void> submit() {
++        acceptedPosts.incrementAndGet();
++        return HttpResponses.seeOther("/");
++    }
++
++    @GetMapping("/counter")
++    @ResponseBody
++    public Map<String, Long> counter() {
++        return Map.of("acceptedPosts", acceptedPosts.get());
++    }
++
++    @GetMapping("/validation")
++    @ResponseBody
++    public Map<String, Object> validation(@RequestParam String kind, @RequestParam String value) {
++        Object checked = switch (kind) {
++            case "integer" -> InputChecks.integer("probeNumber", value, 0, 99);
++            case "money" -> InputChecks.money("probeAmount", value);
++            case "length" -> InputChecks.requiredText("probeText", value, 4);
++            case "enum" -> InputChecks.enumeration("probeState", value, ProbeState.class);
++            default -> throw new BusinessException(HttpStatus.BAD_REQUEST, "VERIFICATION_KIND",
++                    "验证类型无效");
++        };
++        return Map.of("checked", checked.toString());
++    }
++    public enum ProbeState { FIRST, SECOND }
++}
+diff --git a/csucampuscraft-user/src/main/resources/application.yml b/csucampuscraft-user/src/main/resources/application.yml
+index 217789a..9df7f85 100644
+--- a/csucampuscraft-user/src/main/resources/application.yml
++++ b/csucampuscraft-user/src/main/resources/application.yml
+@@ -1,4 +1,9 @@
+ server:
++  error:
++    include-exception: false
++    include-message: never
++    include-stacktrace: never
++    include-binding-errors: never
+   port: 8080
+   servlet:
+     session:
+diff --git a/csucampuscraft-user/src/main/resources/static/css/app.css b/csucampuscraft-user/src/main/resources/static/css/app.css
+new file mode 100644
+index 0000000..09a8423
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/static/css/app.css
+@@ -0,0 +1,133 @@
++:root {
++    --color-bg: #F5F8F4;
++    --color-surface: #FFFFFF;
++    --color-text: #1C312A;
++    --color-muted: #52655D;
++    --color-primary: #225B46;
++    --color-on-primary: #FFFFFF;
++    --color-border: #D3DFD2;
++    --color-focus: #1468AD;
++    --color-success: #226644;
++    --color-warning: #785300;
++    --color-danger: #9F2929;
++    --font-family: system-ui, "Microsoft YaHei", "PingFang SC", sans-serif;
++    --font-size: 16px;
++    --font-size-small: 14px;
++    --font-size-title: 28px;
++    --space-1: 4px;
++    --space-2: 8px;
++    --space-3: 12px;
++    --space-4: 16px;
++    --space-6: 24px;
++    --space-8: 32px;
++    --radius: 8px;
++}
++* { box-sizing: border-box; }
++html { color-scheme: light; }
++body {
++    margin: 0;
++    color: var(--color-text);
++    background: var(--color-bg);
++    font: var(--font-size)/1.6 var(--font-family);
++    min-height: 100vh;
++    display: flex;
++    flex-direction: column;
++}
++a { color: var(--color-primary); text-underline-offset: 3px; }
++a:hover { text-decoration-thickness: 2px; }
++:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
++h1, h2, h3, p { margin: 0; }
++h1 { font-size: var(--font-size-title); line-height: 1.35; font-weight: 700; }
++h2 { font-size: 20px; line-height: 1.4; }
++h3 { font-size: 18px; line-height: 1.4; }
++p + p { margin-top: var(--space-3); }
++small, .small { font-size: var(--font-size-small); }
++.muted { color: var(--color-muted); }
++.container { width: min(100% - 48px, 1120px); margin-inline: auto; }
++.main-content { flex: 1; padding-block: var(--space-8); }
++.site-header { background: var(--color-surface); border-bottom: 1px solid var(--color-border); }
++.site-header-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); min-height: 80px; padding-block: var(--space-4); }
++.site-brand { display: inline-flex; align-items: center; gap: var(--space-3); font-weight: 700; color: var(--color-text); text-decoration: none; }
++.brand-mark { display: grid; place-items: center; width: 44px; height: 44px; border-radius: var(--radius); background: var(--color-primary); color: var(--color-on-primary); font-size: 14px; letter-spacing: 1px; }
++.site-nav { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-6); }
++.site-nav > a { padding-block: var(--space-2); }
++.app-label { color: var(--color-muted); font-size: var(--font-size-small); }
++.nav-placeholder { display: inline-flex; align-items: center; gap: var(--space-2); }
++.quantity-badge { display: inline-grid; place-items: center; min-width: 24px; min-height: 24px; padding-inline: var(--space-2); color: var(--color-primary); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 999px; font-size: var(--font-size-small); }
++.global-alerts:has(.alert) { padding-top: var(--space-6); }
++.page-heading { display: grid; gap: var(--space-3); margin-bottom: var(--space-6); }
++.eyebrow { color: var(--color-primary); font-size: var(--font-size-small); font-weight: 600; }
++.panel { padding: var(--space-6); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); }
++.panel > h2 { margin-bottom: var(--space-3); }
++.theme-list { list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-3); padding: 0; margin: var(--space-6) 0 0; }
++.theme-list > li { padding: var(--space-4); border: 1px solid var(--color-border); background: var(--color-bg); border-radius: var(--radius); overflow-wrap: anywhere; }
++.empty-state { padding: var(--space-6); color: var(--color-muted); border: 1px dashed var(--color-border); border-radius: var(--radius); margin-top: var(--space-4); }
++.site-footer { border-top: 1px solid var(--color-border); padding-block: var(--space-6); font-size: var(--font-size-small); }
++.site-footer > .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3); }
++.skip-link { position: fixed; left: var(--space-4); top: var(--space-4); z-index: 20; transform: translateY(-200%); padding: var(--space-3) var(--space-4); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); }
++.skip-link:focus { transform: translateY(0); }
++.button, button, input[type="submit"] {
++    display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
++    min-height: 44px; padding: var(--space-2) var(--space-4); border: 1px solid var(--color-primary);
++    border-radius: var(--radius); background: var(--color-primary); color: var(--color-on-primary);
++    font: inherit; font-weight: 600; text-decoration: none; cursor: pointer;
++}
++.button:hover, button:hover, input[type="submit"]:hover { filter: brightness(.93); }
++.button-secondary { background: var(--color-surface); color: var(--color-primary); }
++.button-danger { background: var(--color-danger); border-color: var(--color-danger); color: var(--color-on-primary); }
++button:disabled, input[type="submit"]:disabled, .button[aria-disabled="true"] { opacity: .55; cursor: not-allowed; filter: none; }
++form.is-submitting [type="submit"], [aria-busy="true"] [type="submit"] { opacity: .65; cursor: progress; filter: none; }
++.button-row { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
++.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
++.form-field { display: grid; align-content: start; gap: var(--space-2); min-width: 0; margin-bottom: var(--space-4); }
++label { font-weight: 600; }
++input:not([type="hidden"]):not([type="submit"]):not([type="checkbox"]):not([type="radio"]), select, textarea {
++    width: 100%; min-height: 44px; padding: var(--space-2) var(--space-3); border: 1px solid var(--color-border);
++    border-radius: var(--radius); color: var(--color-text); background: var(--color-surface); font: inherit;
++}
++textarea { min-height: 120px; resize: vertical; }
++input:disabled, select:disabled, textarea:disabled { opacity: .65; cursor: not-allowed; background: var(--color-bg); }
++input[readonly], textarea[readonly] { background: var(--color-bg); }
++input.input-error, select.input-error, textarea.input-error, [aria-invalid="true"] { border-color: var(--color-danger); }
++.field-error { color: var(--color-danger); font-size: var(--font-size-small); }
++.field-help { color: var(--color-muted); font-size: var(--font-size-small); }
++.alert { padding: var(--space-4); border: 1px solid currentColor; border-radius: var(--radius); background: var(--color-surface); margin-bottom: var(--space-4); }
++.alert p { overflow-wrap: anywhere; }
++.alert-success { color: var(--color-success); }
++.alert-warning { color: var(--color-warning); }
++.alert-danger { color: var(--color-danger); }
++.alert[aria-busy="true"], .alert.is-loading { opacity: .75; cursor: progress; }
++.error-summary h2 { font-size: 18px; }
++.error-summary ul { padding-left: var(--space-6); margin-block: var(--space-2) 0; }
++.error-summary a { color: inherit; }
++.error-page { max-width: 760px; margin-inline: auto; }
++.error-number { font-size: 40px; font-weight: 700; color: var(--color-muted); }
++.error-page h1 { margin-block: var(--space-2) var(--space-4); }
++.error-page .error-code { margin-top: var(--space-4); color: var(--color-muted); font-size: var(--font-size-small); overflow-wrap: anywhere; }
++.error-page .error-summary { margin-top: var(--space-6); }
++.table-container { max-width: 100%; overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-surface); }
++table { width: 100%; border-collapse: collapse; text-align: left; }
++caption { padding: var(--space-4); text-align: left; font-weight: 600; }
++th, td { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-border); vertical-align: top; }
++th { font-weight: 600; background: var(--color-bg); }
++tbody tr:last-child td { border-bottom: 0; }
++tbody tr:hover { background: var(--color-bg); }
++tbody tr[aria-disabled="true"] { color: var(--color-muted); background: var(--color-bg); }
++.table-container[aria-busy="true"] { opacity: .7; cursor: progress; }
++.catalog-image { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius); }
++@media (max-width: 900px) {
++    .theme-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
++}
++@media (max-width: 600px) {
++    .container { width: calc(100% - 32px); }
++    .site-header-inner { align-items: flex-start; flex-direction: column; gap: var(--space-3); }
++    .site-nav { width: 100%; gap: var(--space-4); }
++    .main-content { padding-block: var(--space-6); }
++    .panel { padding: var(--space-4); }
++    .theme-list, .form-grid { grid-template-columns: 1fr; }
++    .button-row { align-items: stretch; }
++    .button-row > .button { flex: 1; }
++}
++@media (prefers-reduced-motion: reduce) {
++    *, *::before, *::after { scroll-behavior: auto !important; }
++}
+diff --git a/csucampuscraft-user/src/main/resources/static/js/app.js b/csucampuscraft-user/src/main/resources/static/js/app.js
+new file mode 100644
+index 0000000..eb451cd
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/static/js/app.js
+@@ -0,0 +1,64 @@
++(() => {
++    "use strict";
++
++    function showImageFallback(image) {
++        if (!(image instanceof HTMLImageElement) || !image.hasAttribute("data-image-fallback")
++                || image.dataset.imageFallbackUsed === "true") return;
++        const fallback = image.getAttribute("data-image-fallback");
++        if (!fallback || !fallback.startsWith("/") || fallback.startsWith("//")) return;
++        image.dataset.imageFallbackUsed = "true";
++        image.src = fallback;
++    }
++
++    document.addEventListener("error", (event) => showImageFallback(event.target), true);
++
++    function resetForm(form) {
++        delete form.dataset.submitting;
++        form.classList.remove("is-submitting");
++        form.removeAttribute("aria-busy");
++        form.querySelectorAll("[data-submitting-control]").forEach((control) => {
++            control.removeAttribute("aria-disabled");
++            control.removeAttribute("data-submitting-control");
++            if (control.hasAttribute("data-original-label")) {
++                control.textContent = control.dataset.originalLabel;
++                control.removeAttribute("data-original-label");
++            }
++        });
++    }
++
++    document.addEventListener("submit", (event) => {
++        const form = event.target;
++        if (!(form instanceof HTMLFormElement) || !form.hasAttribute("data-submit-state")
++                || event.defaultPrevented) return;
++        if (form.dataset.submitting === "true") {
++            event.preventDefault();
++            return;
++        }
++        form.dataset.submitting = "true";
++        form.classList.add("is-submitting");
++        form.setAttribute("aria-busy", "true");
++        const submitter = event.submitter;
++        if (submitter instanceof HTMLElement) {
++            // Retain the enabled control so its name/value remains in the POST.
++            submitter.setAttribute("aria-disabled", "true");
++            submitter.setAttribute("data-submitting-control", "");
++            if (submitter instanceof HTMLButtonElement) {
++                submitter.dataset.originalLabel = submitter.textContent;
++                submitter.textContent = submitter.dataset.submitLabel || "处理中…";
++            }
++        }
++    });
++
++    function checkImages() {
++        document.querySelectorAll("img[data-image-fallback]").forEach((image) => {
++            if (image.complete && image.naturalWidth === 0) showImageFallback(image);
++        });
++    }
++    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", checkImages);
++    else checkImages();
++
++    window.addEventListener("pageshow", () => {
++        document.querySelectorAll("form[data-submit-state]").forEach(resetForm);
++        checkImages();
++    });
++})();
+diff --git a/csucampuscraft-user/src/main/resources/templates/error/400.html b/csucampuscraft-user/src/main/resources/templates/error/400.html
+new file mode 100644
+index 0000000..0883c95
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/templates/error/400.html
+@@ -0,0 +1,18 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('请求参数有误', ~{::errorContent})}">
++<head><title>请求参数有误</title></head>
++<body>
++<section th:fragment="errorContent" class="panel error-page" aria-labelledby="error-title" data-error-status="400">
++    <p class="error-number">400</p>
++    <h1 id="error-title">请求参数有误</h1>
++    <p th:text="${errorMessage ?: '请检查输入内容后重新提交。'}">请检查输入内容后重新提交。</p>
++    <p class="muted">返回原表单修正输入，或回到首页继续浏览。</p>
++    <p class="error-code">错误代码：<span th:text="${errorCode ?: 'BAD_REQUEST'}">BAD_REQUEST</span></p>
++    <section th:if="${fieldErrors != null and !fieldErrors.isEmpty()}" class="alert alert-danger" aria-label="字段提示">
++        <ul><li th:each="item : ${fieldErrors}" th:text="${item.value}">请检查输入。</li></ul>
++    </section>
++    <div class="button-row"><a class="button" th:href="@{/}">返回首页</a></div>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-user/src/main/resources/templates/error/403.html b/csucampuscraft-user/src/main/resources/templates/error/403.html
+new file mode 100644
+index 0000000..6492196
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/templates/error/403.html
+@@ -0,0 +1,16 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('请求未获允许', ~{::errorContent})}">
++<head><title>请求未获允许</title></head>
++<body>
++<section th:fragment="errorContent" class="panel error-page" aria-labelledby="error-title" data-error-status="403">
++    <p class="error-number">403</p>
++    <h1 id="error-title">请求未获允许</h1>
++    <p th:text="${errorMessage ?: '当前请求无法通过校验。'}">当前请求无法通过校验。</p>
++    <p class="muted">请刷新页面后重新操作，或回到首页。</p>
++    <p class="error-code">错误代码：<span th:text="${errorCode ?: 'FORBIDDEN'}">FORBIDDEN</span></p>
++
++    <div class="button-row"><a class="button" th:href="@{/}">返回首页</a></div>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-user/src/main/resources/templates/error/404.html b/csucampuscraft-user/src/main/resources/templates/error/404.html
+new file mode 100644
+index 0000000..5ba25fe
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/templates/error/404.html
+@@ -0,0 +1,16 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('页面未找到', ~{::errorContent})}">
++<head><title>页面未找到</title></head>
++<body>
++<section th:fragment="errorContent" class="panel error-page" aria-labelledby="error-title" data-error-status="404">
++    <p class="error-number">404</p>
++    <h1 id="error-title">页面未找到</h1>
++    <p th:text="${errorMessage ?: '没有找到你要访问的内容。'}">没有找到你要访问的内容。</p>
++    <p class="muted">请检查地址，或回到首页继续浏览。</p>
++    <p class="error-code">错误代码：<span th:text="${errorCode ?: 'NOT_FOUND'}">NOT_FOUND</span></p>
++
++    <div class="button-row"><a class="button" th:href="@{/}">返回首页</a></div>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-user/src/main/resources/templates/error/409.html b/csucampuscraft-user/src/main/resources/templates/error/409.html
+new file mode 100644
+index 0000000..afa7a07
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/templates/error/409.html
+@@ -0,0 +1,16 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('当前数据已变化', ~{::errorContent})}">
++<head><title>当前数据已变化</title></head>
++<body>
++<section th:fragment="errorContent" class="panel error-page" aria-labelledby="error-title" data-error-status="409">
++    <p class="error-number">409</p>
++    <h1 id="error-title">当前数据已变化</h1>
++    <p th:text="${errorMessage ?: '当前操作与数据状态冲突。'}">当前操作与数据状态冲突。</p>
++    <p class="muted">请重新读取原页面的数据，确认后再次操作。</p>
++    <p class="error-code">错误代码：<span th:text="${errorCode ?: 'CONFLICT'}">CONFLICT</span></p>
++
++    <div class="button-row"><a class="button" th:href="@{/}">返回首页</a></div>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-user/src/main/resources/templates/error/500.html b/csucampuscraft-user/src/main/resources/templates/error/500.html
+new file mode 100644
+index 0000000..a01bdbc
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/templates/error/500.html
+@@ -0,0 +1,16 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('暂时无法完成请求', ~{::errorContent})}">
++<head><title>暂时无法完成请求</title></head>
++<body>
++<section th:fragment="errorContent" class="panel error-page" aria-labelledby="error-title" data-error-status="500">
++    <p class="error-number">500</p>
++    <h1 id="error-title">暂时无法完成请求</h1>
++    <p>服务暂时不可用，请稍后重试。</p>
++    <p class="muted">请稍后重新访问，或回到首页。</p>
++    <p class="error-code">错误代码：<span>INTERNAL_ERROR</span></p>
++
++    <div class="button-row"><a class="button" th:href="@{/}">返回首页</a></div>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-user/src/main/resources/templates/fragments/alerts.html b/csucampuscraft-user/src/main/resources/templates/fragments/alerts.html
+new file mode 100644
+index 0000000..0099a48
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/templates/fragments/alerts.html
+@@ -0,0 +1,22 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
++<body>
++<th:block th:fragment="global">
++    <div th:if="${globalMessage != null}" class="alert alert-success" role="status">
++        <p th:text="${globalMessage}">操作已完成。</p>
++    </div>
++    <div th:if="${globalError != null}" class="alert alert-danger" role="alert">
++        <p th:text="${globalError}">请检查操作结果。</p>
++    </div>
++</th:block>
++<section th:fragment="summary(errors)" th:if="${errors != null and !errors.isEmpty()}"
++         class="alert alert-danger error-summary" role="alert" aria-labelledby="error-summary-title" tabindex="-1">
++    <h2 id="error-summary-title">请修正以下输入</h2>
++    <ul>
++        <li th:each="item : ${errors}">
++            <a th:href="${'#' + item.key}" th:text="${item.value}">请检查输入。</a>
++        </li>
++    </ul>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-user/src/main/resources/templates/fragments/fields.html b/csucampuscraft-user/src/main/resources/templates/fragments/fields.html
+new file mode 100644
+index 0000000..ffb26e1
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/templates/fragments/fields.html
+@@ -0,0 +1,23 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
++<body>
++<div th:fragment="text(id, name, label, value, errors)" class="form-field"
++     th:with="hasError=${errors != null and errors.containsKey(name)}">
++    <label th:for="${id}" th:text="${label}">字段</label>
++    <input type="text" th:id="${id}" th:name="${name}" th:value="${value}"
++           th:classappend="${hasError ? 'input-error' : ''}"
++           th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}">
++    <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors[name]}">请检查输入。</p>
++</div>
++<div th:fragment="number(id, name, label, value, min, max, step, errors)" class="form-field"
++     th:with="hasError=${errors != null and errors.containsKey(name)}">
++    <label th:for="${id}" th:text="${label}">数量</label>
++    <input type="number" th:id="${id}" th:name="${name}" th:value="${value}"
++           th:min="${min}" th:max="${max}" th:step="${step}"
++           th:classappend="${hasError ? 'input-error' : ''}"
++           th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}">
++    <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors[name]}">请检查输入。</p>
++</div>
++<input th:fragment="csrf" type="hidden" name="_csrf" th:value="[REDACTED]">
++</body>
++</html>
+diff --git a/csucampuscraft-user/src/main/resources/templates/fragments/images.html b/csucampuscraft-user/src/main/resources/templates/fragments/images.html
+new file mode 100644
+index 0000000..8bf03e3
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/templates/fragments/images.html
+@@ -0,0 +1,9 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
++<body>
++<img th:fragment="image(path, altText)" class="catalog-image" width="400" height="300" loading="lazy"
++     th:with="fallback=${defaultCoverImage ?: 'images/catalog-placeholder.svg'},safePath=${path != null and #strings.startsWith(path, 'images/') and !#strings.contains(path, '..') and !#strings.contains(path, ':') and !#strings.contains(path, '%') and !#strings.contains(path, '?') and !#strings.contains(path, '#') ? path : fallback}"
++     th:src="@{${'/' + safePath}}" th:alt="${altText ?: '校园文创商品'}"
++     th:attr="data-image-fallback=@{${'/' + fallback}}">
++</body>
++</html>
+diff --git a/csucampuscraft-user/src/main/resources/templates/fragments/layout.html b/csucampuscraft-user/src/main/resources/templates/fragments/layout.html
+new file mode 100644
+index 0000000..4c327b9
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/templates/fragments/layout.html
+@@ -0,0 +1,42 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" th:fragment="page(pageTitle, pageContent)">
++<head th:fragment="head(pageTitle)">
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1">
++    <title th:text="${pageTitle}">CSUCampusCraft</title>
++    <link rel="stylesheet" th:href="@{/css/app.css}">
++    <script defer th:src="@{/js/app.js}"></script>
++</head>
++<body th:attr="data-csucampuscraft-app=${appId}">
++<a class="skip-link" href="#main-content">跳到主要内容</a>
++<header class="site-header">
++    <div class="container site-header-inner">
++        <a class="site-brand" th:href="@{/}" aria-label="CSUCampusCraft 首页">
++            <span class="brand-mark" aria-hidden="true">CSU</span>
++            <span th:text="${siteName ?: 'CSUCampusCraft'}">CSUCampusCraft</span>
++        </a>
++        <nav class="site-nav" aria-label="站点导航">
++            <a th:href="@{/}">首页</a>
++            <span class="app-label" th:text="${appId == 'admin' ? '管理端' : '用户端'}">用户端</span>
++            <span class="nav-placeholder" th:if="${appId == 'user'}"
++                  th:attr="aria-label=${'购物车，' + (cartQuantity ?: 0) + ' 件'}">
++                购物车 <span id="cart-quantity" class="quantity-badge"
++                           th:attr="data-cart-quantity=${cartQuantity ?: 0}" th:text="${cartQuantity ?: 0}">0</span>
++            </span>
++        </nav>
++    </div>
++</header>
++<div class="container global-alerts" aria-label="全局提示区">
++    <th:block th:replace="~{fragments/alerts :: global}"></th:block>
++</div>
++<main id="main-content" class="container main-content" tabindex="-1">
++    <th:block th:replace="${pageContent}"></th:block>
++</main>
++<footer class="site-footer">
++    <div class="container">
++        <span>CSUCampusCraft 校园文创商城</span>
++        <span class="muted">课程实验 · 教学模拟</span>
++    </div>
++</footer>
++</body>
++</html>
+diff --git a/csucampuscraft-user/src/main/resources/templates/home.html b/csucampuscraft-user/src/main/resources/templates/home.html
+index 380c937..adc97e0 100644
+--- a/csucampuscraft-user/src/main/resources/templates/home.html
++++ b/csucampuscraft-user/src/main/resources/templates/home.html
+@@ -1,34 +1,24 @@
+ <!DOCTYPE html>
+-<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+-<head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport" content="width=device-width, initial-scale=1">
+-    <title>CSUCampusCraft 用户端</title>
+-    <style>
+-        body { margin: 0; color: #1c312a; background: #f5f8f4; font: 1rem/1.6 system-ui, sans-serif; }
+-        main { max-width: 44rem; margin: 3rem auto; padding: 0 1.25rem; }
+-        h1 { margin-block: .25rem; }
+-        section { margin-top: 1.75rem; padding: 1rem 1.5rem; border: 1px solid #d3dfd2; background: white; }
+-        section h2 { margin-top: 0; }
+-    </style>
+-</head>
+-<body data-csucampuscraft-app="user">
+-<main>
+-    <header>
+-        <small>校园文创商城 · 工程初始化</small>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('CSUCampusCraft 用户端', ~{::mainContent})}">
++<head><title>CSUCampusCraft 用户端</title></head>
++<body>
++<div th:fragment="mainContent">
++    <header class="page-heading">
++        <small class="eyebrow">校园文创商城 · 工程初始化</small>
+         <h1>CSUCampusCraft 用户端</h1>
+-        <p>面向购买者的校园文创商城。当前展示共享商品分类中的一级主题。</p>
++        <p class="muted">面向购买者的校园文创商城。当前展示共享商品分类中的一级主题。</p>
+     </header>
+-    <section aria-labelledby="themes-heading">
++    <section class="panel" aria-labelledby="themes-heading">
+         <h2 id="themes-heading">校园主题</h2>
+-        <p th:attr="data-theme-count=${#lists.size(themes)}">
++        <p class="muted" th:attr="data-theme-count=${#lists.size(themes)}">
+             共 <span th:text="${#lists.size(themes)}">0</span> 个一级主题
+         </p>
+-        <p th:if="${#lists.isEmpty(themes)}">暂无主题。请确认演示数据已导入。</p>
+-        <ul th:unless="${#lists.isEmpty(themes)}">
++        <p class="empty-state" th:if="${#lists.isEmpty(themes)}">暂无主题。请确认演示数据已导入。</p>
++        <ul class="theme-list" th:unless="${#lists.isEmpty(themes)}">
+             <li th:each="theme : ${themes}" th:attr="data-theme-code=${theme.code}" th:text="${theme.name}"></li>
+         </ul>
+     </section>
+-</main>
++</div>
+ </body>
+ </html>
+diff --git a/csucampuscraft-user/src/main/resources/templates/verification/foundation.html b/csucampuscraft-user/src/main/resources/templates/verification/foundation.html
+new file mode 100644
+index 0000000..5ad25ce
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/templates/verification/foundation.html
+@@ -0,0 +1,17 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('公共基础验证', ~{::mainContent})}">
++<body><section th:fragment="mainContent" class="panel" aria-labelledby="verification-title">
++<h1 id="verification-title">公共基础验证</h1>
++<p>此页面仅在 verification 配置启用，无业务数据写入。</p>
++<p id="escaped-text" th:text="${echoText}">普通文本</p>
++<form method="post" data-submit-state th:action="@{/__verification/submit}">
++    <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++    <div th:replace="~{fragments/alerts :: summary(${fieldErrors})}"></div>
++    <div th:replace="~{fragments/fields :: text('probeText','probeText','文本验证',${echoText},${fieldErrors})}"></div>
++    <div th:replace="~{fragments/fields :: number('probeNumber','probeNumber','数量验证',1,0,99,1,${fieldErrors})}"></div>
++    <button type="submit" class="button">验证提交</button>
++    <button type="button" class="button" disabled>不可用</button>
++</form>
++<div th:replace="~{fragments/images :: image('images/verification-missing.svg','验证缺图回退')}"></div>
++</section></body></html>

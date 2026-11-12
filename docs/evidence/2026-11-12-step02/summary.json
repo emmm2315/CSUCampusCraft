@@ -1,0 +1,42 @@
+{
+  "final_attempt": "attempt4",
+  "full_step02_acceptance": "PASS",
+  "baseline_git_sha": "022f50196ceb7b89880dabe1c369360e8f6136c3",
+  "tested_code_sha": "5d9271d7e32634f947eb9f6077e7a4f3d98806a7",
+  "runtime_manifest_sha256": "9b10df92681a3761c6ce35948b86bb30db9bca81971b7c3b524191da0591fce1",
+  "attempts": {
+    "attempt1": {
+      "automated_overall": "PASS",
+      "tested_code_sha": "b35b0a48a0fb0e60919a41ddfe4496c96ee236b0",
+      "full_acceptance": "FAIL_REVIEW_GAPS",
+      "tracked_processes_stopped": true
+    },
+    "attempt2": {
+      "automated_overall": "FAIL",
+      "tested_code_sha": "5d9271d7e32634f947eb9f6077e7a4f3d98806a7",
+      "full_acceptance": "FAIL_BROWSER_TOOL_TIMEOUT",
+      "tracked_processes_stopped": true
+    },
+    "attempt3": {
+      "automated_overall": "FAIL",
+      "tested_code_sha": "5d9271d7e32634f947eb9f6077e7a4f3d98806a7",
+      "full_acceptance": "FAIL_BROWSER_TOOL_TIMEOUT",
+      "tracked_processes_stopped": true
+    },
+    "attempt4": {
+      "automated_overall": "PASS",
+      "tested_code_sha": "5d9271d7e32634f947eb9f6077e7a4f3d98806a7",
+      "full_acceptance": "PASS",
+      "tracked_processes_stopped": true
+    }
+  },
+  "final_http_records": 200,
+  "final_automated_checks": 284,
+  "browser_checks": 12,
+  "harness_assertions": {
+    "user": 75,
+    "admin": 79
+  },
+  "seven_table_snapshots_equal": true,
+  "sensitive_pattern_findings": []
+}

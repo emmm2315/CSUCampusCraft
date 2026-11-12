@@ -1,0 +1,557 @@
+{
+  "date": "2026-11-12T23:24:34.500505+08:00",
+  "baseline_git_sha": "022f50196ceb7b89880dabe1c369360e8f6136c3",
+  "tested_code_sha": "b35b0a48a0fb0e60919a41ddfe4496c96ee236b0",
+  "source_state": "exact implementation commit; documentation and verification evidence will be committed separately",
+  "checks": {
+    "tested-code-head": {
+      "passed": true,
+      "detail": "Exact implementation commit based on user-supplied M0 baseline"
+    },
+    "build-user": {
+      "passed": true,
+      "detail": "Root ran actual repository Maven verify with exit 0"
+    },
+    "build-admin": {
+      "passed": true,
+      "detail": "Root ran actual repository Maven verify with exit 0"
+    },
+    "version-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "version-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-user-only-crypto": {
+      "passed": true,
+      "detail": "No security filter-chain starter packaged"
+    },
+    "csucampuscraft-admin-only-crypto": {
+      "passed": true,
+      "detail": "No security filter-chain starter packaged"
+    },
+    "isolated-mysql-created": {
+      "passed": true,
+      "detail": "New private datadir; no existing MySQL service"
+    },
+    "isolated-mysql-identity": {
+      "passed": true,
+      "detail": "UUID and bound port match private datadir before mutation"
+    },
+    "csucampuscraft-user-empty-home": {
+      "passed": true,
+      "detail": "Original M0 empty wording preserved"
+    },
+    "csucampuscraft-admin-empty-home": {
+      "passed": true,
+      "detail": "Original M0 empty wording preserved"
+    },
+    "csucampuscraft-user-default-home": {
+      "passed": true,
+      "detail": "Both app marker and five themes"
+    },
+    "csucampuscraft-user-default-404-___verification_foundation": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-___verification_counter": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-___verification_errors_500": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-___verification_validation?kind=integer&value=1": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-_not-a-route": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-_login": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-_products": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-_categories": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-_cart": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-user-default-404-_orders": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-home": {
+      "passed": true,
+      "detail": "Both app marker and five themes"
+    },
+    "csucampuscraft-admin-default-404-___verification_foundation": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-___verification_counter": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-___verification_errors_500": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-___verification_validation?kind=integer&value=1": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-_not-a-route": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-_login": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-_products": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-_categories": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-_cart": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csucampuscraft-admin-default-404-_orders": {
+      "passed": true,
+      "detail": "No business or probe route registered"
+    },
+    "csrf-form-token-8080": {
+      "passed": true,
+      "detail": "Exactly one hidden token, raw value excluded"
+    },
+    "csucampuscraft-user-labels": {
+      "passed": true,
+      "detail": "for/id references exist"
+    },
+    "csucampuscraft-user-csrf-hidden": {
+      "passed": true,
+      "detail": "One shared-fragment hidden token"
+    },
+    "csucampuscraft-user-escaped-text": {
+      "passed": true,
+      "detail": "Text escaped with visible quote payload"
+    },
+    "csucampuscraft-user-error-400": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-user-error-403": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-user-error-404": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-user-error-409": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-user-error-500": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-user-technical-redaction": {
+      "passed": true,
+      "detail": "No sentinel, stack or SQL details in response"
+    },
+    "csucampuscraft-user-validation-integer-44": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-integer-45": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-integer-46": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-money-47": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-money-48": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-money-49": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-enum-50": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-enum-51": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-user-validation-length-52": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "counter-http-8080": {
+      "passed": true,
+      "detail": "Verification-only read"
+    },
+    "csucampuscraft-user-csrf-missing": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-counter-missing": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-wrong": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-counter-wrong": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-other-session": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-counter-other-session": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-duplicate": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-counter-duplicate": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-header-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-counter-header-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-query-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-counter-query-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-non-get-HEAD": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-counter-non-get-HEAD": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-counter-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-non-get-PUT": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-counter-non-get-PUT": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-non-get-PATCH": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-counter-non-get-PATCH": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-non-get-DELETE": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-user-csrf-counter-non-get-DELETE": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-user-csrf-valid": {
+      "passed": true,
+      "detail": "Valid token reaches non-business POST and sees 303"
+    },
+    "csucampuscraft-user-csrf-valid-counter": {
+      "passed": true,
+      "detail": "Exactly one accepted handler call"
+    },
+    "csucampuscraft-user-css": {
+      "passed": true,
+      "detail": "CSS response equals checked-in resource"
+    },
+    "csucampuscraft-user-shared-svg": {
+      "passed": true,
+      "detail": "Shared asset unchanged"
+    },
+    "csrf-form-token-8081": {
+      "passed": true,
+      "detail": "Exactly one hidden token, raw value excluded"
+    },
+    "csucampuscraft-admin-labels": {
+      "passed": true,
+      "detail": "for/id references exist"
+    },
+    "csucampuscraft-admin-csrf-hidden": {
+      "passed": true,
+      "detail": "One shared-fragment hidden token"
+    },
+    "csucampuscraft-admin-escaped-text": {
+      "passed": true,
+      "detail": "Text escaped with visible quote payload"
+    },
+    "csucampuscraft-admin-error-400": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-admin-error-403": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-admin-error-404": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-admin-error-409": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-admin-error-500": {
+      "passed": true,
+      "detail": "Correct status and rendered page"
+    },
+    "csucampuscraft-admin-technical-redaction": {
+      "passed": true,
+      "detail": "No sentinel, stack or SQL details in response"
+    },
+    "csucampuscraft-admin-validation-integer-90": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-integer-91": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-integer-92": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-money-93": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-money-94": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-money-95": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-enum-96": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-enum-97": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "csucampuscraft-admin-validation-length-98": {
+      "passed": true,
+      "detail": "Boundary through HTTP adapter"
+    },
+    "counter-http-8081": {
+      "passed": true,
+      "detail": "Verification-only read"
+    },
+    "csucampuscraft-admin-csrf-missing": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-counter-missing": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-wrong": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-counter-wrong": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-other-session": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-counter-other-session": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-duplicate": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-counter-duplicate": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-header-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-counter-header-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-query-only": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-counter-query-only": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-non-get-HEAD": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-counter-non-get-HEAD": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-counter-non-get-OPTIONS": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-non-get-PUT": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-counter-non-get-PUT": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-non-get-PATCH": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-counter-non-get-PATCH": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-non-get-DELETE": {
+      "passed": true,
+      "detail": "Denied before verification handler"
+    },
+    "csucampuscraft-admin-csrf-counter-non-get-DELETE": {
+      "passed": true,
+      "detail": "No accepted handler invocation"
+    },
+    "csucampuscraft-admin-csrf-valid": {
+      "passed": true,
+      "detail": "Valid token reaches non-business POST and sees 303"
+    },
+    "csucampuscraft-admin-csrf-valid-counter": {
+      "passed": true,
+      "detail": "Exactly one accepted handler call"
+    },
+    "csucampuscraft-admin-css": {
+      "passed": true,
+      "detail": "CSS response equals checked-in resource"
+    },
+    "csucampuscraft-admin-shared-svg": {
+      "passed": true,
+      "detail": "Shared asset unchanged"
+    },
+    "real-browser-checks": {
+      "passed": true,
+      "detail": "Bundled Playwright and local Edge; screenshots contain no hidden token values"
+    },
+    "database-seven-table-zero-write": {
+      "passed": true,
+      "detail": "All seven ordered logical row snapshots unchanged, including values and row counts"
+    },
+    "csucampuscraft-user-harness-compile": {
+      "passed": true,
+      "detail": "Compiled without testing framework"
+    },
+    "csucampuscraft-user-harness-runtime": {
+      "passed": true,
+      "detail": "Production PasswordService, ReturnUrlPolicy and InputChecks exercised"
+    },
+    "csucampuscraft-admin-harness-compile": {
+      "passed": true,
+      "detail": "Compiled without testing framework"
+    },
+    "csucampuscraft-admin-harness-runtime": {
+      "passed": true,
+      "detail": "Production PasswordService, ReturnUrlPolicy and InputChecks exercised"
+    },
+    "two-end-css-equal": {
+      "passed": true,
+      "detail": "Exact identical styles"
+    },
+    "source-inputs-stable": {
+      "passed": true,
+      "detail": "All runtime inputs immutable during verification"
+    }
+  },
+  "profile_boundaries": {
+    "default": "verification probes absent",
+    "verification": "non-business probes only"
+  },
+  "branch": "feat/step02-foundation",
+  "runtime_manifest_sha256": "dfc8ba211e5e9832bc0f090fc0a5c79cae0e6138e4f814ff66e643b6db2d4374",
+  "runtime_file_count": 65,
+  "csucampuscraft-user_jar_sha256": "5c077ee745a2dc1ea9c3e8dd6bfc234251896dae0b815e7b92bd1ab650454241",
+  "csucampuscraft-admin_jar_sha256": "ce9773f87561c91daffea1e0079e0a92ed612a2fa1d30d93578592dfc88585dc",
+  "mysql_version": "8.4.9",
+  "mysql_port": 50519,
+  "overall": "PASS",
+  "tracked_processes_stopped": true
+}

@@ -1,0 +1,94 @@
+[
+  {
+    "port": 8080,
+    "width": 1366,
+    "kind": "home",
+    "app": "user",
+    "count": "5",
+    "font": "16px",
+    "h1": "28px",
+    "overflow": false,
+    "passed": true
+  },
+  {
+    "port": 8080,
+    "width": 1920,
+    "kind": "home",
+    "app": "user",
+    "count": "5",
+    "font": "16px",
+    "h1": "28px",
+    "overflow": false,
+    "passed": true
+  },
+  {
+    "port": 8080,
+    "kind": "fields",
+    "allLabelsMatch": true,
+    "csrfCount": 1,
+    "imageFallback": true,
+    "focus": {
+      "width": "2px",
+      "style": "solid"
+    },
+    "passed": true
+  },
+  {
+    "port": 8080,
+    "kind": "error",
+    "status": 404,
+    "passed": true
+  },
+  {
+    "port": 8080,
+    "kind": "error",
+    "status": 500,
+    "passed": true
+  },
+  {
+    "port": 8081,
+    "width": 1366,
+    "kind": "home",
+    "app": "admin",
+    "count": "5",
+    "font": "16px",
+    "h1": "28px",
+    "overflow": false,
+    "passed": true
+  },
+  {
+    "port": 8081,
+    "width": 1920,
+    "kind": "home",
+    "app": "admin",
+    "count": "5",
+    "font": "16px",
+    "h1": "28px",
+    "overflow": false,
+    "passed": true
+  },
+  {
+    "port": 8081,
+    "kind": "fields",
+    "allLabelsMatch": true,
+    "csrfCount": 1,
+    "imageFallback": true,
+    "focus": {
+      "width": "2px",
+      "style": "solid"
+    },
+    "passed": true
+  },
+  {
+    "port": 8081,
+    "kind": "error",
+    "status": 404,
+    "passed": true
+  },
+  {
+    "port": 8081,
+    "kind": "error",
+    "status": 500,
+    "passed": true
+  }
+]

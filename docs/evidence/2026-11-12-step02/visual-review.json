@@ -1,0 +1,107 @@
+{
+  "tested_code_sha": "5d9271d7e32634f947eb9f6077e7a4f3d98806a7",
+  "tested_code_sha_source": "verification/evidence/attempt4/result.json",
+  "reviewer": "independent UI review agent",
+  "attempt": "attempt4",
+  "png_count": 12,
+  "all_12_pngs_opened": true,
+  "visual_review": "PASS",
+  "source_files_edited": false,
+  "checks": {
+    "field_inline_error_text_visible": true,
+    "submitting_label_readable": true,
+    "navigation_and_footer_complete": true,
+    "no_visible_clipping_or_horizontal_overflow": true,
+    "missing_image_placeholder_complete": true,
+    "focus_outline_visible": true,
+    "focus_outline_computed_width_from_browser_result": "2px",
+    "focus_outline_computed_style_from_browser_result": "solid"
+  },
+  "scope": "本记录是12张实际浏览器PNG的逐张视觉复核。2px精确宽度引用同目录browser/result.json的计算样式，图像确认轮廓可见；HTTP、数据库和安全断言由主验证结果另行记录。",
+  "pages": [
+    {
+      "file": "verification/evidence/attempt4/browser/8080-error-404.png",
+      "sha256": "5f9ae531314a5b89097c2f148c0e25b626667ecb2f3fc9708f98ea5a095678e7",
+      "opened_and_visually_inspected": true,
+      "passed": true,
+      "observation": "404标题、可展示原因、稳定错误代码和返回首页入口完整。"
+    },
+    {
+      "file": "verification/evidence/attempt4/browser/8080-error-500.png",
+      "sha256": "88c22c748d74f0fa7bc90ab1c36a5705fb8135ce55db79675ad10f0c7e4bae08",
+      "opened_and_visually_inspected": true,
+      "passed": true,
+      "observation": "500固定通用文案及返回首页入口完整，截图中无SQL、堆栈或密码。"
+    },
+    {
+      "file": "verification/evidence/attempt4/browser/8080-fields.png",
+      "sha256": "1b4366e9257aba9a666eccf68354d6a200f23a71b49b68026d2951afa580a7d1",
+      "opened_and_visually_inspected": true,
+      "passed": true,
+      "observation": "行内错误正文“请修改此验证字段”清晰可见，摘要链接、标签、蓝色焦点线及完整占位图显示正常。"
+    },
+    {
+      "file": "verification/evidence/attempt4/browser/8080-home-1366.png",
+      "sha256": "f06308a94a4e6528a231d9959f6d66a83264a71c3d0bc922a4ce4d53050d327d",
+      "opened_and_visually_inspected": true,
+      "passed": true,
+      "observation": "首页五主题、端标识、导航及页脚完整，内容在1366或1920视口内，无可见横向溢出。"
+    },
+    {
+      "file": "verification/evidence/attempt4/browser/8080-home-1920.png",
+      "sha256": "f9c5d104a373e539c587d95e8b416e8e7862a8be52a0db35fea7de7e77cf7526",
+      "opened_and_visually_inspected": true,
+      "passed": true,
+      "observation": "首页五主题、端标识、导航及页脚完整，内容在1366或1920视口内，无可见横向溢出。"
+    },
+    {
+      "file": "verification/evidence/attempt4/browser/8080-submitting.png",
+      "sha256": "795c71da4e5dcee8fa58235631363ddd0e96141a651101b73c62846f63632eaa",
+      "opened_and_visually_inspected": true,
+      "passed": true,
+      "observation": "处理中按钮及不可用按钮可读，表单、占位图、导航及页脚无截断或重叠。"
+    },
+    {
+      "file": "verification/evidence/attempt4/browser/8081-error-404.png",
+      "sha256": "8c6c64722c33d388e7abda86c055c25411749498aff999ad7a16c0cf9afc0abe",
+      "opened_and_visually_inspected": true,
+      "passed": true,
+      "observation": "404标题、可展示原因、稳定错误代码和返回首页入口完整。"
+    },
+    {
+      "file": "verification/evidence/attempt4/browser/8081-error-500.png",
+      "sha256": "04e9e7f6c51a0aeb3c4483e1ff07064d7fe223251d54fc57802a20c7228e524b",
+      "opened_and_visually_inspected": true,
+      "passed": true,
+      "observation": "500固定通用文案及返回首页入口完整，截图中无SQL、堆栈或密码。"
+    },
+    {
+      "file": "verification/evidence/attempt4/browser/8081-fields.png",
+      "sha256": "35a8403070e89665b7fe102a96a06559daa3e237d7367ec0254ef386ba04e539",
+      "opened_and_visually_inspected": true,
+      "passed": true,
+      "observation": "行内错误正文“请修改此验证字段”清晰可见，摘要链接、标签、蓝色焦点线及完整占位图显示正常。"
+    },
+    {
+      "file": "verification/evidence/attempt4/browser/8081-home-1366.png",
+      "sha256": "2a164294eeebaf2c46ad13b8d34437c83f74046981fef22cf625e9d1da97134b",
+      "opened_and_visually_inspected": true,
+      "passed": true,
+      "observation": "首页五主题、端标识、导航及页脚完整，内容在1366或1920视口内，无可见横向溢出。"
+    },
+    {
+      "file": "verification/evidence/attempt4/browser/8081-home-1920.png",
+      "sha256": "15a76203ec00088806e1f6dc4bceb4c73435a57926c412aa6bb7d1bbdedec264",
+      "opened_and_visually_inspected": true,
+      "passed": true,
+      "observation": "首页五主题、端标识、导航及页脚完整，内容在1366或1920视口内，无可见横向溢出。"
+    },
+    {
+      "file": "verification/evidence/attempt4/browser/8081-submitting.png",
+      "sha256": "91e6ec4b2af5d7d7caece6f70b10c00e35ae6d63cacda57829bb498166d3d3a8",
+      "opened_and_visually_inspected": true,
+      "passed": true,
+      "observation": "处理中按钮及不可用按钮可读，表单、占位图、导航及页脚无截断或重叠。"
+    }
+  ]
+}

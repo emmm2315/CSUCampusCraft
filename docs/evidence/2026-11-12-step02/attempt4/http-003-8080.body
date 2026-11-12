@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSUCampusCraft 用户端</title>
+    <link rel="stylesheet" href="/css/app.css;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">
+    <script defer src="/js/app.js;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]"></script>
+</head>
+<body data-csucampuscraft-app="user">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">首页</a>
+            <span class="app-label">用户端</span>
+            <span class="nav-placeholder" aria-label="购物车，0 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="0">0</span>
+            </span>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div>
+    <header class="page-heading">
+        <small class="eyebrow">校园文创商城 · 工程初始化</small>
+        <h1>CSUCampusCraft 用户端</h1>
+        <p class="muted">面向购买者的校园文创商城。当前展示共享商品分类中的一级主题。</p>
+    </header>
+    <section class="panel" aria-labelledby="themes-heading">
+        <h2 id="themes-heading">校园主题</h2>
+        <p class="muted" data-theme-count="5">
+            共 <span>5</span> 个一级主题
+        </p>
+        
+        <ul class="theme-list">
+            <li data-theme-code="LANDMARK">校园地标</li>
+            <li data-theme-code="COLLEGE">学院风采</li>
+            <li data-theme-code="CLUB">社团活动</li>
+            <li data-theme-code="SPORTS">校园运动</li>
+            <li data-theme-code="GRADUATION">毕业纪念</li>
+        </ul>
+    </section>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>
