@@ -15,7 +15,7 @@ MySQL 8.4（InnoDB）是项目数据库基线。首版范围与交付标准见[�
 
 ## 准备环境
 
-使用 JDK 17 或 21、Maven 3.6.3 或更高版本，以及 MySQL 8.4 和 `mysql` 客户端。代码按 Java 17 编译。两个工程都使用 Spring Boot 3.5.15、Spring MVC、Thymeleaf 和 MyBatis-Plus 3.5.7。两个 POM 显式加入 spring-security-crypto，由 Spring Boot 管理版本，供后续登录用 BCryptPasswordEncoder(10) 校验种子散列。可在 IntelliJ IDEA 中分别导入两个 `pom.xml`，或在命令行独立构建。确认 `mvn -v` 使用预期的 JDK。
+准备 JDK 21、MySQL 8.4 和 `mysql` 客户端。仓库根目录的 Maven Wrapper 固定 Maven 3.9.16，无需先安装 Maven 或把它加入 PATH。Wrapper 只解决 Maven，不包含 JDK，仍需将 `JAVA_HOME` 指向自己的 JDK 21；本机示例为 `C:/Users/Starmetor/.jdks/ms-21.0.12.1`，其他组员按自己的安装路径替换。代码继续按 Java 17 编译。两个工程都使用 Spring Boot 3.5.15、Spring MVC、Thymeleaf 和 MyBatis-Plus 3.5.7。两个 POM 显式加入 spring-security-crypto，由 Spring Boot 管理版本，供后续登录用 BCryptPasswordEncoder(10) 校验种子散列。可在 IntelliJ IDEA 中分别导入两个 `pom.xml`，或在命令行独立构建。在仓库根目录用 `.\mvnw.cmd -v`（PowerShell）或 `./mvnw -v`（bash）确认 Maven 3.9.16 与预期 JDK。
 
 ## 初始化共享数据库
 
@@ -53,12 +53,27 @@ mysql --host=127.0.0.1 --port=3306 --user=root --password --default-character-se
 
 ## 构建和启动双端
 
-在仓库根目录分别构建。
+在仓库根目录分别构建。PowerShell 使用：
 
 ```powershell
-mvn -f csucampuscraft-user/pom.xml verify
-mvn -f csucampuscraft-admin/pom.xml verify
+.\mvnw.cmd -f csucampuscraft-user/pom.xml verify
+.\mvnw.cmd -f csucampuscraft-admin/pom.xml verify
 ```
+
+bash 使用：
+
+```bash
+./mvnw -f csucampuscraft-user/pom.xml verify
+./mvnw -f csucampuscraft-admin/pom.xml verify
+```
+
+已安装 Maven 3.9.16 也可直接用 `mvn -f <模块>/pom.xml verify`。首次运行 Wrapper 会从 Apache Maven 官方仓库取得固定版本，后续复用 `~/.m2/wrapper/dists` 下的缓存。仓库根没有聚合 POM，两个模块仍各自构建。若下载不可达，保留失败输出；本机已验证的 Maven 绝对路径回退为：
+
+```powershell
+& 'C:/Users/Starmetor/.m2/wrapper/dists/apache-maven-3.9.16/0daed3be3ebd1c706f0e69e8b07c6b73f5cc4ea3dfce72a8d0ec2e849ca2ddb0/bin/mvn.cmd' -f csucampuscraft-user/pom.xml verify
+```
+
+其他成员应替换成自己的 Maven 3.9.16 路径。Wrapper 的缓存复用与本轮实际结果见 STEP03 验收记录。
 
 分别打开用户端和管理端两个 PowerShell 终端，在两个终端中各执行一次以下连接设置，再执行各端启动命令。需要改端口或库名时修改 URL；账号与口令须对应前面创建的 MySQL 应用账号。口令从交互输入读取，不写进配置文件或命令历史。
 
@@ -116,13 +131,13 @@ STEP02 已完成基础设施交付，组员可按计划并行认领 STEP03 的�
 
 ## STEP02 工具链与公共基础交接
 
-STEP02 受测代码提交为 `5d9271d7e32634f947eb9f6077e7a4f3d98806a7`，验证使用 Microsoft JDK 21.0.12.1、Maven 3.9.16，Java 编译目标继续为 17。先在 PowerShell 设置 JDK 并核对 Maven 的 Java 与版本，再执行上面的双端 `verify`。Maven 3.9.16 需已加入本机 PATH。
+STEP02 受测代码提交为 `5d9271d7e32634f947eb9f6077e7a4f3d98806a7`，验证使用 Microsoft JDK 21.0.12.1、Maven 3.9.16，Java 编译目标继续为 17。先在 PowerShell 设置 JDK，再用 Wrapper 核对 Java 与 Maven 版本并执行上面的双端 `verify`。使用 Wrapper 不要求 Maven 已加入 PATH。
 
 ```powershell
 $env:JAVA_HOME = 'C:\Users\Starmetor\.jdks\ms-21.0.12.1'
 $env:Path = "$env:JAVA_HOME\bin;$env:Path"
 java -version
-mvn -v
+.\mvnw.cmd -v
 ```
 
 两端 `foundation/` 下提供异常映射、字段校验、303 响应、密码库和会话级 CSRF。公共模板约定为 `layout::page(pageTitle,pageContent)`、`fields::text(id,name,label,value,errors)`、`fields::number(id,name,label,value,min,max,step,errors)`、`fields::csrf`、`alerts::summary(errors)` 和 `images::image(path,altText)`。调用带错误摘要的字段时使 `id` 与 `name` 相同，错误 Map 键使用同一名称，摘要链接才能定位输入。普通文本用 `th:text`，字段值用 `th:value`；密码不回显。
