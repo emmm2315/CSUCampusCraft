@@ -1,0 +1,27 @@
+[
+  {
+    "name": "literal-percent",
+    "path": "/products?q=%25",
+    "kind": "list",
+    "status": 200
+  },
+  {
+    "name": "literal-underscore",
+    "path": "/products?q=_",
+    "kind": "list",
+    "status": 200
+  },
+  {
+    "name": "literal-backslash",
+    "path": "/products?q=%5C",
+    "kind": "list",
+    "status": 200
+  },
+  {
+    "name": "escaped-description",
+    "path": "/products/1",
+    "kind": "detail",
+    "status": 200,
+    "placeholder": true
+  }
+]

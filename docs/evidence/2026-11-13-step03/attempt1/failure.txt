@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step03-catalog\verification\verify_step03.py", line 334, in <module>
+    cl=Client();home(cl)
+                ^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step03-catalog\verification\verify_step03.py", line 192, in home
+    child=rows('SELECT parent_id,code FROM category WHERE '+condition+';',db).split('\t')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step03-catalog\verification\verify_step03.py", line 125, in rows
+    return sql("SET SESSION time_zone='+00:00';"+q,db).stdout.decode('utf-8').strip()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step03-catalog\verification\verify_step03.py", line 122, in sql
+    if p.returncode and not fail_ok:raise RuntimeError('Isolated SQL command failed; see command exit status')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Isolated SQL command failed; see command exit status

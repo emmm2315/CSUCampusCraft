@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSUCampusCraft 用户端</title>
+    <link rel="stylesheet" href="/css/app.css;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">
+    <script defer src="/js/app.js;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]"></script>
+</head>
+<body data-csucampuscraft-app="user">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">首页</a>
+            <span class="app-label">用户端</span>
+            <span class="nav-placeholder" aria-label="购物车，0 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="0">0</span>
+            </span>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div class="catalog-home" data-page-id="U01">
+    <header class="catalog-home-heading page-heading">
+        <div>
+            <p class="eyebrow">中南大学校园文创</p>
+            <h1>CSUCampusCraft 用户端</h1>
+            <p class="muted">按校园主题发现文具和纪念周边。</p>
+        </div>
+        <form class="catalog-search" method="get" action="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" role="search">
+            <label for="home-query">搜索校园文创</label>
+            <div class="catalog-search-controls">
+                <input id="home-query" type="search" name="q" placeholder="输入商品名称" aria-describedby="home-query-help">
+                <button type="submit">搜索</button>
+            </div>
+            <p id="home-query-help" class="field-help">最多 120 个字符</p>
+        </form>
+    </header>
+
+    
+
+    <section class="panel catalog-section" aria-labelledby="themes-heading">
+        <div class="section-heading">
+            <div>
+                <h2 id="themes-heading">校园主题</h2>
+                <p class="muted" data-theme-count="0">
+                    共 <span>0</span> 个一级主题
+                </p>
+            </div>
+            <a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">浏览全部商品</a>
+        </div>
+        <p class="empty-state">暂无主题，可先浏览全部商品。</p>
+        
+    </section>
+
+    <section class="catalog-section" aria-labelledby="newest-heading" data-section="newest">
+        <div class="section-heading">
+            <div><p class="eyebrow">校园新品</p><h2 id="newest-heading">新品上架</h2></div>
+            <a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?type=ALL&amp;sort=NEWEST&amp;page=1&amp;size=6">查看全部新品</a>
+        </div>
+        <p class="empty-state">暂无可售商品，稍后再来看看。</p>
+        
+    </section>
+
+    <section class="catalog-section" aria-labelledby="featured-heading" data-section="featured">
+        <div class="section-heading">
+            <div><p class="eyebrow">日常文创</p><h2 id="featured-heading">精选推荐</h2></div>
+            <a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?type=ALL&amp;sort=DEFAULT&amp;page=1&amp;size=6">浏览全部商品</a>
+        </div>
+        <p class="empty-state">暂无可售商品，可稍后再来看看。</p>
+        
+    </section>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

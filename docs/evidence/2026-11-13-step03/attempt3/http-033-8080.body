@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>商品目录 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="user">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <span class="app-label">用户端</span>
+            <span class="nav-placeholder" aria-label="购物车，0 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="0">0</span>
+            </span>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div class="catalog-list-page" data-page-id="U02" data-product-count="27" data-result-count="6" data-page="1" data-page-size="6" data-size="6" data-type="SOUVENIR" data-sort="DEFAULT">
+    <nav class="catalog-breadcrumb" aria-label="当前位置">
+        <a href="/">首页</a><span aria-hidden="true">/</span><span aria-current="page">商品目录</span>
+    </nav>
+    <header class="page-heading">
+        <p class="eyebrow">校园文创</p>
+        <h1>全部商品</h1>
+        <p class="muted">浏览文具与纪念周边，按主题、名称或类型筛选。</p>
+    </header>
+
+    <section class="panel catalog-filter-panel" aria-labelledby="filter-heading">
+        <h2 id="filter-heading">筛选商品</h2>
+        <form class="catalog-filter-form" method="get" action="/products">
+            <div class="form-field">
+                <label for="catalog-theme">校园主题</label>
+                <select id="catalog-theme" name="categoryId">
+                    <option value="" selected="selected">全部主题</option>
+                    <option value="1">校园地标</option>
+                    <option value="2">学院风采</option>
+                    <option value="3">社团活动</option>
+                    <option value="4">校园运动</option>
+                    <option value="5">毕业纪念</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for="catalog-type">商品类型</label>
+                <select id="catalog-type" name="type">
+                    <option value="ALL">全部</option>
+                    <option value="STATIONERY">文具</option>
+                    <option value="SOUVENIR" selected="selected">纪念周边</option>
+                </select>
+            </div>
+            <div class="form-field catalog-query-field">
+                <label for="catalog-query">商品名称</label>
+                <input id="catalog-query" type="search" name="q" value="" placeholder="按名称搜索" aria-describedby="catalog-query-help">
+                <p id="catalog-query-help" class="field-help">最多 120 个字符</p>
+            </div>
+            <div class="form-field">
+                <label for="catalog-sort">排序方式</label>
+                <select id="catalog-sort" name="sort">
+                    <option value="DEFAULT" selected="selected">默认</option>
+                    <option value="PRICE_ASC">价格从低到高</option>
+                    <option value="PRICE_DESC">价格从高到低</option>
+                    <option value="NEWEST">最新商品</option>
+                </select>
+            </div>
+            <div class="form-field catalog-size-field">
+                <label for="catalog-size">每页条数</label>
+                <input id="catalog-size" type="number" name="size" min="1" max="50" step="1" value="6">
+            </div>
+            <input type="hidden" name="page" value="1">
+            <div class="catalog-filter-actions">
+                <button type="submit">查询商品</button>
+                <a class="button button-secondary"
+                   href="/products?categoryId=&amp;type=ALL&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6">清除名称和类型</a>
+            </div>
+        </form>
+    </section>
+
+    <div class="catalog-results-heading">
+        <p class="muted">共 <strong>27</strong> 件商品<span>，第 <span>1</span> 页 / 共 <span>5</span> 页</span></p>
+        <nav class="catalog-type-tabs" aria-label="商品类型">
+    <a href="/products?categoryId=&amp;type=ALL&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6" data-type-link="ALL">全部</a>
+    <a href="/products?categoryId=&amp;type=STATIONERY&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6" data-type-link="STATIONERY">文具</a>
+    <a href="/products?categoryId=&amp;type=SOUVENIR&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6" aria-current="page" data-type-link="SOUVENIR">纪念周边</a>
+</nav>
+    </div>
+
+    
+    <div class="catalog-grid" data-product-list>
+        <article class="product-card" data-product-id="7" data-product-sku="CSU-LMK-MAGNET-01" data-product-price="24.00" data-product-stock="24" data-price="24.00" data-stock="24" data-sort-order="70" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/7" aria-label="查看 校史馆冰箱贴">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="校史馆冰箱贴" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-LMK-MAGNET-01</p>
+        <h3><a href="/products/7">校史馆冰箱贴</a></h3>
+        <p class="product-card-summary muted">以玉带河畔的中南大学校史馆为设计主题。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥24.00</p>
+            <span class="stock-badge">库存 24</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="8" data-product-sku="CSU-LMK-CARDS-01" data-product-price="19.90" data-product-stock="29" data-price="19.90" data-stock="29" data-sort-order="80" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/8" aria-label="查看 潇湘校区地标明信片套装">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="潇湘校区地标明信片套装" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-LMK-CARDS-01</p>
+        <h3><a href="/products/8">潇湘校区地标明信片套装</a></h3>
+        <p class="product-card-summary muted">固定套装，按套购买及计库存。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥19.90</p>
+            <span class="stock-badge">库存 29</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="9" data-product-sku="CSU-LMK-KEY-01" data-product-price="12.90" data-product-stock="14" data-price="12.90" data-stock="14" data-sort-order="90" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/9" aria-label="查看 图书馆线稿挂件">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="图书馆线稿挂件" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-LMK-KEY-01</p>
+        <h3><a href="/products/9">图书馆线稿挂件</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为图书馆线稿挂件。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥12.90</p>
+            <span class="stock-badge">库存 14</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="10" data-product-sku="CSU-LMK-PIN-01" data-product-price="14.90" data-product-stock="20" data-price="14.90" data-stock="20" data-sort-order="100" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/10" aria-label="查看 校史馆线描徽章">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="校史馆线描徽章" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-LMK-PIN-01</p>
+        <h3><a href="/products/10">校史馆线描徽章</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为校史馆线描徽章。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥14.90</p>
+            <span class="stock-badge">库存 20</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="11" data-product-sku="CSU-LMK-ART-01" data-product-price="32.00" data-product-stock="0" data-price="32.00" data-stock="0" data-sort-order="110" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/11" aria-label="查看 玉带河插画装饰画">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="玉带河插画装饰画" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-LMK-ART-01</p>
+        <h3><a href="/products/11">玉带河插画装饰画</a></h3>
+        <p class="product-card-summary muted">上架售罄示例，可浏览，不能购买。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥32.00</p>
+            <span class="stock-badge stock-sold-out">售罄</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="19" data-product-sku="CSU-COL-PIN-01" data-product-price="16.00" data-product-stock="25" data-price="16.00" data-stock="25" data-sort-order="190" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/19" aria-label="查看 计算机学院像素徽章">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="计算机学院像素徽章" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-COL-PIN-01</p>
+        <h3><a href="/products/19">计算机学院像素徽章</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为计算机学院像素徽章。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥16.00</p>
+            <span class="stock-badge">库存 25</span>
+        </div>
+    </div>
+</article>
+    </div>
+
+    <nav class="catalog-pagination" aria-label="商品分页">
+        
+        <span class="pagination-disabled" aria-disabled="true">上一页</span>
+        <span class="pagination-position">第 <strong>1</strong> 页 / 共 <span>5</span> 页</span>
+        <a class="button button-secondary" href="/products?categoryId=&amp;type=SOUVENIR&amp;q=&amp;sort=DEFAULT&amp;page=2&amp;size=6" data-page-link="2">下一页</a>
+        
+    </nav>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

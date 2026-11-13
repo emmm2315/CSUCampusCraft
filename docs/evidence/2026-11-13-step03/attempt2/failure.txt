@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step03-catalog\verification\verify_step03.py", line 345, in <module>
+    verify_list(cl,{'q':'😀'*120},'unicode-keyword-length120')
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step03-catalog\verification\verify_step03.py", line 150, in verify_list
+    r=client.get(query(params));check(name+'-status',r[0]==200,'Public list read')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step03-catalog\verification\verify_step03.py", line 42, in check
+    if not ok:raise AssertionError(name)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unicode-keyword-length120-status

@@ -1,0 +1,6 @@
+SELECT p.id FROM product p WHERE p.status='ON_SALE' ORDER BY p.sort_order,p.id LIMIT 6 OFFSET 0;
+1	SIMPLE	p	NULL	ref	idx_product_category_status_sort,idx_product_status_sort	idx_product_status_sort	66	const	54	100.00	Using index
+SELECT p.id FROM product p JOIN category c ON c.id=p.category_id JOIN category t ON t.id=c.parent_id AND t.parent_id IS NULL WHERE p.status='ON_SALE' AND t.id=1 ORDER BY p.sort_order,p.id LIMIT 6 OFFSET 0;
+1	SIMPLE	t	NULL	const	PRIMARY,idx_category_parent_sort	PRIMARY	8	const	1	100.00	NULL
+1	SIMPLE	p	NULL	ref	idx_product_category_status_sort,idx_product_status_sort	idx_product_status_sort	66	const	54	100.00	NULL
+1	SIMPLE	c	NULL	eq_ref	PRIMARY,idx_category_parent_sort	PRIMARY	8	csucampuscraft.p.category_id	1	13.33	Using where

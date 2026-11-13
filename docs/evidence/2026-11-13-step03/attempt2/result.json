@@ -1,0 +1,379 @@
+{
+  "date": "2026-11-13T15:09:33.710924+08:00",
+  "baseline_git_sha": "f9fd249b7a8c0a6ea6111133062d9e701096ef9d",
+  "tested_code_sha": "68244c371e5522f590d340459b7e4b679cc2abac",
+  "checks": {
+    "tested-code-head": {
+      "passed": true,
+      "detail": ""
+    },
+    "feature-branch": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-user": {
+      "passed": true,
+      "detail": "Actual repository Maven Wrapper build"
+    },
+    "wrapper-build-admin": {
+      "passed": true,
+      "detail": "Actual repository Maven Wrapper build"
+    },
+    "tool-version-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-maven-pin": {
+      "passed": true,
+      "detail": "Fresh subprocess PATH excludes Maven"
+    },
+    "isolated-mysql-created": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-identity": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-physical-product-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-visible-product-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-draft-product-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft_structure-home-http": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft_structure-home-theme-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft_structure-home-theme-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft_structure-newest-section": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft_structure-newest-ids": {
+      "passed": true,
+      "detail": "[]"
+    },
+    "csucampuscraft_structure-featured-section": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft_structure-featured-ids": {
+      "passed": true,
+      "detail": "[]"
+    },
+    "csucampuscraft_structure-home-graduation": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-default-status": {
+      "passed": true,
+      "detail": "Public list read"
+    },
+    "empty-default-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-default-count": {
+      "passed": true,
+      "detail": "0"
+    },
+    "empty-default-page": {
+      "passed": true,
+      "detail": "1"
+    },
+    "empty-default-size": {
+      "passed": true,
+      "detail": "6"
+    },
+    "empty-default-ids": {
+      "passed": true,
+      "detail": "{'actual': [], 'expected': []}"
+    },
+    "empty-default-read-form-27": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-detail-404": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-empty": {
+      "passed": true,
+      "detail": "Real Edge screenshots and DOM checks"
+    },
+    "csucampuscraft-home-http": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-home-theme-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-home-theme-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-newest-section": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-newest-ids": {
+      "passed": true,
+      "detail": "[59, 58, 57]"
+    },
+    "csucampuscraft-featured-section": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-featured-ids": {
+      "passed": true,
+      "detail": "[1, 2, 3, 4]"
+    },
+    "csucampuscraft-home-graduation": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-graduation-query": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-LANDMARK_STATIONERY": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-LANDMARK_SOUVENIR": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-COLLEGE_STATIONERY": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-COLLEGE_SOUVENIR": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-CLUB_STATIONERY": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-CLUB_SOUVENIR": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-SPORTS_STATIONERY": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-SPORTS_SOUVENIR": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-GRADUATION_STATIONERY": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-GRADUATION_SOUVENIR": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-regression-home": {
+      "passed": true,
+      "detail": ""
+    },
+    "forbidden-user-get-_login": {
+      "passed": true,
+      "detail": ""
+    },
+    "forbidden-user-get-_logout": {
+      "passed": true,
+      "detail": ""
+    },
+    "forbidden-user-get-_cart": {
+      "passed": true,
+      "detail": ""
+    },
+    "forbidden-user-get-_orders": {
+      "passed": true,
+      "detail": ""
+    },
+    "forbidden-user-get-_categories": {
+      "passed": true,
+      "detail": ""
+    },
+    "forbidden-user-get-___verification_foundation": {
+      "passed": true,
+      "detail": ""
+    },
+    "unimplemented-admin-get-_products": {
+      "passed": true,
+      "detail": ""
+    },
+    "unimplemented-admin-get-_categories": {
+      "passed": true,
+      "detail": ""
+    },
+    "unimplemented-admin-get-_customers": {
+      "passed": true,
+      "detail": ""
+    },
+    "unimplemented-admin-get-_orders": {
+      "passed": true,
+      "detail": ""
+    },
+    "unimplemented-admin-get-_login": {
+      "passed": true,
+      "detail": ""
+    },
+    "demo-default-status": {
+      "passed": true,
+      "detail": "Public list read"
+    },
+    "demo-default-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "demo-default-count": {
+      "passed": true,
+      "detail": "54"
+    },
+    "demo-default-page": {
+      "passed": true,
+      "detail": "1"
+    },
+    "demo-default-size": {
+      "passed": true,
+      "detail": "6"
+    },
+    "demo-default-ids": {
+      "passed": true,
+      "detail": "{'actual': [1, 2, 3, 4, 5, 6], 'expected': [1, 2, 3, 4, 5, 6]}"
+    },
+    "demo-default-card-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "demo-default-card-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "demo-default-card-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "demo-default-card-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "demo-default-card-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "demo-default-card-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "demo-default-page-link-2": {
+      "passed": true,
+      "detail": "All filter conditions retained"
+    },
+    "demo-default-read-form-74": {
+      "passed": true,
+      "detail": ""
+    },
+    "blank-keyword-status": {
+      "passed": true,
+      "detail": "Public list read"
+    },
+    "blank-keyword-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "blank-keyword-count": {
+      "passed": true,
+      "detail": "54"
+    },
+    "blank-keyword-page": {
+      "passed": true,
+      "detail": "1"
+    },
+    "blank-keyword-size": {
+      "passed": true,
+      "detail": "6"
+    },
+    "blank-keyword-ids": {
+      "passed": true,
+      "detail": "{'actual': [1, 2, 3, 4, 5, 6], 'expected': [1, 2, 3, 4, 5, 6]}"
+    },
+    "blank-keyword-card-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "blank-keyword-card-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "blank-keyword-card-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "blank-keyword-card-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "blank-keyword-card-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "blank-keyword-card-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "blank-keyword-page-link-2": {
+      "passed": true,
+      "detail": "All filter conditions retained"
+    },
+    "blank-keyword-read-form-88": {
+      "passed": true,
+      "detail": ""
+    },
+    "unicode-keyword-length120-status": {
+      "passed": false,
+      "detail": "Public list read"
+    }
+  },
+  "source_state": "exact implementation commit; documentation/evidence committed separately",
+  "branch": "feat/step03-catalog",
+  "runtime_manifest_sha256": "e62fce9ccb11b869d9bef4b72d99f9871acb195f78e19556d4a768287fe56d7b",
+  "runtime_file_count": 85,
+  "wrapper_version_without_maven_path": "3.9.16",
+  "csucampuscraft-user_jar_sha256": "63b8c9d1e4009d7faf089c2ff1e13e224facfa71449ee212247a8c1450bd4d48",
+  "csucampuscraft-admin_jar_sha256": "79674db7f65c97fc638b54009fc304fa2114c095013ecf073a5009281c541696",
+  "mysql_version": "8.4.9",
+  "mysql_port": 60109,
+  "overall": "FAIL",
+  "error": "AssertionError: unicode-keyword-length120-status",
+  "tracked_processes_stopped": true
+}

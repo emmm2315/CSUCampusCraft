@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSUCampusCraft 用户端</title>
+    <link rel="stylesheet" href="/css/app.css;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">
+    <script defer src="/js/app.js;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]"></script>
+</head>
+<body data-csucampuscraft-app="user">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">首页</a>
+            <span class="app-label">用户端</span>
+            <span class="nav-placeholder" aria-label="购物车，0 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="0">0</span>
+            </span>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div class="catalog-home" data-page-id="U01">
+    <header class="catalog-home-heading page-heading">
+        <div>
+            <p class="eyebrow">中南大学校园文创</p>
+            <h1>CSUCampusCraft 用户端</h1>
+            <p class="muted">按校园主题发现文具和纪念周边。</p>
+        </div>
+        <form class="catalog-search" method="get" action="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" role="search">
+            <label for="home-query">搜索校园文创</label>
+            <div class="catalog-search-controls">
+                <input id="home-query" type="search" name="q" placeholder="输入商品名称" aria-describedby="home-query-help">
+                <button type="submit">搜索</button>
+            </div>
+            <p id="home-query-help" class="field-help">最多 120 个字符</p>
+        </form>
+    </header>
+
+    <section class="graduation-banner" aria-labelledby="graduation-heading" data-graduation-section>
+        <div>
+            <p class="eyebrow">毕业专区</p>
+            <h2 id="graduation-heading">毕业纪念专区</h2>
+            <p>毕业留言本、祝福卡片与独立成品礼盒。</p>
+        </div>
+        <a class="button graduation-link"
+           href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=5&amp;type=ALL&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6"
+           data-graduation-link>浏览毕业纪念</a>
+    </section>
+
+    <section class="panel catalog-section" aria-labelledby="themes-heading">
+        <div class="section-heading">
+            <div>
+                <h2 id="themes-heading">校园主题</h2>
+                <p class="muted" data-theme-count="5">
+                    共 <span>5</span> 个一级主题
+                </p>
+            </div>
+            <a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">浏览全部商品</a>
+        </div>
+        
+        <ul class="theme-list catalog-themes">
+            <li data-theme-code="LANDMARK">
+                <a class="theme-primary"
+                   href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=1&amp;type=ALL&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6">校园地标</a>
+                <div class="theme-type-links">
+                    <a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=1&amp;type=STATIONERY&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6"
+                       data-secondary-code="LANDMARK_STATIONERY" data-secondary-category-code="LANDMARK_STATIONERY">文具</a><a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=1&amp;type=SOUVENIR&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6"
+                       data-secondary-code="LANDMARK_SOUVENIR" data-secondary-category-code="LANDMARK_SOUVENIR">纪念周边</a>
+                </div>
+            </li>
+            <li data-theme-code="COLLEGE">
+                <a class="theme-primary"
+                   href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=2&amp;type=ALL&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6">学院风采</a>
+                <div class="theme-type-links">
+                    <a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=2&amp;type=STATIONERY&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6"
+                       data-secondary-code="COLLEGE_STATIONERY" data-secondary-category-code="COLLEGE_STATIONERY">文具</a><a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=2&amp;type=SOUVENIR&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6"
+                       data-secondary-code="COLLEGE_SOUVENIR" data-secondary-category-code="COLLEGE_SOUVENIR">纪念周边</a>
+                </div>
+            </li>
+            <li data-theme-code="CLUB">
+                <a class="theme-primary"
+                   href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=3&amp;type=ALL&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6">社团活动</a>
+                <div class="theme-type-links">
+                    <a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=3&amp;type=STATIONERY&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6"
+                       data-secondary-code="CLUB_STATIONERY" data-secondary-category-code="CLUB_STATIONERY">文具</a><a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=3&amp;type=SOUVENIR&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6"
+                       data-secondary-code="CLUB_SOUVENIR" data-secondary-category-code="CLUB_SOUVENIR">纪念周边</a>
+                </div>
+            </li>
+            <li data-theme-code="SPORTS">
+                <a class="theme-primary"
+                   href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=4&amp;type=ALL&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6">校园运动</a>
+                <div class="theme-type-links">
+                    <a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=4&amp;type=STATIONERY&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6"
+                       data-secondary-code="SPORTS_STATIONERY" data-secondary-category-code="SPORTS_STATIONERY">文具</a><a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=4&amp;type=SOUVENIR&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6"
+                       data-secondary-code="SPORTS_SOUVENIR" data-secondary-category-code="SPORTS_SOUVENIR">纪念周边</a>
+                </div>
+            </li>
+            <li data-theme-code="GRADUATION">
+                <a class="theme-primary"
+                   href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=5&amp;type=ALL&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6">毕业纪念</a>
+                <div class="theme-type-links">
+                    <a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=5&amp;type=STATIONERY&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6"
+                       data-secondary-code="GRADUATION_STATIONERY" data-secondary-category-code="GRADUATION_STATIONERY">文具</a><a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?categoryId=5&amp;type=SOUVENIR&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6"
+                       data-secondary-code="GRADUATION_SOUVENIR" data-secondary-category-code="GRADUATION_SOUVENIR">纪念周边</a>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="catalog-section" aria-labelledby="newest-heading" data-section="newest">
+        <div class="section-heading">
+            <div><p class="eyebrow">校园新品</p><h2 id="newest-heading">新品上架</h2></div>
+            <a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?type=ALL&amp;sort=NEWEST&amp;page=1&amp;size=6">查看全部新品</a>
+        </div>
+        
+        <div class="catalog-grid">
+            <article class="product-card" data-product-id="59" data-product-sku="CSU-GRAD-STAND-01" data-product-price="28.00" data-product-stock="11" data-price="28.00" data-stock="11" data-sort-order="590" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/59;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" aria-label="查看 毕业帽亚克力立牌">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" alt="毕业帽亚克力立牌" data-image-fallback="/images/catalog-placeholder.svg;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-GRAD-STAND-01</p>
+        <h3><a href="/products/59;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">毕业帽亚克力立牌</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为毕业帽亚克力立牌。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥28.00</p>
+            <span class="stock-badge">库存 11</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="58" data-product-sku="CSU-GRAD-MAGNET-01" data-product-price="21.00" data-product-stock="18" data-price="21.00" data-stock="18" data-sort-order="580" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/58;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" aria-label="查看 毕业合影主题磁贴">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" alt="毕业合影主题磁贴" data-image-fallback="/images/catalog-placeholder.svg;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-GRAD-MAGNET-01</p>
+        <h3><a href="/products/58;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">毕业合影主题磁贴</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为毕业合影主题磁贴。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥21.00</p>
+            <span class="stock-badge">库存 18</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="57" data-product-sku="CSU-GRAD-PIN-01" data-product-price="15.00" data-product-stock="30" data-price="15.00" data-stock="30" data-sort-order="570" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/57;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" aria-label="查看 毕业徽章">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" alt="毕业徽章" data-image-fallback="/images/catalog-placeholder.svg;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-GRAD-PIN-01</p>
+        <h3><a href="/products/57;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">毕业徽章</a></h3>
+        <p class="product-card-summary muted">独立 SKU。作为礼盒成分另行销售时使用自身库存。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥15.00</p>
+            <span class="stock-badge">库存 30</span>
+        </div>
+    </div>
+</article>
+        </div>
+    </section>
+
+    <section class="catalog-section" aria-labelledby="featured-heading" data-section="featured">
+        <div class="section-heading">
+            <div><p class="eyebrow">日常文创</p><h2 id="featured-heading">精选推荐</h2></div>
+            <a href="/products;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]?type=ALL&amp;sort=DEFAULT&amp;page=1&amp;size=6">浏览全部商品</a>
+        </div>
+        
+        <div class="catalog-grid catalog-grid-featured">
+            <article class="product-card" data-product-id="1" data-product-sku="CSU-LMK-NOTE-01" data-product-price="18.00" data-product-stock="10" data-price="18.00" data-stock="10" data-sort-order="10" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/1;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" aria-label="查看 潇湘校区图书馆方格本">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" alt="潇湘校区图书馆方格本" data-image-fallback="/images/catalog-placeholder.svg;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-LMK-NOTE-01</p>
+        <h3><a href="/products/1;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">潇湘校区图书馆方格本</a></h3>
+        <p class="product-card-summary muted">以潇湘校区图书馆为主题的方格本。演示库初始化后可售 10 本，用于购买与补货并发验证。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥18.00</p>
+            <span class="stock-badge">库存 10</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="2" data-product-sku="CSU-LMK-BOOKMARK-01" data-product-price="8.00" data-product-stock="23" data-price="8.00" data-stock="23" data-sort-order="20" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/2;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" aria-label="查看 玉带河书签">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" alt="玉带河书签" data-image-fallback="/images/catalog-placeholder.svg;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-LMK-BOOKMARK-01</p>
+        <h3><a href="/products/2;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">玉带河书签</a></h3>
+        <p class="product-card-summary muted">以潇湘校区玉带河为主题的纸质书签。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥8.00</p>
+            <span class="stock-badge">库存 23</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="3" data-product-sku="CSU-LMK-FOLDER-01" data-product-price="16.90" data-product-stock="22" data-price="16.90" data-stock="22" data-sort-order="30" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/3;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" aria-label="查看 潇湘阅览文件夹">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" alt="潇湘阅览文件夹" data-image-fallback="/images/catalog-placeholder.svg;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-LMK-FOLDER-01</p>
+        <h3><a href="/products/3;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">潇湘阅览文件夹</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为潇湘阅览文件夹。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥16.90</p>
+            <span class="stock-badge">库存 22</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="4" data-product-sku="CSU-LMK-TABS-01" data-product-price="9.90" data-product-stock="45" data-price="9.90" data-stock="45" data-sort-order="40" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/4;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" aria-label="查看 图书馆索引便利贴">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]" alt="图书馆索引便利贴" data-image-fallback="/images/catalog-placeholder.svg;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-LMK-TABS-01</p>
+        <h3><a href="/products/4;CSUCAMPUSCRAFT_USER_SESSION=[REDACTED]">图书馆索引便利贴</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为图书馆索引便利贴。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥9.90</p>
+            <span class="stock-badge">库存 45</span>
+        </div>
+    </div>
+</article>
+        </div>
+    </section>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-13T15:15:53.753453+08:00",
+  "reviewer": "Codex independent UI review agent",
+  "tested_code_sha": "68244c371e5522f590d340459b7e4b679cc2abac",
+  "attempt_overall": "FAIL",
+  "scope": "Interim review of six existing attempt2 empty-schema desktop screenshots only; no final demo visual acceptance claim.",
+  "attempt_failure": "Non-empty q MyBatis record-derived getter binding returns 500; separate backend repair and fresh SHA/attempt required.",
+  "visual_findings": [],
+  "screenshots": [
+    {
+      "path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step03-catalog/verification/evidence/attempt2/browser/empty/empty-home-1366.png",
+      "sha256": "6d02f48f35472f6002757fff4b74fe3138a3736fb360454b15e496ce6ea9bb1d",
+      "viewport_width": 1366,
+      "manual_visual_review": "PASS",
+      "observation": "U01: campus-green header/body/footer align; separate no-theme and both no-sale-product empty states are readable; search labelled and available; graduation banner correctly omitted.",
+      "automated_browser_check_passed": true
+    },
+    {
+      "path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step03-catalog/verification/evidence/attempt2/browser/empty/empty-home-1920.png",
+      "sha256": "b720b44a4025814edc8ec33db642873baeb8b2fd16afd0a6dee083b4202f575e",
+      "viewport_width": 1920,
+      "manual_visual_review": "PASS",
+      "observation": "U01: campus-green header/body/footer align; separate no-theme and both no-sale-product empty states are readable; search labelled and available; graduation banner correctly omitted.",
+      "automated_browser_check_passed": true
+    },
+    {
+      "path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step03-catalog/verification/evidence/attempt2/browser/empty/empty-products-1366.png",
+      "sha256": "7281038a7df5dd3f09bd42f3506d88be5722bf4281da2eb3e079e44d2748f260",
+      "viewport_width": 1366,
+      "manual_visual_review": "PASS",
+      "observation": "U02: all five filter labels and controls align; total 0 and empty-state recovery links readable; selected type tab distinct; no horizontal clipping.",
+      "automated_browser_check_passed": true
+    },
+    {
+      "path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step03-catalog/verification/evidence/attempt2/browser/empty/empty-products-1920.png",
+      "sha256": "a95ce819a2b7a041eddf6c252566176d94bf927fccb8300f6cca15e64bf0f357",
+      "viewport_width": 1920,
+      "manual_visual_review": "PASS",
+      "observation": "U02: all five filter labels and controls align; total 0 and empty-state recovery links readable; selected type tab distinct; no horizontal clipping.",
+      "automated_browser_check_passed": true
+    },
+    {
+      "path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step03-catalog/verification/evidence/attempt2/browser/empty/empty-detail-1366.png",
+      "sha256": "eed7eeaa92b9b35608f501cdab7b65877793e517586c032e72ffe65d9051053a",
+      "viewport_width": 1366,
+      "manual_visual_review": "PASS",
+      "observation": "Empty schema detail: shared 404 card readable, PRODUCT_NOT_FOUND and home recovery shown; generic site header retained.",
+      "automated_browser_check_passed": true
+    },
+    {
+      "path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step03-catalog/verification/evidence/attempt2/browser/empty/empty-detail-1920.png",
+      "sha256": "e1b12f27f0496760e43d672ae18836fbfd399920cff38e0678bcf06528e4d439",
+      "viewport_width": 1920,
+      "manual_visual_review": "PASS",
+      "observation": "Empty schema detail: shared 404 card readable, PRODUCT_NOT_FOUND and home recovery shown; generic site header retained.",
+      "automated_browser_check_passed": true
+    }
+  ],
+  "source_review": {
+    "files": [
+      "csucampuscraft-user/src/main/resources/templates/home.html",
+      "csucampuscraft-user/src/main/resources/templates/products/list.html",
+      "csucampuscraft-user/src/main/resources/templates/products/detail.html",
+      "csucampuscraft-user/src/main/resources/templates/fragments/catalog.html",
+      "csucampuscraft-user/src/main/resources/templates/fragments/layout.html",
+      "csucampuscraft-user/src/main/resources/templates/fragments/images.html",
+      "csucampuscraft-user/src/main/resources/static/css/app.css"
+    ],
+    "observations": [
+      "U01 primary themes in body; shared header generic, cart 0 placeholder not a business route.",
+      "U01/U02 card loops are outer each with inner replace, avoiding Thymeleaf precedence defect.",
+      "U02 filter GET hidden page=1; type and paging links preserve categoryId/type/q/sort/page/size as applicable; no _csrf in GET forms.",
+      "U02 count/page/page-size/type/sort and card product identity/price/stock markers present; secondary entry URLs use primary theme ID and service-provided type.",
+      "U03 name/SKU/price/stock/description escaped with th:text; cover and ordered gallery reuse images fragment; absent gallery has cover fallback copy.",
+      "U03 purchase controls disabled, explanatory text associated with aria-describedby; STEP07 implementation comment not visible product text.",
+      "Headings, label-for/input-id, nav aria-label/current-page, skip link, alt text and 2px focus style available.",
+      "No new POST forms, login/cart/order links, th:utext or asset changes in reviewed templates."
+    ],
+    "known_pending_fix": "Both q inputs used maxlength=120 UTF-16 code units; parent-approved minimal candidate removes maxlength and adds field-help + aria-describedby, pending fresh-SHA validation."
+  },
+  "final_review_pending": true
+}

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "scan_scope": "text files, actual HTML CSRF inputs, cookie/session values and BCrypt strings; screenshots separately visually reviewed",
+  "counts": {
+    "files": 300,
+    "http_bodies": 120,
+    "session_values": 0,
+    "csrf_values": 0,
+    "bcrypt_values": 0,
+    "cookie_headers": 0
+  },
+  "findings": []
+}

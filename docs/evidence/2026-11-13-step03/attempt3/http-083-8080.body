@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>STEP03 percent% under_score back\slash bang! &lt;script&gt;alert(1)&lt;/script&gt; · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="user">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <span class="app-label">用户端</span>
+            <span class="nav-placeholder" aria-label="购物车，0 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="0">0</span>
+            </span>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div class="catalog-detail-page" data-page-id="U03" data-product-id="1" data-product-sku="CSU-LMK-NOTE-01" data-price="18.00" data-stock="10" data-gallery-count="4">
+    <nav class="catalog-breadcrumb" aria-label="当前位置">
+        <a href="/">首页</a><span aria-hidden="true">/</span>
+        <a href="/products">商品</a><span aria-hidden="true">/</span>
+        <a href="/products?categoryId=1&amp;type=ALL&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6">校园地标</a>
+        <span aria-hidden="true">/</span><span>文具</span>
+        <span aria-hidden="true">/</span><span aria-current="page">STEP03 percent% under_score back\slash bang! &lt;script&gt;alert(1)&lt;/script&gt;</span>
+    </nav>
+
+    <section class="catalog-detail-main" aria-labelledby="product-heading">
+        <figure class="catalog-cover" data-cover-image>
+            <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="STEP03 percent% under_score back\slash bang! &lt;script&gt;alert(1)&lt;/script&gt;" data-image-fallback="/images/catalog-placeholder.svg">
+        </figure>
+        <div class="catalog-detail-info">
+            <p class="eyebrow">校园地标 / 文具</p>
+            <h1 id="product-heading">STEP03 percent% under_score back\slash bang! &lt;script&gt;alert(1)&lt;/script&gt;</h1>
+            <p class="muted catalog-sku">SKU：<span>CSU-LMK-NOTE-01</span></p>
+            <p class="catalog-detail-summary muted">以潇湘校区图书馆为主题的方格本。演示库初始化后可售 10 本，用于购买与补货并发验证。</p>
+            <p class="product-price detail-price">¥18.00</p>
+            <p class="stock-badge">现货 · 库存 10</p>
+            <div class="catalog-purchase-disabled" aria-labelledby="purchase-heading">
+                <!-- STEP07 接入：本步只读，不注册加购 POST，也不跳转登录。 -->
+                <h2 id="purchase-heading">选购</h2>
+                <label for="purchase-quantity">数量</label>
+                <input id="purchase-quantity" type="number" min="1" value="1" disabled aria-describedby="purchase-help">
+                <button type="button" disabled aria-describedby="purchase-help">加入购物车</button>
+                <p id="purchase-help" class="field-help">暂未开放</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel catalog-section catalog-description" aria-labelledby="description-heading">
+        <h2 id="description-heading">设计说明</h2>
+        <p class="catalog-plain-text">&lt;script&gt;fixture()&lt;/script&gt; 普通文本 &quot;双引号&quot; 与单引号</p>
+        
+    </section>
+
+    <section class="catalog-section" aria-labelledby="gallery-heading">
+        <div class="section-heading">
+            <div><h2 id="gallery-heading">商品相册</h2><p class="muted">共 <span>4</span> 张图片</p></div>
+        </div>
+        
+        <div class="catalog-gallery" data-product-gallery>
+            <figure data-image-id="1" data-image-sort="10">
+                <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="潇湘校区图书馆方格本 · 教学占位图 1" data-image-fallback="/images/catalog-placeholder.svg">
+                <figcaption class="muted">潇湘校区图书馆方格本 · 教学占位图 1</figcaption>
+            </figure>
+            <figure data-image-id="2" data-image-sort="20">
+                <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="潇湘校区图书馆方格本 · 教学占位图 2" data-image-fallback="/images/catalog-placeholder.svg">
+                <figcaption class="muted">潇湘校区图书馆方格本 · 教学占位图 2</figcaption>
+            </figure>
+            <figure data-image-id="3" data-image-sort="30">
+                <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="潇湘校区图书馆方格本 · 教学占位图 3" data-image-fallback="/images/catalog-placeholder.svg">
+                <figcaption class="muted">潇湘校区图书馆方格本 · 教学占位图 3</figcaption>
+            </figure>
+            <figure data-image-id="4" data-image-sort="40">
+                <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="潇湘校区图书馆方格本 · 教学占位图 4" data-image-fallback="/images/catalog-placeholder.svg">
+                <figcaption class="muted">潇湘校区图书馆方格本 · 教学占位图 4</figcaption>
+            </figure>
+        </div>
+    </section>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

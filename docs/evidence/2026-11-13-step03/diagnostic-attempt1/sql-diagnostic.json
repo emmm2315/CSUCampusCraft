@@ -1,0 +1,6 @@
+{
+  "query": "SET SESSION time_zone='+00:00';SELECT parent_id,code FROM category WHERE code=CONVERT(0x4c414e444d41524b5f53544154494f4e455259 USING utf8mb4);",
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "ERROR 1267 (HY000) at line 1: Illegal mix of collations (utf8mb4_0900_as_ci,IMPLICIT) and (utf8mb4_0900_ai_ci,IMPLICIT) for operation '='\r\n"
+}

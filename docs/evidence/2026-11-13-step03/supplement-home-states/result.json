@@ -1,0 +1,604 @@
+{
+  "date": "2026-11-13T15:22:08.475471+08:00",
+  "baseline_git_sha": "f9fd249b7a8c0a6ea6111133062d9e701096ef9d",
+  "tested_code_sha": "ad43f8f213d858b2d7b15b0676ed2e438051ebb2",
+  "checks": {
+    "tested-code-head": {
+      "passed": true,
+      "detail": ""
+    },
+    "feature-branch": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-user": {
+      "passed": true,
+      "detail": "Actual repository Maven Wrapper build"
+    },
+    "wrapper-build-admin": {
+      "passed": true,
+      "detail": "Actual repository Maven Wrapper build"
+    },
+    "tool-version-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-maven-pin": {
+      "passed": true,
+      "detail": "Fresh subprocess PATH excludes Maven"
+    },
+    "isolated-mysql-created": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-identity": {
+      "passed": true,
+      "detail": ""
+    },
+    "same-tested-sha-as-full-suite": {
+      "passed": true,
+      "detail": ""
+    },
+    "same-user-jar-as-full-suite": {
+      "passed": true,
+      "detail": ""
+    },
+    "same-admin-jar-as-full-suite": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-home-http": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-home-theme-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-home-theme-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-newest-section": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-newest-ids": {
+      "passed": true,
+      "detail": "[59, 58, 57]"
+    },
+    "csucampuscraft-featured-section": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-featured-ids": {
+      "passed": true,
+      "detail": "[1, 2, 3, 4]"
+    },
+    "csucampuscraft-home-graduation": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-graduation-query": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-LANDMARK_STATIONERY": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-LANDMARK_SOUVENIR": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-COLLEGE_STATIONERY": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-COLLEGE_SOUVENIR": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-CLUB_STATIONERY": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-CLUB_SOUVENIR": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-SPORTS_STATIONERY": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-SPORTS_SOUVENIR": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-GRADUATION_STATIONERY": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-GRADUATION_SOUVENIR": {
+      "passed": true,
+      "detail": ""
+    },
+    "sold-out-featured-still-visible": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-sold-out-home": {
+      "passed": true,
+      "detail": "Real Edge screenshots and DOM checks"
+    },
+    "sold-out-home-zero-app-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "sold-out-fixture-restored": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-home-http [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-home-theme-count [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-home-theme-order [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-newest-section [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-newest-ids [2]": {
+      "passed": true,
+      "detail": "[]"
+    },
+    "csucampuscraft-featured-section [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-featured-ids [2]": {
+      "passed": true,
+      "detail": "[]"
+    },
+    "csucampuscraft-home-graduation [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-graduation-query [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-LANDMARK_STATIONERY [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-LANDMARK_SOUVENIR [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-COLLEGE_STATIONERY [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-COLLEGE_SOUVENIR [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-CLUB_STATIONERY [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-CLUB_SOUVENIR [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-SPORTS_STATIONERY [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-SPORTS_SOUVENIR [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-GRADUATION_STATIONERY [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-secondary-link-GRADUATION_SOUVENIR [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-five-theme-navigation": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-distinct-product-empty-states": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-search-form-remains": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-global-status": {
+      "passed": true,
+      "detail": "Public list read"
+    },
+    "all-draft-global-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-global-count": {
+      "passed": true,
+      "detail": "0"
+    },
+    "all-draft-global-page": {
+      "passed": true,
+      "detail": "1"
+    },
+    "all-draft-global-size": {
+      "passed": true,
+      "detail": "6"
+    },
+    "all-draft-global-query-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-global-ids": {
+      "passed": true,
+      "detail": "{'actual': [], 'expected': []}"
+    },
+    "all-draft-global-type-link-ALL": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-global-type-link-STATIONERY": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-global-type-link-SOUVENIR": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-global-read-form-68": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-global-form-prefill": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-search-status": {
+      "passed": true,
+      "detail": "Public list read"
+    },
+    "all-draft-search-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-search-count": {
+      "passed": true,
+      "detail": "0"
+    },
+    "all-draft-search-page": {
+      "passed": true,
+      "detail": "1"
+    },
+    "all-draft-search-size": {
+      "passed": true,
+      "detail": "6"
+    },
+    "all-draft-search-query-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-search-ids": {
+      "passed": true,
+      "detail": "{'actual': [], 'expected': []}"
+    },
+    "all-draft-search-type-link-ALL": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-search-type-link-STATIONERY": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-search-type-link-SOUVENIR": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-search-read-form-80": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-search-form-prefill": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-1-status": {
+      "passed": true,
+      "detail": "Public list read"
+    },
+    "all-draft-theme-1-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-1-count": {
+      "passed": true,
+      "detail": "0"
+    },
+    "all-draft-theme-1-page": {
+      "passed": true,
+      "detail": "1"
+    },
+    "all-draft-theme-1-size": {
+      "passed": true,
+      "detail": "6"
+    },
+    "all-draft-theme-1-query-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-1-ids": {
+      "passed": true,
+      "detail": "{'actual': [], 'expected': []}"
+    },
+    "all-draft-theme-1-type-link-ALL": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-theme-1-type-link-STATIONERY": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-theme-1-type-link-SOUVENIR": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-theme-1-read-form-92": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-1-form-prefill": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-2-status": {
+      "passed": true,
+      "detail": "Public list read"
+    },
+    "all-draft-theme-2-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-2-count": {
+      "passed": true,
+      "detail": "0"
+    },
+    "all-draft-theme-2-page": {
+      "passed": true,
+      "detail": "1"
+    },
+    "all-draft-theme-2-size": {
+      "passed": true,
+      "detail": "6"
+    },
+    "all-draft-theme-2-query-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-2-ids": {
+      "passed": true,
+      "detail": "{'actual': [], 'expected': []}"
+    },
+    "all-draft-theme-2-type-link-ALL": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-theme-2-type-link-STATIONERY": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-theme-2-type-link-SOUVENIR": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-theme-2-read-form-104": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-2-form-prefill": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-3-status": {
+      "passed": true,
+      "detail": "Public list read"
+    },
+    "all-draft-theme-3-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-3-count": {
+      "passed": true,
+      "detail": "0"
+    },
+    "all-draft-theme-3-page": {
+      "passed": true,
+      "detail": "1"
+    },
+    "all-draft-theme-3-size": {
+      "passed": true,
+      "detail": "6"
+    },
+    "all-draft-theme-3-query-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-3-ids": {
+      "passed": true,
+      "detail": "{'actual': [], 'expected': []}"
+    },
+    "all-draft-theme-3-type-link-ALL": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-theme-3-type-link-STATIONERY": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-theme-3-type-link-SOUVENIR": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-theme-3-read-form-116": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-3-form-prefill": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-4-status": {
+      "passed": true,
+      "detail": "Public list read"
+    },
+    "all-draft-theme-4-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-4-count": {
+      "passed": true,
+      "detail": "0"
+    },
+    "all-draft-theme-4-page": {
+      "passed": true,
+      "detail": "1"
+    },
+    "all-draft-theme-4-size": {
+      "passed": true,
+      "detail": "6"
+    },
+    "all-draft-theme-4-query-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-4-ids": {
+      "passed": true,
+      "detail": "{'actual': [], 'expected': []}"
+    },
+    "all-draft-theme-4-type-link-ALL": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-theme-4-type-link-STATIONERY": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-theme-4-type-link-SOUVENIR": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-theme-4-read-form-128": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-4-form-prefill": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-5-status": {
+      "passed": true,
+      "detail": "Public list read"
+    },
+    "all-draft-theme-5-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-5-count": {
+      "passed": true,
+      "detail": "0"
+    },
+    "all-draft-theme-5-page": {
+      "passed": true,
+      "detail": "1"
+    },
+    "all-draft-theme-5-size": {
+      "passed": true,
+      "detail": "6"
+    },
+    "all-draft-theme-5-query-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-5-ids": {
+      "passed": true,
+      "detail": "{'actual': [], 'expected': []}"
+    },
+    "all-draft-theme-5-type-link-ALL": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-theme-5-type-link-STATIONERY": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-theme-5-type-link-SOUVENIR": {
+      "passed": true,
+      "detail": "Switch type resets page and retains theme, keyword, sort and size"
+    },
+    "all-draft-theme-5-read-form-140": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-draft-theme-5-form-prefill": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-all-draft-home": {
+      "passed": true,
+      "detail": "Real Edge screenshots and DOM checks"
+    },
+    "all-draft-home-zero-app-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-supplement-fixtures-restored": {
+      "passed": true,
+      "detail": ""
+    },
+    "supplement-source-inputs-stable": {
+      "passed": true,
+      "detail": ""
+    }
+  },
+  "source_state": "exact implementation commit; documentation/evidence committed separately",
+  "branch": "feat/step03-catalog",
+  "runtime_manifest_sha256": "11411de4bf1e1a1901d8619900dc14529266f431f021b2314e27bca54963b03d",
+  "runtime_file_count": 85,
+  "wrapper_version_without_maven_path": "3.9.16",
+  "csucampuscraft-user_jar_sha256": "823be44b372a9964055139181a05d0b6dc1c9fee7e950800910315f2f1bd5cf2",
+  "csucampuscraft-admin_jar_sha256": "79674db7f65c97fc638b54009fc304fa2114c095013ecf073a5009281c541696",
+  "mysql_version": "8.4.9",
+  "mysql_port": 61857,
+  "overall": "PASS",
+  "scope": "Additional two home states only; does not replace full attempt3",
+  "full_suite_attempt": "attempt3",
+  "tracked_processes_stopped": true
+}

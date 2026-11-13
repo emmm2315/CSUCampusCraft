@@ -1,0 +1,11 @@
+Exception in thread "main" org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'likePattern' in 'class org.csucampuscraft.storefront.catalog.CatalogQuery'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:385)
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:160)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:156)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:50)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:115)
+	at org.apache.ibatis.reflection.wrapper.BaseWrapper.getChildValue(BaseWrapper.java:121)
+	at org.apache.ibatis.reflection.wrapper.MapWrapper.get(MapWrapper.java:42)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:115)
+	at org.apache.ibatis.scripting.defaults.DefaultParameterHandler.setParameters(DefaultParameterHandler.java:82)
+	at PatternBindingSmoke.main(PatternBindingSmoke.java:23)

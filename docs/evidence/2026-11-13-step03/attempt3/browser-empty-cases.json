@@ -1,0 +1,20 @@
+[
+  {
+    "name": "empty-home",
+    "path": "/",
+    "kind": "home",
+    "status": 200
+  },
+  {
+    "name": "empty-products",
+    "path": "/products",
+    "kind": "list",
+    "status": 200
+  },
+  {
+    "name": "empty-detail",
+    "path": "/products/1",
+    "kind": "error",
+    "status": 404
+  }
+]

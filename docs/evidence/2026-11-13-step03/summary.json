@@ -1,0 +1,50 @@
+{
+  "final_attempt": "attempt3",
+  "attempts": [
+    {
+      "attempt": "attempt1",
+      "overall": "FAIL",
+      "tested_code_sha": "68244c371e5522f590d340459b7e4b679cc2abac",
+      "checks": 39,
+      "passed": 39,
+      "http_records": 4,
+      "error": "RuntimeError: Isolated SQL command failed; see command exit status",
+      "tracked_processes_stopped": true
+    },
+    {
+      "attempt": "attempt2",
+      "overall": "FAIL",
+      "tested_code_sha": "68244c371e5522f590d340459b7e4b679cc2abac",
+      "checks": 90,
+      "passed": 89,
+      "http_records": 19,
+      "error": "AssertionError: unicode-keyword-length120-status",
+      "tracked_processes_stopped": true
+    },
+    {
+      "attempt": "attempt3",
+      "overall": "PASS",
+      "tested_code_sha": "ad43f8f213d858b2d7b15b0676ed2e438051ebb2",
+      "checks": 964,
+      "passed": 964,
+      "http_records": 88,
+      "error": null,
+      "tracked_processes_stopped": true
+    }
+  ],
+  "final_screenshots": 62,
+  "supplements": [
+    {
+      "name": "supplement-home-states",
+      "overall": "PASS",
+      "tested_code_sha": "ad43f8f213d858b2d7b15b0676ed2e438051ebb2",
+      "checks": 146,
+      "passed": 146,
+      "http_records": 9,
+      "screenshots": 4,
+      "mysql_port": 61857,
+      "tracked_processes_stopped": true,
+      "scope": "Additional two home states only; does not replace full attempt3"
+    }
+  ]
+}

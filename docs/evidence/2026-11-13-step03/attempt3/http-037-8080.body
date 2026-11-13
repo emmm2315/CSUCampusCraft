@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>商品目录 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="user">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <span class="app-label">用户端</span>
+            <span class="nav-placeholder" aria-label="购物车，0 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="0">0</span>
+            </span>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div class="catalog-list-page" data-page-id="U02" data-product-count="11" data-result-count="11" data-page="1" data-page-size="50" data-size="50" data-category-id="3" data-type="ALL" data-sort="DEFAULT">
+    <nav class="catalog-breadcrumb" aria-label="当前位置">
+        <a href="/">首页</a><span aria-hidden="true">/</span><span aria-current="page">商品目录</span>
+    </nav>
+    <header class="page-heading">
+        <p class="eyebrow">校园文创</p>
+        <h1>社团活动</h1>
+        <p class="muted">浏览文具与纪念周边，按主题、名称或类型筛选。</p>
+    </header>
+
+    <section class="panel catalog-filter-panel" aria-labelledby="filter-heading">
+        <h2 id="filter-heading">筛选商品</h2>
+        <form class="catalog-filter-form" method="get" action="/products">
+            <div class="form-field">
+                <label for="catalog-theme">校园主题</label>
+                <select id="catalog-theme" name="categoryId">
+                    <option value="">全部主题</option>
+                    <option value="1">校园地标</option>
+                    <option value="2">学院风采</option>
+                    <option value="3"
+                            selected="selected">社团活动</option>
+                    <option value="4">校园运动</option>
+                    <option value="5">毕业纪念</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for="catalog-type">商品类型</label>
+                <select id="catalog-type" name="type">
+                    <option value="ALL" selected="selected">全部</option>
+                    <option value="STATIONERY">文具</option>
+                    <option value="SOUVENIR">纪念周边</option>
+                </select>
+            </div>
+            <div class="form-field catalog-query-field">
+                <label for="catalog-query">商品名称</label>
+                <input id="catalog-query" type="search" name="q" value="" placeholder="按名称搜索" aria-describedby="catalog-query-help">
+                <p id="catalog-query-help" class="field-help">最多 120 个字符</p>
+            </div>
+            <div class="form-field">
+                <label for="catalog-sort">排序方式</label>
+                <select id="catalog-sort" name="sort">
+                    <option value="DEFAULT" selected="selected">默认</option>
+                    <option value="PRICE_ASC">价格从低到高</option>
+                    <option value="PRICE_DESC">价格从高到低</option>
+                    <option value="NEWEST">最新商品</option>
+                </select>
+            </div>
+            <div class="form-field catalog-size-field">
+                <label for="catalog-size">每页条数</label>
+                <input id="catalog-size" type="number" name="size" min="1" max="50" step="1" value="50">
+            </div>
+            <input type="hidden" name="page" value="1">
+            <div class="catalog-filter-actions">
+                <button type="submit">查询商品</button>
+                <a class="button button-secondary"
+                   href="/products?categoryId=3&amp;type=ALL&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=50">清除名称和类型</a>
+            </div>
+        </form>
+    </section>
+
+    <div class="catalog-results-heading">
+        <p class="muted">共 <strong>11</strong> 件商品<span>，第 <span>1</span> 页 / 共 <span>1</span> 页</span></p>
+        <nav class="catalog-type-tabs" aria-label="商品类型">
+    <a href="/products?categoryId=3&amp;type=ALL&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=50" aria-current="page" data-type-link="ALL">全部</a>
+    <a href="/products?categoryId=3&amp;type=STATIONERY&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=50" data-type-link="STATIONERY">文具</a>
+    <a href="/products?categoryId=3&amp;type=SOUVENIR&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=50" data-type-link="SOUVENIR">纪念周边</a>
+</nav>
+    </div>
+
+    
+    <div class="catalog-grid" data-product-list>
+        <article class="product-card" data-product-id="25" data-product-sku="CSU-CLB-FOLDER-01" data-product-price="11.90" data-product-stock="30" data-price="11.90" data-stock="30" data-sort-order="250" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/25" aria-label="查看 社团招新文件夹">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="社团招新文件夹" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-CLB-FOLDER-01</p>
+        <h3><a href="/products/25">社团招新文件夹</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为社团招新文件夹。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥11.90</p>
+            <span class="stock-badge">库存 30</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="26" data-product-sku="CSU-CLB-NOTE-01" data-product-price="21.00" data-product-stock="29" data-price="21.00" data-stock="29" data-sort-order="260" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/26" aria-label="查看 校园摄影手账本">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="校园摄影手账本" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-CLB-NOTE-01</p>
+        <h3><a href="/products/26">校园摄影手账本</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为校园摄影手账本。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥21.00</p>
+            <span class="stock-badge">库存 29</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="27" data-product-sku="CSU-CLB-NOTE-02" data-product-price="16.90" data-product-stock="15" data-price="16.90" data-stock="15" data-sort-order="270" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/27" aria-label="查看 校园乐队练习记事本">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="校园乐队练习记事本" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-CLB-NOTE-02</p>
+        <h3><a href="/products/27">校园乐队练习记事本</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为校园乐队练习记事本。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥16.90</p>
+            <span class="stock-badge">库存 15</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="28" data-product-sku="CSU-CLB-MEMO-01" data-product-price="8.90" data-product-stock="35" data-price="8.90" data-stock="35" data-sort-order="280" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/28" aria-label="查看 校园志愿活动便利贴">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="校园志愿活动便利贴" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-CLB-MEMO-01</p>
+        <h3><a href="/products/28">校园志愿活动便利贴</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为校园志愿活动便利贴。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥8.90</p>
+            <span class="stock-badge">库存 35</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="29" data-product-sku="CSU-CLB-BOOKMARK-01" data-product-price="6.90" data-product-stock="0" data-price="6.90" data-stock="0" data-sort-order="290" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/29" aria-label="查看 社团读书会纸质书签">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="社团读书会纸质书签" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-CLB-BOOKMARK-01</p>
+        <h3><a href="/products/29">社团读书会纸质书签</a></h3>
+        <p class="product-card-summary muted">上架售罄示例。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥6.90</p>
+            <span class="stock-badge stock-sold-out">售罄</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="31" data-product-sku="CSU-CLB-KEY-01" data-product-price="14.00" data-product-stock="21" data-price="14.00" data-stock="21" data-sort-order="310" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/31" aria-label="查看 摄影主题钥匙扣">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="摄影主题钥匙扣" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-CLB-KEY-01</p>
+        <h3><a href="/products/31">摄影主题钥匙扣</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为摄影主题钥匙扣。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥14.00</p>
+            <span class="stock-badge">库存 21</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="32" data-product-sku="CSU-CLB-PIN-01" data-product-price="15.00" data-product-stock="19" data-price="15.00" data-stock="19" data-sort-order="320" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/32" aria-label="查看 校园乐队主题徽章">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="校园乐队主题徽章" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-CLB-PIN-01</p>
+        <h3><a href="/products/32">校园乐队主题徽章</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为校园乐队主题徽章。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥15.00</p>
+            <span class="stock-badge">库存 19</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="33" data-product-sku="CSU-CLB-CARDS-01" data-product-price="18.00" data-product-stock="13" data-price="18.00" data-stock="13" data-sort-order="330" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/33" aria-label="查看 社团活动主题明信片套装">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="社团活动主题明信片套装" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-CLB-CARDS-01</p>
+        <h3><a href="/products/33">社团活动主题明信片套装</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为社团活动主题明信片套装。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥18.00</p>
+            <span class="stock-badge">库存 13</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="34" data-product-sku="CSU-CLB-STICKER-01" data-product-price="9.90" data-product-stock="24" data-price="9.90" data-stock="24" data-sort-order="340" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/34" aria-label="查看 校园舞台贴纸套装">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="校园舞台贴纸套装" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-CLB-STICKER-01</p>
+        <h3><a href="/products/34">校园舞台贴纸套装</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为校园舞台贴纸套装。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥9.90</p>
+            <span class="stock-badge">库存 24</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="35" data-product-sku="CSU-CLB-MAGNET-01" data-product-price="21.00" data-product-stock="9" data-price="21.00" data-stock="9" data-sort-order="350" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/35" aria-label="查看 摄影取景框冰箱贴">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="摄影取景框冰箱贴" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-CLB-MAGNET-01</p>
+        <h3><a href="/products/35">摄影取景框冰箱贴</a></h3>
+        <p class="product-card-summary muted">校园文创课程样品。设计主题为摄影取景框冰箱贴。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥21.00</p>
+            <span class="stock-badge">库存 9</span>
+        </div>
+    </div>
+</article><article class="product-card" data-product-id="36" data-product-sku="CSU-CLB-STAND-01" data-product-price="29.00" data-product-stock="7" data-price="29.00" data-stock="7" data-sort-order="360" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/36" aria-label="查看 校园演出亚克力立牌">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/demo-missing.svg" alt="校园演出亚克力立牌" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-CLB-STAND-01</p>
+        <h3><a href="/products/36">校园演出亚克力立牌</a></h3>
+        <p class="product-card-summary muted">覆盖封面资源缺失的教学场景，页面应回退到默认占位图。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥29.00</p>
+            <span class="stock-badge">库存 7</span>
+        </div>
+    </div>
+</article>
+    </div>
+
+    <nav class="catalog-pagination" aria-label="商品分页">
+        
+        <span class="pagination-disabled" aria-disabled="true">上一页</span>
+        <span class="pagination-position">第 <strong>1</strong> 页 / 共 <span>1</span> 页</span>
+        
+        <span class="pagination-disabled" aria-disabled="true">下一页</span>
+    </nav>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

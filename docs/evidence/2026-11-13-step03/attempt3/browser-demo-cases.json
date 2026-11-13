@@ -1,0 +1,144 @@
+[
+  {
+    "name": "home",
+    "path": "/",
+    "kind": "home",
+    "status": 200
+  },
+  {
+    "name": "products",
+    "path": "/products",
+    "kind": "list",
+    "status": 200
+  },
+  {
+    "name": "combined",
+    "path": "/products?categoryId=5&type=STATIONERY&q=%E6%AF%95%E4%B8%9A&sort=PRICE_ASC&size=2",
+    "kind": "list",
+    "status": 200
+  },
+  {
+    "name": "pagination",
+    "path": "/products?page=2&size=6",
+    "kind": "list",
+    "status": 200
+  },
+  {
+    "name": "out-of-range",
+    "path": "/products?page=9223372036854775807",
+    "kind": "list",
+    "status": 200
+  },
+  {
+    "name": "unknown-category",
+    "path": "/products?categoryId=999999",
+    "kind": "error",
+    "status": 404
+  },
+  {
+    "name": "secondary-category",
+    "path": "/products?categoryId=101",
+    "kind": "error",
+    "status": 404
+  },
+  {
+    "name": "draft",
+    "path": "/products/30",
+    "kind": "error",
+    "status": 404
+  },
+  {
+    "name": "sold-out",
+    "path": "/products/47",
+    "kind": "detail",
+    "status": 200,
+    "placeholder": true
+  },
+  {
+    "name": "gift-box",
+    "path": "/products/56",
+    "kind": "detail",
+    "status": 200,
+    "placeholder": true
+  },
+  {
+    "name": "no-album",
+    "path": "/products/5",
+    "kind": "detail",
+    "status": 200,
+    "placeholder": true
+  },
+  {
+    "name": "missing-cover",
+    "path": "/products/36",
+    "kind": "detail",
+    "status": 200,
+    "placeholder": true
+  },
+  {
+    "name": "sort-default",
+    "path": "/products?sort=DEFAULT",
+    "kind": "list",
+    "status": 200
+  },
+  {
+    "name": "sort-price_asc",
+    "path": "/products?sort=PRICE_ASC",
+    "kind": "list",
+    "status": 200
+  },
+  {
+    "name": "sort-price_desc",
+    "path": "/products?sort=PRICE_DESC",
+    "kind": "list",
+    "status": 200
+  },
+  {
+    "name": "sort-newest",
+    "path": "/products?sort=NEWEST",
+    "kind": "list",
+    "status": 200
+  },
+  {
+    "name": "invalid-type",
+    "path": "/products?type=INVALID",
+    "kind": "error",
+    "status": 400
+  },
+  {
+    "name": "invalid-sort",
+    "path": "/products?sort=INVALID",
+    "kind": "error",
+    "status": 400
+  },
+  {
+    "name": "invalid-size",
+    "path": "/products?size=51",
+    "kind": "error",
+    "status": 400
+  },
+  {
+    "name": "invalid-page",
+    "path": "/products?page=wrong",
+    "kind": "error",
+    "status": 400
+  },
+  {
+    "name": "graduation-all",
+    "path": "/products?categoryId=5&type=ALL&q=%E6%AF%95%E4%B8%9A&page=2&size=1",
+    "kind": "list",
+    "status": 200
+  },
+  {
+    "name": "graduation-stationery",
+    "path": "/products?categoryId=5&type=STATIONERY&q=%E6%AF%95%E4%B8%9A&page=2&size=1",
+    "kind": "list",
+    "status": 200
+  },
+  {
+    "name": "graduation-souvenir",
+    "path": "/products?categoryId=5&type=SOUVENIR&q=%E6%AF%95%E4%B8%9A&page=2&size=1",
+    "kind": "list",
+    "status": 200
+  }
+]

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>商品目录 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="user">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <span class="app-label">用户端</span>
+            <span class="nav-placeholder" aria-label="购物车，0 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="0">0</span>
+            </span>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div class="catalog-list-page" data-page-id="U02" data-product-count="1" data-result-count="1" data-page="1" data-page-size="6" data-size="6" data-type="ALL" data-sort="DEFAULT">
+    <nav class="catalog-breadcrumb" aria-label="当前位置">
+        <a href="/">首页</a><span aria-hidden="true">/</span><span aria-current="page">商品目录</span>
+    </nav>
+    <header class="page-heading">
+        <p class="eyebrow">校园文创</p>
+        <h1>全部商品</h1>
+        <p class="muted">浏览文具与纪念周边，按主题、名称或类型筛选。</p>
+    </header>
+
+    <section class="panel catalog-filter-panel" aria-labelledby="filter-heading">
+        <h2 id="filter-heading">筛选商品</h2>
+        <form class="catalog-filter-form" method="get" action="/products">
+            <div class="form-field">
+                <label for="catalog-theme">校园主题</label>
+                <select id="catalog-theme" name="categoryId">
+                    <option value="" selected="selected">全部主题</option>
+                    <option value="1">校园地标</option>
+                    <option value="2">学院风采</option>
+                    <option value="3">社团活动</option>
+                    <option value="4">校园运动</option>
+                    <option value="5">毕业纪念</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for="catalog-type">商品类型</label>
+                <select id="catalog-type" name="type">
+                    <option value="ALL" selected="selected">全部</option>
+                    <option value="STATIONERY">文具</option>
+                    <option value="SOUVENIR">纪念周边</option>
+                </select>
+            </div>
+            <div class="form-field catalog-query-field">
+                <label for="catalog-query">商品名称</label>
+                <input id="catalog-query" type="search" name="q" value="%" placeholder="按名称搜索" aria-describedby="catalog-query-help">
+                <p id="catalog-query-help" class="field-help">最多 120 个字符</p>
+            </div>
+            <div class="form-field">
+                <label for="catalog-sort">排序方式</label>
+                <select id="catalog-sort" name="sort">
+                    <option value="DEFAULT" selected="selected">默认</option>
+                    <option value="PRICE_ASC">价格从低到高</option>
+                    <option value="PRICE_DESC">价格从高到低</option>
+                    <option value="NEWEST">最新商品</option>
+                </select>
+            </div>
+            <div class="form-field catalog-size-field">
+                <label for="catalog-size">每页条数</label>
+                <input id="catalog-size" type="number" name="size" min="1" max="50" step="1" value="6">
+            </div>
+            <input type="hidden" name="page" value="1">
+            <div class="catalog-filter-actions">
+                <button type="submit">查询商品</button>
+                <a class="button button-secondary"
+                   href="/products?categoryId=&amp;type=ALL&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6">清除名称和类型</a>
+            </div>
+        </form>
+    </section>
+
+    <div class="catalog-results-heading">
+        <p class="muted">共 <strong>1</strong> 件商品<span>，第 <span>1</span> 页 / 共 <span>1</span> 页</span></p>
+        <nav class="catalog-type-tabs" aria-label="商品类型">
+    <a href="/products?categoryId=&amp;type=ALL&amp;q=%25&amp;sort=DEFAULT&amp;page=1&amp;size=6" aria-current="page" data-type-link="ALL">全部</a>
+    <a href="/products?categoryId=&amp;type=STATIONERY&amp;q=%25&amp;sort=DEFAULT&amp;page=1&amp;size=6" data-type-link="STATIONERY">文具</a>
+    <a href="/products?categoryId=&amp;type=SOUVENIR&amp;q=%25&amp;sort=DEFAULT&amp;page=1&amp;size=6" data-type-link="SOUVENIR">纪念周边</a>
+</nav>
+    </div>
+
+    
+    <div class="catalog-grid" data-product-list>
+        <article class="product-card" data-product-id="1" data-product-sku="CSU-LMK-NOTE-01" data-product-price="18.00" data-product-stock="10" data-price="18.00" data-stock="10" data-sort-order="10" data-created-at="2026-11-13T07:16:55.773516">
+    <a class="product-card-image" href="/products/1" aria-label="查看 STEP03 percent% under_score back\slash bang! &lt;script&gt;alert(1)&lt;/script&gt;">
+        <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="STEP03 percent% under_score back\slash bang! &lt;script&gt;alert(1)&lt;/script&gt;" data-image-fallback="/images/catalog-placeholder.svg">
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted">CSU-LMK-NOTE-01</p>
+        <h3><a href="/products/1">STEP03 percent% under_score back\slash bang! &lt;script&gt;alert(1)&lt;/script&gt;</a></h3>
+        <p class="product-card-summary muted">以潇湘校区图书馆为主题的方格本。演示库初始化后可售 10 本，用于购买与补货并发验证。</p>
+        <div class="product-card-meta">
+            <p class="product-price">¥18.00</p>
+            <span class="stock-badge">库存 10</span>
+        </div>
+    </div>
+</article>
+    </div>
+
+    <nav class="catalog-pagination" aria-label="商品分页">
+        
+        <span class="pagination-disabled" aria-disabled="true">上一页</span>
+        <span class="pagination-position">第 <strong>1</strong> 页 / 共 <span>1</span> 页</span>
+        
+        <span class="pagination-disabled" aria-disabled="true">下一页</span>
+    </nav>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,175 @@
+{
+  "date": "2026-11-13T15:07:09.531487+08:00",
+  "baseline_git_sha": "f9fd249b7a8c0a6ea6111133062d9e701096ef9d",
+  "tested_code_sha": "68244c371e5522f590d340459b7e4b679cc2abac",
+  "checks": {
+    "tested-code-head": {
+      "passed": true,
+      "detail": ""
+    },
+    "feature-branch": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-user": {
+      "passed": true,
+      "detail": "Actual repository Maven Wrapper build"
+    },
+    "wrapper-build-admin": {
+      "passed": true,
+      "detail": "Actual repository Maven Wrapper build"
+    },
+    "tool-version-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-maven-pin": {
+      "passed": true,
+      "detail": "Fresh subprocess PATH excludes Maven"
+    },
+    "isolated-mysql-created": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-identity": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-physical-product-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-visible-product-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-draft-product-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft_structure-home-http": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft_structure-home-theme-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft_structure-home-theme-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft_structure-newest-section": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft_structure-newest-ids": {
+      "passed": true,
+      "detail": "[]"
+    },
+    "csucampuscraft_structure-featured-section": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft_structure-featured-ids": {
+      "passed": true,
+      "detail": "[]"
+    },
+    "csucampuscraft_structure-home-graduation": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-default-status": {
+      "passed": true,
+      "detail": "Public list read"
+    },
+    "empty-default-markers": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-default-count": {
+      "passed": true,
+      "detail": "0"
+    },
+    "empty-default-page": {
+      "passed": true,
+      "detail": "1"
+    },
+    "empty-default-size": {
+      "passed": true,
+      "detail": "6"
+    },
+    "empty-default-ids": {
+      "passed": true,
+      "detail": "{'actual': [], 'expected': []}"
+    },
+    "empty-default-read-form-27": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-detail-404": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-empty": {
+      "passed": true,
+      "detail": "Real Edge screenshots and DOM checks"
+    },
+    "csucampuscraft-home-http": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-home-theme-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-home-theme-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-newest-section": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-newest-ids": {
+      "passed": true,
+      "detail": "[59, 58, 57]"
+    },
+    "csucampuscraft-featured-section": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-featured-ids": {
+      "passed": true,
+      "detail": "[1, 2, 3, 4]"
+    },
+    "csucampuscraft-home-graduation": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-graduation-query": {
+      "passed": true,
+      "detail": ""
+    }
+  },
+  "source_state": "exact implementation commit; documentation/evidence committed separately",
+  "branch": "feat/step03-catalog",
+  "runtime_manifest_sha256": "e62fce9ccb11b869d9bef4b72d99f9871acb195f78e19556d4a768287fe56d7b",
+  "runtime_file_count": 85,
+  "wrapper_version_without_maven_path": "3.9.16",
+  "csucampuscraft-user_jar_sha256": "63b8c9d1e4009d7faf089c2ff1e13e224facfa71449ee212247a8c1450bd4d48",
+  "csucampuscraft-admin_jar_sha256": "79674db7f65c97fc638b54009fc304fa2114c095013ecf073a5009281c541696",
+  "mysql_version": "8.4.9",
+  "mysql_port": 53412,
+  "overall": "FAIL",
+  "error": "RuntimeError: Isolated SQL command failed; see command exit status",
+  "tracked_processes_stopped": true
+}
