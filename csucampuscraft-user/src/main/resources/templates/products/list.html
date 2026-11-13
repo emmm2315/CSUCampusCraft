@@ -36,7 +36,8 @@
             </div>
             <div class="form-field catalog-query-field">
                 <label for="catalog-query">商品名称</label>
-                <input id="catalog-query" type="search" name="q" maxlength="120" th:value="${query.q}" placeholder="按名称搜索">
+                <input id="catalog-query" type="search" name="q" th:value="${query.q}" placeholder="按名称搜索" aria-describedby="catalog-query-help">
+                <p id="catalog-query-help" class="field-help">最多 120 个字符</p>
             </div>
             <div class="form-field">
                 <label for="catalog-sort">排序方式</label>

@@ -18,12 +18,13 @@ public interface ProductMapper {
             """;
     /** Shared verbatim by count and list; all values remain prepared parameters. */
     String PUBLIC_WHERE = """
+             <bind name="likePattern" value="query.getLikePattern()"/>
              WHERE p.status = 'ON_SALE'
              <if test="query.categoryId != null">AND t.id = #{query.categoryId}</if>
              <if test="query.type.suffix != null">
                  AND RIGHT(c.code, #{query.type.suffixLength}) = #{query.type.suffix}
              </if>
-             <if test="query.likePattern != null">AND p.name LIKE #{query.likePattern} ESCAPE '!'</if>
+             <if test="likePattern != null">AND p.name LIKE #{likePattern} ESCAPE '!'</if>
             """;
 
     @Select("<script>SELECT COUNT(*) " + PUBLIC_FROM + PUBLIC_WHERE + "</script>")

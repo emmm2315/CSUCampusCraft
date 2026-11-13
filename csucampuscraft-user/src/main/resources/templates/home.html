@@ -13,9 +13,10 @@
         <form class="catalog-search" method="get" th:action="@{/products}" role="search">
             <label for="home-query">搜索校园文创</label>
             <div class="catalog-search-controls">
-                <input id="home-query" type="search" name="q" maxlength="120" placeholder="输入商品名称">
+                <input id="home-query" type="search" name="q" placeholder="输入商品名称" aria-describedby="home-query-help">
                 <button type="submit">搜索</button>
             </div>
+            <p id="home-query-help" class="field-help">最多 120 个字符</p>
         </form>
     </header>
 
