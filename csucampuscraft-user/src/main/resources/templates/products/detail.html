@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page(${product.name + ' · CSUCampusCraft'}, ~{::mainContent})}">
+<head><title>商品详情</title></head>
+<body>
+<div th:fragment="mainContent" class="catalog-detail-page" data-page-id="U03"
+     th:attr="data-product-id=${product.id},data-product-sku=${product.sku},data-price=${product.price},data-stock=${product.stock},data-gallery-count=${#lists.size(images)}">
+    <nav class="catalog-breadcrumb" aria-label="当前位置">
+        <a th:href="@{/}">首页</a><span aria-hidden="true">/</span>
+        <a th:href="@{/products}">商品</a><span aria-hidden="true">/</span>
+        <a th:href="@{/products(categoryId=${theme.id},type='ALL',q='',sort='DEFAULT',page=1,size=6)}" th:text="${theme.name}">一级主题</a>
+        <span aria-hidden="true">/</span><span th:text="${category.name}">二级分类</span>
+        <span aria-hidden="true">/</span><span aria-current="page" th:text="${product.name}">商品名称</span>
+    </nav>
+
+    <section class="catalog-detail-main" aria-labelledby="product-heading">
+        <figure class="catalog-cover" data-cover-image>
+            <th:block th:replace="~{fragments/images :: image(${product.coverImage},${product.name})}"></th:block>
+        </figure>
+        <div class="catalog-detail-info">
+            <p class="eyebrow" th:text="${theme.name + ' / ' + category.name}">校园文创</p>
+            <h1 id="product-heading" th:text="${product.name}">商品名称</h1>
+            <p class="muted catalog-sku">SKU：<span th:text="${product.sku}">SKU</span></p>
+            <p class="catalog-detail-summary muted" th:if="${!#strings.isEmpty(product.summary)}" th:text="${product.summary}">商品简介</p>
+            <p class="product-price detail-price" th:text="${'¥' + #numbers.formatDecimal(product.price,1,'NONE',2,'POINT')}">¥0.00</p>
+            <p class="stock-badge" th:classappend="${product.stock == 0 ? 'stock-sold-out' : ''}"
+               th:text="${product.stock == 0 ? '售罄 · 库存 0' : '现货 · 库存 ' + product.stock}">库存</p>
+            <div class="catalog-purchase-disabled" aria-labelledby="purchase-heading">
+                <!-- STEP07 接入：本步只读，不注册加购 POST，也不跳转登录。 -->
+                <h2 id="purchase-heading">选购</h2>
+                <label for="purchase-quantity">数量</label>
+                <input id="purchase-quantity" type="number" min="1" value="1" disabled aria-describedby="purchase-help">
+                <button type="button" disabled aria-describedby="purchase-help">加入购物车</button>
+                <p id="purchase-help" class="field-help">暂未开放</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel catalog-section catalog-description" aria-labelledby="description-heading">
+        <h2 id="description-heading">设计说明</h2>
+        <p class="catalog-plain-text" th:if="${!#strings.isEmpty(product.description)}" th:text="${product.description}">商品设计说明</p>
+        <p class="muted" th:if="${#strings.isEmpty(product.description)}">暂无设计说明。</p>
+    </section>
+
+    <section class="catalog-section" aria-labelledby="gallery-heading">
+        <div class="section-heading">
+            <div><h2 id="gallery-heading">商品相册</h2><p class="muted">共 <span th:text="${#lists.size(images)}">0</span> 张图片</p></div>
+        </div>
+        <p class="empty-state" th:if="${#lists.isEmpty(images)}" data-gallery-empty>暂无相册，当前显示商品封面。</p>
+        <div class="catalog-gallery" data-product-gallery>
+            <figure th:each="imageItem : ${images}"
+                    th:attr="data-image-id=${imageItem.id},data-image-sort=${imageItem.sortOrder}">
+                <th:block th:replace="~{fragments/images :: image(${imageItem.imagePath},${imageItem.altText ?: product.name})}"></th:block>
+                <figcaption class="muted" th:text="${imageItem.altText ?: product.name}">商品图片</figcaption>
+            </figure>
+        </div>
+    </section>
+</div>
+</body>
+</html>

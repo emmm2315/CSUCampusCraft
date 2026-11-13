@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<body>
+<article th:fragment="productCard(item)" class="product-card"
+         th:attr="data-product-id=${item.id},data-product-sku=${item.sku},data-product-price=${item.price},data-product-stock=${item.stock},data-price=${item.price},data-stock=${item.stock},data-sort-order=${item.sortOrder},data-created-at=${item.createdAt}">
+    <a class="product-card-image" th:href="@{/products/{id}(id=${item.id})}"
+       th:attr="aria-label=${'查看 ' + item.name}">
+        <th:block th:replace="~{fragments/images :: image(${item.coverImage},${item.name})}"></th:block>
+    </a>
+    <div class="product-card-body">
+        <p class="product-card-sku muted" th:text="${item.sku}">SKU</p>
+        <h3><a th:href="@{/products/{id}(id=${item.id})}" th:text="${item.name}">校园文创商品</a></h3>
+        <p class="product-card-summary muted" th:if="${!#strings.isEmpty(item.summary)}" th:text="${item.summary}">商品介绍</p>
+        <div class="product-card-meta">
+            <p class="product-price" th:text="${'¥' + #numbers.formatDecimal(item.price,1,'NONE',2,'POINT')}">¥0.00</p>
+            <span class="stock-badge" th:classappend="${item.stock == 0 ? 'stock-sold-out' : ''}"
+                  th:text="${item.stock == 0 ? '售罄' : '库存 ' + item.stock}">库存</span>
+        </div>
+    </div>
+</article>
+<nav th:fragment="typeTabs(query)" class="catalog-type-tabs" aria-label="商品类型">
+    <a th:href="@{/products(categoryId=${query.categoryId},type='ALL',q=${query.q},sort=${query.sort.name()},page=1,size=${query.size})}"
+       th:attr="aria-current=${query.type.name() == 'ALL' ? 'page' : null},data-type-link='ALL'">全部</a>
+    <a th:href="@{/products(categoryId=${query.categoryId},type='STATIONERY',q=${query.q},sort=${query.sort.name()},page=1,size=${query.size})}"
+       th:attr="aria-current=${query.type.name() == 'STATIONERY' ? 'page' : null},data-type-link='STATIONERY'">文具</a>
+    <a th:href="@{/products(categoryId=${query.categoryId},type='SOUVENIR',q=${query.q},sort=${query.sort.name()},page=1,size=${query.size})}"
+       th:attr="aria-current=${query.type.name() == 'SOUVENIR' ? 'page' : null},data-type-link='SOUVENIR'">纪念周边</a>
+</nav>
+</body>
+</html>

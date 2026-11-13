@@ -3,21 +3,80 @@
       th:replace="~{fragments/layout :: page('CSUCampusCraft 用户端', ~{::mainContent})}">
 <head><title>CSUCampusCraft 用户端</title></head>
 <body>
-<div th:fragment="mainContent">
-    <header class="page-heading">
-        <small class="eyebrow">校园文创商城 · 工程初始化</small>
-        <h1>CSUCampusCraft 用户端</h1>
-        <p class="muted">面向购买者的校园文创商城。当前展示共享商品分类中的一级主题。</p>
+<div th:fragment="mainContent" class="catalog-home" data-page-id="U01">
+    <header class="catalog-home-heading page-heading">
+        <div>
+            <p class="eyebrow">中南大学校园文创</p>
+            <h1>CSUCampusCraft 用户端</h1>
+            <p class="muted">按校园主题发现文具和纪念周边。</p>
+        </div>
+        <form class="catalog-search" method="get" th:action="@{/products}" role="search">
+            <label for="home-query">搜索校园文创</label>
+            <div class="catalog-search-controls">
+                <input id="home-query" type="search" name="q" maxlength="120" placeholder="输入商品名称">
+                <button type="submit">搜索</button>
+            </div>
+        </form>
     </header>
-    <section class="panel" aria-labelledby="themes-heading">
-        <h2 id="themes-heading">校园主题</h2>
-        <p class="muted" th:attr="data-theme-count=${#lists.size(themes)}">
-            共 <span th:text="${#lists.size(themes)}">0</span> 个一级主题
-        </p>
-        <p class="empty-state" th:if="${#lists.isEmpty(themes)}">暂无主题。请确认演示数据已导入。</p>
-        <ul class="theme-list" th:unless="${#lists.isEmpty(themes)}">
-            <li th:each="theme : ${themes}" th:attr="data-theme-code=${theme.code}" th:text="${theme.name}"></li>
+
+    <section class="graduation-banner" th:if="${graduationTheme != null}"
+             aria-labelledby="graduation-heading" data-graduation-section>
+        <div>
+            <p class="eyebrow">毕业专区</p>
+            <h2 id="graduation-heading" th:text="${graduationTheme.name + '专区'}">毕业纪念专区</h2>
+            <p>毕业留言本、祝福卡片与独立成品礼盒。</p>
+        </div>
+        <a class="button graduation-link"
+           th:href="@{/products(categoryId=${graduationTheme.id},type='ALL',q='',sort='DEFAULT',page=1,size=6)}"
+           data-graduation-link>浏览毕业纪念</a>
+    </section>
+
+    <section class="panel catalog-section" aria-labelledby="themes-heading">
+        <div class="section-heading">
+            <div>
+                <h2 id="themes-heading">校园主题</h2>
+                <p class="muted" th:attr="data-theme-count=${#lists.size(themes)}">
+                    共 <span th:text="${#lists.size(themes)}">0</span> 个一级主题
+                </p>
+            </div>
+            <a th:href="@{/products}">浏览全部商品</a>
+        </div>
+        <p class="empty-state" th:if="${#lists.isEmpty(themes)}">暂无主题，可先浏览全部商品。</p>
+        <ul class="theme-list catalog-themes" th:unless="${#lists.isEmpty(themeNavigation)}">
+            <li th:each="navigation : ${themeNavigation}" th:attr="data-theme-code=${navigation.theme.code}">
+                <a class="theme-primary"
+                   th:href="@{/products(categoryId=${navigation.theme.id},type='ALL',q='',sort='DEFAULT',page=1,size=6)}"
+                   th:text="${navigation.theme.name}">校园主题</a>
+                <div class="theme-type-links" th:if="${!#lists.isEmpty(navigation.types)}">
+                    <a th:each="entry : ${navigation.types}"
+                       th:href="@{/products(categoryId=${navigation.theme.id},type=${entry.type},q='',sort='DEFAULT',page=1,size=6)}"
+                       th:attr="data-secondary-code=${entry.code},data-secondary-category-code=${entry.code}"
+                       th:text="${entry.label}">商品类型</a>
+                </div>
+            </li>
         </ul>
+    </section>
+
+    <section class="catalog-section" aria-labelledby="newest-heading" data-section="newest">
+        <div class="section-heading">
+            <div><p class="eyebrow">校园新品</p><h2 id="newest-heading">新品上架</h2></div>
+            <a th:href="@{/products(type='ALL',sort='NEWEST',page=1,size=6)}">查看全部新品</a>
+        </div>
+        <p class="empty-state" th:if="${#lists.isEmpty(newProducts)}">暂无可售商品，稍后再来看看。</p>
+        <div class="catalog-grid" th:unless="${#lists.isEmpty(newProducts)}">
+            <th:block th:each="item : ${newProducts}"><th:block th:replace="~{fragments/catalog :: productCard(${item})}"></th:block></th:block>
+        </div>
+    </section>
+
+    <section class="catalog-section" aria-labelledby="featured-heading" data-section="featured">
+        <div class="section-heading">
+            <div><p class="eyebrow">日常文创</p><h2 id="featured-heading">精选推荐</h2></div>
+            <a th:href="@{/products(type='ALL',sort='DEFAULT',page=1,size=6)}">浏览全部商品</a>
+        </div>
+        <p class="empty-state" th:if="${#lists.isEmpty(featuredProducts)}">暂无可售商品，可稍后再来看看。</p>
+        <div class="catalog-grid catalog-grid-featured" th:unless="${#lists.isEmpty(featuredProducts)}">
+            <th:block th:each="item : ${featuredProducts}"><th:block th:replace="~{fragments/catalog :: productCard(${item})}"></th:block></th:block>
+        </div>
     </section>
 </div>
 </body>

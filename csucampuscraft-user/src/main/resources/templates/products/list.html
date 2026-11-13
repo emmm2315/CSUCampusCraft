@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('商品目录 · CSUCampusCraft', ~{::mainContent})}">
+<head><title>商品目录</title></head>
+<body>
+<div th:fragment="mainContent" class="catalog-list-page" data-page-id="U02"
+     th:attr="data-product-count=${total},data-result-count=${#lists.size(products)},data-page=${page},data-page-size=${size},data-size=${size},data-category-id=${query.categoryId == null ? '': query.categoryId},data-type=${query.type.name()},data-sort=${query.sort.name()}">
+    <nav class="catalog-breadcrumb" aria-label="当前位置">
+        <a th:href="@{/}">首页</a><span aria-hidden="true">/</span><span aria-current="page">商品目录</span>
+    </nav>
+    <header class="page-heading">
+        <p class="eyebrow">校园文创</p>
+        <h1 th:text="${selectedTheme != null ? selectedTheme.name : '全部商品'}">全部商品</h1>
+        <p class="muted">浏览文具与纪念周边，按主题、名称或类型筛选。</p>
+    </header>
+
+    <section class="panel catalog-filter-panel" aria-labelledby="filter-heading">
+        <h2 id="filter-heading">筛选商品</h2>
+        <form class="catalog-filter-form" method="get" th:action="@{/products}">
+            <div class="form-field">
+                <label for="catalog-theme">校园主题</label>
+                <select id="catalog-theme" name="categoryId">
+                    <option value="" th:selected="${query.categoryId == null}">全部主题</option>
+                    <option th:each="themeItem : ${themes}" th:value="${themeItem.id}"
+                            th:selected="${query.categoryId != null and query.categoryId == themeItem.id}"
+                            th:text="${themeItem.name}">校园主题</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for="catalog-type">商品类型</label>
+                <select id="catalog-type" name="type">
+                    <option value="ALL" th:selected="${query.type.name() == 'ALL'}">全部</option>
+                    <option value="STATIONERY" th:selected="${query.type.name() == 'STATIONERY'}">文具</option>
+                    <option value="SOUVENIR" th:selected="${query.type.name() == 'SOUVENIR'}">纪念周边</option>
+                </select>
+            </div>
+            <div class="form-field catalog-query-field">
+                <label for="catalog-query">商品名称</label>
+                <input id="catalog-query" type="search" name="q" maxlength="120" th:value="${query.q}" placeholder="按名称搜索">
+            </div>
+            <div class="form-field">
+                <label for="catalog-sort">排序方式</label>
+                <select id="catalog-sort" name="sort">
+                    <option value="DEFAULT" th:selected="${query.sort.name() == 'DEFAULT'}">默认</option>
+                    <option value="PRICE_ASC" th:selected="${query.sort.name() == 'PRICE_ASC'}">价格从低到高</option>
+                    <option value="PRICE_DESC" th:selected="${query.sort.name() == 'PRICE_DESC'}">价格从高到低</option>
+                    <option value="NEWEST" th:selected="${query.sort.name() == 'NEWEST'}">最新商品</option>
+                </select>
+            </div>
+            <div class="form-field catalog-size-field">
+                <label for="catalog-size">每页条数</label>
+                <input id="catalog-size" type="number" name="size" min="1" max="50" step="1" th:value="${size}">
+            </div>
+            <input type="hidden" name="page" value="1">
+            <div class="catalog-filter-actions">
+                <button type="submit">查询商品</button>
+                <a class="button button-secondary"
+                   th:href="@{/products(categoryId=${query.categoryId},type='ALL',q='',sort='DEFAULT',page=1,size=${size})}">清除名称和类型</a>
+            </div>
+        </form>
+    </section>
+
+    <div class="catalog-results-heading">
+        <p class="muted">共 <strong th:text="${total}">0</strong> 件商品<span th:if="${total > 0}">，第 <span th:text="${page}">1</span> 页 / 共 <span th:text="${totalPages}">1</span> 页</span></p>
+        <th:block th:replace="~{fragments/catalog :: typeTabs(${query})}"></th:block>
+    </div>
+
+    <div th:if="${#lists.isEmpty(products)}" class="empty-state" data-catalog-empty>
+        <th:block th:if="${page > (totalPages > 0 ? totalPages : 1)}">
+            <h2>当前页超出商品范围</h2>
+            <p>筛选条件保持不变，可以返回有效页面继续浏览。</p>
+            <a class="button button-secondary"
+               th:href="@{/products(categoryId=${query.categoryId},type=${query.type.name()},q=${query.q},sort=${query.sort.name()},page=1,size=${size})}"
+               data-page-link="1">返回第 1 页</a>
+        </th:block>
+        <th:block th:unless="${page > (totalPages > 0 ? totalPages : 1)}">
+            <h2>暂无匹配商品</h2>
+            <p>可尝试修改名称、类型或主题，再次查询。</p>
+            <a th:href="@{/products(categoryId=${query.categoryId},type='ALL',q='',sort='DEFAULT',page=1,size=${size})}">清除名称和类型</a>
+        </th:block>
+    </div>
+    <div class="catalog-grid" data-product-list>
+        <th:block th:each="item : ${products}"><th:block th:replace="~{fragments/catalog :: productCard(${item})}"></th:block></th:block>
+    </div>
+
+    <nav class="catalog-pagination" aria-label="商品分页" th:if="${total > 0}">
+        <a class="button button-secondary" th:if="${hasPrevious}"
+           th:href="@{/products(categoryId=${query.categoryId},type=${query.type.name()},q=${query.q},sort=${query.sort.name()},page=${previousPage},size=${size})}"
+           th:attr="data-page-link=${previousPage}">上一页</a>
+        <span class="pagination-disabled" th:unless="${hasPrevious}" aria-disabled="true">上一页</span>
+        <span class="pagination-position">第 <strong th:text="${page}">1</strong> 页 / 共 <span th:text="${totalPages}">1</span> 页</span>
+        <a class="button button-secondary" th:if="${hasNext}"
+           th:href="@{/products(categoryId=${query.categoryId},type=${query.type.name()},q=${query.q},sort=${query.sort.name()},page=${nextPage},size=${size})}"
+           th:attr="data-page-link=${nextPage}">下一页</a>
+        <span class="pagination-disabled" th:unless="${hasNext}" aria-disabled="true">下一页</span>
+    </nav>
+</div>
+</body>
+</html>
