@@ -1,0 +1,28 @@
+{
+  "attempt": "attempt1",
+  "overall": "PASS",
+  "http": 247,
+  "all_post": 121,
+  "post_orders": 86,
+  "get_checkout_requests": 82,
+  "automatic_seven_table_audits": 209,
+  "all_post_audited": 121,
+  "orders_all_zero_write": true,
+  "checkouts_all_zero_write": true,
+  "db_records": 234,
+  "http_statuses": {
+    "302": 5,
+    "200": 112,
+    "303": 35,
+    "409": 71,
+    "403": 4,
+    "400": 20
+  },
+  "orders_statuses": {
+    "302": 2,
+    "409": 60,
+    "403": 4,
+    "400": 20
+  },
+  "browser_http": 36
+}

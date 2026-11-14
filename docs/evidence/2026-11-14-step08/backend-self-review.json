@@ -1,0 +1,120 @@
+{
+  "limitations": [
+    "No real HTTP request, database integrity claim, build pass, browser screenshot or concurrency result is asserted by this static review.",
+    "Fresh real acceptance is separate and must remain tied to full tested SHA and frozen runtime inputs.",
+    "Java session synchronization is not the future RC user/product row-lock write transaction.",
+    "Snapshot expiry is enforced lazily upon use; it is not a scheduled session cleanup job.",
+    "No real order is created; STEP09 must replace the pending stub and repeat locked business validation."
+  ],
+  "kind": "static_backend_source_and_verifier_review",
+  "schema_version": 1,
+  "recommended_native_cases": [
+    "exact TTL boundary and malformed/zero/negative TTL",
+    "actor identity changes while waiting for session monitor",
+    "healthy-session CartService IllegalStateException remains technical failure",
+    "invalid token or changed cart takes precedence over invalid shipping fields",
+    "row version-only conflict, amount line and aggregate overflow",
+    "immutable copied line list and mutable projection detachment",
+    "redacted confirmation/form/validation string outputs"
+  ],
+  "findings": [
+    {
+      "status": "CONFIRMED_STATIC",
+      "runtime_evidence": "Owned by fresh acceptance run; not established by this source review",
+      "finding": "No business write or locking SQL in new checkout package; only ordinary CartService.read invokes database.",
+      "id": "S08-BR01"
+    },
+    {
+      "status": "CONFIRMED_STATIC",
+      "finding": "Token validation precedes full-cart reread and shipping fields; missing/duplicate/foreign token clears current confirmation and returns409.",
+      "id": "S08-BR02"
+    },
+    {
+      "status": "CONFIRMED_STATIC",
+      "finding": "32 SecureRandom bytes become 43 Base64url characters; latest session-bound immutable snapshot includes required identifiers, row versions, unit prices, UTC Instant timestamps and total.",
+      "id": "S08-BR03"
+    },
+    {
+      "status": "CONFIRMED_STATIC",
+      "finding": "Session monitor serializes prepare/validate; actor captured before monitor and exact SessionIdentity equality rechecked inside; safe request userId and CUSTOMER role checked.",
+      "id": "S08-BR04"
+    },
+    {
+      "status": "CONFIRMED_STATIC",
+      "finding": "TTL defaults PT10M, positive constructor validation, now >= expiresAt rejected; expired token cleared lazily at validation; existing SessionSupport clears confirmation on establish/clear/invalidate.",
+      "id": "S08-BR05"
+    },
+    {
+      "status": "CONFIRMED_STATIC",
+      "finding": "Full cart equality checks itemId/productId/quantity/itemVersion/unitPrice and total; stock sufficiency reread, product version not confirmation field. No reservation or inventory hold.",
+      "id": "S08-BR06"
+    },
+    {
+      "status": "CONFIRMED_STATIC",
+      "finding": "Field code-point checks use InputChecks 1..50/30/255, aggregate errors, request-only redisplay; exact two-decimal line/total bounds; client amount/userId parameters ignored.",
+      "id": "S08-BR07"
+    },
+    {
+      "status": "CONFIRMED_STATIC",
+      "finding": "No receiver or token logging; confirmation/form/validation toString redact; controller stub409 explicitly not order success and retains valid token.",
+      "id": "S08-BR08"
+    },
+    {
+      "status": "CONFIRMED_STATIC",
+      "finding": "Technical IllegalStateException is not blindly treated as expired identity: sessionFailure checks actual session validity before selecting SessionExpiredException.",
+      "id": "S08-BR09"
+    },
+    {
+      "status": "CONFIRMED_STATIC",
+      "finding": "Fresh verifier cases separately cover CSRF rejection without consuming confirmation, field400 reuse, replacement clearing newer token policy, cross-session/account, price/root-fixture and real-HTTP cart changes, amount overflow and short TTL. This is verifier-code review only.",
+      "id": "S08-BR10"
+    }
+  ],
+  "actionable_production_defects_found": 0,
+  "observed_worktree_clean": true,
+  "reviewer": "Codex backend implementation agent; self-review of implementation, separate source re-read at fixed commit; not a human independent review",
+  "tested_sha": "54d6b007eb1317c14be090016ea75aec02ead6c5",
+  "source_files": [
+    {
+      "sha256": "ba6cb2e7bc3c29c02c1bd1a67950128cfc914c70a38e185d5a865efb80e0aff8",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutService.java"
+    },
+    {
+      "sha256": "f756b89f7ee26627d61b835296b81f538f287e0cd69ce49b5a2cc867277cbe3b",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutController.java"
+    },
+    {
+      "sha256": "73f2f565c3cb523f9e16e7b20f5806800caf91e37ea07c56b7aac0da4191ddad",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutConfirmation.java"
+    },
+    {
+      "sha256": "7f1528cf057af18e2af7c7c1aa29cfbf38adfa56f97d00cb096352d0602f48d0",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutLine.java"
+    },
+    {
+      "sha256": "a9266a48e44d8eb4b9a966989c1b26c7f66c986ebd571ee1e94ef24760b7f692",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/ShippingForm.java"
+    },
+    {
+      "sha256": "ec54418921eb2009da55de48d5c2e35bf3f2948c5ac0330b33c629bf28b86489",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionSupport.java"
+    },
+    {
+      "sha256": "e74785cddda9bc467d75d8e2107b61004952ab30695e34999fc3e5bf873ceebe",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthFilter.java"
+    },
+    {
+      "sha256": "2a8c716f39c497461661db6535d8d9c1039db670df33686265335b1ac0f65c7d",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartService.java"
+    },
+    {
+      "sha256": "c7799d3c4c2b774ea970dac12cde5aed79b4b51e161ae057f1eb210c29bf20e4",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/validation/InputChecks.java"
+    },
+    {
+      "sha256": "e6f63357757ab45754edd6b9148deb0d6bb7bc6177da52f07ed36450aa389e3d",
+      "path": "csucampuscraft-user/src/main/resources/application.yml"
+    }
+  ],
+  "captured_at_utc": "2026-11-14T11:36:56.4369225Z"
+}

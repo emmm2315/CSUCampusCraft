@@ -1,0 +1,17 @@
+{
+  "overall": "PASS",
+  "date": "2026-11-14T11:51:36.267610+00:00",
+  "scope": "Final publication checks; not a new product acceptance attempt",
+  "initial_tool_check": "FAIL false-positive: escaped Chinese Git paths were compared with literal allowed paths",
+  "raw_error_capture": "Summary of observed tool stderr; no reconstructed raw terminal transcript",
+  "correction": "git -c core.quotepath=false",
+  "old_tool_sha256": "2eac11ecd50520db0eb8efcc35045afdf8db2aeebd49d403b0502db481b41838",
+  "corrected_tool_sha256": "0fed977c4df988edeb7ce0a7edf9c3bf4fc6825d102ca9897fd20bb177d16f54",
+  "production_source_changed": false,
+  "prior_raw_git_blobs_verified": 219,
+  "prior_archive_payloads_verified_unchanged": true,
+  "old_evidence_files_unchanged": 3385,
+  "all_original_refs_unchanged": true,
+  "forbidden_paths": [],
+  "new_tool_text_sensitive_scan": "PASS"
+}

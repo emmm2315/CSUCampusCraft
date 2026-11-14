@@ -1,0 +1,468 @@
+{
+  "overall": "PASS",
+  "source_sha": "54d6b007eb1317c14be090016ea75aec02ead6c5",
+  "branch": "feat/step08-checkout",
+  "evidence_attempt": "attempt1",
+  "reviewer": "Codex UI 子执行单元；AI 参与，组员人工复核待补",
+  "review_independence": "独立于自动验收脚本执行的实际图像观察；复核者参与 UI 初稿实现，本记录不是独立组员人工验收。",
+  "method": "通过 view_image 实际逐张查看全部24张原始PNG，6组每组4张；未仅凭文件元数据判断，未生成或修改截图。",
+  "checked_at_utc": "2026-11-14T11:42:30Z",
+  "screenshot_count": 24,
+  "states_reviewed": 12,
+  "viewports": [
+    {
+      "width": 1366,
+      "height": 768
+    },
+    {
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "findings": [],
+  "general_observations": [
+    "两种视口下字体、主题配色、表格、表单、错误摘要、页脚与布局一致，未观察到重叠、缺失文字、横向页面溢出或主要操作不可读。",
+    "U06合法与400状态完整展示2种3件及85.00元；错误409/403与游客登录均保留适当恢复入口和正确布局徽标。",
+    "收货输入与地址文本域由验收截图原始隐私遮罩覆盖，遮罩不盖住标签、字段错误、金额、页面提示与操作。"
+  ],
+  "limitations": [
+    "PNG使用fullPage=true，实际高度可超过768或1080；视口尺寸来自文件命名与验收脚本配置，PNG宽度独立核对一致。",
+    "输入内容被灰色隐私遮罩覆盖；不以截图证明具体收货值、脚本原文、隐藏确认令牌或CSRF值，相关语义需结合真实HTTP/DOM验收记录。",
+    "静态图像不能证明键盘操作、屏幕阅读器行为或所有更窄屏幕布局；本轮只覆盖用户指定两种视口。",
+    "AI参与实现和复核不替代组员交叉复核；台账仍待复核。"
+  ],
+  "screenshots": [
+    {
+      "path": "attempt1/browser/u01-live-badge-1366.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u01-live-badge-1366.png",
+      "sha256": "b6d03555d5f35621142abe174397a317a50e2ccc0f650b9332809818b7cf3811",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "captured_png": {
+        "width": 1366,
+        "height": 1819,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "首页公共布局徽标3，毕业横幅、5主题、3新品及4精选排布完整；无截断溢出或页脚覆盖。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u01-live-badge-1920.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u01-live-badge-1920.png",
+      "sha256": "427976c26d320e9a3e73f8f766abb7a867f60e301daf40715c9048e272b111d7",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "captured_png": {
+        "width": 1920,
+        "height": 1819,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "首页公共布局徽标3，毕业横幅、5主题、3新品及4精选排布完整；无截断溢出或页脚覆盖。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u03-live-badge-1366.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u03-live-badge-1366.png",
+      "sha256": "9cf1a93a352a8bcd192327087252b84503e13f1bdccd709fc70e54eb8f693765",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "captured_png": {
+        "width": 1366,
+        "height": 1665,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "详情公共布局徽标3，礼盒49.00/库存12、已登录加购区、设计说明及4张相册均完整；未见布局回退或遮挡。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u03-live-badge-1920.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u03-live-badge-1920.png",
+      "sha256": "e0b2fb86f1f1140218071dd15e847c73aeb92de6792bc1188d97c783f6ce0ef5",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "captured_png": {
+        "width": 1920,
+        "height": 1665,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "详情公共布局徽标3，礼盒49.00/库存12、已登录加购区、设计说明及4张相册均完整；未见布局回退或遮挡。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u05-valid-checkout-entry-1366.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u05-valid-checkout-entry-1366.png",
+      "sha256": "7cdd39fa7444fe6c2da0638a6e36786700b51a7f49da2b8c6b7310301e5b2f59",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "captured_png": {
+        "width": 1366,
+        "height": 1020,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "U05整车2种3件，36/49小计和85.00合计正确可读；已开放整车结算入口与当前价格/收货核对说明可见，原更新/移除操作保持。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u05-valid-checkout-entry-1920.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u05-valid-checkout-entry-1920.png",
+      "sha256": "4d2dc521dded6ae3e164cb9f39807e94f4cae45477f3a0a8d46f821bc9e7772f",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "captured_png": {
+        "width": 1920,
+        "height": 1080,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "U05整车2种3件，36/49小计和85.00合计正确可读；已开放整车结算入口与当前价格/收货核对说明可见，原更新/移除操作保持。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-csrf-403-1366.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-csrf-403-1366.png",
+      "sha256": "00d33dd208bce822d6446bdd9f4a337b05f4fb00653a10d07fc83f987f402572",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "captured_png": {
+        "width": 1366,
+        "height": 768,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "复用403错误页，请求校验失败说明、CSRF_REJECTED及返回首页按钮可见；导航徽标3保持，无收货信息泄露。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-csrf-403-1920.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-csrf-403-1920.png",
+      "sha256": "7988ed320024d68c6fc3b7ea0512b6787d04ee0b6d8c4463f8f1fc10279de57e",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "captured_png": {
+        "width": 1920,
+        "height": 1080,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "复用403错误页，请求校验失败说明、CSRF_REJECTED及返回首页按钮可见；导航徽标3保持，无收货信息泄露。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-empty-cart-409-1366.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-empty-cart-409-1366.png",
+      "sha256": "573bd585aaf26a9120a90559665be0cf437f638e083e92a70b683abb3a197c46",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "captured_png": {
+        "width": 1366,
+        "height": 768,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "409空购物车原因明确，导航徽标0，返回购物车为主入口；错误代码及重新确认入口完整，无溢出。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-empty-cart-409-1920.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-empty-cart-409-1920.png",
+      "sha256": "01b659d329abac314cb3f15f507af712f8966d8d1ad4213674956c639afbaefa",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "captured_png": {
+        "width": 1920,
+        "height": 1080,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "409空购物车原因明确，导航徽标0，返回购物车为主入口；错误代码及重新确认入口完整，无溢出。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-fields-400-1366.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-fields-400-1366.png",
+      "sha256": "85ede6b2c885bfaa810883d3d98ad84fca214aa7ffe44f41e1d95c37f83c9ee4",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "captured_png": {
+        "width": 1366,
+        "height": 1209,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "全局错误、可定位摘要及收货人字段错误同时可见；商品清单/85.00合计保留；灰色隐私遮罩覆盖输入区域，标签、错误及提交按钮无遮挡。",
+      "shipping_fields_masked": true,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-fields-400-1920.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-fields-400-1920.png",
+      "sha256": "e17ca4b0efe8a7525e12eb6e759dda5abaa5243034e7fb46bc10869fb6031ae0",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "captured_png": {
+        "width": 1920,
+        "height": 1209,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "全局错误、可定位摘要及收货人字段错误同时可见；商品清单/85.00合计保留；灰色隐私遮罩覆盖输入区域，标签、错误及提交按钮无遮挡。",
+      "shipping_fields_masked": true,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-guest-login-1366.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-guest-login-1366.png",
+      "sha256": "2b71833f54299377a2df257331c37992d46cfaa784a855f0e95fea17c9cbf206",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "captured_png": {
+        "width": 1366,
+        "height": 768,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "游客被引导至用户登录页，导航徽标0；用户名/密码标签和空输入、登录及返回首页入口可见，表单卡居中且无遮挡。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-guest-login-1920.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-guest-login-1920.png",
+      "sha256": "775f8b025b8029e135d1bddb177453cfbe25b7adcea61324f5a0faba2d242ccf",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "captured_png": {
+        "width": 1920,
+        "height": 1080,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "游客被引导至用户登录页，导航徽标0；用户名/密码标签和空输入、登录及返回首页入口可见，表单卡居中且无遮挡。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-invalid-cart-409-1366.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-invalid-cart-409-1366.png",
+      "sha256": "aa3db00d0501aed39200e408e114b0cd1dd3ecbf6cc8a103840d67c6aa4bfa60",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "captured_png": {
+        "width": 1366,
+        "height": 768,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "409明确下架/售罄/超库存原因与返回处理方式，导航徽标仍3；稳定代码完整，错误卡及操作不重叠。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-invalid-cart-409-1920.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-invalid-cart-409-1920.png",
+      "sha256": "5296207ca53dfe384b325b7ff8ec35d5679c4e19348d7d277321b194070c9646",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "captured_png": {
+        "width": 1920,
+        "height": 1080,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "409明确下架/售罄/超库存原因与返回处理方式，导航徽标仍3；稳定代码完整，错误卡及操作不重叠。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-replaced-token-409-1366.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-replaced-token-409-1366.png",
+      "sha256": "0ec9c85af006322699bdc79066a55a7990f37a67f5796aa3395b55804515baf2",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "captured_png": {
+        "width": 1366,
+        "height": 768,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "409明确确认过期/被替换/不属于本会话的统一提示，稳定代码完整；返回购物车与重新确认入口可见，不显示令牌。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-replaced-token-409-1920.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-replaced-token-409-1920.png",
+      "sha256": "7fd0e29b81721ad13d7f3e4b16a539cf1663cb37e569ab3d9a5ca867c7cc5b1e",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "captured_png": {
+        "width": 1920,
+        "height": 1080,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "409明确确认过期/被替换/不属于本会话的统一提示，稳定代码完整；返回购物车与重新确认入口可见，不显示令牌。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-script-literal-400-1366.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-script-literal-400-1366.png",
+      "sha256": "5e9c991b785cad5cfc44c28f492063dab4533ae03770dd425feb68f6c5e2701e",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "captured_png": {
+        "width": 1366,
+        "height": 1209,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "字段400页面结构稳定，电话错误提示贴近对应控件且摘要可见；商品和金额完整；脚本文本所在输入被隐私遮罩覆盖，本视觉记录不据此证明原文回显，另由HTTP/DOM记录验证。",
+      "shipping_fields_masked": true,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-script-literal-400-1920.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-script-literal-400-1920.png",
+      "sha256": "e4ded7c665fd62cd42448ae2656cfc841225c7a1999b510cb603b06cbcea4467",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "captured_png": {
+        "width": 1920,
+        "height": 1209,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "字段400页面结构稳定，电话错误提示贴近对应控件且摘要可见；商品和金额完整；脚本文本所在输入被隐私遮罩覆盖，本视觉记录不据此证明原文回显，另由HTTP/DOM记录验证。",
+      "shipping_fields_masked": true,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-valid-85-1366.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-valid-85-1366.png",
+      "sha256": "9a3e82c2009ade3dd4ea20e85e98a5f7713783795b877c32bc5e6337acf2e320",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "captured_png": {
+        "width": 1366,
+        "height": 971,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "两列整车清单与收货表单完整；2 种 3 件，18×2+49×1，小计36/49、合计85.00可读；不预留库存、UTC到期、暂不真实下单说明可读；返回购物车及提交按钮无遮挡。",
+      "shipping_fields_masked": true,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-valid-85-1920.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-valid-85-1920.png",
+      "sha256": "14a75f6c14a16ee5c83c57fb1aad968852e5df81e6e7eda2553e02ad360416e3",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "captured_png": {
+        "width": 1920,
+        "height": 1080,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "两列整车清单与收货表单完整；2 种 3 件，18×2+49×1，小计36/49、合计85.00可读；不预留库存、UTC到期、暂不真实下单说明可读；返回购物车及提交按钮无遮挡。",
+      "shipping_fields_masked": true,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-validated-pending-409-1366.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-validated-pending-409-1366.png",
+      "sha256": "e2467d42c2e8357bfee8085f9f8d38332279b9fc95d77331d26a03a341cd5cdb",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "captured_png": {
+        "width": 1366,
+        "height": 768,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "409明确标题下单暂未开放，稳定ORDER_SUBMISSION_PENDING代码及未生成订单/未扣库存/确认仍保留说明可读；两处恢复入口可见，无伪订单成功信息。",
+      "shipping_fields_masked": false,
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/u06-validated-pending-409-1920.png",
+      "absolute_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step08-checkout/verification/evidence/attempt1/browser/u06-validated-pending-409-1920.png",
+      "sha256": "5af8916b859ffd91021660844dc3414f3dc071e06a26eca56d0ce0c842b198f0",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "captured_png": {
+        "width": 1920,
+        "height": 1080,
+        "full_page": true
+      },
+      "visually_reviewed": true,
+      "observation": "409明确标题下单暂未开放，稳定ORDER_SUBMISSION_PENDING代码及未生成订单/未扣库存/确认仍保留说明可读；两处恢复入口可见，无伪订单成功信息。",
+      "shipping_fields_masked": false,
+      "findings": []
+    }
+  ]
+}

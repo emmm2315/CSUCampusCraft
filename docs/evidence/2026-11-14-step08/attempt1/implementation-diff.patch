@@ -1,0 +1,637 @@
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutConfirmation.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutConfirmation.java
+new file mode 100644
+index 0000000..8f937c5
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutConfirmation.java
+@@ -0,0 +1,41 @@
++package org.csucampuscraft.storefront.checkout;
++
++import java.io.Serializable;
++import java.math.BigDecimal;
++import java.time.Instant;
++import java.util.List;
++
++/** One latest server-side confirmation; contains no receiver details or client amounts. */
++public final class CheckoutConfirmation implements Serializable {
++    private static final long serialVersionUID = 1L;
++    private final String token;
++    private final Instant createdAt;
++    private final Instant expiresAt;
++    private final long userId;
++    private final List<CheckoutLine> items;
++    private final BigDecimal total;
++
++    CheckoutConfirmation(String token, Instant createdAt, Instant expiresAt, long userId,
++                         List<CheckoutLine> items, BigDecimal total) {
++        this.token = token;
++        this.createdAt = createdAt;
++        this.expiresAt = expiresAt;
++        this.userId = userId;
++        this.items = List.copyOf(items);
++        this.total = total;
++    }
++
++    String token() { return token; }
++    public Instant getCreatedAt() { return createdAt; }
++    public Instant getExpiresAt() { return expiresAt; }
++    public long getUserId() { return userId; }
++    public List<CheckoutLine> getItems() { return items; }
++    public BigDecimal getTotal() { return total; }
++    public int getItemCount() { return items.size(); }
++    public long getQuantity() { return items.stream().mapToLong(CheckoutLine::quantity).sum(); }
++
++    @Override
++    public String toString() {
++        return "CheckoutConfirmation[items=" + items.size() + ", token=REDACTED]";
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutController.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutController.java
+new file mode 100644
+index 0000000..468acab
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutController.java
+@@ -0,0 +1,72 @@
++package org.csucampuscraft.storefront.checkout;
++
++import jakarta.servlet.http.HttpServletRequest;
++import java.util.Map;
++import org.csucampuscraft.storefront.foundation.web.BusinessException;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Controller;
++import org.springframework.util.MultiValueMap;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.PostMapping;
++import org.springframework.web.bind.annotation.RequestParam;
++import org.springframework.web.servlet.ModelAndView;
++
++/** U06 and a validation-only POST boundary, replaced by the real transaction in STEP09. */
++@Controller
++public final class CheckoutController {
++    private final CheckoutService checkout;
++
++    public CheckoutController(CheckoutService checkout) { this.checkout = checkout; }
++
++    @GetMapping("/checkout")
++    public ModelAndView page(HttpServletRequest request) {
++        try {
++            return form(checkout.prepare(request), ShippingForm.empty(), Map.of());
++        } catch (BusinessException failure) {
++            return conflict(failure);
++        }
++    }
++
++    @PostMapping("/orders")
++    public ModelAndView submit(@RequestParam MultiValueMap<String, String> parameters,
++                               HttpServletRequest request) {
++        try {
++            CheckoutService.Validation result = checkout.validate(request, parameters);
++            if (!result.isValid()) return form(result.confirmation(), result.form(), result.fieldErrors());
++            // This is not a successful submission: retain the valid confirmation, never write an order.
++            return conflict(new BusinessException(HttpStatus.CONFLICT, "ORDER_SUBMISSION_PENDING",
++                    "下单将在 STEP09 接入。本次仅完成确认校验，未生成订单，购物车和库存保持原状。"));
++        } catch (BusinessException failure) {
++            return conflict(failure);
++        }
++    }
++
++    private static ModelAndView form(CheckoutConfirmation confirmation, ShippingForm form,
++                                     Map<String, String> errors) {
++        ModelAndView view = new ModelAndView("checkout/index");
++        view.addObject("checkout", confirmation);
++        view.addObject("confirmationToken", confirmation.token());
++        view.addObject("checkoutForm", form);
++        view.addObject("fieldErrors", errors);
++        view.addObject("errorAnchors", errors);
++        if (!errors.isEmpty()) {
++            view.setStatus(HttpStatus.BAD_REQUEST);
++            view.addObject("errorStatus", 400);
++            view.addObject("errorCode", "INVALID_SHIPPING_FIELDS");
++            view.addObject("globalError", "请修正收货信息后再次提交，仍有效的确认可以继续使用。");
++        }
++        return view;
++    }
++
++    private static ModelAndView conflict(BusinessException failure) {
++        if (failure.getStatus() != HttpStatus.CONFLICT) throw failure;
++        ModelAndView view = new ModelAndView("checkout/conflict");
++        view.setStatus(HttpStatus.CONFLICT);
++        view.addObject("errorStatus", 409);
++        view.addObject("errorCode", failure.getCode());
++        view.addObject("errorMessage", failure.getMessage());
++        view.addObject("canRetryConfirmation", true);
++        view.addObject("tokenPreserved", "ORDER_SUBMISSION_PENDING".equals(failure.getCode()));
++        return view;
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutLine.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutLine.java
+new file mode 100644
+index 0000000..6f28bbc
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutLine.java
+@@ -0,0 +1,20 @@
++package org.csucampuscraft.storefront.checkout;
++
++import java.io.Serializable;
++import java.math.BigDecimal;
++
++/** Immutable confirmation values, detached from mutable MyBatis cart projections. */
++public record CheckoutLine(long itemId, long productId, int quantity, long itemVersion,
++                           BigDecimal unitPrice, BigDecimal subtotal, String sku,
++                           String name, String coverImage) implements Serializable {
++    private static final long serialVersionUID = 1L;
++    public long getItemId() { return itemId; }
++    public long getProductId() { return productId; }
++    public int getQuantity() { return quantity; }
++    public long getItemVersion() { return itemVersion; }
++    public BigDecimal getUnitPrice() { return unitPrice; }
++    public BigDecimal getSubtotal() { return subtotal; }
++    public String getSku() { return sku; }
++    public String getName() { return name; }
++    public String getCoverImage() { return coverImage; }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutService.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutService.java
+new file mode 100644
+index 0000000..fea61e4
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutService.java
+@@ -0,0 +1,249 @@
++package org.csucampuscraft.storefront.checkout;
++
++import jakarta.servlet.http.HttpServletRequest;
++import jakarta.servlet.http.HttpSession;
++import java.math.BigDecimal;
++import java.math.RoundingMode;
++import java.nio.charset.StandardCharsets;
++import java.security.MessageDigest;
++import java.security.SecureRandom;
++import java.time.Clock;
++import java.time.Duration;
++import java.time.Instant;
++import java.util.ArrayList;
++import java.util.Base64;
++import java.util.LinkedHashMap;
++import java.util.List;
++import java.util.Map;
++import org.csucampuscraft.storefront.auth.AuthUser;
++import org.csucampuscraft.storefront.auth.SessionExpiredException;
++import org.csucampuscraft.storefront.auth.SessionIdentity;
++import org.csucampuscraft.storefront.auth.SessionSupport;
++import org.csucampuscraft.storefront.cart.CartLine;
++import org.csucampuscraft.storefront.cart.CartPage;
++import org.csucampuscraft.storefront.cart.CartService;
++import org.csucampuscraft.storefront.foundation.validation.InputChecks;
++import org.csucampuscraft.storefront.foundation.web.BusinessException;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.beans.factory.annotation.Value;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Service;
++import org.springframework.util.MultiValueMap;
++
++/** Session confirmation only. Every database call is an ordinary read; STEP09 owns writes. */
++@Service
++public final class CheckoutService {
++    private static final SecureRandom RANDOM = new SecureRandom();
++    private static final BigDecimal ZERO = new BigDecimal("0.00");
++    private final CartService carts;
++    private final SessionSupport sessions;
++    private final Duration ttl;
++    private final Clock clock;
++
++    @Autowired
++    public CheckoutService(CartService carts, SessionSupport sessions,
++            @Value("${csucampuscraft.checkout.confirmation-ttl:PT10M}") String configuredTtl) {
++        this(carts, sessions, Duration.parse(configuredTtl), Clock.systemUTC());
++    }
++
++    CheckoutService(CartService carts, SessionSupport sessions, Duration ttl, Clock clock) {
++        if (ttl == null || ttl.isZero() || ttl.isNegative()) {
++            throw new IllegalArgumentException("Checkout confirmation TTL must be positive");
++        }
++        clock.instant().plus(ttl); // Reject an unrepresentable server configuration at startup.
++        this.carts = carts;
++        this.sessions = sessions;
++        this.ttl = ttl;
++        this.clock = clock;
++    }
++
++    public CheckoutConfirmation prepare(HttpServletRequest request) {
++        SessionIdentity expected = actor(request);
++        HttpSession session = session(request);
++        try {
++            synchronized (session) {
++                SessionIdentity actor = actor(request);
++                if (!actor.equals(expected)) throw new SessionExpiredException();
++                // A failed new attempt must never leave an older usable confirmation behind.
++                session.removeAttribute(SessionSupport.CHECKOUT_CONFIRMATION_ATTRIBUTE);
++                CartValues values = currentCart(actor.userId());
++                Instant createdAt = clock.instant();
++                byte[] entropy = new byte[32];
++                RANDOM.nextBytes(entropy);
++                String token = Base64.getUrlEncoder().withoutPadding().encodeToString(entropy);
++                CheckoutConfirmation confirmation = new CheckoutConfirmation(token, createdAt,
++                        createdAt.plus(ttl), actor.userId(), values.items(), values.total());
++                session.setAttribute(SessionSupport.CHECKOUT_CONFIRMATION_ATTRIBUTE, confirmation);
++                return confirmation;
++            }
++        } catch (IllegalStateException expiredSession) {
++            throw sessionFailure(session, expiredSession);
++        }
++    }
++
++    /** Ordered validation: current token -> current complete cart -> shipping fields. */
++    public Validation validate(HttpServletRequest request, MultiValueMap<String, String> parameters) {
++        SessionIdentity expected = actor(request);
++        HttpSession session = session(request);
++        try {
++            synchronized (session) {
++                SessionIdentity actor = actor(request);
++                if (!actor.equals(expected)) throw new SessionExpiredException();
++                CheckoutConfirmation confirmation;
++                try {
++                    Object stored = session.getAttribute(SessionSupport.CHECKOUT_CONFIRMATION_ATTRIBUTE);
++                    if (!(stored instanceof CheckoutConfirmation candidate)
++                            || candidate.getUserId() != actor.userId()) {
++                        throw conflict("CHECKOUT_CONFIRMATION_INVALID", "确认已失效，请重新进入结算。");
++                    }
++                    confirmation = candidate;
++                    requireUnexpired(confirmation);
++                    List<String> tokens = parameters.get("confirmationToken");
++                    String submitted = tokens == null || tokens.size() != 1 ? null : tokens.get(0);
++                    if (submitted == null || !submitted.matches("[A-Za-z0-9_-]{43}")
++                            || !MessageDigest.isEqual(confirmation.token().getBytes(StandardCharsets.UTF_8),
++                                    submitted.getBytes(StandardCharsets.UTF_8))) {
++                        throw conflict("CHECKOUT_CONFIRMATION_INVALID",
++                                "确认已过期、被替换或不属于当前会话，请重新进入结算。");
++                    }
++                    CartValues current = currentCart(actor.userId());
++                    if (!matches(confirmation, current)) {
++                        throw conflict("CHECKOUT_CART_CHANGED", "购物车或商品价格已变化，请重新确认整车。");
++                    }
++                    requireUnexpired(confirmation);
++                } catch (BusinessException conflict) {
++                    // Includes stale/foreign tokens: end this session's current confirmation conservatively.
++                    session.removeAttribute(SessionSupport.CHECKOUT_CONFIRMATION_ATTRIBUTE);
++                    throw conflict;
++                }
++
++                ShippingForm raw = new ShippingForm(first(parameters, "receiverName"),
++                        first(parameters, "receiverPhone"), first(parameters, "receiverAddress"));
++                Map<String, String> errors = new LinkedHashMap<>();
++                String name = field(parameters, "receiverName", raw.receiverName(), 50, errors);
++                String phone = field(parameters, "receiverPhone", raw.receiverPhone(), 30, errors);
++                String address = field(parameters, "receiverAddress", raw.receiverAddress(), 255, errors);
++                try {
++                    requireUnexpired(confirmation);
++                } catch (BusinessException expired) {
++                    session.removeAttribute(SessionSupport.CHECKOUT_CONFIRMATION_ATTRIBUTE);
++                    throw expired;
++                }
++                ShippingForm redisplay = errors.isEmpty() ? new ShippingForm(name, phone, address) : raw;
++                return new Validation(confirmation, redisplay, errors);
++            }
++        } catch (IllegalStateException expiredSession) {
++            throw sessionFailure(session, expiredSession);
++        }
++    }
++
++    private CartValues currentCart(long userId) {
++        CartPage cart = carts.read(userId);
++        if (cart.isEmpty()) {
++            throw conflict("CHECKOUT_CART_EMPTY", "购物车为空，请先选购商品后再结算。");
++        }
++        if (!cart.isAllValid()) {
++            throw conflict("CHECKOUT_CART_INVALID", "购物车包含下架、售罄或超库存条目，请返回购物车处理。");
++        }
++        List<CheckoutLine> lines = new ArrayList<>();
++        BigDecimal total = ZERO;
++        for (CartLine line : cart.items()) {
++            BigDecimal unitPrice = amount(line.getPrice());
++            BigDecimal subtotal = amount(unitPrice.multiply(BigDecimal.valueOf(line.getQuantity())));
++            total = amount(total.add(subtotal));
++            lines.add(new CheckoutLine(line.getId(), line.getProductId(), line.getQuantity(),
++                    line.getVersion(), unitPrice, subtotal, line.getSku(), line.getName(), line.getCoverImage()));
++        }
++        return new CartValues(List.copyOf(lines), total);
++    }
++
++    private static BigDecimal amount(BigDecimal value) {
++        try {
++            if (value == null || value.signum() <= 0 || value.compareTo(InputChecks.MAX_MONEY) > 0) {
++                throw new ArithmeticException();
++            }
++            return value.setScale(2, RoundingMode.UNNECESSARY);
++        } catch (ArithmeticException invalid) {
++            throw conflict("CHECKOUT_AMOUNT_OUT_OF_RANGE", "商品小计或整车金额超过允许范围，请返回购物车调整。");
++        }
++    }
++
++    private static boolean matches(CheckoutConfirmation confirmation, CartValues current) {
++        List<CheckoutLine> expected = confirmation.getItems();
++        if (expected.size() != current.items().size()
++                || confirmation.getTotal().compareTo(current.total()) != 0) return false;
++        // CartService reads the complete own cart in id order using one joined SELECT.
++        for (int index = 0; index < expected.size(); index++) {
++            CheckoutLine previous = expected.get(index);
++            CheckoutLine now = current.items().get(index);
++            if (previous.itemId() != now.itemId() || previous.productId() != now.productId()
++                    || previous.quantity() != now.quantity() || previous.itemVersion() != now.itemVersion()
++                    || previous.unitPrice().compareTo(now.unitPrice()) != 0) return false;
++        }
++        return true;
++    }
++
++    private void requireUnexpired(CheckoutConfirmation confirmation) {
++        if (!clock.instant().isBefore(confirmation.getExpiresAt())) {
++            throw conflict("CHECKOUT_CONFIRMATION_EXPIRED", "确认已过期，请重新进入结算。");
++        }
++    }
++
++    private SessionIdentity actor(HttpServletRequest request) {
++        SessionIdentity identity = sessions.identity(request);
++        AuthUser user = sessions.currentUser(request);
++        if (identity == null || user == null || !"CUSTOMER".equals(user.role())
++                || !identity.userId().equals(user.userId())) throw new SessionExpiredException();
++        return identity;
++    }
++
++    private static HttpSession session(HttpServletRequest request) {
++        HttpSession session = request.getSession(false);
++        if (session == null) throw new SessionExpiredException();
++        return session;
++    }
++
++    private static RuntimeException sessionFailure(HttpSession session, IllegalStateException failure) {
++        try {
++            session.getCreationTime();
++            // Keep an unrelated technical IllegalStateException on the ordinary generic-500 path.
++            return failure;
++        } catch (IllegalStateException expired) {
++            return new SessionExpiredException();
++        }
++    }
++
++    private static String field(MultiValueMap<String, String> parameters, String name, String raw,
++                                int maximum, Map<String, String> errors) {
++        List<String> values = parameters.get(name);
++        if (values != null && values.size() != 1) {
++            errors.put(name, "此字段只能提交一个值。");
++            return "";
++        }
++        try {
++            return InputChecks.requiredText(name, raw, maximum);
++        } catch (BusinessException invalid) {
++            errors.put(name, "去除首尾空白后须为 1–" + maximum + " 个字符。");
++            return "";
++        }
++    }
++
++    private static String first(MultiValueMap<String, String> parameters, String field) {
++        List<String> values = parameters.get(field);
++        return values == null || values.isEmpty() ? null : values.get(0);
++    }
++
++    private static BusinessException conflict(String code, String message) {
++        return new BusinessException(HttpStatus.CONFLICT, code, message);
++    }
++
++    private record CartValues(List<CheckoutLine> items, BigDecimal total) { }
++
++    /** Request-scoped result; a valid result is deliberately not an order. */
++    public record Validation(CheckoutConfirmation confirmation, ShippingForm form,
++                             Map<String, String> fieldErrors) {
++        public Validation { fieldErrors = Map.copyOf(fieldErrors); }
++        public boolean isValid() { return fieldErrors.isEmpty(); }
++        @Override public String toString() { return "CheckoutValidation[REDACTED]"; }
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/ShippingForm.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/ShippingForm.java
+new file mode 100644
+index 0000000..23e8f78
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/ShippingForm.java
+@@ -0,0 +1,15 @@
++package org.csucampuscraft.storefront.checkout;
++
++/** Request-scoped redisplay only: never retained in the session or diagnostic output. */
++public record ShippingForm(String receiverName, String receiverPhone, String receiverAddress) {
++    public ShippingForm {
++        receiverName = receiverName == null ? "" : receiverName;
++        receiverPhone = receiverPhone == null ? "" : receiverPhone;
++        receiverAddress = receiverAddress == null ? "" : receiverAddress;
++    }
++    public static ShippingForm empty() { return new ShippingForm("", "", ""); }
++    public String getReceiverName() { return receiverName; }
++    public String getReceiverPhone() { return receiverPhone; }
++    public String getReceiverAddress() { return receiverAddress; }
++    @Override public String toString() { return "ShippingForm[REDACTED]"; }
++}
+diff --git a/csucampuscraft-user/src/main/resources/application.yml b/csucampuscraft-user/src/main/resources/application.yml
+index e62836e..0749dec 100644
+--- a/csucampuscraft-user/src/main/resources/application.yml
++++ b/csucampuscraft-user/src/main/resources/application.yml
+@@ -25,3 +25,7 @@ spring:
+   sql:
+     init:
+       mode: never
++
++csucampuscraft:
++  checkout:
++    confirmation-ttl: PT10M
+diff --git a/csucampuscraft-user/src/main/resources/static/css/app.css b/csucampuscraft-user/src/main/resources/static/css/app.css
+index 726b4bc..3d9142c 100644
+--- a/csucampuscraft-user/src/main/resources/static/css/app.css
++++ b/csucampuscraft-user/src/main/resources/static/css/app.css
+@@ -280,3 +280,36 @@ tbody tr[aria-disabled="true"] { color: var(--color-muted); background: var(--co
+     [data-page-id="U05"] .cart-checkout { width: 100%; max-width: none; }
+     [data-page-id="U05"] .cart-checkout > button { width: 100%; }
+ }
++/* STEP08 additions are scoped to the storefront checkout confirmation page. */
++[data-page-id="U06"] { min-width: 0; }
++[data-page-id="U06"] .checkout-heading { display: flex; align-items: start; justify-content: space-between; flex-wrap: wrap; gap: var(--space-6); }
++[data-page-id="U06"] .checkout-heading h1 { margin-block: var(--space-2); }
++[data-page-id="U06"] .checkout-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(320px, 1fr); gap: var(--space-6); align-items: start; }
++[data-page-id="U06"] .checkout-overview { min-width: 0; }
++[data-page-id="U06"] .checkout-section-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-4); }
++[data-page-id="U06"] .checkout-table { min-width: 490px; table-layout: fixed; }
++[data-page-id="U06"] .checkout-table th:nth-child(1) { width: 46%; }
++[data-page-id="U06"] .checkout-table th:nth-child(2) { width: 20%; }
++[data-page-id="U06"] .checkout-table th:nth-child(3) { width: 12%; }
++[data-page-id="U06"] .checkout-table th:nth-child(4) { width: 22%; }
++[data-page-id="U06"] .checkout-table th,
++[data-page-id="U06"] .checkout-table td { padding: var(--space-3); }
++[data-page-id="U06"] .checkout-product { display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: start; gap: var(--space-2); }
++[data-page-id="U06"] .checkout-product a { font-weight: 600; overflow-wrap: anywhere; }
++[data-page-id="U06"] .checkout-product-image .catalog-image { width: 48px; }
++[data-page-id="U06"] .checkout-sku { margin-top: var(--space-2); overflow-wrap: anywhere; }
++[data-page-id="U06"] .checkout-money { font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
++[data-page-id="U06"] .checkout-total-panel { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-4); }
++[data-page-id="U06"] .checkout-total-panel h2 { margin-bottom: var(--space-2); }
++[data-page-id="U06"] .checkout-total { font-size: 28px; }
++[data-page-id="U06"] .checkout-confirmation-help { margin-top: var(--space-4); overflow-wrap: anywhere; }
++[data-page-id="U06"] .checkout-shipping > .field-help { margin-bottom: var(--space-6); }
++[data-page-id="U06"] .checkout-shipping .button-row > button { width: 100%; }
++[data-page-id="U06"] .checkout-shipping .form-field input { min-width: 0; }
++@media (max-width: 960px) {
++    [data-page-id="U06"] .checkout-grid { grid-template-columns: 1fr; }
++}
++@media (max-width: 600px) {
++    [data-page-id="U06"] .checkout-heading > .button { width: 100%; }
++    [data-page-id="U06"] .checkout-total-panel { align-items: start; flex-direction: column; }
++}
+diff --git a/csucampuscraft-user/src/main/resources/templates/cart/index.html b/csucampuscraft-user/src/main/resources/templates/cart/index.html
+index 99c3249..e906dff 100644
+--- a/csucampuscraft-user/src/main/resources/templates/cart/index.html
++++ b/csucampuscraft-user/src/main/resources/templates/cart/index.html
+@@ -128,10 +128,12 @@
+                th:text="${'¥' + #numbers.formatDecimal(cart.validSubtotal,1,'NONE',2,'POINT')}">¥0.00</p>
+         </div>
+         <div class="cart-checkout">
+-            <!-- STEP08 接入整车确认；本步不注册或链接结算与订单路由。 -->
+-            <button type="button" disabled data-checkout-unavailable aria-describedby="cart-checkout-help">整车结算</button>
++            <a class="button" th:if="${cart.allValid}" th:href="@{/checkout}" data-checkout-link
++               aria-describedby="cart-checkout-help">整车结算</a>
++            <button type="button" th:if="${!cart.allValid}" disabled data-checkout-unavailable
++                    aria-describedby="cart-checkout-help">整车结算</button>
+             <p id="cart-checkout-help" class="field-help"
+-               th:text="${cart.empty ? '请先选购商品。' : (cart.hasInvalidItems ? '请先处理失效商品后结算。' : '结算功能暂未开放。')}">结算说明</p>
++               th:text="${cart.empty ? '请先选购商品。' : (cart.hasInvalidItems ? '请先处理失效商品后结算。' : '进入整车确认，核对当前价格与收货信息。')}">结算说明</p>
+         </div>
+     </section>
+ </div>
+diff --git a/csucampuscraft-user/src/main/resources/templates/checkout/conflict.html b/csucampuscraft-user/src/main/resources/templates/checkout/conflict.html
+new file mode 100644
+index 0000000..00c828b
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/templates/checkout/conflict.html
+@@ -0,0 +1,20 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('结算提示 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>结算提示</title></head>
++<body>
++<section th:fragment="mainContent" class="panel error-page checkout-conflict" data-page-id="U06" data-checkout-conflict
++         th:attr="data-error-status=${errorStatus},data-error-code=${errorCode}" aria-labelledby="checkout-conflict-title">
++    <p class="error-number" th:text="${errorStatus}">409</p>
++    <h1 id="checkout-conflict-title" th:text="${tokenPreserved ? '下单暂未开放' : '请重新核对购物车'}">请重新核对购物车</h1>
++    <p th:text="${errorMessage}">当前确认已失效，请处理后重新确认。</p>
++    <p class="muted" th:if="${tokenPreserved}">本次未生成订单、未扣减库存，购物车和仍有效的确认均保留。</p>
++    <p class="muted" th:if="${!tokenPreserved}">购物车保持不变。请先查看购物车，处理商品或数量后再重新确认。</p>
++    <p class="error-code">错误代码：<span th:text="${errorCode}">CHECKOUT_CONFLICT</span></p>
++    <div class="button-row">
++        <a class="button" th:href="@{/cart}" data-return-cart>返回购物车</a>
++        <a class="button button-secondary" th:if="${canRetryConfirmation}" th:href="@{/checkout}" data-retry-checkout>重新确认整车</a>
++    </div>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-user/src/main/resources/templates/checkout/index.html b/csucampuscraft-user/src/main/resources/templates/checkout/index.html
+new file mode 100644
+index 0000000..c6b6452
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/templates/checkout/index.html
+@@ -0,0 +1,87 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('结算确认 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>结算确认</title></head>
++<body>
++<div th:fragment="mainContent" class="checkout-page" data-page-id="U06"
++     th:attr="data-checkout-item-count=${checkout.itemCount},data-checkout-quantity=${checkout.quantity},data-checkout-total=${checkout.total},data-error-status=${errorStatus},data-error-code=${errorCode}">
++    <header class="page-heading checkout-heading">
++        <div>
++            <p class="eyebrow">CSUCampusCraft</p>
++            <h1>结算确认</h1>
++            <p class="muted">核对整车商品与收货信息，金额由当前商品价格计算。</p>
++        </div>
++        <a class="button button-secondary" th:href="@{/cart}" data-return-cart>返回购物车</a>
++    </header>
++
++    <th:block th:replace="~{fragments/alerts :: summary(${errorAnchors})}"></th:block>
++
++    <div class="checkout-grid">
++        <section class="checkout-overview" aria-labelledby="checkout-items-title">
++            <div class="checkout-section-heading">
++                <h2 id="checkout-items-title">整车商品</h2>
++                <span class="muted" th:text="${checkout.itemCount + ' 种 · ' + checkout.quantity + ' 件'}">0 种 · 0 件</span>
++            </div>
++            <div class="table-container">
++                <table class="checkout-table">
++                    <caption class="small">本次确认的全部购物车条目</caption>
++                    <thead>
++                    <tr><th scope="col">商品</th><th scope="col">当前单价</th><th scope="col">数量</th><th scope="col">小计</th></tr>
++                    </thead>
++                    <tbody>
++                    <tr th:each="line : ${checkout.items}"
++                        th:attr="data-checkout-item-id=${line.itemId},data-product-id=${line.productId},data-quantity=${line.quantity},data-item-version=${line.itemVersion},data-unit-price=${line.unitPrice},data-line-subtotal=${line.subtotal}">
++                        <td>
++                            <div class="checkout-product">
++                                <div class="checkout-product-image">
++                                    <th:block th:replace="~{fragments/images :: image(${line.coverImage},${line.name})}"></th:block>
++                                </div>
++                                <div>
++                                    <a th:href="@{/products/{id}(id=${line.productId})}" th:text="${line.name}">商品名称</a>
++                                    <p class="field-help checkout-sku">SKU：<span th:text="${line.sku}">SKU</span></p>
++                                </div>
++                            </div>
++                        </td>
++                        <td class="checkout-money" th:text="${'¥' + #numbers.formatDecimal(line.unitPrice,1,'NONE',2,'POINT')}">¥0.00</td>
++                        <td th:text="${line.quantity}">0</td>
++                        <td class="checkout-money"><strong th:text="${'¥' + #numbers.formatDecimal(line.subtotal,1,'NONE',2,'POINT')}">¥0.00</strong></td>
++                    </tr>
++                    </tbody>
++                </table>
++            </div>
++
++            <div class="panel checkout-total-panel" aria-labelledby="checkout-total-title">
++                <div>
++                    <h2 id="checkout-total-title">商品金额合计</h2>
++                    <p class="field-help">人民币，包含整车全部商品；模拟配送不另计运费。</p>
++                </div>
++                <strong class="product-price checkout-total" data-checkout-amount
++                        th:text="${'¥' + #numbers.formatDecimal(checkout.total,1,'NONE',2,'POINT')}">¥0.00</strong>
++            </div>
++            <div class="checkout-confirmation-help field-help">
++                <p>确认不预留库存。购物车内容、价格或可购状态变化后，需要重新确认。</p>
++                <p>重新打开本页会替换上一次确认。当前确认到期时间：
++                    <time data-confirmation-expires-at th:datetime="${checkout.expiresAt}" th:text="${checkout.expiresAt}">UTC</time>（UTC）。
++                </p>
++            </div>
++        </section>
++
++        <section class="panel checkout-shipping" aria-labelledby="checkout-shipping-title">
++            <h2 id="checkout-shipping-title">收货信息</h2>
++            <p id="checkout-delivery-help" class="field-help">使用收货地址进行教学模拟配送。以下三项均为必填，去除首尾空白后核对长度。</p>
++            <form method="post" th:action="@{/orders}" data-submit-state data-checkout-form aria-describedby="checkout-delivery-help checkout-stage-help">
++                <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++                <input type="hidden" name="confirmationToken" th:value="[REDACTED]">
++                <th:block th:replace="~{fragments/fields :: text('receiverName','receiverName','收货人（1–50 字符）',${checkoutForm.receiverName},${fieldErrors})}"></th:block>
++                <th:block th:replace="~{fragments/fields :: text('receiverPhone','receiverPhone','联系电话（1–30 字符）',${checkoutForm.receiverPhone},${fieldErrors})}"></th:block>
++                <th:block th:replace="~{fragments/fields :: textarea('receiverAddress','receiverAddress','完整收货地址（1–255 字符）',${checkoutForm.receiverAddress},${fieldErrors})}"></th:block>
++                <p id="checkout-stage-help" class="field-help">目前仅支持结算确认，尚不能提交真实订单。提交后会显示下单尚未开放的说明。</p>
++                <div class="button-row">
++                    <button type="submit" data-submit-order data-submit-label="核对中…">提交订单</button>
++                </div>
++            </form>
++        </section>
++    </div>
++</div>
++</body>
++</html>
+diff --git a/csucampuscraft-user/src/main/resources/templates/fragments/fields.html b/csucampuscraft-user/src/main/resources/templates/fragments/fields.html
+index 7ee7cdb..f13258f 100644
+--- a/csucampuscraft-user/src/main/resources/templates/fragments/fields.html
++++ b/csucampuscraft-user/src/main/resources/templates/fragments/fields.html
+@@ -27,5 +27,13 @@
+            th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}">
+     <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors.get(name)}">请检查输入。</p>
+ </div>
++<div th:fragment="textarea(id, name, label, value, errors)" class="form-field"
++     th:with="hasError=${errors != null and errors.containsKey(name)}">
++    <label th:for="${id}" th:text="${label}">字段</label>
++    <textarea th:id="${id}" th:name="${name}" th:text="${value}"
++              th:classappend="${hasError ? 'input-error' : ''}"
++              th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}"></textarea>
++    <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors.get(name)}">请检查输入。</p>
++</div>
+ </body>
+ </html>

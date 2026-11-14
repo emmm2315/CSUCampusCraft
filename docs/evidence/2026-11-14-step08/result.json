@@ -1,0 +1,31 @@
+{
+  "overall": "PASS",
+  "scope": "STEP08 confirmation and validation-only order stub; real order writes STEP09, concurrency/fault injection STEP13",
+  "baseline_git_sha": "993b2ee184a1a05af40a1943970276ffb14cfac0",
+  "tested_code_sha": "54d6b007eb1317c14be090016ea75aec02ead6c5",
+  "branch": "feat/step08-checkout",
+  "execution_date": "2026-11-14T19:37:08.974062+08:00",
+  "attempts": [
+    {
+      "path": "attempt1/result.json",
+      "overall": "PASS"
+    }
+  ],
+  "main_assertions": 2249,
+  "http_records": 247,
+  "automatic_database_audits": 209,
+  "checkout_get_audits": 82,
+  "order_post_audits": 86,
+  "all_checkout_audits_zero_write": true,
+  "native_checks": 130,
+  "native_sql_trace": 2,
+  "browser_checks": 302,
+  "screenshots": 24,
+  "runtime_file_count": 147,
+  "runtime_manifest_sha256": "e23e25c23afb45c22474833685506d5086ab9193f253920b70b818673a39bec2",
+  "mysql_version": "8.4.9",
+  "mysql_port": 58660,
+  "tracked_processes_stopped": true,
+  "team_review": "待复核；姓名待填，M3前完成；STEP07台账保持待复核",
+  "source_code_after_test": "unchanged; documentation and this new archive are a subsequent local commit"
+}
