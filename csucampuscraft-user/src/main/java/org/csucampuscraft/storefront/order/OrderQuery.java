@@ -23,8 +23,10 @@ public record OrderQuery(String orderNo, String status, long page, int size) {
     public long getPage() { return page; }
     public int getSize() { return size; }
     public boolean isOffsetRepresentable() { return page - 1 <= Long.MAX_VALUE / size; }
-    public long getOffset() {
+    /** MyBatis exposes record accessors by their exact method name, including derived values. */
+    public long offset() {
         if (!isOffsetRepresentable()) throw new IllegalStateException("Order offset is not representable");
         return (page - 1) * size;
     }
+    public long getOffset() { return offset(); }
 }
