@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-14T15:21:10.761500+08:00",
+  "scope": "Only STEP07 owned MySQL8.4/8.0 instances and already-stopped application; no recursive directory deletion.",
+  "shutdown_requests": [
+    {
+      "instance": "mysql84-attempt1",
+      "port": 50941,
+      "uuid": "2e5c2dbc-dffa-11f1-88d2-025075b5a1bd",
+      "uuid_datadir_verified_before_shutdown": true,
+      "shutdown_completed": true
+    },
+    {
+      "instance": "mysql80-compat-attempt2",
+      "port": 64145,
+      "uuid": "769fabe6-dff9-11f1-a4dc-025075b5a1bd",
+      "uuid_datadir_verified_before_shutdown": true,
+      "shutdown_completed": true
+    }
+  ],
+  "port_checks": [
+    {
+      "host": "127.0.0.1",
+      "port": 50941,
+      "connect_ex_code": 10035,
+      "connect_probe_conclusive": false,
+      "os_listener_query": "GetExtendedTcpTable IPv4+IPv6",
+      "matching_os_listeners": [],
+      "not_listening": true
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 64145,
+      "connect_ex_code": 10035,
+      "connect_probe_conclusive": false,
+      "os_listener_query": "GetExtendedTcpTable IPv4+IPv6",
+      "matching_os_listeners": [],
+      "not_listening": true
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 18080,
+      "connect_ex_code": 10035,
+      "connect_probe_conclusive": false,
+      "os_listener_query": "GetExtendedTcpTable IPv4+IPv6",
+      "matching_os_listeners": [],
+      "not_listening": true
+    }
+  ],
+  "tracked_process_checks": [
+    {
+      "pid": 51596,
+      "open_process_error": 87,
+      "not_running": true
+    },
+    {
+      "pid": 44680,
+      "open_process_error": 87,
+      "not_running": true
+    },
+    {
+      "pid": 33848,
+      "open_process_error": 87,
+      "not_running": true
+    }
+  ],
+  "temporary_credentials": [
+    {
+      "instance": "mysql84-attempt1",
+      "deleted": true
+    },
+    {
+      "instance": "mysql80-compat-attempt2",
+      "deleted": true
+    }
+  ],
+  "preserved_data_directories": [
+    {
+      "instance": "mysql84-attempt1",
+      "datadir_preserved": true
+    },
+    {
+      "instance": "mysql80-compat-attempt2",
+      "datadir_preserved": true
+    }
+  ],
+  "download_tool_cache_preserved": true,
+  "final_application_lifecycle_events": 7,
+  "application_stop_event_recorded": true,
+  "other_processes_or_databases_modified": false,
+  "overall": "PASS"
+}

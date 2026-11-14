@@ -1,0 +1,590 @@
+PASS isolated database only
+PASS GET /login
+PASS login alice
+PASS GET /login
+PASS login bob
+PASS GET /login
+PASS login alice
+PASS GET /
+PASS badge /
+PASS GET /products
+PASS badge /products
+PASS GET /products/1
+PASS badge /products/1
+PASS GET /cart
+PASS badge /cart
+PASS GET /cart
+PASS cart total equals current valid SQL subtotal
+PASS guest before parsing status
+PASS guest before parsing inventory and unrelated tables
+PASS guest before parsing no database mutation
+PASS guest before parsing no session URL
+PASS guest before parsing no password leakage
+PASS missing CSRF status
+PASS missing CSRF inventory and unrelated tables
+PASS missing CSRF no database mutation
+PASS missing CSRF no session URL
+PASS missing CSRF no password leakage
+PASS wrong CSRF status
+PASS wrong CSRF inventory and unrelated tables
+PASS wrong CSRF no database mutation
+PASS wrong CSRF no session URL
+PASS wrong CSRF no password leakage
+PASS GET /cart
+PASS quantity '' status
+PASS quantity '' inventory and unrelated tables
+PASS quantity '' no database mutation
+PASS quantity '' no session URL
+PASS quantity '' no password leakage
+PASS GET /cart
+PASS quantity '0' status
+PASS quantity '0' inventory and unrelated tables
+PASS quantity '0' no database mutation
+PASS quantity '0' no session URL
+PASS quantity '0' no password leakage
+PASS GET /cart
+PASS quantity '-1' status
+PASS quantity '-1' inventory and unrelated tables
+PASS quantity '-1' no database mutation
+PASS quantity '-1' no session URL
+PASS quantity '-1' no password leakage
+PASS GET /cart
+PASS quantity '1.5' status
+PASS quantity '1.5' inventory and unrelated tables
+PASS quantity '1.5' no database mutation
+PASS quantity '1.5' no session URL
+PASS quantity '1.5' no password leakage
+PASS GET /cart
+PASS quantity '100' status
+PASS quantity '100' inventory and unrelated tables
+PASS quantity '100' no database mutation
+PASS quantity '100' no session URL
+PASS quantity '100' no password leakage
+PASS GET /cart
+PASS quantity 'NaN' status
+PASS quantity 'NaN' inventory and unrelated tables
+PASS quantity 'NaN' no database mutation
+PASS quantity 'NaN' no session URL
+PASS quantity 'NaN' no password leakage
+PASS GET /cart
+PASS quantity '9223372036854775808' status
+PASS quantity '9223372036854775808' inventory and unrelated tables
+PASS quantity '9223372036854775808' no database mutation
+PASS quantity '9223372036854775808' no session URL
+PASS quantity '9223372036854775808' no password leakage
+PASS GET /cart
+PASS missing productId status
+PASS missing productId inventory and unrelated tables
+PASS missing productId no database mutation
+PASS missing productId no session URL
+PASS missing productId no password leakage
+PASS GET /cart
+PASS missing quantity status
+PASS missing quantity inventory and unrelated tables
+PASS missing quantity no database mutation
+PASS missing quantity no session URL
+PASS missing quantity no password leakage
+PASS GET /cart
+PASS productId 0 status
+PASS productId 0 inventory and unrelated tables
+PASS productId 0 no database mutation
+PASS productId 0 no session URL
+PASS productId 0 no password leakage
+PASS GET /cart
+PASS productId -1 status
+PASS productId -1 inventory and unrelated tables
+PASS productId -1 no database mutation
+PASS productId -1 no session URL
+PASS productId -1 no password leakage
+PASS GET /cart
+PASS productId 1.0 status
+PASS productId 1.0 inventory and unrelated tables
+PASS productId 1.0 no database mutation
+PASS productId 1.0 no session URL
+PASS productId 1.0 no password leakage
+PASS GET /cart
+PASS productId abc status
+PASS productId abc inventory and unrelated tables
+PASS productId abc no database mutation
+PASS productId abc no session URL
+PASS productId abc no password leakage
+PASS GET /cart
+PASS productId 9223372036854775808 status
+PASS productId 9223372036854775808 inventory and unrelated tables
+PASS productId 9223372036854775808 no database mutation
+PASS productId 9223372036854775808 no session URL
+PASS productId 9223372036854775808 no password leakage
+PASS GET /cart
+PASS duplicate quantity status
+PASS duplicate quantity inventory and unrelated tables
+PASS duplicate quantity no database mutation
+PASS duplicate quantity no session URL
+PASS duplicate quantity no password leakage
+PASS GET /cart
+PASS missing product status
+PASS missing product inventory and unrelated tables
+PASS missing product no database mutation
+PASS missing product no session URL
+PASS missing product no password leakage
+PASS GET /cart
+PASS draft product status
+PASS draft product inventory and unrelated tables
+PASS draft product no database mutation
+PASS draft product no session URL
+PASS draft product no password leakage
+PASS GET /cart
+PASS sold out product status
+PASS sold out product inventory and unrelated tables
+PASS sold out product no database mutation
+PASS sold out product no session URL
+PASS sold out product no password leakage
+PASS GET /cart
+PASS over stock status
+PASS over stock inventory and unrelated tables
+PASS over stock no database mutation
+PASS over stock no session URL
+PASS over stock no password leakage
+PASS GET /cart
+PASS first add status
+PASS first add inventory and unrelated tables
+PASS first add fixed redirect
+PASS first add no session URL
+PASS first add no password leakage
+PASS GET /cart
+PASS merge add status
+PASS merge add inventory and unrelated tables
+PASS merge add fixed redirect
+PASS merge add no session URL
+PASS merge add no password leakage
+PASS same SKU one row
+PASS GET /
+PASS badge /
+PASS GET /products
+PASS badge /products
+PASS GET /products/1
+PASS badge /products/1
+PASS GET /cart
+PASS badge /cart
+PASS GET /cart
+PASS cart total equals current valid SQL subtotal
+PASS GET /cart
+PASS same quantity status
+PASS same quantity inventory and unrelated tables
+PASS same quantity no database mutation
+PASS same quantity fixed redirect
+PASS same quantity no session URL
+PASS same quantity no password leakage
+PASS GET /cart
+PASS change quantity status
+PASS change quantity inventory and unrelated tables
+PASS change quantity fixed redirect
+PASS change quantity no session URL
+PASS change quantity no password leakage
+PASS GET /cart
+PASS old quantity version status
+PASS old quantity version inventory and unrelated tables
+PASS old quantity version no database mutation
+PASS old quantity version no session URL
+PASS old quantity version no password leakage
+PASS GET /cart
+PASS old remove version status
+PASS old remove version inventory and unrelated tables
+PASS old remove version no database mutation
+PASS old remove version no session URL
+PASS old remove version no password leakage
+PASS GET /cart
+PASS foreign quantity status
+PASS foreign quantity inventory and unrelated tables
+PASS foreign quantity no database mutation
+PASS foreign quantity no session URL
+PASS foreign quantity no password leakage
+PASS GET /cart
+PASS foreign remove status
+PASS foreign remove inventory and unrelated tables
+PASS foreign remove no database mutation
+PASS foreign remove no session URL
+PASS foreign remove no password leakage
+PASS GET /cart
+PASS missing item status
+PASS missing item inventory and unrelated tables
+PASS missing item no database mutation
+PASS missing item no session URL
+PASS missing item no password leakage
+PASS GET /cart
+PASS missing row malformed quantity status
+PASS missing row malformed quantity inventory and unrelated tables
+PASS missing row malformed quantity no database mutation
+PASS missing row malformed quantity no session URL
+PASS missing row malformed quantity no password leakage
+PASS no broken error summary anchor
+PASS GET /cart
+PASS bad version None status
+PASS bad version None inventory and unrelated tables
+PASS bad version None no database mutation
+PASS bad version None no session URL
+PASS bad version None no password leakage
+PASS GET /cart
+PASS bad version -1 status
+PASS bad version -1 inventory and unrelated tables
+PASS bad version -1 no database mutation
+PASS bad version -1 no session URL
+PASS bad version -1 no password leakage
+PASS GET /cart
+PASS bad version 1.2 status
+PASS bad version 1.2 inventory and unrelated tables
+PASS bad version 1.2 no database mutation
+PASS bad version 1.2 no session URL
+PASS bad version 1.2 no password leakage
+PASS GET /cart
+PASS bad version 9223372036854775808 status
+PASS bad version 9223372036854775808 inventory and unrelated tables
+PASS bad version 9223372036854775808 no database mutation
+PASS bad version 9223372036854775808 no session URL
+PASS bad version 9223372036854775808 no password leakage
+PASS GET /
+PASS badge /
+PASS GET /products
+PASS badge /products
+PASS GET /products/1
+PASS badge /products/1
+PASS GET /cart
+PASS badge /cart
+PASS GET /cart
+PASS cart total equals current valid SQL subtotal
+PASS GET /
+PASS badge /
+PASS GET /products
+PASS badge /products
+PASS GET /products/1
+PASS badge /products/1
+PASS GET /cart
+PASS badge /cart
+PASS GET /cart
+PASS cart total equals current valid SQL subtotal
+PASS GET /cart
+PASS merge to 99 status
+PASS merge to 99 inventory and unrelated tables
+PASS merge to 99 fixed redirect
+PASS merge to 99 no session URL
+PASS merge to 99 no password leakage
+PASS GET /cart
+PASS merge over 99 status
+PASS merge over 99 inventory and unrelated tables
+PASS merge over 99 no database mutation
+PASS merge over 99 no session URL
+PASS merge over 99 no password leakage
+PASS GET /cart
+PASS SKU 1 status
+PASS SKU 1 inventory and unrelated tables
+PASS SKU 1 fixed redirect
+PASS SKU 1 no session URL
+PASS SKU 1 no password leakage
+PASS GET /cart
+PASS SKU 2 status
+PASS SKU 2 inventory and unrelated tables
+PASS SKU 2 fixed redirect
+PASS SKU 2 no session URL
+PASS SKU 2 no password leakage
+PASS GET /cart
+PASS SKU 3 status
+PASS SKU 3 inventory and unrelated tables
+PASS SKU 3 fixed redirect
+PASS SKU 3 no session URL
+PASS SKU 3 no password leakage
+PASS GET /cart
+PASS SKU 4 status
+PASS SKU 4 inventory and unrelated tables
+PASS SKU 4 fixed redirect
+PASS SKU 4 no session URL
+PASS SKU 4 no password leakage
+PASS GET /cart
+PASS SKU 5 status
+PASS SKU 5 inventory and unrelated tables
+PASS SKU 5 fixed redirect
+PASS SKU 5 no session URL
+PASS SKU 5 no password leakage
+PASS GET /cart
+PASS SKU 6 status
+PASS SKU 6 inventory and unrelated tables
+PASS SKU 6 fixed redirect
+PASS SKU 6 no session URL
+PASS SKU 6 no password leakage
+PASS GET /cart
+PASS SKU 7 status
+PASS SKU 7 inventory and unrelated tables
+PASS SKU 7 fixed redirect
+PASS SKU 7 no session URL
+PASS SKU 7 no password leakage
+PASS GET /cart
+PASS SKU 8 status
+PASS SKU 8 inventory and unrelated tables
+PASS SKU 8 fixed redirect
+PASS SKU 8 no session URL
+PASS SKU 8 no password leakage
+PASS GET /cart
+PASS SKU 9 status
+PASS SKU 9 inventory and unrelated tables
+PASS SKU 9 fixed redirect
+PASS SKU 9 no session URL
+PASS SKU 9 no password leakage
+PASS GET /cart
+PASS SKU 10 status
+PASS SKU 10 inventory and unrelated tables
+PASS SKU 10 fixed redirect
+PASS SKU 10 no session URL
+PASS SKU 10 no password leakage
+PASS GET /cart
+PASS SKU 13 status
+PASS SKU 13 inventory and unrelated tables
+PASS SKU 13 fixed redirect
+PASS SKU 13 no session URL
+PASS SKU 13 no password leakage
+PASS GET /cart
+PASS SKU 14 status
+PASS SKU 14 inventory and unrelated tables
+PASS SKU 14 fixed redirect
+PASS SKU 14 no session URL
+PASS SKU 14 no password leakage
+PASS GET /cart
+PASS SKU 15 status
+PASS SKU 15 inventory and unrelated tables
+PASS SKU 15 fixed redirect
+PASS SKU 15 no session URL
+PASS SKU 15 no password leakage
+PASS GET /cart
+PASS SKU 16 status
+PASS SKU 16 inventory and unrelated tables
+PASS SKU 16 fixed redirect
+PASS SKU 16 no session URL
+PASS SKU 16 no password leakage
+PASS GET /cart
+PASS SKU 17 status
+PASS SKU 17 inventory and unrelated tables
+PASS SKU 17 fixed redirect
+PASS SKU 17 no session URL
+PASS SKU 17 no password leakage
+PASS GET /cart
+PASS SKU 18 status
+PASS SKU 18 inventory and unrelated tables
+PASS SKU 18 fixed redirect
+PASS SKU 18 no session URL
+PASS SKU 18 no password leakage
+PASS GET /cart
+PASS SKU 19 status
+PASS SKU 19 inventory and unrelated tables
+PASS SKU 19 fixed redirect
+PASS SKU 19 no session URL
+PASS SKU 19 no password leakage
+PASS GET /cart
+PASS SKU 20 status
+PASS SKU 20 inventory and unrelated tables
+PASS SKU 20 fixed redirect
+PASS SKU 20 no session URL
+PASS SKU 20 no password leakage
+PASS GET /cart
+PASS SKU 21 status
+PASS SKU 21 inventory and unrelated tables
+PASS SKU 21 fixed redirect
+PASS SKU 21 no session URL
+PASS SKU 21 no password leakage
+PASS GET /cart
+PASS SKU 22 status
+PASS SKU 22 inventory and unrelated tables
+PASS SKU 22 fixed redirect
+PASS SKU 22 no session URL
+PASS SKU 22 no password leakage
+PASS GET /cart
+PASS 21st SKU status
+PASS 21st SKU inventory and unrelated tables
+PASS 21st SKU no database mutation
+PASS 21st SKU no session URL
+PASS 21st SKU no password leakage
+PASS GET /cart
+PASS merge allowed at 20 SKU status
+PASS merge allowed at 20 SKU inventory and unrelated tables
+PASS merge allowed at 20 SKU fixed redirect
+PASS merge allowed at 20 SKU no session URL
+PASS merge allowed at 20 SKU no password leakage
+PASS 20 SKU retained
+PASS GET /cart
+PASS GET /cart
+PASS same SKU concurrent add responses
+PASS same SKU concurrent add inventory and unrelated tables
+PASS concurrent unique row
+PASS GET /cart
+PASS prepare 98 status
+PASS prepare 98 inventory and unrelated tables
+PASS prepare 98 fixed redirect
+PASS prepare 98 no session URL
+PASS prepare 98 no password leakage
+PASS GET /cart
+PASS GET /cart
+PASS 99 boundary concurrent add responses
+PASS 99 boundary concurrent add inventory and unrelated tables
+PASS quantity capped 99
+PASS GET /cart
+PASS GET /cart
+PASS 20 SKU concurrent boundary responses
+PASS 20 SKU concurrent boundary inventory and unrelated tables
+PASS concurrent SKU cap
+PASS GET /cart
+PASS prepare version race status
+PASS prepare version race inventory and unrelated tables
+PASS prepare version race fixed redirect
+PASS prepare version race no session URL
+PASS prepare version race no password leakage
+PASS GET /cart
+PASS GET /cart
+PASS same version concurrent update responses
+PASS same version concurrent update inventory and unrelated tables
+PASS version increments once
+PASS GET /cart
+PASS invalid draft fixture status
+PASS invalid draft fixture inventory and unrelated tables
+PASS invalid draft fixture fixed redirect
+PASS invalid draft fixture no session URL
+PASS invalid draft fixture no password leakage
+PASS GET /cart
+PASS invalid zero fixture status
+PASS invalid zero fixture inventory and unrelated tables
+PASS invalid zero fixture fixed redirect
+PASS invalid zero fixture no session URL
+PASS invalid zero fixture no password leakage
+PASS GET /cart
+PASS invalid stock fixture status
+PASS invalid stock fixture inventory and unrelated tables
+PASS invalid stock fixture fixed redirect
+PASS invalid stock fixture no session URL
+PASS invalid stock fixture no password leakage
+PASS GET /
+PASS badge /
+PASS GET /products
+PASS badge /products
+PASS GET /products/4
+PASS badge /products/4
+PASS GET /cart
+PASS badge /cart
+PASS GET /cart
+PASS cart total equals current valid SQL subtotal
+PASS GET /cart
+PASS all invalid reasons
+PASS invalid checkout blocked
+PASS GET /cart
+PASS invalid item change status
+PASS invalid item change inventory and unrelated tables
+PASS invalid item change no database mutation
+PASS invalid item change no session URL
+PASS invalid item change no password leakage
+PASS GET /cart
+PASS invalid item removable status
+PASS invalid item removable inventory and unrelated tables
+PASS invalid item removable fixed redirect
+PASS invalid item removable no session URL
+PASS invalid item removable no password leakage
+PASS GET /cart
+PASS invalid item change status
+PASS invalid item change inventory and unrelated tables
+PASS invalid item change no database mutation
+PASS invalid item change no session URL
+PASS invalid item change no password leakage
+PASS GET /cart
+PASS invalid item removable status
+PASS invalid item removable inventory and unrelated tables
+PASS invalid item removable fixed redirect
+PASS invalid item removable no session URL
+PASS invalid item removable no password leakage
+PASS GET /cart
+PASS invalid item change status
+PASS invalid item change inventory and unrelated tables
+PASS invalid item change no database mutation
+PASS invalid item change no session URL
+PASS invalid item change no password leakage
+PASS GET /cart
+PASS invalid item removable status
+PASS invalid item removable inventory and unrelated tables
+PASS invalid item removable fixed redirect
+PASS invalid item removable no session URL
+PASS invalid item removable no password leakage
+PASS GET /
+PASS badge /
+PASS GET /products
+PASS badge /products
+PASS GET /products/4
+PASS badge /products/4
+PASS GET /cart
+PASS badge /cart
+PASS GET /cart
+PASS cart total equals current valid SQL subtotal
+PASS GET /cart
+PASS persistent cart status
+PASS persistent cart inventory and unrelated tables
+PASS persistent cart fixed redirect
+PASS persistent cart no session URL
+PASS persistent cart no password leakage
+PASS GET /
+PASS badge /
+PASS GET /products
+PASS badge /products
+PASS GET /products/4
+PASS badge /products/4
+PASS GET /cart
+PASS badge /cart
+PASS GET /cart
+PASS cart total equals current valid SQL subtotal
+PASS GET /cart
+PASS logout success
+PASS GET /
+PASS logout badge is zero
+PASS GET /login
+PASS login alice
+PASS GET /
+PASS badge /
+PASS GET /products
+PASS badge /products
+PASS GET /products/4
+PASS badge /products/4
+PASS GET /cart
+PASS badge /cart
+PASS GET /cart
+PASS cart total equals current valid SQL subtotal
+PASS GET /
+PASS badge /
+PASS GET /products
+PASS badge /products
+PASS GET /products/4
+PASS badge /products/4
+PASS GET /cart
+PASS badge /cart
+PASS GET /cart
+PASS cart total equals current valid SQL subtotal
+PASS disabled identity before CSRF status
+PASS disabled identity before CSRF inventory and unrelated tables
+PASS disabled identity before CSRF no database mutation
+PASS disabled identity before CSRF no session URL
+PASS disabled identity before CSRF no password leakage
+PASS GET /login
+PASS login alice
+PASS GET /
+PASS badge /
+PASS GET /products
+PASS badge /products
+PASS GET /products/4
+PASS badge /products/4
+PASS GET /cart
+PASS badge /cart
+PASS GET /cart
+PASS cart total equals current valid SQL subtotal
+PASS restart preserved seven tables
+PASS restart requires fresh session
+PASS GET /login
+PASS login alice
+PASS GET /
+PASS badge /
+PASS GET /products
+PASS badge /products
+PASS GET /products/4
+PASS badge /products/4
+PASS GET /cart
+PASS badge /cart
+PASS GET /cart
+PASS cart total equals current valid SQL subtotal

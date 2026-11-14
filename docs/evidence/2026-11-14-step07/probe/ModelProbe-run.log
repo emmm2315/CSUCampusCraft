@@ -1,0 +1,19 @@
+PASS DataAccessResourceFailureException renders unavailable badge
+PASS DataAccessResourceFailureException preserves safe identity
+PASS DataAccessResourceFailureException renders safe 500 without repeated failure
+PASS DataAccessResourceFailureException does not create POST session
+PASS CannotCreateTransactionException renders unavailable badge
+PASS CannotCreateTransactionException preserves safe identity
+PASS CannotCreateTransactionException renders safe 500 without repeated failure
+PASS CannotCreateTransactionException does not create POST session
+PASS UnexpectedRollbackException renders unavailable badge
+PASS UnexpectedRollbackException preserves safe identity
+PASS UnexpectedRollbackException renders safe 500 without repeated failure
+PASS UnexpectedRollbackException does not create POST session
+PASS guest badge is zero without cart query
+PASS expired identity redirects to safe cart GET
+PASS expired identity and confirmation are cleared
+PASS expired identity preserves CSRF
+PASS expired POST does not create a session
+PASS 500 BusinessException message is sanitized
+MODEL_PROBE_PASSED=18

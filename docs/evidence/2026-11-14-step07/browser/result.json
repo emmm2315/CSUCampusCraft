@@ -1,0 +1,3920 @@
+{
+  "overall": "PASS",
+  "completed": true,
+  "secretsRecorded": false,
+  "checks": [
+    {
+      "name": "GET-/products/1-status-200",
+      "passed": true
+    },
+    {
+      "name": "guest-badge-zero",
+      "passed": true
+    },
+    {
+      "name": "guest-explicit-login-link",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1366-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "detail-guest-1366-page-id",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1366-no-document-overflow",
+      "passed": true,
+      "observation": 1366
+    },
+    {
+      "name": "detail-guest-1366-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-guest-1366-labels",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1366-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-guest-1366-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1366-csrf",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1366-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1366-images",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1366-missing-cover-fell-back",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1366-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1920-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "detail-guest-1920-page-id",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1920-no-document-overflow",
+      "passed": true,
+      "observation": 1920
+    },
+    {
+      "name": "detail-guest-1920-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-guest-1920-labels",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1920-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-guest-1920-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1920-csrf",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1920-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1920-images",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1920-missing-cover-fell-back",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-1920-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-390-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "detail-guest-390-page-id",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-390-no-document-overflow",
+      "passed": true,
+      "observation": 390
+    },
+    {
+      "name": "detail-guest-390-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-guest-390-labels",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-390-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-guest-390-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-390-csrf",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-390-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-390-images",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-390-missing-cover-fell-back",
+      "passed": true
+    },
+    {
+      "name": "detail-guest-390-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "POST-/login-status-303",
+      "passed": true
+    },
+    {
+      "name": "login-returned-to-detail",
+      "passed": true
+    },
+    {
+      "name": "login-return-did-not-replay-add",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1366-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "detail-authenticated-1366-page-id",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1366-no-document-overflow",
+      "passed": true,
+      "observation": 1366
+    },
+    {
+      "name": "detail-authenticated-1366-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-authenticated-1366-labels",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1366-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-authenticated-1366-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1366-csrf",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1366-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1366-images",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1366-missing-cover-fell-back",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1366-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1920-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "detail-authenticated-1920-page-id",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1920-no-document-overflow",
+      "passed": true,
+      "observation": 1920
+    },
+    {
+      "name": "detail-authenticated-1920-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-authenticated-1920-labels",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1920-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-authenticated-1920-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1920-csrf",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1920-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1920-images",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1920-missing-cover-fell-back",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-1920-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-390-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "detail-authenticated-390-page-id",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-390-no-document-overflow",
+      "passed": true,
+      "observation": 390
+    },
+    {
+      "name": "detail-authenticated-390-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-authenticated-390-labels",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-390-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-authenticated-390-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-390-csrf",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-390-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-390-images",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-390-missing-cover-fell-back",
+      "passed": true
+    },
+    {
+      "name": "detail-authenticated-390-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "GET-/cart-status-200",
+      "passed": true
+    },
+    {
+      "name": "initial-invalid-fixture-present",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1366-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "cart-invalid-1366-page-id",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1366-no-document-overflow",
+      "passed": true,
+      "observation": 1366
+    },
+    {
+      "name": "cart-invalid-1366-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-invalid-1366-labels",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1366-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-invalid-1366-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1366-csrf",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1366-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1366-images",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1366-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1366-no-unimplemented-checkout-link",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1366-checkout-phase-labeled",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1366-badge-includes-every-row",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1366-row-form-versions",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1366-whole-cart-readiness",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1920-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "cart-invalid-1920-page-id",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1920-no-document-overflow",
+      "passed": true,
+      "observation": 1920
+    },
+    {
+      "name": "cart-invalid-1920-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-invalid-1920-labels",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1920-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-invalid-1920-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1920-csrf",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1920-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1920-images",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1920-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1920-no-unimplemented-checkout-link",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1920-checkout-phase-labeled",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1920-badge-includes-every-row",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1920-row-form-versions",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-1920-whole-cart-readiness",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-390-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "cart-invalid-390-page-id",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-390-no-document-overflow",
+      "passed": true,
+      "observation": 390
+    },
+    {
+      "name": "cart-invalid-390-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-invalid-390-labels",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-390-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-invalid-390-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-390-csrf",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-390-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-390-images",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-390-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-390-no-unimplemented-checkout-link",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-390-checkout-phase-labeled",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-390-badge-includes-every-row",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-390-row-form-versions",
+      "passed": true
+    },
+    {
+      "name": "cart-invalid-390-whole-cart-readiness",
+      "passed": true
+    },
+    {
+      "name": "initial-valid-row-present",
+      "passed": true
+    },
+    {
+      "name": "POST-/cart/items/78/quantity-status-400",
+      "passed": true
+    },
+    {
+      "name": "cart-400-value-retained",
+      "passed": true
+    },
+    {
+      "name": "cart-400-field-associated",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1366-document-status-400",
+      "passed": true,
+      "observation": 400
+    },
+    {
+      "name": "cart-quantity-400-1366-page-id",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1366-no-document-overflow",
+      "passed": true,
+      "observation": 1366
+    },
+    {
+      "name": "cart-quantity-400-1366-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-quantity-400-1366-labels",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1366-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-quantity-400-1366-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1366-csrf",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1366-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1366-images",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1366-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1366-no-unimplemented-checkout-link",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1366-checkout-phase-labeled",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1366-badge-includes-every-row",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1366-row-form-versions",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1366-whole-cart-readiness",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1920-document-status-400",
+      "passed": true,
+      "observation": 400
+    },
+    {
+      "name": "cart-quantity-400-1920-page-id",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1920-no-document-overflow",
+      "passed": true,
+      "observation": 1920
+    },
+    {
+      "name": "cart-quantity-400-1920-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-quantity-400-1920-labels",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1920-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-quantity-400-1920-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1920-csrf",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1920-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1920-images",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1920-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1920-no-unimplemented-checkout-link",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1920-checkout-phase-labeled",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1920-badge-includes-every-row",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1920-row-form-versions",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-1920-whole-cart-readiness",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-390-document-status-400",
+      "passed": true,
+      "observation": 400
+    },
+    {
+      "name": "cart-quantity-400-390-page-id",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-390-no-document-overflow",
+      "passed": true,
+      "observation": 390
+    },
+    {
+      "name": "cart-quantity-400-390-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-quantity-400-390-labels",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-390-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-quantity-400-390-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-390-csrf",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-390-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-390-images",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-390-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-390-no-unimplemented-checkout-link",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-390-checkout-phase-labeled",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-390-badge-includes-every-row",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-390-row-form-versions",
+      "passed": true
+    },
+    {
+      "name": "cart-quantity-400-390-whole-cart-readiness",
+      "passed": true
+    },
+    {
+      "name": "GET-/cart-status-200",
+      "passed": true
+    },
+    {
+      "name": "GET-/cart-status-200",
+      "passed": true
+    },
+    {
+      "name": "POST-/cart/items/78/quantity-status-303",
+      "passed": true
+    },
+    {
+      "name": "POST-/cart/items/78/quantity-status-409",
+      "passed": true
+    },
+    {
+      "name": "cart-409-quantity-disabled",
+      "passed": true
+    },
+    {
+      "name": "cart-409-remove-disabled",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1366-document-status-409",
+      "passed": true,
+      "observation": 409
+    },
+    {
+      "name": "cart-stale-version-409-1366-page-id",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1366-no-document-overflow",
+      "passed": true,
+      "observation": 1366
+    },
+    {
+      "name": "cart-stale-version-409-1366-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-stale-version-409-1366-labels",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1366-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-stale-version-409-1366-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1366-csrf",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1366-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1366-images",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1366-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1366-no-unimplemented-checkout-link",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1366-checkout-phase-labeled",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1366-badge-includes-every-row",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1366-row-form-versions",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1366-whole-cart-readiness",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1920-document-status-409",
+      "passed": true,
+      "observation": 409
+    },
+    {
+      "name": "cart-stale-version-409-1920-page-id",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1920-no-document-overflow",
+      "passed": true,
+      "observation": 1920
+    },
+    {
+      "name": "cart-stale-version-409-1920-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-stale-version-409-1920-labels",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1920-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-stale-version-409-1920-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1920-csrf",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1920-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1920-images",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1920-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1920-no-unimplemented-checkout-link",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1920-checkout-phase-labeled",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1920-badge-includes-every-row",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1920-row-form-versions",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-1920-whole-cart-readiness",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-390-document-status-409",
+      "passed": true,
+      "observation": 409
+    },
+    {
+      "name": "cart-stale-version-409-390-page-id",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-390-no-document-overflow",
+      "passed": true,
+      "observation": 390
+    },
+    {
+      "name": "cart-stale-version-409-390-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-stale-version-409-390-labels",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-390-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-stale-version-409-390-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-390-csrf",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-390-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-390-images",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-390-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-390-no-unimplemented-checkout-link",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-390-checkout-phase-labeled",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-390-badge-includes-every-row",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-390-row-form-versions",
+      "passed": true
+    },
+    {
+      "name": "cart-stale-version-409-390-whole-cart-readiness",
+      "passed": true
+    },
+    {
+      "name": "GET-/products/1-status-200",
+      "passed": true
+    },
+    {
+      "name": "POST-/cart/items-status-400",
+      "passed": true
+    },
+    {
+      "name": "detail-400-value-retained",
+      "passed": true
+    },
+    {
+      "name": "detail-400-field-associated",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-1366-document-status-400",
+      "passed": true,
+      "observation": 400
+    },
+    {
+      "name": "detail-quantity-400-1366-page-id",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-1366-no-document-overflow",
+      "passed": true,
+      "observation": 1366
+    },
+    {
+      "name": "detail-quantity-400-1366-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-quantity-400-1366-labels",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-1366-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-quantity-400-1366-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-1366-csrf",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-1366-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-1366-images",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-1366-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-1920-document-status-400",
+      "passed": true,
+      "observation": 400
+    },
+    {
+      "name": "detail-quantity-400-1920-page-id",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-1920-no-document-overflow",
+      "passed": true,
+      "observation": 1920
+    },
+    {
+      "name": "detail-quantity-400-1920-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-quantity-400-1920-labels",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-1920-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-quantity-400-1920-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-1920-csrf",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-1920-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-1920-images",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-1920-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-390-document-status-400",
+      "passed": true,
+      "observation": 400
+    },
+    {
+      "name": "detail-quantity-400-390-page-id",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-390-no-document-overflow",
+      "passed": true,
+      "observation": 390
+    },
+    {
+      "name": "detail-quantity-400-390-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-quantity-400-390-labels",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-390-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-quantity-400-390-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-390-csrf",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-390-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-390-images",
+      "passed": true
+    },
+    {
+      "name": "detail-quantity-400-390-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "GET-/products/1-status-200",
+      "passed": true
+    },
+    {
+      "name": "POST-/cart/items-status-409",
+      "passed": true
+    },
+    {
+      "name": "detail-409-submit-disabled",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-1366-document-status-409",
+      "passed": true,
+      "observation": 409
+    },
+    {
+      "name": "detail-stock-409-1366-page-id",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-1366-no-document-overflow",
+      "passed": true,
+      "observation": 1366
+    },
+    {
+      "name": "detail-stock-409-1366-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-stock-409-1366-labels",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-1366-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-stock-409-1366-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-1366-csrf",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-1366-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-1366-images",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-1366-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-1920-document-status-409",
+      "passed": true,
+      "observation": 409
+    },
+    {
+      "name": "detail-stock-409-1920-page-id",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-1920-no-document-overflow",
+      "passed": true,
+      "observation": 1920
+    },
+    {
+      "name": "detail-stock-409-1920-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-stock-409-1920-labels",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-1920-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-stock-409-1920-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-1920-csrf",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-1920-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-1920-images",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-1920-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-390-document-status-409",
+      "passed": true,
+      "observation": 409
+    },
+    {
+      "name": "detail-stock-409-390-page-id",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-390-no-document-overflow",
+      "passed": true,
+      "observation": 390
+    },
+    {
+      "name": "detail-stock-409-390-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-stock-409-390-labels",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-390-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-stock-409-390-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-390-csrf",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-390-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-390-images",
+      "passed": true
+    },
+    {
+      "name": "detail-stock-409-390-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "GET-/products/11-status-200",
+      "passed": true
+    },
+    {
+      "name": "sold-out-submit-disabled",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-1366-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "detail-sold-out-1366-page-id",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-1366-no-document-overflow",
+      "passed": true,
+      "observation": 1366
+    },
+    {
+      "name": "detail-sold-out-1366-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-sold-out-1366-labels",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-1366-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-sold-out-1366-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-1366-csrf",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-1366-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-1366-images",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-1366-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-1920-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "detail-sold-out-1920-page-id",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-1920-no-document-overflow",
+      "passed": true,
+      "observation": 1920
+    },
+    {
+      "name": "detail-sold-out-1920-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-sold-out-1920-labels",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-1920-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-sold-out-1920-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-1920-csrf",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-1920-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-1920-images",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-1920-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-390-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "detail-sold-out-390-page-id",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-390-no-document-overflow",
+      "passed": true,
+      "observation": 390
+    },
+    {
+      "name": "detail-sold-out-390-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-sold-out-390-labels",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-390-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "detail-sold-out-390-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-390-csrf",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-390-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-390-images",
+      "passed": true
+    },
+    {
+      "name": "detail-sold-out-390-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "GET-/cart-status-200",
+      "passed": true
+    },
+    {
+      "name": "POST-/cart/items/78/remove-status-303",
+      "passed": true
+    },
+    {
+      "name": "POST-/cart/items/79/remove-status-303",
+      "passed": true
+    },
+    {
+      "name": "all-initial-cart-rows-removed",
+      "passed": true
+    },
+    {
+      "name": "empty-cart-badge-zero",
+      "passed": true
+    },
+    {
+      "name": "empty-cart-state-visible",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1366-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "cart-empty-1366-page-id",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1366-no-document-overflow",
+      "passed": true,
+      "observation": 1366
+    },
+    {
+      "name": "cart-empty-1366-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-empty-1366-labels",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1366-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-empty-1366-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1366-csrf",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1366-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1366-images",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1366-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1366-no-unimplemented-checkout-link",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1366-checkout-phase-labeled",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1366-badge-includes-every-row",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1366-row-form-versions",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1366-whole-cart-readiness",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1920-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "cart-empty-1920-page-id",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1920-no-document-overflow",
+      "passed": true,
+      "observation": 1920
+    },
+    {
+      "name": "cart-empty-1920-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-empty-1920-labels",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1920-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-empty-1920-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1920-csrf",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1920-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1920-images",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1920-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1920-no-unimplemented-checkout-link",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1920-checkout-phase-labeled",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1920-badge-includes-every-row",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1920-row-form-versions",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-1920-whole-cart-readiness",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-390-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "cart-empty-390-page-id",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-390-no-document-overflow",
+      "passed": true,
+      "observation": 390
+    },
+    {
+      "name": "cart-empty-390-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-empty-390-labels",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-390-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-empty-390-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-390-csrf",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-390-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-390-images",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-390-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-390-no-unimplemented-checkout-link",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-390-checkout-phase-labeled",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-390-badge-includes-every-row",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-390-row-form-versions",
+      "passed": true
+    },
+    {
+      "name": "cart-empty-390-whole-cart-readiness",
+      "passed": true
+    },
+    {
+      "name": "GET-/products/1-status-200",
+      "passed": true
+    },
+    {
+      "name": "POST-/cart/items-status-303",
+      "passed": true
+    },
+    {
+      "name": "add-success-return-cart",
+      "passed": true
+    },
+    {
+      "name": "healthy-cart-allows-future-checkout",
+      "passed": true
+    },
+    {
+      "name": "add-success-badge-one",
+      "passed": true
+    },
+    {
+      "name": "POST-/cart/items/80/quantity-status-303",
+      "passed": true
+    },
+    {
+      "name": "same-quantity-keeps-version",
+      "passed": true
+    },
+    {
+      "name": "POST-/cart/items/80/quantity-status-303",
+      "passed": true
+    },
+    {
+      "name": "quantity-success-badge-two",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1366-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "cart-healthy-1366-page-id",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1366-no-document-overflow",
+      "passed": true,
+      "observation": 1366
+    },
+    {
+      "name": "cart-healthy-1366-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-healthy-1366-labels",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1366-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-healthy-1366-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1366-csrf",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1366-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1366-images",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1366-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1366-no-unimplemented-checkout-link",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1366-checkout-phase-labeled",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1366-badge-includes-every-row",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1366-row-form-versions",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1366-whole-cart-readiness",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1920-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "cart-healthy-1920-page-id",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1920-no-document-overflow",
+      "passed": true,
+      "observation": 1920
+    },
+    {
+      "name": "cart-healthy-1920-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-healthy-1920-labels",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1920-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-healthy-1920-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1920-csrf",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1920-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1920-images",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1920-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1920-no-unimplemented-checkout-link",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1920-checkout-phase-labeled",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1920-badge-includes-every-row",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1920-row-form-versions",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-1920-whole-cart-readiness",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-390-document-status-200",
+      "passed": true,
+      "observation": 200
+    },
+    {
+      "name": "cart-healthy-390-page-id",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-390-no-document-overflow",
+      "passed": true,
+      "observation": 390
+    },
+    {
+      "name": "cart-healthy-390-unique-ids",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-healthy-390-labels",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-390-descriptions",
+      "passed": true,
+      "observation": []
+    },
+    {
+      "name": "cart-healthy-390-error-anchors",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-390-csrf",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-390-cookie-only",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-390-images",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-390-table-scroll-contained",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-390-no-unimplemented-checkout-link",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-390-checkout-phase-labeled",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-390-badge-includes-every-row",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-390-row-form-versions",
+      "passed": true
+    },
+    {
+      "name": "cart-healthy-390-whole-cart-readiness",
+      "passed": true
+    },
+    {
+      "name": "GET-/-status-200",
+      "passed": true
+    },
+    {
+      "name": "shared-badge-/",
+      "passed": true
+    },
+    {
+      "name": "GET-/products-status-200",
+      "passed": true
+    },
+    {
+      "name": "shared-badge-/products",
+      "passed": true
+    },
+    {
+      "name": "GET-/products/1-status-200",
+      "passed": true
+    },
+    {
+      "name": "shared-badge-/products/1",
+      "passed": true
+    },
+    {
+      "name": "GET-/cart-status-200",
+      "passed": true
+    },
+    {
+      "name": "POST-/cart/items/80/remove-status-303",
+      "passed": true
+    },
+    {
+      "name": "browser-final-cart-empty",
+      "passed": true
+    },
+    {
+      "name": "no-client-page-errors",
+      "passed": true,
+      "observation": []
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "detail-guest-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "status": 200,
+      "sha256": "b0893b0de351b4cae5eaf9086065465966f696021a7e63e8175861dd9a3119dc",
+      "pngWidth": 1366,
+      "pngHeight": 1632,
+      "observation": {
+        "pageId": "U03",
+        "documentOverflow": false,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "0",
+        "checkoutAllowed": null,
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": null,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "detail-guest-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "sha256": "d0470844e5b45d0b577a5695842707797905e1072560c32d0af5beda96a78122",
+      "pngWidth": 1920,
+      "pngHeight": 1632,
+      "observation": {
+        "pageId": "U03",
+        "documentOverflow": false,
+        "documentWidth": 1920,
+        "viewportWidth": 1920,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "0",
+        "checkoutAllowed": null,
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": null,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "detail-guest-390.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "sha256": "4044537bed8c0ba7944c40b3af280c94bfc3bc79bebea9cd109eca7d572f021a",
+      "pngWidth": 390,
+      "pngHeight": 2678,
+      "observation": {
+        "pageId": "U03",
+        "documentOverflow": false,
+        "documentWidth": 390,
+        "viewportWidth": 390,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "0",
+        "checkoutAllowed": null,
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": null,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "detail-authenticated-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "status": 200,
+      "sha256": "4464a55cfcf8b1d6889767a590eccab0f43b1b63c5440e648d9d8a150f21c5d2",
+      "pngWidth": 1366,
+      "pngHeight": 1662,
+      "observation": {
+        "pageId": "U03",
+        "documentOverflow": false,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "3",
+        "checkoutAllowed": null,
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": false,
+        "checkoutDisabled": null,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "detail-authenticated-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "sha256": "e8068cc57f2af25052cd591b63e2d1b9f766975c3135966604a47119a9c34d2d",
+      "pngWidth": 1920,
+      "pngHeight": 1662,
+      "observation": {
+        "pageId": "U03",
+        "documentOverflow": false,
+        "documentWidth": 1920,
+        "viewportWidth": 1920,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "3",
+        "checkoutAllowed": null,
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": false,
+        "checkoutDisabled": null,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "detail-authenticated-390.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "sha256": "c497c60cfdc699703d0ba3140bb5282d0d8b951c6f06c187d104c603b03f4d00",
+      "pngWidth": 390,
+      "pngHeight": 2734,
+      "observation": {
+        "pageId": "U03",
+        "documentOverflow": false,
+        "documentWidth": 390,
+        "viewportWidth": 390,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "3",
+        "checkoutAllowed": null,
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": false,
+        "checkoutDisabled": null,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "cart-invalid-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "status": 200,
+      "sha256": "b36f498a4cc1e06ccd9c1a24aaaaded1360865bdaf87353b05bb20c2a93b2179",
+      "pngWidth": 1366,
+      "pngHeight": 954,
+      "observation": {
+        "pageId": "U05",
+        "documentOverflow": false,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "3",
+        "checkoutAllowed": "false",
+        "rows": [
+          {
+            "itemId": "78",
+            "productId": "1",
+            "quantity": "2",
+            "version": "0",
+            "valid": "true"
+          },
+          {
+            "itemId": "79",
+            "productId": "11",
+            "quantity": "1",
+            "version": "0",
+            "valid": "false"
+          }
+        ],
+        "invalidReasons": [
+          "商品已售罄，请调整或移除。"
+        ],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": true,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "cart-invalid-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "sha256": "7cb8aa992259ba7a6e1ca0ad7b10f55330e0098958f946c3d0fa8ff3b119f545",
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "observation": {
+        "pageId": "U05",
+        "documentOverflow": false,
+        "documentWidth": 1920,
+        "viewportWidth": 1920,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "3",
+        "checkoutAllowed": "false",
+        "rows": [
+          {
+            "itemId": "78",
+            "productId": "1",
+            "quantity": "2",
+            "version": "0",
+            "valid": "true"
+          },
+          {
+            "itemId": "79",
+            "productId": "11",
+            "quantity": "1",
+            "version": "0",
+            "valid": "false"
+          }
+        ],
+        "invalidReasons": [
+          "商品已售罄，请调整或移除。"
+        ],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": true,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "cart-invalid-390.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "sha256": "cc3d6aa952e47e00fb179587b3a49c6c6e59c7dafd32bd32ed7192e8560f4273",
+      "pngWidth": 390,
+      "pngHeight": 1188,
+      "observation": {
+        "pageId": "U05",
+        "documentOverflow": false,
+        "documentWidth": 390,
+        "viewportWidth": 390,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "3",
+        "checkoutAllowed": "false",
+        "rows": [
+          {
+            "itemId": "78",
+            "productId": "1",
+            "quantity": "2",
+            "version": "0",
+            "valid": "true"
+          },
+          {
+            "itemId": "79",
+            "productId": "11",
+            "quantity": "1",
+            "version": "0",
+            "valid": "false"
+          }
+        ],
+        "invalidReasons": [
+          "商品已售罄，请调整或移除。"
+        ],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": true,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "cart-quantity-400-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "status": 400,
+      "sha256": "941d7086fb8768c0d01cd72ea4f1c61e79fe958bf9c4b237202b901b0aa91016",
+      "pngWidth": 1366,
+      "pngHeight": 1265,
+      "observation": {
+        "pageId": "U05",
+        "documentOverflow": false,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "3",
+        "checkoutAllowed": "false",
+        "rows": [
+          {
+            "itemId": "78",
+            "productId": "1",
+            "quantity": "2",
+            "version": "0",
+            "valid": "true"
+          },
+          {
+            "itemId": "79",
+            "productId": "11",
+            "quantity": "1",
+            "version": "0",
+            "valid": "false"
+          }
+        ],
+        "invalidReasons": [
+          "商品已售罄，请调整或移除。"
+        ],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": true,
+        "checkoutHrefPresent": false,
+        "globalError": "请输入允许范围内的整数。"
+      }
+    },
+    {
+      "path": "cart-quantity-400-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 400,
+      "sha256": "407eb39af88700166b1a49abbe039f75754030f0f259dda21909b64d67e50594",
+      "pngWidth": 1920,
+      "pngHeight": 1265,
+      "observation": {
+        "pageId": "U05",
+        "documentOverflow": false,
+        "documentWidth": 1920,
+        "viewportWidth": 1920,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "3",
+        "checkoutAllowed": "false",
+        "rows": [
+          {
+            "itemId": "78",
+            "productId": "1",
+            "quantity": "2",
+            "version": "0",
+            "valid": "true"
+          },
+          {
+            "itemId": "79",
+            "productId": "11",
+            "quantity": "1",
+            "version": "0",
+            "valid": "false"
+          }
+        ],
+        "invalidReasons": [
+          "商品已售罄，请调整或移除。"
+        ],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": true,
+        "checkoutHrefPresent": false,
+        "globalError": "请输入允许范围内的整数。"
+      }
+    },
+    {
+      "path": "cart-quantity-400-390.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 400,
+      "sha256": "711a3c54887bc4a5fff16d5bc9a72a1247c72f605f4717807738e040b009f248",
+      "pngWidth": 390,
+      "pngHeight": 1502,
+      "observation": {
+        "pageId": "U05",
+        "documentOverflow": false,
+        "documentWidth": 390,
+        "viewportWidth": 390,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "3",
+        "checkoutAllowed": "false",
+        "rows": [
+          {
+            "itemId": "78",
+            "productId": "1",
+            "quantity": "2",
+            "version": "0",
+            "valid": "true"
+          },
+          {
+            "itemId": "79",
+            "productId": "11",
+            "quantity": "1",
+            "version": "0",
+            "valid": "false"
+          }
+        ],
+        "invalidReasons": [
+          "商品已售罄，请调整或移除。"
+        ],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": true,
+        "checkoutHrefPresent": false,
+        "globalError": "请输入允许范围内的整数。"
+      }
+    },
+    {
+      "path": "cart-stale-version-409-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "status": 409,
+      "sha256": "773d96d6f89ee2261598c07acbdaf0486dfc421d316809b26b7994a42df26a8d",
+      "pngWidth": 1366,
+      "pngHeight": 1126,
+      "observation": {
+        "pageId": "U05",
+        "documentOverflow": false,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "2",
+        "checkoutAllowed": "false",
+        "rows": [
+          {
+            "itemId": "78",
+            "productId": "1",
+            "quantity": "1",
+            "version": "1",
+            "valid": "true"
+          },
+          {
+            "itemId": "79",
+            "productId": "11",
+            "quantity": "1",
+            "version": "0",
+            "valid": "false"
+          }
+        ],
+        "invalidReasons": [
+          "商品已售罄，请调整或移除。"
+        ],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": true,
+        "checkoutHrefPresent": false,
+        "globalError": "购物车条目已变化，请重新读取购物车后再操作。"
+      }
+    },
+    {
+      "path": "cart-stale-version-409-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 409,
+      "sha256": "46a5d2184b10511573ed41ef79126dbcb106862faa98946fae0d68307afb0829",
+      "pngWidth": 1920,
+      "pngHeight": 1126,
+      "observation": {
+        "pageId": "U05",
+        "documentOverflow": false,
+        "documentWidth": 1920,
+        "viewportWidth": 1920,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "2",
+        "checkoutAllowed": "false",
+        "rows": [
+          {
+            "itemId": "78",
+            "productId": "1",
+            "quantity": "1",
+            "version": "1",
+            "valid": "true"
+          },
+          {
+            "itemId": "79",
+            "productId": "11",
+            "quantity": "1",
+            "version": "0",
+            "valid": "false"
+          }
+        ],
+        "invalidReasons": [
+          "商品已售罄，请调整或移除。"
+        ],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": true,
+        "checkoutHrefPresent": false,
+        "globalError": "购物车条目已变化，请重新读取购物车后再操作。"
+      }
+    },
+    {
+      "path": "cart-stale-version-409-390.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 409,
+      "sha256": "b01ba9513035abdfef7f71601df9a5e9db3ce0bf64688ae2137326c53edfe02d",
+      "pngWidth": 390,
+      "pngHeight": 1396,
+      "observation": {
+        "pageId": "U05",
+        "documentOverflow": false,
+        "documentWidth": 390,
+        "viewportWidth": 390,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "2",
+        "checkoutAllowed": "false",
+        "rows": [
+          {
+            "itemId": "78",
+            "productId": "1",
+            "quantity": "1",
+            "version": "1",
+            "valid": "true"
+          },
+          {
+            "itemId": "79",
+            "productId": "11",
+            "quantity": "1",
+            "version": "0",
+            "valid": "false"
+          }
+        ],
+        "invalidReasons": [
+          "商品已售罄，请调整或移除。"
+        ],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": true,
+        "checkoutHrefPresent": false,
+        "globalError": "购物车条目已变化，请重新读取购物车后再操作。"
+      }
+    },
+    {
+      "path": "detail-quantity-400-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "status": 400,
+      "sha256": "aae0eda734ea903405173dea6066b121aba3d2ad0e4657d359da3c40d5fec507",
+      "pngWidth": 1366,
+      "pngHeight": 1973,
+      "observation": {
+        "pageId": "U03",
+        "documentOverflow": false,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "2",
+        "checkoutAllowed": null,
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": false,
+        "checkoutDisabled": null,
+        "checkoutHrefPresent": false,
+        "globalError": "请输入允许范围内的整数。"
+      }
+    },
+    {
+      "path": "detail-quantity-400-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 400,
+      "sha256": "f4d36f92f35fc50d2253d02fa59f56b73fe96594558517bf5f5ed31878b5b9ba",
+      "pngWidth": 1920,
+      "pngHeight": 1973,
+      "observation": {
+        "pageId": "U03",
+        "documentOverflow": false,
+        "documentWidth": 1920,
+        "viewportWidth": 1920,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "2",
+        "checkoutAllowed": null,
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": false,
+        "checkoutDisabled": null,
+        "checkoutHrefPresent": false,
+        "globalError": "请输入允许范围内的整数。"
+      }
+    },
+    {
+      "path": "detail-quantity-400-390.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 400,
+      "sha256": "970a5bade523d1a73770bf792bf23224744620c499ccfdef35eea40831d0d326",
+      "pngWidth": 390,
+      "pngHeight": 3055,
+      "observation": {
+        "pageId": "U03",
+        "documentOverflow": false,
+        "documentWidth": 390,
+        "viewportWidth": 390,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "2",
+        "checkoutAllowed": null,
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": false,
+        "checkoutDisabled": null,
+        "checkoutHrefPresent": false,
+        "globalError": "请输入允许范围内的整数。"
+      }
+    },
+    {
+      "path": "detail-stock-409-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "status": 409,
+      "sha256": "6f48ab66a65d32318a3043d283cc92d8a1991352de2399ade83f9555c83befbe",
+      "pngWidth": 1366,
+      "pngHeight": 1973,
+      "observation": {
+        "pageId": "U03",
+        "documentOverflow": false,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "2",
+        "checkoutAllowed": null,
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": true,
+        "checkoutDisabled": null,
+        "checkoutHrefPresent": false,
+        "globalError": "同一商品合计最多 99 件，请调整购物车数量。"
+      }
+    },
+    {
+      "path": "detail-stock-409-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 409,
+      "sha256": "3b749eb44acc84ccc884fa6ae4e996f4d4285b21bbbfb7e6f66633e506411d00",
+      "pngWidth": 1920,
+      "pngHeight": 1973,
+      "observation": {
+        "pageId": "U03",
+        "documentOverflow": false,
+        "documentWidth": 1920,
+        "viewportWidth": 1920,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "2",
+        "checkoutAllowed": null,
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": true,
+        "checkoutDisabled": null,
+        "checkoutHrefPresent": false,
+        "globalError": "同一商品合计最多 99 件，请调整购物车数量。"
+      }
+    },
+    {
+      "path": "detail-stock-409-390.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 409,
+      "sha256": "cf39e78c0c9cf5a432090e37391f868c5df39a9afae3a82976d56bf5f55f4939",
+      "pngWidth": 390,
+      "pngHeight": 3059,
+      "observation": {
+        "pageId": "U03",
+        "documentOverflow": false,
+        "documentWidth": 390,
+        "viewportWidth": 390,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "2",
+        "checkoutAllowed": null,
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": true,
+        "checkoutDisabled": null,
+        "checkoutHrefPresent": false,
+        "globalError": "同一商品合计最多 99 件，请调整购物车数量。"
+      }
+    },
+    {
+      "path": "detail-sold-out-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "status": 200,
+      "sha256": "38ab4691cfc01edd0236a2aeb6e9d93cc29d6af35977545e25260ad26145ed42",
+      "pngWidth": 1366,
+      "pngHeight": 1092,
+      "observation": {
+        "pageId": "U03",
+        "documentOverflow": false,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "2",
+        "checkoutAllowed": null,
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 0,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": true,
+        "checkoutDisabled": null,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "detail-sold-out-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "sha256": "ffe9347359116956aa020f2bf2653438b4b6e3abb62f0bca7297a5a50ed5fba5",
+      "pngWidth": 1920,
+      "pngHeight": 1092,
+      "observation": {
+        "pageId": "U03",
+        "documentOverflow": false,
+        "documentWidth": 1920,
+        "viewportWidth": 1920,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "2",
+        "checkoutAllowed": null,
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 0,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": true,
+        "checkoutDisabled": null,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "detail-sold-out-390.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "sha256": "3d960a62e2ce69842bb2a24193e9366ec7bd8d6088a025c778d878e0d6921d1d",
+      "pngWidth": 390,
+      "pngHeight": 1468,
+      "observation": {
+        "pageId": "U03",
+        "documentOverflow": false,
+        "documentWidth": 390,
+        "viewportWidth": 390,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "2",
+        "checkoutAllowed": null,
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 0,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": true,
+        "checkoutDisabled": null,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "cart-empty-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "status": 200,
+      "sha256": "580fcdd89281174ba3cfaf3009e95e688f39e26744ff42fccaddff5d6a1fd11a",
+      "pngWidth": 1366,
+      "pngHeight": 768,
+      "observation": {
+        "pageId": "U05",
+        "documentOverflow": false,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "0",
+        "checkoutAllowed": "false",
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 0,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": true,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "cart-empty-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "sha256": "d2ab4b7d790f88c1cc3c39aed814f61208b7336ea02d5ffcd66b168a15678243",
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "observation": {
+        "pageId": "U05",
+        "documentOverflow": false,
+        "documentWidth": 1920,
+        "viewportWidth": 1920,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "0",
+        "checkoutAllowed": "false",
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 0,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": true,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "cart-empty-390.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "sha256": "ff51bec4b73b36d2abd20f0dcc3915b618d5b80769f81566e787fd8cf48ecd62",
+      "pngWidth": 390,
+      "pngHeight": 892,
+      "observation": {
+        "pageId": "U05",
+        "documentOverflow": false,
+        "documentWidth": 390,
+        "viewportWidth": 390,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "0",
+        "checkoutAllowed": "false",
+        "rows": [],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 0,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": true,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "cart-healthy-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "status": 200,
+      "sha256": "ceb6bd4715ab9c2b7f3a401e52395de140923da29b6077590f588c2832e5da6c",
+      "pngWidth": 1366,
+      "pngHeight": 779,
+      "observation": {
+        "pageId": "U05",
+        "documentOverflow": false,
+        "documentWidth": 1366,
+        "viewportWidth": 1366,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "2",
+        "checkoutAllowed": "true",
+        "rows": [
+          {
+            "itemId": "80",
+            "productId": "1",
+            "quantity": "2",
+            "version": "1",
+            "valid": "true"
+          }
+        ],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": true,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "cart-healthy-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": 200,
+      "sha256": "0c97f186459e5ecc3e59fd82ad64ad92d65251cf66d20d1cba34b57659a33374",
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "observation": {
+        "pageId": "U05",
+        "documentOverflow": false,
+        "documentWidth": 1920,
+        "viewportWidth": 1920,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "2",
+        "checkoutAllowed": "true",
+        "rows": [
+          {
+            "itemId": "80",
+            "productId": "1",
+            "quantity": "2",
+            "version": "1",
+            "valid": "true"
+          }
+        ],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": true,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    },
+    {
+      "path": "cart-healthy-390.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "sha256": "15e73235e6200677c9ad7b215f770e0707c1c7bbd8d9b102bf3416fb7d622513",
+      "pngWidth": 390,
+      "pngHeight": 983,
+      "observation": {
+        "pageId": "U05",
+        "documentOverflow": false,
+        "documentWidth": 390,
+        "viewportWidth": 390,
+        "duplicateIds": [],
+        "labelProblems": 0,
+        "brokenDescriptions": [],
+        "brokenErrorAnchors": 0,
+        "postFormsWithOneCsrf": true,
+        "cartFormVersionsMatchRows": true,
+        "sessionInLinks": false,
+        "cartQuantity": "2",
+        "checkoutAllowed": "true",
+        "rows": [
+          {
+            "itemId": "80",
+            "productId": "1",
+            "quantity": "2",
+            "version": "1",
+            "valid": "true"
+          }
+        ],
+        "invalidReasons": [],
+        "imagesLoaded": true,
+        "fallbackCount": 1,
+        "tableScrollsLocally": true,
+        "purchaseDisabled": null,
+        "checkoutDisabled": true,
+        "checkoutHrefPresent": false,
+        "globalError": null
+      }
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/products/1",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/login",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "POST",
+      "path": "/login",
+      "status": 303,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/products/1",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/cart",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "POST",
+      "path": "/cart/items/78/quantity",
+      "status": 400,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/cart",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "POST",
+      "path": "/cart/items/78/quantity",
+      "status": 409,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/products/1",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "POST",
+      "path": "/cart/items",
+      "status": 400,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/products/1",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "POST",
+      "path": "/cart/items",
+      "status": 409,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/products/11",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/cart",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "POST",
+      "path": "/cart/items/78/remove",
+      "status": 303,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/cart",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "POST",
+      "path": "/cart/items/79/remove",
+      "status": 303,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/cart",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/products/1",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "POST",
+      "path": "/cart/items",
+      "status": 303,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/cart",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "POST",
+      "path": "/cart/items/80/quantity",
+      "status": 303,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/cart",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "POST",
+      "path": "/cart/items/80/quantity",
+      "status": 303,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/cart",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/products",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/products/1",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/cart",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    },
+    {
+      "method": "GET",
+      "path": "/images/step07-missing-test.png",
+      "status": 404,
+      "resourceType": "image"
+    },
+    {
+      "method": "GET",
+      "path": "/images/catalog-placeholder.svg",
+      "status": 200,
+      "resourceType": "image"
+    },
+    {
+      "method": "POST",
+      "path": "/cart/items/80/remove",
+      "status": 303,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/cart",
+      "status": 200,
+      "resourceType": "document"
+    },
+    {
+      "method": "GET",
+      "path": "/css/app.css",
+      "status": 200,
+      "resourceType": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "path": "/js/app.js",
+      "status": 200,
+      "resourceType": "script"
+    }
+  ],
+  "errors": []
+}

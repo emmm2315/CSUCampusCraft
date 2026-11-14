@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>潇湘校区图书馆方格本 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="user" data-authenticated="true">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <span class="app-label">用户端</span>
+            <a class="nav-placeholder" href="/cart" aria-label="购物车，99 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="99">99</span>
+                
+            </a>
+            
+            <span class="app-label" data-current-user>林同学</span>
+            <form method="post" action="/logout" data-submit-state data-logout-form>
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    <div class="alert alert-danger" role="alert">
+        <p>同一商品合计最多 99 件，请调整购物车数量。</p>
+    </div>
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div class="catalog-detail-page" data-page-id="U03" data-product-id="1" data-product-sku="CSU-LMK-NOTE-01" data-price="18.00" data-stock="150" data-gallery-count="4">
+    <nav class="catalog-breadcrumb" aria-label="当前位置">
+        <a href="/">首页</a><span aria-hidden="true">/</span>
+        <a href="/products">商品</a><span aria-hidden="true">/</span>
+        <a href="/products?categoryId=1&amp;type=ALL&amp;q=&amp;sort=DEFAULT&amp;page=1&amp;size=6">校园地标</a>
+        <span aria-hidden="true">/</span><span>文具</span>
+        <span aria-hidden="true">/</span><span aria-current="page">潇湘校区图书馆方格本</span>
+    </nav>
+
+    <section class="alert alert-danger error-summary" role="alert" aria-labelledby="error-summary-title" tabindex="-1">
+    <h2 id="error-summary-title">请修正以下输入</h2>
+    <ul>
+        <li>
+            <a href="#purchase-quantity">累加后的数量不能超过 99 件。</a>
+        </li>
+    </ul>
+</section>
+    <p class="cart-reload-help">
+        <a href="/products/1">重新载入当前页面</a>
+        <span class="muted">请核对当前商品与购物车，再重新提交。</span>
+    </p>
+
+    <section class="catalog-detail-main" aria-labelledby="product-heading">
+        <figure class="catalog-cover" data-cover-image>
+            <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="潇湘校区图书馆方格本" data-image-fallback="/images/catalog-placeholder.svg">
+        </figure>
+        <div class="catalog-detail-info">
+            <p class="eyebrow">校园地标 / 文具</p>
+            <h1 id="product-heading">潇湘校区图书馆方格本</h1>
+            <p class="muted catalog-sku">SKU：<span>CSU-LMK-NOTE-01</span></p>
+            <p class="catalog-detail-summary muted">以潇湘校区图书馆为主题的方格本。演示库初始化后可售 10 本，用于购买与补货并发验证。</p>
+            <p class="product-price detail-price">¥18.00</p>
+            <p class="stock-badge">现货 · 库存 150</p>
+            <section class="catalog-purchase" aria-labelledby="purchase-heading">
+                <h2 id="purchase-heading">选购</h2>
+                <form method="post" action="/cart/items" data-submit-state data-add-to-cart>
+                    <input type="hidden" name="_csrf" value="[REDACTED]">
+                    <input type="hidden" name="productId" value="1">
+                    <fieldset class="cart-form-controls" disabled="disabled">
+                        <div class="form-field">
+                            <label for="purchase-quantity">数量</label>
+                            <input id="purchase-quantity" type="number" name="quantity" min="1" max="99" step="1" required
+                                   value="1" aria-invalid="true" aria-describedby="purchase-quantity-error purchase-help" class="input-error">
+                            <p id="purchase-quantity-error" class="field-error">累加后的数量不能超过 99 件。</p>
+                        </div>
+                        <button type="submit" aria-describedby="purchase-help">加入购物车</button>
+                    </fieldset>
+                </form>
+                
+                <p id="purchase-help" class="field-help">商品或购物车发生变化，请先重新载入并核对。</p>
+            </section>
+        </div>
+    </section>
+
+    <section class="panel catalog-section catalog-description" aria-labelledby="description-heading">
+        <h2 id="description-heading">设计说明</h2>
+        <p class="catalog-plain-text">以潇湘校区图书馆为主题的方格本。演示库初始化后可售 10 本，用于购买与补货并发验证。 商品和价格均为教学演示数据。</p>
+        
+    </section>
+
+    <section class="catalog-section" aria-labelledby="gallery-heading">
+        <div class="section-heading">
+            <div><h2 id="gallery-heading">商品相册</h2><p class="muted">共 <span>4</span> 张图片</p></div>
+        </div>
+        
+        <div class="catalog-gallery" data-product-gallery>
+            <figure data-image-id="1" data-image-sort="10">
+                <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="潇湘校区图书馆方格本 · 教学占位图 1" data-image-fallback="/images/catalog-placeholder.svg">
+                <figcaption class="muted">潇湘校区图书馆方格本 · 教学占位图 1</figcaption>
+            </figure>
+            <figure data-image-id="2" data-image-sort="20">
+                <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="潇湘校区图书馆方格本 · 教学占位图 2" data-image-fallback="/images/catalog-placeholder.svg">
+                <figcaption class="muted">潇湘校区图书馆方格本 · 教学占位图 2</figcaption>
+            </figure>
+            <figure data-image-id="3" data-image-sort="30">
+                <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="潇湘校区图书馆方格本 · 教学占位图 3" data-image-fallback="/images/catalog-placeholder.svg">
+                <figcaption class="muted">潇湘校区图书馆方格本 · 教学占位图 3</figcaption>
+            </figure>
+            <figure data-image-id="4" data-image-sort="40">
+                <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="潇湘校区图书馆方格本 · 教学占位图 4" data-image-fallback="/images/catalog-placeholder.svg">
+                <figcaption class="muted">潇湘校区图书馆方格本 · 教学占位图 4</figcaption>
+            </figure>
+        </div>
+    </section>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

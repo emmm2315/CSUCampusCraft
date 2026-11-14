@@ -1,0 +1,25 @@
+{
+  "overall": "PASS",
+  "method": "Rendered PNGs inspected using view_image, after real Edge HTTP navigation and form submissions",
+  "inspected": [
+    "contact-desktop.png",
+    "contact-mobile.png",
+    "cart-healthy-1920.png",
+    "cart-quantity-400-1366.png"
+  ],
+  "coverage": [
+    "U03 guest and authenticated purchase, actual missing image fallback, sold-out state, 400 and 409 field feedback",
+    "U05 healthy, invalid, empty, 400 and stale-version 409 states",
+    "1366x768 and 1920x1080 desktop layouts plus 390x844 mobile layout"
+  ],
+  "observations": [
+    "Desktop content, buttons, field errors and totals remain inside their containers; no overlap, missing text or page overflow observed",
+    "400 quantity input and associated field message remain visible with the rejected value; 409 disables the affected write controls until reload",
+    "390px cart table intentionally scrolls horizontally within its own container; page headings, alerts, navigation and summary fit the viewport",
+    "Product cover with a missing resource visibly falls back to the existing campus placeholder; gallery images remain loaded",
+    "Empty cart provides a clear product browsing action; checkout is consistently marked as unavailable in STEP07"
+  ],
+  "sourceChangesAfterRuntimeVerification": false,
+  "productChangesRequired": false,
+  "secretsRecorded": false
+}

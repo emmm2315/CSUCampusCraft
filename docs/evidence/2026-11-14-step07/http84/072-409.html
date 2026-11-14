@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>购物车 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="user" data-authenticated="true">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <span class="app-label">用户端</span>
+            <a class="nav-placeholder" href="/cart" aria-label="购物车，6 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="6">6</span>
+                
+            </a>
+            
+            <span class="app-label" data-current-user>林同学</span>
+            <form method="post" action="/logout" data-submit-state data-logout-form>
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    <div class="alert alert-danger" role="alert">
+        <p>该商品已售罄，请重新选购。</p>
+    </div>
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div class="cart-page" data-page-id="U05" data-checkout-allowed="false" data-cart-total="0.00" data-cart-total-quantity="6">
+    <nav class="catalog-breadcrumb" aria-label="当前位置">
+        <a href="/">首页</a><span aria-hidden="true">/</span><span aria-current="page">购物车</span>
+    </nav>
+    <header class="page-heading">
+        <p class="eyebrow">CSUCampusCraft 用户端</p>
+        <h1>我的购物车</h1>
+        <p class="muted">购物车随账号保存。这里展示商品现价，加购不预留库存。</p>
+    </header>
+
+    <section class="alert alert-danger error-summary" role="alert" aria-labelledby="error-summary-title" tabindex="-1">
+    <h2 id="error-summary-title">请修正以下输入</h2>
+    <ul>
+        <li>
+            <a href="#cart-73-quantity">当前库存为 0，不能加入或增加数量。</a>
+        </li>
+    </ul>
+</section>
+    <p class="cart-reload-help">
+        <a href="/cart">重新载入最新购物车</a>
+        <span class="muted">请核对当前数量、状态与版本后，再重新提交。</span>
+    </p>
+
+    
+
+    
+        <div class="alert alert-warning" role="status" data-cart-invalid>
+            <p>购物车中有失效条目。请调整超库存数量，或移除下架、售罄商品后再结算。</p>
+        </div>
+        <div class="table-container cart-table-container">
+            <table class="cart-table">
+                <caption>共 <span>2</span> 种商品，<span>6</span> 件（包含失效条目）</caption>
+                <thead><tr><th scope="col">商品</th><th scope="col">现价</th><th scope="col">数量</th><th scope="col">当前状态</th><th scope="col">有效小计</th><th scope="col">操作</th></tr></thead>
+                <tbody>
+                <tr data-cart-item-id="73" data-product-id="2" data-quantity="2" data-version="0" data-valid="false" class="cart-row-invalid">
+                    <td>
+                        <div class="cart-product">
+                            <div class="cart-product-image"><img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="玉带河书签" data-image-fallback="/images/catalog-placeholder.svg"></div>
+                            <div class="cart-product-info">
+                                <a href="/products/2">玉带河书签</a>
+                                
+                                <p class="muted product-card-sku">SKU：<span>CSU-LMK-BOOKMARK-01</span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="cart-money">¥8.00</td>
+                    <td>
+                        <form method="post" action="/cart/items/73/quantity" data-submit-state data-cart-quantity-form>
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <fieldset class="cart-form-controls" disabled="disabled">
+                                <div class="form-field">
+                                    <label for="cart-73-quantity">数量<span class="visually-hidden">：玉带河书签</span></label>
+                                    <input type="number" name="quantity" min="1" max="99" step="1" required
+                                           id="cart-73-quantity" value="2"
+                                           aria-invalid="true" aria-describedby="cart-73-quantity-error" class="input-error">
+                                    <p class="field-error" id="cart-73-quantity-error">当前库存为 0，不能加入或增加数量。</p>
+                                </div>
+                                <button type="submit" class="button-secondary" aria-label="更新 玉带河书签 的数量">更新</button>
+                            </fieldset>
+                        </form>
+                        <p class="field-help">请先重新载入购物车。</p>
+                    </td>
+                    <td class="cart-state">
+                        
+                        <strong class="cart-invalid-reason">商品已售罄，请调整或移除。</strong>
+                        <p class="field-help">当前库存 <span>0</span> 件</p>
+                    </td>
+                    <td class="cart-money">
+                        
+                        <span class="muted" aria-label="失效条目不计入有效小计">不计入</span>
+                    </td>
+                    <td>
+                        <form method="post" action="/cart/items/73/remove" data-submit-state data-cart-remove-form>
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <button type="submit" class="button-secondary" aria-label="移除 玉带河书签" disabled="disabled">移除</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr data-cart-item-id="74" data-product-id="3" data-quantity="4" data-version="0" data-valid="false" class="cart-row-invalid">
+                    <td>
+                        <div class="cart-product">
+                            <div class="cart-product-image"><img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="潇湘阅览文件夹" data-image-fallback="/images/catalog-placeholder.svg"></div>
+                            <div class="cart-product-info">
+                                <a href="/products/3">潇湘阅览文件夹</a>
+                                
+                                <p class="muted product-card-sku">SKU：<span>CSU-LMK-FOLDER-01</span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="cart-money">¥16.90</td>
+                    <td>
+                        <form method="post" action="/cart/items/74/quantity" data-submit-state data-cart-quantity-form>
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <fieldset class="cart-form-controls">
+                                <div class="form-field">
+                                    <label for="cart-74-quantity">数量<span class="visually-hidden">：潇湘阅览文件夹</span></label>
+                                    <input type="number" name="quantity" min="1" max="99" step="1" required
+                                           id="cart-74-quantity" value="4"
+                                           aria-invalid="false">
+                                    
+                                </div>
+                                <button type="submit" class="button-secondary" aria-label="更新 潇湘阅览文件夹 的数量">更新</button>
+                            </fieldset>
+                        </form>
+                        
+                    </td>
+                    <td class="cart-state">
+                        
+                        <strong class="cart-invalid-reason">购买数量超过当前库存，请减少数量或移除。</strong>
+                        <p class="field-help">当前库存 <span>1</span> 件</p>
+                    </td>
+                    <td class="cart-money">
+                        
+                        <span class="muted" aria-label="失效条目不计入有效小计">不计入</span>
+                    </td>
+                    <td>
+                        <form method="post" action="/cart/items/74/remove" data-submit-state data-cart-remove-form>
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <button type="submit" class="button-secondary" aria-label="移除 潇湘阅览文件夹">移除</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    
+
+    <section class="panel cart-summary" aria-labelledby="cart-summary-heading">
+        <div>
+            <h2 id="cart-summary-heading">有效条目小计</h2>
+            <p class="product-price cart-total" data-cart-total>¥0.00</p>
+            <p class="field-help">失效条目不计入上述小计。处理全部失效条目后，才能进行整车结算。</p>
+            
+        </div>
+        <div class="cart-summary-actions">
+            <a class="button button-secondary" href="/products">继续选购</a>
+            <button type="button" disabled aria-describedby="checkout-help">结算暂未开放</button>
+            <p id="checkout-help" class="field-help">请先处理失效条目。</p>
+        </div>
+    </section>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>
