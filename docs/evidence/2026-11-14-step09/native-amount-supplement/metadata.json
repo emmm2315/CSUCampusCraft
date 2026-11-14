@@ -1,0 +1,57 @@
+{
+  "overall": "PASS",
+  "tested_code_sha": "1399c311f34c98907ee80c812cfe71606b9820c7",
+  "recorded_utc": "2026-11-14T12:45:39.147865+00:00",
+  "scope": "controlled supplement only, no application/DB/HTTP startup",
+  "java_home": "C:/Users/Starmetor/.jdks/ms-21.0.12.1",
+  "compile_exit": 0,
+  "run_exit": 0,
+  "source_sha256": "66bf6058cf6262257957da1bc1e2068e1e5061bb1f4307f8c2f33549e2dc0d18",
+  "jar_sha256": "6ea93ce7686c33778e5754157e5f863f55880fa7b8e9233bc671e69940b8792d",
+  "actual_jar_classes": [
+    {
+      "class": "org/csucampuscraft/storefront/checkout/CheckoutService.class",
+      "sha256": "6ba83f67a000c40490f7ec3fb4bb51124fa52667f8d000c7c929dc23c32ca821",
+      "matches_extracted_classpath": true
+    },
+    {
+      "class": "org/csucampuscraft/storefront/checkout/CheckoutConfirmation.class",
+      "sha256": "789d429f4e16e33661ba07f1ea6f1dd790bccdacd1a9115d710181fecf00087f",
+      "matches_extracted_classpath": true
+    },
+    {
+      "class": "org/csucampuscraft/storefront/cart/CartService.class",
+      "sha256": "710925a3ff376828039efebb9fea0775d165bdc99c113898f162432e100737e1",
+      "matches_extracted_classpath": true
+    },
+    {
+      "class": "org/csucampuscraft/storefront/cart/CartLine.class",
+      "sha256": "b00406763d3537bb795ce418b4972a1bbf325f34047161cb2681807ec3333111",
+      "matches_extracted_classpath": true
+    },
+    {
+      "class": "org/csucampuscraft/storefront/cart/CartPage.class",
+      "sha256": "7069072a0d19b4ddc9663f01b010594e48cedb9a4b115fa0b34b7a2badb9bb69",
+      "matches_extracted_classpath": true
+    },
+    {
+      "class": "org/csucampuscraft/storefront/auth/SessionSupport.class",
+      "sha256": "d1fcc790a796cb5cf668e554edb1cbd204fd4d19ac2206c578d0b5ae056a9c51",
+      "matches_extracted_classpath": true
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "CheckoutAmountProbe.java",
+      "sha256": "66bf6058cf6262257957da1bc1e2068e1e5061bb1f4307f8c2f33549e2dc0d18"
+    },
+    {
+      "path": "compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "result.json",
+      "sha256": "13ff0c838961dc22ee297cb2fd32d87ab80eaa494db60e8b83a832f297cc7c22"
+    }
+  ]
+}

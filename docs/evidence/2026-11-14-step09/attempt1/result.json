@@ -1,0 +1,2137 @@
+{
+  "date": "2026-11-14T20:27:56.103682+08:00",
+  "baseline_git_sha": "e3bfb2fe0c1087f915d838d0dff50ae0be3db0bf",
+  "tested_code_sha": "f8b01088b5f4b9e335d3ee86587e2695ffba0e7a",
+  "requested_evidence_batch": "2026-11-14-step09",
+  "timestamp_policy": "actual system clock in Asia/Shanghai",
+  "checks": {
+    "tested-code-head": {
+      "passed": true,
+      "detail": ""
+    },
+    "feature-branch": {
+      "passed": true,
+      "detail": ""
+    },
+    "tested-worktree-clean": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-user": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-admin": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-pin": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-created": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-identity": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-counts": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-user-listener-owned-by-created-process": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-0 [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-admin-listener-owned-by-created-process": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-order-list-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-order-list-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-order-list-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-order-list-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-checkout-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-checkout-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-checkout-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-checkout-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-order-post-before-csrf-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-order-post-before-csrf-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-order-post-before-csrf-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-alice-8080-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "initial-alice-8080-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-alice-8080-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-alice-8080-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-alice-8080-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-alice-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "no-session-url-rewriting-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-alice-8080-form-status [2]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "initial-alice-8080-form-html [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-alice-8080-form-no-secrets [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-alice-8080-form-password-empty [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-alice-8080-form-csrf [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-alice-status [2]": {
+      "passed": true,
+      "detail": "303"
+    },
+    "no-session-url-rewriting-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-bob-8080-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "initial-bob-8080-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-bob-8080-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-bob-8080-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-bob-8080-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-bob-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "no-session-url-rewriting-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-admin-8081-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "initial-admin-8081-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-admin-8081-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-admin-8081-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-admin-8081-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-11": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-admin-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "no-session-url-rewriting-12": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-shared-database-ready-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "admin-shared-database-ready-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-shared-database-ready-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-13": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-13": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-order-page-not-yet-implemented-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "admin-order-page-not-yet-implemented-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-order-page-not-yet-implemented-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-order-page-not-yet-implemented-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-order-page-not-yet-implemented-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-14": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-14": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-seed-cart-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "invalid-seed-cart-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-seed-cart-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-seed-cart-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-seed-cart-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-seed-cart-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-seed-cart-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 8}"
+    },
+    "invalid-seed-cart-back-cart": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-15": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-0-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-alice-seed-via-http-0-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-0-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-0-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-16": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-0-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-alice-seed-via-http-0-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-0-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-0-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-0-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-17": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-1-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-alice-seed-via-http-1-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-1-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-1-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-18": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-1-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-alice-seed-via-http-1-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-1-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-1-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-1-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-19": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-2-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-alice-seed-via-http-2-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-2-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-2-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-20": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-2-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-alice-seed-via-http-2-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-2-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-2-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-2-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-21": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-3-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-alice-seed-via-http-3-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-3-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-3-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-22": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-3-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-alice-seed-via-http-3-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-3-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-3-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-3-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-23": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-4-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-alice-seed-via-http-4-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-4-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-4-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-24": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-4-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-alice-seed-via-http-4-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-4-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-4-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-4-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-25": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-5-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-alice-seed-via-http-5-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-5-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-5-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-26": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-5-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-alice-seed-via-http-5-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-5-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-5-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-5-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-via-http-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-27": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-0-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-bob-seed-via-http-0-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-0-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-0-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-28": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-0-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-bob-seed-via-http-0-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-0-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-0-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-0-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-29": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-1-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-bob-seed-via-http-1-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-1-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-1-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-30": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-1-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-bob-seed-via-http-1-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-1-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-1-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-1-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-31": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-2-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-bob-seed-via-http-2-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-2-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-2-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-2-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-bob-seed-via-http-2-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-2-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-2-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-2-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-3-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-bob-seed-via-http-3-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-3-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-3-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-34": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-3-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-bob-seed-via-http-3-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-3-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-3-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-3-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-via-http-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-35": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-35": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-cart-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "empty-cart-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-cart-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-cart-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-cart-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-cart-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-cart-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "empty-cart-back-cart": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-empty-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-36": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-two-note-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "main-85-cart-two-note-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-two-note-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-two-note-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-37": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-two-note-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "main-85-cart-two-note-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-two-note-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-two-note-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-two-note-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-two-note-one-sku-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-two-note-quantity": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-two-note-version": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-38": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-one-gift-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "main-85-cart-one-gift-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-one-gift-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-one-gift-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-39": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-one-gift-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "main-85-cart-one-gift-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-one-gift-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-one-gift-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-one-gift-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-one-gift-one-sku-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-one-gift-quantity": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-cart-one-gift-version": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-initial-stock-10-12": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-40": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-40": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-confirm-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "main-85-confirm-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-confirm-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-confirm-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-confirm-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "main-85-confirm-U06": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-confirm-opaque-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-confirm-fixture-total": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-confirm-amount-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-85-confirm-complete-own-cart": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-41": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-41": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-missing-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-receiverName-missing-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-missing-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-missing-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-missing-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-missing-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-missing-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-missing-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "receiverName-missing-same-token-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "receiverName-missing-field-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-42": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-42": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-empty-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-receiverName-empty-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-empty-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-empty-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-empty-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-empty-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-empty-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-empty-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "receiverName-empty-same-token-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "receiverName-empty-field-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-43": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-43": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-blank-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-receiverName-blank-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-blank-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-blank-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-blank-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-blank-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-blank-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-blank-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "receiverName-blank-same-token-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "receiverName-blank-field-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-44": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-44": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-too-long-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-receiverName-too-long-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-too-long-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-too-long-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-too-long-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-too-long-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-too-long-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-too-long-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "receiverName-too-long-same-token-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "receiverName-too-long-field-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-45": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-45": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-astral-too-long-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-receiverName-astral-too-long-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-astral-too-long-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-astral-too-long-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-astral-too-long-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-astral-too-long-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-astral-too-long-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverName-astral-too-long-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "receiverName-astral-too-long-same-token-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "receiverName-astral-too-long-field-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-46": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-46": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-missing-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-receiverPhone-missing-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-missing-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-missing-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-missing-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-missing-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-missing-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-missing-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "receiverPhone-missing-same-token-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "receiverPhone-missing-field-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-47": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-47": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-empty-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-receiverPhone-empty-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-empty-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-empty-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-empty-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-empty-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-empty-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-empty-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "receiverPhone-empty-same-token-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "receiverPhone-empty-field-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-48": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-48": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-blank-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-receiverPhone-blank-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-blank-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-blank-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-blank-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-blank-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-blank-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-blank-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "receiverPhone-blank-same-token-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "receiverPhone-blank-field-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-49": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-49": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-too-long-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-receiverPhone-too-long-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-too-long-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-too-long-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-too-long-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-too-long-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-too-long-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-too-long-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "receiverPhone-too-long-same-token-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "receiverPhone-too-long-field-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-50": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-50": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-astral-too-long-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-receiverPhone-astral-too-long-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-astral-too-long-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-astral-too-long-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-astral-too-long-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-astral-too-long-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-astral-too-long-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverPhone-astral-too-long-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "receiverPhone-astral-too-long-same-token-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "receiverPhone-astral-too-long-field-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-51": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-51": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-missing-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-receiverAddress-missing-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-missing-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-missing-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-missing-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-missing-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-missing-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-missing-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "receiverAddress-missing-same-token-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "receiverAddress-missing-field-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-52": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-52": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-empty-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-receiverAddress-empty-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-empty-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-empty-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-empty-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-empty-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-empty-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-empty-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "receiverAddress-empty-same-token-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "receiverAddress-empty-field-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-53": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-53": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-blank-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-receiverAddress-blank-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-blank-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-blank-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-blank-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-blank-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-blank-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-blank-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "receiverAddress-blank-same-token-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "receiverAddress-blank-field-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-54": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-54": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-too-long-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-receiverAddress-too-long-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-too-long-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-too-long-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-too-long-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-too-long-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-too-long-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-too-long-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "receiverAddress-too-long-same-token-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "receiverAddress-too-long-field-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-55": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-55": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-astral-too-long-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-receiverAddress-astral-too-long-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-astral-too-long-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-astral-too-long-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-astral-too-long-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-astral-too-long-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-astral-too-long-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-receiverAddress-astral-too-long-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "receiverAddress-astral-too-long-same-token-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "receiverAddress-astral-too-long-field-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "script-fields-text-only-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "script-fields-text-only-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "script-fields-text-only-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "script-fields-text-only-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "script-fields-text-only-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "script-fields-text-only-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "script-fields-text-only-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "script-fields-text-only-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "script-input-literal": {
+      "passed": true,
+      "detail": ""
+    },
+    "script-textarea-literal": {
+      "passed": true,
+      "detail": ""
+    },
+    "script-does-not-create-inline-element": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-57": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-57": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-first-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "missing-csrf-first-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-first-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-first-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-first-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-first-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-first-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-first-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "no-session-url-rewriting-58": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-58": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-first-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "wrong-csrf-first-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-first-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-first-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-first-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-first-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-first-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-first-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "no-session-url-rewriting-59": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "main-real-85-submit-safe-detail-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-nonorder-business-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-exactly-one-new-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-correct-order-number": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-order-number-safe": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-number-unique-CI": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-owner-pending-null-payment": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-only-confirmed-own-cart-deleted": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-no-own-cart-left": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-one-line-per-confirmed-sku": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-stock-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-locked-product-snapshot-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-product-only-stock-version-time-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-stock-version-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-locked-product-snapshot-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-product-only-stock-version-time-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-only-confirmed-products-changed": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-server-total": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-85-submit-shipping-hashes-server-trim": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-stock-8-11": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-two-items-and-85": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-60": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-60": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-303-destination-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "main-303-destination-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-303-destination-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-303-destination-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-303-destination-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "main-303-destination-U08": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-303-destination-order-data": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-303-destination-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-303-destination-snapshot-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-303-destination-snapshot-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-303-destination-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-303-destination-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-303-destination-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-303-destination-no-payment-cancel-actions": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-cleared-cart-and-badge-zero": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-61": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-home-badge-zero-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-home-badge-zero-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "no-session-url-rewriting-62": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-62": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-used-confirmation-no-second-order-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "repeat-used-confirmation-no-second-order-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-used-confirmation-no-second-order-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-used-confirmation-no-second-order-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-used-confirmation-no-second-order-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-used-confirmation-no-second-order-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-used-confirmation-no-second-order-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-used-confirmation-no-second-order-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "no-session-url-rewriting-63": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-63": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-after-success-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "empty-after-success-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-after-success-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-after-success-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-after-success-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-after-success-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-after-success-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "empty-after-success-back-cart": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-64": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-64": {
+      "passed": true,
+      "detail": ""
+    },
+    "list-default-status": {
+      "passed": false,
+      "detail": "200"
+    }
+  },
+  "scope": "STEP09 atomic orders and own-order reads; payment/cancel/shipping STEP10/11, concurrent and injected-failure acceptance STEP13",
+  "branch": "feat/step09-orders",
+  "runtime_manifest_sha256": "c10b40d1e160c9146ca5baa3d0866e0b06516eaf0d0eac8ed0afc63d417cab6f",
+  "runtime_file_count": 161,
+  "csucampuscraft-user_jar_sha256": "c90c9d9f6bf1efe208dfcf9d8e454eddaf92c63ebac8a2c2e1f4710fd979e9f9",
+  "csucampuscraft-admin_jar_sha256": "c64efee8726dd0027c9d6b1cce6f563148907889ec662147e13916a433d9a647",
+  "static_files": 3,
+  "mysql_version": "8.4.9",
+  "mysql_port": 62964,
+  "overall": "FAIL",
+  "error": "AssertionError: list-default-status",
+  "tracked_processes_stopped": true
+}

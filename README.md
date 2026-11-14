@@ -9,7 +9,7 @@ CSUCampusCraft 是《软件开发架构平台》实验一的双端商城项目�
 
 ## 当前阶段
 
-M0 与 M1（STEP02–06）已通过各自范围自动实测，组员实名和交叉复核待补。STEP07 统一版的既有自动验收与双方原始记录保留，台账保持待复核。STEP08 整车结算确认已实现，受测源码 `54d6b007eb1317c14be090016ea75aec02ead6c5`，本步验证：通过（全新私有库 attempt1，本步范围自动验收通过，台账待复核），台账待复核。用户端新增 U06 与会话确认，`POST /orders` 仅校验并返回明确占位；管理端保持 STEP06 交付。真实下单与本人订单留 STEP09，支付取消留 STEP10，控制台 STEP12，REST 仅预留。
+M0 与 M1（STEP02–06）已通过各自范围自动实测，组员实名和交叉复核待补。STEP07 统一版和 STEP08 整车确认的原始记录保留，台账均保持待复核。STEP09 原子下单与本人订单已实现，受测 `1399c311f34c98907ee80c812cfe71606b9820c7`，本步验证：通过（修复后全新私有库attempt2；原attempt1失败保留，本步范围自动验收通过，台账待复核），台账待复核。用户端 POST /orders 的 ORDER_SUBMISSION_PENDING 占位已移除，改为事务成功后303到本人 U08，并提供 U07 查询。支付取消留 STEP10，后台订单留 STEP11，控制台 STEP12，REST 仅预留。管理端保持 STEP06 交付。
 
 MySQL 8.4（InnoDB）是项目数据库基线。首版范围与交付标准见[项目立项与范围](docs/项目立项与范围.md)。
 
@@ -226,6 +226,8 @@ U05 用当前单价与 BigDecimal 重算，只把有效行计入小计；下架�
 
 ## STEP08 整车结算确认交接
 
+> 以下保留 STEP08 当时的交接与受测事实。STEP09 起 `POST /orders` 已替换为真实事务，`ORDER_SUBMISSION_PENDING` 只作为历史说明保留；当前行为见本页 STEP09 交接与对应实测。
+
 U05 仅在购物车非空且全部有效时显示到 `GET /checkout` 的整车结算链接，空车或存在失效条目时继续阻止结算。U06 重读本人整车及现价，展示全部条目、单价、小计、总价和模拟配送表单；空车、下架、售罄、超库存或金额超过 `DECIMAL(12,2)` 范围均 409 并提供购物车入口。当前可购库存只用于校验，不预留、不扣减。
 
 `CheckoutConfirmation` 保存在用户端会话的 `SessionSupport.CHECKOUT_CONFIRMATION_ATTRIBUTE`：32 字节 `SecureRandom` 生成的不透明令牌、UTC `Instant` 创建和到期时间、userId、不可变全车行（itemId/productId/quantity/itemVersion/unitPrice，另含展示所需名称、SKU、封面和小计）及服务端 `BigDecimal` 总价。每个会话只保留最新一份；重开替换，重新登录、清身份、退出或会话结束清理；到期即不可用，并在下一次校验或重新确认时清理/替换。服务端配置 `csucampuscraft.checkout.confirmation-ttl` 默认 `PT10M`，例如启动参数 `--csucampuscraft.checkout.confirmation-ttl=PT10M`；临时短 TTL 只用于隔离验收。
@@ -237,3 +239,22 @@ U05 仅在购物车非空且全部有效时显示到 `GET /checkout` 的整车�
 本步只使用普通只读 SQL，不调用 `CustomerWriteGuard`，不持用户或商品业务行锁；Java 会话监视器只协调本端令牌替换/校验。它不能代替真实下单授权和事务。STEP09 必须替换占位，在 READ COMMITTED 事务内先锁当前用户并复核认证戳，再重验确认/整车，按商品 ID 升序锁商品后校验与扣减，主单、明细、库存/version 和已确认车条目清理一并提交，成功后消费令牌并 303 至本人订单详情。
 
 受测 `54d6b007eb1317c14be090016ea75aec02ead6c5`；两端均用固定 JDK 21 和根 Maven Wrapper 3.9.16 执行 verify，真实输出 BUILD SUCCESS，user/admin 退出码均为 0。attempt1 主验收 2249 项断言、0 失败，247 条真实 HTTP；209 组逐请求七表自动对照，连同具名重复观察共 234 组。82 次 GET /checkout（含浏览器两次游客重定向）与 86 次 POST /orders 均有七表零写入证据。独立响应/SQL/截图摘要重放为 PASS，86 个金额页面与 SQL 当前整车逐项一致。另有原生补充 130 项、浏览器 302 项观察、36 条真实浏览器 GET/POST、24 张截图；这些补充按各自层次归档，不以相加计数代替业务覆盖。敏感扫描 167 个文本、132 个解压缩正文、108 个已知私密值，发现 0 项 详见 [STEP08 实测记录](docs/测试与验收用例.md#step08-实测记录)及[证据目录](docs/evidence/2026-11-14-step08/README.md)。TST-11–13 只确认本步浏览/确认/校验部分；真实订单金额落库、库存扣减、清车和订单页面待 STEP09，并发/故障回滚待 STEP13。STEP07 台账保持待复核，Word 本轮不改。
+
+
+## STEP09 原子下单与本人订单交接
+
+受测源码 `1399c311f34c98907ee80c812cfe71606b9820c7`，分支 `feat/step09-orders`。修复源码1399c311f34c98907ee80c812cfe71606b9820c7下，两端均重新使用固定Microsoft JDK21.0.12.1与Maven Wrapper3.9.16执行verify，真实BUILD SUCCESS、退出0；用户端3.663秒、管理端1.680秒，完整命令和日志归档。 成功attempt2有1865项主断言、0失败，226条HTTP；88次POST均有七表自动前后对照，共184份自动审计、含具名重复观察共258份。49次POST /orders中3次303成交、46次拒绝且七表零变化（302×2、400×20、403×4、409×20）。独立重读确认3张HTTP新单与1张原生新单、31份U07及10份U08数据和SQL一致。原生真实Service另70项、14条SQL；金额受控补充另13项；浏览器326项、28次真实导航/提交、24张PNG。各层断言与记录分别计数，不合并充当业务用例数。成功轮敏感扫描159份文本、120份解压正文、148个已知私密值，0发现。 详见[STEP09 实测](docs/测试与验收用例.md#step09-实测记录)和[新证据](docs/evidence/2026-11-14-step09/README.md)。STEP07/08 台账仍待复核；未用本步自动验证替代实名组员签字。
+
+轮次与修复：首次attempt1受测f8b01088b5f4b9e335d3ee86587e2695ffba0e7a：85元下单及U08已成功，但GET /orders列表500导致整轮FAIL；该失败GET七表无变化，之前独立成功请求的订单不是此读请求的部分写入。根因是MyBatis按原方法名识别record派生getOffset，#{query.offset}缺少offset()访问器。仅新增offset()并让getOffset委托，形成1399c311f34c98907ee80c812cfe71606b9820c7；原FAIL和诊断保留，新私有库attempt2从头完整重跑PASS，新的85元成交由本轮实际请求产生，不复用旧通过项。 `backend-review.json`为首次运行前的作者静态自检，不能当最终通过证明；修复后的源码比对见`final-source-fix-review.json`，运行结果各按所属SHA和attempt读取。
+
+`POST /orders` 沿用会话身份和 CSRF。`OrderSubmissionCoordinator` 在当前 Java 会话监视器内调用独立 Spring 代理 `OrderService.submit`，让令牌替换、校验与提交的本端会话边界保持一致。真实 Service 声明 READ COMMITTED，其第一个数据库操作是 `CustomerWriteGuard.lock(actor)`：先锁当前 store_user 并按原始 UTC 微秒认证戳复验 ENABLED/CUSTOMER，之后才重新读取本人最新确认、当前整车及收货字段。字段错误400保留仍有效确认并回填可修内容，不写订单。
+
+随后按商品 ID 升序锁所有涉及商品，使用锁内当前价、状态、库存和 version 重算每行小计及整车总价；金额均 BigDecimal 两位小数且不超 DECIMAL(12,2)。确认条目、数量、车版本或价格变化以及下架、缺库存、商品版本上溢均409，保留车并清当前确认。商品名称、SKU、封面快照从锁内当前商品取得，不从客户端或以后可变商品 JOIN 取得。商品锁等待后、第一条订单 INSERT 前再次检查确认仍属于本会话本人、仍为最新且未过期。
+
+单号使用 `CSU-` 加16随机字节的32位十六进制，共36字符，符合 `[A-Za-z0-9_-]{1,40}` 和既有 ReturnUrlPolicy。数据库现有不区分大小写的唯一键负责最终唯一性，冲突整单回滚，不自动重放。事务先写一张 PENDING_PAYMENT 主单（支付方式、凭证、支付时间均NULL）与全部商品/收货快照，再逐SKU用 `stock=stock-quantity, version=version+1` 且 `id/stock>=quantity/version` 条件更新，最后只删除本次确认且本人/itemId/productId/quantity/version相符的车行。每次插入、扣库、删除都检查影响行数；任一失败由同一事务回滚。
+
+会话不是数据库事务资源，因此确认在事务代理成功返回（数据库提交完成）后才条件消费；已结束会话的清理不会把已提交订单误报成回滚。409清确认，字段400保留有效确认；技术异常清旧确认并由通用500处理，用户先查看本人订单和购物车，不自动重发。成功303到 `/orders/{orderNo}`，目标页重新查全车 SUM 徽标。被清理的只是确认车行，后续新加购不应被整车 DELETE 清掉。
+
+`GET /orders`（U07）固定按当前会话本人过滤，完整 `orderNo` 去空白后0–40码点、普通绑定等值SQL按数据库列排序规则大小写不敏感，空值不限；状态 ALL 或5个业务状态，默认10条、1–50，页码整数小于1按1，创建时间/ID倒序，list和count共用where。超末页200空态并给有效页入口；巨大页码不计算溢出的OFFSET。`GET /orders/{orderNo}`（U08）未知、格式不符或他人单号统一404，省略其订单资料；详情只读保存的快照，时间从数据库UTC转换到北京时间展示。待支付只显示状态，支付/取消按钮与路由留STEP10。
+
+本步可验证新订单、明细、库存/version、车、徽标和用户端历史快照；管理端尚无订单详情且禁止本步修改admin，故“管理端HTTP详情同样显示快照”的完整联查留STEP11，本轮使用用户端U08和数据库快照对照，不声称已跑通管理端页面。TST-12–19/30/34只登记实际覆盖部分；TST-16/17/35并发与故障注入留STEP13，支付取消留STEP10。

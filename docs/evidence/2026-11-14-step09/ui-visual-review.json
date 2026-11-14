@@ -1,0 +1,378 @@
+{
+  "overall": "PASS",
+  "tested_code_sha": "1399c311f34c98907ee80c812cfe71606b9820c7",
+  "attempt": "attempt2",
+  "recorded_utc": "2026-11-14T12:47:37.885844+00:00",
+  "scope": "Actual original PNG visual inspection in six batches of four images; twelve states at both desktop viewports. No PNG was edited.",
+  "images": [
+    {
+      "path": "attempt2/browser/u07-own-orders-1366.png",
+      "sha256": "58a8e80a8e9cfe7be5be498ef822db1f5592e27d3acb2f15dbd9f8e8123118f4",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 1462,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Own order list renders eight current orders with readable number/time/status/amount/detail columns; full-number query, status selector, page size and navigation are clear, without visible overlap.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u07-pending-filter-1366.png",
+      "sha256": "ebf85ffdf2d02ebda0ffc8cff1423f25fd066563e613f303798c638448212eaa",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 926,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Pending-payment filter and size=1 remain visible; one row shown, total four and page1/4 agree with the displayed controls, with next page enabled.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u07-exact-number-ci-1366.png",
+      "sha256": "eb5286d8898bef11d5b7d1ecfe3310266dca956314815b0bac25bc95637a20dc",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 923,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Lowercase full-number query remains visible and produces one matching stored order; 85.00 and pending-payment label are readable, with disabled previous/next for one page.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u07-empty-result-1366.png",
+      "sha256": "bc22a99b5e51bc9a34fc1de666ff2b58519273e67e15f9048c74243e4f51fc64",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 846,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Unknown full-number query remains visible; zero results produce a matching-empty state with continue-shopping and clear-filter recovery actions.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u07-outofrange-1366.png",
+      "sha256": "7d01ddd926bce92539c60c57b4d69962d1e2331dedb1a14bc98cc8f59bed3966",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 890,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Page10000/8 has a distinct out-of-range empty state and a correctly labeled return-to-page8 link; filters are retained and result table is absent.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u08-created-85-1366.png",
+      "sha256": "5caf831223af311448369792112bd5ebd3a5ff2ed41bdec9df4822f144c9dd7a",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 1351,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Created order displays pending-payment status and 85.00; two snapshot rows show notebook 18.00 x2=36.00 and gift 49.00 x1=49.00; shipping fields are masked, creation time is readable and no payment/cancel action is present.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": true
+    },
+    {
+      "path": "attempt2/browser/u08-historical-paid-readonly-1366.png",
+      "sha256": "8b8a0004790b4e74d640c3db26bcc396e2dd458fe90a3caba959fa43addaf797",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 1351,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Historical paid order displays waiting-for-shipment label, 45.00 and two historical lines24.00+21.00; creation/payment time entries are visible, receiver fields masked, no new action buttons.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": true
+    },
+    {
+      "path": "attempt2/browser/u08-foreign-404-1366.png",
+      "sha256": "142a97446f323097fdf133413577af850e64a590937ba65db090cb5ecd3eb03a",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 768,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Foreign-order request shows generic404 ORDER_NOT_FOUND without order number, lines, amounts or receiver information; bob current badge is0.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u08-unknown-404-1366.png",
+      "sha256": "0c69f3a55514fb5685d169a97aea086dc1c5e37d858481d3b70bfa28d58d6a0d",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 768,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Unknown-order request shows the same generic404 ORDER_NOT_FOUND and recovery link; no order or receiver content appears.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u06-script-fields-400-1366.png",
+      "sha256": "542da59baa0bc5b10324e05e2d9360072f52c513051c897c15efdd3aa8a36f9e",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 1209,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "U06 remains at85.00, shows a global correction message and phone field error with summary link; all shipping inputs are visibly masked, so literal-script correctness is not inferred from the PNG.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": true
+    },
+    {
+      "path": "attempt2/browser/u06-csrf-403-1366.png",
+      "sha256": "3f1c85d3343822b96b61f24ac4919014fada41d414a6ee420aced4e6b7fe2551",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 768,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Shared403 error page shows request-validation message and CSRF_REJECTED code with recovery link; no order or shipping details appear.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u07-guest-login-1366.png",
+      "sha256": "49bd9313f67917947b3574f6c3845c8b2ae3a4c165f8737b65d40ceb0aec3e38",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 768,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Guest order navigation ends at the shared login page with empty username/password fields, clear labels and guest badge0; no order data is shown.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u07-own-orders-1920.png",
+      "sha256": "552fde620b2dc01737d28872e601d440825d8961459aa97bb008f96eb420e9a1",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1462,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Own order list renders eight current orders with readable number/time/status/amount/detail columns; full-number query, status selector, page size and navigation are clear, without visible overlap.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u07-pending-filter-1920.png",
+      "sha256": "7efbb54f0383199ec9eddf1741082db54fbdb4aeda9d8f75c22d85dddc1c13c8",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1080,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Pending-payment filter and size=1 remain visible; one row shown, total four and page1/4 agree with the displayed controls, with next page enabled.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u07-exact-number-ci-1920.png",
+      "sha256": "a5ba914146dd7871b24a01c04eb7909717ff6a5b5d429f1074aef108e01fef33",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1080,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Lowercase full-number query remains visible and produces one matching stored order; 85.00 and pending-payment label are readable, with disabled previous/next for one page.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u07-empty-result-1920.png",
+      "sha256": "67c95e66f31c65fd76ee53d21289e49bbbc70b91bb52f20f50f06e11bf5e1958",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1080,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Unknown full-number query remains visible; zero results produce a matching-empty state with continue-shopping and clear-filter recovery actions.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u07-outofrange-1920.png",
+      "sha256": "f70eff5272f41a8760fecc6ebe90d829a26419830dd8bed285eb90dc74eac3c2",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1080,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Page10000/8 has a distinct out-of-range empty state and a correctly labeled return-to-page8 link; filters are retained and result table is absent.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u08-created-85-1920.png",
+      "sha256": "754ad109026468a9743dc6a808badb19815bce8125dcef24c7693f6b56c1635e",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1351,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Created order displays pending-payment status and 85.00; two snapshot rows show notebook 18.00 x2=36.00 and gift 49.00 x1=49.00; shipping fields are masked, creation time is readable and no payment/cancel action is present.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": true
+    },
+    {
+      "path": "attempt2/browser/u08-historical-paid-readonly-1920.png",
+      "sha256": "a35ec286212078e8d71255b6cab51d217fc6be42a329851caaebec4024aa6664",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1351,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Historical paid order displays waiting-for-shipment label, 45.00 and two historical lines24.00+21.00; creation/payment time entries are visible, receiver fields masked, no new action buttons.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": true
+    },
+    {
+      "path": "attempt2/browser/u08-foreign-404-1920.png",
+      "sha256": "582c121da69f348b15b2de51f4b2d07291aaac8c36e89e84c25c105c7f6f81cd",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1080,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Foreign-order request shows generic404 ORDER_NOT_FOUND without order number, lines, amounts or receiver information; bob current badge is0.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u08-unknown-404-1920.png",
+      "sha256": "d2aa787ce77f020cb908f94307c5a77e651268c78bc0c8dbf4d4fdb502232281",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1080,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Unknown-order request shows the same generic404 ORDER_NOT_FOUND and recovery link; no order or receiver content appears.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u06-script-fields-400-1920.png",
+      "sha256": "ffb76c6c26636faa22a616dd1b4a0ce985d335712e5e210ddb4e98200c6e8485",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1209,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "U06 remains at85.00, shows a global correction message and phone field error with summary link; all shipping inputs are visibly masked, so literal-script correctness is not inferred from the PNG.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": true
+    },
+    {
+      "path": "attempt2/browser/u06-csrf-403-1920.png",
+      "sha256": "597e3b4863172e8fb8391bbdc2711ab01f809b28383e15928250396824ce54f5",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1080,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Shared403 error page shows request-validation message and CSRF_REJECTED code with recovery link; no order or shipping details appear.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    },
+    {
+      "path": "attempt2/browser/u07-guest-login-1920.png",
+      "sha256": "f377cdc51afa783531627d11434a1fe9e50ad0c15cb328c5faf90026ba4e2cb5",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1080,
+      "actually_viewed_original": true,
+      "visual_verdict": "PASS",
+      "observation": "Guest order navigation ends at the shared login page with empty username/password fields, clear labels and guest badge0; no order data is shown.",
+      "visible_clipping_or_overlap": false,
+      "shipping_masked": false
+    }
+  ],
+  "observed_images": 24,
+  "visible_blocking_layout_defects": [],
+  "limitations": [
+    "The reviewer is the Codex agent that authored the UI; this AI visual check does not replace named teammate cross-review.",
+    "The images are fullPage screenshots, so PNG height may exceed viewport height.",
+    "Receiver input values and U08 receiver text are masked. Script-literal and snapshot-content privacy assertions rely on the separately recorded real DOM/HTTP/SQL checks, not on masked pixels.",
+    "U08 created-85 screenshots were captured after later cart fixtures refilled alice to three items; visible badge3 is the current cart at screenshot time. Immediate post-submission badge0 is established by the earlier HTTP response records, not these later images.",
+    "Visible labels, recovery links and layout were inspected; keyboard interaction, transaction atomicity and database effects are not established by screenshots alone."
+  ]
+}

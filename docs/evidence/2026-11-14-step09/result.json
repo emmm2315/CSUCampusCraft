@@ -1,0 +1,114 @@
+{
+  "overall": "PASS",
+  "tested_code_sha": "1399c311f34c98907ee80c812cfe71606b9820c7",
+  "main_assertions": 1865,
+  "main_failures": 0,
+  "http_records": 226,
+  "http_status_counts": {
+    "302": 5,
+    "200": 113,
+    "303": 42,
+    "404": 7,
+    "409": 25,
+    "400": 30,
+    "403": 4
+  },
+  "all_post_records": 88,
+  "automatic_database_audits": 184,
+  "database_records_including_semantic_repeats": 258,
+  "order_post_records": 49,
+  "order_post_status_counts": {
+    "302": 2,
+    "400": 20,
+    "403": 4,
+    "303": 3,
+    "409": 20
+  },
+  "successful_http_orders": 3,
+  "rejected_http_order_posts_zero_write": 46,
+  "native_service_orders": 1,
+  "all_observed_new_orders": 4,
+  "order_summaries": [
+    {
+      "name": "main-real-85-submit",
+      "order_no": "CSU-a9d9b97fab356a421071d84e6ada5953",
+      "user_id": 1,
+      "total": "85.00",
+      "line_count": 2
+    },
+    {
+      "name": "all-three-codepoint-maxima-create-order",
+      "order_no": "CSU-34be5f991d1d0b09c6c652444f04a546",
+      "user_id": 1,
+      "total": "85.00",
+      "line_count": 2
+    },
+    {
+      "name": "gift-independent-sku-purchase",
+      "order_no": "CSU-2f04de96a377a0b883b7ed394aefa9bf",
+      "user_id": 1,
+      "total": "98.00",
+      "line_count": 1
+    },
+    {
+      "name": "native-real-service-submit",
+      "order_no": "CSU-e9ceba10c140ab48ae7ab27c8f74f573",
+      "user_id": 2,
+      "total": "85.00",
+      "line_count": 2
+    }
+  ],
+  "native_checks": 70,
+  "native_checks_passed": 70,
+  "native_sql_events": 14,
+  "browser_checks": 326,
+  "browser_navigation_records": 28,
+  "screenshots": 24,
+  "runtime_input_count": 161,
+  "runtime_manifest_sha256": "bc380000a0cd69506e4b329aa88ad2a9c21fe562e654dfb73430706a2db9dac0",
+  "mysql_version": "8.4.9",
+  "mysql_port": 62151,
+  "sensitive_scan": {
+    "overall": "PASS",
+    "files_scanned": 159,
+    "gzip_decompressed_files": 120,
+    "known_values_checked": 148,
+    "secret_values_recorded": false,
+    "findings": [],
+    "shipping_redaction": "Receiver input/textarea and U08 data-shipping-value contents structurally redacted; SQL order state contains only per-field SHA; screenshots mask shipping; no request form values recorded."
+  },
+  "tracked_processes_stopped": true,
+  "failure_history": {
+    "attempt1": "FAIL actual default-order-list HTTP500 on f8b01088; original raw evidence retained",
+    "attempt2": "PASS full rerun in new DB after offset accessor fix1399c311"
+  },
+  "coverage_boundaries": [
+    "Main85 successful HTTP order has stock10/12->8/11, product version+1, main confirmed cart cleared and next-page badge0.",
+    "Later browser fixture deliberately adds a new alice85 cart; native bob order clears only bob cart and preserves alice fixture.",
+    "Three HTTP-created orders: main85, Unicode field-max85, two-independent-gift-box98. Separate native actual Service creates one bob85 order, not counted as HTTP.",
+    "All rejects have zero seven-table writes; no injected post-DML failure or actual concurrency has been exercised (STEP13).",
+    "HTTP aggregate-labeled price fixture also overflows note line(quantity2*6bn); sum-only is not isolated by that HTTP case. Parent is collecting separately-labelled native controlled sum-only supplement.",
+    "Admin order detail is not implemented/current admin code unchanged; user U08 plus SQL snapshots prove current scope, admin HTTP deferred STEP11.",
+    "Browser captures real current order pages and actual failed U06POST; successful order creation is HTTP-client/native proof, not a browser-success-click claim."
+  ],
+  "raw_evidence_frozen": true,
+  "baseline_git_sha": "e3bfb2fe0c1087f915d838d0dff50ae0be3db0bf",
+  "failed_tested_code_sha": "f8b01088b5f4b9e335d3ee86587e2695ffba0e7a",
+  "branch": "feat/step09-orders",
+  "attempts": [
+    {
+      "path": "attempt1/result.json",
+      "overall": "FAIL",
+      "tested_code_sha": "f8b01088b5f4b9e335d3ee86587e2695ffba0e7a"
+    },
+    {
+      "path": "attempt2/result.json",
+      "overall": "PASS",
+      "tested_code_sha": "1399c311f34c98907ee80c812cfe71606b9820c7"
+    }
+  ],
+  "runtime_file_count": 161,
+  "controlled_amount_checks": 13,
+  "controlled_amount_proof": "Separate actual-class controlled calculation, no DB or HTTP",
+  "team_review": "待复核；组员真实姓名待填，M3前完成；STEP07/08台账状态不变"
+}

@@ -1,0 +1,105 @@
+{
+  "tested_code_sha": "1399c311f34c98907ee80c812cfe71606b9820c7",
+  "files": [
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderStatus.java",
+      "original_sha256": null,
+      "sha256": "5cae020f62d44bd0c6a961045f064e190571c38a1a3c2a48854730b4740af220"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/SalesOrder.java",
+      "original_sha256": null,
+      "sha256": "f6c301e4f33361334411dc0af3941fe2abf309d24da01833745ffa93f3505321"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/SalesOrderItem.java",
+      "original_sha256": null,
+      "sha256": "e71d9be4ebc5c803dff310eb06dd3d2271f2002745b94c452635e0c68bb28828"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderQuery.java",
+      "original_sha256": null,
+      "sha256": "da19dde2114e6ac94fea289089f8ef7f5ff2dd601a68b9aa3094b2211eec7567"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderPage.java",
+      "original_sha256": null,
+      "sha256": "65386569198cca64f1c4e6a194d25a3534e4bd4ccd9cd596e06a04d1a00ac59e"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderDetail.java",
+      "original_sha256": null,
+      "sha256": "913742a12c1358ac2d24c7967e48b081fc734a78ba62f2385c681514dded95ff"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderMapper.java",
+      "original_sha256": null,
+      "sha256": "4e4e6c8695d19c949060689ec89111dae6e1818242839e1c340fed6b98eae153"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderItemMapper.java",
+      "original_sha256": null,
+      "sha256": "a93ad10933b7bef5c012abd06d19edde125bceb1a5a4ea43fa3b185edd17b60c"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderSubmissionResult.java",
+      "original_sha256": null,
+      "sha256": "e34c24d8b9f76aefcd57557f98295fc26bded500f7f37f0874ce2097f1a26614"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderService.java",
+      "original_sha256": null,
+      "sha256": "fb89e50efb38c7c5b3f40f383277ad2d84c61f9df0adb898bdf70d3a1019e2bf"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderSubmissionCoordinator.java",
+      "original_sha256": null,
+      "sha256": "bbdb425a87504c6338c75649109fdd2d39f5fb5d2b80d4723ca2541c352dc70c"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderController.java",
+      "original_sha256": null,
+      "sha256": "8e320959250dcc2f3ddd1df1910eb4c3befa7d7d7b535e7d325ad14be0607997"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutController.java",
+      "original_sha256": "67a78e497dc246b5ace19a0ee419b40e2d47040e3d7926d2e92cded76a2220a0",
+      "sha256": "2f2d502a6052ecb22210d72e9893c681dcf2c69deefa69c474653cd72dc0afea"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutService.java",
+      "original_sha256": "6aebdc8066c935f83979831b435b94d1d661b4182f183e2035af5c22a14ecac2",
+      "sha256": "e4e2a843e39b2a1e66cbc081cce9a9adc8709cb219cbc5c7f8c7d97c6d25f235"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/resources/templates/orders/index.html",
+      "original_sha256": null,
+      "sha256": "f9c81e9cf140cef408c1341b597922bf77fc52e6c0d698a7483623a66e58ee63"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/resources/templates/orders/detail.html",
+      "original_sha256": null,
+      "sha256": "32a51b8701568ec7959efa56c5f57ce61600b46f5d2458e15933c1cc075a2e7e"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/resources/templates/fragments/layout.html",
+      "original_sha256": "0304a7461cf9dc735c5671aed9ee902c39ff9e9eb9dad0c231c83ea232fa116d",
+      "sha256": "21bc2d75357e53b54016c2d5febf656dcc694cf32dc9c80be326774db2abe49a"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/resources/templates/checkout/index.html",
+      "original_sha256": "ed5614bc4b075cc51b83be5e1746a9dc93e331db57009f8c2f420c3fdc9c4059",
+      "sha256": "5e5c8d4e00a5febfac9b1107e370fe33e880c53358cb39b588b2e6f47035cdc1"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/resources/templates/checkout/conflict.html",
+      "original_sha256": "2341a226c9bc8d3921303846375ec3161805ee554f994112ade3e23ad3d6afc5",
+      "sha256": "0c68986829f4a1597e0ad8de510a45b8ff7b01f7da29b09f93f7113ef0ba1e4b"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/resources/static/css/app.css",
+      "original_sha256": "eca76f7f29c6cfa0ce9120f4953f5d305cfc9b29d0113f79a4533ffcc42a0833",
+      "sha256": "45f1defcf1fec4645459059d057b0493605e4947dda84634bd7ab0f6f69619a3"
+    }
+  ]
+}

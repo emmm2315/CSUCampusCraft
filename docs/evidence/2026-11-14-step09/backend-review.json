@@ -1,0 +1,173 @@
+{
+  "kind": "author_self_review_of_static_backend_source",
+  "date": "2026-11-14T12:25:31.440069+00:00",
+  "tested_code_sha": "f8b01088b5f4b9e335d3ee86587e2695ffba0e7a",
+  "files": [
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderStatus.java",
+      "sha256": "5cae020f62d44bd0c6a961045f064e190571c38a1a3c2a48854730b4740af220",
+      "lines": 10
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/SalesOrder.java",
+      "sha256": "f6c301e4f33361334411dc0af3941fe2abf309d24da01833745ffa93f3505321",
+      "lines": 77
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/SalesOrderItem.java",
+      "sha256": "e71d9be4ebc5c803dff310eb06dd3d2271f2002745b94c452635e0c68bb28828",
+      "lines": 39
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderQuery.java",
+      "sha256": "f2d9decf8f1e9dc121f851f29fe3c1a02e33b7639e2e40cdd3f5e7c23f8a569e",
+      "lines": 30
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderPage.java",
+      "sha256": "65386569198cca64f1c4e6a194d25a3534e4bd4ccd9cd596e06a04d1a00ac59e",
+      "lines": 19
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderDetail.java",
+      "sha256": "913742a12c1358ac2d24c7967e48b081fc734a78ba62f2385c681514dded95ff",
+      "lines": 10
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderMapper.java",
+      "sha256": "4e4e6c8695d19c949060689ec89111dae6e1818242839e1c340fed6b98eae153",
+      "lines": 60
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderItemMapper.java",
+      "sha256": "a93ad10933b7bef5c012abd06d19edde125bceb1a5a4ea43fa3b185edd17b60c",
+      "lines": 28
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderSubmissionResult.java",
+      "sha256": "e34c24d8b9f76aefcd57557f98295fc26bded500f7f37f0874ce2097f1a26614",
+      "lines": 11
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderService.java",
+      "sha256": "fb89e50efb38c7c5b3f40f383277ad2d84c61f9df0adb898bdf70d3a1019e2bf",
+      "lines": 160
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderSubmissionCoordinator.java",
+      "sha256": "bbdb425a87504c6338c75649109fdd2d39f5fb5d2b80d4723ca2541c352dc70c",
+      "lines": 58
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderController.java",
+      "sha256": "8e320959250dcc2f3ddd1df1910eb4c3befa7d7d7b535e7d325ad14be0607997",
+      "lines": 54
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutController.java",
+      "sha256": "2f2d502a6052ecb22210d72e9893c681dcf2c69deefa69c474653cd72dc0afea",
+      "lines": 84
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutService.java",
+      "sha256": "e4e2a843e39b2a1e66cbc081cce9a9adc8709cb219cbc5c7f8c7d97c6d25f235",
+      "lines": 266
+    }
+  ],
+  "observations": [
+    {
+      "id": "TX-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "OrderService.submit has READ_COMMITTED; first database call is CustomerWriteGuard.lock(actor), before confirmation/cart reads."
+    },
+    {
+      "id": "TX-02",
+      "status": "CONFIRMED_STATIC",
+      "finding": "CheckoutService.validate runs inside the same outer transaction; CartService.read joins it, not a separate read-only transaction."
+    },
+    {
+      "id": "TX-03",
+      "status": "CONFIRMED_STATIC",
+      "finding": "All confirmed products are selected FOR UPDATE in ascending product ID before any DML; locked current price/status/stock/version checked."
+    },
+    {
+      "id": "TX-04",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Line and total values use positive BigDecimal, scale2 without rounding, maximum9999999999.99; total compared with server confirmation."
+    },
+    {
+      "id": "TX-05",
+      "status": "CONFIRMED_STATIC",
+      "finding": "After product locking/repricing and immediately before first INSERT, requireCurrent rechecks same latest session/user confirmation and expiry using the existing UTC Clock."
+    },
+    {
+      "id": "TX-06",
+      "status": "CONFIRMED_STATIC",
+      "finding": "PENDING_PAYMENT insert explicitly sets payment_method/payment_no/paid_at NULL; all immutable product and receiver snapshots are created from locked database state and normalized request shipping."
+    },
+    {
+      "id": "TX-07",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Every insert/generated identity, conditional product stock/version deduction, and exact confirmed cart deletion checks the affected row count."
+    },
+    {
+      "id": "TX-08",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Data-integrity and concurrency failures are rethrown as runtime409, not swallowed; other technical exceptions propagate to generic500. No retry or partial compensation."
+    },
+    {
+      "id": "TX-09",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Coordinator holds local session monitor across the separate transaction proxy; confirmation consumed only after successful return/commit, ended-session cleanup is tolerated after commit."
+    },
+    {
+      "id": "NUM-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Order numbers use CSU- plus32hex from16SecureRandom bytes, length36 matching route whitelist; existing case-insensitive unique DB key is final collision guard."
+    },
+    {
+      "id": "READ-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Order list and count share the same bound own-user/orderNo/status WHERE; fixed creation-time/id descending order, bound LIMIT/OFFSET, no request SQL concatenation."
+    },
+    {
+      "id": "READ-02",
+      "status": "CONFIRMED_STATIC",
+      "finding": "List orderNo is trim0..40codepoints exact equality; status ALL/5codes, size10default1..50, pageinteger<1->1; huge representational offsets yield empty pages."
+    },
+    {
+      "id": "READ-03",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Detail lookup filters orderNo and own user in SQL; malformed, unknown and foreign numbers all404; line lookup follows owned order ID without mutable product JOIN."
+    },
+    {
+      "id": "VIEW-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Order timestamps retain raw UTC LocalDateTime in model and convert only display getters to Asia/Shanghai; absent state timestamps display null."
+    },
+    {
+      "id": "SAFE-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Receiver-bearing models and validation result toString redact receiver data; no logging added; no client userId/amount/order lines determine writes."
+    },
+    {
+      "id": "SCOPE-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Only user Java sources changed in backend; no schema/admin/dependency/payment/cancel/shipping endpoint modifications."
+    }
+  ],
+  "private_compile": {
+    "command": "JDK21 javac --release17 -encoding UTF-8 -cp <existing classes and libraries> -d <private output> <14 Java candidates>",
+    "exit_code": 0,
+    "log": "backend-preflight/javac.log",
+    "scope": "Syntax/classpath supplement only; actual repository Wrapper builds belong to root evidence"
+  },
+  "findings": [],
+  "limitations": [
+    "This is author self-review, not independent human approval or a live HTTP/SQL result.",
+    "Parent separately reported both actual Wrapper verify builds PASS; fresh acceptance is still pending here.",
+    "No concurrency/fault-injection result is asserted; those remain STEP13.",
+    "Database commit and HTTP response delivery are distinct. Technical uncertainty must be checked in own orders/cart rather than blindly resubmitted.",
+    "Admin order detail is not implemented in current scope; user detail plus SQL snapshots do not prove future admin HTTP behavior."
+  ]
+}

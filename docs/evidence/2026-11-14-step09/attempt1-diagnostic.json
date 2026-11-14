@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-14T12:33:47.510623+00:00",
+  "attempt": "attempt1",
+  "overall": "FAIL",
+  "tested_code_sha": "f8b01088b5f4b9e335d3ee86587e2695ffba0e7a",
+  "failure": "The first default GET /orders returned HTTP500 instead of expected200 after successful 85.00 order creation",
+  "failed_http_sequence": 64,
+  "failed_response_body_file": "bodies/7bba208c95600842e21fbfec.body.gz",
+  "failed_response_redacted_sha256": "7bba208c95600842e21fbfec92843e7561ef21355a8cd5fa71d71a6f9c55da43",
+  "failed_read_all_seven_tables_unchanged": true,
+  "root_cause": "MyBatis record reflector has no offset property on original OrderQuery; query.offset parameter mapping throws ReflectionException although Java getOffset() and mapped SQL construction succeed",
+  "offline_diagnostic": "../order-query-meta-diagnostic.log and ../OrderQueryMetaProbe.java; offset_getter=false/getOffset_getter=true/offset_failure=ReflectionException",
+  "accepted_before_failure": "Main HTTP85 order, two snapshots, stock10/12->8/11, product version+1, confirmed cart cleared and badge0; same confirmation replay rejected409; invalid fields400 and CSRF403 zero writes",
+  "not_reached": [
+    "Remaining order-list/filter cases",
+    "Product edit snapshot tests",
+    "Full stale-token/current-price/current-stock matrix",
+    "Native transaction SQL trace",
+    "24 browser screenshots"
+  ],
+  "fix_policy": "Production accessor fix requires a new source SHA and a full fresh private-database attempt2; never overwrite attempt1 or inherit its passed cases as final acceptance",
+  "result_sha256": "f98a1791887965ba9b8877689ee6bde345b37180c57a1bb909eb9a9a9421835a",
+  "tracked_processes_stopped": true,
+  "raw_attempt_evidence_modified": false
+}

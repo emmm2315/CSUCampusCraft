@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-14T12:33:41.957922+00:00",
+  "original_tested_sha": "f8b01088b5f4b9e335d3ee86587e2695ffba0e7a",
+  "original_source_sha256": "f2d9decf8f1e9dc121f851f29fe3c1a02e33b7639e2e40cdd3f5e7c23f8a569e",
+  "fixed_candidate_sha256": "da19dde2114e6ac94fea289089f8ef7f5ff2dd601a68b9aa3094b2211eec7567",
+  "observed": "Original OrderQuery lacks offset getter in MyBatis record reflection; real Mapper parameter binding fails ReflectionException without a database.",
+  "initial_probe_classpath": "Private javac compilation of the unchanged original 14 candidates before repository target/classes; same source SHA as f8b.",
+  "private_original_class_sha256": "c83f418f86572e15407015d673b9e6f9b7e9d4f7fdf78a4066028c36c2f5f657",
+  "repository_class_sha256": "76831ed09042008cef238caa46c47054f1131c700561266d570af525e7ce6416",
+  "fix": "Add offset() record-style derived accessor; retain getOffset() delegating to it. No query, route or schema semantic change.",
+  "no_database_or_receiver_values_used": true,
+  "repo_modified": false,
+  "final_verification": "Fresh source commit and new full private-DB attempt required; candidate compile alone is not acceptance."
+}

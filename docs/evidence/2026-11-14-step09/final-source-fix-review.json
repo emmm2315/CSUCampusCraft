@@ -1,0 +1,104 @@
+{
+  "overall": "PASS",
+  "scope": "Static comparison of final backend fix, not full integration acceptance",
+  "date": "2026-11-14T12:42:59.459567+00:00",
+  "original_tested_sha": "f8b01088b5f4b9e335d3ee86587e2695ffba0e7a",
+  "final_tested_sha": "1399c311f34c98907ee80c812cfe71606b9820c7",
+  "original_backend_files": 14,
+  "unchanged_backend_files": 13,
+  "changed_backend_files": 1,
+  "files": [
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderStatus.java",
+      "original_f8b_sha256": "5cae020f62d44bd0c6a961045f064e190571c38a1a3c2a48854730b4740af220",
+      "final_1399_sha256": "5cae020f62d44bd0c6a961045f064e190571c38a1a3c2a48854730b4740af220",
+      "changed": false
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/SalesOrder.java",
+      "original_f8b_sha256": "f6c301e4f33361334411dc0af3941fe2abf309d24da01833745ffa93f3505321",
+      "final_1399_sha256": "f6c301e4f33361334411dc0af3941fe2abf309d24da01833745ffa93f3505321",
+      "changed": false
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/SalesOrderItem.java",
+      "original_f8b_sha256": "e71d9be4ebc5c803dff310eb06dd3d2271f2002745b94c452635e0c68bb28828",
+      "final_1399_sha256": "e71d9be4ebc5c803dff310eb06dd3d2271f2002745b94c452635e0c68bb28828",
+      "changed": false
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderQuery.java",
+      "original_f8b_sha256": "f2d9decf8f1e9dc121f851f29fe3c1a02e33b7639e2e40cdd3f5e7c23f8a569e",
+      "final_1399_sha256": "da19dde2114e6ac94fea289089f8ef7f5ff2dd601a68b9aa3094b2211eec7567",
+      "changed": true
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderPage.java",
+      "original_f8b_sha256": "65386569198cca64f1c4e6a194d25a3534e4bd4ccd9cd596e06a04d1a00ac59e",
+      "final_1399_sha256": "65386569198cca64f1c4e6a194d25a3534e4bd4ccd9cd596e06a04d1a00ac59e",
+      "changed": false
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderDetail.java",
+      "original_f8b_sha256": "913742a12c1358ac2d24c7967e48b081fc734a78ba62f2385c681514dded95ff",
+      "final_1399_sha256": "913742a12c1358ac2d24c7967e48b081fc734a78ba62f2385c681514dded95ff",
+      "changed": false
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderMapper.java",
+      "original_f8b_sha256": "4e4e6c8695d19c949060689ec89111dae6e1818242839e1c340fed6b98eae153",
+      "final_1399_sha256": "4e4e6c8695d19c949060689ec89111dae6e1818242839e1c340fed6b98eae153",
+      "changed": false
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderItemMapper.java",
+      "original_f8b_sha256": "a93ad10933b7bef5c012abd06d19edde125bceb1a5a4ea43fa3b185edd17b60c",
+      "final_1399_sha256": "a93ad10933b7bef5c012abd06d19edde125bceb1a5a4ea43fa3b185edd17b60c",
+      "changed": false
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderSubmissionResult.java",
+      "original_f8b_sha256": "e34c24d8b9f76aefcd57557f98295fc26bded500f7f37f0874ce2097f1a26614",
+      "final_1399_sha256": "e34c24d8b9f76aefcd57557f98295fc26bded500f7f37f0874ce2097f1a26614",
+      "changed": false
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderService.java",
+      "original_f8b_sha256": "fb89e50efb38c7c5b3f40f383277ad2d84c61f9df0adb898bdf70d3a1019e2bf",
+      "final_1399_sha256": "fb89e50efb38c7c5b3f40f383277ad2d84c61f9df0adb898bdf70d3a1019e2bf",
+      "changed": false
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderSubmissionCoordinator.java",
+      "original_f8b_sha256": "bbdb425a87504c6338c75649109fdd2d39f5fb5d2b80d4723ca2541c352dc70c",
+      "final_1399_sha256": "bbdb425a87504c6338c75649109fdd2d39f5fb5d2b80d4723ca2541c352dc70c",
+      "changed": false
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderController.java",
+      "original_f8b_sha256": "8e320959250dcc2f3ddd1df1910eb4c3befa7d7d7b535e7d325ad14be0607997",
+      "final_1399_sha256": "8e320959250dcc2f3ddd1df1910eb4c3befa7d7d7b535e7d325ad14be0607997",
+      "changed": false
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutController.java",
+      "original_f8b_sha256": "2f2d502a6052ecb22210d72e9893c681dcf2c69deefa69c474653cd72dc0afea",
+      "final_1399_sha256": "2f2d502a6052ecb22210d72e9893c681dcf2c69deefa69c474653cd72dc0afea",
+      "changed": false
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutService.java",
+      "original_f8b_sha256": "e4e2a843e39b2a1e66cbc081cce9a9adc8709cb219cbc5c7f8c7d97c6d25f235",
+      "final_1399_sha256": "e4e2a843e39b2a1e66cbc081cce9a9adc8709cb219cbc5c7f8c7d97c6d25f235",
+      "changed": false
+    }
+  ],
+  "observed_failure": "attempt1 GET /orders returned500 because actual Mapper binding #{query.offset} raised ReflectionException on OrderQuery record.",
+  "correction": "Added public record-style offset() with the original representability guard and calculation; getOffset() delegates to it. Existing pagination/query/route semantics remain unchanged.",
+  "initial_review_status": "backend-review.json/md remain the pre-runtime author self-review at f8b; they missed this integration incompatibility and are not final acceptance proof.",
+  "original_failure_retained": true,
+  "no_database_schema_or_admin_change": true,
+  "diagnostic_scope": "MetaObject and actual Mapper DefaultParameterHandler probes use no database and no receiver values; both original and fixed outputs are kept under diagnostics.",
+  "fresh_acceptance_requirement": "New complete attempt2 from a fresh private database, pinned to1399 and fresh builds; do not inherit attempt1 successful requests or call attempt2 PASS before its full result.",
+  "actual_repository_order_query_class_sha256": "6985094e3084237f1250f1ba4414cc4381f50d30bdbb68834de283d711c75251"
+}

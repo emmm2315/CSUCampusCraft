@@ -1,0 +1,212 @@
+{
+  "overall": "PASS",
+  "scope": "Static UI candidate review only; fresh real rendering and screenshot verification are separate.",
+  "checks": [
+    {
+      "name": "raw sha csucampuscraft-user/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "original sha csucampuscraft-user/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "UTF8 LF single EOF csucampuscraft-user/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "escaping csucampuscraft-user/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "no stub copy csucampuscraft-user/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "raw sha csucampuscraft-user/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "original sha csucampuscraft-user/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "UTF8 LF single EOF csucampuscraft-user/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "escaping csucampuscraft-user/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "no stub copy csucampuscraft-user/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "raw sha csucampuscraft-user/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "original sha csucampuscraft-user/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "UTF8 LF single EOF csucampuscraft-user/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "escaping csucampuscraft-user/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "no stub copy csucampuscraft-user/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "raw sha csucampuscraft-user/src/main/resources/templates/checkout/index.html",
+      "passed": true
+    },
+    {
+      "name": "original sha csucampuscraft-user/src/main/resources/templates/checkout/index.html",
+      "passed": true
+    },
+    {
+      "name": "UTF8 LF single EOF csucampuscraft-user/src/main/resources/templates/checkout/index.html",
+      "passed": true
+    },
+    {
+      "name": "escaping csucampuscraft-user/src/main/resources/templates/checkout/index.html",
+      "passed": true
+    },
+    {
+      "name": "no stub copy csucampuscraft-user/src/main/resources/templates/checkout/index.html",
+      "passed": true
+    },
+    {
+      "name": "raw sha csucampuscraft-user/src/main/resources/templates/checkout/conflict.html",
+      "passed": true
+    },
+    {
+      "name": "original sha csucampuscraft-user/src/main/resources/templates/checkout/conflict.html",
+      "passed": true
+    },
+    {
+      "name": "UTF8 LF single EOF csucampuscraft-user/src/main/resources/templates/checkout/conflict.html",
+      "passed": true
+    },
+    {
+      "name": "escaping csucampuscraft-user/src/main/resources/templates/checkout/conflict.html",
+      "passed": true
+    },
+    {
+      "name": "no stub copy csucampuscraft-user/src/main/resources/templates/checkout/conflict.html",
+      "passed": true
+    },
+    {
+      "name": "raw sha csucampuscraft-user/src/main/resources/static/css/app.css",
+      "passed": true
+    },
+    {
+      "name": "original sha csucampuscraft-user/src/main/resources/static/css/app.css",
+      "passed": true
+    },
+    {
+      "name": "UTF8 LF single EOF csucampuscraft-user/src/main/resources/static/css/app.css",
+      "passed": true
+    },
+    {
+      "name": "escaping csucampuscraft-user/src/main/resources/static/css/app.css",
+      "passed": true
+    },
+    {
+      "name": "no stub copy csucampuscraft-user/src/main/resources/static/css/app.css",
+      "passed": true
+    },
+    {
+      "name": "U07 query is GET",
+      "passed": true
+    },
+    {
+      "name": "U07 status default ALL",
+      "passed": true
+    },
+    {
+      "name": "U07 no UTF16 max length",
+      "passed": true
+    },
+    {
+      "name": "U07 page one filter",
+      "passed": true
+    },
+    {
+      "name": "U07 filter preserved in previous and next links",
+      "passed": true
+    },
+    {
+      "name": "U07 no other-user field",
+      "passed": true
+    },
+    {
+      "name": "U08 shipping structurally redactable",
+      "passed": true
+    },
+    {
+      "name": "U08 shipping only th:text values",
+      "passed": true
+    },
+    {
+      "name": "U08 snapshot data not live product",
+      "passed": true
+    },
+    {
+      "name": "U08 no actions except layout logout",
+      "passed": true
+    },
+    {
+      "name": "Navigation actual orders route",
+      "passed": true
+    },
+    {
+      "name": "CSS original prefix retained",
+      "passed": true
+    },
+    {
+      "name": "CSS scoped U07 and U08",
+      "passed": true
+    }
+  ],
+  "files": [
+    {
+      "path": "csucampuscraft-user/src/main/resources/templates/orders/index.html",
+      "original_sha256": null,
+      "sha256": "f9c81e9cf140cef408c1341b597922bf77fc52e6c0d698a7483623a66e58ee63"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/resources/templates/orders/detail.html",
+      "original_sha256": null,
+      "sha256": "32a51b8701568ec7959efa56c5f57ce61600b46f5d2458e15933c1cc075a2e7e"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/resources/templates/fragments/layout.html",
+      "original_sha256": "0304a7461cf9dc735c5671aed9ee902c39ff9e9eb9dad0c231c83ea232fa116d",
+      "sha256": "21bc2d75357e53b54016c2d5febf656dcc694cf32dc9c80be326774db2abe49a"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/resources/templates/checkout/index.html",
+      "original_sha256": "ed5614bc4b075cc51b83be5e1746a9dc93e331db57009f8c2f420c3fdc9c4059",
+      "sha256": "5e5c8d4e00a5febfac9b1107e370fe33e880c53358cb39b588b2e6f47035cdc1"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/resources/templates/checkout/conflict.html",
+      "original_sha256": "2341a226c9bc8d3921303846375ec3161805ee554f994112ade3e23ad3d6afc5",
+      "sha256": "0c68986829f4a1597e0ad8de510a45b8ff7b01f7da29b09f93f7113ef0ba1e4b"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/resources/static/css/app.css",
+      "original_sha256": "eca76f7f29c6cfa0ce9120f4953f5d305cfc9b29d0113f79a4533ffcc42a0833",
+      "sha256": "45f1defcf1fec4645459059d057b0493605e4947dda84634bd7ab0f6f69619a3"
+    }
+  ],
+  "shipping_policy": "Own-user shipping text only in SSR dd[data-shipping-value]; actual HTTP artifacts redact contents and screenshots mask elements.",
+  "ai_participation": "Codex wrote and statically reviewed these candidates; not a named teammate review."
+}
