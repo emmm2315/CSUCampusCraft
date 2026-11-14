@@ -40,5 +40,6 @@
 - `independent-observation-review.json` 与 `review_observations.py`：独立重读成功轮原始记录，149 HTTP 中的 71 POST 均一一关联七表对照；56 次拒绝无写入，11 次相册变化仅触及请求父商品及其单个图片并使父版恰增 1，2 次同值编辑无写。另两次成功 POST 为登录和 STEP05 补货联动，不算相册写入。
 - 128 个运行输入的清单 SHA-256：`11ce2a3046bccc5ca6f135f59bb81f6868b549ae0c06831b150daa29d45be9f6`；结束及文档归档前继续核对无漂移。文档/证据提交另行记录，不能替换受测代码 SHA。
 - 命令原始字节使用 `attemptN/commands.jsonl.gz` 无损保存，解压 SHA/长度见 `compressed-text-index.json`；HTTP 正文索引的 SHA 对应脱敏后解压内容。复查脚本 `audit_evidence.py` 默认目录可由环境变量 `STEP06_EVIDENCE_DIR` 指定。
+- 双端 Wrapper 在主验收前由新 PowerShell 进程构建；实际脚本 `images-build-fresh.ps1` 保留完整参数、JDK/独立 Maven 缓存及无 Maven PATH 设置，分别用 `-Module user` / `-Module admin` 执行。`build-user.json` / `build-admin.json` 记录真实退出 0，构建日志见成功轮次。脚本中的本机工作路径仅用于说明此次执行环境，其他机器需替换路径。
 
 命令原始JSONL以`attemptN/commands.jsonl.gz`无损压缩归档，`compressed-text-index.json`保存原字节数与解压后完整SHA，原stage命令文件未修改；敏感/hash审计同样解压检查。
