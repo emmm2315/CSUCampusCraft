@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
-      th:replace="~{fragments/layout :: page('CSUCampusCraft 管理端', ~{::mainContent})}">
-<head><title>CSUCampusCraft 管理端</title></head>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: page('管理控制台 · CSUCampusCraft', ~{::mainContent})}">
+<head><title>管理控制台</title></head>
 <body>
-<div th:fragment="mainContent">
-    <header class="page-heading">
-        <small class="eyebrow">校园文创商城 · 工程初始化</small>
-        <h1>CSUCampusCraft 管理端</h1>
-        <p class="muted">CSUCampusCraft 管理端工程已接入共享商品分类。当前展示数据库中的一级主题。</p>
-    </header>
-    <section class="panel" aria-labelledby="themes-heading">
-        <h2 id="themes-heading">校园主题</h2>
-        <p class="muted" th:attr="data-theme-count=${#lists.size(themes)}">
-            共 <span th:text="${#lists.size(themes)}">0</span> 个一级主题
-        </p>
-        <p class="empty-state" th:if="${#lists.isEmpty(themes)}">暂无主题。请确认演示数据已导入。</p>
-        <ul class="theme-list" th:unless="${#lists.isEmpty(themes)}">
-            <li th:each="theme : ${themes}" th:attr="data-theme-code=${theme.code}" th:text="${theme.name}"></li>
-        </ul>
+<div th:fragment="mainContent" data-page-id="A02" class="admin-dashboard"
+     th:attr="data-on-sale-count=${dashboardSummary.onSaleProductCount},data-draft-count=${dashboardSummary.draftProductCount},data-paid-order-count=${dashboardSummary.paidOrderCount},data-enabled-customer-count=${dashboardSummary.enabledCustomerCount},data-disabled-customer-count=${dashboardSummary.disabledCustomerCount}">
+    <header class="page-heading"><p class="eyebrow">CSUCampusCraft 管理端</p><h1>管理控制台</h1><p class="muted">当前管理员：<span th:text="${currentUser.displayName}">管理员</span>。查看当前业务数量，进入相应列表继续处理。</p></header>
+    <section aria-labelledby="dashboard-counts-title"><div class="dashboard-section-heading"><h2 id="dashboard-counts-title">当前数量</h2><a th:href="@{/}" data-dashboard-refresh>刷新统计</a></div>
+        <div class="dashboard-count-grid" data-dashboard-counts>
+            <a class="panel dashboard-count-card" th:href="@{/products(status='ON_SALE')}" data-dashboard-card="on-sale-products"><span class="dashboard-count-label">上架商品</span><strong class="dashboard-count-value" data-dashboard-count th:text="${dashboardSummary.onSaleProductCount}">—</strong><span class="field-help">包含售罄商品</span><span class="dashboard-card-action">查看上架商品 →</span></a>
+            <a class="panel dashboard-count-card" th:href="@{/products(status='DRAFT')}" data-dashboard-card="draft-products"><span class="dashboard-count-label">草稿商品</span><strong class="dashboard-count-value" data-dashboard-count th:text="${dashboardSummary.draftProductCount}">—</strong><span class="field-help">尚未上架或已下架</span><span class="dashboard-card-action">查看草稿商品 →</span></a>
+            <a class="panel dashboard-count-card" th:href="@{/orders(status='PAID')}" data-dashboard-card="paid-orders"><span class="dashboard-count-label">待发货订单</span><strong class="dashboard-count-value" data-dashboard-count th:text="${dashboardSummary.paidOrderCount}">—</strong><span class="field-help">已完成模拟支付</span><span class="dashboard-card-action">查看待发货订单 →</span></a>
+            <a class="panel dashboard-count-card" th:href="@{/customers(status='ENABLED')}" data-dashboard-card="enabled-customers"><span class="dashboard-count-label">启用普通顾客</span><strong class="dashboard-count-value" data-dashboard-count th:text="${dashboardSummary.enabledCustomerCount}">—</strong><span class="field-help">仅统计普通顾客</span><span class="dashboard-card-action">查看启用顾客 →</span></a>
+            <a class="panel dashboard-count-card" th:href="@{/customers(status='DISABLED')}" data-dashboard-card="disabled-customers"><span class="dashboard-count-label">禁用普通顾客</span><strong class="dashboard-count-value" data-dashboard-count th:text="${dashboardSummary.disabledCustomerCount}">—</strong><span class="field-help">原有历史数据保留</span><span class="dashboard-card-action">查看禁用顾客 →</span></a>
+        </div>
+        <p class="field-help dashboard-count-note">以上为本次读取时的当前数量。完成商品上下架、订单支付或发货、顾客启停后，可刷新核对。</p>
     </section>
+    <section class="panel dashboard-module-panel" aria-labelledby="dashboard-modules-title"><h2 id="dashboard-modules-title">管理入口</h2><div class="dashboard-module-grid">
+        <a th:href="@{/categories}"><strong>分类管理</strong><span>维护校园主题与二级分类。</span></a>
+        <a th:href="@{/products}"><strong>商品与相册</strong><span>维护商品、上下架、增量补货；从商品进入相册。</span></a>
+        <a th:href="@{/orders}"><strong>订单管理</strong><span>查询成交快照，核对后模拟发货。</span></a>
+        <a th:href="@{/customers}"><strong>普通顾客管理</strong><span>查询教学账号、查看关联订单与启停状态。</span></a>
+    </div></section>
 </div>
 </body>
 </html>

@@ -16,7 +16,7 @@
             <div><dt>创建时间</dt><dd><time th:text="${order.createdAtDisplay}">创建时间</time>（北京时间）</dd></div>
             <div><dt>订单金额</dt><dd class="admin-order-total" data-order-amount th:text="${'¥' + #numbers.formatDecimal(order.totalAmount,1,'NONE',2,'POINT')}">¥0.00</dd></div>
             <div><dt>顾客</dt><dd><span th:text="${order.customerDisplayName}">顾客显示名</span> / <span th:text="${order.customerUsername}">用户名</span> / ID <span th:text="${order.userId}">0</span></dd></div>
-            <div><dt>顾客资料</dt><dd class="field-help" data-customer-entry-pending>顾客详情入口将在 STEP12 接通。</dd></div>
+            <div><dt>顾客资料</dt><dd><a th:href="@{/customers/{id}(id=${order.userId})}" data-customer-detail-link>查看该顾客资料</a></dd></div>
         </dl>
         <p class="field-help" th:if="${order.status == 'PENDING_PAYMENT'}" data-shipping-gate>订单尚未支付，完成模拟支付后才可发货。</p>
         <p class="field-help" th:if="${order.status == 'CANCELLED'}" data-shipping-gate>订单已取消，不能发货。保留原成交快照与取消时间。</p>

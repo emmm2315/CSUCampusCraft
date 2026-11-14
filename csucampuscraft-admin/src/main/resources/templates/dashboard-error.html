@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: page('控制台暂不可用 · CSUCampusCraft', ~{::mainContent})}">
+<head><title>控制台暂不可用</title></head><body>
+<section th:fragment="mainContent" class="panel error-page" data-page-id="A02" data-dashboard-unavailable data-error-status="500" aria-labelledby="dashboard-error-title">
+    <p class="error-number">500</p><h1 id="dashboard-error-title">控制台暂不可用</h1>
+    <p>当前无法读取统计，请稍后重试。</p><p class="muted">本页未展示数量，避免把读取失败当作没有数据。</p>
+    <p class="error-code">错误代码：<span>DASHBOARD_QUERY_FAILED</span></p>
+    <div class="button-row"><a class="button" th:href="@{/}" data-dashboard-retry>重新读取控制台</a><a class="button button-secondary" th:href="@{/customers}">前往顾客列表</a></div>
+</section></body></html>
