@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('商品相册 · CSUCampusCraft', ~{::mainContent})}">
+<head><title>商品相册</title></head>
+<body>
+<div th:fragment="mainContent" data-page-id="A10"
+     th:attr="data-product-id=${product.id},data-product-version=${productVersion},data-image-count=${#lists.size(images)}">
+    <header class="page-heading admin-toolbar">
+        <div>
+            <p class="eyebrow">商品相册</p>
+            <h1 th:text="${product.name}">商品名称</h1>
+            <p class="muted">维护已有图片路径、替代文本和展示顺序。</p>
+        </div>
+        <div class="button-row">
+            <a class="button button-secondary" th:href="@{/products}">返回商品列表</a>
+            <a class="button button-secondary" th:href="@{/products/{id}/edit(id=${product.id})}">返回商品编辑</a>
+            <a class="button button-secondary" th:href="${reloadUrl}" data-reload-album>重新载入相册</a>
+            <a class="button button-secondary" th:href="${userDetailUrl}" data-user-detail>查看用户端详情</a>
+        </div>
+    </header>
+
+    <th:block th:replace="~{fragments/alerts :: summary(${errorAnchors})}"></th:block>
+
+    <section class="panel album-failed-target" th:if="${formImageId != null and !formImagePresent}"
+             th:with="prefix=${'image-' + formImageId + '-'}" aria-labelledby="album-failed-target-title">
+        <h2 id="album-failed-target-title">核对未保存的提交</h2>
+        <p>本次操作未保存，目标记录已不在当前相册。请重新载入后核对。</p>
+        <dl class="album-meta">
+            <div>
+                <dt>图片编号</dt><dd th:text="${formImageId}">图片编号</dd>
+            </div>
+            <div th:id="${prefix + 'productVersion'}">
+                <dt>提交的商品版本</dt><dd th:text="${imageForm.productVersion ?: '未填写'}">商品版本</dd>
+                <dd class="field-error" th:if="${fieldErrors.containsKey('productVersion')}" th:text="${fieldErrors.get('productVersion')}">请重新载入相册。</dd>
+            </div>
+            <div th:id="${prefix + 'sortOrder'}">
+                <dt>提交的排序值</dt><dd th:text="${imageForm.sortOrder ?: '未填写'}">排序值</dd>
+                <dd class="field-error" th:if="${fieldErrors.containsKey('sortOrder')}" th:text="${fieldErrors.get('sortOrder')}">请检查排序值。</dd>
+            </div>
+            <div class="album-meta-wide" th:id="${prefix + 'imagePath'}">
+                <dt>提交的图片路径</dt><dd th:text="${imageForm.imagePath ?: '未填写'}">图片路径</dd>
+                <dd class="field-error" th:if="${fieldErrors.containsKey('imagePath')}" th:text="${fieldErrors.get('imagePath')}">请检查图片路径。</dd>
+            </div>
+            <div class="album-meta-wide" th:id="${prefix + 'altText'}">
+                <dt>提交的替代文本</dt><dd th:text="${imageForm.altText ?: '未填写'}">替代文本</dd>
+                <dd class="field-error" th:if="${fieldErrors.containsKey('altText')}" th:text="${fieldErrors.get('altText')}">请检查替代文本。</dd>
+            </div>
+        </dl>
+        <a th:href="${reloadUrl}">重新载入相册，按当前记录继续</a>
+    </section>
+
+    <section class="panel album-product" aria-labelledby="album-product-title">
+        <figure class="album-cover">
+            <th:block th:replace="~{fragments/images :: image(${product.coverImage},${product.name})}"></th:block>
+            <figcaption>独立封面</figcaption>
+        </figure>
+        <div>
+            <h2 id="album-product-title">商品与封面</h2>
+            <dl class="album-meta">
+                <div><dt>SKU</dt><dd th:text="${product.sku}">SKU</dd></div>
+                <div><dt>商品版本</dt><dd th:text="${productVersion}" data-current-version>0</dd></div>
+                <div><dt>商品状态</dt><dd th:text="${product.status == 'ON_SALE' ? '已上架' : '草稿 / 下架'}">商品状态</dd></div>
+                <div class="album-meta-wide"><dt>封面路径</dt><dd class="album-path" th:text="${product.coverImage}">images/catalog-placeholder.svg</dd></div>
+            </dl>
+            <p class="field-help">封面独立维护；新增、编辑或移除相册记录都不会修改封面。</p>
+            <p class="field-help" th:if="${product.status != 'ON_SALE'}">当前商品未上架，用户端详情暂不可浏览；上架后可从上方入口查看。</p>
+        </div>
+    </section>
+
+    <section class="panel album-add" aria-labelledby="album-add-title"
+             th:with="addFailed=${formImageId == null and formAction == 'add'}">
+        <div class="album-section-heading">
+            <div>
+                <h2 id="album-add-title">新增相册图片</h2>
+                <p class="field-help">填写项目已有的相对图片路径，无需上传文件。</p>
+            </div>
+        </div>
+        <form method="post" th:action="@{/products/{id}/images(id=${product.id})}" data-submit-state data-image-action="add">
+            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+            <input type="hidden" name="productVersion" th:value="${addFailed ? imageForm.productVersion : productVersion}">
+            <p id="add-productVersion" class="field-help"
+               th:classappend="${addFailed and fieldErrors.containsKey('productVersion') ? 'field-error' : ''}"
+               th:text="${addFailed and fieldErrors.containsKey('productVersion') ? fieldErrors.get('productVersion') : '提交时核对商品版本；提示过期时请重新载入相册。'}">商品版本</p>
+            <div class="album-fields">
+                <div class="album-path-field">
+                    <th:block th:replace="~{fragments/fields :: text('add-imagePath','imagePath','图片路径',${addFailed ? imageForm.imagePath : ''},${addFailed ? fieldErrors : null})}"></th:block>
+                    <p class="field-help">1–255 个字符，以 images/ 开头；不接受外部地址、斜杠开头、反斜杠、..、单独的 . 路径段、:、%、?、# 或控制字符。</p>
+                </div>
+                <div>
+                    <th:block th:replace="~{fragments/fields :: text('add-altText','altText','替代文本（可选）',${addFailed ? imageForm.altText : ''},${addFailed ? fieldErrors : null})}"></th:block>
+                    <p class="field-help">最多 120 个字符；留空时使用商品名称。</p>
+                </div>
+                <div>
+                    <th:block th:replace="~{fragments/fields :: text('add-sortOrder','sortOrder','排序值（非负整数）',${addFailed ? imageForm.sortOrder : '0'},${addFailed ? fieldErrors : null})}"></th:block>
+                    <p class="field-help">留空按 0；先按排序值、再按图片编号升序显示。</p>
+                </div>
+            </div>
+            <div class="button-row"><button type="submit">新增图片记录</button></div>
+        </form>
+    </section>
+
+    <section class="album-gallery" aria-labelledby="album-gallery-title">
+        <div class="album-section-heading">
+            <div>
+                <h2 id="album-gallery-title">当前相册</h2>
+                <p class="field-help">共 <strong th:text="${#lists.size(images)}">0</strong> 张图片。保存后重新读取版本，其他表单以新版本继续操作。</p>
+            </div>
+        </div>
+        <div class="empty-state" th:if="${#lists.isEmpty(images)}" data-image-empty>
+            <p>相册为空，用户端详情回退封面；封面缺图时显示占位图。</p>
+            <p>可在上方新增相册图片，商品封面仍独立保留。</p>
+        </div>
+        <div class="album-records">
+            <article class="panel album-record" th:each="image : ${images}"
+                     th:attr="data-image-id=${image.id},data-sort-order=${image.sortOrder}"
+                     th:with="prefix=${'image-' + image.id + '-'},editFailed=${formImageId != null and formImageId == image.id and formAction == 'edit'},removeFailed=${formImageId != null and formImageId == image.id and formAction == 'remove'}">
+                <figure class="album-preview">
+                    <th:block th:replace="~{fragments/images :: image(${image.imagePath},${#strings.isEmpty(image.altText) ? product.name : image.altText})}"></th:block>
+                    <figcaption th:text="${'图片编号 ' + image.id}">图片编号</figcaption>
+                    <p class="album-path field-help" th:text="${image.imagePath}">图片路径</p>
+                </figure>
+                <div class="album-record-content">
+                    <h3 th:text="${'图片 ' + image.id}">相册图片</h3>
+                    <p th:id="${prefix + 'productVersion'}" class="field-help"
+                       th:classappend="${(editFailed or removeFailed) and fieldErrors.containsKey('productVersion') ? 'field-error' : ''}"
+                       th:text="${(editFailed or removeFailed) and fieldErrors.containsKey('productVersion') ? fieldErrors.get('productVersion') : '排序值相同时按图片编号升序显示。'}">相册顺序</p>
+                    <form method="post" th:action="@{/products/{pid}/images/{iid}(pid=${product.id},iid=${image.id})}"
+                          data-submit-state data-image-action="edit" th:attr="data-image-id=${image.id}">
+                        <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+                        <input type="hidden" name="productVersion" th:value="${editFailed ? imageForm.productVersion : productVersion}">
+                        <div class="album-fields">
+                            <div class="album-path-field">
+                                <th:block th:replace="~{fragments/fields :: text(${prefix + 'imagePath'},'imagePath','图片路径',${editFailed ? imageForm.imagePath : image.imagePath},${editFailed ? fieldErrors : null})}"></th:block>
+                            </div>
+                            <div>
+                                <th:block th:replace="~{fragments/fields :: text(${prefix + 'altText'},'altText','替代文本（可选）',${editFailed ? imageForm.altText : image.altText},${editFailed ? fieldErrors : null})}"></th:block>
+                            </div>
+                            <div>
+                                <th:block th:replace="~{fragments/fields :: text(${prefix + 'sortOrder'},'sortOrder','排序值（非负整数）',${editFailed ? imageForm.sortOrder : image.sortOrder},${editFailed ? fieldErrors : null})}"></th:block>
+                            </div>
+                        </div>
+                        <div class="button-row">
+                            <button type="submit" class="button-secondary">保存此图片</button>
+                            <span class="field-help">内容未变时保存成功且不增加商品版本。</span>
+                        </div>
+                    </form>
+                    <form method="post" class="album-remove"
+                          th:action="@{/products/{pid}/images/{iid}/remove(pid=${product.id},iid=${image.id})}"
+                          data-submit-state data-image-action="remove" th:attr="data-image-id=${image.id}">
+                        <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+                        <input type="hidden" name="productVersion" th:value="${removeFailed ? imageForm.productVersion : productVersion}">
+                        <button type="submit" class="button-danger">移除此图片记录</button>
+                        <span class="field-help">只移除相册记录，保留静态图片文件和独立封面。</span>
+                    </form>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+</body>
+</html>

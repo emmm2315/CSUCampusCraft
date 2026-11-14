@@ -11,6 +11,8 @@
         <div class="button-row">
             <a class="button button-secondary" th:href="${returnUrl}">返回商品列表</a>
             <a class="button button-secondary" th:if="${editing}"
+               th:href="@{/products/{id}/images(id=${product.id})}" data-album-link>管理商品相册</a>
+            <a class="button button-secondary" th:if="${editing}"
                th:href="@{/products/{id}/edit(id=${product.id},returnUrl=${returnUrl})}" data-reload-product>重新载入编辑页</a>
         </div>
     </header>

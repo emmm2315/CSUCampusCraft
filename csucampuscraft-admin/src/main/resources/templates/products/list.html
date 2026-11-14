@@ -85,8 +85,7 @@
                             <button type="submit" class="button-secondary">下架</button>
                         </form>
                     </div>
-                    <!-- STEP06 接入相册维护；本步不注册相册路由。 -->
-                    <p class="field-help">相册管理暂未开放</p>
+                    <p class="field-help"><a th:href="@{/products/{id}/images(id=${item.id})}" data-album-link>管理商品相册</a></p>
                 </td>
             </tr>
             </tbody>
