@@ -1,0 +1,373 @@
+{
+  "result": "PASS_VISUAL_REVIEW",
+  "tested_code_sha": "3bc5629bcbcbeefa6cbc8f655e8cb4d790c81b77",
+  "attempt": "attempt1",
+  "reviewer": "Independent Codex UI execution unit; human cross review pending",
+  "screenshots_individually_viewed": 24,
+  "viewport_pairs": 12,
+  "blocking_findings": [],
+  "source_changes_required": false,
+  "limits": "Visual inspection is read-only, separate from HTTP/SQL/DOM assertions. Screenshots do not establish concurrency, checkout/order behavior, keyboard interaction or real human team sign-off. All five error scenes use existing verification-profile read probes with an available database.",
+  "screenshots": [
+    {
+      "path": "attempt1/browser/u05-valid-85-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1020
+      ],
+      "sha256": "e3eb7396df502a083f5dcf899954422804d407289b801825fdcaa522c0c1d94c",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "导航徽标为3；两种商品共3件，行小计36.00和49.00、合计85.00完整可读；数量/更新/移除控件未被表格裁切，整车结算禁用且说明暂未开放。 本图视口为1366×768。"
+    },
+    {
+      "path": "attempt1/browser/u05-valid-85-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "sha256": "7955b69487c73fe916bdd69ee5ff093a2c0e24e215c5805a0e58e6707af8c02d",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "导航徽标为3；两种商品共3件，行小计36.00和49.00、合计85.00完整可读；数量/更新/移除控件未被表格裁切，整车结算禁用且说明暂未开放。 本图视口为1920×1080。"
+    },
+    {
+      "path": "attempt1/browser/u05-invalid-live-status-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1520
+      ],
+      "sha256": "c519136583f8ce67161be2bfcbb6f557bedcf62256687c704a1120143c4a50cf",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "导航徽标为6，包含失效行；下架、售罄、超库存三种行内原因及3种失效提示可读；失效行不计小计，只有礼盒49.00计入，移除控件保留且结算禁用。 本图视口为1366×768。"
+    },
+    {
+      "path": "attempt1/browser/u05-empty-bob-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        768
+      ],
+      "sha256": "f14542eef33cf48db412756f841ea9881f2c8a34ca0fdd610595598aa325028a",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "当前账号空车显示去逛逛入口、0.00金额和徽标0；未出现另一账号条目，结算禁用；空态、操作入口和页脚布局完整。 本图视口为1366×768。"
+    },
+    {
+      "path": "attempt1/browser/u01-live-badge-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1819
+      ],
+      "sha256": "bd49f393e3bccd6548ec42a9b0a4236db9a425ea232995fd54c4433695219a6a",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "导航徽标6与登录顾客标识可读；毕业横幅、五个主题、搜索及新品/精选卡片布局完整，导航入口没有挤压或遮挡正文。 本图视口为1366×768。"
+    },
+    {
+      "path": "attempt1/browser/u02-live-badge-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1724
+      ],
+      "sha256": "919f7622d62d2c0045c49b0ca3a21d82e690790d29a922a2474b2608225e4e63",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "导航徽标6；主题/类型/名称/排序/条数筛选、商品卡片和分页完整可读，无页面横向裁切。 本图视口为1366×768。"
+    },
+    {
+      "path": "attempt1/browser/u03-real-add-form-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1665
+      ],
+      "sha256": "68b8d3e9f4723aac3491bb2516c438f26dbd2fde9c278c1231057fdd8e39e99a",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "登录顾客导航徽标6；礼盒49.00、库存12、默认数量1与加购按钮清楚，数量规则、设计说明和相册可读，无重叠或裁切。 本图视口为1366×768。"
+    },
+    {
+      "path": "attempt1/browser/u03-guest-zero-badge-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1700
+      ],
+      "sha256": "3b26c2542d2f6147895f19941037fbb27dac7499ee84dd92c06a43af749108de",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "游客导航徽标0并显示登录入口；默认数量1、加购按钮和先登录再重新确认加购提示可读，封面与相册布局完整。 本图视口为1366×768。"
+    },
+    {
+      "path": "attempt1/browser/error-400-badge-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        768
+      ],
+      "sha256": "ff1252971493400326349bf52fef978e1f2096d8137ee28932d3a11adf85ebce",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "400参数错误标题、修正输入提示和返回首页入口可读；错误页仍显示顾客导航徽标6，布局完整。 本图视口为1366×768。"
+    },
+    {
+      "path": "attempt1/browser/error-403-badge-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        768
+      ],
+      "sha256": "59a55fa06dda1f6d0feb85b6f1e2b24847f0b002219a3267b0ef6440ef600d80",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "403未获允许标题、刷新或返回首页说明可读；此为验证配置的错误页渲染场景，导航徽标仍为当前顾客6，未挤压错误内容。 本图视口为1366×768。"
+    },
+    {
+      "path": "attempt1/browser/error-404-badge-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        768
+      ],
+      "sha256": "1fcb14d3ff0e6ace5b9f129698df43467030ee2b11f9fa2cbe55b6b9dd8c0ec3",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "404页面未找到标题与可恢复导航可读；共享导航徽标6和页脚完整，未出现空白错误页。 本图视口为1366×768。"
+    },
+    {
+      "path": "attempt1/browser/error-409-badge-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        768
+      ],
+      "sha256": "133139dd14ecf413cccacd993f3d814d09d31d112690fdd59f02693f3b4713cf",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "409当前数据已变化标题与重新读取提示可读；共享导航徽标6、返回首页入口和错误代码完整。 本图视口为1366×768。"
+    },
+    {
+      "path": "attempt1/browser/error-500-badge-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        768
+      ],
+      "sha256": "e80ba05f9c664c2f3d4e9949defea905ed1a1cf58fd142561ce4e189968f3974",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "500通用暂时无法完成请求提示可读，显示INTERNAL_ERROR；无可见堆栈/SQL/密码；数据库可用的验证错误页仍显示导航徽标6。 本图视口为1366×768。"
+    },
+    {
+      "path": "attempt1/browser/u05-invalid-live-status-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1520
+      ],
+      "sha256": "b9120756edad655d4117e69fbb7187b2238f82583bb837418964eba3cba54c7e",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "导航徽标为6，包含失效行；下架、售罄、超库存三种行内原因及3种失效提示可读；失效行不计小计，只有礼盒49.00计入，移除控件保留且结算禁用。 本图视口为1920×1080。"
+    },
+    {
+      "path": "attempt1/browser/u05-empty-bob-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "sha256": "2cb7660d4807b4d0b98bb70603860eee1c0134370a1b1f0e0f176607f5924262",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "当前账号空车显示去逛逛入口、0.00金额和徽标0；未出现另一账号条目，结算禁用；空态、操作入口和页脚布局完整。 本图视口为1920×1080。"
+    },
+    {
+      "path": "attempt1/browser/u01-live-badge-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1819
+      ],
+      "sha256": "01f5f7598cd5630433ae4b0c56a921949311b1718f106ffc644b0ec207c99998",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "导航徽标6与登录顾客标识可读；毕业横幅、五个主题、搜索及新品/精选卡片布局完整，导航入口没有挤压或遮挡正文。 本图视口为1920×1080。"
+    },
+    {
+      "path": "attempt1/browser/u02-live-badge-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1724
+      ],
+      "sha256": "2d6af234e6b54b79b56ab37ec00558445f5bd0abf84ec9ea6939986968948b20",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "导航徽标6；主题/类型/名称/排序/条数筛选、商品卡片和分页完整可读，无页面横向裁切。 本图视口为1920×1080。"
+    },
+    {
+      "path": "attempt1/browser/u03-real-add-form-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1665
+      ],
+      "sha256": "52052e5e2a28fd2ddbf96beb485d1235ad01630fe6309fe319d7a637cef57532",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "登录顾客导航徽标6；礼盒49.00、库存12、默认数量1与加购按钮清楚，数量规则、设计说明和相册可读，无重叠或裁切。 本图视口为1920×1080。"
+    },
+    {
+      "path": "attempt1/browser/u03-guest-zero-badge-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1700
+      ],
+      "sha256": "dc0f5555f9d8b4cefde3f291356bff7cd389815414e567e51d3b4567894a87f5",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "游客导航徽标0并显示登录入口；默认数量1、加购按钮和先登录再重新确认加购提示可读，封面与相册布局完整。 本图视口为1920×1080。"
+    },
+    {
+      "path": "attempt1/browser/error-400-badge-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "sha256": "d515f1d866ac2c61687be3d9508e327d67e1fbca6ab1098d87773a6dc62166b4",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "400参数错误标题、修正输入提示和返回首页入口可读；错误页仍显示顾客导航徽标6，布局完整。 本图视口为1920×1080。"
+    },
+    {
+      "path": "attempt1/browser/error-403-badge-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "sha256": "92c8c81a87c27acdd108ad7c75c371bc6aa011027bfd8f1275f25892e919dd5e",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "403未获允许标题、刷新或返回首页说明可读；此为验证配置的错误页渲染场景，导航徽标仍为当前顾客6，未挤压错误内容。 本图视口为1920×1080。"
+    },
+    {
+      "path": "attempt1/browser/error-404-badge-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "sha256": "591d5950d8609736e6dfbc654e585f6667f0286d4db2e713d39522c04e0c33a1",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "404页面未找到标题与可恢复导航可读；共享导航徽标6和页脚完整，未出现空白错误页。 本图视口为1920×1080。"
+    },
+    {
+      "path": "attempt1/browser/error-409-badge-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "sha256": "41a6991656723f39589a535d2395db08bbaeac0a8dbefd4f906370d7481788d7",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "409当前数据已变化标题与重新读取提示可读；共享导航徽标6、返回首页入口和错误代码完整。 本图视口为1920×1080。"
+    },
+    {
+      "path": "attempt1/browser/error-500-badge-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "sha256": "7cb87235f8587b9e91dc97955f6a3ef9e09b1fcc8252159fbf6665311204182c",
+      "method": "Individually inspected using tools.view_image; original PNG bytes unchanged",
+      "visual_result": "PASS",
+      "observation": "500通用暂时无法完成请求提示可读，显示INTERNAL_ERROR；无可见堆栈/SQL/密码；数据库可用的验证错误页仍显示导航徽标6。 本图视口为1920×1080。"
+    }
+  ]
+}

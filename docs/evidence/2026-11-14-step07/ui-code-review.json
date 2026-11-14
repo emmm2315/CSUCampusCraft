@@ -1,0 +1,21 @@
+{
+  "result": "PASS_STATIC_REVIEW",
+  "reviewer": "independent Codex UI execution unit; human cross review pending",
+  "scope": "Read-only review of frozen user resources and cooperating foundation/cart Java candidates; not runtime evidence",
+  "blocking_findings": [],
+  "observations": [
+    "CartPage/CartLine bean properties and CartController failure models match every U05 and U03 expression.",
+    "Cart POST role rejection is deferred by AuthFilter request flag to MVC preHandle, after the existing CSRF filter and before controller argument binding.",
+    "CustomerWriteGuard requires an existing READ_COMMITTED write transaction and performs the user FOR UPDATE query before business mapper access.",
+    "Cart mutation mapper SQL uses bound values, owner/id/version predicates and checked affected-row counts; only cart_item is written.",
+    "Merged add uses all own cart rows including invalid entries for the twenty-SKU limit; existing SKU can merge when twenty rows exist.",
+    "Valid-version same quantity returns without DML, including maximum version and invalid current product; this does not make the invalid cart eligible for checkout.",
+    "Add/remove/quantity forms share CSRF fragments; failing raw quantity/version remain in only the failed action, while other forms use current versions.",
+    "Non-numeric quantity errors switch input to text so the raw invalid value remains visibly editable; normal fields use number min1 max99.",
+    "Cart valid subtotal excludes invalid lines and uses BigDecimal; each invalid line remains visible with a reason and a remove action.",
+    "Navigation uses server-provided all-row SUM, with a distinct unavailable display for technical failures; failed reauthentication resets old account badge.",
+    "Checkout controls stay disabled and no checkout/order links or routes are added; all new CSS is scoped to user U03/U05.",
+    "Template static checks reject unescaped output, nested forms, duplicate literal IDs and th:replace sharing a node with conditional/iteration attributes."
+  ],
+  "verification_limits": "Actual Maven, HTTP/database, native transaction traces and browser screenshots are verified separately by root and the verification agent. Concurrent requests, order confirmation and injected rollback are outside this review."
+}

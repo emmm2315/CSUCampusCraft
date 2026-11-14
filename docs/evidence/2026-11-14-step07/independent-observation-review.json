@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "reviewer": "independent Codex root; named human review pending",
+  "tested_sha": "3bc5629bcbcbeefa6cbc8f655e8cb4d790c81b77",
+  "http_records": 335,
+  "automatic_post_db_pairs": 154,
+  "non303_posts_zero_write": 70,
+  "cart_insert_posts": 26,
+  "cart_update_posts": 5,
+  "cart_remove_posts": 36,
+  "cart_noop_posts": 3,
+  "badge_html_observations": 95,
+  "findings": [],
+  "coverage": "Every POST matched one automatic seven-table pair; other six tables unchanged; cart mutation only one row belonging to the named actor, initial version0/actual-update+1, <=20 unique SKUs; response gzip SHA and actual badge HTML agree with recorded SQL SUM.",
+  "limits": "Serial HTTP/native observations only; no concurrent requests, checkout/order flow, or injected failure after DML."
+}

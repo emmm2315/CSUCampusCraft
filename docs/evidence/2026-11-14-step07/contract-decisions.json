@@ -1,0 +1,14 @@
+{
+  "draft_add": "404 per detailed core contract and existing BR12/SRS/HTTP matrix; acceptance prose grouping it with409 treated as inconsistent shorthand",
+  "identity_failure": "missing/disabled/stamp-expired identity clears local identity and confirmation and redirects302 to fixed allowed GET",
+  "wrong_role": "403 per specific HTTP matrix and BR12; overrides generic guard prose saying all failures redirect",
+  "cart_post_order": "AuthFilter +10 identity; CsrfFilter +20; MVC preHandle deferred role; controller field parsing; RC Service actor-lock revalidation; cart/product decisions",
+  "same_quantity": "valid version no-op303 before availability/version-capacity; invalid row stays invalid and cannot checkout",
+  "actual_quantity_change_draft": "404 unavailable product; sold-out/insufficient stock409",
+  "remove_version_max": "allowed with valid owner/version; removal has no version increment",
+  "guest_return": "single positive Long productId creates fixed /products/{id} GET; other cart writes or invalid productId use fixed /cart; no POST replay",
+  "checkout": "UI disabled for every cart in STEP07; invalid/empty reasons visible; no checkout/order controller/link/token/persistence",
+  "technical_badge_failure": "unavailable dash only when actual read failed; not invented authenticated0, not mistaken for invalid identity",
+  "numbered_contracts": "no numbered requirements/rules/routes/schema semantics rewritten; differences disclosed in STEP07 observations",
+  "deferred": "TST11 confirmation STEP08, TST17 real concurrency/old confirmation/transactions STEP13, named team review before M3"
+}

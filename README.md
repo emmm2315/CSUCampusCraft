@@ -9,7 +9,7 @@ CSUCampusCraft 是《软件开发架构平台》实验一的双端商城项目�
 
 ## 当前阶段
 
-M0、STEP02 基础设施、STEP03 公开目录、STEP04 双端身份及 STEP05 后台分类/商品/增量补货已通过各自范围的自动实测；STEP06 管理端 A10 相册代码已提交且双端 Wrapper 构建通过，正式 HTTP/SQL/浏览器结论为 通过（attempt2；本步范围，组员复核待补）。STEP06 自动验收已完成，M1 登记为待复核；STEP03–06 组员实名与交叉复核仍待补。管理端 ADMIN 可从分类/商品入口进入相册，根页仍是初始化主题页；用户端详情复用既有相册与封面回退。购物车、订单和其他后台模块按后续计划开发，控制台在 STEP12，REST 仅预留。
+M0 与 M1（STEP02–06）已通过各自范围自动实测，组员实名和交叉复核待补。STEP07 用户端持久购物车、U03 加购和全站导航徽标的本步结果为 通过（attempt1；仅本步购物车范围，组员复核待补）；当前阶段以本页及对应实测记录为准。用户端支持本人车持久化、同 SKU 合并、版本改量与移除；管理端保持 STEP06 交付。结算确认、下单与订单页面尚未开发，控制台在 STEP12，REST 仅预留。
 
 MySQL 8.4（InnoDB）是项目数据库基线。首版范围与交付标准见[项目立项与范围](docs/项目立项与范围.md)。
 
@@ -127,7 +127,7 @@ M0 已完成本地独立目录复现与 INIT-01 至 INIT-05 核对，详细版�
 
 推送前用 `git status --short` 核对两端源码、SQL、共享素材、七份文档、指导书与归档证据均纳入提交。`docs/evidence/` 下经过检查的 `.log` 属于验收资料；构建 `target/`、本机口令文件和普通运行日志继续忽略。提交后可记录新的完整 SHA，保留本轮「基线 SHA + 工作区快照」证据的原始身份，不把它改写成该新提交已测试。
 
-STEP02–STEP05 已通过各自范围自动实测；STEP06 构建通过，正式验收结论见上方「当前阶段」及[STEP06 实测记录](docs/测试与验收用例.md#step06-实测记录)。先按 M1 门槛复核，再进入 STEP07 持久购物车。新成员仍须在自己的环境复现 STEP01，并阅读下方公共基础与身份交接；后台和交易写不能只依赖入口过滤器授权。
+STEP02–STEP05 已通过各自范围自动实测；STEP06 构建通过，正式验收结论见上方「当前阶段」及[STEP06 实测记录](docs/测试与验收用例.md#step06-实测记录)。M1 组员复核仍待补；STEP07 购物车实际覆盖见当前阶段，下一步为 STEP08 整车确认。新成员仍须在自己的环境复现 STEP01，并阅读下方公共基础与身份交接；后台和交易写不能只依赖入口过滤器授权。
 
 ## STEP02 工具链与公共基础交接
 
@@ -142,7 +142,7 @@ java -version
 
 两端 `foundation/` 下提供异常映射、字段校验、303 响应、密码库和会话级 CSRF。公共模板约定为 `layout::page(pageTitle,pageContent)`、`fields::text(id,name,label,value,errors)`、`fields::number(id,name,label,value,min,max,step,errors)`、`fields::csrf`、`alerts::summary(errors)` 和 `images::image(path,altText)`。单个表单可使 `id` 与 `name` 相同，字段错误 Map 使用 `name`；同页多行表单须给 `id` 加唯一前缀，并将摘要另映射到完整 `id`，A10 的具体约定见下方 STEP06 交接。普通文本用 `th:text`，字段值用 `th:value`；密码不回显。
 
-POST 表单复用 `fields::csrf`，可加 `data-submit-state` 启用「处理中」反馈。成功写后使用 `HttpResponses.seeOther(readPath)` 返回 303。`BusinessException` 的消息只放可展示文案，技术异常交给通用 500。`InputChecks.money` 默认检查完整有符号 DECIMAL(12,2) 列范围，返回两位小数且不舍入；价格正值等业务限制由调用方传入 min/max。用户导航 `cartQuantity` 当前固定为 0，STEP07 再接查询。
+POST 表单复用 `fields::csrf`，可加 `data-submit-state` 启用「处理中」反馈。成功写后使用 `HttpResponses.seeOther(readPath)` 返回 303。`BusinessException` 的消息只放可展示文案，技术异常交给通用 500。`InputChecks.money` 默认检查完整有符号 DECIMAL(12,2) 列范围，返回两位小数且不舍入；价格正值等业务限制由调用方传入 min/max。用户导航 `cartQuantity` 已由 STEP07 接入本人全部车条目数量和，具体查询与错误态见下方交接。
 
 日常启动使用默认 profile，验证专用入口不会注册。复现本步探针时，在已经设置同库环境变量的两个终端分别运行：
 
@@ -158,7 +158,7 @@ STEP02 的 CsrfFilter 继续校验所有非 GET 请求；STEP04 已在它之前�
 
 ## STEP03 公开目录交接
 
-用户端入口为 `/`、`/products`、`/products/{productId}`，毕业专区复用列表。演示库为 60 件物理商品、54 件公开上架商品；售罄仍可浏览，草稿返回 404。详情加购仅为禁用控件，未开放写入。代码与验收身份、失败复测及桌面截图见[STEP03 实测记录](docs/测试与验收用例.md#step03-实测记录)和[证据目录](docs/evidence/2026-11-13-step03/README.md)。
+用户端入口为 `/`、`/products`、`/products/{productId}`，毕业专区复用列表。演示库为 60 件物理商品、54 件公开上架商品；售罄仍可浏览，草稿返回 404。STEP07 已将详情加购接入真实购物车表单；售罄仍禁用，目录与相册沿用原契约。代码与验收身份、失败复测及桌面截图见[STEP03 实测记录](docs/测试与验收用例.md#step03-实测记录)和[证据目录](docs/evidence/2026-11-13-step03/README.md)。
 
 列表只绑定 categoryId/type/q/sort/page/size。categoryId 只接受一级主题，二级入口已转换为父主题 ID+类型；直接传二级 ID 返回 404。关键词去首尾空白，服务端按 Unicode 码点限 120；LIKE 使用 `ESCAPE '!'` 并显式绑定转义值。排序固定四段白名单；默认 6 条，允许 1–50。过滤改变回第 1 页，分页保留条件，超页仍返回 200 空态。
 
@@ -171,7 +171,7 @@ STEP04 已实现下述身份过滤顺序，参见后面的正式交接。后续�
 
 AuthFilter为HIGHEST_PRECEDENCE+10，CsrfFilter仍为+20。公开基础路径为/login、/error、/css/**、/js/**、/images/**；用户GET/和/products及子路径公开，其余预留/cart、/checkout、/orders及子路径与POST/logout受保护，未知普通路径仍404。管理端除白名单外全部受保护。未认证302至/login，已认证但错角色403；不存在的未来受保护GET在认证后404。外部/动作/非法returnUrl回退/，不自动重放POST。
 
-会话只存SessionIdentity(userId,authStamp)，authStamp为数据库updated_at的UTC微秒LocalDateTime原值；每次受保护请求查库以equals比较，不格式化或截断。失效清本端身份与结算确认；公共目录遇旧身份失效按游客继续。模型仅放安全AuthUser；cartQuantity仍为0，STEP07接查询。两端Cookie名保持原值，tracking-modes=cookie，不再把会话ID写入链接。真实通过范围、失败复测及截图见[STEP04实测记录](docs/测试与验收用例.md#step04-实测记录)和[证据目录](docs/evidence/2026-11-14-step04/README.md)。
+会话只存SessionIdentity(userId,authStamp)，authStamp为数据库updated_at的UTC微秒LocalDateTime原值；每次受保护请求查库以equals比较，不格式化或截断。失效清本端身份与结算确认；公共目录遇旧身份失效按游客继续。模型仅放安全AuthUser；cartQuantity已由STEP07接入本人全部车条目数量和。两端Cookie名保持原值，tracking-modes=cookie，不再把会话ID写入链接。真实通过范围、失败复测及截图见[STEP04实测记录](docs/测试与验收用例.md#step04-实测记录)和[证据目录](docs/evidence/2026-11-14-step04/README.md)。
 
 STEP05 已接入受保护后台分类、商品及补货，详见下方交接。数据库业务写继续要求事务内操作者锁，入口过滤器不替代事务授权；初始化主题页不是控制台，root SQL夹具不是后台启停接口，TST-39留STEP12。
 
@@ -200,3 +200,17 @@ A04 商品列表和 A05 商品编辑页可进入管理端 `GET /products/{produc
 「查看用户端详情」默认指向 `http://127.0.0.1:8080/products/{id}`。本机用户端使用其他基址时，可在管理端启动参数设置 `--csucampuscraft.user-base-url=http://127.0.0.1:8080` 并替换为实际可信基址；该值来自服务端配置，末尾斜杠会去除，仅拼服务端商品 ID，既不是表单 `returnUrl`，也不会放宽登录回跳白名单。
 
 受测代码为 `1aa6ad0c4a7546c5bfba7ed65ef05f5913132027`。双端 Wrapper `verify` 已退出 0；正式 HTTP/SQL/截图与敏感扫描结果为 通过（attempt2；本步范围，组员复核待补），见[STEP06 实测记录](docs/测试与验收用例.md#step06-实测记录)及[证据目录](docs/evidence/2026-11-14-step06/README.md)。TST-40 只记录本轮顺序相册维护/版本部分，TST-04 只记录本轮静态资源与回退部分；真实下单竞争、并发及故障注入留 STEP13。Word 实验指导书本轮不改，M1 复核后再按完整 STEP02–06 交付统一更新，不能以自动验收代替实名组员复核。
+
+## STEP07 持久购物车与导航徽标交接
+
+用户端 `GET /cart`（U05）只读当前会话 CUSTOMER 的数据库购物车；`POST /cart/items` 加购，`POST /cart/items/{itemId}/quantity` 改量，`POST /cart/items/{itemId}/remove` 移除，均带 CSRF，成功固定 303 回 `/cart`。U03 已有真实加购表单，售罄仍可浏览但禁用购买控件。游客提交先 302 到登录，允许的商品详情作为读回跳地址；登录后由本人重新点击，绝不自动重放 POST。
+
+所有车写 Service 均 READ COMMITTED，事务首个数据库操作是 `CustomerWriteGuard.lock(actor)`：锁 `store_user` 并复验 ENABLED、CUSTOMER 与 UTC 微秒认证戳，之后才读本人车、条目和商品当前状态。身份失效清本端身份与确认并 302 登录；已认证错角色按细化矩阵 403。三条 cart POST 的入口顺序为 AuthFilter(+10) 身份 → CsrfFilter(+20) → MVC CartRoleConfiguration.preHandle 角色 → 参数绑定；事务内复验不被入口检查替代。其他既有保护路径不扩展业务。
+
+加购数量 1–99、每人最多 20 种（含失效行），同 SKU 合并；新增条目由数据库自增回填 ID，版本从 0 起，数量实际变化才增版。更新/删除绑定本人条目、提交版本并检查受影响行数。有效版本的相同数量直接无 DML 成功，包括版本到上限或商品已失效的原值；它不会解除失效结算阻断。实际改量仍检查商品可用性及库存；旧版本、数量冲突、版本上溢均拒绝。移除不增版，版本上限的条目仍可正常移除；加购、改量、移除均不改库存或商品版本。
+
+徽标统一为 `SELECT COALESCE(SUM(quantity),0) FROM cart_item WHERE user_id=?`，参数只取当前认证的 CUSTOMER，包含下架、售罄、超库存行，不 JOIN 过滤有效性，不以种类 COUNT 替代。PageModelAdvice 向全部用户端布局注入，303 目标页重新读，游客和失效身份为 0；直接错误页亦重查身份。只有实际查询故障的通用错误状态显示“—”表示暂不可用，不伪造已登录空车，也不因为数据库技术异常清除合法身份。失败再认证清身份时同步重置旧模型的徽标为 0。没有前端加减或跨账号缓存。
+
+U05 用当前单价与 BigDecimal 重算，只把有效行计入小计；下架、售罄、超库存行保留并给出原因，仍可移除。含失效行明确标注“有效条目小计”并阻止整车结算。正常车的结算入口本步也暂不开放，不注册或链接 `/checkout`、`/orders`。400/409 只回显本人失败表单的允许字段及原版本；重新载入由用户确认，不悄悄替换失败版本。公开详情的参数/库存冲突尽可能回显 U03，非本人条目 403 不暴露他人车。
+
+受测源码 `3bc5629bcbcbeefa6cbc8f655e8cb4d790c81b77`，起测工作区干净；双端构建 用户端和管理端均 BUILD SUCCESS、退出 0；实际 `mvnw.cmd -o -s <isolated settings> -Dmaven.repo.local=<isolated cache> -f <module>/pom.xml verify` 在无 Maven PATH 的新进程执行，完整参数见证据根 `cart-build-fresh.ps1`，元信息 `build-user.json` / `build-admin.json`，日志见 attempt1；真实 HTTP、数据库、徽标、重启与浏览器结果 通过（attempt1；仅本步购物车范围，组员复核待补）。见[STEP07 实测记录](docs/测试与验收用例.md#step07-实测记录)及[证据入口](docs/evidence/2026-11-14-step07/README.md)。TST-08–11 和 TST-17 只按本步购物车范围判定，TST-11 有效确认仍留 STEP08，真实并发/旧确认及交易留 STEP13。管理端、DDL、POM、共享素材及 Word 本轮不改。

@@ -1,0 +1,152 @@
+    for port in [8080,8081]:
+        with socket.socket() as s:s.bind(('127.0.0.1',port))
+    user_process=launch('csucampuscraft-user',8080);launch('csucampuscraft-admin',8081)
+    originals=state()['product'];store_original=rows("SELECT CAST(updated_at AS CHAR) FROM store_user WHERE id=1;")
+    note=pid_by_sku('CSU-LMK-NOTE-01');gift=pid_by_sku('CSU-GRAD-BOX-01');draft=pid_by_sku('CSU-CLB-FOLDER-02');sold=pid_by_sku('CSU-SPT-STAND-01')
+    guest=Client();is_login_redirect(guest.get('/cart'),'guest-cart','/cart')
+    r,_,_=write(guest,'/cart/items',{'productId':str(gift),'quantity':'abc'},302,'guest-before-format-csrf',csrf=False,uid=None)
+    is_login_redirect(r,'guest-add-return-detail','/products/'+str(gift))
+    for path in ['/cart/items/1/quantity','/cart/items/1/remove']:
+        r,_,_=write(guest,path,{},302,'guest-'+path.split('/')[-1],csrf=False,uid=None);is_login_redirect(r,'guest-row-return-cart','/cart')
+    r,_,_=login(guest,8080,return_url='/products/'+str(gift),name='guest-return-login');assert_page(r,303,'guest-login');check('guest-login-returns-GET',r[1].get('Location')=='/products/'+str(gift))
+    check('login-did-not-replay-old-post',snapshot()==original)
+    cl=guest;clbob=Client();r,_,_=login(clbob,8080,username='bob',name='bob');assert_page(r,303,'bob-login')
+    admin=Client();r,_,_=login(admin,8081,name='admin');assert_page(r,303,'admin-login');assert_page(admin.get('/products',8081),200,'same-db-admin-read')
+    cart(cl,1,'alice-seed-invalid-cart');cart(clbob,2,'bob-isolated-seed-cart')
+    r=cl.get('/products/'+str(sold));assert_page(r,200,'soldout-detail-browsable');badge(r,1,'soldout-detail-badge')
+    purchase=r[3].find(lambda n:n.tag=='form' and 'data-add-cart' in n.a)
+    check('soldout-controls-disabled',purchase is not None and all('disabled' in n.a for n in purchase.all(lambda n:n.tag=='button' or n.tag=='input' and n.a.get('name')=='quantity')))
+    for name,path in [('home','/'),('list','/products'),('detail','/products/'+str(gift)),('login','/login'),('400','/products?size=0'),('404','/step07-missing-page')]:
+        r=cl.get(path);assert_page(r,400 if name=='400' else 404 if name=='404' else 200,'seed-badge-'+name);badge(r,1,'seed-badge-'+name)
+    for path in ['/cart/items','/cart/items/1/quantity','/cart/items/1/remove']:
+        write(cl,path,{},403,'missing-csrf-'+path.replace('/','-'),csrf=False)
+        write(cl,path,{'_csrf':'not-a-session-token'},403,'wrong-csrf-'+path.replace('/','-'),csrf=False)
+    # Preserve authentication timestamp so this deliberately wrong role is not confused with expiry.
+    for cs in [False,True]:
+        roleclient=Client();r,_,_=login(roleclient,8080,name='role-fixture-login');assert_page(r,303,'role-fixture-authenticated')
+        role_token=token(roleclient.get('/products/'+str(gift)))
+        fixture("UPDATE store_user SET role='ADMIN',updated_at=updated_at WHERE id=1;",'wrong-role-preserve-stamp')
+        try:
+            form={'productId':'bad-id','quantity':'bad-quantity','_csrf':role_token if cs else 'wrong-token'}
+            r,_,_=write(roleclient,'/cart/items',form,403,'role-priority-'+str(cs),csrf=False,uid=None)
+            check('csrf-before-role-'+str(cs),('CSRF_REJECTED' in r[3].text()) if not cs else ('AUTH_ROLE_FORBIDDEN' in r[3].text()))
+        finally:fixture("UPDATE store_user SET role='CUSTOMER',updated_at=updated_at WHERE id=1;",'restore-customer-role')
+    # All parameter failures use a valid CUSTOMER, valid CSRF and an otherwise available product.
+    for index,value in enumerate([None,'','abc','1.0','1.2','1e0','0','-1','100','9223372036854775808']):
+        form={'productId':str(gift)}
+        if value is not None:form['quantity']=value
+        write(cl,'/cart/items',form,400,'invalid-add-quantity-'+str(index))
+    for index,value in enumerate([None,'','abc','1.0','1e0','0','-1','9223372036854775808']):
+        form={'quantity':'1'}
+        if value is not None:form['productId']=value
+        write(cl,'/cart/items',form,400,'invalid-add-product-'+str(index))
+    write(cl,'/cart/items',{'productId':str(gift),'quantity':['1','2']},400,'duplicate-quantity-field')
+    for pid,name,status in [(999999999,'unknown-product',404),(draft,'draft-product',404),(sold,'sold-out-product',409)]:
+        write(cl,'/cart/items',{'productId':str(pid),'quantity':'1'},status,'add-'+name)
+    seedrow=cartrows(1)[0];foreign=cartrows(2)[0]
+    for suffix,form in [('quantity',{'quantity':'1','version':str(foreign['version']+9)}),('remove',{'version':str(foreign['version']+9)})]:
+        write(cl,'/cart/items/'+str(foreign['id'])+'/'+suffix,form,403,'foreign-'+suffix)
+        write(cl,'/cart/items/999999999/'+suffix,form,404,'unknown-'+suffix)
+    for suffix in ['quantity','remove']:
+        for index,value in enumerate([None,'','abc','-1','1.0','9223372036854775808']):
+            form={'quantity':'1'}
+            if value is not None:form['version']=value
+            write(cl,'/cart/items/'+str(seedrow['id'])+'/'+suffix,form,400,'invalid-'+suffix+'-version-'+str(index))
+    for index,value in enumerate(['','abc','1.0','1e0','0','-1','100','9223372036854775808']):change(cl,seedrow,value,'invalid-change-quantity-'+str(index),400)
+    clear_cart(cl,1,'clear-alice-seed-via-app');cart(cl,1,'empty-alice-after-removes')
+    row=add(cl,note,1,'add-new-sku-one',userId='2',role='ADMIN',price='0.01')
+    row=add(cl,note,1,'duplicate-add-merges-in-one')
+    cart(cl,1,'merged-quantity-two');check('forged-user-id-not-used',not item_for(note,2) or item_for(note,2)['id']!=row['id'])
+    before=snapshot();change(cl,row,row['quantity'],'same-value-edit');check('same-value-no-write',snapshot()==before)
+    change(cl,row,3,'actual-quantity-increments');new=item(row['id']);check('changed-version-plus-one',new['version']==row['version']+1)
+    change(cl,new,2,'old-version-change',409,version=row['version']);remove(cl,new,'old-version-remove',409,version=row['version'])
+    write(cl,'/cart/items',{'productId':str(note),'quantity':str(originals[str(note)]['stock'])},409,'merged-stock-shortage')
+    fixture('UPDATE product SET stock=200,updated_at=updated_at WHERE id='+str(gift)+';','stock-for-99-boundary')
+    large=add(cl,gift,99,'valid-single-99')
+    write(cl,'/cart/items',{'productId':str(gift),'quantity':'1'},409,'merged-over-99-with-enough-stock')
+    change(cl,large,98,'quantity-98');large=item(large['id']);check('change-98-version',large['version']==1)
+    change(cl,large,99,'quantity-99');large=item(large['id']);remove(cl,large,'remove-valid-99')
+    fixture('UPDATE cart_item SET version=9223372036854775807,updated_at=updated_at WHERE id='+str(new['id'])+';','max-cart-version')
+    maxrow=item(new['id']);before=snapshot();change(cl,maxrow,maxrow['quantity'],'max-version-same-value');check('max-noop-all-tables-unchanged',snapshot()==before)
+    change(cl,maxrow,2,'max-version-change-refused',409)
+    write(cl,'/cart/items',{'productId':str(note),'quantity':'1'},409,'max-version-add-refused')
+    remove(cl,maxrow,'max-version-remove-allowed');cart(cl,1,'empty-after-max-version-delete')
+    # Every add/removal remains a real HTTP operation; root changes only stock/status fixture.
+    candidates=[int(x) for x in rows("SELECT id FROM product WHERE status='ON_SALE' ORDER BY id LIMIT 21;").splitlines()]
+    fixture('UPDATE product SET stock=200,updated_at=updated_at WHERE id IN ('+','.join(map(str,candidates))+');','stock-for-21-sku-matrix')
+    for index,pid in enumerate(candidates[:20]):add(cl,pid,1,'fill-20-skus-'+str(index))
+    fixture("UPDATE product SET status='DRAFT',updated_at=updated_at WHERE id="+str(candidates[0])+';','invalid-row-still-counts-toward-20')
+    write(cl,'/cart/items',{'productId':str(candidates[20]),'quantity':'1'},409,'new-21st-sku-rejected-counts-invalid')
+    add(cl,candidates[1],1,'existing-sku-can-merge-at-20')
+    cart(cl,1,'twenty-types-including-invalid')
+    clear_cart(cl,1,'clear-20-skus-via-app');restore_products(originals)
+    # Independent scenario: exact 85.00 valid subtotal from current prices, without checkout/order routes.
+    add(cl,note,2,'add-two-18-yuan-notebooks');add(cl,gift,1,'add-one-49-yuan-gift');r=cart(cl,1,'eighty-five-yuan-cart')
+    check('85-yuan-total','85.00'==str(sum(Decimal(product(x['productId'])['price'])*x['quantity'] for x in cartrows(1))))
+    stable_cart=cartrows(1);before=snapshot();stop(user_process);user_process=launch('csucampuscraft-user',8080)
+    is_login_redirect(cl.get('/cart'),'old-session-after-restart','/cart')
+    fresh=Client();r,_,_=login(fresh,8080,name='after-restart-login');assert_page(r,303,'restart-login');cl=fresh
+    cart(cl,1,'restart-restores-cart');check('restart-did-not-write-any-table',snapshot()==before and cartrows(1)==stable_cart)
+    # Logout redirects to / rather than cart, so validate via the raw HTTP audit path.
+    before=snapshot();r=cl.post('/logout',{'_csrf':token(cl.get('/cart'))});assert_page(r,303,'logout');check('logout-return-home',r[1].get('Location')=='/');check('logout-preserves-database',snapshot()==before)
+    badge(cl.get('/'),None,'after-logout-home');r,_,_=login(cl,8080,name='relogin');assert_page(r,303,'relogin');cart(cl,1,'relogin-restores-cart')
+    other_browser=Client();r,_,_=login(other_browser,8080,name='new-browser');assert_page(r,303,'new-browser-login');cart(other_browser,1,'new-browser-same-account-cart')
+    # Failed reauthentication cannot retain the old account's badge.
+    bad=Client();r,_,_=login(bad,8080,name='reauth-start');assert_page(r,303,'reauth-start-login')
+    r=bad.post('/login',{'username':'alice','password':wrongpass,'_csrf':token(bad.get('/login'))});assert_page(r,200,'failed-reauth');badge(r,None,'failed-reauth-clears-badge');is_login_redirect(bad.get('/cart'),'failed-reauth-clears-identity','/cart')
+    bad2=Client();r,_,_=login(bad2,8080,name='invalid-reauth-start');assert_page(r,303,'invalid-reauth-login')
+    r=bad2.post('/login',{'username':'','password':'','_csrf':token(bad2.get('/login'))});assert_page(r,400,'invalid-reauth');badge(r,None,'invalid-reauth-zero-badge')
+    # Disable uses root SQL solely as a controlled authorization fixture. No admin enable route is added.
+    fixture("UPDATE store_user SET status='DISABLED',updated_at=GREATEST(CURRENT_TIMESTAMP(6),updated_at+INTERVAL 1 MICROSECOND) WHERE id=1;",'disabled-customer')
+    r,_,_=write(cl,'/cart/items',{'productId':'bad','quantity':'bad'},302,'disabled-before-csrf-format',csrf=False,uid=None);is_login_redirect(r,'disabled-login-redirect')
+    badge(cl.get('/'),None,'disabled-public-home-as-guest')
+    fixture("UPDATE store_user SET status='ENABLED',updated_at=GREATEST(CURRENT_TIMESTAMP(6),updated_at+INTERVAL 1 MICROSECOND) WHERE id=1;",'reenabled-requires-new-login')
+    is_login_redirect(cl.get('/cart'),'reenabled-old-session-does-not-revive','/cart')
+    fixture('UPDATE store_user SET status=\'ENABLED\',role=\'CUSTOMER\',updated_at='+literal(store_original)+' WHERE id=1;','restore-private-account-fixture-exact-stamp')
+    cl=Client();r,_,_=login(cl,8080,name='after-disable-fresh-login');assert_page(r,303,'new-login-after-disable');cart(cl,1,'fresh-login-preserves-cart')
+    # A current price changes preview only, with no cart version/update writes.
+    fixture('UPDATE product SET price=19.25,updated_at=updated_at WHERE id='+str(note)+';','current-price-preview')
+    before=snapshot();cart(cl,1,'current-price-cart-preview');check('price-preview-get-does-not-write-cart',snapshot()==before)
+    restore_products(originals)
+    assert_page(cl.get('/__verification/errors/500'),404,'verification-profile-default-inactive')
+    # Existing foundation probes are enabled only in a later read-only profile phase.
+    before=snapshot();stop(user_process);user_process=launch('csucampuscraft-user',8080,'verification')
+    cl=Client();r,_,_=login(cl,8080,name='verification-phase-login');assert_page(r,303,'verification-phase-auth');clbob=Client();r,_,_=login(clbob,8080,username='bob',name='verification-phase-bob');assert_page(r,303,'verification-bob-auth')
+    check('verification-restart-keeps-all-data',snapshot()==before)
+    for code in [400,403,404,409,500]:
+        r=cl.get('/__verification/errors/'+str(code));assert_page(r,code,'foundation-error-'+str(code));badge(r,1,'foundation-error-'+str(code))
+    native_probe();cart(cl,1,'native-probe-kept-original-cart')
+    browser({'alice':cl.cookie(8080),'bob':clbob.cookie(8080)},[{'name':'u05-valid-85','path':'/cart','kind':'U05','account':'alice','badge':quantity(1),'status':200,'total':'85.00'}])
+    # Change current goods without touching cart rows, then show all three invalidity reasons.
+    fixture("UPDATE product SET status='DRAFT',updated_at=updated_at WHERE id="+str(note)+';','cart-product-downlisted')
+    fixture('UPDATE product SET stock=2,updated_at=updated_at WHERE id='+str(sold)+';','make-sold-product-addable-for-invalidation')
+    row_sold=add(cl,sold,1,'prepare-cart-before-sold-out')
+    extra=next(int(x) for x in rows("SELECT id FROM product WHERE status='ON_SALE' AND stock>=2 AND id NOT IN ("+','.join(map(str,[note,gift,sold]))+") ORDER BY id LIMIT 1;").splitlines())
+    row_extra=add(cl,extra,2,'prepare-cart-before-shortage')
+    fixture('UPDATE product SET stock=0,updated_at=updated_at WHERE id='+str(sold)+';','cart-product-sold-out')
+    fixture('UPDATE product SET stock=1,updated_at=updated_at WHERE id='+str(extra)+';','cart-product-stock-reduced')
+    r=cart(cl,1,'three-invalid-reasons-retained');check('all-invalid-reason-text','下架' in r[3].text() and '售罄' in r[3].text() and ('库存' in r[3].text()))
+    before=snapshot();change(cl,item_for(note),item_for(note)['quantity'],'same-quantity-invalid-row-noop');check('invalid-row-noop-no-write',snapshot()==before)
+    change(cl,item_for(note),1,'downlisted-quantity-change',404)
+    change(cl,row_sold,2,'soldout-quantity-change',409)
+    change(cl,row_extra,3,'overstock-quantity-change',409)
+    clear_cart(clbob,2,'bob-clears-own-cart');cart(clbob,2,'bob-empty-cart')
+    cases=[
+      {'name':'u05-invalid-live-status','path':'/cart','kind':'U05','account':'alice','badge':quantity(1),'status':200},
+      {'name':'u05-empty-bob','path':'/cart','kind':'U05','account':'bob','badge':0,'status':200},
+      {'name':'u01-live-badge','path':'/','kind':'U01','account':'alice','badge':quantity(1),'status':200},
+      {'name':'u02-live-badge','path':'/products','kind':'U02','account':'alice','badge':quantity(1),'status':200},
+      {'name':'u03-real-add-form','path':'/products/'+str(gift),'kind':'U03','account':'alice','badge':quantity(1),'status':200},
+      {'name':'u03-guest-zero-badge','path':'/products/'+str(gift),'kind':'U03','account':'guest','badge':0,'status':200},
+      *[{'name':'error-'+str(code)+'-badge','path':'/__verification/errors/'+str(code),'kind':'error','account':'alice','badge':quantity(1),'status':code} for code in [400,403,404,409,500]]]
+    browser({'alice':cl.cookie(8080),'bob':clbob.cookie(8080)},cases)
+    check('exact-24-screenshots',result['screenshots']==24)
+    for row in list(cartrows(1)):
+        if row['productId']!=gift:remove(cl,row,'remove-invalid-or-extra-'+str(row['id']))
+    cart(cl,1,'invalid-removal-recomputes-badge')
+    clear_cart(cl,1,'final-empty-cart');cart(cl,1,'final-empty-state-and-badge')
+    restore_products(originals)
+    final=snapshot();save(EV/'database-final.json',json.dumps(final,indent=2));check('final-other-six-tables-unchanged',unchanged_other(original,final))
+    check('static-sources-and-dual-jar-images-unchanged',static_manifest()==statics);save(EV/'static-after.json',json.dumps(static_manifest(),indent=2))
+    check('runtime-inputs-stable',all(hashlib.sha256((REPO/line.split('  ',1)[1]).read_bytes()).hexdigest()==line.split('  ',1)[0] for line in manifest.splitlines()))
+    result['overall']='PASS'

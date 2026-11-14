@@ -1,0 +1,134 @@
+
+def state():
+    queries={
+      'cart_item':"SELECT JSON_OBJECT('id',id,'userId',user_id,'productId',product_id,'quantity',quantity,'version',version,'createdAt',created_at,'updatedAt',updated_at) FROM cart_item ORDER BY id;",
+      'product':"SELECT JSON_OBJECT('id',id,'sku',sku,'name',name,'price',CAST(price AS CHAR),'stock',stock,'status',status,'version',version,'updatedAt',updated_at) FROM product ORDER BY id;"}
+    return {t:{str(x['id']):x for x in map(json.loads,rows(q).splitlines())} for t,q in queries.items()}
+
+def deltas(a,b):
+    return {t:[{'id':k,'before':a[t].get(k),'after':b[t].get(k)} for k in sorted(set(a[t])|set(b[t]),key=int) if a[t].get(k)!=b[t].get(k)] for t in a}
+def cartrows(uid=1):return sorted((x for x in state()['cart_item'].values() if x['userId']==uid),key=lambda x:x['id'])
+def item(iid):return state()['cart_item'].get(str(iid))
+def item_for(pid,uid=1):return next((x for x in cartrows(uid) if x['productId']==pid),None)
+def product(pid):return state()['product'][str(pid)]
+def pid_by_sku(sku):return int(rows('SELECT id FROM product WHERE sku='+literal(sku)))
+def quantity(uid=1):return int(rows('SELECT COALESCE(SUM(quantity),0) FROM cart_item WHERE user_id='+str(uid)))
+def unchanged_other(a,b):return all(a[t]==b[t] for t in TABLES if t!='cart_item')
+def snapshot_pair(name,before,a,after,b,**extra):
+    record('database-writes.jsonl',dict(name=name,before=before,after=after,cart_before=a['cart_item'],cart_after=b['cart_item'],product_before=a['product'],product_after=b['product'],deltas=deltas(a,b),**extra))
+def badge(r,uid,name):
+    n=r[3].find(lambda x:x.a.get('id')=='cart-quantity')
+    expected=quantity(uid) if uid is not None else 0
+    check(name+'-badge-present',n is not None)
+    check(name+'-badge-sum',n.a.get('data-cart-quantity')==str(expected) and n.text().strip()==str(expected),{'expected':expected})
+    record('badge-observations.jsonl',{'name':name,'http_sequence':http_no,'user_id':uid,'expected_sum_all_rows':expected,'displayed':n.text().strip(),'data_value':n.a.get('data-cart-quantity'),'includes_invalid_rows':True})
+    return r
+def cart(cl,uid,name):
+    r=cl.get('/cart');assert_page(r,200,name);badge(r,uid,name)
+    root=r[3].find(lambda x:x.a.get('data-page-id')=='U05');check(name+'-root',root is not None)
+    expected=cartrows(uid);actual=root.all(lambda x:x.tag=='tr' and 'data-cart-item-id' in x.a)
+    check(name+'-own-rows-only',[int(x.a['data-cart-item-id']) for x in actual]==[x['id'] for x in expected])
+    invalid=0;total=Decimal('0.00')
+    for n,x in zip(actual,expected):
+        p=product(x['productId']);valid=p['status']=='ON_SALE' and p['stock']>0 and x['quantity']<=p['stock']
+        check(name+'-row-'+str(x['id']),n.a.get('data-product-id')==str(x['productId']) and n.a.get('data-quantity')==str(x['quantity']) and n.a.get('data-version')==str(x['version']))
+        check(name+'-validity-'+str(x['id']),n.a.get('data-cart-valid')==str(valid).lower())
+        unit=n.find(lambda z:z.tag=='td' and 'cart-money' in z.a.get('class','').split())
+        check(name+'-unit-price-'+str(x['id']),unit is not None and unit.text().strip()=='¥'+format(Decimal(p['price']),'.2f'))
+        if valid:
+            line_amount=Decimal(p['price'])*x['quantity'];total+=line_amount
+            amount=n.find(lambda z:'data-line-subtotal' in z.a)
+            check(name+'-line-money-'+str(x['id']),amount is not None and Decimal(amount.a['data-line-subtotal'])==line_amount and amount.text().strip()=='¥'+format(line_amount,'.2f'))
+        else:
+            invalid+=1;reason='DRAFT' if p['status']!='ON_SALE' else 'SOLD_OUT' if p['stock']==0 else 'OVER_STOCK'
+            check(name+'-invalid-reason-'+str(x['id']),n.a.get('data-invalid-reason')==reason)
+            check(name+'-visible-reason-'+str(x['id']),{'DRAFT':'下架','SOLD_OUT':'售罄','OVER_STOCK':'超过当前库存'}[reason] in n.text())
+            amount=n.find(lambda z:'data-line-subtotal' in z.a)
+            check(name+'-invalid-no-numeric-subtotal-'+str(x['id']),amount is None or not amount.a.get('data-line-subtotal'))
+        forms=n.all(lambda z:z.tag=='form')
+        check(name+'-row-forms-'+str(x['id']),{f.a.get('data-cart-action') for f in forms}=={'quantity','remove'})
+        for f in forms:
+            check(name+'-csrf-'+str(x['id']),len(f.all(lambda z:z.tag=='input' and z.a.get('name')=='_csrf'))==1)
+            version=f.find(lambda z:z.tag=='input' and z.a.get('name')=='version')
+            check(name+'-form-version-'+str(x['id']),version is not None and version.a.get('value')==str(x['version']))
+    amount=root.find(lambda x:'data-cart-total' in x.a)
+    check(name+'-valid-total',amount is not None and Decimal(amount.a['data-cart-total'])==total)
+    check(name+'-invalid-count',root.a.get('data-cart-invalid-count')==str(invalid))
+    checkout=root.find(lambda x:'data-checkout-unavailable' in x.a)
+    check(name+'-checkout-unavailable',checkout is not None and 'disabled' in checkout.a)
+    check(name+'-no-checkout-link',not root.find(lambda x:x.a.get('href')=='/checkout' or x.a.get('action')=='/orders'))
+    if not expected:check(name+'-empty-state','去逛逛' in root.text() or '购物车' in root.text())
+    record('cart-observations.jsonl',{'name':name,'http_sequence':http_no,'user_id':uid,'ordered_cart_rows':expected,'invalid_count':invalid,'valid_total':str(total),'quantity_sum':quantity(uid)})
+    return r
+def write(cl,path,form,status,name,csrf=True,uid=1,back='/cart'):
+    data=dict(form)
+    if csrf:
+        r=cl.get(back);assert_page(r,200,name+'-form');data['_csrf']=token(r);check(name+'-token',bool(data['_csrf']))
+    before=snapshot();a=state();r=cl.post(path,data);after=snapshot();b=state()
+    snapshot_pair(name,before,a,after,b,path=path,status=r[0],expected_status=status,csrf_supplied=csrf,actor_user_id=uid,form_fields=sorted(data))
+    assert_page(r,status,name)
+    check(name+'-other-six-tables-unchanged',unchanged_other(before,after))
+    if status!=303:
+        check(name+'-rejected-zero-write',before==after)
+        if status not in [302] and uid is not None:badge(r,uid,name)
+    else:
+        u=urllib.parse.urlsplit(r[1].get('Location',''))
+        check(name+'-fixed-cart-redirect',not u.netloc and u.path=='/cart' and not u.query)
+        changes=deltas(a,b)['cart_item'];check(name+'-own-cart-only',all((x['before'] or x['after'])['userId']==uid for x in changes))
+        check(name+'-at-most-one-cart-row',len(changes)<=1)
+    return r,a,b
+def add(cl,pid,qty,name,uid=1,**extra):
+    old=item_for(pid,uid);r,a,b=write(cl,'/cart/items',dict(productId=str(pid),quantity=str(qty),**extra),303,name,uid=uid,back='/products/'+str(pid))
+    current=item_for(pid,uid);check(name+'-one-sku-row',current is not None and len([x for x in cartrows(uid) if x['productId']==pid])==1)
+    check(name+'-quantity',current['quantity']==(old['quantity'] if old else 0)+int(qty))
+    check(name+'-version',current['version']==(old['version']+1 if old else 0))
+    return current
+def change(cl,row,qty,name,status=303,version=None,uid=1):
+    form={'quantity':str(qty),'version':str(row['version'] if version is None else version)}
+    return write(cl,'/cart/items/'+str(row['id'])+'/quantity',form,status,name,uid=uid)
+def remove(cl,row,name,status=303,version=None,uid=1):
+    return write(cl,'/cart/items/'+str(row['id'])+'/remove',{'version':str(row['version'] if version is None else version)},status,name,uid=uid)
+def clear_cart(cl,uid,name):
+    for i,row in enumerate(cartrows(uid)):remove(cl,row,name+'-'+str(i),uid=uid)
+    check(name+'-empty',not cartrows(uid))
+def fixture(q,name):
+    before=snapshot();a=state();sql(q,'csucampuscraft');after=snapshot();b=state()
+    record('fixtures.jsonl',{'name':name,'controlled_root_fixture':True,'query':q,'before':before,'after':after,'deltas':deltas(a,b)})
+def restore_products(original):
+    for x in original.values():
+        now=product(x['id'])
+        if now!=x:
+            fixture("UPDATE product SET price="+x['price']+",stock="+str(x['stock'])+",status="+literal(x['status'])+",version="+str(x['version'])+",updated_at="+literal(x['updatedAt'])+" WHERE id="+str(x['id'])+';','restore-product-'+str(x['id']))
+def static_manifest():
+    out={}
+    for p in sorted((REPO/'assets').rglob('*')):
+        if p.is_file():out['assets/'+p.relative_to(REPO/'assets').as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()
+    for app in ['csucampuscraft-user','csucampuscraft-admin']:
+        with zipfile.ZipFile(REPO/app/'target'/f'{app}-0.0.1-SNAPSHOT.jar') as z:
+            for n in z.namelist():
+                if n.startswith('BOOT-INF/classes/static/images/') and not n.endswith('/'):out[app+'/'+n]=hashlib.sha256(z.read(n)).hexdigest()
+    return out
+def native_probe():
+    extracted=BASE/'native-probe';classes=extracted/'classes';libs=extracted/'lib';classes.mkdir(parents=True);libs.mkdir()
+    with zipfile.ZipFile(REPO/'csucampuscraft-user/target/csucampuscraft-user-0.0.1-SNAPSHOT.jar') as z:
+        for n in z.namelist():
+            if n.startswith('BOOT-INF/classes/') and not n.endswith('/'):
+                p=classes/n[len('BOOT-INF/classes/'):];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
+            elif n.startswith('BOOT-INF/lib/') and n.endswith('.jar'):(libs/Path(n).name).write_bytes(z.read(n))
+    cp=str(classes)+';'+str(libs/'*')+';'+str(extracted)
+    p=command([JAVA.parent/'javac.exe','-cp',cp,'-d',extracted,HERE/'CartWriteProbe.java'],timeout=45)
+    save(EV/'native-compile.log',p.stdout.decode('utf-8',errors='replace')+p.stderr.decode('utf-8',errors='replace'));check('native-probe-compile',p.returncode==0)
+    e=start_env();e.update(STEP07_ROOT_PASSWORD=rootpass,STEP07_MYSQL_PORT=str(mysqlport))
+    before=snapshot();a=state();p=command([JAVA,'-cp',cp,'CartWriteProbe'],env=e,timeout=110);after=snapshot();b=state()
+    save(EV/'native-probe.log',p.stdout.decode('utf-8',errors='replace')+p.stderr.decode('utf-8',errors='replace'))
+    snapshot_pair('native-cart-service-probe',before,a,after,b)
+    check('native-probe',p.returncode==0 and '"overall":"PASS"' in p.stdout.decode('utf-8',errors='replace'))
+    check('native-other-six-tables-stable',unchanged_other(before,after))
+def browser(cookies,cases):
+    e=start_env();e.update(STEP07_BROWSER_OUT=str(EV/'browser'),STEP07_BROWSER_CASES=json.dumps(cases,ensure_ascii=False),STEP07_BROWSER_COOKIES=json.dumps(cookies))
+    before=snapshot();p=command([RUNTIME/'node/bin/node.exe',HERE/'verify_browser.cjs'],env=e,timeout=150)
+    save(EV/('browser-'+str(len(cases))+'.log'),p.stdout.decode('utf-8',errors='replace')+p.stderr.decode('utf-8',errors='replace'));check('browser',p.returncode==0)
+    br=json.loads((EV/'browser/result.json').read_text(encoding='utf-8'));check('browser-completed',br.get('completed') and br['overall']=='PASS')
+    result['browser_checks']=len(br['checks']);result['screenshots']=len(br['screenshots']);check('browser-zero-write',snapshot()==before)
+
+from decimal import Decimal

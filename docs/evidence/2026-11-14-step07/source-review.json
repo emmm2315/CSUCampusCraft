@@ -1,0 +1,23 @@
+{
+  "reviewer": "Codex root and independent UI/backend agents; named human review pending",
+  "tested_code_sha": "3bc5629bcbcbeefa6cbc8f655e8cb4d790c81b77",
+  "result": "PASS_STATIC_REVIEW",
+  "files": 20,
+  "scope": "User module only; no admin, POM, SQL/schema, asset, wrapper or Word changes",
+  "observations": [
+    "Cart POST identity filter +10 precedes CSRF +20; deferred wrong-role MVC preHandle precedes controller argument binding.",
+    "Each CartService write is READ_COMMITTED; CustomerWriteGuard locks and rechecks actor before any cart/product mapper access.",
+    "Only cart_item is written; SQL parameters are bound; user identity is obtained from server session, not submitted userId.",
+    "New item AUTO id is checked for generated-key return, initial version0; same SKU merges under user row lock.",
+    "Actual quantity changes use user/item/version conditional UPDATE and affected-row checks; version overflow rejects before DML.",
+    "Valid same-value quantity returns before availability/capacity checks, leaving state intact; version-MAX remove is allowed.",
+    "Missing item404, existing foreign item403; owner/version checks precede mutation; invalid items remain removable.",
+    "Badge uses exact COALESCE(SUM(quantity),0) by authenticated CUSTOMER user_id, without join/status/stock filtering.",
+    "Cart view recalculates current-price BigDecimal valid subtotal; invalid rows remain visible; checkout disabled and no checkout/order route added.",
+    "Failed reauthentication resets identity and previously constructed badge model together; direct error rendering resolves current customer.",
+    "Failed owned forms preserve submitted raw quantity/version and error anchors; foreign rows are never rendered.",
+    "No th:utext or frontend badge arithmetic; shared CSRF/image/layout fragments reused; CSS additions scoped to U03/U05."
+  ],
+  "findings": [],
+  "limits": "Static observations do not establish concurrent requests or injected-failure rollback. Real HTTP/database/browser coverage is recorded by attempt results."
+}

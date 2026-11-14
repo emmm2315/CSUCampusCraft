@@ -1,0 +1,100 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.15)
+
+2026-11-14T14:27:57.375+08:00  INFO 24512 --- [csucampuscraft-user] [           main] CartWriteProbe                           : Starting CartWriteProbe using Java 21.0.12.1 with PID 24512 (C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step07-cart\verification\runtime\attempt1\native-probe started by Starmetor in C:\Users\Starmetor)
+2026-11-14T14:27:57.376+08:00  INFO 24512 --- [csucampuscraft-user] [           main] CartWriteProbe                           : The following 1 profile is active: "default"
+2026-11-14T14:27:58.154+08:00  INFO 24512 --- [csucampuscraft-user] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2026-11-14T14:27:58.165+08:00  INFO 24512 --- [csucampuscraft-user] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-14T14:27:58.165+08:00  INFO 24512 --- [csucampuscraft-user] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-11-14T14:27:58.212+08:00  INFO 24512 --- [csucampuscraft-user] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-14T14:27:58.212+08:00  INFO 24512 --- [csucampuscraft-user] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 810 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.7 
+2026-11-14T14:27:58.815+08:00  INFO 24512 --- [csucampuscraft-user] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 53935 (http) with context path '/'
+2026-11-14T14:27:58.820+08:00  INFO 24512 --- [csucampuscraft-user] [           main] CartWriteProbe                           : Started CartWriteProbe in 1.742 seconds (process running for 1.961)
+2026-11-14T14:27:58.824+08:00  INFO 24512 --- [csucampuscraft-user] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-14T14:27:59.027+08:00  INFO 24512 --- [csucampuscraft-user] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d717f19
+2026-11-14T14:27:59.028+08:00  INFO 24512 --- [csucampuscraft-user] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+SQL_TRACE add #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,username,display_name AS displayName,role,status,updated_at AS updatedAt FROM store_user WHERE id=? FOR UPDATE
+SQL_TRACE add #2 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,user_id,product_id,quantity,version,created_at,updated_at FROM cart_item WHERE user_id=? ORDER BY id ASC
+SQL_TRACE add #3 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,sku,category_id,name,cover_image,price,stock,status,version FROM product WHERE id=?
+SQL_TRACE add #4 active=true declaredIsolation=2 jdbcIsolation=2 sql=INSERT INTO cart_item(user_id,product_id,quantity,version) VALUES(?,?,?,0)
+SQL_TRACE change #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,username,display_name AS displayName,role,status,updated_at AS updatedAt FROM store_user WHERE id=? FOR UPDATE
+SQL_TRACE change #2 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,user_id,product_id,quantity,version,created_at,updated_at FROM cart_item WHERE id=?
+SQL_TRACE change #3 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,sku,category_id,name,cover_image,price,stock,status,version FROM product WHERE id=?
+SQL_TRACE change #4 active=true declaredIsolation=2 jdbcIsolation=2 sql=UPDATE cart_item SET quantity=?,version=version+1 WHERE id=? AND user_id=? AND version=? AND version<9223372036854775807
+SQL_TRACE no-op #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,username,display_name AS displayName,role,status,updated_at AS updatedAt FROM store_user WHERE id=? FOR UPDATE
+SQL_TRACE no-op #2 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,user_id,product_id,quantity,version,created_at,updated_at FROM cart_item WHERE id=?
+SQL_TRACE stale-version #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,username,display_name AS displayName,role,status,updated_at AS updatedAt FROM store_user WHERE id=? FOR UPDATE
+SQL_TRACE stale-version #2 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,user_id,product_id,quantity,version,created_at,updated_at FROM cart_item WHERE id=?
+SQL_TRACE stale-stamp #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,username,display_name AS displayName,role,status,updated_at AS updatedAt FROM store_user WHERE id=? FOR UPDATE
+SQL_TRACE admin-role #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,username,display_name AS displayName,role,status,updated_at AS updatedAt FROM store_user WHERE id=? FOR UPDATE
+SQL_TRACE disabled #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,username,display_name AS displayName,role,status,updated_at AS updatedAt FROM store_user WHERE id=? FOR UPDATE
+SQL_TRACE remove #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,username,display_name AS displayName,role,status,updated_at AS updatedAt FROM store_user WHERE id=? FOR UPDATE
+SQL_TRACE remove #2 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,user_id,product_id,quantity,version,created_at,updated_at FROM cart_item WHERE id=?
+SQL_TRACE remove #3 active=true declaredIsolation=2 jdbcIsolation=2 sql=DELETE FROM cart_item WHERE id=? AND user_id=? AND version=?
+BADGE_SQL SELECT COALESCE(SUM(quantity),0) FROM cart_item WHERE user_id=?
+2026-11-14T14:27:59.202+08:00  INFO 24512 --- [csucampuscraft-user] [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-14T14:27:59.205+08:00  INFO 24512 --- [csucampuscraft-user] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-11-14T14:27:59.207+08:00  INFO 24512 --- [csucampuscraft-user] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-11-14T14:27:59.237+08:00  INFO 24512 --- [csucampuscraft-user] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+{"overall":"PASS","checks":50,"secretsRecorded":false,"scope":"actual user JAR; serial Service invocation; no fault hook/concurrency"}
+CHECK add-success=true
+CHECK add-first-actor-lock=true
+CHECK add-all-active-rc=true
+CHECK add-single-connection=true
+CHECK new-row-version-zero=true
+CHECK change-success=true
+CHECK change-first-actor-lock=true
+CHECK change-all-active-rc=true
+CHECK change-single-connection=true
+CHECK change-version-plus-one=true
+CHECK quantity-version-conditional-update=true
+CHECK noop-success=true
+CHECK no-op-first-actor-lock=true
+CHECK no-op-all-active-rc=true
+CHECK no-op-single-connection=true
+CHECK no-op-no-dml=true
+CHECK no-op-zero-write=true
+CHECK stale-version-refused=true
+CHECK stale-version-first-actor-lock=true
+CHECK stale-version-all-active-rc=true
+CHECK stale-version-single-connection=true
+CHECK stale-zero-write=true
+CHECK missing-actor-refused=true
+CHECK missing-actor-no-sql=true
+CHECK missing-actor-zero-write=true
+CHECK stale-stamp-refused=true
+CHECK stale-stamp-first-actor-lock=true
+CHECK stale-stamp-all-active-rc=true
+CHECK stale-stamp-single-connection=true
+CHECK stale-stamp-only-actor-query=true
+CHECK stale-stamp-zero-write=true
+CHECK admin-role-refused=true
+CHECK admin-role-first-actor-lock=true
+CHECK admin-role-all-active-rc=true
+CHECK admin-role-single-connection=true
+CHECK admin-role-only-actor-query=true
+CHECK admin-role-zero-write=true
+CHECK disabled-refused=true
+CHECK disabled-first-actor-lock=true
+CHECK disabled-all-active-rc=true
+CHECK disabled-single-connection=true
+CHECK disabled-only-actor-query=true
+CHECK disabled-zero-write=true
+CHECK remove-success=true
+CHECK remove-first-actor-lock=true
+CHECK remove-all-active-rc=true
+CHECK remove-single-connection=true
+CHECK removed-row-gone=true
+CHECK quantity-sum-value=true
+CHECK quantity-sql-sum-no-join-or-count=true

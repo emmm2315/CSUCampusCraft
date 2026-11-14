@@ -1,0 +1,1253 @@
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthFilter.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthFilter.java
+index bf06116..fd60ebc 100644
+--- a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthFilter.java
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthFilter.java
+@@ -57,7 +57,10 @@ public final class AuthFilter extends OncePerRequestFilter {
+ 
+     private boolean authorize(HttpServletRequest request, HttpServletResponse response) {
+         String path = request.getServletPath();
+-        if (publicInfrastructure(path)) return true;
++        if (publicInfrastructure(path)) {
++            if ("/error".equals(path)) response.setHeader("Cache-Control", "no-store");
++            return true;
++        }
+         boolean protectedRequest = isProtected(request, path);
+         if (protectedRequest || "/login".equals(path)) response.setHeader("Cache-Control", "no-store");
+         SessionIdentity identity = sessions.identity(request);
+@@ -80,6 +83,11 @@ public final class AuthFilter extends OncePerRequestFilter {
+         }
+         if (!AuthService.REQUIRED_ROLE.equals(user.getRole())) {
+             if (protectedRequest) {
++                if (CartRequestNavigation.isCartWrite(request)) {
++                    // Defer only these three POSTs: CSRF must precede role and field validation.
++                    request.setAttribute(CartRequestNavigation.ROLE_REJECTED, Boolean.TRUE);
++                    return true;
++                }
+                 throw new BusinessException(HttpStatus.FORBIDDEN, "AUTH_ROLE_FORBIDDEN",
+                         "当前账号无权访问此页面。");
+             }
+@@ -107,11 +115,8 @@ public final class AuthFilter extends OncePerRequestFilter {
+     }
+ 
+     private void redirectToLogin(HttpServletRequest request, HttpServletResponse response) {
+-        // Only the original GET may become a destination; POST is never replayed.
+-        String requested = "GET".equals(request.getMethod())
+-                ? request.getRequestURI().substring(request.getContextPath().length())
+-                    + (request.getQueryString() == null ? "" : "?" + request.getQueryString())
+-                : "/";
++        // Cart writes choose a fixed product/cart GET; the original POST is never replayed.
++        String requested = CartRequestNavigation.readDestination(request);
+         String target = returns.resolve(requested, "/");
+         response.setStatus(HttpServletResponse.SC_FOUND);
+         response.setHeader("Location", request.getContextPath() + "/login?returnUrl="
+@@ -144,4 +149,3 @@ public final class AuthFilter extends OncePerRequestFilter {
+         }
+     }
+ }
+-
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/CartRequestNavigation.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/CartRequestNavigation.java
+new file mode 100644
+index 0000000..e6f35db
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/CartRequestNavigation.java
+@@ -0,0 +1,41 @@
++package org.csucampuscraft.storefront.auth;
++
++import jakarta.servlet.http.HttpServletRequest;
++
++/** Fixed read destinations only; a rejected POST is never replayed after login. */
++public final class CartRequestNavigation {
++    public static final String ROLE_REJECTED = "csucampuscraft.cartRoleRejected";
++    private CartRequestNavigation() { }
++
++    public static boolean isCartWrite(HttpServletRequest request) {
++        if (!"POST".equals(request.getMethod())) return false;
++        String path = request.getServletPath();
++        return "/cart/items".equals(path)
++                || path.matches("/cart/items/[^/]+/(?:quantity|remove)");
++    }
++
++    public static String readDestination(HttpServletRequest request) {
++        if ("GET".equals(request.getMethod())) {
++            return request.getRequestURI().substring(request.getContextPath().length())
++                    + (request.getQueryString() == null ? "" : "?" + request.getQueryString());
++        }
++        if (isCartWrite(request)) {
++            if ("/cart/items".equals(request.getServletPath())) {
++                String[] values = request.getParameterValues("productId");
++                if (values != null && values.length == 1 && values[0] != null) {
++                    String raw = values[0].strip();
++                    if (raw.matches("[0-9]+")) {
++                        try {
++                            long id = Long.parseLong(raw);
++                            if (id > 0) return "/products/" + id;
++                        } catch (NumberFormatException outsideLongRange) {
++                            // Invalid input selects the fixed cart read page, not an arbitrary URL.
++                        }
++                    }
++                }
++            }
++            return "/cart";
++        }
++        return "/";
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/CartRoleConfiguration.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/CartRoleConfiguration.java
+new file mode 100644
+index 0000000..3194748
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/CartRoleConfiguration.java
+@@ -0,0 +1,30 @@
++package org.csucampuscraft.storefront.auth;
++
++import jakarta.servlet.http.HttpServletRequest;
++import jakarta.servlet.http.HttpServletResponse;
++import org.csucampuscraft.storefront.foundation.web.BusinessException;
++import org.springframework.context.annotation.Configuration;
++import org.springframework.http.HttpStatus;
++import org.springframework.web.servlet.HandlerInterceptor;
++import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
++import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
++
++/** Cart POST role rejection follows the CSRF filter and precedes MVC argument binding. */
++@Configuration
++public class CartRoleConfiguration implements WebMvcConfigurer {
++    @Override
++    public void addInterceptors(InterceptorRegistry registry) {
++        registry.addInterceptor(new HandlerInterceptor() {
++            @Override
++            public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
++                                     Object handler) {
++                if (CartRequestNavigation.isCartWrite(request)
++                        && Boolean.TRUE.equals(request.getAttribute(CartRequestNavigation.ROLE_REJECTED))) {
++                    throw new BusinessException(HttpStatus.FORBIDDEN, "AUTH_ROLE_FORBIDDEN",
++                            "当前账号无权执行购物车操作。");
++                }
++                return true;
++            }
++        }).addPathPatterns("/cart/items", "/cart/items/*/quantity", "/cart/items/*/remove");
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/CustomerWriteGuard.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/CustomerWriteGuard.java
+new file mode 100644
+index 0000000..1a72b8b
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/CustomerWriteGuard.java
+@@ -0,0 +1,37 @@
++package org.csucampuscraft.storefront.auth;
++
++import java.sql.Connection;
++import org.csucampuscraft.storefront.foundation.web.BusinessException;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Service;
++import org.springframework.transaction.annotation.Propagation;
++import org.springframework.transaction.annotation.Transactional;
++import org.springframework.transaction.support.TransactionSynchronizationManager;
++
++/** Must be the first database operation inside every protected write Service transaction. */
++@Service
++public class CustomerWriteGuard {
++    private final StoreUserMapper users;
++    public CustomerWriteGuard(StoreUserMapper users) { this.users = users; }
++
++    @Transactional(propagation = Propagation.MANDATORY)
++    public StoreUser lock(SessionIdentity actor) {
++        Integer isolation = TransactionSynchronizationManager.getCurrentTransactionIsolationLevel();
++        if (!TransactionSynchronizationManager.isActualTransactionActive()
++                || TransactionSynchronizationManager.isCurrentTransactionReadOnly()
++                || isolation == null || isolation != Connection.TRANSACTION_READ_COMMITTED) {
++            throw new IllegalStateException("Customer write requires a READ COMMITTED transaction");
++        }
++        if (actor == null) throw new SessionExpiredException();
++        StoreUser current = users.selectForUpdate(actor.userId());
++        if (current == null || !"ENABLED".equals(current.getStatus())
++                || !actor.authStamp().equals(current.getUpdatedAt())) {
++            throw new SessionExpiredException();
++        }
++        if (!"CUSTOMER".equals(current.getRole())) {
++            throw new BusinessException(HttpStatus.FORBIDDEN, "AUTH_ROLE_FORBIDDEN",
++                    "当前账号无权执行此操作。");
++        }
++        return current;
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/LoginController.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/LoginController.java
+index c252398..7a661f2 100644
+--- a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/LoginController.java
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/LoginController.java
+@@ -42,6 +42,9 @@ public final class LoginController {
+         sessions.clear(request);
+         model.addAttribute("currentUser", null);
+         model.addAttribute("authenticated", false);
++        // PageModelAdvice ran before reauthentication cleared the old identity.
++        model.addAttribute("cartQuantity", 0);
++        model.addAttribute("cartQuantityUnavailable", false);
+         Map<String, String> fields = new LinkedHashMap<>();
+         String username = single(parameters, "username", fields);
+         username = username == null ? "" : username.strip();
+@@ -94,4 +97,3 @@ public final class LoginController {
+         return returns.resolve(values != null && values.size() == 1 ? values.get(0) : null, "/");
+     }
+ }
+-
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionExpiredException.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionExpiredException.java
+new file mode 100644
+index 0000000..e391fd7
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionExpiredException.java
+@@ -0,0 +1,6 @@
++package org.csucampuscraft.storefront.auth;
++
++/** Transaction-time identity failure; the MVC handler clears only this application's session identity. */
++public final class SessionExpiredException extends RuntimeException {
++    public SessionExpiredException() { super("Authentication must be renewed"); }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUserMapper.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUserMapper.java
+index 43929ce..7b06678 100644
+--- a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUserMapper.java
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUserMapper.java
+@@ -7,6 +7,12 @@ import org.apache.ibatis.annotations.Select;
+ 
+ @Mapper
+ public interface StoreUserMapper extends BaseMapper<StoreUser> {
++    @Select("""
++            SELECT id,username,display_name AS displayName,role,status,updated_at AS updatedAt
++              FROM store_user WHERE id=#{userId} FOR UPDATE
++            """)
++    StoreUser selectForUpdate(@Param("userId") long userId);
++
+     @Select("""
+             SELECT id, username, password_hash AS passwordHash,
+                    display_name AS displayName, role, status, updated_at AS updatedAt
+@@ -14,4 +20,3 @@ public interface StoreUserMapper extends BaseMapper<StoreUser> {
+             """)
+     StoreUser selectForLoginByUsername(@Param("username") String username);
+ }
+-
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartForm.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartForm.java
+new file mode 100644
+index 0000000..135e407
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartForm.java
+@@ -0,0 +1,7 @@
++package org.csucampuscraft.storefront.cart;
++
++/** Allowlisted raw field values for escaped redisplay after a rejected POST. */
++public record CartForm(String quantity, String version) {
++    public String getQuantity() { return quantity; }
++    public String getVersion() { return version; }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartItem.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartItem.java
+new file mode 100644
+index 0000000..1f1aafa
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartItem.java
+@@ -0,0 +1,34 @@
++package org.csucampuscraft.storefront.cart;
++
++import com.baomidou.mybatisplus.annotation.IdType;
++import com.baomidou.mybatisplus.annotation.TableId;
++import com.baomidou.mybatisplus.annotation.TableName;
++import java.time.LocalDateTime;
++
++/** Persistent quantities only; no price or inventory is copied into a cart row. */
++@TableName("cart_item")
++public class CartItem {
++    @TableId(type = IdType.AUTO)
++    private Long id;
++    private Long userId;
++    private Long productId;
++    private Integer quantity;
++    private Long version;
++    private LocalDateTime createdAt;
++    private LocalDateTime updatedAt;
++
++    public Long getId() { return id; }
++    public void setId(Long value) { id = value; }
++    public Long getUserId() { return userId; }
++    public void setUserId(Long value) { userId = value; }
++    public Long getProductId() { return productId; }
++    public void setProductId(Long value) { productId = value; }
++    public Integer getQuantity() { return quantity; }
++    public void setQuantity(Integer value) { quantity = value; }
++    public Long getVersion() { return version; }
++    public void setVersion(Long value) { version = value; }
++    public LocalDateTime getCreatedAt() { return createdAt; }
++    public void setCreatedAt(LocalDateTime value) { createdAt = value; }
++    public LocalDateTime getUpdatedAt() { return updatedAt; }
++    public void setUpdatedAt(LocalDateTime value) { updatedAt = value; }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartItemMapper.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartItemMapper.java
+new file mode 100644
+index 0000000..8467eb4
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartItemMapper.java
+@@ -0,0 +1,57 @@
++package org.csucampuscraft.storefront.cart;
++
++import com.baomidou.mybatisplus.core.mapper.BaseMapper;
++import java.util.List;
++import org.apache.ibatis.annotations.Delete;
++import org.apache.ibatis.annotations.Insert;
++import org.apache.ibatis.annotations.Mapper;
++import org.apache.ibatis.annotations.Options;
++import org.apache.ibatis.annotations.Param;
++import org.apache.ibatis.annotations.Select;
++import org.apache.ibatis.annotations.Update;
++import org.csucampuscraft.storefront.catalog.Product;
++
++@Mapper
++public interface CartItemMapper extends BaseMapper<CartItem> {
++    @Select("SELECT id,user_id,product_id,quantity,version,created_at,updated_at "
++            + "FROM cart_item WHERE user_id=#{userId} ORDER BY id ASC")
++    List<CartItem> selectByUser(@Param("userId") long userId);
++
++    @Select("SELECT id,user_id,product_id,quantity,version,created_at,updated_at "
++            + "FROM cart_item WHERE id=#{itemId}")
++    CartItem selectItem(@Param("itemId") long itemId);
++
++    @Select("SELECT COALESCE(SUM(quantity),0) FROM cart_item WHERE user_id=#{userId}")
++    long selectQuantity(@Param("userId") long userId);
++
++    @Select("""
++            SELECT ci.id,ci.product_id,ci.quantity,ci.version,
++                   p.sku,p.name,p.cover_image,p.price,p.stock,p.status
++              FROM cart_item ci LEFT JOIN product p ON p.id=ci.product_id
++             WHERE ci.user_id=#{userId} ORDER BY ci.id ASC
++            """)
++    List<CartLine> selectLines(@Param("userId") long userId);
++
++    @Select("SELECT id,sku,category_id,name,cover_image,price,stock,status,version "
++            + "FROM product WHERE id=#{productId}")
++    Product selectProduct(@Param("productId") long productId);
++
++    @Insert("""
++            INSERT INTO cart_item(user_id,product_id,quantity,version)
++            VALUES(#{item.userId},#{item.productId},#{item.quantity},0)
++            """)
++    @Options(useGeneratedKeys = true, keyProperty = "item.id", keyColumn = "id")
++    int insertItem(@Param("item") CartItem item);
++
++    @Update("""
++            UPDATE cart_item SET quantity=#{quantity},version=version+1
++             WHERE id=#{itemId} AND user_id=#{userId} AND version=#{version}
++                   AND version<9223372036854775807
++            """)
++    int updateQuantity(@Param("userId") long userId, @Param("itemId") long itemId,
++                       @Param("quantity") int quantity, @Param("version") long version);
++
++    @Delete("DELETE FROM cart_item WHERE id=#{itemId} AND user_id=#{userId} AND version=#{version}")
++    int deleteItem(@Param("userId") long userId, @Param("itemId") long itemId,
++                   @Param("version") long version);
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartLine.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartLine.java
+new file mode 100644
+index 0000000..1156715
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartLine.java
+@@ -0,0 +1,51 @@
++package org.csucampuscraft.storefront.cart;
++
++import java.math.BigDecimal;
++
++/** Read projection joined to the current product; invalid rows remain visible and removable. */
++public class CartLine {
++    private Long id;
++    private Long productId;
++    private Integer quantity;
++    private Long version;
++    private String sku;
++    private String name;
++    private String coverImage;
++    private BigDecimal price;
++    private Integer stock;
++    private String status;
++
++    public Long getId() { return id; }
++    public Long getProductId() { return productId; }
++    public Integer getQuantity() { return quantity; }
++    public Long getVersion() { return version; }
++    public String getSku() { return sku; }
++    public String getName() { return name; }
++    public String getCoverImage() { return coverImage; }
++    public BigDecimal getPrice() { return price; }
++    public Integer getStock() { return stock; }
++    public String getStatus() { return status; }
++
++    public boolean isPublicProduct() { return "ON_SALE".equals(status); }
++    public String getInvalidCode() {
++        if (price == null || stock == null || status == null) return "UNAVAILABLE";
++        if (!isPublicProduct()) return "DRAFT";
++        if (stock == 0) return "SOLD_OUT";
++        if (quantity > stock) return "OVER_STOCK";
++        return "VALID";
++    }
++    public boolean isValid() { return "VALID".equals(getInvalidCode()); }
++    public String getInvalidReason() {
++        return switch (getInvalidCode()) {
++            case "DRAFT" -> "商品已下架，可移除此条目。";
++            case "SOLD_OUT" -> "商品已售罄，可移除此条目。";
++            case "OVER_STOCK" -> "数量超过当前库存，请减少数量或移除。";
++            case "UNAVAILABLE" -> "商品暂不可用，可移除此条目。";
++            default -> "";
++        };
++    }
++    public BigDecimal getSubtotal() {
++        return isValid() ? price.multiply(BigDecimal.valueOf(quantity)).setScale(2)
++                : new BigDecimal("0.00");
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartPage.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartPage.java
+new file mode 100644
+index 0000000..9fbc910
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartPage.java
+@@ -0,0 +1,17 @@
++package org.csucampuscraft.storefront.cart;
++
++import java.math.BigDecimal;
++import java.util.List;
++
++/** Server-calculated current cart view; no checkout token or order is produced. */
++public record CartPage(List<CartLine> items, long quantity, BigDecimal validSubtotal, int invalidCount) {
++    public CartPage { items = List.copyOf(items); }
++    public List<CartLine> getItems() { return items; }
++    public long getQuantity() { return quantity; }
++    public BigDecimal getValidSubtotal() { return validSubtotal; }
++    public int getInvalidCount() { return invalidCount; }
++    public int getItemCount() { return items.size(); }
++    public boolean isEmpty() { return items.isEmpty(); }
++    public boolean isHasInvalidItems() { return invalidCount > 0; }
++    public boolean isAllValid() { return !items.isEmpty() && invalidCount == 0; }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartService.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartService.java
+new file mode 100644
+index 0000000..b32fa37
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartService.java
+@@ -0,0 +1,198 @@
++package org.csucampuscraft.storefront.cart;
++
++import java.math.BigDecimal;
++import java.util.List;
++import java.util.Map;
++import org.csucampuscraft.storefront.auth.CustomerWriteGuard;
++import org.csucampuscraft.storefront.auth.SessionIdentity;
++import org.csucampuscraft.storefront.catalog.Product;
++import org.csucampuscraft.storefront.foundation.web.BusinessException;
++import org.springframework.dao.ConcurrencyFailureException;
++import org.springframework.dao.DataIntegrityViolationException;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Service;
++import org.springframework.transaction.annotation.Isolation;
++import org.springframework.transaction.annotation.Transactional;
++
++/** Every cart write is serialized by the current customer's row; inventory is never written. */
++@Service
++public class CartService {
++    private final CartItemMapper items;
++    private final CustomerWriteGuard customers;
++
++    public CartService(CartItemMapper items, CustomerWriteGuard customers) {
++        this.items = items;
++        this.customers = customers;
++    }
++
++    @Transactional(readOnly = true)
++    public CartPage read(long userId) {
++        List<CartLine> lines = items.selectLines(userId);
++        BigDecimal subtotal = new BigDecimal("0.00");
++        long quantity = 0;
++        int invalidCount = 0;
++        for (CartLine line : lines) {
++            quantity += line.getQuantity();
++            if (line.isValid()) subtotal = subtotal.add(line.getSubtotal());
++            else invalidCount++;
++        }
++        return new CartPage(lines, quantity, subtotal, invalidCount);
++    }
++
++    /** Exact navigation contract: all own quantities, including every invalid row. */
++    @Transactional(readOnly = true)
++    public long quantityFor(long userId) { return items.selectQuantity(userId); }
++
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public void add(SessionIdentity actor, long productId, int quantity) {
++        try {
++            long userId = customers.lock(actor).getId();
++            checkId("productId", productId);
++            checkQuantity(quantity);
++            List<CartItem> cart = items.selectByUser(userId);
++            Product product = available(items.selectProduct(productId));
++            CartItem existing = cart.stream().filter(item -> item.getProductId() == productId)
++                    .findFirst().orElse(null);
++            int combined = quantity + (existing == null ? 0 : existing.getQuantity());
++            if (combined > 99) {
++                throw quantityConflict("CART_QUANTITY_LIMIT", "该商品合计不能超过 99 件，请先核对购物车。");
++            }
++            if (existing == null && cart.size() >= 20) {
++                throw new BusinessException(HttpStatus.CONFLICT, "CART_SKU_LIMIT",
++                        "购物车最多保留 20 种商品，请先移除条目后再添加。");
++            }
++            requireStock(product, combined);
++            if (existing == null) {
++                CartItem added = new CartItem();
++                added.setUserId(userId);
++                added.setProductId(productId);
++                added.setQuantity(quantity);
++                added.setVersion(0L);
++                if (items.insertItem(added) != 1 || added.getId() == null) {
++                    throw new IllegalStateException("Cart insert did not return an identity");
++                }
++            } else {
++                capacity(existing);
++                if (items.updateQuantity(userId, existing.getId(), combined, existing.getVersion()) != 1) {
++                    throw versionConflict();
++                }
++            }
++        } catch (DataIntegrityViolationException | ConcurrencyFailureException conflict) {
++            throw dataConflict();
++        }
++    }
++
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public void changeQuantity(SessionIdentity actor, long itemId, int quantity, long version) {
++        try {
++            long userId = customers.lock(actor).getId();
++            checkId("itemId", itemId);
++            checkQuantity(quantity);
++            checkVersion(version);
++            CartItem current = owned(userId, itemId);
++            requireVersion(current, version);
++            // A valid same-value request does not modify an invalid row or consume a version.
++            if (current.getQuantity() == quantity) return;
++            Product product = available(items.selectProduct(current.getProductId()));
++            requireStock(product, quantity);
++            capacity(current);
++            if (items.updateQuantity(userId, itemId, quantity, version) != 1) throw versionConflict();
++        } catch (DataIntegrityViolationException | ConcurrencyFailureException conflict) {
++            throw dataConflict();
++        }
++    }
++
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public void remove(SessionIdentity actor, long itemId, long version) {
++        try {
++            long userId = customers.lock(actor).getId();
++            checkId("itemId", itemId);
++            checkVersion(version);
++            CartItem current = owned(userId, itemId);
++            requireVersion(current, version);
++            // Removal never consults product availability and does not increment a deleted version.
++            if (items.deleteItem(userId, itemId, version) != 1) throw versionConflict();
++        } catch (DataIntegrityViolationException | ConcurrencyFailureException conflict) {
++            throw dataConflict();
++        }
++    }
++
++    private CartItem owned(long userId, long itemId) {
++        CartItem item = items.selectItem(itemId);
++        if (item == null) {
++            throw new BusinessException(HttpStatus.NOT_FOUND, "CART_ITEM_NOT_FOUND",
++                    "该购物车条目已不存在，请重新载入购物车。");
++        }
++        if (item.getUserId() != userId) {
++            throw new BusinessException(HttpStatus.FORBIDDEN, "CART_ITEM_FORBIDDEN",
++                    "当前账号无权操作此购物车条目。");
++        }
++        return item;
++    }
++
++    private static Product available(Product product) {
++        if (product == null || !"ON_SALE".equals(product.getStatus())) {
++            throw new BusinessException(HttpStatus.NOT_FOUND, "PRODUCT_NOT_AVAILABLE",
++                    "商品不存在或已下架，请返回目录选择其他商品。");
++        }
++        return product;
++    }
++
++    private static void requireStock(Product product, int quantity) {
++        if (product.getStock() == 0) {
++            throw quantityConflict("PRODUCT_SOLD_OUT", "商品已售罄，购物车未改变。");
++        }
++        if (quantity > product.getStock()) {
++            throw quantityConflict("CART_STOCK_INSUFFICIENT", "购买数量超过当前库存，请减少数量或处理购物车。");
++        }
++    }
++
++    private static void requireVersion(CartItem item, long version) {
++        if (item.getVersion() != version) throw versionConflict();
++    }
++
++    private static void capacity(CartItem item) {
++        if (item.getVersion() == Long.MAX_VALUE) {
++            throw new BusinessException(HttpStatus.CONFLICT, "CART_VERSION_OVERFLOW",
++                    "条目版本已到允许上限，数量未修改，请移除后重新添加。",
++                    Map.of("version", "条目版本已到上限，无法保存数量变化。"));
++        }
++    }
++
++    private static void checkId(String field, long id) {
++        if (id < 1) {
++            throw new BusinessException(HttpStatus.BAD_REQUEST, "INVALID_INTEGER", "请输入允许范围内的整数。",
++                    Map.of(field, "请输入正整数。"));
++        }
++    }
++
++    private static void checkQuantity(int quantity) {
++        if (quantity < 1 || quantity > 99) {
++            throw new BusinessException(HttpStatus.BAD_REQUEST, "INVALID_INTEGER", "购买数量须为 1–99 的整数。",
++                    Map.of("quantity", "购买数量须为 1–99 的整数。"));
++        }
++    }
++
++    private static void checkVersion(long version) {
++        if (version < 0) {
++            throw new BusinessException(HttpStatus.BAD_REQUEST, "INVALID_INTEGER", "条目版本格式不正确。",
++                    Map.of("version", "请重新载入购物车取得当前版本。"));
++        }
++    }
++
++    private static BusinessException quantityConflict(String code, String message) {
++        return new BusinessException(HttpStatus.CONFLICT, code, message, Map.of("quantity", message));
++    }
++
++    private static BusinessException versionConflict() {
++        return new BusinessException(HttpStatus.CONFLICT, "CART_VERSION_CONFLICT",
++                "购物车条目已发生变化，操作未提交，请重新载入后再确认。",
++                Map.of("version", "页面版本已过期，请重新载入购物车。"));
++    }
++
++    private static BusinessException dataConflict() {
++        return new BusinessException(HttpStatus.CONFLICT, "CART_DATA_CONFLICT",
++                "购物车数据已变化，操作未提交，请重新载入后重试。",
++                Map.of("version", "请重新载入购物车后重试。"));
++    }
++}
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/GlobalExceptionHandler.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/GlobalExceptionHandler.java
+index 651550b..ed48cbf 100644
+--- a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/GlobalExceptionHandler.java
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/GlobalExceptionHandler.java
+@@ -3,6 +3,12 @@ package org.csucampuscraft.storefront.foundation.web;
+ import jakarta.servlet.http.HttpServletRequest;
+ import jakarta.servlet.http.HttpServletResponse;
+ import java.io.IOException;
++import java.net.URLEncoder;
++import java.nio.charset.StandardCharsets;
++import org.csucampuscraft.storefront.auth.CartRequestNavigation;
++import org.csucampuscraft.storefront.auth.SessionExpiredException;
++import org.csucampuscraft.storefront.auth.SessionSupport;
++import org.csucampuscraft.storefront.foundation.security.ReturnUrlPolicy;
+ import java.util.LinkedHashMap;
+ import java.util.Map;
+ import org.springframework.beans.TypeMismatchException;
+@@ -14,13 +20,33 @@ import org.springframework.web.bind.ServletRequestBindingException;
+ import org.springframework.web.bind.annotation.ControllerAdvice;
+ import org.springframework.web.bind.annotation.ExceptionHandler;
+ import org.springframework.web.servlet.ModelAndView;
++import org.springframework.web.servlet.view.RedirectView;
+ 
+ /** Maps expected failures without reflecting submitted values or technical exception messages. */
+ @ControllerAdvice
+ public final class GlobalExceptionHandler {
+     private final PageModelAdvice pageModels;
+ 
+-    public GlobalExceptionHandler(PageModelAdvice pageModels) { this.pageModels = pageModels; }
++    private final SessionSupport sessions;
++    private final ReturnUrlPolicy returns;
++
++    public GlobalExceptionHandler(PageModelAdvice pageModels, SessionSupport sessions, ReturnUrlPolicy returns) {
++        this.pageModels = pageModels;
++        this.sessions = sessions;
++        this.returns = returns;
++    }
++
++    @ExceptionHandler(SessionExpiredException.class)
++    public ModelAndView expired(SessionExpiredException exception, HttpServletRequest request) {
++        sessions.clear(request);
++        String target = returns.resolve(CartRequestNavigation.readDestination(request), "/");
++        RedirectView redirect = new RedirectView("/login?returnUrl="
++                + URLEncoder.encode(target, StandardCharsets.UTF_8), true);
++        redirect.setStatusCode(HttpStatus.FOUND);
++        redirect.setExposeModelAttributes(false);
++        redirect.setExpandUriTemplateVariables(false);
++        return new ModelAndView(redirect);
++    }
+ 
+     @ExceptionHandler(BusinessException.class)
+     public ModelAndView business(BusinessException exception, HttpServletRequest request) {
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java
+index 188b5b8..3390093 100644
+--- a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java
+@@ -1,6 +1,12 @@
+ package org.csucampuscraft.storefront.foundation.web;
+ 
+ import org.csucampuscraft.storefront.auth.AuthUser;
++import org.csucampuscraft.storefront.auth.AuthService;
++import org.csucampuscraft.storefront.auth.CartRequestNavigation;
++import org.csucampuscraft.storefront.auth.SessionIdentity;
++import org.csucampuscraft.storefront.auth.StoreUser;
++import org.csucampuscraft.storefront.cart.CartService;
++import org.springframework.dao.DataAccessException;
+ import org.csucampuscraft.storefront.auth.SessionSupport;
+ import org.csucampuscraft.storefront.foundation.security.CsrfTokenService;
+ import org.csucampuscraft.storefront.foundation.view.ImagePaths;
+@@ -17,7 +23,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
+ public final class PageModelAdvice {
+     private final CsrfTokenService csrfTokens;
+ 
+-    public PageModelAdvice(CsrfTokenService csrfTokens) { this.csrfTokens = csrfTokens; }
++    private static final String BADGE_UNAVAILABLE = "csucampuscraft.cartQuantityUnavailable";
++    private final SessionSupport sessions;
++    private final AuthService auth;
++    private final CartService carts;
++
++    public PageModelAdvice(CsrfTokenService csrfTokens, SessionSupport sessions, AuthService auth, CartService carts) {
++        this.csrfTokens = csrfTokens;
++        this.sessions = sessions;
++        this.auth = auth;
++        this.carts = carts;
++    }
+ 
+     @ModelAttribute
+     public void contribute(Model model, HttpServletRequest request) {
+@@ -29,9 +45,20 @@ public final class PageModelAdvice {
+         Map<String, Object> values = new LinkedHashMap<>();
+         values.put("appId", "user");
+         values.put("siteName", "CSUCampusCraft 用户端");
+-        values.put("cartQuantity", 0);
+-        Object identity = request.getAttribute(SessionSupport.CURRENT_USER_ATTRIBUTE);
+-        AuthUser current = identity instanceof AuthUser user ? user : null;
++        AuthUser current = currentCustomer(request);
++        boolean unavailable = Boolean.TRUE.equals(request.getAttribute(BADGE_UNAVAILABLE));
++        long quantity = 0;
++        if (current != null && !unavailable) {
++            try {
++                quantity = carts.quantityFor(current.userId());
++            } catch (DataAccessException failedRead) {
++                // The generic 500 can render without repeating the failed SUM or inventing zero.
++                request.setAttribute(BADGE_UNAVAILABLE, Boolean.TRUE);
++                throw failedRead;
++            }
++        }
++        values.put("cartQuantity", unavailable ? null : quantity);
++        values.put("cartQuantityUnavailable", unavailable);
+         values.put("currentUser", current);
+         values.put("authenticated", current != null);
+         values.put("defaultCoverImage", ImagePaths.DEFAULT_COVER);
+@@ -46,6 +73,29 @@ public final class PageModelAdvice {
+         return values;
+     }
+ 
++    private AuthUser currentCustomer(HttpServletRequest request) {
++        AuthUser current = sessions.currentUser(request);
++        if (current != null) return "CUSTOMER".equals(current.role()) ? current : null;
++        if (Boolean.TRUE.equals(request.getAttribute(BADGE_UNAVAILABLE))
++                || Boolean.TRUE.equals(request.getAttribute(CartRequestNavigation.ROLE_REJECTED))) return null;
++        SessionIdentity identity = sessions.identity(request);
++        if (identity == null) return null;
++        try {
++            // Direct Boot /error renders also use the current account, never a previous browser value.
++            StoreUser user = auth.findCurrent(identity);
++            if (user == null) {
++                sessions.clear(request);
++                return null;
++            }
++            if (!"CUSTOMER".equals(user.getRole())) return null;
++            sessions.publishCurrentUser(request, user);
++            return sessions.currentUser(request);
++        } catch (DataAccessException failedRead) {
++            request.setAttribute(BADGE_UNAVAILABLE, Boolean.TRUE);
++            throw failedRead;
++        }
++    }
++
+     private String publicAttribute(HttpServletRequest request, String name) {
+         Object value = request.getAttribute(name);
+         return value instanceof String text ? text : "";
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/web/CartController.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/web/CartController.java
+new file mode 100644
+index 0000000..753f383
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/web/CartController.java
+@@ -0,0 +1,191 @@
++package org.csucampuscraft.storefront.web;
++
++import jakarta.servlet.http.HttpServletRequest;
++import java.util.LinkedHashMap;
++import java.util.List;
++import java.util.Map;
++import java.util.Set;
++import org.csucampuscraft.storefront.auth.SessionExpiredException;
++import org.csucampuscraft.storefront.auth.SessionIdentity;
++import org.csucampuscraft.storefront.auth.SessionSupport;
++import org.csucampuscraft.storefront.cart.CartForm;
++import org.csucampuscraft.storefront.cart.CartPage;
++import org.csucampuscraft.storefront.cart.CartService;
++import org.csucampuscraft.storefront.catalog.CatalogService;
++import org.csucampuscraft.storefront.catalog.ProductDetail;
++import org.csucampuscraft.storefront.foundation.validation.InputChecks;
++import org.csucampuscraft.storefront.foundation.web.BusinessException;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Controller;
++import org.springframework.util.MultiValueMap;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.PathVariable;
++import org.springframework.web.bind.annotation.PostMapping;
++import org.springframework.web.bind.annotation.RequestParam;
++import org.springframework.web.servlet.ModelAndView;
++import org.springframework.web.servlet.view.RedirectView;
++
++@Controller
++public final class CartController {
++    private final CartService carts;
++    private final CatalogService catalog;
++    private final SessionSupport sessions;
++
++    public CartController(CartService carts, CatalogService catalog, SessionSupport sessions) {
++        this.carts = carts;
++        this.catalog = catalog;
++        this.sessions = sessions;
++    }
++
++    @GetMapping("/cart")
++    public ModelAndView page(HttpServletRequest request) {
++        return cartPage(carts.read(actor(request).userId()), null, null, "", null);
++    }
++
++    @PostMapping("/cart/items")
++    public ModelAndView add(@RequestParam MultiValueMap<String, String> parameters,
++                            HttpServletRequest request) {
++        SessionIdentity actor = actor(request);
++        String rawProductId = first(parameters, "productId");
++        String rawQuantity = first(parameters, "quantity");
++        try {
++            rejectDuplicates(parameters, Set.of("productId", "quantity"));
++            long productId = InputChecks.longInteger("productId", rawProductId, 1, Long.MAX_VALUE);
++            int quantity = InputChecks.integer("quantity", rawQuantity, 1, 99);
++            carts.add(actor, productId, quantity);
++            return redirect();
++        } catch (BusinessException failure) {
++            if (!formFailure(failure)) throw failure;
++            return detailFailure(rawProductId, rawQuantity, failure);
++        }
++    }
++
++    @PostMapping("/cart/items/{itemId}/quantity")
++    public ModelAndView changeQuantity(@PathVariable("itemId") String rawItemId,
++                                       @RequestParam MultiValueMap<String, String> parameters,
++                                       HttpServletRequest request) {
++        SessionIdentity actor = actor(request);
++        long itemId = InputChecks.longInteger("itemId", rawItemId, 1, Long.MAX_VALUE);
++        CartForm form = new CartForm(first(parameters, "quantity"), first(parameters, "version"));
++        try {
++            rejectDuplicates(parameters, Set.of("quantity", "version"));
++            int quantity = InputChecks.integer("quantity", form.quantity(), 1, 99);
++            long version = InputChecks.longInteger("version", form.version(), 0, Long.MAX_VALUE);
++            carts.changeQuantity(actor, itemId, quantity, version);
++            return redirect();
++        } catch (BusinessException failure) {
++            if (!formFailure(failure)) throw failure;
++            return cartPage(carts.read(actor(request).userId()), form, itemId, "quantity", failure);
++        }
++    }
++
++    @PostMapping("/cart/items/{itemId}/remove")
++    public ModelAndView remove(@PathVariable("itemId") String rawItemId,
++                               @RequestParam MultiValueMap<String, String> parameters,
++                               HttpServletRequest request) {
++        SessionIdentity actor = actor(request);
++        long itemId = InputChecks.longInteger("itemId", rawItemId, 1, Long.MAX_VALUE);
++        CartForm form = new CartForm(null, first(parameters, "version"));
++        try {
++            rejectDuplicates(parameters, Set.of("version"));
++            long version = InputChecks.longInteger("version", form.version(), 0, Long.MAX_VALUE);
++            carts.remove(actor, itemId, version);
++            return redirect();
++        } catch (BusinessException failure) {
++            if (!formFailure(failure)) throw failure;
++            return cartPage(carts.read(actor(request).userId()), form, itemId, "remove", failure);
++        }
++    }
++
++    private ModelAndView detailFailure(String rawProductId, String rawQuantity, BusinessException failure) {
++        ProductDetail detail;
++        try {
++            long productId = InputChecks.longInteger("productId", rawProductId, 1, Long.MAX_VALUE);
++            detail = catalog.detail(productId);
++        } catch (BusinessException unavailable) {
++            // Preserve the original POST status without exposing an unavailable product.
++            throw failure;
++        }
++        ModelAndView view = new ModelAndView("products/detail");
++        view.setStatus(failure.getStatus());
++        view.addObject("product", detail.product());
++        view.addObject("theme", detail.theme());
++        view.addObject("category", detail.category());
++        view.addObject("images", detail.images());
++        view.addObject("purchaseQuantity", rawQuantity);
++        view.addObject("purchaseFailure", true);
++        view.addObject("reloadUrl", "/products/" + detail.product().getId());
++        view.addObject("globalError", failure.getMessage());
++        Map<String, String> fields = new LinkedHashMap<>();
++        Map<String, String> anchors = new LinkedHashMap<>();
++        failure.getFieldErrors().forEach((field, message) -> {
++            if ("quantity".equals(field) || "productId".equals(field)) {
++                fields.put(field, message);
++                anchors.put("purchase-" + field, message);
++            }
++        });
++        view.addObject("fieldErrors", fields);
++        view.addObject("errorAnchors", anchors);
++        view.addObject("errorStatus", failure.getStatus().value());
++        view.addObject("errorCode", failure.getCode());
++        return view;
++    }
++
++    private ModelAndView cartPage(CartPage cart, CartForm form, Long itemId,
++                                  String action, BusinessException failure) {
++        ModelAndView view = new ModelAndView("cart/index");
++        view.addObject("cart", cart);
++        view.addObject("cartForm", form == null ? new CartForm(null, null) : form);
++        view.addObject("formItemId", itemId);
++        view.addObject("formAction", action);
++        view.addObject("formItemPresent", itemId == null || cart.items().stream()
++                .anyMatch(line -> itemId.equals(line.getId())));
++        view.addObject("reloadUrl", "/cart");
++        Map<String, String> fields = failure == null ? Map.of() : failure.getFieldErrors();
++        Map<String, String> anchors = new LinkedHashMap<>();
++        if (itemId != null) fields.forEach((field, message) ->
++                anchors.put("item-" + itemId + "-" + field, message));
++        view.addObject("fieldErrors", fields);
++        view.addObject("errorAnchors", anchors);
++        if (failure != null) {
++            view.setStatus(failure.getStatus());
++            view.addObject("globalError", failure.getMessage());
++            view.addObject("errorStatus", failure.getStatus().value());
++            view.addObject("errorCode", failure.getCode());
++        }
++        return view;
++    }
++
++    private SessionIdentity actor(HttpServletRequest request) {
++        SessionIdentity identity = sessions.identity(request);
++        if (identity == null) throw new SessionExpiredException();
++        return identity;
++    }
++
++    private static boolean formFailure(BusinessException failure) {
++        return failure.getStatus() == HttpStatus.BAD_REQUEST || failure.getStatus() == HttpStatus.CONFLICT;
++    }
++
++    private static void rejectDuplicates(MultiValueMap<String, String> parameters, Set<String> fields) {
++        for (String field : fields) {
++            List<String> values = parameters.get(field);
++            if (values != null && values.size() != 1) {
++                throw new BusinessException(HttpStatus.BAD_REQUEST, "DUPLICATE_CART_FIELD",
++                        "每个购物车字段只能提交一个值。", Map.of(field, "请为此字段提交一个值。"));
++            }
++        }
++    }
++
++    private static String first(MultiValueMap<String, String> parameters, String field) {
++        List<String> values = parameters.get(field);
++        return values == null || values.isEmpty() ? null : values.get(0);
++    }
++
++    private static ModelAndView redirect() {
++        RedirectView redirect = new RedirectView("/cart", true);
++        redirect.setStatusCode(HttpStatus.SEE_OTHER);
++        redirect.setExposeModelAttributes(false);
++        redirect.setExpandUriTemplateVariables(false);
++        return new ModelAndView(redirect);
++    }
++}
+diff --git a/csucampuscraft-user/src/main/resources/static/css/app.css b/csucampuscraft-user/src/main/resources/static/css/app.css
+index 4f6f9be..726b4bc 100644
+--- a/csucampuscraft-user/src/main/resources/static/css/app.css
++++ b/csucampuscraft-user/src/main/resources/static/css/app.css
+@@ -226,3 +226,57 @@ tbody tr[aria-disabled="true"] { color: var(--color-muted); background: var(--co
+ /* STEP04: shared login panel; colors, spacing and fields reuse foundation tokens. */
+ .auth-panel { max-width: 32rem; margin-inline: auto; }
+ .auth-panel > .field-help { margin-top: var(--space-4); }
++
++/* STEP07 additions apply only to the storefront cart and purchase section. */
++[data-page-id="U03"] .catalog-purchase { width: 100%; border-top: 1px solid var(--color-border); padding-top: var(--space-6); }
++[data-page-id="U03"] .catalog-purchase h2 { margin-bottom: var(--space-4); }
++[data-page-id="U03"] .purchase-controls { display: flex; align-items: start; flex-wrap: wrap; gap: var(--space-4); }
++[data-page-id="U03"] .purchase-controls .form-field { width: 150px; max-width: 100%; }
++[data-page-id="U03"] .purchase-controls > button { margin-top: 34px; }
++[data-page-id="U03"] .purchase-recovery { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-4); margin-top: var(--space-4); }
++[data-page-id="U05"] { min-width: 0; }
++[data-page-id="U05"] .cart-heading { display: flex; align-items: start; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap; }
++[data-page-id="U05"] .cart-heading h1 { margin-block: var(--space-2); }
++[data-page-id="U05"] .cart-heading .button-row { margin-top: 0; }
++[data-page-id="U05"] .cart-empty { background: var(--color-surface); }
++[data-page-id="U05"] .cart-empty h2 { margin-bottom: var(--space-2); }
++[data-page-id="U05"] .cart-empty .button { margin-top: var(--space-4); }
++[data-page-id="U05"] .cart-table { table-layout: fixed; min-width: 940px; }
++[data-page-id="U05"] .cart-table th:nth-child(1) { width: 36%; }
++[data-page-id="U05"] .cart-table th:nth-child(2) { width: 12%; }
++[data-page-id="U05"] .cart-table th:nth-child(3) { width: 25%; }
++[data-page-id="U05"] .cart-table th:nth-child(4) { width: 14%; }
++[data-page-id="U05"] .cart-table th:nth-child(5) { width: 13%; }
++[data-page-id="U05"] .cart-table td { padding-block: var(--space-4); }
++[data-page-id="U05"] .cart-product { display: grid; grid-template-columns: 76px minmax(0, 1fr); align-items: start; gap: var(--space-3); }
++[data-page-id="U05"] .cart-product-image .catalog-image { width: 76px; }
++[data-page-id="U05"] .cart-product-info { min-width: 0; }
++[data-page-id="U05"] .cart-product h2 { font-size: 16px; overflow-wrap: anywhere; }
++[data-page-id="U05"] .cart-product p { margin-top: var(--space-2); }
++[data-page-id="U05"] .cart-sku { font-size: var(--font-size-small); overflow-wrap: anywhere; }
++[data-page-id="U05"] .cart-availability { font-size: var(--font-size-small); font-weight: 600; overflow-wrap: anywhere; }
++[data-page-id="U05"] .cart-availability-valid { color: var(--color-success); }
++[data-page-id="U05"] .cart-availability-invalid { color: var(--color-warning); }
++[data-page-id="U05"] .cart-line-invalid { background: var(--color-bg); }
++[data-page-id="U05"] .cart-money { font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
++[data-page-id="U05"] .cart-table .form-field { margin-bottom: var(--space-3); }
++[data-page-id="U05"] .cart-table .form-field label { font-size: var(--font-size-small); }
++[data-page-id="U05"] .cart-table button { white-space: nowrap; }
++[data-page-id="U05"] .cart-version-feedback,
++[data-page-id="U05"] .cart-remove-help { margin-top: var(--space-3); }
++[data-page-id="U05"] .cart-summary { display: flex; align-items: start; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap; margin-top: var(--space-6); }
++[data-page-id="U05"] .cart-summary h2 { margin-bottom: var(--space-2); }
++[data-page-id="U05"] .cart-total { margin-top: var(--space-3); font-size: 28px; }
++[data-page-id="U05"] .cart-checkout { max-width: 20rem; }
++[data-page-id="U05"] .cart-checkout .field-help { margin-top: var(--space-2); }
++[data-page-id="U05"] .cart-failed-target { margin-bottom: var(--space-6); }
++[data-page-id="U05"] .cart-failed-values { display: flex; flex-wrap: wrap; gap: var(--space-6); }
++[data-page-id="U05"] .cart-failed-values dt { color: var(--color-muted); font-size: var(--font-size-small); }
++[data-page-id="U05"] .cart-failed-values dd { margin: 0; overflow-wrap: anywhere; }
++@media (max-width: 600px) {
++    [data-page-id="U03"] .purchase-controls { flex-direction: column; }
++    [data-page-id="U03"] .purchase-controls > button { margin-top: 0; }
++    [data-page-id="U05"] .cart-heading .button-row,
++    [data-page-id="U05"] .cart-checkout { width: 100%; max-width: none; }
++    [data-page-id="U05"] .cart-checkout > button { width: 100%; }
++}
+diff --git a/csucampuscraft-user/src/main/resources/templates/cart/index.html b/csucampuscraft-user/src/main/resources/templates/cart/index.html
+new file mode 100644
+index 0000000..99c3249
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/templates/cart/index.html
+@@ -0,0 +1,139 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('我的购物车 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>我的购物车</title></head>
++<body>
++<div th:fragment="mainContent" class="cart-page" data-page-id="U05"
++     th:attr="data-cart-item-count=${cart.itemCount},data-cart-quantity=${cart.quantity},data-cart-invalid-count=${cart.invalidCount},data-cart-all-valid=${cart.allValid}">
++    <header class="page-heading cart-heading">
++        <div>
++            <p class="eyebrow">CSUCampusCraft</p>
++            <h1>我的购物车</h1>
++            <p class="muted">按当前商品价格与库存核对，购物车不预留库存。</p>
++        </div>
++        <div class="button-row">
++            <a class="button button-secondary" th:href="@{/products}">继续选购</a>
++            <a class="button button-secondary" th:href="${reloadUrl}" data-reload-cart>重新载入购物车</a>
++        </div>
++    </header>
++
++    <th:block th:replace="~{fragments/alerts :: summary(${errorAnchors})}"></th:block>
++
++    <section class="panel cart-failed-target" th:if="${formItemId != null and !formItemPresent}"
++             th:with="prefix=${'item-' + formItemId + '-'}" aria-labelledby="cart-failed-target-title">
++        <h2 id="cart-failed-target-title">核对未保存的提交</h2>
++        <p>本次操作未保存，目标记录已不在当前购物车。请重新载入后核对。</p>
++        <dl class="cart-failed-values">
++            <div th:id="${prefix + 'quantity'}">
++                <dt>提交的数量</dt><dd th:text="${cartForm.quantity ?: '未填写'}">数量</dd>
++                <dd class="field-error" th:if="${fieldErrors.containsKey('quantity')}" th:text="${fieldErrors.get('quantity')}">请检查数量。</dd>
++            </div>
++            <div th:id="${prefix + 'version'}">
++                <dt>提交的购物车版本</dt><dd th:text="${cartForm.version ?: '未填写'}">版本</dd>
++                <dd class="field-error" th:if="${fieldErrors.containsKey('version')}" th:text="${fieldErrors.get('version')}">请重新载入购物车。</dd>
++            </div>
++        </dl>
++        <a th:href="${reloadUrl}">重新载入购物车，按当前记录继续</a>
++    </section>
++
++    <section class="empty-state cart-empty" th:if="${cart.empty}" data-cart-empty aria-labelledby="cart-empty-title">
++        <h2 id="cart-empty-title">购物车还是空的</h2>
++        <p>去挑选喜欢的校园文创，把心意放进购物车。</p>
++        <a class="button" th:href="@{/products}">去逛逛</a>
++    </section>
++
++    <th:block th:if="${!cart.empty}">
++        <div class="alert alert-warning" th:if="${cart.hasInvalidItems}" role="status" data-cart-invalid-notice>
++            <p>购物车中有 <strong th:text="${cart.invalidCount}">0</strong> 种失效商品，请调整数量或移除后再结算。</p>
++            <p>下架、售罄和超库存条目仍保留在车中，也计入导航件数。</p>
++        </div>
++        <div class="table-container cart-table-container">
++            <table class="cart-table">
++                <caption>共 <span th:text="${cart.itemCount}">0</span> 种商品，<span th:text="${cart.quantity}">0</span> 件</caption>
++                <thead>
++                <tr><th scope="col">商品与库存</th><th scope="col">当前单价</th><th scope="col">数量</th><th scope="col">有效小计</th><th scope="col">操作</th></tr>
++                </thead>
++                <tbody>
++                <tr th:each="line : ${cart.items}"
++                    th:with="prefix=${'item-' + line.id + '-'},quantityFailed=${formItemId != null and formItemId == line.id and formAction == 'quantity'},removeFailed=${formItemId != null and formItemId == line.id and formAction == 'remove'}"
++                    th:attr="data-cart-item-id=${line.id},data-product-id=${line.productId},data-quantity=${line.quantity},data-version=${line.version},data-cart-valid=${line.valid},data-invalid-reason=${line.invalidCode}"
++                    th:classappend="${line.valid ? '' : 'cart-line-invalid'}">
++                    <td>
++                        <div class="cart-product">
++                            <div class="cart-product-image">
++                                <th:block th:replace="~{fragments/images :: image(${line.coverImage},${line.name})}"></th:block>
++                            </div>
++                            <div class="cart-product-info">
++                                <h2>
++                                    <a th:if="${line.publicProduct}" th:href="@{/products/{id}(id=${line.productId})}" th:text="${line.name}">商品名称</a>
++                                    <span th:if="${!line.publicProduct}" th:text="${line.name}">商品名称</span>
++                                </h2>
++                                <p class="cart-sku muted">SKU：<span th:text="${line.sku}">SKU</span></p>
++                                <p class="field-help" th:text="${'当前库存：' + line.stock}">当前库存</p>
++                                <p class="cart-availability" th:classappend="${line.valid ? 'cart-availability-valid' : 'cart-availability-invalid'}"
++                                   th:text="${line.valid ? '可购买' : line.invalidReason}" data-cart-line-state>状态</p>
++                            </div>
++                        </div>
++                    </td>
++                    <td class="cart-money" th:text="${'¥' + #numbers.formatDecimal(line.price,1,'NONE',2,'POINT')}">¥0.00</td>
++                    <td>
++                        <form method="post" th:action="@{/cart/items/{id}/quantity(id=${line.id})}"
++                              data-submit-state data-cart-action="quantity" th:attr="data-cart-item-id=${line.id}"
++                              th:with="quantityError=${quantityFailed and fieldErrors.containsKey('quantity')}">
++                            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++                            <input type="hidden" name="version" th:value="${quantityFailed ? cartForm.version : line.version}">
++                            <div class="form-field">
++                                <label th:for="${prefix + 'quantity'}">购买数量</label>
++                                <input type="number" name="quantity" inputmode="numeric" min="1" max="99" step="1" required
++                                       th:id="${prefix + 'quantity'}" th:type="${quantityError ? 'text' : 'number'}"
++                                       th:value="${quantityFailed ? cartForm.quantity : line.quantity}"
++                                       th:classappend="${quantityError ? 'input-error' : ''}"
++                                       th:attr="aria-invalid=${quantityError},aria-describedby=${quantityError ? prefix + 'quantity-error ' + prefix + 'quantity-help' : prefix + 'quantity-help'}">
++                                <p class="field-error" th:if="${quantityError}" th:id="${prefix + 'quantity-error'}"
++                                   th:text="${fieldErrors.get('quantity')}">请检查数量。</p>
++                                <p class="field-help" th:id="${prefix + 'quantity-help'}">每种 1–99 件，保存时核对库存。</p>
++                            </div>
++                            <button type="submit" class="button-secondary">更新数量</button>
++                        </form>
++                        <p class="field-error cart-version-feedback" th:id="${prefix + 'version'}"
++                           th:if="${(quantityFailed or removeFailed) and fieldErrors.containsKey('version')}"
++                           th:text="${fieldErrors.get('version')}" data-cart-version-feedback>请重新载入购物车。</p>
++                    </td>
++                    <td class="cart-money">
++                        <strong th:if="${line.valid}" th:text="${'¥' + #numbers.formatDecimal(line.subtotal,1,'NONE',2,'POINT')}"
++                                th:attr="data-line-subtotal=${line.subtotal}">¥0.00</strong>
++                        <span class="field-help" th:if="${!line.valid}" data-line-subtotal-excluded>不计入小计</span>
++                    </td>
++                    <td>
++                        <form method="post" th:action="@{/cart/items/{id}/remove(id=${line.id})}"
++                              data-submit-state data-cart-action="remove" th:attr="data-cart-item-id=${line.id}">
++                            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++                            <input type="hidden" name="version" th:value="${removeFailed ? cartForm.version : line.version}">
++                            <button type="submit" class="button-danger">移除</button>
++                        </form>
++                        <p class="field-help cart-remove-help">失效商品也可移除。</p>
++                    </td>
++                </tr>
++                </tbody>
++            </table>
++        </div>
++    </th:block>
++
++    <section class="panel cart-summary" aria-labelledby="cart-summary-title">
++        <div>
++            <h2 id="cart-summary-title" th:text="${cart.hasInvalidItems ? '有效条目小计' : '商品金额合计'}">商品金额合计</h2>
++            <p class="field-help" th:if="${cart.hasInvalidItems}">失效条目不计入小计，处理完毕后才能整车结算。</p>
++            <p class="field-help" th:if="${!cart.hasInvalidItems}">按当前单价计算，实际成交金额以确认时为准。</p>
++            <p class="cart-total product-price" th:attr="data-cart-total=${cart.validSubtotal}"
++               th:text="${'¥' + #numbers.formatDecimal(cart.validSubtotal,1,'NONE',2,'POINT')}">¥0.00</p>
++        </div>
++        <div class="cart-checkout">
++            <!-- STEP08 接入整车确认；本步不注册或链接结算与订单路由。 -->
++            <button type="button" disabled data-checkout-unavailable aria-describedby="cart-checkout-help">整车结算</button>
++            <p id="cart-checkout-help" class="field-help"
++               th:text="${cart.empty ? '请先选购商品。' : (cart.hasInvalidItems ? '请先处理失效商品后结算。' : '结算功能暂未开放。')}">结算说明</p>
++        </div>
++    </section>
++</div>
++</body>
++</html>
+diff --git a/csucampuscraft-user/src/main/resources/templates/fragments/layout.html b/csucampuscraft-user/src/main/resources/templates/fragments/layout.html
+index bafcbc5..150ab19 100644
+--- a/csucampuscraft-user/src/main/resources/templates/fragments/layout.html
++++ b/csucampuscraft-user/src/main/resources/templates/fragments/layout.html
+@@ -18,11 +18,12 @@
+         <nav class="site-nav" aria-label="站点导航">
+             <a th:href="@{/}">首页</a>
+             <span class="app-label" th:text="${appId == 'admin' ? '管理端' : '用户端'}">用户端</span>
+-            <span class="nav-placeholder" th:if="${appId == 'user'}"
+-                  th:attr="aria-label=${'购物车，' + (cartQuantity ?: 0) + ' 件'}">
++            <a class="nav-placeholder" th:if="${appId == 'user'}" th:href="@{/cart}" data-cart-link
++               th:attr="aria-label=${cartQuantityUnavailable == true ? '购物车数量暂不可用' : '购物车，' + (cartQuantity ?: 0) + ' 件'}">
+                 购物车 <span id="cart-quantity" class="quantity-badge"
+-                           th:attr="data-cart-quantity=${cartQuantity ?: 0}" th:text="${cartQuantity ?: 0}">0</span>
+-            </span>
++                           th:attr="data-cart-quantity=${cartQuantityUnavailable == true ? null : (cartQuantity ?: 0)},data-cart-quantity-unavailable=${cartQuantityUnavailable == true}"
++                           th:text="${cartQuantityUnavailable == true ? '—' : (cartQuantity ?: 0)}">0</span>
++            </a>
+             <a th:if="${currentUser == null}" th:href="@{/login}">登录</a>
+             <span th:if="${currentUser != null}" class="app-label" data-current-user
+                   th:text="${currentUser.displayName}">当前用户</span>
+diff --git a/csucampuscraft-user/src/main/resources/templates/products/detail.html b/csucampuscraft-user/src/main/resources/templates/products/detail.html
+index ebe32c3..d58e6e9 100644
+--- a/csucampuscraft-user/src/main/resources/templates/products/detail.html
++++ b/csucampuscraft-user/src/main/resources/templates/products/detail.html
+@@ -13,6 +13,10 @@
+         <span aria-hidden="true">/</span><span aria-current="page" th:text="${product.name}">商品名称</span>
+     </nav>
+ 
++    <th:block th:if="${purchaseFailure == true}">
++        <th:block th:replace="~{fragments/alerts :: summary(${errorAnchors})}"></th:block>
++    </th:block>
++
+     <section class="catalog-detail-main" aria-labelledby="product-heading">
+         <figure class="catalog-cover" data-cover-image>
+             <th:block th:replace="~{fragments/images :: image(${product.coverImage},${product.name})}"></th:block>
+@@ -25,14 +29,37 @@
+             <p class="product-price detail-price" th:text="${'¥' + #numbers.formatDecimal(product.price,1,'NONE',2,'POINT')}">¥0.00</p>
+             <p class="stock-badge" th:classappend="${product.stock == 0 ? 'stock-sold-out' : ''}"
+                th:text="${product.stock == 0 ? '售罄 · 库存 0' : '现货 · 库存 ' + product.stock}">库存</p>
+-            <div class="catalog-purchase-disabled" aria-labelledby="purchase-heading">
+-                <!-- STEP07 接入：本步只读，不注册加购 POST，也不跳转登录。 -->
++            <section class="catalog-purchase" aria-labelledby="purchase-heading">
+                 <h2 id="purchase-heading">选购</h2>
+-                <label for="purchase-quantity">数量</label>
+-                <input id="purchase-quantity" type="number" min="1" value="1" disabled aria-describedby="purchase-help">
+-                <button type="button" disabled aria-describedby="purchase-help">加入购物车</button>
+-                <p id="purchase-help" class="field-help">暂未开放</p>
+-            </div>
++                <form method="post" th:action="@{/cart/items}" data-submit-state data-add-cart
++                      th:with="quantityError=${fieldErrors != null and fieldErrors.containsKey('quantity')}">
++                    <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++                    <input type="hidden" name="productId" th:value="${product.id}">
++                    <p id="purchase-productId" class="field-error" th:if="${fieldErrors != null and fieldErrors.containsKey('productId')}"
++                       th:text="${fieldErrors.get('productId')}">请重新载入商品详情。</p>
++                    <div class="purchase-controls">
++                        <div class="form-field">
++                            <label for="purchase-quantity">数量</label>
++                            <input id="purchase-quantity" name="quantity" type="number" inputmode="numeric" min="1" max="99" step="1" required
++                                   th:type="${quantityError ? 'text' : 'number'}"
++                                   th:value="${purchaseFailure == true ? purchaseQuantity : '1'}"
++                                   th:disabled="${product.stock == 0}"
++                                   th:classappend="${quantityError ? 'input-error' : ''}"
++                                   th:attr="aria-invalid=${quantityError},aria-describedby=${quantityError ? 'purchase-quantity-error purchase-help' : 'purchase-help'}">
++                            <p id="purchase-quantity-error" class="field-error" th:if="${quantityError}"
++                               th:text="${fieldErrors.get('quantity')}">请检查数量。</p>
++                        </div>
++                        <button type="submit" th:disabled="${product.stock == 0}" aria-describedby="purchase-help">加入购物车</button>
++                    </div>
++                    <p id="purchase-help" class="field-help"
++                       th:text="${product.stock == 0 ? '商品已售罄，暂不可购买。' : '单次可加 1–99 件，同一商品在购物车中最多 99 件；提交时核对当前库存。'}">购买数量说明</p>
++                    <p class="field-help" th:if="${currentUser == null}">游客点击后先登录，返回本页后请重新确认加购。</p>
++                    <div class="purchase-recovery" th:if="${purchaseFailure == true}">
++                        <a th:href="@{/products/{id}(id=${product.id})}">重新载入商品详情</a>
++                        <a th:href="@{/cart}">前往购物车核对数量</a>
++                    </div>
++                </form>
++            </section>
+         </div>
+     </section>
+ 
