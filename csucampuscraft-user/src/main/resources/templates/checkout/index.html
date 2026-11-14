@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('结算确认 · CSUCampusCraft', ~{::mainContent})}">
+<head><title>结算确认</title></head>
+<body>
+<div th:fragment="mainContent" class="checkout-page" data-page-id="U06"
+     th:attr="data-checkout-item-count=${checkout.itemCount},data-checkout-quantity=${checkout.quantity},data-checkout-total=${checkout.total},data-error-status=${errorStatus},data-error-code=${errorCode}">
+    <header class="page-heading checkout-heading">
+        <div>
+            <p class="eyebrow">CSUCampusCraft</p>
+            <h1>结算确认</h1>
+            <p class="muted">核对整车商品与收货信息，金额由当前商品价格计算。</p>
+        </div>
+        <a class="button button-secondary" th:href="@{/cart}" data-return-cart>返回购物车</a>
+    </header>
+
+    <th:block th:replace="~{fragments/alerts :: summary(${errorAnchors})}"></th:block>
+
+    <div class="checkout-grid">
+        <section class="checkout-overview" aria-labelledby="checkout-items-title">
+            <div class="checkout-section-heading">
+                <h2 id="checkout-items-title">整车商品</h2>
+                <span class="muted" th:text="${checkout.itemCount + ' 种 · ' + checkout.quantity + ' 件'}">0 种 · 0 件</span>
+            </div>
+            <div class="table-container">
+                <table class="checkout-table">
+                    <caption class="small">本次确认的全部购物车条目</caption>
+                    <thead>
+                    <tr><th scope="col">商品</th><th scope="col">当前单价</th><th scope="col">数量</th><th scope="col">小计</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="line : ${checkout.items}"
+                        th:attr="data-checkout-item-id=${line.itemId},data-product-id=${line.productId},data-quantity=${line.quantity},data-item-version=${line.itemVersion},data-unit-price=${line.unitPrice},data-line-subtotal=${line.subtotal}">
+                        <td>
+                            <div class="checkout-product">
+                                <div class="checkout-product-image">
+                                    <th:block th:replace="~{fragments/images :: image(${line.coverImage},${line.name})}"></th:block>
+                                </div>
+                                <div>
+                                    <a th:href="@{/products/{id}(id=${line.productId})}" th:text="${line.name}">商品名称</a>
+                                    <p class="field-help checkout-sku">SKU：<span th:text="${line.sku}">SKU</span></p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="checkout-money" th:text="${'¥' + #numbers.formatDecimal(line.unitPrice,1,'NONE',2,'POINT')}">¥0.00</td>
+                        <td th:text="${line.quantity}">0</td>
+                        <td class="checkout-money"><strong th:text="${'¥' + #numbers.formatDecimal(line.subtotal,1,'NONE',2,'POINT')}">¥0.00</strong></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="panel checkout-total-panel" aria-labelledby="checkout-total-title">
+                <div>
+                    <h2 id="checkout-total-title">商品金额合计</h2>
+                    <p class="field-help">人民币，包含整车全部商品；模拟配送不另计运费。</p>
+                </div>
+                <strong class="product-price checkout-total" data-checkout-amount
+                        th:text="${'¥' + #numbers.formatDecimal(checkout.total,1,'NONE',2,'POINT')}">¥0.00</strong>
+            </div>
+            <div class="checkout-confirmation-help field-help">
+                <p>确认不预留库存。购物车内容、价格或可购状态变化后，需要重新确认。</p>
+                <p>重新打开本页会替换上一次确认。当前确认到期时间：
+                    <time data-confirmation-expires-at th:datetime="${checkout.expiresAt}" th:text="${checkout.expiresAt}">UTC</time>（UTC）。
+                </p>
+            </div>
+        </section>
+
+        <section class="panel checkout-shipping" aria-labelledby="checkout-shipping-title">
+            <h2 id="checkout-shipping-title">收货信息</h2>
+            <p id="checkout-delivery-help" class="field-help">使用收货地址进行教学模拟配送。以下三项均为必填，去除首尾空白后核对长度。</p>
+            <form method="post" th:action="@{/orders}" data-submit-state data-checkout-form aria-describedby="checkout-delivery-help checkout-stage-help">
+                <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+                <input type="hidden" name="confirmationToken" th:value="${confirmationToken}">
+                <th:block th:replace="~{fragments/fields :: text('receiverName','receiverName','收货人（1–50 字符）',${checkoutForm.receiverName},${fieldErrors})}"></th:block>
+                <th:block th:replace="~{fragments/fields :: text('receiverPhone','receiverPhone','联系电话（1–30 字符）',${checkoutForm.receiverPhone},${fieldErrors})}"></th:block>
+                <th:block th:replace="~{fragments/fields :: textarea('receiverAddress','receiverAddress','完整收货地址（1–255 字符）',${checkoutForm.receiverAddress},${fieldErrors})}"></th:block>
+                <p id="checkout-stage-help" class="field-help">目前仅支持结算确认，尚不能提交真实订单。提交后会显示下单尚未开放的说明。</p>
+                <div class="button-row">
+                    <button type="submit" data-submit-order data-submit-label="核对中…">提交订单</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+</body>
+</html>

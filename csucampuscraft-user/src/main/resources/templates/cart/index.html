@@ -128,10 +128,12 @@
                th:text="${'¥' + #numbers.formatDecimal(cart.validSubtotal,1,'NONE',2,'POINT')}">¥0.00</p>
         </div>
         <div class="cart-checkout">
-            <!-- STEP08 接入整车确认；本步不注册或链接结算与订单路由。 -->
-            <button type="button" disabled data-checkout-unavailable aria-describedby="cart-checkout-help">整车结算</button>
+            <a class="button" th:if="${cart.allValid}" th:href="@{/checkout}" data-checkout-link
+               aria-describedby="cart-checkout-help">整车结算</a>
+            <button type="button" th:if="${!cart.allValid}" disabled data-checkout-unavailable
+                    aria-describedby="cart-checkout-help">整车结算</button>
             <p id="cart-checkout-help" class="field-help"
-               th:text="${cart.empty ? '请先选购商品。' : (cart.hasInvalidItems ? '请先处理失效商品后结算。' : '结算功能暂未开放。')}">结算说明</p>
+               th:text="${cart.empty ? '请先选购商品。' : (cart.hasInvalidItems ? '请先处理失效商品后结算。' : '进入整车确认，核对当前价格与收货信息。')}">结算说明</p>
         </div>
     </section>
 </div>

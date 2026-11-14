@@ -25,3 +25,7 @@ spring:
   sql:
     init:
       mode: never
+
+csucampuscraft:
+  checkout:
+    confirmation-ttl: PT10M
