@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step04-auth\verification\verify_step04.py", line 386, in <module>
+    before_browser=snapshot();browser()
+                              ^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step04-auth\verification\verify_step04.py", line 192, in browser
+    check('browser-real-forms',p.returncode==0 and (EV/'browser/result.json').is_file())
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step04-auth\verification\verify_step04.py", line 49, in check
+    if not ok:raise AssertionError(name)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: browser-real-forms

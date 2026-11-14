@@ -1,0 +1,43 @@
+{
+  "changed_tables_before_fix": [
+    "store_user"
+  ],
+  "default_timezone": [
+    "SYSTEM",
+    "?й???׼ʱ?",
+    "480"
+  ],
+  "user_deltas_minutes": [
+    {
+      "id": 1,
+      "status": "ENABLED",
+      "role": "CUSTOMER",
+      "updated_minus_created_minutes": -480
+    },
+    {
+      "id": 2,
+      "status": "ENABLED",
+      "role": "CUSTOMER",
+      "updated_minus_created_minutes": 0
+    },
+    {
+      "id": 3,
+      "status": "DISABLED",
+      "role": "CUSTOMER",
+      "updated_minus_created_minutes": 0
+    },
+    {
+      "id": 4,
+      "status": "ENABLED",
+      "role": "ADMIN",
+      "updated_minus_created_minutes": -480
+    }
+  ],
+  "all_tables_match_original_after_utc_timestamp_only_repair": true,
+  "only_restore_utc_timezone_was_wrong": true,
+  "original_failed_datadir_modified": false,
+  "production_source_modified": false,
+  "scope": "Copied failed private data directory; read seven hashes, repaired only updated_at in copy. Original attempt and runtime data untouched.",
+  "overall": "PASS",
+  "diagnostic_process_stopped": true
+}

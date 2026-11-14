@@ -1,0 +1,1 @@
+这些仅为准备阶段私有副本编译记录，不取代精确受测SHA的实际仓库Wrapper构建。user-compile-unoverlaid.log遗漏叠加新auth目录，不能算候选构建通过；后续user-compile.log才叠加候选。admin候选编译后还补了静态白名单/响应头等小改，最终实际Wrapper构建才覆盖全部74e源码。最终通过依据为根目录build-user/admin.log与attempt4运行输入及JAR摘要。

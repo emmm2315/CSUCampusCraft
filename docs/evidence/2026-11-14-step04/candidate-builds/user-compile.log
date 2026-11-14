@@ -1,0 +1,37 @@
+Access is denied.
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< org.csucampuscraft:csucampuscraft-user >---------------
+[INFO] Building CSUCampusCraft Storefront 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ csucampuscraft-user ---
+[INFO] Copying 18 resources from src\main\resources to target\classes
+[INFO] Copying 1 resource from ..\assets to target\classes\static
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ csucampuscraft-user ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 38 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ csucampuscraft-user ---
+[INFO] skip non existing resourceDirectory C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step04-auth\user-compile\csucampuscraft-user\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ csucampuscraft-user ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ csucampuscraft-user ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ csucampuscraft-user ---
+[INFO] Building jar: C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step04-auth\user-compile\csucampuscraft-user\target\csucampuscraft-user-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:3.5.15:repackage (repackage) @ csucampuscraft-user ---
+[INFO] Replacing main artifact C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step04-auth\user-compile\csucampuscraft-user\target\csucampuscraft-user-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step04-auth\user-compile\csucampuscraft-user\target\csucampuscraft-user-0.0.1-SNAPSHOT.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.353 s
+[INFO] Finished at: 2026-11-14T10:10:20+08:00
+[INFO] ------------------------------------------------------------------------

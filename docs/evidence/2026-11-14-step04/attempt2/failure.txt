@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step04-auth\verification\verify_step04.py", line 378, in <module>
+    check('main-fixtures-restored',snapshot()==original)
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step04-auth\verification\verify_step04.py", line 49, in check
+    if not ok:raise AssertionError(name)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: main-fixtures-restored

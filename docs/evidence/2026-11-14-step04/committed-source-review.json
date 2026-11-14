@@ -1,0 +1,183 @@
+{
+  "reviewed_at": "2026-11-14T10:20:43.321243+08:00",
+  "reviewer": "Codex independent cross-end reviewer; AI-assisted, not named human review",
+  "reviewed_code_sha": "74e6272e5b60ac1604964f7e50909f4a1490086f",
+  "source_review_result": "PASS_STATIC_REVIEW",
+  "runtime_inputs_rehashed": 103,
+  "runtime_input_drift": [],
+  "staged_candidate_vs_committed_source_drift": [],
+  "static_review_reference": "cross-code-review.json",
+  "four_fixed_status_docs": [
+    {
+      "path": "docs/项目立项与范围.md",
+      "diff_blocks": [
+        {
+          "old_lines": [
+            3,
+            3
+          ],
+          "new_lines": [
+            3,
+            3
+          ]
+        }
+      ],
+      "fixed_status_reference_present": true
+    },
+    {
+      "path": "docs/需求与业务规则.md",
+      "diff_blocks": [
+        {
+          "old_lines": [
+            3,
+            3
+          ],
+          "new_lines": [
+            3,
+            3
+          ]
+        }
+      ],
+      "fixed_status_reference_present": true
+    },
+    {
+      "path": "docs/系统设计与路由.md",
+      "diff_blocks": [
+        {
+          "old_lines": [
+            3,
+            3
+          ],
+          "new_lines": [
+            3,
+            3
+          ]
+        },
+        {
+          "old_lines": [
+            55,
+            55
+          ],
+          "new_lines": [
+            55,
+            55
+          ]
+        }
+      ],
+      "fixed_status_reference_present": true
+    },
+    {
+      "path": "docs/页面清单与原型.md",
+      "diff_blocks": [
+        {
+          "old_lines": [
+            3,
+            3
+          ],
+          "new_lines": [
+            3,
+            3
+          ]
+        }
+      ],
+      "fixed_status_reference_present": true
+    }
+  ],
+  "ssr_admin_root_statement_present": true,
+  "attempt2_diagnostic": {
+    "observed_overall": "FAIL",
+    "failure": "AssertionError: main-fixtures-restored",
+    "http_records_completed": 186,
+    "all_seven_tables_equal_before_root_fixtures": true,
+    "application_permissions": "USAGE + SELECT only, verified from application-read-only-grants.txt",
+    "tool_root_cause_static": "rows() explicitly sets UTC when exporting TIMESTAMP text, but restore_users() and fixture_update() call sql() without setting time_zone on each fresh client connection. mysqld has no explicit default-time-zone; default SYSTEM can reinterpret exported UTC text.",
+    "eight_hour_delta_status": "Independently confirmed in diagnostic-attempt2-utc/result.json: uid1/id4 -480 minutes, other accounts0; timestamp-only repair on private copied data restores all7 hashes. Original failed directory untouched.",
+    "preservation": "Attempt2 original FAIL retained. Independent attempt4 fullPASS now exists for same implementation SHA; see final-evidence-review.json."
+  },
+  "dynamic_evidence_review": {
+    "status": "PASS_WITH_DECLARED_SCOPE",
+    "attempt": "attempt4",
+    "report": "final-evidence-review.json",
+    "reviewed_source_sha": "74e6272e5b60ac1604964f7e50909f4a1490086f",
+    "visual_review": "PNG byte/dimensions checked here; separate viewer review covers the56 images; this static/evidence review is not named human review."
+  },
+  "comparison_to_step03": {
+    "archived_runtime_manifest_comparison": {
+      "baseline_manifest": "docs/evidence/2026-11-13-step03/runtime-inputs.sha256",
+      "old_count": 85,
+      "new_count": 103,
+      "new_input_count": 18,
+      "raw_common_hash_differences": [
+        ".mvn/wrapper/maven-wrapper.properties",
+        "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/PageModelAdvice.java",
+        "csucampuscraft-admin/src/main/resources/application.yml",
+        "csucampuscraft-admin/src/main/resources/static/css/app.css",
+        "csucampuscraft-admin/src/main/resources/templates/fragments/fields.html",
+        "csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/CatalogPage.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/CatalogQuery.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/CatalogService.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/CategoryMapper.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/HomeCatalog.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/Product.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/ProductDetail.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/ProductImage.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/ProductImageMapper.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/ProductMapper.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/ProductSort.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/ProductType.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/ThemeNavigation.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/TypeLink.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/web/CatalogController.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/web/HomeController.java",
+        "csucampuscraft-user/src/main/resources/application.yml",
+        "csucampuscraft-user/src/main/resources/static/css/app.css",
+        "csucampuscraft-user/src/main/resources/templates/fragments/catalog.html",
+        "csucampuscraft-user/src/main/resources/templates/fragments/fields.html",
+        "csucampuscraft-user/src/main/resources/templates/fragments/layout.html",
+        "csucampuscraft-user/src/main/resources/templates/home.html",
+        "csucampuscraft-user/src/main/resources/templates/products/detail.html",
+        "csucampuscraft-user/src/main/resources/templates/products/list.html"
+      ],
+      "interpretation": "Historical runtime manifest captures the then-working-tree byte form. A later Git checkout may normalize line endings; raw hash differences across dates do not by themselves establish source changes."
+    },
+    "git_tree_comparison": {
+      "before": "f5372631f24dc265abda7eeeb2711584417abfe9",
+      "after": "74e6272e5b60ac1604964f7e50909f4a1490086f",
+      "read_only_git_dir_command_exit": 0,
+      "changed_paths": [
+        "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthFilter.java",
+        "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthService.java",
+        "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthUser.java",
+        "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/LoginController.java",
+        "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionIdentity.java",
+        "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionSupport.java",
+        "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUser.java",
+        "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUserMapper.java",
+        "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/PageModelAdvice.java",
+        "csucampuscraft-admin/src/main/resources/application.yml",
+        "csucampuscraft-admin/src/main/resources/static/css/app.css",
+        "csucampuscraft-admin/src/main/resources/templates/fragments/fields.html",
+        "csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+        "csucampuscraft-admin/src/main/resources/templates/login.html",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthFilter.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthService.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthUser.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/LoginController.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionIdentity.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionSupport.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUser.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUserMapper.java",
+        "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java",
+        "csucampuscraft-user/src/main/resources/application.yml",
+        "csucampuscraft-user/src/main/resources/static/css/app.css",
+        "csucampuscraft-user/src/main/resources/templates/fragments/fields.html",
+        "csucampuscraft-user/src/main/resources/templates/fragments/layout.html",
+        "csucampuscraft-user/src/main/resources/templates/login.html"
+      ],
+      "sql_assets_poms_wrapper_changed_paths": []
+    },
+    "conclusion": "No SQL/assets/POM/Wrapper source changes between baseline main and current implementation Git trees. Current103 runtime input rehash also matches actual working files."
+  }
+}

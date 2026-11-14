@@ -1,0 +1,81 @@
+{
+  "final_attempt": "attempt4",
+  "tested_code_sha": "74e6272e5b60ac1604964f7e50909f4a1490086f",
+  "attempts": [
+    {
+      "attempt": "attempt1",
+      "overall": "FAIL",
+      "tested_code_sha": "74e6272e5b60ac1604964f7e50909f4a1490086f",
+      "checks": 193,
+      "passed": 192,
+      "http_records": 39,
+      "error": "AssertionError: login-fields-missing-username-8080-safe-error",
+      "cleanup_result": true,
+      "tracked_processes_stopped": true
+    },
+    {
+      "attempt": "attempt2",
+      "overall": "FAIL",
+      "tested_code_sha": "74e6272e5b60ac1604964f7e50909f4a1490086f",
+      "checks": 880,
+      "passed": 879,
+      "http_records": 186,
+      "error": "AssertionError: main-fixtures-restored",
+      "cleanup_result": true,
+      "tracked_processes_stopped": true
+    },
+    {
+      "attempt": "attempt3",
+      "overall": "FAIL",
+      "tested_code_sha": "74e6272e5b60ac1604964f7e50909f4a1490086f",
+      "checks": 917,
+      "passed": 916,
+      "http_records": 192,
+      "error": "AssertionError: browser-real-forms",
+      "cleanup_result": true,
+      "tracked_processes_stopped": true
+    },
+    {
+      "attempt": "attempt4",
+      "overall": "PASS",
+      "tested_code_sha": "74e6272e5b60ac1604964f7e50909f4a1490086f",
+      "checks": 920,
+      "passed": 920,
+      "http_records": 192,
+      "error": null,
+      "cleanup_result": true,
+      "tracked_processes_stopped": true
+    }
+  ],
+  "main_assertions": 920,
+  "http_records": 192,
+  "http_status_distribution": {
+    "200": 75,
+    "404": 24,
+    "302": 43,
+    "403": 11,
+    "400": 10,
+    "303": 29
+  },
+  "browser_checks": 416,
+  "browser_completed": true,
+  "screenshots": 56,
+  "native_session_probes": {
+    "csucampuscraft-user": {
+      "overall": "PASS",
+      "checks": 27,
+      "microsecondValueLogged": false,
+      "sessionValuesLogged": false
+    },
+    "csucampuscraft-admin": {
+      "overall": "PASS",
+      "checks": 27,
+      "microsecondValueLogged": false,
+      "sessionValuesLogged": false
+    }
+  },
+  "runtime_files": 103,
+  "runtime_manifest_sha256": "e4f937e512c9e2f3f526a6645e45966bb371793843fa162de842d8606d377194",
+  "mysql_port": 59448,
+  "human_cross_review": "pending"
+}

@@ -1,0 +1,356 @@
+{
+  "reviewed_at": "2026-11-14T10:14:46.200633+08:00",
+  "reviewer": "Codex cross-end source review unit; not named human group-member review",
+  "scope": "Static inspection of frozen staged user/admin auth candidates, existing return policy/CSRF/error primitives and required docs; no HTTP run or database operation in this review",
+  "baseline_main_sha": "f5372631f24dc265abda7eeeb2711584417abfe9",
+  "conclusion": "PASS_STATIC_REVIEW",
+  "blocking_findings": [],
+  "checks": [
+    {
+      "name": "user-auth-order",
+      "passed": true,
+      "detail": "Identity precedes existing +20 CSRF"
+    },
+    {
+      "name": "user-csrf-order",
+      "passed": true,
+      "detail": "Existing all-external-non-GET CSRF remains unchanged"
+    },
+    {
+      "name": "user-role-policy",
+      "passed": true,
+      "detail": "Login requires enabled account of this end"
+    },
+    {
+      "name": "user-bcrypt",
+      "passed": true,
+      "detail": "No plaintext comparison; absent account also takes BCrypt comparison branch"
+    },
+    {
+      "name": "user-stamp",
+      "passed": true,
+      "detail": "Each existing protected identity rechecked by id; LocalDateTime exact equals"
+    },
+    {
+      "name": "user-session-rotation",
+      "passed": true,
+      "detail": "Exact database stamp retained; login changes this session id"
+    },
+    {
+      "name": "user-confirmation-clear",
+      "passed": true,
+      "detail": "Establish/clear discard confirmation; logout invalidates only request session"
+    },
+    {
+      "name": "user-csrf-retained-on-login",
+      "passed": true,
+      "detail": "Session support does not rotate/remove CSRF token"
+    },
+    {
+      "name": "user-login-retry-cleanup",
+      "passed": true,
+      "detail": "Old request and MVC model identity both cleared on re-login before failure rendering"
+    },
+    {
+      "name": "user-redirects",
+      "passed": true,
+      "detail": "303 to resolved local GET; no model/CSRF query leakage; invalid returnUrl falls back"
+    },
+    {
+      "name": "user-unauth-redirect",
+      "passed": true,
+      "detail": "302 login with encoded returnUrl only from original GET; POST defaults to /"
+    },
+    {
+      "name": "user-filter-error-render",
+      "passed": true,
+      "detail": "MVC error model is explicitly rendered by filter, with real status; Boot fallback on rendering failure"
+    },
+    {
+      "name": "user-cookie-only",
+      "passed": true,
+      "detail": "Cookie names retained; URL rewriting disabled through servlet config"
+    },
+    {
+      "name": "user-password-fragment",
+      "passed": true,
+      "detail": "Password field has no static/dynamic value attribute"
+    },
+    {
+      "name": "user-login-view",
+      "passed": true,
+      "detail": "Stable page marker; same failure region; common CSRF/password fragments and escaped output"
+    },
+    {
+      "name": "user-safe-model",
+      "passed": true,
+      "detail": "Only safe projection in presentation; cart quantity placeholder stays zero"
+    },
+    {
+      "name": "user-hash-private",
+      "passed": true,
+      "detail": "Default identity queries do not select hash; explicit login query only; safe projection has no credential fields"
+    },
+    {
+      "name": "user-route-scope",
+      "passed": true,
+      "detail": "Only login GET/login POST/logout POST implemented"
+    },
+    {
+      "name": "admin-auth-order",
+      "passed": true,
+      "detail": "Identity precedes existing +20 CSRF"
+    },
+    {
+      "name": "admin-csrf-order",
+      "passed": true,
+      "detail": "Existing all-external-non-GET CSRF remains unchanged"
+    },
+    {
+      "name": "admin-role-policy",
+      "passed": true,
+      "detail": "Login requires enabled account of this end"
+    },
+    {
+      "name": "admin-bcrypt",
+      "passed": true,
+      "detail": "No plaintext comparison; absent account also takes BCrypt comparison branch"
+    },
+    {
+      "name": "admin-stamp",
+      "passed": true,
+      "detail": "Each existing protected identity rechecked by id; LocalDateTime exact equals"
+    },
+    {
+      "name": "admin-session-rotation",
+      "passed": true,
+      "detail": "Exact database stamp retained; login changes this session id"
+    },
+    {
+      "name": "admin-confirmation-clear",
+      "passed": true,
+      "detail": "Establish/clear discard confirmation; logout invalidates only request session"
+    },
+    {
+      "name": "admin-csrf-retained-on-login",
+      "passed": true,
+      "detail": "Session support does not rotate/remove CSRF token"
+    },
+    {
+      "name": "admin-login-retry-cleanup",
+      "passed": true,
+      "detail": "Old request and MVC model identity both cleared on re-login before failure rendering"
+    },
+    {
+      "name": "admin-redirects",
+      "passed": true,
+      "detail": "303 to resolved local GET; no model/CSRF query leakage; invalid returnUrl falls back"
+    },
+    {
+      "name": "admin-unauth-redirect",
+      "passed": true,
+      "detail": "302 login with encoded returnUrl only from original GET; POST defaults to /"
+    },
+    {
+      "name": "admin-filter-error-render",
+      "passed": true,
+      "detail": "MVC error model is explicitly rendered by filter, with real status; Boot fallback on rendering failure"
+    },
+    {
+      "name": "admin-cookie-only",
+      "passed": true,
+      "detail": "Cookie names retained; URL rewriting disabled through servlet config"
+    },
+    {
+      "name": "admin-password-fragment",
+      "passed": true,
+      "detail": "Password field has no static/dynamic value attribute"
+    },
+    {
+      "name": "admin-login-view",
+      "passed": true,
+      "detail": "Stable page marker; same failure region; common CSRF/password fragments and escaped output"
+    },
+    {
+      "name": "admin-safe-model",
+      "passed": true,
+      "detail": "Only safe projection in presentation; cart quantity placeholder stays zero"
+    },
+    {
+      "name": "admin-hash-private",
+      "passed": true,
+      "detail": "Default identity queries do not select hash; explicit login query only; safe projection has no credential fields"
+    },
+    {
+      "name": "admin-route-scope",
+      "passed": true,
+      "detail": "Only login GET/login POST/logout POST implemented"
+    }
+  ],
+  "requirements_1_to_8": {
+    "1": "AuthFilter +10; admin deny by default outside login/error/assets; user protected cart/checkout/orders plus POSTlogout; invalid identities302; valid stamp wrong role403; public catalog stays readable",
+    "2": "Both forms username stripped/codepoint1-50; nonempty password used verbatim; BCrypt/no absent-account message distinction; invalid fields400; usable but invalid credentials200same message",
+    "3": "changeSessionId and exact UTC LocalDateTime record; CSRF retained; redirect303 to ReturnUrlPolicy-resolved local GET, no response model exposure",
+    "4": "POSTlogout requires earlier identity+CSRF then invalidates this application session; user303/; admin303/login with fixed RedirectView, policy not relaxed",
+    "5": "Database lookup per protected request; status and exact stamp checked before role. No new business write transactions in scope; future Service user-row-lock recheck remains later work",
+    "6": "Both yml cookie-only; names unchanged",
+    "7": "Unimplemented protected routes stay controller-free: auth intercepts anonymous, valid identity proceeds to normal 404/405 according to mapping/method",
+    "8": "Existing BusinessException/GlobalExceptionHandler/Thymeleaf500 protections reused; no security starter/framework added"
+  },
+  "resolved_findings": [
+    {
+      "id": "REVIEW-04-01",
+      "finding": "Admin static asset predicate initially excluded bare /css,/js,/images while user /** matcher included them",
+      "resolution": "Root requested zero-segment alignment before source publication; admin AuthFilter now explicitly permits each bare prefix and descendants; manifest refreshed"
+    },
+    {
+      "id": "REVIEW-04-02",
+      "finding": "Role403 stable business code differed between candidates",
+      "resolution": "Root requested common AUTH_ROLE_FORBIDDEN before publication; admin code aligned; no prior committed error contract changed"
+    }
+  ],
+  "accepted_implementation_differences": [
+    "SessionIdentity record accessors userId()/authStamp() match both. User adds JavaBean getter aliases; root explicitly accepted no need to add redundant aliases to admin",
+    "User LoginController reads MultiValueMap, admin reads request parameter arrays. Both reject duplicate credential fields400 and fall back for missing/duplicate/unsafe returnUrl without400",
+    "Username input validation uses equivalent codepoint counting: shared InputChecks in admin, explicit same rules in user",
+    "Presentation error variable names and optional logout data marker differ; both real forms target POST/logout and expose stable login page/error markers"
+  ],
+  "nonblocking_limitations": [
+    "This review is static. Actual HTTP statuses, cookie independence, exact timestamp retention, role403 views, URL rewrite removal and zero database writes must be established by the independent real-JAR verification",
+    "The given database timestamp/role recheck cannot revoke a business transaction already committed. Business row-lock recheck, TST39 admin status endpoint and concurrent customer-disable behavior remain later scope",
+    "No full browser accessibility/security audit or production load assessment is claimed; group-member human cross-review is still pending before M3"
+  ],
+  "candidate_input_count": 26,
+  "candidate_inputs": [
+    {
+      "side": "user",
+      "path": "csucampuscraft-user/src/main/resources/application.yml",
+      "sha256": "0f6ce2403f48ac484d0e33da71c993375d64d709fe142e375eb017673c0e9b6b"
+    },
+    {
+      "side": "user",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthFilter.java",
+      "sha256": "70e41dbe31e94752002f4c2ff13b99cdd21c574835319f780a311df3bc6af583"
+    },
+    {
+      "side": "user",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthService.java",
+      "sha256": "ed6fa4f5a69b742bab96c3a8019a3e187bb66a64e5c64344edd97c25a25f06ea"
+    },
+    {
+      "side": "user",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthUser.java",
+      "sha256": "b21095b7fc1d5bf0b23dd37c2f78dcebbbd6a0b50a42ba598d30cc542e253af3"
+    },
+    {
+      "side": "user",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/LoginController.java",
+      "sha256": "e81fa9ebf1e12ecfcacae44f5d4bee4e002cbcff77583552753141c2bb7ff302"
+    },
+    {
+      "side": "user",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionIdentity.java",
+      "sha256": "293b0550236773722def79687ad00a861e0efa455fc52173f0cf34209c43e0de"
+    },
+    {
+      "side": "user",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionSupport.java",
+      "sha256": "af3508317646c95f68874570647a69a23ef1049e1ceac8dc55ebbfd119631719"
+    },
+    {
+      "side": "user",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUser.java",
+      "sha256": "ceda760f7af55a9fc37bd86d3d964e45528573256907e1616b252fe057761ecc"
+    },
+    {
+      "side": "user",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUserMapper.java",
+      "sha256": "a66eba4a38b78276619a8603e2847a9fe7e969e4d5a5bb9a2764a623e8c9dc21"
+    },
+    {
+      "side": "user",
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java",
+      "sha256": "e37fbb1cb64dc1e1eb63244595ffbc89350f914796fa042a92ada87427d2284b"
+    },
+    {
+      "side": "user",
+      "path": "csucampuscraft-user/src/main/resources/templates/login.html",
+      "sha256": "272a0cd49d094db84b2bc2a128e0e5c1c14b7533d7de4d1b208b23348078f70d"
+    },
+    {
+      "side": "user",
+      "path": "csucampuscraft-user/src/main/resources/templates/fragments/fields.html",
+      "sha256": "34c9d16c277fd4616d081c85fec0404b355ceccc5913b6493015e78566d2c9f3"
+    },
+    {
+      "side": "user",
+      "path": "csucampuscraft-user/src/main/resources/templates/fragments/layout.html",
+      "sha256": "82508b467864649c5bbd9b0da40be96650f07c795968425324fe1424f2b4e518"
+    },
+    {
+      "side": "admin",
+      "path": "csucampuscraft-admin/src/main/resources/application.yml",
+      "sha256": "4a5d2e46de39fe08adbfb203f9a524cf75f6a86af17ee4dfce8dc76959ee881c"
+    },
+    {
+      "side": "admin",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthFilter.java",
+      "sha256": "04bd5eca6e1bbe4af1c7bbc0f6822ffe211c32feac505e004f546fa43c330c4a"
+    },
+    {
+      "side": "admin",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthService.java",
+      "sha256": "e038f7fa0f874bc31dbc572e5ca082d12e198cdee0e0e48e56c97c5095617018"
+    },
+    {
+      "side": "admin",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthUser.java",
+      "sha256": "40af83d76133e166ff07b017988c6e8ee3a29701a0a918f3a43c208ed5e34d36"
+    },
+    {
+      "side": "admin",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/LoginController.java",
+      "sha256": "c20c5984b9827c856acf86c650c66c065ca47a6cfb1ee7c67e7b767b1b133887"
+    },
+    {
+      "side": "admin",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionIdentity.java",
+      "sha256": "24a58641f88c49a4824e4806352a74429051bbc6240dc164c24d9b47a7c0eddc"
+    },
+    {
+      "side": "admin",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionSupport.java",
+      "sha256": "7723fea5e90d944fd58378bc8db10ddd1453e766272e4897c269dc075f8e1cdc"
+    },
+    {
+      "side": "admin",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUser.java",
+      "sha256": "d18dfc542e8fc864449a9a693768c3294b8af4427819edf4b1efedefc7741160"
+    },
+    {
+      "side": "admin",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUserMapper.java",
+      "sha256": "823a17d541e73918f8cbbb024cfb7ec78c0e32c7467b3115ce6bce965b9c8c79"
+    },
+    {
+      "side": "admin",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/PageModelAdvice.java",
+      "sha256": "c3a0afa06c273d3e9e85a4a977ef090b4985e6cdfc2dd45e1a3c631685a01a09"
+    },
+    {
+      "side": "admin",
+      "path": "csucampuscraft-admin/src/main/resources/templates/login.html",
+      "sha256": "ed03b3dae657655b13d779be6c5a38edc0d90ae98d64a20947417c74d29ce534"
+    },
+    {
+      "side": "admin",
+      "path": "csucampuscraft-admin/src/main/resources/templates/fragments/fields.html",
+      "sha256": "f0b4e421a6cebe927edf67217add19db9e90825c11862b087b0c16ffc8d7ac56"
+    },
+    {
+      "side": "admin",
+      "path": "csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "sha256": "7032b92671e75cd68d74e83e4d89b280a826f2a75c88969036b14bdba93cb2c2"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户登录 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="user" data-authenticated="false">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <span class="app-label">用户端</span>
+            <span class="nav-placeholder" aria-label="购物车，0 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="0">0</span>
+            </span>
+            <a href="/login">登录</a>
+            
+            
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <section class="panel auth-panel" data-page-id="U04">
+    <header class="page-heading">
+        <p class="eyebrow">CSUCampusCraft 用户端</p>
+        <h1>用户登录</h1>
+        <p class="muted">使用本项目的普通顾客教学账号登录。</p>
+    </header>
+    <p class="field-help">会话过期或退出后，请重新登录。</p>
+    
+    
+    <form method="post" action="/login" data-submit-state>
+        <input type="hidden" name="_csrf" value="[REDACTED]">
+        <input type="hidden" name="returnUrl" value="/">
+        <div class="form-field">
+    <label for="username">用户名</label>
+    <input type="text" id="username" name="username" value=""
+           aria-invalid="false">
+    
+</div>
+        <div class="form-field">
+    <label for="password">密码</label>
+    <input type="password" id="password" name="password" autocomplete="current-password" required
+           aria-invalid="false">
+    
+</div>
+        <button type="submit">登录</button>
+    </form>
+    <p><a href="/">返回首页浏览商品</a></p>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

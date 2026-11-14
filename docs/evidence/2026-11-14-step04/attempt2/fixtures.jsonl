@@ -1,0 +1,6 @@
+{"fixture": "disable-authenticated-account", "target_user_id": 1, "sql": "status='DISABLED',updated_at=GREATEST(CURRENT_TIMESTAMP(6),updated_at+INTERVAL 1 MICROSECOND)", "app_account": "SELECT only", "source_sql_changed": false}
+{"fixture": "role-mismatch-stamp-preserved", "target_user_id": 1, "sql": "role=(CONVERT(0x41444d494e USING utf8mb4) COLLATE utf8mb4_0900_as_ci),updated_at=updated_at", "app_account": "SELECT only", "source_sql_changed": false}
+{"fixture": "one-microsecond-auth-stamp-change", "target_user_id": 1, "sql": "updated_at=updated_at+INTERVAL 1 MICROSECOND", "app_account": "SELECT only", "source_sql_changed": false}
+{"fixture": "disable-authenticated-account", "target_user_id": 4, "sql": "status='DISABLED',updated_at=GREATEST(CURRENT_TIMESTAMP(6),updated_at+INTERVAL 1 MICROSECOND)", "app_account": "SELECT only", "source_sql_changed": false}
+{"fixture": "role-mismatch-stamp-preserved", "target_user_id": 4, "sql": "role=(CONVERT(0x435553544f4d4552 USING utf8mb4) COLLATE utf8mb4_0900_as_ci),updated_at=updated_at", "app_account": "SELECT only", "source_sql_changed": false}
+{"fixture": "one-microsecond-auth-stamp-change", "target_user_id": 4, "sql": "updated_at=updated_at+INTERVAL 1 MICROSECOND", "app_account": "SELECT only", "source_sql_changed": false}

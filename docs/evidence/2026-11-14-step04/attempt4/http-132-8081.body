@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>管理员登录 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="admin" data-authenticated="false">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 管理端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <span class="app-label">管理端</span>
+            
+
+            <a href="/login">登录</a>
+            
+            
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <section class="auth-panel" data-page-id="A01">
+    <header class="page-heading">
+        <p class="eyebrow">CSUCampusCraft 管理端</p>
+        <h1>管理员登录</h1>
+        <p class="muted">请使用已启用的管理员账号登录。</p>
+    </header>
+    <div class="panel">
+        
+        
+        <form method="post" action="/login" data-submit-state>
+            <input type="hidden" name="_csrf" value="[REDACTED]">
+            <input type="hidden" name="returnUrl" value="/products?page=2">
+            <div class="form-field">
+    <label for="username">用户名</label>
+    <input type="text" id="username" name="username" value=""
+           aria-invalid="false">
+    
+</div>
+            <div class="form-field">
+    <label for="password">密码</label>
+    <input type="password" id="password" name="password" autocomplete="current-password"
+           aria-invalid="false">
+    
+</div>
+            <button type="submit">登录管理端</button>
+        </form>
+    </div>
+    <p class="field-help">会话过期或退出后，请重新登录。用户端与管理端的登录状态相互独立。</p>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

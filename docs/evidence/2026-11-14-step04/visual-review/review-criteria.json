@@ -1,0 +1,19 @@
+{
+  "reviewer": "Codex independent visual review; AI assistance, not human group-member cross-review",
+  "initial_tested_code_sha": "74e6272e5b60ac1604964f7e50909f4a1490086f",
+  "scope": [
+    "Real browser screenshots at 1366x768 and 1920x1080",
+    "Login initial state, credentials failure, field errors, 403, authenticated navigation, post-logout state",
+    "No source changes, no additional HTTP requests, no business or identity proof inferred from images"
+  ],
+  "criteria": [
+    "App identity and login page title are clear and distinct",
+    "Visible labels correspond to username and password fields; errors remain legible",
+    "Password fields appear empty on initial/failure pages; no raw password, hash, session or CSRF text visible",
+    "Uniform authentication failure message does not reveal the rejection reason",
+    "403 and 400 page states preserve framing and readable recovery actions",
+    "Authenticated header and logout form are visible; anonymous/post-logout pages do not retain old identity",
+    "No blocking overlap, clipping, horizontal overflow, or invisible primary actions at either desktop viewport"
+  ],
+  "status": "applied to all 56 attempt4 images; see final-step04.json"
+}

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step04-auth\verification\verify_step04.py", line 298, in <module>
+    r=cl.post('/login',form,port);assert_page(r,400,'login-fields-'+label+'-'+str(port))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step04-auth\verification\verify_step04.py", line 123, in assert_page
+    text=r[3].text();check(name+'-safe-error',str(status) in text and 'java.lang.' not in text and 'SELECT ' not in text and 'jdbc:mysql:' not in text)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step04-auth\verification\verify_step04.py", line 49, in check
+    if not ok:raise AssertionError(name)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: login-fields-missing-username-8080-safe-error

@@ -9,13 +9,13 @@ CSUCampusCraft 是《软件开发架构平台》实验一的双端商城项目�
 
 ## 当前阶段
 
-M0 工程初始化与 STEP02 公共页面和安全基础已完成，STEP03 用户端公开目录已实现并通过自动实测，组员交叉复核待补。用户端提供首页、商品筛选/分页、详情和毕业专区；管理端保持初始化主题页，两个应用仍读取同一 MySQL 库及共享图片。登录、购物车、订单和后台业务按后续步骤开发。P0 管理端包括真实控制台、分类维护、商品资料、上下架、增量补货、商品相册、普通顾客查询与启停、关联订单以及查单发货；REST 接口仅作设计预留。上述管理及交易需求已进入文档，尚未实现。
+M0、STEP02 基础设施、STEP03 公开目录及 STEP04 双端身份代码已交付并通过自动实测，STEP03/04 组员交叉复核待补。用户端公开首页、列表、详情和毕业专区；两端提供独立登录/退出及逐请求身份检查。管理端根页需启用 ADMIN 登录，登录后仍显示初始化主题页；STEP12 再替换控制台。购物车、订单、后台分类/商品/补货/相册/顾客/发货和真实控制台按后续步骤开发，REST 仅作预留。
 
 MySQL 8.4（InnoDB）是项目数据库基线。首版范围与交付标准见[项目立项与范围](docs/项目立项与范围.md)。
 
 ## 准备环境
 
-准备 JDK 21、MySQL 8.4 和 `mysql` 客户端。仓库根目录的 Maven Wrapper 固定 Maven 3.9.16，无需先安装 Maven 或把它加入 PATH。Wrapper 只解决 Maven，不包含 JDK，仍需将 `JAVA_HOME` 指向自己的 JDK 21；本机示例为 `C:/Users/Starmetor/.jdks/ms-21.0.12.1`，其他组员按自己的安装路径替换。代码继续按 Java 17 编译。两个工程都使用 Spring Boot 3.5.15、Spring MVC、Thymeleaf 和 MyBatis-Plus 3.5.7。两个 POM 显式加入 spring-security-crypto，由 Spring Boot 管理版本，供后续登录用 BCryptPasswordEncoder(10) 校验种子散列。可在 IntelliJ IDEA 中分别导入两个 `pom.xml`，或在命令行独立构建。在仓库根目录用 `.\mvnw.cmd -v`（PowerShell）或 `./mvnw -v`（bash）确认 Maven 3.9.16 与预期 JDK。
+准备 JDK 21、MySQL 8.4 和 `mysql` 客户端。仓库根目录的 Maven Wrapper 固定 Maven 3.9.16，无需先安装 Maven 或把它加入 PATH。Wrapper 只解决 Maven，不包含 JDK，仍需将 `JAVA_HOME` 指向自己的 JDK 21；本机示例为 `C:/Users/Starmetor/.jdks/ms-21.0.12.1`，其他组员按自己的安装路径替换。代码继续按 Java 17 编译。两个工程都使用 Spring Boot 3.5.15、Spring MVC、Thymeleaf 和 MyBatis-Plus 3.5.7。两个 POM 显式加入 spring-security-crypto，由 Spring Boot 管理版本，供登录模块用 BCryptPasswordEncoder(10) 校验种子散列。可在 IntelliJ IDEA 中分别导入两个 `pom.xml`，或在命令行独立构建。在仓库根目录用 `.\mvnw.cmd -v`（PowerShell）或 `./mvnw -v`（bash）确认 Maven 3.9.16 与预期 JDK。
 
 ## 初始化共享数据库
 
@@ -49,7 +49,7 @@ mysql --host=127.0.0.1 --port=3306 --user=root --password --default-character-se
 | `CSUCAMPUSCRAFT_DB_USER` | `csucampuscraft` |
 | `CSUCAMPUSCRAFT_DB_PASSWORD` | MySQL 应用账号的本机口令，默认空值 |
 
-带数据脚本包含教学账号 `alice`、`bob`、`disabled`、`admin`，教学密码为 `CSUCampusCraft123!`。这些是供后续登录模块使用的商城账号。JDBC 连接使用 MySQL 应用账号的口令。双端 JDBC 会话统一使用 UTC，页面的业务时间按 Asia/Shanghai 展示。
+带数据脚本包含教学账号 `alice`、`bob`、`disabled`、`admin`，教学密码为 `CSUCampusCraft123!`。这些是两端登录模块使用的商城账号。JDBC 连接使用 MySQL 应用账号的口令。双端 JDBC 会话统一使用 UTC，页面的业务时间按 Asia/Shanghai 展示。
 
 ## 构建和启动双端
 
@@ -97,7 +97,7 @@ java -jar csucampuscraft-user/target/csucampuscraft-user-0.0.1-SNAPSHOT.jar
 java -jar csucampuscraft-admin/target/csucampuscraft-admin-0.0.1-SNAPSHOT.jar
 ```
 
-打开上表两个首页。导入演示数据后，用户端和管理端分别显示自己的应用标识，并展示数据库中的「校园地标、学院风采、社团活动、校园运动、毕业纪念」。导入结构版时，两端展示空目录。用户端公开详情已实现，可从首页主题或毕业专区进入列表和详情；登录、购物车和订单属于后续版本。
+打开上表两个首页。用户端可公开浏览；管理端未登录先进入登录页，用本端管理员教学账号登录后显示应用标识及「校园地标、学院风采、社团活动、校园运动、毕业纪念」。仅结构库没有种子账号：用户端公开页展示空态，管理端可打开登录页但没有可用教学账号；日常身份联调应使用演示库。用户端公开详情已实现，可从首页主题或毕业专区进入列表和详情；登录/退出见下方 STEP04 交接，购物车和订单属于后续版本。
 
 两端构建都从 `assets/` 打包共享素材。可以分别打开两端的 `/images/catalog-placeholder.svg`，检查占位图是否加载。MySQL 与双端初始化实测结果见[初始化实测记录](docs/测试与验收用例.md#初始化实测记录)。
 
@@ -123,11 +123,11 @@ java -jar csucampuscraft-admin/target/csucampuscraft-admin-0.0.1-SNAPSHOT.jar
 
 ## M0 完成与开工入口
 
-M0 已完成本地独立目录复现与 INIT-01 至 INIT-05 核对，详细版本、环境和观察见[M0 结项记录](docs/测试与验收用例.md#m0-结项记录)。本次通过范围为工程初始化，登录、购物车、交易及后台业务仍按计划开发。
+M0 已完成本地独立目录复现与 INIT-01 至 INIT-05 核对，详细版本、环境和观察见[M0 结项记录](docs/测试与验收用例.md#m0-结项记录)。M0 结项证明工程初始化；当前目录和身份交付范围见本页「当前阶段」，购物车、交易及后台业务按后续步骤验证。
 
 推送前用 `git status --short` 核对两端源码、SQL、共享素材、七份文档、指导书与归档证据均纳入提交。`docs/evidence/` 下经过检查的 `.log` 属于验收资料；构建 `target/`、本机口令文件和普通运行日志继续忽略。提交后可记录新的完整 SHA，保留本轮「基线 SHA + 工作区快照」证据的原始身份，不把它改写成该新提交已测试。
 
-STEP02 与 STEP03 代码及自动实测已交付，STEP03 组员交叉复核待补；下一步按 STEP04 接双端身份模块。新成员先按 README 在自己的环境复现 STEP01，并阅读下方 STEP02 交接约定；后台及交易写入口须等 STEP04 鉴权通过。
+STEP02、STEP03、STEP04 代码及自动实测已交付，STEP03/04 组员交叉复核待补；下一步按 STEP05 实现后台分类/商品/补货。新成员先按 README 在自己的环境复现 STEP01，并阅读下方 STEP02 交接约定；后台及交易写入口须等 STEP04 鉴权通过。
 
 ## STEP02 工具链与公共基础交接
 
@@ -151,9 +151,9 @@ java -jar csucampuscraft-user/target/csucampuscraft-user-0.0.1-SNAPSHOT.jar --sp
 java -jar csucampuscraft-admin/target/csucampuscraft-admin-0.0.1-SNAPSHOT.jar --spring.profiles.active=verification
 ```
 
-每个终端只执行对应端命令。`GET /__verification/foundation` 展示公共片段，`GET /__verification/errors/{status}` 检查错误页，`POST /__verification/submit` 只增加非持久化计数并返回 303，不操作业务表。运行与脱敏证据见[STEP02 基础设施实测记录](docs/测试与验收用例.md#step02-基础设施实测记录)。
+每个终端只执行对应端命令。STEP04 起管理端验证路径也受 ADMIN 身份保护，先在管理端登录，再手动访问对应探针路径。`GET /__verification/foundation` 展示公共片段，`GET /__verification/errors/{status}` 检查错误页，`POST /__verification/submit` 只增加非持久化计数并返回 303，不操作业务表。运行与脱敏证据见[STEP02 基础设施实测记录](docs/测试与验收用例.md#step02-基础设施实测记录)。
 
-本轮按任务要求对所有非 GET 请求先校验会话级表单 `_csrf`，HEAD/OPTIONS 也包括在内。现有 HLD/BR-01 对未来未登录业务写请求规定先进入登录页，两者的身份/CSRF 顺序留在 STEP04 接入时协调；STEP02 没有实现这些业务入口。返回地址白名单仅约束跳转，不注册未来 GET 路由。
+STEP02 的 CsrfFilter 继续校验所有非 GET 请求；STEP04 已在它之前接入 AuthFilter，受保护请求先检查身份，再进入 CSRF。公开登录 POST 仍需 CSRF，HEAD/OPTIONS 的非 GET 校验口径保持原有实现。返回地址白名单仅约束跳转，不注册未来 GET 路由。
 
 
 ## STEP03 公开目录交接
@@ -162,4 +162,15 @@ java -jar csucampuscraft-admin/target/csucampuscraft-admin-0.0.1-SNAPSHOT.jar --
 
 列表只绑定 categoryId/type/q/sort/page/size。categoryId 只接受一级主题，二级入口已转换为父主题 ID+类型；直接传二级 ID 返回 404。关键词去首尾空白，服务端按 Unicode 码点限 120；LIKE 使用 `ESCAPE '!'` 并显式绑定转义值。排序固定四段白名单；默认 6 条，允许 1–50。过滤改变回第 1 页，分页保留条件，超页仍返回 200 空态。
 
-STEP04 可由两名同学分别实现两端身份，先统一会话结构与公开路径白名单。**身份校验必须排在 CSRF 之前**：受保护请求先用 `@Order(HIGHEST_PRECEDENCE + 10)` 的身份过滤器（早于现有 CsrfFilter 的 `+20`）判断会话/角色/禁用戳，再由现有 CSRF 检查写请求；公开登录 POST 不要求已有身份，但仍校验 CSRF。写 Service 在用户行锁内复验，登录成功只跳白名单 GET，不重放旧 POST。本步未注册登录及其他业务写路由。姓名和组员交叉复核需在 M3 前补齐，不能把 Codex 自动复核记为人类复核。
+STEP04 已实现下述身份过滤顺序，参见后面的正式交接。后续数据库业务写须在操作者用户行锁内复验身份；入口过滤器不替代事务授权。姓名与组员交叉复核仍需在 M3 前补齐。
+
+
+## STEP04 双端身份交接
+
+两端 GET /login 公开，POST /login 校验表单 CSRF、用户名和密码；启用 CUSTOMER 仅能登录用户端，启用 ADMIN 仅能登录管理端。错误凭证/禁用/错端角色使用同一失败提示，密码字段不回显；登录成功更换会话 ID，CSRF 保留，303回合法returnUrl或/。POST /logout先过身份与CSRF，用户端303回/，管理端303回固定/login；两个Cookie独立。
+
+AuthFilter为HIGHEST_PRECEDENCE+10，CsrfFilter仍为+20。公开基础路径为/login、/error、/css/**、/js/**、/images/**；用户GET/和/products及子路径公开，其余预留/cart、/checkout、/orders及子路径与POST/logout受保护，未知普通路径仍404。管理端除白名单外全部受保护。未认证302至/login，已认证但错角色403；不存在的未来受保护GET在认证后404。外部/动作/非法returnUrl回退/，不自动重放POST。
+
+会话只存SessionIdentity(userId,authStamp)，authStamp为数据库updated_at的UTC微秒LocalDateTime原值；每次受保护请求查库以equals比较，不格式化或截断。失效清本端身份与结算确认；公共目录遇旧身份失效按游客继续。模型仅放安全AuthUser；cartQuantity仍为0，STEP07接查询。两端Cookie名保持原值，tracking-modes=cookie，不再把会话ID写入链接。真实通过范围、失败复测及截图见[STEP04实测记录](docs/测试与验收用例.md#step04-实测记录)和[证据目录](docs/evidence/2026-11-14-step04/README.md)。
+
+STEP05可先做受保护的后台分类/商品读取，再做维护和补货。每个数据库写Service事务必须先锁ADMIN操作者行，复核启用状态、角色和会话authStamp，再按BR-01取得业务目标锁。不要把当前初始化主题页当成已完成控制台，也不要将root SQL夹具当成后台启停接口验收；TST-39留STEP12。

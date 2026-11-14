@@ -1,0 +1,1231 @@
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthFilter.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthFilter.java
+new file mode 100644
+index 0000000..1966cb7
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthFilter.java
+@@ -0,0 +1,134 @@
++package org.csucampuscraft.admin.auth;
++
++import jakarta.servlet.FilterChain;
++import jakarta.servlet.ServletException;
++import jakarta.servlet.http.HttpServletRequest;
++import jakarta.servlet.http.HttpServletResponse;
++import java.io.IOException;
++import java.net.URLEncoder;
++import java.nio.charset.StandardCharsets;
++import org.csucampuscraft.admin.foundation.security.ReturnUrlPolicy;
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import org.csucampuscraft.admin.foundation.web.GlobalExceptionHandler;
++import org.springframework.beans.factory.ObjectProvider;
++import org.springframework.core.Ordered;
++import org.springframework.core.annotation.Order;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Component;
++import org.springframework.web.filter.OncePerRequestFilter;
++import org.springframework.web.servlet.ModelAndView;
++import org.springframework.web.servlet.View;
++import org.thymeleaf.spring6.view.ThymeleafViewResolver;
++
++/** Identity checks precede the existing +20 CSRF filter for every protected request. */
++@Component
++@Order(Ordered.HIGHEST_PRECEDENCE + 10)
++public final class AuthFilter extends OncePerRequestFilter {
++    private final AuthService auth;
++    private final SessionSupport sessions;
++    private final ReturnUrlPolicy returns;
++    private final ObjectProvider<GlobalExceptionHandler> errors;
++    private final ObjectProvider<ThymeleafViewResolver> views;
++
++    public AuthFilter(AuthService auth, SessionSupport sessions, ReturnUrlPolicy returns,
++                      ObjectProvider<GlobalExceptionHandler> errors,
++                      ObjectProvider<ThymeleafViewResolver> views) {
++        this.auth = auth;
++        this.sessions = sessions;
++        this.returns = returns;
++        this.errors = errors;
++        this.views = views;
++    }
++
++    @Override
++    protected boolean shouldNotFilterErrorDispatch() { return true; }
++
++    @Override
++    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
++                                    FilterChain chain) throws ServletException, IOException {
++        String path = request.getServletPath();
++        boolean protectedRequest = !publicPath(path);
++        // Error and static resources must stay available even if the database is unavailable.
++        if ("/error".equals(path) || resourcePath(path)) {
++            chain.doFilter(request, response);
++            return;
++        }
++        if (protectedRequest || "/login".equals(path)) {
++            response.setHeader("Cache-Control", "no-store");
++        }
++        try {
++            SessionIdentity identity = sessions.identity(request);
++            StoreUser current = identity == null ? null : auth.findCurrent(identity);
++            if (current == null) {
++                sessions.clear(request);
++                if (protectedRequest) {
++                    redirectToLogin(request, response);
++                    return;
++                }
++            } else if (!AuthService.REQUIRED_ROLE.equals(current.getRole())) {
++                if (protectedRequest) {
++                    throw new BusinessException(HttpStatus.FORBIDDEN, "AUTH_ROLE_FORBIDDEN",
++                            "当前账号无权访问本端页面。");
++                }
++                sessions.clear(request);
++            } else {
++                response.setHeader("Cache-Control", "no-store");
++                sessions.publishCurrentUser(request, current);
++            }
++        } catch (Exception failure) {
++            renderFailure(failure, request, response);
++            return;
++        }
++        // Business Controller errors are handled by MVC; never swallow downstream failures.
++        chain.doFilter(request, response);
++    }
++
++    private boolean publicPath(String path) {
++        return "/login".equals(path) || "/error".equals(path) || resourcePath(path);
++    }
++
++    private boolean resourcePath(String path) {
++        return "/css".equals(path) || path.startsWith("/css/")
++                || "/js".equals(path) || path.startsWith("/js/")
++                || "/images".equals(path) || path.startsWith("/images/");
++    }
++
++    private void redirectToLogin(HttpServletRequest request, HttpServletResponse response) {
++        String candidate = "/";
++        if ("GET".equals(request.getMethod())) {
++            candidate = request.getRequestURI().substring(request.getContextPath().length());
++            String query = request.getQueryString();
++            if (query != null) candidate += "?" + query;
++        }
++        String destination = returns.resolve(candidate, "/");
++        response.setStatus(HttpServletResponse.SC_FOUND);
++        // Cookie-only tracking intentionally avoids encodeRedirectURL / URL session rewriting.
++        response.setHeader("Location", request.getContextPath() + "/login?returnUrl="
++                + URLEncoder.encode(destination, StandardCharsets.UTF_8));
++    }
++
++    private void renderFailure(Exception failure, HttpServletRequest request,
++                               HttpServletResponse response) throws IOException {
++        try {
++            GlobalExceptionHandler handler = errors.getObject();
++            ModelAndView result = failure instanceof BusinessException business
++                    ? handler.business(business, request) : handler.unexpected(failure, request, response);
++            if (response.isCommitted()) return;
++            if (result == null || result.isEmpty() || result.getViewName() == null) {
++                response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
++                return;
++            }
++            View view = views.getObject().resolveViewName(result.getViewName(), request.getLocale());
++            if (view == null) {
++                response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
++                return;
++            }
++            response.setStatus(result.getStatus() == null ? 500 : result.getStatus().value());
++            response.setContentType("text/html;charset=UTF-8");
++            response.setCharacterEncoding(StandardCharsets.UTF_8.name());
++            view.render(result.getModel(), request, response);
++        } catch (Exception renderingFailure) {
++            if (!response.isCommitted()) response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
++        }
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthService.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthService.java
+new file mode 100644
+index 0000000..0f9450d
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthService.java
+@@ -0,0 +1,36 @@
++package org.csucampuscraft.admin.auth;
++
++import java.util.UUID;
++import org.csucampuscraft.admin.foundation.security.PasswordService;
++import org.springframework.stereotype.Service;
++import org.springframework.transaction.annotation.Transactional;
++
++@Service
++@Transactional(readOnly = true)
++public class AuthService {
++    public static final String REQUIRED_ROLE = "ADMIN";
++    private final StoreUserMapper users;
++    private final PasswordService passwords;
++    private final String dummyHash;
++
++    public AuthService(StoreUserMapper users, PasswordService passwords) {
++        this.users = users;
++        this.passwords = passwords;
++        this.dummyHash = passwords.hash(UUID.randomUUID().toString());
++    }
++
++    public StoreUser authenticate(String username, String password) {
++        StoreUser user = users.selectForLoginByUsername(username);
++        boolean matched = passwords.matches(password, user == null ? dummyHash : user.getPasswordHash());
++        return matched && user != null && "ENABLED".equals(user.getStatus())
++                && REQUIRED_ROLE.equals(user.getRole()) && user.getUpdatedAt() != null ? user : null;
++    }
++
++    /** Role is checked separately so a current authenticated identity with a wrong role is 403. */
++    public StoreUser findCurrent(SessionIdentity identity) {
++        if (identity == null) return null;
++        StoreUser user = users.selectById(identity.userId());
++        return user != null && "ENABLED".equals(user.getStatus())
++                && identity.authStamp().equals(user.getUpdatedAt()) ? user : null;
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthUser.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthUser.java
+new file mode 100644
+index 0000000..25a8cb1
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthUser.java
+@@ -0,0 +1,9 @@
++package org.csucampuscraft.admin.auth;
++
++/** The only account projection permitted in a request model. */
++public record AuthUser(Long userId, String username, String displayName, String role) {
++    public Long getUserId() { return userId; }
++    public String getUsername() { return username; }
++    public String getDisplayName() { return displayName; }
++    public String getRole() { return role; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/LoginController.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/LoginController.java
+new file mode 100644
+index 0000000..d106d72
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/LoginController.java
+@@ -0,0 +1,109 @@
++package org.csucampuscraft.admin.auth;
++
++import jakarta.servlet.http.HttpServletRequest;
++import jakarta.servlet.http.HttpServletResponse;
++import java.util.LinkedHashMap;
++import java.util.Map;
++import org.csucampuscraft.admin.foundation.security.ReturnUrlPolicy;
++import org.csucampuscraft.admin.foundation.validation.InputChecks;
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import org.csucampuscraft.admin.foundation.web.PageModelAdvice;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Controller;
++import org.springframework.ui.Model;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.PostMapping;
++import org.springframework.web.servlet.view.RedirectView;
++import org.springframework.web.servlet.ModelAndView;
++
++@Controller
++public final class LoginController {
++    public static final String FAILURE_MESSAGE = "用户名或密码不正确，或账号不可用于本端登录。";
++    private final AuthService auth;
++    private final SessionSupport sessions;
++    private final ReturnUrlPolicy returns;
++    private final PageModelAdvice pageModels;
++
++    public LoginController(AuthService auth, SessionSupport sessions, ReturnUrlPolicy returns,
++                           PageModelAdvice pageModels) {
++        this.auth = auth;
++        this.sessions = sessions;
++        this.returns = returns;
++        this.pageModels = pageModels;
++    }
++
++    @GetMapping("/login")
++    public String loginPage(HttpServletRequest request, Model model) {
++        model.addAttribute("username", "");
++        model.addAttribute("returnUrl", returnUrl(request));
++        model.addAttribute("loginError", null);
++        return "login";
++    }
++
++    @PostMapping("/login")
++    public ModelAndView login(HttpServletRequest request, HttpServletResponse response, Model model) {
++        // CsrfFilter has already accepted this POST. Failed re-login cannot retain an old identity.
++        sessions.clear(request);
++        model.addAllAttributes(pageModels.commonModel(request));
++        Map<String, String> fields = new LinkedHashMap<>();
++        String rawUsername = one(request, "username", fields);
++        String rawPassword = one(request, "password", fields);
++        String username = rawUsername == null ? "" : rawUsername.strip();
++        if (!fields.containsKey("username")) {
++            try {
++                username = InputChecks.requiredText("username", rawUsername, 50);
++            } catch (BusinessException invalid) {
++                fields.putAll(invalid.getFieldErrors());
++            }
++        }
++        if (!fields.containsKey("password") && (rawPassword == null || rawPassword.isEmpty())) {
++            fields.put("password", "请填写密码。");
++        }
++        String target = returnUrl(request);
++        model.addAttribute("username", username);
++        model.addAttribute("returnUrl", target);
++        model.addAttribute("loginError", null);
++        if (!fields.isEmpty()) {
++            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
++            model.addAttribute("fieldErrors", fields);
++            ModelAndView invalid = new ModelAndView("login", model.asMap());
++            invalid.setStatus(HttpStatus.BAD_REQUEST);
++            return invalid;
++        }
++        StoreUser user = auth.authenticate(username, rawPassword);
++        if (user == null) {
++            model.addAttribute("loginError", FAILURE_MESSAGE);
++            return new ModelAndView("login", model.asMap());
++        }
++        sessions.establish(request, user);
++        RedirectView redirect = new RedirectView(target, true);
++        redirect.setStatusCode(HttpStatus.SEE_OTHER);
++        redirect.setExposeModelAttributes(false);
++        return new ModelAndView(redirect);
++    }
++
++    @PostMapping("/logout")
++    public RedirectView logout(HttpServletRequest request) {
++        sessions.invalidate(request);
++        // Fixed internal destination, intentionally not a user-supplied returnUrl.
++        RedirectView redirect = new RedirectView("/login", true);
++        redirect.setStatusCode(HttpStatus.SEE_OTHER);
++        redirect.setExposeModelAttributes(false);
++        return redirect;
++    }
++
++    private String one(HttpServletRequest request, String name, Map<String, String> fields) {
++        String[] values = request.getParameterValues(name);
++        if (values == null) return null;
++        if (values.length != 1) {
++            fields.put(name, "每个字段只能提交一个值。");
++            return null;
++        }
++        return values[0];
++    }
++
++    private String returnUrl(HttpServletRequest request) {
++        String[] values = request.getParameterValues("returnUrl");
++        return returns.resolve(values != null && values.length == 1 ? values[0] : null, "/");
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionIdentity.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionIdentity.java
+new file mode 100644
+index 0000000..dc46878
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionIdentity.java
+@@ -0,0 +1,17 @@
++package org.csucampuscraft.admin.auth;
++
++import java.io.Serializable;
++import java.time.LocalDateTime;
++import java.util.Objects;
++
++/** Exact database UTC timestamp; never stringify, format, or truncate it for authorization. */
++public record SessionIdentity(Long userId, LocalDateTime authStamp) implements Serializable {
++    public SessionIdentity {
++        Objects.requireNonNull(userId);
++        Objects.requireNonNull(authStamp);
++        if (userId <= 0) throw new IllegalArgumentException("Invalid identity");
++    }
++
++    @Override
++    public String toString() { return "SessionIdentity[redacted]"; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionSupport.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionSupport.java
+new file mode 100644
+index 0000000..2ea7e4b
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionSupport.java
+@@ -0,0 +1,69 @@
++package org.csucampuscraft.admin.auth;
++
++import jakarta.servlet.http.HttpServletRequest;
++import jakarta.servlet.http.HttpSession;
++import org.springframework.stereotype.Component;
++
++/** This application only touches its own cookie-backed HttpSession. */
++@Component
++public final class SessionSupport {
++    public static final String IDENTITY_ATTRIBUTE = "CSUCAMPUSCRAFT_AUTH_IDENTITY";
++    public static final String CHECKOUT_CONFIRMATION_ATTRIBUTE = "CSUCAMPUSCRAFT_CHECKOUT_CONFIRMATION";
++    public static final String CURRENT_USER_ATTRIBUTE = "csucampuscraft.currentUser";
++    public static final String AUTH_EXPIRED_ATTRIBUTE = "csucampuscraft.authExpired";
++
++    public SessionIdentity identity(HttpServletRequest request) {
++        HttpSession session = request.getSession(false);
++        if (session == null) return null;
++        try {
++            Object value = session.getAttribute(IDENTITY_ATTRIBUTE);
++            return value instanceof SessionIdentity identity ? identity : null;
++        } catch (IllegalStateException expired) {
++            return null;
++        }
++    }
++
++    public void establish(HttpServletRequest request, StoreUser user) {
++        HttpSession session = request.getSession(true);
++        request.changeSessionId();
++        session.removeAttribute(CHECKOUT_CONFIRMATION_ATTRIBUTE);
++        session.setAttribute(IDENTITY_ATTRIBUTE, new SessionIdentity(user.getId(), user.getUpdatedAt()));
++        publishCurrentUser(request, user);
++    }
++
++    /** Clear identity/confirmation while retaining the existing CSRF token for the next login. */
++    public void clear(HttpServletRequest request) {
++        request.removeAttribute(CURRENT_USER_ATTRIBUTE);
++        HttpSession session = request.getSession(false);
++        if (session == null) return;
++        try {
++            boolean hadIdentity = session.getAttribute(IDENTITY_ATTRIBUTE) != null;
++            session.removeAttribute(IDENTITY_ATTRIBUTE);
++            session.removeAttribute(CHECKOUT_CONFIRMATION_ATTRIBUTE);
++            if (hadIdentity) request.setAttribute(AUTH_EXPIRED_ATTRIBUTE, true);
++        } catch (IllegalStateException expired) {
++            // A concurrently expired session contains no usable identity.
++        }
++    }
++
++    public void invalidate(HttpServletRequest request) {
++        request.removeAttribute(CURRENT_USER_ATTRIBUTE);
++        HttpSession session = request.getSession(false);
++        if (session == null) return;
++        try {
++            session.invalidate();
++        } catch (IllegalStateException expired) {
++            // Logout remains successful if this application session has already expired.
++        }
++    }
++
++    public AuthUser currentUser(HttpServletRequest request) {
++        Object value = request.getAttribute(CURRENT_USER_ATTRIBUTE);
++        return value instanceof AuthUser user ? user : null;
++    }
++
++    public void publishCurrentUser(HttpServletRequest request, StoreUser user) {
++        request.setAttribute(CURRENT_USER_ATTRIBUTE,
++                new AuthUser(user.getId(), user.getUsername(), user.getDisplayName(), user.getRole()));
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUser.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUser.java
+new file mode 100644
+index 0000000..0fd4adb
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUser.java
+@@ -0,0 +1,29 @@
++package org.csucampuscraft.admin.auth;
++
++import com.baomidou.mybatisplus.annotation.IdType;
++import com.baomidou.mybatisplus.annotation.TableField;
++import com.baomidou.mybatisplus.annotation.TableId;
++import com.baomidou.mybatisplus.annotation.TableName;
++import java.time.LocalDateTime;
++
++/** Database-only authentication row. Never place this object in a model or a log. */
++@TableName("store_user")
++public class StoreUser {
++    @TableId(type = IdType.AUTO)
++    private Long id;
++    private String username;
++    @TableField(select = false)
++    private String passwordHash;
++    private String displayName;
++    private String role;
++    private String status;
++    private LocalDateTime updatedAt;
++
++    public Long getId() { return id; }
++    public String getUsername() { return username; }
++    public String getPasswordHash() { return passwordHash; }
++    public String getDisplayName() { return displayName; }
++    public String getRole() { return role; }
++    public String getStatus() { return status; }
++    public LocalDateTime getUpdatedAt() { return updatedAt; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUserMapper.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUserMapper.java
+new file mode 100644
+index 0000000..dbe8137
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUserMapper.java
+@@ -0,0 +1,15 @@
++package org.csucampuscraft.admin.auth;
++
++import com.baomidou.mybatisplus.core.mapper.BaseMapper;
++import org.apache.ibatis.annotations.Mapper;
++import org.apache.ibatis.annotations.Param;
++import org.apache.ibatis.annotations.Select;
++
++@Mapper
++public interface StoreUserMapper extends BaseMapper<StoreUser> {
++    @Select("""
++            SELECT id, username, password_hash, display_name, role, status, updated_at
++            FROM store_user WHERE username = #{username}
++            """)
++    StoreUser selectForLoginByUsername(@Param("username") String username);
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/PageModelAdvice.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/PageModelAdvice.java
+index 4a04764..83d1a6b 100644
+--- a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/PageModelAdvice.java
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/PageModelAdvice.java
+@@ -1,6 +1,8 @@
+ package org.csucampuscraft.admin.foundation.web;
+ 
+ import org.csucampuscraft.admin.foundation.security.CsrfTokenService;
++import org.csucampuscraft.admin.auth.AuthUser;
++import org.csucampuscraft.admin.auth.SessionSupport;
+ import org.csucampuscraft.admin.foundation.view.ImagePaths;
+ import jakarta.servlet.RequestDispatcher;
+ import jakarta.servlet.http.HttpServletRequest;
+@@ -10,12 +12,16 @@ import org.springframework.ui.Model;
+ import org.springframework.web.bind.annotation.ControllerAdvice;
+ import org.springframework.web.bind.annotation.ModelAttribute;
+ 
+-/** Shared presentation values only; authentication and cart queries belong to later steps. */
++/** Safe presentation values from the identity already verified by AuthFilter. */
+ @ControllerAdvice
+ public final class PageModelAdvice {
+     private final CsrfTokenService csrfTokens;
++    private final SessionSupport sessions;
+ 
+-    public PageModelAdvice(CsrfTokenService csrfTokens) { this.csrfTokens = csrfTokens; }
++    public PageModelAdvice(CsrfTokenService csrfTokens, SessionSupport sessions) {
++        this.csrfTokens = csrfTokens;
++        this.sessions = sessions;
++    }
+ 
+     @ModelAttribute
+     public void contribute(Model model, HttpServletRequest request) {
+@@ -28,6 +34,12 @@ public final class PageModelAdvice {
+         values.put("appId", "admin");
+         values.put("siteName", "CSUCampusCraft 管理端");
+         values.put("cartQuantity", 0);
++        AuthUser currentUser = sessions.currentUser(request);
++        values.put("currentUser", currentUser);
++        values.put("authenticated", currentUser != null);
++        if (Boolean.TRUE.equals(request.getAttribute(SessionSupport.AUTH_EXPIRED_ATTRIBUTE))) {
++            values.put("globalMessage", "登录状态已失效，请重新登录。");
++        }
+         values.put("defaultCoverImage", ImagePaths.DEFAULT_COVER);
+         // An invalid write must not create a new session while rendering the rejection.
+         values.put("csrfToken", "GET".equals(request.getMethod())
+diff --git a/csucampuscraft-admin/src/main/resources/application.yml b/csucampuscraft-admin/src/main/resources/application.yml
+index f53f32a..ca6e1a5 100644
+--- a/csucampuscraft-admin/src/main/resources/application.yml
++++ b/csucampuscraft-admin/src/main/resources/application.yml
+@@ -7,6 +7,7 @@ server:
+   port: 8081
+   servlet:
+     session:
++      tracking-modes: cookie
+       cookie:
+         name: CSUCAMPUSCRAFT_ADMIN_SESSION
+ 
+diff --git a/csucampuscraft-admin/src/main/resources/static/css/app.css b/csucampuscraft-admin/src/main/resources/static/css/app.css
+index bd4c3f0..4f6f9be 100644
+--- a/csucampuscraft-admin/src/main/resources/static/css/app.css
++++ b/csucampuscraft-admin/src/main/resources/static/css/app.css
+@@ -222,3 +222,7 @@ tbody tr[aria-disabled="true"] { color: var(--color-muted); background: var(--co
+     .catalog-purchase-disabled { grid-template-columns: 64px 1fr; }
+     .catalog-purchase-disabled > button { grid-column: 1 / -1; }
+ }
++
++/* STEP04: shared login panel; colors, spacing and fields reuse foundation tokens. */
++.auth-panel { max-width: 32rem; margin-inline: auto; }
++.auth-panel > .field-help { margin-top: var(--space-4); }
+diff --git a/csucampuscraft-admin/src/main/resources/templates/fragments/fields.html b/csucampuscraft-admin/src/main/resources/templates/fragments/fields.html
+index 1b9c147..5839be8 100644
+--- a/csucampuscraft-admin/src/main/resources/templates/fragments/fields.html
++++ b/csucampuscraft-admin/src/main/resources/templates/fragments/fields.html
+@@ -18,6 +18,14 @@
+            th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}">
+     <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors.get(name)}">请检查输入。</p>
+ </div>
++<div th:fragment="password(id, name, label, errors)" class="form-field"
++     th:with="hasError=${errors != null and errors.containsKey(name)}">
++    <label th:for="${id}" th:text="${label}">密码</label>
++    <input type="password" th:id="${id}" th:name="${name}" autocomplete="current-password"
++           th:classappend="${hasError ? 'input-error' : ''}"
++           th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}">
++    <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors.get(name)}">请检查密码。</p>
++</div>
+ <input th:fragment="csrf" type="hidden" name="_csrf" th:value="[REDACTED]">
+ </body>
+ </html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html b/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html
+index 4c327b9..897c8ee 100644
+--- a/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html
++++ b/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html
+@@ -7,7 +7,7 @@
+     <link rel="stylesheet" th:href="@{/css/app.css}">
+     <script defer th:src="@{/js/app.js}"></script>
+ </head>
+-<body th:attr="data-csucampuscraft-app=${appId}">
++<body th:attr="data-csucampuscraft-app=${appId},data-authenticated=${authenticated}">
+ <a class="skip-link" href="#main-content">跳到主要内容</a>
+ <header class="site-header">
+     <div class="container site-header-inner">
+@@ -23,6 +23,14 @@
+                 购物车 <span id="cart-quantity" class="quantity-badge"
+                            th:attr="data-cart-quantity=${cartQuantity ?: 0}" th:text="${cartQuantity ?: 0}">0</span>
+             </span>
++
++            <a th:unless="${authenticated}" th:href="@{/login}">登录</a>
++            <span th:if="${authenticated}" class="app-label" data-current-user
++                  th:text="${currentUser.displayName}">当前账号</span>
++            <form th:if="${authenticated}" method="post" th:action="@{/logout}" data-submit-state>
++                <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++                <button type="submit" class="button-secondary">退出</button>
++            </form>
+         </nav>
+     </div>
+ </header>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/login.html b/csucampuscraft-admin/src/main/resources/templates/login.html
+new file mode 100644
+index 0000000..2720642
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/login.html
+@@ -0,0 +1,28 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('管理员登录 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>管理员登录</title></head>
++<body>
++<section th:fragment="mainContent" class="auth-panel" data-page-id="A01">
++    <header class="page-heading">
++        <p class="eyebrow">CSUCampusCraft 管理端</p>
++        <h1>管理员登录</h1>
++        <p class="muted">请使用已启用的管理员账号登录。</p>
++    </header>
++    <div class="panel">
++        <div th:if="${loginError != null}" class="alert alert-danger" role="alert" data-auth-error>
++            <p th:text="${loginError}">登录失败，请检查账号。</p>
++        </div>
++        <th:block th:replace="~{fragments/alerts :: summary(${fieldErrors})}"></th:block>
++        <form method="post" th:action="@{/login}" data-submit-state>
++            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++            <input type="hidden" name="returnUrl" th:value="${returnUrl}">
++            <th:block th:replace="~{fragments/fields :: text('username','username','用户名',${username},${fieldErrors})}"></th:block>
++            <th:block th:replace="~{fragments/fields :: password('password','password','密码',${fieldErrors})}"></th:block>
++            <button type="submit">登录管理端</button>
++        </form>
++    </div>
++    <p class="field-help">会话过期或退出后，请重新登录。用户端与管理端的登录状态相互独立。</p>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthFilter.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthFilter.java
+new file mode 100644
+index 0000000..bf06116
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthFilter.java
+@@ -0,0 +1,147 @@
++package org.csucampuscraft.storefront.auth;
++
++import jakarta.servlet.FilterChain;
++import jakarta.servlet.ServletException;
++import jakarta.servlet.http.HttpServletRequest;
++import jakarta.servlet.http.HttpServletResponse;
++import java.io.IOException;
++import java.net.URLEncoder;
++import java.nio.charset.StandardCharsets;
++import org.csucampuscraft.storefront.foundation.security.ReturnUrlPolicy;
++import org.csucampuscraft.storefront.foundation.web.BusinessException;
++import org.csucampuscraft.storefront.foundation.web.GlobalExceptionHandler;
++import org.springframework.beans.factory.ObjectProvider;
++import org.springframework.core.Ordered;
++import org.springframework.core.annotation.Order;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Component;
++import org.springframework.web.filter.OncePerRequestFilter;
++import org.springframework.web.servlet.ModelAndView;
++import org.springframework.web.servlet.View;
++import org.thymeleaf.spring6.view.ThymeleafViewResolver;
++
++@Component
++@Order(Ordered.HIGHEST_PRECEDENCE + 10)
++public final class AuthFilter extends OncePerRequestFilter {
++    private final AuthService auth;
++    private final SessionSupport sessions;
++    private final ReturnUrlPolicy returns;
++    private final ObjectProvider<GlobalExceptionHandler> errors;
++    private final ObjectProvider<ThymeleafViewResolver> views;
++
++    public AuthFilter(AuthService auth, SessionSupport sessions, ReturnUrlPolicy returns,
++                      ObjectProvider<GlobalExceptionHandler> errors,
++                      ObjectProvider<ThymeleafViewResolver> views) {
++        this.auth = auth;
++        this.sessions = sessions;
++        this.returns = returns;
++        this.errors = errors;
++        this.views = views;
++    }
++
++    @Override
++    protected boolean shouldNotFilterErrorDispatch() { return true; }
++
++    @Override
++    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
++                                    FilterChain chain) throws ServletException, IOException {
++        try {
++            if (!authorize(request, response)) return;
++        } catch (Exception failure) {
++            renderFailure(request, response, failure);
++            return;
++        }
++        // Downstream MVC/CSRF failures keep their own existing mapping.
++        chain.doFilter(request, response);
++    }
++
++    private boolean authorize(HttpServletRequest request, HttpServletResponse response) {
++        String path = request.getServletPath();
++        if (publicInfrastructure(path)) return true;
++        boolean protectedRequest = isProtected(request, path);
++        if (protectedRequest || "/login".equals(path)) response.setHeader("Cache-Control", "no-store");
++        SessionIdentity identity = sessions.identity(request);
++        if (identity == null) {
++            if (protectedRequest) {
++                sessions.clear(request);
++                redirectToLogin(request, response);
++                return false;
++            }
++            return true;
++        }
++        StoreUser user = auth.findCurrent(identity);
++        if (user == null) {
++            sessions.clear(request);
++            if (protectedRequest) {
++                redirectToLogin(request, response);
++                return false;
++            }
++            return true;
++        }
++        if (!AuthService.REQUIRED_ROLE.equals(user.getRole())) {
++            if (protectedRequest) {
++                throw new BusinessException(HttpStatus.FORBIDDEN, "AUTH_ROLE_FORBIDDEN",
++                        "当前账号无权访问此页面。");
++            }
++            sessions.clear(request);
++            return true;
++        }
++        sessions.publishCurrentUser(request, user);
++        response.setHeader("Cache-Control", "no-store");
++        return true;
++    }
++
++    private boolean publicInfrastructure(String path) {
++        // Static assets and error dispatch need no database identity lookup.
++        return "/error".equals(path)
++                || within(path, "/css") || within(path, "/js") || within(path, "/images");
++    }
++
++    private boolean isProtected(HttpServletRequest request, String path) {
++        return within(path, "/cart") || within(path, "/checkout") || within(path, "/orders")
++                || ("POST".equals(request.getMethod()) && "/logout".equals(path));
++    }
++
++    private boolean within(String path, String prefix) {
++        return prefix.equals(path) || path.startsWith(prefix + "/");
++    }
++
++    private void redirectToLogin(HttpServletRequest request, HttpServletResponse response) {
++        // Only the original GET may become a destination; POST is never replayed.
++        String requested = "GET".equals(request.getMethod())
++                ? request.getRequestURI().substring(request.getContextPath().length())
++                    + (request.getQueryString() == null ? "" : "?" + request.getQueryString())
++                : "/";
++        String target = returns.resolve(requested, "/");
++        response.setStatus(HttpServletResponse.SC_FOUND);
++        response.setHeader("Location", request.getContextPath() + "/login?returnUrl="
++                + URLEncoder.encode(target, StandardCharsets.UTF_8));
++    }
++
++    private void renderFailure(HttpServletRequest request, HttpServletResponse response,
++                               Exception failure) throws IOException {
++        try {
++            ModelAndView result = failure instanceof BusinessException business
++                    ? errors.getObject().business(business, request)
++                    : errors.getObject().unexpected(failure, request, response);
++            if (response.isCommitted()) return;
++            if (result == null || result.getViewName() == null) {
++                response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
++                return;
++            }
++            View view = views.getObject().resolveViewName(result.getViewName(), request.getLocale());
++            if (view == null) {
++                response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
++                return;
++            }
++            response.setStatus(result.getStatus() == null
++                    ? HttpServletResponse.SC_INTERNAL_SERVER_ERROR : result.getStatus().value());
++            response.setContentType("text/html;charset=UTF-8");
++            response.setCharacterEncoding(StandardCharsets.UTF_8.name());
++            view.render(result.getModel(), request, response);
++        } catch (Exception renderingFailure) {
++            if (!response.isCommitted()) response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
++        }
++    }
++}
++
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthService.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthService.java
+new file mode 100644
+index 0000000..62c5836
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthService.java
+@@ -0,0 +1,39 @@
++package org.csucampuscraft.storefront.auth;
++
++import java.util.UUID;
++import org.csucampuscraft.storefront.foundation.security.PasswordService;
++import org.springframework.stereotype.Service;
++import org.springframework.transaction.annotation.Transactional;
++
++@Service
++@Transactional(readOnly = true)
++public class AuthService {
++    public static final String REQUIRED_ROLE = "CUSTOMER";
++    private final StoreUserMapper users;
++    private final PasswordService passwords;
++    private final String absentUserHash;
++
++    public AuthService(StoreUserMapper users, PasswordService passwords) {
++        this.users = users;
++        this.passwords = passwords;
++        // Unknown accounts also perform a BCrypt comparison; never expose this value.
++        this.absentUserHash = passwords.hash(UUID.randomUUID().toString());
++    }
++
++    public StoreUser authenticate(String username, String password) {
++        StoreUser user = users.selectForLoginByUsername(username);
++        boolean matched = passwords.matches(password,
++                user == null ? absentUserHash : user.getPasswordHash());
++        return user != null && matched && "ENABLED".equals(user.getStatus())
++                && REQUIRED_ROLE.equals(user.getRole()) && user.getUpdatedAt() != null ? user : null;
++    }
++
++    /** Role follows existence/status/stamp validation in the identity filter. */
++    public StoreUser findCurrent(SessionIdentity identity) {
++        if (identity == null) return null;
++        StoreUser user = users.selectById(identity.userId());
++        return user != null && "ENABLED".equals(user.getStatus())
++                && identity.authStamp().equals(user.getUpdatedAt()) ? user : null;
++    }
++}
++
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthUser.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthUser.java
+new file mode 100644
+index 0000000..1577888
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthUser.java
+@@ -0,0 +1,10 @@
++package org.csucampuscraft.storefront.auth;
++
++/** Explicitly safe presentation projection; no password or authentication stamp. */
++public record AuthUser(Long userId, String username, String displayName, String role) {
++    public Long getUserId() { return userId; }
++    public String getUsername() { return username; }
++    public String getDisplayName() { return displayName; }
++    public String getRole() { return role; }
++}
++
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/LoginController.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/LoginController.java
+new file mode 100644
+index 0000000..c252398
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/LoginController.java
+@@ -0,0 +1,97 @@
++package org.csucampuscraft.storefront.auth;
++
++import jakarta.servlet.http.HttpServletRequest;
++import java.util.LinkedHashMap;
++import java.util.List;
++import java.util.Map;
++import org.csucampuscraft.storefront.foundation.security.ReturnUrlPolicy;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Controller;
++import org.springframework.ui.Model;
++import org.springframework.util.MultiValueMap;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.PostMapping;
++import org.springframework.web.bind.annotation.RequestParam;
++import org.springframework.web.servlet.ModelAndView;
++import org.springframework.web.servlet.view.RedirectView;
++
++@Controller
++public final class LoginController {
++    private static final String FAILED = "用户名或密码不正确，或账号不可用于本端登录。";
++    private final AuthService auth;
++    private final SessionSupport sessions;
++    private final ReturnUrlPolicy returns;
++
++    public LoginController(AuthService auth, SessionSupport sessions, ReturnUrlPolicy returns) {
++        this.auth = auth;
++        this.sessions = sessions;
++        this.returns = returns;
++    }
++
++    @GetMapping("/login")
++    public String login(@RequestParam MultiValueMap<String, String> parameters, Model model) {
++        model.addAttribute("username", "");
++        model.addAttribute("returnUrl", returnUrl(parameters));
++        return "login";
++    }
++
++    @PostMapping("/login")
++    public ModelAndView authenticate(@RequestParam MultiValueMap<String, String> parameters,
++                                     HttpServletRequest request, Model model) {
++        // A failed reauthentication must not leave an old usable identity behind.
++        sessions.clear(request);
++        model.addAttribute("currentUser", null);
++        model.addAttribute("authenticated", false);
++        Map<String, String> fields = new LinkedHashMap<>();
++        String username = single(parameters, "username", fields);
++        username = username == null ? "" : username.strip();
++        int length = username.codePointCount(0, username.length());
++        if (length < 1 || length > 50) fields.put("username", "请输入 1–50 个字符的用户名。");
++        String password = single(parameters, "password", fields);
++        if (password == null || password.isEmpty()) fields.put("password", "请输入密码。");
++        String target = returnUrl(parameters);
++        model.addAttribute("username", username);
++        model.addAttribute("returnUrl", target);
++        if (!fields.isEmpty()) {
++            model.addAttribute("fieldErrors", fields);
++            return new ModelAndView("login", model.asMap(), HttpStatus.BAD_REQUEST);
++        }
++        StoreUser user = auth.authenticate(username, password);
++        if (user == null) {
++            model.addAttribute("authError", FAILED);
++            return new ModelAndView("login", model.asMap());
++        }
++        sessions.establish(request, user);
++        return seeOther(target);
++    }
++
++    @PostMapping("/logout")
++    public ModelAndView logout(HttpServletRequest request) {
++        sessions.invalidate(request);
++        return seeOther("/");
++    }
++
++    private ModelAndView seeOther(String target) {
++        RedirectView view = new RedirectView(target, true);
++        view.setStatusCode(HttpStatus.SEE_OTHER);
++        view.setExposeModelAttributes(false);
++        view.setExpandUriTemplateVariables(false);
++        return new ModelAndView(view);
++    }
++
++    private String single(MultiValueMap<String, String> parameters, String name,
++                          Map<String, String> errors) {
++        List<String> values = parameters.get(name);
++        if (values == null || values.size() != 1) {
++            errors.put(name, "请为此字段填写一个值。");
++            return null;
++        }
++        return values.get(0);
++    }
++
++    private String returnUrl(MultiValueMap<String, String> parameters) {
++        List<String> values = parameters.get("returnUrl");
++        return returns.resolve(values != null && values.size() == 1 ? values.get(0) : null, "/");
++    }
++}
++
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionIdentity.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionIdentity.java
+new file mode 100644
+index 0000000..672feff
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionIdentity.java
+@@ -0,0 +1,18 @@
++package org.csucampuscraft.storefront.auth;
++
++import java.io.Serializable;
++import java.time.LocalDateTime;
++import java.util.Objects;
++
++/** UTC database value retained exactly, including microseconds. */
++public record SessionIdentity(Long userId, LocalDateTime authStamp) implements Serializable {
++    private static final long serialVersionUID = 1L;
++    public SessionIdentity {
++        Objects.requireNonNull(userId);
++        Objects.requireNonNull(authStamp);
++        if (userId < 1) throw new IllegalArgumentException("Invalid identity");
++    }
++    public Long getUserId() { return userId; }
++    public LocalDateTime getAuthStamp() { return authStamp; }
++}
++
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionSupport.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionSupport.java
+new file mode 100644
+index 0000000..2fee490
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionSupport.java
+@@ -0,0 +1,75 @@
++package org.csucampuscraft.storefront.auth;
++
++import jakarta.servlet.http.HttpServletRequest;
++import jakarta.servlet.http.HttpSession;
++import org.springframework.stereotype.Component;
++
++@Component
++public final class SessionSupport {
++    public static final String IDENTITY_ATTRIBUTE = "CSUCAMPUSCRAFT_AUTH_IDENTITY";
++    public static final String CHECKOUT_CONFIRMATION_ATTRIBUTE = "CSUCAMPUSCRAFT_CHECKOUT_CONFIRMATION";
++    public static final String CURRENT_USER_ATTRIBUTE = "csucampuscraft.currentUser";
++    public static final String AUTH_EXPIRED_ATTRIBUTE = "csucampuscraft.authExpired";
++
++    public SessionIdentity identity(HttpServletRequest request) {
++        HttpSession session = request.getSession(false);
++        if (session == null) return null;
++        try {
++            Object value = session.getAttribute(IDENTITY_ATTRIBUTE);
++            if (value instanceof SessionIdentity identity) return identity;
++            if (value != null) clear(request);
++            return null;
++        } catch (IllegalStateException expired) {
++            request.removeAttribute(CURRENT_USER_ATTRIBUTE);
++            return null;
++        }
++    }
++
++    public void establish(HttpServletRequest request, StoreUser user) {
++        HttpSession session = request.getSession(true);
++        synchronized (session) {
++            request.changeSessionId();
++            session.removeAttribute(CHECKOUT_CONFIRMATION_ATTRIBUTE);
++            session.setAttribute(IDENTITY_ATTRIBUTE,
++                    new SessionIdentity(user.getId(), user.getUpdatedAt()));
++        }
++        publishCurrentUser(request, user);
++    }
++
++    /** Clears only identity/confirmation; the existing CSRF token remains valid. */
++    public void clear(HttpServletRequest request) {
++        request.removeAttribute(CURRENT_USER_ATTRIBUTE);
++        request.setAttribute(AUTH_EXPIRED_ATTRIBUTE, Boolean.TRUE);
++        HttpSession session = request.getSession(false);
++        if (session != null) {
++            try {
++                synchronized (session) {
++                    session.removeAttribute(IDENTITY_ATTRIBUTE);
++                    session.removeAttribute(CHECKOUT_CONFIRMATION_ATTRIBUTE);
++                }
++            } catch (IllegalStateException expired) {
++                // An already-ended local session has no identity left to clear.
++            }
++        }
++    }
++
++    public void invalidate(HttpServletRequest request) {
++        request.removeAttribute(CURRENT_USER_ATTRIBUTE);
++        HttpSession session = request.getSession(false);
++        if (session != null) {
++            try { session.invalidate(); }
++            catch (IllegalStateException expired) { /* Already ended. */ }
++        }
++    }
++
++    public AuthUser currentUser(HttpServletRequest request) {
++        Object value = request.getAttribute(CURRENT_USER_ATTRIBUTE);
++        return value instanceof AuthUser user ? user : null;
++    }
++
++    public void publishCurrentUser(HttpServletRequest request, StoreUser user) {
++        request.setAttribute(CURRENT_USER_ATTRIBUTE,
++                new AuthUser(user.getId(), user.getUsername(), user.getDisplayName(), user.getRole()));
++    }
++}
++
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUser.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUser.java
+new file mode 100644
+index 0000000..5a93fb7
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUser.java
+@@ -0,0 +1,30 @@
++package org.csucampuscraft.storefront.auth;
++
++import com.baomidou.mybatisplus.annotation.IdType;
++import com.baomidou.mybatisplus.annotation.TableField;
++import com.baomidou.mybatisplus.annotation.TableId;
++import com.baomidou.mybatisplus.annotation.TableName;
++import java.time.LocalDateTime;
++
++/** Private persistence object; never add it to a model, session, or log. */
++@TableName("store_user")
++public final class StoreUser {
++    @TableId(type = IdType.AUTO)
++    private Long id;
++    private String username;
++    @TableField(select = false)
++    private String passwordHash;
++    private String displayName;
++    private String role;
++    private String status;
++    private LocalDateTime updatedAt;
++
++    public Long getId() { return id; }
++    public String getUsername() { return username; }
++    public String getPasswordHash() { return passwordHash; }
++    public String getDisplayName() { return displayName; }
++    public String getRole() { return role; }
++    public String getStatus() { return status; }
++    public LocalDateTime getUpdatedAt() { return updatedAt; }
++}
++
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUserMapper.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUserMapper.java
+new file mode 100644
+index 0000000..43929ce
+--- /dev/null
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUserMapper.java
+@@ -0,0 +1,17 @@
++package org.csucampuscraft.storefront.auth;
++
++import com.baomidou.mybatisplus.core.mapper.BaseMapper;
++import org.apache.ibatis.annotations.Mapper;
++import org.apache.ibatis.annotations.Param;
++import org.apache.ibatis.annotations.Select;
++
++@Mapper
++public interface StoreUserMapper extends BaseMapper<StoreUser> {
++    @Select("""
++            SELECT id, username, password_hash AS passwordHash,
++                   display_name AS displayName, role, status, updated_at AS updatedAt
++              FROM store_user WHERE username = #{username} LIMIT 1
++            """)
++    StoreUser selectForLoginByUsername(@Param("username") String username);
++}
++
+diff --git a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java
+index 749eaca..188b5b8 100644
+--- a/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java
++++ b/csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java
+@@ -1,5 +1,7 @@
+ package org.csucampuscraft.storefront.foundation.web;
+ 
++import org.csucampuscraft.storefront.auth.AuthUser;
++import org.csucampuscraft.storefront.auth.SessionSupport;
+ import org.csucampuscraft.storefront.foundation.security.CsrfTokenService;
+ import org.csucampuscraft.storefront.foundation.view.ImagePaths;
+ import jakarta.servlet.RequestDispatcher;
+@@ -10,7 +12,7 @@ import org.springframework.ui.Model;
+ import org.springframework.web.bind.annotation.ControllerAdvice;
+ import org.springframework.web.bind.annotation.ModelAttribute;
+ 
+-/** Shared presentation values only; authentication and cart queries belong to later steps. */
++/** Shared presentation values; identity has already been rechecked by AuthFilter. */
+ @ControllerAdvice
+ public final class PageModelAdvice {
+     private final CsrfTokenService csrfTokens;
+@@ -28,6 +30,10 @@ public final class PageModelAdvice {
+         values.put("appId", "user");
+         values.put("siteName", "CSUCampusCraft 用户端");
+         values.put("cartQuantity", 0);
++        Object identity = request.getAttribute(SessionSupport.CURRENT_USER_ATTRIBUTE);
++        AuthUser current = identity instanceof AuthUser user ? user : null;
++        values.put("currentUser", current);
++        values.put("authenticated", current != null);
+         values.put("defaultCoverImage", ImagePaths.DEFAULT_COVER);
+         // An invalid write must not create a new session while rendering the rejection.
+         values.put("csrfToken", "GET".equals(request.getMethod())
+diff --git a/csucampuscraft-user/src/main/resources/application.yml b/csucampuscraft-user/src/main/resources/application.yml
+index 9df7f85..e62836e 100644
+--- a/csucampuscraft-user/src/main/resources/application.yml
++++ b/csucampuscraft-user/src/main/resources/application.yml
+@@ -7,6 +7,7 @@ server:
+   port: 8080
+   servlet:
+     session:
++      tracking-modes: cookie
+       cookie:
+         name: CSUCAMPUSCRAFT_USER_SESSION
+ 
+diff --git a/csucampuscraft-user/src/main/resources/static/css/app.css b/csucampuscraft-user/src/main/resources/static/css/app.css
+index bd4c3f0..4f6f9be 100644
+--- a/csucampuscraft-user/src/main/resources/static/css/app.css
++++ b/csucampuscraft-user/src/main/resources/static/css/app.css
+@@ -222,3 +222,7 @@ tbody tr[aria-disabled="true"] { color: var(--color-muted); background: var(--co
+     .catalog-purchase-disabled { grid-template-columns: 64px 1fr; }
+     .catalog-purchase-disabled > button { grid-column: 1 / -1; }
+ }
++
++/* STEP04: shared login panel; colors, spacing and fields reuse foundation tokens. */
++.auth-panel { max-width: 32rem; margin-inline: auto; }
++.auth-panel > .field-help { margin-top: var(--space-4); }
+diff --git a/csucampuscraft-user/src/main/resources/templates/fragments/fields.html b/csucampuscraft-user/src/main/resources/templates/fragments/fields.html
+index 1b9c147..7ee7cdb 100644
+--- a/csucampuscraft-user/src/main/resources/templates/fragments/fields.html
++++ b/csucampuscraft-user/src/main/resources/templates/fragments/fields.html
+@@ -19,5 +19,13 @@
+     <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors.get(name)}">请检查输入。</p>
+ </div>
+ <input th:fragment="csrf" type="hidden" name="_csrf" th:value="[REDACTED]">
++<div th:fragment="password(id, name, label, errors)" class="form-field"
++     th:with="hasError=${errors != null and errors.containsKey(name)}">
++    <label th:for="${id}" th:text="${label}">密码</label>
++    <input type="password" th:id="${id}" th:name="${name}" autocomplete="current-password" required
++           th:classappend="${hasError ? 'input-error' : ''}"
++           th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}">
++    <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors.get(name)}">请检查输入。</p>
++</div>
+ </body>
+ </html>
+diff --git a/csucampuscraft-user/src/main/resources/templates/fragments/layout.html b/csucampuscraft-user/src/main/resources/templates/fragments/layout.html
+index 4c327b9..bafcbc5 100644
+--- a/csucampuscraft-user/src/main/resources/templates/fragments/layout.html
++++ b/csucampuscraft-user/src/main/resources/templates/fragments/layout.html
+@@ -7,7 +7,7 @@
+     <link rel="stylesheet" th:href="@{/css/app.css}">
+     <script defer th:src="@{/js/app.js}"></script>
+ </head>
+-<body th:attr="data-csucampuscraft-app=${appId}">
++<body th:attr="data-csucampuscraft-app=${appId},data-authenticated=${currentUser != null}">
+ <a class="skip-link" href="#main-content">跳到主要内容</a>
+ <header class="site-header">
+     <div class="container site-header-inner">
+@@ -23,6 +23,13 @@
+                 购物车 <span id="cart-quantity" class="quantity-badge"
+                            th:attr="data-cart-quantity=${cartQuantity ?: 0}" th:text="${cartQuantity ?: 0}">0</span>
+             </span>
++            <a th:if="${currentUser == null}" th:href="@{/login}">登录</a>
++            <span th:if="${currentUser != null}" class="app-label" data-current-user
++                  th:text="${currentUser.displayName}">当前用户</span>
++            <form th:if="${currentUser != null}" method="post" th:action="@{/logout}" data-submit-state data-logout-form>
++                <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++                <button type="submit" class="button-secondary">退出</button>
++            </form>
+         </nav>
+     </div>
+ </header>
+diff --git a/csucampuscraft-user/src/main/resources/templates/login.html b/csucampuscraft-user/src/main/resources/templates/login.html
+new file mode 100644
+index 0000000..3f0e4e6
+--- /dev/null
++++ b/csucampuscraft-user/src/main/resources/templates/login.html
+@@ -0,0 +1,27 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('用户登录 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>用户登录</title></head>
++<body>
++<section th:fragment="mainContent" class="panel auth-panel" data-page-id="U04">
++    <header class="page-heading">
++        <p class="eyebrow">CSUCampusCraft 用户端</p>
++        <h1>用户登录</h1>
++        <p class="muted">使用本项目的普通顾客教学账号登录。</p>
++    </header>
++    <p class="field-help">会话过期或退出后，请重新登录。</p>
++    <div class="alert alert-danger" role="alert" th:if="${authError != null}" data-auth-error>
++        <p th:text="${authError}">登录失败，请检查账号信息。</p>
++    </div>
++    <th:block th:replace="~{fragments/alerts :: summary(${fieldErrors})}"></th:block>
++    <form method="post" th:action="@{/login}" data-submit-state>
++        <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++        <input type="hidden" name="returnUrl" th:value="${returnUrl}">
++        <th:block th:replace="~{fragments/fields :: text('username','username','用户名',${username},${fieldErrors})}"></th:block>
++        <th:block th:replace="~{fragments/fields :: password('password','password','密码',${fieldErrors})}"></th:block>
++        <button type="submit">登录</button>
++    </form>
++    <p><a th:href="@{/}">返回首页浏览商品</a></p>
++</section>
++</body>
++</html>

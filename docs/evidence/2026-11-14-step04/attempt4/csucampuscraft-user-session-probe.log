@@ -1,0 +1,61 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.15)
+
+2026-11-14T10:26:47.088+08:00  INFO 5080 --- [csucampuscraft-user] [           main] AuthSessionProbe                         : Starting AuthSessionProbe using Java 21.0.12.1 with PID 5080 (C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step04-auth\verification\runtime\attempt4\csucampuscraft-user-probe started by Starmetor in C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step04-auth\verification)
+2026-11-14T10:26:47.089+08:00  INFO 5080 --- [csucampuscraft-user] [           main] AuthSessionProbe                         : The following 1 profile is active: "default"
+2026-11-14T10:26:47.906+08:00  INFO 5080 --- [csucampuscraft-user] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 59985 (http)
+2026-11-14T10:26:47.919+08:00  INFO 5080 --- [csucampuscraft-user] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-14T10:26:47.919+08:00  INFO 5080 --- [csucampuscraft-user] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-11-14T10:26:47.961+08:00  INFO 5080 --- [csucampuscraft-user] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-14T10:26:47.961+08:00  INFO 5080 --- [csucampuscraft-user] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 847 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.7 
+2026-11-14T10:26:48.648+08:00  INFO 5080 --- [csucampuscraft-user] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 59985 (http) with context path '/'
+2026-11-14T10:26:48.653+08:00  INFO 5080 --- [csucampuscraft-user] [           main] AuthSessionProbe                         : Started AuthSessionProbe in 1.877 seconds (process running for 2.103)
+2026-11-14T10:26:48.809+08:00  INFO 5080 --- [csucampuscraft-user] [io-59985-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14T10:26:48.809+08:00  INFO 5080 --- [csucampuscraft-user] [io-59985-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-14T10:26:48.810+08:00  INFO 5080 --- [csucampuscraft-user] [io-59985-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-11-14T10:26:49.083+08:00  INFO 5080 --- [csucampuscraft-user] [io-59985-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-14T10:26:49.256+08:00  INFO 5080 --- [csucampuscraft-user] [io-59985-exec-5] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7981affb
+2026-11-14T10:26:49.257+08:00  INFO 5080 --- [csucampuscraft-user] [io-59985-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+{"overall":"PASS","checks":27,"microsecondValueLogged":false,"sessionValuesLogged":false}
+native-manager-present: true
+auth-filter-order: true
+csrf-filter-order: true
+login-form: true
+login-status: true
+session-rotation: true
+csrf-retained: true
+password-not-reflected: true
+identity-server-side: true
+utc-auth-stamp-equals-db-microseconds: true
+nonzero-six-digit-microseconds-preserved: true
+stale-stamp-next-protected-request-302: true
+stale-stamp-identity-cleared: true
+stale-stamp-confirmation-cleared: true
+unknown-account-next-protected-request-302: true
+unknown-account-identity-cleared: true
+unknown-account-confirmation-cleared: true
+bad-csrf-relogin-403: true
+bad-csrf-relogin-preserves-identity: true
+bad-csrf-relogin-preserves-confirmation: true
+valid-csrf-failed-relogin-readable: true
+failed-relogin-password-empty: true
+failed-relogin-identity-cleared: true
+failed-relogin-confirmation-cleared: true
+logout-303: true
+logout-identity-unavailable: true
+logout-confirmation-unavailable: true
+2026-11-14T10:26:49.628+08:00  INFO 5080 --- [csucampuscraft-user] [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-14T10:26:49.631+08:00  INFO 5080 --- [csucampuscraft-user] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-11-14T10:26:49.634+08:00  INFO 5080 --- [csucampuscraft-user] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-11-14T10:26:49.644+08:00  INFO 5080 --- [csucampuscraft-user] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -1,0 +1,792 @@
+{
+  "date": "2026-11-14T10:14:55.717687+08:00",
+  "baseline_git_sha": "f5372631f24dc265abda7eeeb2711584417abfe9",
+  "tested_code_sha": "74e6272e5b60ac1604964f7e50909f4a1490086f",
+  "checks": {
+    "tested-code-head": {
+      "passed": true,
+      "detail": ""
+    },
+    "feature-branch": {
+      "passed": true,
+      "detail": ""
+    },
+    "tested-worktree-clean": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-user": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-admin": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-maven-pin": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-created": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-identity": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-0 [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8080-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "first-no-cookie-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8080-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8080-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8080-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "with-cookie-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8080-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8080-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-static-8080/css/app.css": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-static-8080/js/app.js": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-static-8080/images/catalog-placeholder.svg": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/css-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "public-bare-static-8080/css-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/css-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/css-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/js-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "public-bare-static-8080/js-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/js-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/js-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/images-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "public-bare-static-8080/images-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/images-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/images-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/cart-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/cart-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/cart-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/cart-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/checkout-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/checkout-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/checkout-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/checkout-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-11": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-12": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders/QA-NOT-EXISTS-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders/QA-NOT-EXISTS-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders/QA-NOT-EXISTS-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders/QA-NOT-EXISTS-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-13": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/logout-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/logout-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/logout-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/logout-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-14": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/orders-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/orders-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/orders-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/orders-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-15": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8080-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8080-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8080-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8080-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-16": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "first-no-cookie-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8081-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8081-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-17": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "with-cookie-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8081-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8081-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-18": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-static-8081/css/app.css": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-19": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-static-8081/js/app.js": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-20": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-static-8081/images/catalog-placeholder.svg": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-21": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/css-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "public-bare-static-8081/css-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/css-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/css-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-22": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/js-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "public-bare-static-8081/js-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/js-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/js-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-23": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/images-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "public-bare-static-8081/images-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/images-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/images-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-24": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-25": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/categories-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/categories-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/categories-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/categories-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-26": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/products-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/products-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/products-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/products-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-27": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/orders-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/orders-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/orders-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/orders-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-28": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/customers-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/customers-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/customers-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/customers-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-29": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/logout-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/logout-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/logout-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/logout-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-30": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/orders-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/orders-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/orders-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/orders-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-31": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8081-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8081-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8081-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8081-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-home-public-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "user-home-public-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-home-public-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-list-public-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "user-list-public-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-list-public-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-34": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-home-private-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-home-private-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-home-private-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-home-private-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-35": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-any-unknown-prefix-private-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-any-unknown-prefix-private-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-any-unknown-prefix-private-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-any-unknown-prefix-private-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-36": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-form-8080-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "csrf-form-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-form-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-form-8080-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-form-8080-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-37": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-missing-8080-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "login-csrf-missing-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-missing-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-missing-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-38": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-wrong-8080-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "login-csrf-wrong-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-wrong-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-wrong-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-39": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-missing-username-8080-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "login-fields-missing-username-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-missing-username-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-missing-username-8080-safe-error": {
+      "passed": false,
+      "detail": ""
+    }
+  },
+  "scope": "STEP04 identity/login/logout/CSRF only; later business and TST-39 remain pending",
+  "branch": "feat/step04-auth",
+  "runtime_manifest_sha256": "e4f937e512c9e2f3f526a6645e45966bb371793843fa162de842d8606d377194",
+  "runtime_file_count": 103,
+  "csucampuscraft-user_jar_sha256": "890b94a94d8bf24847e2b5558e19196849b700098de75daacda54575d14eb819",
+  "csucampuscraft-admin_jar_sha256": "bc4f06b67ef2368ee3e4a9e93353be4b8febe55f90c8bef6193d5910189ec73c",
+  "mysql_version": "8.4.9",
+  "mysql_port": 51273,
+  "overall": "FAIL",
+  "error": "AssertionError: login-fields-missing-username-8080-safe-error",
+  "fixture_cleanup_succeeded": true,
+  "tracked_processes_stopped": true,
+  "http_records": 39
+}

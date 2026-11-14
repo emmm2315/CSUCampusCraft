@@ -1,0 +1,3540 @@
+{
+  "date": "2026-11-14T10:15:58.309784+08:00",
+  "baseline_git_sha": "f5372631f24dc265abda7eeeb2711584417abfe9",
+  "tested_code_sha": "74e6272e5b60ac1604964f7e50909f4a1490086f",
+  "checks": {
+    "tested-code-head": {
+      "passed": true,
+      "detail": ""
+    },
+    "feature-branch": {
+      "passed": true,
+      "detail": ""
+    },
+    "tested-worktree-clean": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-user": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-admin": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-maven-pin": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-created": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-identity": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-0 [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8080-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "first-no-cookie-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8080-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8080-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8080-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "with-cookie-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8080-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8080-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-static-8080/css/app.css": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-static-8080/js/app.js": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-static-8080/images/catalog-placeholder.svg": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/css-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "public-bare-static-8080/css-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/css-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/css-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/js-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "public-bare-static-8080/js-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/js-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/js-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/images-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "public-bare-static-8080/images-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/images-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8080/images-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/cart-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/cart-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/cart-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/cart-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/checkout-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/checkout-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/checkout-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/checkout-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-11": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-12": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders/QA-NOT-EXISTS-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders/QA-NOT-EXISTS-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders/QA-NOT-EXISTS-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8080/orders/QA-NOT-EXISTS-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-13": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/logout-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/logout-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/logout-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/logout-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-14": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/orders-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/orders-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/orders-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8080/orders-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-15": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8080-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8080-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8080-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8080-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-16": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "first-no-cookie-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8081-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-no-cookie-8081-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-17": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "with-cookie-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8081-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "with-cookie-8081-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-18": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-static-8081/css/app.css": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-19": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-static-8081/js/app.js": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-20": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-static-8081/images/catalog-placeholder.svg": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-21": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/css-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "public-bare-static-8081/css-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/css-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/css-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-22": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/js-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "public-bare-static-8081/js-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/js-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/js-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-23": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/images-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "public-bare-static-8081/images-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/images-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "public-bare-static-8081/images-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-24": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-25": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/categories-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/categories-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/categories-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/categories-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-26": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/products-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/products-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/products-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/products-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-27": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/orders-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/orders-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/orders-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/orders-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-28": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/customers-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/customers-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/customers-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-get-8081/customers-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-29": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/logout-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/logout-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/logout-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/logout-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-30": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/orders-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/orders-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/orders-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-post-before-csrf-8081/orders-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-31": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8081-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8081-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8081-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-malformed-post-before-csrf-8081-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-home-public-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "user-home-public-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-home-public-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-list-public-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "user-list-public-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-list-public-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-34": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-home-private-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-home-private-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-home-private-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-home-private-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-35": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-any-unknown-prefix-private-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-any-unknown-prefix-private-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-any-unknown-prefix-private-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-any-unknown-prefix-private-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-36": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-form-8080-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "csrf-form-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-form-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-form-8080-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-form-8080-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-37": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-missing-8080-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "login-csrf-missing-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-missing-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-missing-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-38": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-wrong-8080-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "login-csrf-wrong-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-wrong-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-wrong-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-39": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-missing-username-8080-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "login-fields-missing-username-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-missing-username-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-missing-username-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-password-empty-missing-username-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-40": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-missing-password-8080-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "login-fields-missing-password-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-missing-password-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-missing-password-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-password-empty-missing-password-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-41": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-blank-username-8080-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "login-fields-blank-username-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-blank-username-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-blank-username-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-password-empty-blank-username-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-42": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-long-username-8080-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "login-fields-long-username-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-long-username-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-long-username-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-password-empty-long-username-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-43": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-empty-password-8080-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "login-fields-empty-password-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-empty-password-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-empty-password-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-password-empty-empty-password-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-44": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-password-8080-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "failed-wrong-password-8080-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-password-8080-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-password-8080-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-password-8080-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-45": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-wrong-password-8080-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "credentials-wrong-password-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-wrong-password-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-common-error-present-wrong-password-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-logout-wrong-password-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-46": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-wrong-password-8080-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-wrong-password-8080-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-wrong-password-8080-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-47": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-unknown-account-8080-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "failed-unknown-account-8080-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-unknown-account-8080-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-unknown-account-8080-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-unknown-account-8080-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-48": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-unknown-account-8080-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "credentials-unknown-account-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-unknown-account-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-common-error-present-unknown-account-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-logout-unknown-account-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-49": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-unknown-account-8080-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-unknown-account-8080-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-unknown-account-8080-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-50": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-disabled-account-8080-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "failed-disabled-account-8080-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-disabled-account-8080-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-disabled-account-8080-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-disabled-account-8080-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-51": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-disabled-account-8080-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "credentials-disabled-account-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-disabled-account-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-common-error-present-disabled-account-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-logout-disabled-account-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-52": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-disabled-account-8080-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-disabled-account-8080-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-disabled-account-8080-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-53": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-role-8080-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "failed-wrong-role-8080-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-role-8080-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-role-8080-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-role-8080-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-54": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-wrong-role-8080-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "credentials-wrong-role-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-wrong-role-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-common-error-present-wrong-role-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-logout-wrong-role-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-55": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-wrong-role-8080-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-wrong-role-8080-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-wrong-role-8080-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-password-not-trimmed-8080-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "failed-password-not-trimmed-8080-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-password-not-trimmed-8080-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-password-not-trimmed-8080-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-password-not-trimmed-8080-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-57": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-password-not-trimmed-8080-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "credentials-password-not-trimmed-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-password-not-trimmed-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-common-error-present-password-not-trimmed-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-logout-password-not-trimmed-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-58": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-password-not-trimmed-8080-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-password-not-trimmed-8080-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-password-not-trimmed-8080-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-authentication-failures-identical-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-59": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-form-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "csrf-form-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-form-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-form-8081-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-form-8081-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-60": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-missing-8081-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "login-csrf-missing-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-missing-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-missing-8081-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-61": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-wrong-8081-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "login-csrf-wrong-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-wrong-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-csrf-wrong-8081-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-62": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-missing-username-8081-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "login-fields-missing-username-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-missing-username-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-missing-username-8081-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-password-empty-missing-username-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-63": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-missing-password-8081-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "login-fields-missing-password-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-missing-password-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-missing-password-8081-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-password-empty-missing-password-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-64": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-blank-username-8081-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "login-fields-blank-username-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-blank-username-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-blank-username-8081-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-password-empty-blank-username-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-65": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-long-username-8081-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "login-fields-long-username-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-long-username-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-long-username-8081-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-password-empty-long-username-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-66": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-empty-password-8081-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "login-fields-empty-password-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-empty-password-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-empty-password-8081-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-fields-password-empty-empty-password-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-67": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-password-8081-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "failed-wrong-password-8081-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-password-8081-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-password-8081-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-password-8081-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-68": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-wrong-password-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "credentials-wrong-password-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-wrong-password-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-common-error-present-wrong-password-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-logout-wrong-password-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-69": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-wrong-password-8081-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-wrong-password-8081-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-wrong-password-8081-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-70": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-unknown-account-8081-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "failed-unknown-account-8081-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-unknown-account-8081-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-unknown-account-8081-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-unknown-account-8081-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-71": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-unknown-account-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "credentials-unknown-account-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-unknown-account-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-common-error-present-unknown-account-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-logout-unknown-account-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-72": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-unknown-account-8081-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-unknown-account-8081-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-unknown-account-8081-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-73": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-disabled-account-8081-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "failed-disabled-account-8081-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-disabled-account-8081-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-disabled-account-8081-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-disabled-account-8081-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-74": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-disabled-account-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "credentials-disabled-account-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-disabled-account-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-common-error-present-disabled-account-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-logout-disabled-account-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-75": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-disabled-account-8081-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-disabled-account-8081-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-disabled-account-8081-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-76": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-role-8081-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "failed-wrong-role-8081-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-role-8081-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-role-8081-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-wrong-role-8081-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-77": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-wrong-role-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "credentials-wrong-role-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-wrong-role-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-common-error-present-wrong-role-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-logout-wrong-role-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-78": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-wrong-role-8081-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-wrong-role-8081-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-wrong-role-8081-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-79": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-password-not-trimmed-8081-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "failed-password-not-trimmed-8081-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-password-not-trimmed-8081-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-password-not-trimmed-8081-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-password-not-trimmed-8081-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-80": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-password-not-trimmed-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "credentials-password-not-trimmed-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-password-not-trimmed-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-common-error-present-password-not-trimmed-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-logout-password-not-trimmed-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-81": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-password-not-trimmed-8081-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-password-not-trimmed-8081-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "credentials-no-identity-password-not-trimmed-8081-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-authentication-failures-identical-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-authentication-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-82": {
+      "passed": true,
+      "detail": ""
+    },
+    "good-8080-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "good-8080-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "good-8080-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "good-8080-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "good-8080-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-83": {
+      "passed": true,
+      "detail": ""
+    },
+    "good-login-303-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "session-id-changed-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-84": {
+      "passed": true,
+      "detail": ""
+    },
+    "authorized-entry-8080-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "authorized-entry-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authorized-entry-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "authorized-entry-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-85": {
+      "passed": true,
+      "detail": ""
+    },
+    "retained-csrf-8080-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "retained-csrf-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "retained-csrf-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "retained-csrf-8080-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "retained-csrf-8080-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-retained-after-login-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-86": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8080/cart-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "authenticated-unimplemented-8080/cart-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8080/cart-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8080/cart-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-87": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8080/checkout-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "authenticated-unimplemented-8080/checkout-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8080/checkout-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8080/checkout-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-88": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8080/orders-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "authenticated-unimplemented-8080/orders-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8080/orders-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8080/orders-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-89": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8080/orders/QA-NOT-EXISTS-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "authenticated-unimplemented-8080/orders/QA-NOT-EXISTS-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8080/orders/QA-NOT-EXISTS-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8080/orders/QA-NOT-EXISTS-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-90": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-valid-csrf-unimplemented-post-8080-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "authenticated-valid-csrf-unimplemented-post-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-valid-csrf-unimplemented-post-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-valid-csrf-unimplemented-post-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-91": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-missing-csrf-8080-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "authenticated-missing-csrf-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-missing-csrf-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-missing-csrf-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-92": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-failure-does-not-logout-8080-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "csrf-failure-does-not-logout-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-failure-does-not-logout-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-failure-does-not-logout-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-93": {
+      "passed": true,
+      "detail": ""
+    },
+    "relogin-bad-csrf-8080-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "relogin-bad-csrf-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "relogin-bad-csrf-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "relogin-bad-csrf-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-94": {
+      "passed": true,
+      "detail": ""
+    },
+    "bad-csrf-relogin-preserves-identity-8080-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "bad-csrf-relogin-preserves-identity-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "bad-csrf-relogin-preserves-identity-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "bad-csrf-relogin-preserves-identity-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-95": {
+      "passed": true,
+      "detail": ""
+    },
+    "relogin-bad-credentials-8080-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "relogin-bad-credentials-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "relogin-bad-credentials-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-relogin-no-stale-user-nav-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-96": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-relogin-clears-old-identity-8080-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-relogin-clears-old-identity-8080-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-relogin-clears-old-identity-8080-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-97": {
+      "passed": true,
+      "detail": ""
+    },
+    "returnUrl-challenge-8080-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "returnUrl-challenge-8080-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "returnUrl-challenge-8080-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "returnUrl-challenge-8080-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-98": {
+      "passed": true,
+      "detail": ""
+    },
+    "valid-return-8080-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "valid-return-8080-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "valid-return-8080-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "valid-return-8080-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "valid-return-8080-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-99": {
+      "passed": true,
+      "detail": ""
+    },
+    "valid-return-url-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-100": {
+      "passed": true,
+      "detail": ""
+    },
+    "allowed-return-unimplemented-8080-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "allowed-return-unimplemented-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "allowed-return-unimplemented-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "allowed-return-unimplemented-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-101": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "invalid-return-8080-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-102": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-fallback-8080-527": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-103": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-status [2]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "invalid-return-8080-form-html [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-no-secrets [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-password-empty [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-csrf [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-104": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-fallback-8080-535": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-105": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-status [3]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "invalid-return-8080-form-html [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-no-secrets [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-password-empty [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-csrf [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-106": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-fallback-8080-543": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-107": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-status [4]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "invalid-return-8080-form-html [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-no-secrets [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-password-empty [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-csrf [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-108": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-fallback-8080-551": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-109": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-status [5]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "invalid-return-8080-form-html [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-no-secrets [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-password-empty [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-csrf [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-110": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-fallback-8080-559": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-111": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-status [6]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "invalid-return-8080-form-html [6]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-no-secrets [6]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-password-empty [6]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-csrf [6]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-112": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-fallback-8080-567": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-113": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-status [7]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "invalid-return-8080-form-html [7]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-no-secrets [7]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-password-empty [7]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8080-form-csrf [7]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-114": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-fallback-8080-575": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-115": {
+      "passed": true,
+      "detail": ""
+    },
+    "good-8081-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "good-8081-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "good-8081-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "good-8081-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "good-8081-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-116": {
+      "passed": true,
+      "detail": ""
+    },
+    "good-login-303-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "session-id-changed-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-117": {
+      "passed": true,
+      "detail": ""
+    },
+    "authorized-entry-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "authorized-entry-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authorized-entry-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-118": {
+      "passed": true,
+      "detail": ""
+    },
+    "retained-csrf-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "retained-csrf-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "retained-csrf-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "retained-csrf-8081-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "retained-csrf-8081-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-retained-after-login-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-119": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8081/categories-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "authenticated-unimplemented-8081/categories-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8081/categories-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8081/categories-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-120": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8081/products-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "authenticated-unimplemented-8081/products-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8081/products-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8081/products-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-121": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8081/orders-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "authenticated-unimplemented-8081/orders-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8081/orders-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8081/orders-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-122": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8081/customers-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "authenticated-unimplemented-8081/customers-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8081/customers-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-unimplemented-8081/customers-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-123": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-unknown-prefix-after-auth-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "admin-unknown-prefix-after-auth-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-unknown-prefix-after-auth-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-unknown-prefix-after-auth-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-124": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-valid-csrf-unimplemented-post-8081-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "authenticated-valid-csrf-unimplemented-post-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-valid-csrf-unimplemented-post-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-valid-csrf-unimplemented-post-8081-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-125": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-missing-csrf-8081-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "authenticated-missing-csrf-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-missing-csrf-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-missing-csrf-8081-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-126": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-failure-does-not-logout-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "csrf-failure-does-not-logout-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "csrf-failure-does-not-logout-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-127": {
+      "passed": true,
+      "detail": ""
+    },
+    "relogin-bad-csrf-8081-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "relogin-bad-csrf-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "relogin-bad-csrf-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "relogin-bad-csrf-8081-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-128": {
+      "passed": true,
+      "detail": ""
+    },
+    "bad-csrf-relogin-preserves-identity-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "bad-csrf-relogin-preserves-identity-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "bad-csrf-relogin-preserves-identity-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-129": {
+      "passed": true,
+      "detail": ""
+    },
+    "relogin-bad-credentials-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "relogin-bad-credentials-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "relogin-bad-credentials-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-relogin-no-stale-user-nav-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-130": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-relogin-clears-old-identity-8081-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-relogin-clears-old-identity-8081-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "failed-relogin-clears-old-identity-8081-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-131": {
+      "passed": true,
+      "detail": ""
+    },
+    "returnUrl-challenge-8081-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "returnUrl-challenge-8081-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "returnUrl-challenge-8081-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "returnUrl-challenge-8081-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-132": {
+      "passed": true,
+      "detail": ""
+    },
+    "valid-return-8081-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "valid-return-8081-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "valid-return-8081-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "valid-return-8081-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "valid-return-8081-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-133": {
+      "passed": true,
+      "detail": ""
+    },
+    "valid-return-url-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-134": {
+      "passed": true,
+      "detail": ""
+    },
+    "allowed-return-unimplemented-8081-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "allowed-return-unimplemented-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "allowed-return-unimplemented-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "allowed-return-unimplemented-8081-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-135": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "invalid-return-8081-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-136": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-fallback-8081-678": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-137": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-status [2]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "invalid-return-8081-form-html [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-no-secrets [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-password-empty [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-csrf [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-138": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-fallback-8081-686": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-139": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-status [3]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "invalid-return-8081-form-html [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-no-secrets [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-password-empty [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-csrf [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-140": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-fallback-8081-694": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-141": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-status [4]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "invalid-return-8081-form-html [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-no-secrets [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-password-empty [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-csrf [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-142": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-fallback-8081-702": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-143": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-status [5]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "invalid-return-8081-form-html [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-no-secrets [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-password-empty [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-csrf [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-144": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-fallback-8081-710": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-145": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-status [6]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "invalid-return-8081-form-html [6]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-no-secrets [6]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-password-empty [6]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-csrf [6]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-146": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-fallback-8081-718": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-147": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-status [7]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "invalid-return-8081-form-html [7]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-no-secrets [7]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-password-empty [7]": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-8081-form-csrf [7]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-148": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-return-fallback-8081-726": {
+      "passed": true,
+      "detail": ""
+    },
+    "successful-authentication-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-149": {
+      "passed": true,
+      "detail": ""
+    },
+    "both-user-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "both-user-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "both-user-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "both-user-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "both-user-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-150": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-151": {
+      "passed": true,
+      "detail": ""
+    },
+    "both-admin-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "both-admin-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "both-admin-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "both-admin-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "both-admin-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-152": {
+      "passed": true,
+      "detail": ""
+    },
+    "both-cookie-names-independent": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-153": {
+      "passed": true,
+      "detail": ""
+    },
+    "cross-end-csrf-rejected": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-154": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-survives-cross-token-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "admin-survives-cross-token-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-survives-cross-token-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-155": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-logout-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-156": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-logged-out-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-logged-out-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-logged-out-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-157": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-survives-user-logout-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "admin-survives-user-logout-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-survives-user-logout-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-158": {
+      "passed": true,
+      "detail": ""
+    },
+    "both-user-again-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "both-user-again-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "both-user-again-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "both-user-again-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "both-user-again-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-159": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-160": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-logout-fixed-login-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-161": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-logged-out-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-logged-out-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-logged-out-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-162": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-survives-admin-logout-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "user-survives-admin-logout-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-survives-admin-logout-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-survives-admin-logout-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-logout-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-163": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-disable-8080-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "before-disable-8080-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-disable-8080-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-disable-8080-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-disable-8080-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-164": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-165": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-read-clears-8080-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-read-clears-8080-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-read-clears-8080-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-166": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-write-before-csrf-8080-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-write-before-csrf-8080-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-write-before-csrf-8080-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-app-zero-write-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-167": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-old-session-stays-invalid-8080-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-old-session-stays-invalid-8080-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-old-session-stays-invalid-8080-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-168": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-new-login-8080-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "reenabled-new-login-8080-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-new-login-8080-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-new-login-8080-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-new-login-8080-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-169": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-fresh-login-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-170": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-entry-8080-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "reenabled-entry-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-entry-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-entry-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-171": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-role-mismatch-8080-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "authenticated-role-mismatch-8080-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-role-mismatch-8080-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-role-mismatch-8080-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "role-rejection-zero-write-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-172": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-microsecond-8080-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "before-microsecond-8080-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-microsecond-8080-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-microsecond-8080-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-microsecond-8080-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-173": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-174": {
+      "passed": true,
+      "detail": ""
+    },
+    "microsecond-change-rejected-8080-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "microsecond-change-rejected-8080-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "microsecond-change-rejected-8080-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "stamp-rejection-zero-write-8080": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-175": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-disable-8081-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "before-disable-8081-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-disable-8081-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-disable-8081-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-disable-8081-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-176": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-177": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-read-clears-8081-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-read-clears-8081-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-read-clears-8081-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-178": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-write-before-csrf-8081-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-write-before-csrf-8081-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-write-before-csrf-8081-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-app-zero-write-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-179": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-old-session-stays-invalid-8081-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-old-session-stays-invalid-8081-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-old-session-stays-invalid-8081-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-180": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-new-login-8081-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "reenabled-new-login-8081-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-new-login-8081-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-new-login-8081-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-new-login-8081-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-181": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-fresh-login-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-182": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-entry-8081-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "reenabled-entry-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenabled-entry-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-183": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-role-mismatch-8081-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "authenticated-role-mismatch-8081-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-role-mismatch-8081-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "authenticated-role-mismatch-8081-safe-error": {
+      "passed": true,
+      "detail": ""
+    },
+    "role-rejection-zero-write-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-184": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-microsecond-8081-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "before-microsecond-8081-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-microsecond-8081-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-microsecond-8081-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "before-microsecond-8081-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-185": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-186": {
+      "passed": true,
+      "detail": ""
+    },
+    "microsecond-change-rejected-8081-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "microsecond-change-rejected-8081-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "microsecond-change-rejected-8081-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "stamp-rejection-zero-write-8081": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-fixtures-restored": {
+      "passed": false,
+      "detail": ""
+    }
+  },
+  "scope": "STEP04 identity/login/logout/CSRF only; later business and TST-39 remain pending",
+  "branch": "feat/step04-auth",
+  "runtime_manifest_sha256": "e4f937e512c9e2f3f526a6645e45966bb371793843fa162de842d8606d377194",
+  "runtime_file_count": 103,
+  "csucampuscraft-user_jar_sha256": "890b94a94d8bf24847e2b5558e19196849b700098de75daacda54575d14eb819",
+  "csucampuscraft-admin_jar_sha256": "bc4f06b67ef2368ee3e4a9e93353be4b8febe55f90c8bef6193d5910189ec73c",
+  "mysql_version": "8.4.9",
+  "mysql_port": 51463,
+  "overall": "FAIL",
+  "error": "AssertionError: main-fixtures-restored",
+  "fixture_cleanup_succeeded": true,
+  "tracked_processes_stopped": true,
+  "http_records": 186
+}

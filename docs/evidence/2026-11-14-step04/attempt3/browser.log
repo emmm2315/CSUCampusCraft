@@ -1,0 +1,6 @@
+locator.evaluate: Error: strict mode violation: locator('input[name=_csrf]') resolved to 2 elements:
+    1) <input name="_csrf" type="hidden" value="[REDACTED]"/> aka getByRole('navigation', { name: '站点导航' }).locator('input[name="_csrf"]')
+    2) <input name="_csrf" type="hidden" value="[REDACTED]"/> aka locator('#main-content input[name="_csrf"]')
+
+Call log:
+[2m  - waiting for locator('input[name=_csrf]')[22m

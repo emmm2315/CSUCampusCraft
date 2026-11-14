@@ -1,0 +1,3102 @@
+{
+  "overall": "PASS",
+  "completed": true,
+  "checks": [
+    {
+      "name": "user-login-status",
+      "passed": true
+    },
+    {
+      "name": "user-login-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-login-labels",
+      "passed": true
+    },
+    {
+      "name": "user-login-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-login-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-login-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-post-status",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-labels",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-message",
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields-status",
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields-labels",
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-fields-400-post-status",
+      "passed": true
+    },
+    {
+      "name": "user-fields-400-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-fields-400-labels",
+      "passed": true
+    },
+    {
+      "name": "user-fields-400-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-fields-400-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-fields-400-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-fields-400-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name-status",
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name-labels",
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username-post-status",
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username-labels",
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-script-not-executed",
+      "passed": true
+    },
+    {
+      "name": "user-before-correct-status",
+      "passed": true
+    },
+    {
+      "name": "user-before-correct-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-before-correct-labels",
+      "passed": true
+    },
+    {
+      "name": "user-before-correct-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-before-correct-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-before-correct-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-before-correct-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-post-status",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-labels",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-session-id-rotated",
+      "passed": true
+    },
+    {
+      "name": "user-login-returns-home",
+      "passed": true
+    },
+    {
+      "name": "user-logout-control-present",
+      "passed": true
+    },
+    {
+      "name": "admin-login-status",
+      "passed": true
+    },
+    {
+      "name": "admin-login-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-login-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-login-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-login-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-login-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password-post-status",
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields-status",
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400-post-status",
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct-status",
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in-post-status",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-session-id-rotated",
+      "passed": true
+    },
+    {
+      "name": "two-cookie-names-in-same-browser",
+      "passed": true
+    },
+    {
+      "name": "admin-logout-control-present",
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404-status",
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404-status",
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404-labels",
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-before-logout-status",
+      "passed": true
+    },
+    {
+      "name": "user-before-logout-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-before-logout-labels",
+      "passed": true
+    },
+    {
+      "name": "user-before-logout-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-before-logout-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-before-logout-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-before-logout-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-real-logout-303",
+      "passed": true
+    },
+    {
+      "name": "user-logged-out-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-logged-out-labels",
+      "passed": true
+    },
+    {
+      "name": "user-logged-out-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-logged-out-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-logged-out-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-logged-out-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-no-logout-after-exit",
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout-status",
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-still-logged-in",
+      "passed": true
+    },
+    {
+      "name": "user-login-again-status",
+      "passed": true
+    },
+    {
+      "name": "user-login-again-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-login-again-labels",
+      "passed": true
+    },
+    {
+      "name": "user-login-again-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-login-again-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-login-again-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-login-again-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again-post-status",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again-labels",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout-status",
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-real-logout-303",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-out-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-out-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-out-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-out-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-out-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-out-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-logout-returns-login",
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout-status",
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout-labels",
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-still-logged-in",
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection-status",
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection-labels",
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403-post-status",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403-labels",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection-status",
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403-post-status",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-login-status",
+      "passed": true
+    },
+    {
+      "name": "user-login-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-login-labels",
+      "passed": true
+    },
+    {
+      "name": "user-login-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-login-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-login-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-post-status",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-labels",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password-message",
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields-status",
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields-labels",
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-fields-400-post-status",
+      "passed": true
+    },
+    {
+      "name": "user-fields-400-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-fields-400-labels",
+      "passed": true
+    },
+    {
+      "name": "user-fields-400-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-fields-400-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-fields-400-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-fields-400-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name-status",
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name-labels",
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username-post-status",
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username-labels",
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-script-not-executed",
+      "passed": true
+    },
+    {
+      "name": "user-before-correct-status",
+      "passed": true
+    },
+    {
+      "name": "user-before-correct-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-before-correct-labels",
+      "passed": true
+    },
+    {
+      "name": "user-before-correct-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-before-correct-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-before-correct-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-before-correct-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-post-status",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-labels",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-session-id-rotated",
+      "passed": true
+    },
+    {
+      "name": "user-login-returns-home",
+      "passed": true
+    },
+    {
+      "name": "user-logout-control-present",
+      "passed": true
+    },
+    {
+      "name": "admin-login-status",
+      "passed": true
+    },
+    {
+      "name": "admin-login-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-login-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-login-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-login-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-login-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password-post-status",
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields-status",
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400-post-status",
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct-status",
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in-post-status",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-session-id-rotated",
+      "passed": true
+    },
+    {
+      "name": "two-cookie-names-in-same-browser",
+      "passed": true
+    },
+    {
+      "name": "admin-logout-control-present",
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404-status",
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404-status",
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404-labels",
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-before-logout-status",
+      "passed": true
+    },
+    {
+      "name": "user-before-logout-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-before-logout-labels",
+      "passed": true
+    },
+    {
+      "name": "user-before-logout-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-before-logout-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-before-logout-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-before-logout-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-real-logout-303",
+      "passed": true
+    },
+    {
+      "name": "user-logged-out-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-logged-out-labels",
+      "passed": true
+    },
+    {
+      "name": "user-logged-out-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-logged-out-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-logged-out-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-logged-out-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-no-logout-after-exit",
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout-status",
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-still-logged-in",
+      "passed": true
+    },
+    {
+      "name": "user-login-again-status",
+      "passed": true
+    },
+    {
+      "name": "user-login-again-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-login-again-labels",
+      "passed": true
+    },
+    {
+      "name": "user-login-again-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-login-again-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-login-again-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-login-again-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again-post-status",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again-labels",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout-status",
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-real-logout-303",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-out-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-out-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-out-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-out-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-out-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-logged-out-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-logout-returns-login",
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout-status",
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout-labels",
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-still-logged-in",
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection-status",
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection-labels",
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403-post-status",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403-labels",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection-status",
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection-escaped-script",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403-post-status",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403-labels",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403-password-not-retained",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403-csrf-forms",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403-no-url-session",
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403-escaped-script",
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "user-login",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "user-login-1366.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "user-wrong-password-1366.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": true,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "user-before-invalid-fields-1366.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-fields-400",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 400,
+      "screenshot": "user-fields-400-1366.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 1,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "user-before-script-name-1366.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "user-escaped-username-1366.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": true,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-before-correct",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "user-before-correct-1366.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-logged-in",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 303,
+      "screenshot": "user-logged-in-1366.png",
+      "pageId": "U01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        },
+        {
+          "method": "get",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-login",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "admin-login-1366.png",
+      "pageId": "A01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "admin-wrong-password-1366.png",
+      "pageId": "A01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": true,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "admin-before-invalid-fields-1366.png",
+      "pageId": "A01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 400,
+      "screenshot": "admin-fields-400-1366.png",
+      "pageId": "A01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 1,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "admin-before-correct-1366.png",
+      "pageId": "A01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 303,
+      "screenshot": "admin-logged-in-1366.png",
+      "pageId": null,
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 404,
+      "screenshot": "admin-unimplemented-404-1366.png",
+      "pageId": null,
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 404,
+      "screenshot": "user-unimplemented-404-1366.png",
+      "pageId": null,
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-before-logout",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "user-before-logout-1366.png",
+      "pageId": "U01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        },
+        {
+          "method": "get",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-logged-out",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 303,
+      "screenshot": "user-logged-out-1366.png",
+      "pageId": "U01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "get",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "admin-survives-user-logout-1366.png",
+      "pageId": null,
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-login-again",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "user-login-again-1366.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 303,
+      "screenshot": "user-logged-in-again-1366.png",
+      "pageId": "U01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        },
+        {
+          "method": "get",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "admin-before-logout-1366.png",
+      "pageId": null,
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-logged-out",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 303,
+      "screenshot": "admin-logged-out-1366.png",
+      "pageId": "A01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "user-survives-admin-logout-1366.png",
+      "pageId": "U01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        },
+        {
+          "method": "get",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "user-before-csrf-rejection-1366.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        },
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 403,
+      "screenshot": "user-login-csrf-403-1366.png",
+      "pageId": null,
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 200,
+      "screenshot": "admin-before-csrf-rejection-1366.png",
+      "pageId": "A01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403",
+      "width": 1366,
+      "viewportHeight": 768,
+      "status": 403,
+      "screenshot": "admin-login-csrf-403-1366.png",
+      "pageId": null,
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-login",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "user-login-1920.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-wrong-password",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "user-wrong-password-1920.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": true,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-before-invalid-fields",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "user-before-invalid-fields-1920.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-fields-400",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 400,
+      "screenshot": "user-fields-400-1920.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 1,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-before-script-name",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "user-before-script-name-1920.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-escaped-username",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "user-escaped-username-1920.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": true,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-before-correct",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "user-before-correct-1920.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-logged-in",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 303,
+      "screenshot": "user-logged-in-1920.png",
+      "pageId": "U01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        },
+        {
+          "method": "get",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-login",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "admin-login-1920.png",
+      "pageId": "A01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-wrong-password",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "admin-wrong-password-1920.png",
+      "pageId": "A01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": true,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-before-invalid-fields",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "admin-before-invalid-fields-1920.png",
+      "pageId": "A01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-fields-400",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 400,
+      "screenshot": "admin-fields-400-1920.png",
+      "pageId": "A01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 1,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-before-correct",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "admin-before-correct-1920.png",
+      "pageId": "A01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-logged-in",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 303,
+      "screenshot": "admin-logged-in-1920.png",
+      "pageId": null,
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-unimplemented-404",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 404,
+      "screenshot": "admin-unimplemented-404-1920.png",
+      "pageId": null,
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-unimplemented-404",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 404,
+      "screenshot": "user-unimplemented-404-1920.png",
+      "pageId": null,
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-before-logout",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "user-before-logout-1920.png",
+      "pageId": "U01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        },
+        {
+          "method": "get",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-logged-out",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 303,
+      "screenshot": "user-logged-out-1920.png",
+      "pageId": "U01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "get",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-survives-user-logout",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "admin-survives-user-logout-1920.png",
+      "pageId": null,
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-login-again",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "user-login-again-1920.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-logged-in-again",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 303,
+      "screenshot": "user-logged-in-again-1920.png",
+      "pageId": "U01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        },
+        {
+          "method": "get",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-before-logout",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "admin-before-logout-1920.png",
+      "pageId": null,
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-logged-out",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 303,
+      "screenshot": "admin-logged-out-1920.png",
+      "pageId": "A01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-survives-admin-logout",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "user-survives-admin-logout-1920.png",
+      "pageId": "U01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        },
+        {
+          "method": "get",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-before-csrf-rejection",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "user-before-csrf-rejection-1920.png",
+      "pageId": "U04",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        },
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "user-login-csrf-403",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 403,
+      "screenshot": "user-login-csrf-403-1920.png",
+      "pageId": null,
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": true,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-before-csrf-rejection",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 200,
+      "screenshot": "admin-before-csrf-rejection-1920.png",
+      "pageId": "A01",
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [
+        {
+          "method": "post",
+          "hasCsrf": true
+        }
+      ],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    },
+    {
+      "name": "admin-login-csrf-403",
+      "width": 1920,
+      "viewportHeight": 1080,
+      "status": 403,
+      "screenshot": "admin-login-csrf-403-1920.png",
+      "pageId": null,
+      "overflowing": false,
+      "labelsLinked": true,
+      "passwordEmpty": true,
+      "passwordType": true,
+      "hasLogout": false,
+      "forms": [],
+      "sessionUrlRewrite": false,
+      "inlineScripts": 0,
+      "fieldErrors": 0,
+      "authError": false,
+      "allImagesLoaded": true,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "reviewer": "Codex AI-assisted image review; not human group-member review",
+  "tested_code_sha": "74e6272e5b60ac1604964f7e50909f4a1490086f",
+  "attempt": "attempt3",
+  "attempt_overall": "FAIL",
+  "review_scope": "Only six explicitly listed images from a failed browser attempt. Not complete STEP04 acceptance.",
+  "reviewed_count": 6,
+  "available_count": 25,
+  "subset_visual_findings": "No blocking visual finding in the six opened images",
+  "final_visual_verdict": "PENDING fresh complete attempt",
+  "images": [
+    {
+      "evidence_relative_path": "attempt3/browser/user-login-1366.png",
+      "source_absolute_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step04-auth\\verification\\evidence\\attempt3\\browser\\user-login-1366.png",
+      "sha256": "526a8503450bcd541021762f46002ef4e0cf05cadb174f80f4157cc4cf0b42cd",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "visually_opened_with": "view_image",
+      "observation": "用户端初态：标题/应用标识清楚；用户名与密码均空；登录与返回首页可见；无明显遮挡。",
+      "blocking_findings": []
+    },
+    {
+      "evidence_relative_path": "attempt3/browser/user-fields-400-1366.png",
+      "source_absolute_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step04-auth\\verification\\evidence\\attempt3\\browser\\user-fields-400-1366.png",
+      "sha256": "816d1158dd4eaa5c8732e7a6de153f832641bcab918e5c84a100ca9f8102ca6f",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions": {
+        "width": 1366,
+        "height": 819
+      },
+      "visually_opened_with": "view_image",
+      "observation": "字段400：摘要和用户名行内错误可读、位置对应；密码空；登录按钮可见。全页截图高于视口，属于正常纵向滚动。",
+      "blocking_findings": []
+    },
+    {
+      "evidence_relative_path": "attempt3/browser/user-wrong-password-1366.png",
+      "source_absolute_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step04-auth\\verification\\evidence\\attempt3\\browser\\user-wrong-password-1366.png",
+      "sha256": "ed285485a56cef414fb5510c3ccb26ab0c09804a87098cd71fbe89d0ac9ea99e",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "visually_opened_with": "view_image",
+      "observation": "凭证失败：统一文案，用户名alice回显，密码空；无旧用户/退出入口，无明显溢出。",
+      "blocking_findings": []
+    },
+    {
+      "evidence_relative_path": "attempt3/browser/admin-login-1366.png",
+      "source_absolute_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step04-auth\\verification\\evidence\\attempt3\\browser\\admin-login-1366.png",
+      "sha256": "843de3a4198a67aa521101ef9a095b0e18ba2abde53eb617cf01e7be58157e5e",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "visually_opened_with": "view_image",
+      "observation": "管理端初态：管理员登录说明明确；字段空，登录按钮可见；本端身份与用户端区分清楚。",
+      "blocking_findings": []
+    },
+    {
+      "evidence_relative_path": "attempt3/browser/admin-fields-400-1366.png",
+      "source_absolute_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step04-auth\\verification\\evidence\\attempt3\\browser\\admin-fields-400-1366.png",
+      "sha256": "1de7a77b3cd25b385f2a3ca39d9b94c062a6fccec520907c9dcc6802f410ff23",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions": {
+        "width": 1366,
+        "height": 809
+      },
+      "visually_opened_with": "view_image",
+      "observation": "管理端字段400：密码摘要和行内提示可读；username=admin保留；密码空，按钮可见；正常纵向滚动。",
+      "blocking_findings": []
+    },
+    {
+      "evidence_relative_path": "attempt3/browser/admin-logged-out-1366.png",
+      "source_absolute_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step04-auth\\verification\\evidence\\attempt3\\browser\\admin-logged-out-1366.png",
+      "sha256": "843de3a4198a67aa521101ef9a095b0e18ba2abde53eb617cf01e7be58157e5e",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "visually_opened_with": "view_image",
+      "observation": "管理端退出后：回登录页，字段空，页头显示登录入口而非旧身份/退出控件。",
+      "blocking_findings": []
+    }
+  ]
+}
