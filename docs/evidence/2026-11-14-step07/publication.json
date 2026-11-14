@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-14T15:30:47.196164+08:00",
+  "purpose": "Associate the original worktree test snapshot with functional commits; not a new business-test run.",
+  "branch": "feat/step07-cart",
+  "code_commit": "ceb4059717d59020b999d1479a7ef5f647a89e14",
+  "evidence_commit": "cdfa8db554b4c1be6cf370d10d9afce1ca31a902",
+  "commits": [
+    {
+      "sha": "672be4e201d1e62acc048f561e57e586f6d65da5",
+      "subject": "feat(STEP07): REQ-05 BR-01/03/04/11 持久购物车与事务授权"
+    },
+    {
+      "sha": "af9904fe55d8f5af013b3a6e36a98d98f2796cb4",
+      "subject": "feat(STEP07): REQ-05 BR-04/12 接入购物车页面与加购改删"
+    },
+    {
+      "sha": "ceb4059717d59020b999d1479a7ef5f647a89e14",
+      "subject": "feat(STEP07): REQ-05 BR-04 全车数量导航徽标"
+    },
+    {
+      "sha": "cdfa8db554b4c1be6cf370d10d9afce1ca31a902",
+      "subject": "test(STEP07): 归档购物车HTTP事务并发与三视口验收证据"
+    }
+  ],
+  "original_test_baseline": "a1d4f3523f557af63fc77ea883986c099edcd93e",
+  "original_test_identity_preserved": true,
+  "runtime_input_count": 137,
+  "runtime_input_digest": "10c0e25b002aa31a37353ab375974dfd5e837dcc274e0f1513d6865b5474d7e9",
+  "runtime_disk_hashes_match_test_snapshot": true,
+  "git_filtered_blobs_match_code_commit": true,
+  "runtime_changed_paths": [],
+  "committed_content_mismatch_paths": [],
+  "both_jars_match_test_snapshot": true,
+  "evidence_index_metadata_update": {
+    "path": "README.md",
+    "previous_sha256": "387d2c2037d2725f8afda7a6426ea775a734655ce3eff5d918bba40ebb2b99a9",
+    "current_sha256": "6cbaec9951e404cdb065a0d8aec0cab8660d83cf284c3147f8649dd53b0a504b",
+    "reason": "Clarify historical pre-commit status and link the later publication record."
+  },
+  "human_review": "pending",
+  "main_merge": "not performed"
+}

@@ -1,0 +1,87 @@
+{
+  "overall": "PASS",
+  "date": "2026-11-14T15:33:22.747945+08:00",
+  "method": "Independent read-only Git/blob and filesystem comparison; no business tests, database access, staging, commits, or pushes.",
+  "code_commit": "ceb4059717d59020b999d1479a7ef5f647a89e14",
+  "evidence_commit": "cdfa8db554b4c1be6cf370d10d9afce1ca31a902",
+  "original_archive_files": 94,
+  "unchanged_original_files": 93,
+  "changed_original_paths": [
+    "README.md"
+  ],
+  "new_paths_before_this_audit": [
+    "publication.json"
+  ],
+  "assertions": {
+    "original_archive_count_94": true,
+    "93_original_non_index_files_unchanged": true,
+    "only_publication_json_added_before_this_audit": true,
+    "index_old_sha_matches_publication": true,
+    "index_new_sha_matches_publication": true,
+    "publication_code_and_evidence_commit_ids_correct": true,
+    "runtime_137_disk_files_match_test_snapshot": true,
+    "all_137_filtered_git_blobs_match_code_commit": true,
+    "runtime_manifest_digest_matches": true,
+    "both_jars_unchanged": true,
+    "test_baseline_preserved": true,
+    "four_commit_messages_valid_utf8_and_match_publication": true,
+    "new_metadata_has_no_detected_sensitive_values": true,
+    "prior_audit_scan_cleanup_pass": true,
+    "gitattributes_matches_evidence_commit": true,
+    "branch_matches_publication": true
+  },
+  "runtime_input_count": 137,
+  "runtime_input_digest": "10c0e25b002aa31a37353ab375974dfd5e837dcc274e0f1513d6865b5474d7e9",
+  "runtime_disk_mismatches": [],
+  "filtered_blob_mismatches": [],
+  "jar_mismatches": [],
+  "index_sha256": {
+    "original": "387d2c2037d2725f8afda7a6426ea775a734655ce3eff5d918bba40ebb2b99a9",
+    "current": "6cbaec9951e404cdb065a0d8aec0cab8660d83cf284c3147f8649dd53b0a504b"
+  },
+  "commit_messages": [
+    {
+      "sha": "672be4e201d1e62acc048f561e57e586f6d65da5",
+      "subject": "feat(STEP07): REQ-05 BR-01/03/04/11 持久购物车与事务授权",
+      "utf8_valid": true,
+      "publication_subject_exact_match": true,
+      "contains_chinese": true,
+      "contains_replacement_character": false,
+      "encoding_header_utf8_or_absent": true
+    },
+    {
+      "sha": "af9904fe55d8f5af013b3a6e36a98d98f2796cb4",
+      "subject": "feat(STEP07): REQ-05 BR-04/12 接入购物车页面与加购改删",
+      "utf8_valid": true,
+      "publication_subject_exact_match": true,
+      "contains_chinese": true,
+      "contains_replacement_character": false,
+      "encoding_header_utf8_or_absent": true
+    },
+    {
+      "sha": "ceb4059717d59020b999d1479a7ef5f647a89e14",
+      "subject": "feat(STEP07): REQ-05 BR-04 全车数量导航徽标",
+      "utf8_valid": true,
+      "publication_subject_exact_match": true,
+      "contains_chinese": true,
+      "contains_replacement_character": false,
+      "encoding_header_utf8_or_absent": true
+    },
+    {
+      "sha": "cdfa8db554b4c1be6cf370d10d9afce1ca31a902",
+      "subject": "test(STEP07): 归档购物车HTTP事务并发与三视口验收证据",
+      "utf8_valid": true,
+      "publication_subject_exact_match": true,
+      "contains_chinese": true,
+      "contains_replacement_character": false,
+      "encoding_header_utf8_or_absent": true
+    }
+  ],
+  "sensitive_findings": [],
+  "publication_file_sha256": "c99a302eeabba958cd64d348cd82de4727cd98b24206c5051148b51db2b67a18",
+  "original_test_and_audit_records_rewritten": false,
+  "limits": [
+    "Historical test identity remains the original uncommitted worktree; this publication links identical bytes to the later code commit.",
+    "Secret comparison files were already deleted; unchanged historical evidence is protected by comparison with the previously scanned evidence commit."
+  ]
+}
