@@ -2,6 +2,7 @@ package org.csucampuscraft.storefront.foundation.web;
 
 import org.csucampuscraft.storefront.auth.AuthUser;
 import org.csucampuscraft.storefront.auth.SessionSupport;
+import org.csucampuscraft.storefront.cart.CartService;
 import org.csucampuscraft.storefront.foundation.security.CsrfTokenService;
 import org.csucampuscraft.storefront.foundation.view.ImagePaths;
 import jakarta.servlet.RequestDispatcher;
@@ -9,6 +10,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.springframework.ui.Model;
+import org.springframework.dao.DataAccessException;
+import org.springframework.transaction.TransactionException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -16,8 +19,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 @ControllerAdvice
 public final class PageModelAdvice {
     private final CsrfTokenService csrfTokens;
+    private final CartService carts;
 
-    public PageModelAdvice(CsrfTokenService csrfTokens) { this.csrfTokens = csrfTokens; }
+    public PageModelAdvice(CsrfTokenService csrfTokens, CartService carts) {
+        this.csrfTokens = csrfTokens;
+        this.carts = carts;
+    }
 
     @ModelAttribute
     public void contribute(Model model, HttpServletRequest request) {
@@ -29,9 +36,19 @@ public final class PageModelAdvice {
         Map<String, Object> values = new LinkedHashMap<>();
         values.put("appId", "user");
         values.put("siteName", "CSUCampusCraft 用户端");
-        values.put("cartQuantity", 0);
         Object identity = request.getAttribute(SessionSupport.CURRENT_USER_ATTRIBUTE);
         AuthUser current = identity instanceof AuthUser user ? user : null;
+        values.put("cartQuantity", 0L);
+        values.put("cartQuantityAvailable", true);
+        if (current != null && "CUSTOMER".equals(current.role())) {
+            try {
+                values.put("cartQuantity", carts.quantity(current.userId()));
+            } catch (DataAccessException | TransactionException unavailable) {
+                // Keep error pages renderable, without presenting a failed query as an empty cart.
+                values.put("cartQuantity", null);
+                values.put("cartQuantityAvailable", false);
+            }
+        }
         values.put("currentUser", current);
         values.put("authenticated", current != null);
         values.put("defaultCoverImage", ImagePaths.DEFAULT_COVER);
