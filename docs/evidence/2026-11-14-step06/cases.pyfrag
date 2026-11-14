@@ -1,0 +1,267 @@
+def state():
+    queries={
+      'product':"SELECT JSON_OBJECT('id',id,'sku',sku,'categoryId',category_id,'name',name,'summaryChars',CHAR_LENGTH(COALESCE(summary,'')),'summarySha',SHA2(COALESCE(summary,''),256),'descriptionBytes',OCTET_LENGTH(COALESCE(description,'')),'descriptionSha',SHA2(COALESCE(description,''),256),'coverImage',cover_image,'price',CAST(price AS CHAR),'stock',stock,'status',status,'sortOrder',sort_order,'version',version,'createdAt',created_at,'updatedAt',updated_at) FROM product ORDER BY id;",
+      'product_image':"SELECT JSON_OBJECT('id',id,'productId',product_id,'imagePath',image_path,'altText',alt_text,'sortOrder',sort_order) FROM product_image ORDER BY id;"}
+    return {t:{str(x['id']):x for x in map(json.loads,rows(q).splitlines())} for t,q in queries.items()}
+def deltas(a,b):
+    return {t:[{'id':k,'before':a[t].get(k),'after':b[t].get(k)} for k in sorted(set(a[t])|set(b[t]),key=int) if a[t].get(k)!=b[t].get(k)] for t in a}
+def images(pid):return sorted((x for x in state()['product_image'].values() if x['productId']==pid),key=lambda x:(x['sortOrder'],x['id']))
+def product(pid):return state()['product'][str(pid)]
+def version(pid):return str(product(pid)['version'])
+def pid_by_sku(sku):return int(rows('SELECT id FROM product WHERE sku='+literal(sku)))
+def unchanged_other(a,b):return all(a[t]==b[t] for t in TABLES if t not in ['product','product_image'])
+def snapshot_pair(name,before,a,after,b,**extra):
+    delta=deltas(a,b);match=re.search(r'/products/([0-9]+)',extra.get('path',''))
+    ids={match.group(1)} if match else set()
+    ids.update(x['id'] for x in delta['product'])
+    for x in delta['product_image']:
+        for y in [x['before'],x['after']]:
+            if y:ids.add(str(y['productId']))
+    def relevant(s):return {'product':{k:v for k,v in s['product'].items() if k in ids},'product_image':{k:v for k,v in s['product_image'].items() if str(v['productId']) in ids}}
+    record('database-writes.jsonl',dict(name=name,before=before,after=after,target_before=relevant(a),target_after=relevant(b),deltas=delta,**extra))
+def write(cl,path,form,status,name,csrf=True,back=None,album=True,allow_product_fields=('version','updatedAt')):
+    data=dict(form)
+    if csrf:
+        r=cl.get(back or path.split('/images')[0]+'/images',8081);assert_page(r,200,name+'-form')
+        data['_csrf']=token(r);check(name+'-token',bool(data['_csrf']))
+    before=snapshot();a=state();r=cl.post(path,data,8081);after=snapshot();b=state()
+    snapshot_pair(name,before,a,after,b,path=path,status=r[0],expected_status=status,csrf_supplied=csrf,form_fields=sorted(data))
+    assert_page(r,status,name)
+    check(name+'-other-five-tables-unchanged',unchanged_other(before,after))
+    if status!=303:check(name+'-rejected-zero-write',before==after)
+    else:
+        u=urllib.parse.urlsplit(r[1].get('Location',''))
+        check(name+'-internal-get-redirect',not u.netloc and (re.fullmatch('/products/[0-9]+/images',u.path) is not None if album else u.path=='/products'))
+        check(name+'-redirect-no-model-leak','csrfToken' not in u.query and 'currentUser' not in u.query)
+        if album:
+            for key in a['product']:
+                old,new=a['product'][key],b['product'][key]
+                check(name+'-parent-'+key+'-forbidden-columns-unchanged',all(old[k]==new[k] for k in old if k not in allow_product_fields))
+    return r,a,b
+def raw_post(cl,path,form,status,name):return write(cl,path,form,status,name,csrf=False)
+def album(cl,pid,name):
+    r=cl.get('/products/'+str(pid)+'/images',8081);assert_page(r,200,name)
+    n=r[3].find(lambda n:n.a.get('data-page-id')=='A10');expected=images(pid)
+    check(name+'-root',n is not None and n.a.get('data-product-id')==str(pid))
+    check(name+'-version',n.a.get('data-product-version')==version(pid))
+    check(name+'-count',int(n.a.get('data-image-count','-1'))==len(expected))
+    actual=[int(x.a['data-image-id']) for x in n.all(lambda x:x.tag=='article' and 'data-image-id' in x.a)]
+    check(name+'-database-order',actual==[x['id'] for x in expected],{'actual':actual,'expected':[x['id'] for x in expected]})
+    for f in n.all(lambda x:x.tag=='form'):
+        check(name+'-form-single-csrf',len(f.all(lambda x:x.tag=='input' and x.a.get('name')=='_csrf'))==1)
+        pv=f.find(lambda x:x.tag=='input' and x.a.get('name')=='productVersion')
+        check(name+'-form-current-version',pv is not None and pv.a.get('value')==version(pid))
+    record('sql-reference.jsonl',{'name':name,'parent':product(pid),'ordered_images':expected})
+    return r
+def user_detail(pid,name):
+    r=Client().get('/products/'+str(pid),8080);assert_page(r,200,name)
+    gallery=r[3].find(lambda n:'data-product-gallery' in n.a);expected=images(pid)
+    figures=gallery.all(lambda n:n.tag=='figure' and 'data-image-id' in n.a)
+    check(name+'-order',[int(n.a['data-image-id']) for n in figures]==[x['id'] for x in expected])
+    for n,x in zip(figures,expected):
+        img=n.find(lambda y:y.tag=='img');alt=x['altText'] or product(pid)['name']
+        check(name+'-alt-'+str(x['id']),img.a.get('alt')==alt and n.find(lambda y:y.tag=='figcaption').text()==alt)
+    check(name+'-escaped-text','<script>step06()</script>' not in r[2].decode())
+    if not expected:check(name+'-cover-fallback',r[3].find(lambda n:'data-gallery-empty' in n.a) is not None)
+    return r
+def input_form(pid,**changes):
+    f={'imagePath':'images/catalog-placeholder.svg','altText':'相册验收','sortOrder':'0','productVersion':version(pid)};f.update(changes);return f
+def add(cl,pid,name,**changes):
+    before=version(pid);r,a,b=write(cl,'/products/'+str(pid)+'/images',input_form(pid,**changes),303,name)
+    inserted=[x for x in b['product_image'].values() if str(x['id']) not in a['product_image']]
+    check(name+'-one-row-added',len(inserted)==1);check(name+'-version-plus-one',int(version(pid))==int(before)+1)
+    return inserted[0]['id']
+def fixture(pid,assignments,name):
+    before=snapshot();a=state();sql('UPDATE product SET '+assignments+' WHERE id='+str(pid)+';','csucampuscraft');after=snapshot();b=state()
+    record('fixtures.jsonl',{'name':name,'controlled_root_fixture':True,'assignments':assignments,'before':before,'after':after,'deltas':deltas(a,b)})
+def static_manifest():
+    out={}
+    for p in sorted((REPO/'assets').rglob('*')):
+        if p.is_file():out['assets/'+p.relative_to(REPO/'assets').as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()
+    for app in ['csucampuscraft-user','csucampuscraft-admin']:
+        with zipfile.ZipFile(REPO/app/'target'/f'{app}-0.0.1-SNAPSHOT.jar') as z:
+            for n in z.namelist():
+                if n.startswith('BOOT-INF/classes/static/images/') and not n.endswith('/'):out[app+'/'+n]=hashlib.sha256(z.read(n)).hexdigest()
+    return out
+def static_pair(path,name,expected=200):
+    arr=[]
+    for port in [8080,8081]:
+        req=urllib.request.Request('http://127.0.0.1:'+str(port)+'/'+urllib.parse.quote(path,safe='/'))
+        try:r=urllib.request.build_opener(urllib.request.ProxyHandler({})).open(req,timeout=10)
+        except urllib.error.HTTPError as e:r=e
+        body=r.read();arr.append({'port':port,'status':r.code,'content_type':r.headers.get('Content-Type'),'bytes':len(body),'sha256':hashlib.sha256(body).hexdigest()})
+    record('static-resources.jsonl',{'name':name,'path':path,'observations':arr})
+    check(name+'-http-status',all(x['status']==expected for x in arr))
+    if expected==200:
+        check(name+'-same-type-bytes',arr[0]['content_type']==arr[1]['content_type'] and arr[0]['sha256']==arr[1]['sha256'])
+        candidates=list((REPO/'assets').rglob(Path(path).name));check(name+'-asset-source-present',len(candidates)==1)
+        check(name+'-source-equals-served',hashlib.sha256(candidates[0].read_bytes()).hexdigest()==arr[0]['sha256'])
+def native_probe():
+    extracted=BASE/'native-probe';classes=extracted/'classes';libs=extracted/'lib';classes.mkdir(parents=True);libs.mkdir()
+    with zipfile.ZipFile(REPO/'csucampuscraft-admin/target/csucampuscraft-admin-0.0.1-SNAPSHOT.jar') as z:
+        for n in z.namelist():
+            if n.startswith('BOOT-INF/classes/') and not n.endswith('/'):
+                p=classes/n[len('BOOT-INF/classes/'):];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
+            elif n.startswith('BOOT-INF/lib/') and n.endswith('.jar'):(libs/Path(n).name).write_bytes(z.read(n))
+    cp=str(classes)+';'+str(libs/'*')+';'+str(extracted)
+    p=command([JAVA.parent/'javac.exe','-cp',cp,'-d',extracted,HERE/'AlbumWriteProbe.java'],timeout=45)
+    save(EV/'native-compile.log',p.stdout.decode(errors='replace')+p.stderr.decode(errors='replace'));check('native-probe-compile',p.returncode==0)
+    e=start_env();e.update(STEP06_ROOT_PASSWORD=rootpass,STEP06_MYSQL_PORT=str(mysqlport))
+    before=snapshot();a=state();p=command([JAVA,'-cp',cp,'AlbumWriteProbe'],env=e,timeout=110);after=snapshot();b=state()
+    save(EV/'native-probe.log',p.stdout.decode(errors='replace')+p.stderr.decode(errors='replace'))
+    snapshot_pair('native-album-service-probe',before,a,after,b)
+    check('native-probe',p.returncode==0 and '"overall":"PASS"' in p.stdout.decode(errors='replace'))
+    check('native-five-tables-stable',unchanged_other(before,after))
+def browser(cookie,cases):
+    e=start_env();e.update(STEP06_BROWSER_OUT=str(EV/'browser'),STEP06_BROWSER_CASES=json.dumps(cases,ensure_ascii=False),STEP06_ADMIN_COOKIE=cookie)
+    before=snapshot();p=command([RUNTIME/'node/bin/node.exe',HERE/'verify_browser.cjs'],env=e,timeout=180)
+    save(EV/'browser.log',p.stdout.decode(errors='replace')+p.stderr.decode(errors='replace'));check('browser',p.returncode==0)
+    br=json.loads((EV/'browser/result.json').read_text(encoding='utf-8'));check('browser-completed',br.get('completed') and br['overall']=='PASS')
+    result['browser_checks']=len(br['checks']);result['screenshots']=len(br['screenshots']);check('browser-zero-write',snapshot()==before)
+
+try:
+    check('tested-code-head',git('rev-parse','HEAD').decode().strip()==TESTED)
+    result['branch']=git('branch','--show-current').decode().strip();check('feature-branch',result['branch']=='feat/step06-admin-images')
+    status=git('status','--short','--untracked-files=all').decode();save(EV/'git-input-status.txt',status);check('tested-worktree-clean',not status.strip())
+    save(EV/'implementation-diff.patch',git('diff',BASELINE+'..'+TESTED,'--','csucampuscraft-admin').decode('utf-8'))
+    inputs=[]
+    for app in ['csucampuscraft-user','csucampuscraft-admin']:
+        inputs.append(REPO/app/'pom.xml');inputs.extend(p for p in (REPO/app/'src').rglob('*') if p.is_file())
+    inputs.extend(p for d in ['database','assets','.mvn'] for p in (REPO/d).rglob('*') if p.is_file());inputs.extend([REPO/'mvnw',REPO/'mvnw.cmd'])
+    manifest=''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.relative_to(REPO).as_posix()+'\n' for p in sorted(inputs,key=lambda x:x.relative_to(REPO).as_posix()))
+    save(EV/'runtime-inputs.sha256',manifest);result['runtime_manifest_sha256']=hashlib.sha256(manifest.encode()).hexdigest();result['runtime_file_count']=len(inputs)
+    for name in ['verify_step06.py','verify_browser.cjs','AlbumWriteProbe.java']:save(EV/name,(HERE/name).read_text(encoding='utf-8-sig'))
+    builddir=Path(os.environ.get('STEP06_BUILD_LOG_DIR',HERE.parent));exits=json.loads((builddir/'build-exits.json').read_text(encoding='utf-8-sig'))
+    for app in ['user','admin']:
+        text=(builddir/('build-'+app+'.log')).read_text(encoding='utf-8',errors='replace');check('wrapper-build-'+app,exits[app]==0 and 'BUILD SUCCESS' in text);save(EV/('build-'+app+'.log'),text)
+    save(EV/'build-exits.json',json.dumps(exits))
+    ve=os.environ.copy();ve['JAVA_HOME']=str(JAVA.parent.parent);ve['PATH']=str(JAVA.parent)+';'+os.environ['SystemRoot']+'/System32;'+os.environ['SystemRoot']+'/System32/WindowsPowerShell/v1.0'
+    versions=[]
+    for args in [[JAVA,'-version'],[REPO/'mvnw.cmd','-v'],[MYSQL/'mysqld.exe','--version']]:
+        p=command(args,env=ve,timeout=60);check('tool-version-'+str(len(versions)),p.returncode==0);versions.append(p.stdout.decode(errors='replace')+p.stderr.decode(errors='replace'))
+    save(EV/'versions.txt','\n'.join(versions));check('wrapper-pin','Apache Maven 3.9.16' in versions[1])
+    for app in ['csucampuscraft-user','csucampuscraft-admin']:result[app+'_jar_sha256']=hashlib.sha256((REPO/app/'target'/f'{app}-0.0.1-SNAPSHOT.jar').read_bytes()).hexdigest()
+    statics=static_manifest();save(EV/'static-before.json',json.dumps(statics,indent=2));result['static_files']=len(statics)
+    data=BASE/'mysql-data';data.mkdir();init=BASE/'mysql-init-private.sql';private_files.append(init)
+    init.write_text("ALTER USER 'root'@'localhost' IDENTIFIED BY '"+rootpass+"';",encoding='utf-8')
+    p=command([MYSQL/'mysqld.exe','--no-defaults','--initialize-insecure','--basedir=D:/MySQL',f'--datadir={data}',f'--log-error={BASE/"mysql-initialize.log"}'],timeout=45);check('isolated-mysql-created',p.returncode==0)
+    h=(BASE/'mysql-server.log').open('wb');handles.append(h)
+    server=subprocess.Popen([str(MYSQL/'mysqld.exe'),'--no-defaults','--basedir=D:/MySQL',f'--datadir={data}',f'--port={mysqlport}','--bind-address=127.0.0.1','--mysqlx=OFF',f'--init-file={init}',f'--pid-file={BASE/"mysql.pid"}','--console'],stdout=h,stderr=subprocess.STDOUT,creationflags=FLAG)
+    deadline=time.monotonic()+35
+    while time.monotonic()<deadline:
+        p=sql('SELECT @@version,@@server_uuid,@@port,@@datadir;',fail_ok=True)
+        if p.returncode==0:break
+        if server.poll() is not None:raise RuntimeError('Private MySQL exited')
+        time.sleep(.2)
+    else:raise RuntimeError('Private MySQL readiness timeout')
+    ident=p.stdout.decode().strip().split('\t');uuid=re.search(r'server-uuid=(.+)',(data/'auto.cnf').read_text(encoding='utf-8')).group(1).strip()
+    check('isolated-mysql-identity',ident[1]==uuid and int(ident[2])==mysqlport and Path(ident[3]).resolve()==data.resolve());result['mysql_version']=ident[0];result['mysql_port']=mysqlport;init.unlink()
+    save(EV/'database-identity.json',json.dumps({'version':ident[0],'uuid':uuid,'port':mysqlport,'datadir_is_private':True,'every_connection_timezone':'UTC','collation':'utf8mb4_0900_as_ci'},indent=2))
+    sql('CREATE DATABASE csucampuscraft CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_as_ci;')
+    sql((REPO/'database/02-schema-with-demo.sql').read_text(encoding='utf-8-sig'),'csucampuscraft')
+    sql("CREATE USER 'csucampuscraft'@'127.0.0.1' IDENTIFIED BY '"+apppass+"';")
+    sql("GRANT SELECT,LOCK TABLES ON csucampuscraft.* TO 'csucampuscraft'@'127.0.0.1';")
+    sql("GRANT INSERT,UPDATE,DELETE ON csucampuscraft.product_image TO 'csucampuscraft'@'127.0.0.1';")
+    sql("GRANT UPDATE ON csucampuscraft.product TO 'csucampuscraft'@'127.0.0.1';")
+    save(EV/'application-grants.txt',rows("SHOW GRANTS FOR 'csucampuscraft'@'127.0.0.1';",None))
+    original=snapshot();save(EV/'database-original.json',json.dumps(original,indent=2));check('seed-counts',[original[t]['rows'] for t in TABLES]==[4,15,60,100,10,10,20])
+    for port in [8080,8081]:
+        with socket.socket() as s:s.bind(('127.0.0.1',port))
+    launch('csucampuscraft-user',8080);launch('csucampuscraft-admin',8081)
+    pid=pid_by_sku('CSU-GRAD-BOX-01');other=pid_by_sku('CSU-LMK-NOTE-01');path='/products/'+str(pid)+'/images'
+    guest=Client();is_login_redirect(guest.get(path,8081),'guest-album',path)
+    for suffix in ['', '/1','/1/remove']:raw_post(guest,path+suffix,{},302,'guest-post'+suffix.replace('/','-'))
+    cl=Client();r,_,_=login(cl,8081,name='admin');assert_page(r,303,'admin-login');album(cl,pid,'seed-album');user_detail(pid,'seed-user-order')
+    static_pair('images/catalog-placeholder.svg','placeholder-dual-apps');static_pair(product(pid)['coverImage'],'gift-cover-dual-apps')
+    raw_post(cl,path,input_form(pid),403,'missing-csrf');raw_post(cl,path,dict(input_form(pid),_csrf='not-the-session-token'),403,'wrong-csrf')
+    before=snapshot();sql("UPDATE store_user SET role='CUSTOMER',updated_at=updated_at WHERE id=4;",'csucampuscraft');record('fixtures.jsonl',{'name':'wrong-role-controlled-fixture','before':before,'after':snapshot(),'preserve_auth_stamp':True})
+    try:raw_post(cl,path,{},403,'wrong-role-before-csrf');assert_page(cl.get(path,8081),403,'wrong-role-get')
+    finally:sql("UPDATE store_user SET role='ADMIN',updated_at=updated_at WHERE id=4;",'csucampuscraft')
+    check('role-fixture-restored-entire-row',snapshot()==before)
+    assert_page(cl.get('/products/999999999/images',8081),404,'unknown-product-get')
+    added=add(cl,pid,'add-escaped-alt',imagePath=product(pid)['coverImage'],altText='<script>step06()</script>',sortOrder='5')
+    album(cl,pid,'added-album');user_detail(pid,'added-user-order')
+    addedpath=path+'/'+str(added)
+    old=version(pid);write(cl,addedpath,input_form(pid,imagePath=product(pid)['coverImage'],altText='调整后的替代文本',sortOrder='25'),303,'edit-order-alt')
+    check('edit-version-plus-one',int(version(pid))==int(old)+1);album(cl,pid,'edited-album');user_detail(pid,'edited-user-order')
+    duplicate=add(cl,pid,'add-repeated-path-tied-sort',imagePath=product(pid)['coverImage'],altText='',sortOrder='25')
+    check('tied-order-id',[x['id'] for x in images(pid) if x['sortOrder']==25]==sorted(x['id'] for x in images(pid) if x['sortOrder']==25));user_detail(pid,'blank-alt-fallback-and-tie')
+    target=next(x for x in images(pid) if x['id']==added);before=snapshot();old=version(pid)
+    write(cl,addedpath,input_form(pid,imagePath=target['imagePath'],altText=target['altText'],sortOrder=str(target['sortOrder'])),303,'same-value-edit')
+    check('same-value-full-snapshot-unchanged',snapshot()==before and version(pid)==old)
+    cross=images(other)[0]['id']
+    for suffix in ['', '/remove']:write(cl,path+'/'+str(cross)+suffix,input_form(pid),404,'cross-product-image'+suffix.replace('/','-'))
+    for suffix in ['', '/remove']:write(cl,path+'/999999999'+suffix,input_form(pid),404,'unknown-image'+suffix.replace('/','-'))
+    stale=str(int(version(pid))-1)
+    for suffix in ['', '/'+str(added),'/'+str(added)+'/remove']:
+        for tag,value in [('missing',None),('blank',''),('stale',stale),('nonnumeric','abc'),('negative','-1'),('overflow','9223372036854775808')]:
+            f=input_form(pid)
+            if value is None:f.pop('productVersion')
+            else:f['productVersion']=value
+            write(cl,path+suffix,f,409 if tag in ['missing','blank','stale'] else 400,tag+'-version'+suffix.replace('/','-'))
+    write(cl,path+'/'+str(cross),input_form(pid,productVersion=stale),409,'version-before-cross-product-ownership')
+    write(cl,'/products/999999999/images',dict(input_form(pid),productVersion=''),404,'missing-parent-before-version',back=path)
+    invalid_paths=['','/images/a.svg','//example.test/a.svg','https://example.test/a.svg','images/../a.svg','images/a..b.svg','images\\a.svg','images/a%20b.svg','images/a?b.svg','images/a#b.svg','images/a:b.svg','images/./a.svg','images/\x01a.svg','images/\x7fa.svg','images/\u0085a.svg','images/'+'a'*249]
+    for index,value in enumerate(invalid_paths):write(cl,path,input_form(pid,imagePath=value),400,'invalid-image-path-'+str(index))
+    for field,value in [('altText','中'*121),('sortOrder','-1'),('sortOrder','1.1'),('sortOrder','abc'),('sortOrder','2147483648')]:write(cl,path,input_form(pid,**{field:value}),400,'invalid-'+field+'-'+str(len(value))+'-'+value[:3])
+    unicode_id=add(cl,pid,'unicode-space-path-120-alt',imagePath=' images/校园 文创.svg ',altText='中'*120,sortOrder='2147483647')
+    check('path-trimmed',next(x for x in images(pid) if x['id']==unicode_id)['imagePath']=='images/校园 文创.svg')
+    blank_id=add(cl,pid,'blank-sort-default-zero',imagePath='images/absent-step06.svg',sortOrder='',altText='')
+    maxpath_id=add(cl,pid,'255-character-path-accepted',imagePath='images/'+'a'*248,sortOrder='100')
+    check('sort-default-zero',next(x for x in images(pid) if x['id']==blank_id)['sortOrder']==0)
+    static_pair('images/absent-step06.svg','missing-resource-raw-404',404)
+    # Genuine MAX version branches; controlled root fixture is kept separately from application POSTs.
+    original_version=version(pid);fixture(pid,'version=9223372036854775807,updated_at=updated_at','max-version-fixture')
+    write(cl,path,input_form(pid),409,'max-version-create-zero-write')
+    target=next(x for x in images(pid) if x['id']==added)
+    write(cl,addedpath,input_form(pid,imagePath=target['imagePath'],altText='changed at max',sortOrder=str(target['sortOrder'])),409,'max-version-edit-zero-write')
+    write(cl,addedpath+'/remove',{'productVersion':version(pid)},409,'max-version-remove-zero-write')
+    before=snapshot();write(cl,addedpath,input_form(pid,imagePath=target['imagePath'],altText=target['altText'],sortOrder=str(target['sortOrder'])),303,'max-version-noop-allowed');check('max-noop-entire-state-unchanged',snapshot()==before)
+    fixture(pid,'version='+original_version+',updated_at=updated_at','restore-version-after-max-fixture')
+    # Old product form becomes stale after album changes; SKU/stock are not posted as edits.
+    product_before=product(pid);old_version=version(pid);add(cl,pid,'album-bump-before-stale-product-form')
+    f={'categoryId':str(product_before['categoryId']),'name':product_before['name'],'price':product_before['price'],'summary':'旧资料表单','description':'旧资料','coverImage':product_before['coverImage'],'sortOrder':str(product_before['sortOrder']),'version':old_version}
+    write(cl,'/products/'+str(pid),f,409,'stale-product-form-after-album',back='/products/'+str(pid)+'/edit',album=False)
+    stale_album=version(pid);write(cl,'/products/'+str(pid)+'/restock',{'quantity':'1'},303,'restock-invalidates-album-form',back='/products/'+str(pid)+'/edit',album=False)
+    write(cl,path,input_form(pid,productVersion=stale_album),409,'stale-album-after-restock')
+    # Remove every image from another seeded public product via genuine app operations.
+    empty=pid_by_sku('CSU-LMK-BOOKMARK-01');empty_path='/products/'+str(empty)+'/images';cover_before=product(empty)['coverImage']
+    for x in images(empty):write(cl,empty_path+'/'+str(x['id'])+'/remove',{'productVersion':version(empty)},303,'remove-image-'+str(x['id']))
+    check('last-remove-cover-independent',product(empty)['coverImage']==cover_before);album(cl,empty,'empty-album-keeps-add-form');user_detail(empty,'last-image-cover-fallback')
+    missing=pid_by_sku('CSU-CLB-STAND-01');check('missing-cover-seed-empty-album',not images(missing));user_detail(missing,'missing-cover-empty-album');static_pair(product(missing)['coverImage'],'missing-cover-raw-404',404)
+    native_probe()
+    cases=[
+      {'name':'a10-edited-gallery','port':8081,'path':path,'kind':'A10'},
+      {'name':'a10-seed-gallery','port':8081,'path':'/products/'+str(other)+'/images','kind':'A10'},
+      {'name':'a10-empty-fallback','port':8081,'path':empty_path,'kind':'A10'},
+      {'name':'a10-missing-cover','port':8081,'path':'/products/'+str(missing)+'/images','kind':'A10','fallback':True},
+      {'name':'a04-album-entry','port':8081,'path':'/products','kind':'A04'},
+      {'name':'a05-album-entry','port':8081,'path':'/products/'+str(pid)+'/edit','kind':'A05'},
+      {'name':'u03-edited-gallery','port':8080,'path':'/products/'+str(pid),'kind':'U03','fallback':True},
+      {'name':'u03-seed-gallery','port':8080,'path':'/products/'+str(other),'kind':'U03'},
+      {'name':'u03-empty-cover','port':8080,'path':'/products/'+str(empty),'kind':'U03'},
+      {'name':'u03-missing-cover','port':8080,'path':'/products/'+str(missing),'kind':'U03','fallback':True},
+      {'name':'a10-draft-product','port':8081,'path':'/products/'+str(pid_by_sku('CSU-CLB-FOLDER-02'))+'/images','kind':'A10'},
+      {'name':'u03-sold-out','port':8080,'path':'/products/'+str(pid_by_sku('CSU-SPT-STAND-01')),'kind':'U03'}]
+    browser(cl.cookie(8081),cases)
+    final=snapshot();save(EV/'database-final.json',json.dumps(final,indent=2));check('final-five-other-tables-unchanged',unchanged_other(original,final))
+    check('static-sources-and-dual-jar-images-unchanged',static_manifest()==statics);save(EV/'static-after.json',json.dumps(static_manifest(),indent=2))
+    check('runtime-inputs-stable',all(hashlib.sha256((REPO/line.split('  ',1)[1]).read_bytes()).hexdigest()==line.split('  ',1)[0] for line in manifest.splitlines()))
+    result['overall']='PASS'
+except Exception as e:
+    result['overall']='FAIL';result['error']=scrub(type(e).__name__+': '+str(e));save(EV/'failure.txt',traceback.format_exc());print(result['error'],flush=True)
+finally:
+    for p in reversed(processes):stop(p)
+    if server is not None:
+        if server.poll() is None:
+            try:command([MYSQL/'mysqladmin.exe','--no-defaults','--no-login-paths','--protocol=TCP','--host=127.0.0.1',f'--port={mysqlport}','--user=root','shutdown'],env=env,timeout=15)
+            except Exception:pass
+        stop(server)
+    for h in handles:h.close()
+    for p in private_files:
+        if p.exists():p.unlink()
+    result['tracked_processes_stopped']=all(p.poll() is not None for p in processes) and (server is None or server.poll() is not None)
+    save(EV/'result.json',json.dumps(result,ensure_ascii=False,indent=2))
+    for log in BASE.glob('*.log'):save(EV/log.name,log.read_text(encoding='utf-8',errors='replace'))
+    print('RESULT '+str(EV/'result.json'),flush=True)
+if result['overall']!='PASS':raise SystemExit(1)

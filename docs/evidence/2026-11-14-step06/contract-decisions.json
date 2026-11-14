@@ -1,0 +1,10 @@
+{
+  "enumeration": "one GET and three listed POST endpoints; no fourth POST invented",
+  "missing_product_version": "409 per current user request; original TST-40 missing-version 400 criterion preserved and disclosed",
+  "malformed_product_version": "400",
+  "parent_missing": "404 before version check",
+  "wrong_parent_image": "404 after version check",
+  "path_subset": "reject any .. substring and %, colon, backslash, ?/#/controls plus standalone dot segment; preserve Unicode/spaces/reusable paths",
+  "frontend": "no user module change planned",
+  "word": "unchanged; M1 review recommendation only"
+}

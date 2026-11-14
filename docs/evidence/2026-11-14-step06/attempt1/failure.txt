@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step06-admin-images\verification\verify_step06.py", line 454, in <module>
+    browser(cl.cookie(8081),cases)
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step06-admin-images\verification\verify_step06.py", line 327, in browser
+    br=json.loads((EV/'browser/result.json').read_text());check('browser-completed',br.get('completed') and br['overall']=='PASS')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\OpenAI.CodexPrimaryRuntime.v26-1112-611-0_26.1112.611.0_x64__3k8sg7r9htsxt\dependencies\python\Lib\pathlib.py", line 1028, in read_text
+    return f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xad in position 30168: illegal multibyte sequence

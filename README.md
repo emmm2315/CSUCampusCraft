@@ -9,7 +9,7 @@ CSUCampusCraft 是《软件开发架构平台》实验一的双端商城项目�
 
 ## 当前阶段
 
-M0、STEP02基础设施、STEP03公开目录、STEP04双端身份及STEP05后台分类/商品/增量补货已交付并通过各自范围自动实测；STEP03–05组员交叉复核待补。用户端页面保持现状；管理端ADMIN登录后可从导航进入分类和商品管理，根页仍是初始化主题页。相册STEP06、购物车/订单及其他后台模块按后续计划开发，控制台STEP12，REST仅预留。
+M0、STEP02 基础设施、STEP03 公开目录、STEP04 双端身份及 STEP05 后台分类/商品/增量补货已通过各自范围的自动实测；STEP06 管理端 A10 相册代码已提交且双端 Wrapper 构建通过，正式 HTTP/SQL/浏览器结论为 通过（attempt2；本步范围，组员复核待补）。STEP06 自动验收已完成，M1 登记为待复核；STEP03–06 组员实名与交叉复核仍待补。管理端 ADMIN 可从分类/商品入口进入相册，根页仍是初始化主题页；用户端详情复用既有相册与封面回退。购物车、订单和其他后台模块按后续计划开发，控制台在 STEP12，REST 仅预留。
 
 MySQL 8.4（InnoDB）是项目数据库基线。首版范围与交付标准见[项目立项与范围](docs/项目立项与范围.md)。
 
@@ -127,7 +127,7 @@ M0 已完成本地独立目录复现与 INIT-01 至 INIT-05 核对，详细版�
 
 推送前用 `git status --short` 核对两端源码、SQL、共享素材、七份文档、指导书与归档证据均纳入提交。`docs/evidence/` 下经过检查的 `.log` 属于验收资料；构建 `target/`、本机口令文件和普通运行日志继续忽略。提交后可记录新的完整 SHA，保留本轮「基线 SHA + 工作区快照」证据的原始身份，不把它改写成该新提交已测试。
 
-STEP02–STEP05 代码及各自范围自动实测已交付，组员交叉复核待补；下一步按 STEP06 接商品相册。新成员先按 README 在自己的环境复现 STEP01，并阅读下方 STEP02 交接约定；后台及交易写入口须等 STEP04 鉴权通过。
+STEP02–STEP05 已通过各自范围自动实测；STEP06 构建通过，正式验收结论见上方「当前阶段」及[STEP06 实测记录](docs/测试与验收用例.md#step06-实测记录)。先按 M1 门槛复核，再进入 STEP07 持久购物车。新成员仍须在自己的环境复现 STEP01，并阅读下方公共基础与身份交接；后台和交易写不能只依赖入口过滤器授权。
 
 ## STEP02 工具链与公共基础交接
 
@@ -140,7 +140,7 @@ java -version
 .\mvnw.cmd -v
 ```
 
-两端 `foundation/` 下提供异常映射、字段校验、303 响应、密码库和会话级 CSRF。公共模板约定为 `layout::page(pageTitle,pageContent)`、`fields::text(id,name,label,value,errors)`、`fields::number(id,name,label,value,min,max,step,errors)`、`fields::csrf`、`alerts::summary(errors)` 和 `images::image(path,altText)`。调用带错误摘要的字段时使 `id` 与 `name` 相同，错误 Map 键使用同一名称，摘要链接才能定位输入。普通文本用 `th:text`，字段值用 `th:value`；密码不回显。
+两端 `foundation/` 下提供异常映射、字段校验、303 响应、密码库和会话级 CSRF。公共模板约定为 `layout::page(pageTitle,pageContent)`、`fields::text(id,name,label,value,errors)`、`fields::number(id,name,label,value,min,max,step,errors)`、`fields::csrf`、`alerts::summary(errors)` 和 `images::image(path,altText)`。单个表单可使 `id` 与 `name` 相同，字段错误 Map 使用 `name`；同页多行表单须给 `id` 加唯一前缀，并将摘要另映射到完整 `id`，A10 的具体约定见下方 STEP06 交接。普通文本用 `th:text`，字段值用 `th:value`；密码不回显。
 
 POST 表单复用 `fields::csrf`，可加 `data-submit-state` 启用「处理中」反馈。成功写后使用 `HttpResponses.seeOther(readPath)` 返回 303。`BusinessException` 的消息只放可展示文案，技术异常交给通用 500。`InputChecks.money` 默认检查完整有符号 DECIMAL(12,2) 列范围，返回两位小数且不舍入；价格正值等业务限制由调用方传入 min/max。用户导航 `cartQuantity` 当前固定为 0，STEP07 再接查询。
 
@@ -178,10 +178,25 @@ STEP05 已接入受保护后台分类、商品及补货，详见下方交接。�
 
 ## STEP05 后台分类、商品与补货交接
 
-ADMIN登录后使用/categories及/products，分类按两级维护，商品新增DRAFT、编辑保留SKU/库存、上下架按版本、补货按增量。表单POST带CSRF，成功303回列表；旧版409需手动重新载入。相册仅显示暂未开放，下一步STEP06再接。用户端代码、初始化SQL、POM、Wrapper和共享素材保持原状。
+ADMIN登录后使用/categories及/products，分类按两级维护，商品新增DRAFT、编辑保留SKU/库存、上下架按版本、补货按增量。表单POST带CSRF，成功303回列表；旧版409需手动重新载入。相册入口已由 STEP06 接入 A10，具体边界见下方交接。用户端代码、初始化SQL、POM、Wrapper和共享素材保持原状。
 
 每个写Service声明READ_COMMITTED，第一步调用AdminWriteGuard.lock(SessionIdentity)。该守卫要求已有写事务，先锁store_user操作者，再复核ENABLED、ADMIN及LocalDateTime.equals(authStamp)，之后才触业务目标。会话失效清本端身份/确认并302登录；角色错误403。商品资料和状态UPDATE带id/version条件并检查行数，真实变化增版；同值资料不更新。补货直接SQL stock=stock+quantity，数据库当前值为基准，库存/version上溢拒绝。
 
 产品写后的返回上下文只接受固定/products及五个重新绑定的查询参数；允许q里合法字面反斜杠等字符，不把它作为任意returnUrl，也不放宽登录回跳白名单。管理端新增样式仅服务A03/A04/A05，原公共Token不改。真实覆盖、失败配置诊断及28图见[STEP05实测记录](docs/测试与验收用例.md#step05-实测记录)和[证据目录](docs/evidence/2026-11-14-step05/README.md)。TST-25–28只按本步覆盖判定，真实购买、并发与故障注入留STEP13。
 
 正常开发按前文数据库授权即可支持锁读。隔离验收账号限制其他五表无DML时，额外授schema级LOCK TABLES以允许store_user的FOR UPDATE，实测不会写操作者行；这属于测试角色配置，未改变初始化SQL。权限要求参考[MySQL8.4官方说明](https://dev.mysql.com/doc/refman/8.4/en/innodb-locking-reads.html)。
+
+
+## STEP06 后台商品相册交接
+
+A04 商品列表和 A05 商品编辑页可进入管理端 `GET /products/{productId}/images`（A10）。页面展示名称、SKU、独立封面、当前 `productVersion` 以及按 `sort_order ASC, id ASC` 排列的相册；提供返回编辑、重新载入和查看用户端详情入口。新增、编辑、移除分别使用 `POST /products/{productId}/images`、`POST /products/{productId}/images/{imageId}`、`POST /products/{productId}/images/{imageId}/remove`。本轮按枚举实现 1 个 GET 与 3 个 POST，不增设第四个写动作；每个写表单都有 CSRF 与父版本，成功 303 回固定 A10，不接受请求传入的跳转地址。
+
+`ProductImageService` 的三个写方法均在 READ COMMITTED 事务内先调用 `AdminWriteGuard.lock(actor)`，再锁父商品、校验父版本，编辑/移除随后按父商品及图片 ID 查询归属。真实新增、内容变化或移除与父商品 `version + 1` 在同一事务中完成；同值编辑不写入、不改版本，即使版本已到上限仍可无变化成功。真实变化在版本上限被拒绝，异常回滚覆盖图片行和父版本。相册不修改独立封面、库存、SKU、状态或历史快照；移除仅删除相册行。用户端源码、初始化 SQL、POM、Wrapper、共享素材都未改动。
+
+`imagePath` 去首尾空白后限 1–255 个 Unicode 码点，以 `images/` 开头，拒绝 `..` 子串、独立 `.` 路径段、协议冒号、反斜杠、`%`、`?`、`#` 和 ISO 控制字符。允许 Unicode、空格、路径复用及合法但暂缺的文件；缺图交由既有片段显示占位。`altText` 去空白后可空且最多 120 个码点，空值在展示时回退商品名；排序是非负整数、空值为 0。此校验采用既有渲染片段可接受路径的安全子集，不检查文件存在，也不写文件系统。
+
+400/409 在 A10 保留失败动作原始输入及原 `productVersion`，其他表单使用当前版本，409 提供明确重新载入链接。不会悄悄以新版本重放旧操作。每行输入 `id` 使用 `image-<id>-<field>`，新增使用 `add-<field>`；`fieldErrors` 仍按字段名绑定，摘要 `errorAnchors` 映射到完整唯一 ID。旧版本且目标图片已消失时只展示原提交摘要，不生成不存在记录的写表单。商品不存在 404；归属检查后的图片不存在或跨商品 404；旧版本和本轮要求的缺失/空白版本为 409，非整数、负数、溢出或重复版本字段为 400。旧 TST-40 对缺失版本写 400 的差异在本轮实测记录单列，原表不改。
+
+「查看用户端详情」默认指向 `http://127.0.0.1:8080/products/{id}`。本机用户端使用其他基址时，可在管理端启动参数设置 `--csucampuscraft.user-base-url=http://127.0.0.1:8080` 并替换为实际可信基址；该值来自服务端配置，末尾斜杠会去除，仅拼服务端商品 ID，既不是表单 `returnUrl`，也不会放宽登录回跳白名单。
+
+受测代码为 `1aa6ad0c4a7546c5bfba7ed65ef05f5913132027`。双端 Wrapper `verify` 已退出 0；正式 HTTP/SQL/截图与敏感扫描结果为 通过（attempt2；本步范围，组员复核待补），见[STEP06 实测记录](docs/测试与验收用例.md#step06-实测记录)及[证据目录](docs/evidence/2026-11-14-step06/README.md)。TST-40 只记录本轮顺序相册维护/版本部分，TST-04 只记录本轮静态资源与回退部分；真实下单竞争、并发及故障注入留 STEP13。Word 实验指导书本轮不改，M1 复核后再按完整 STEP02–06 交付统一更新，不能以自动验收代替实名组员复核。

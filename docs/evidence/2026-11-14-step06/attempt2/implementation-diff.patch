@@ -1,0 +1,732 @@
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImage.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImage.java
+new file mode 100644
+index 0000000..9d4c231
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImage.java
+@@ -0,0 +1,27 @@
++package org.csucampuscraft.admin.catalog;
++
++import com.baomidou.mybatisplus.annotation.IdType;
++import com.baomidou.mybatisplus.annotation.TableId;
++import com.baomidou.mybatisplus.annotation.TableName;
++
++/** Album metadata only. The independent product cover is never written here. */
++@TableName("product_image")
++public class ProductImage {
++    @TableId(type = IdType.AUTO)
++    private Long id;
++    private Long productId;
++    private String imagePath;
++    private String altText;
++    private Integer sortOrder;
++
++    public Long getId() { return id; }
++    public void setId(Long value) { this.id = value; }
++    public Long getProductId() { return productId; }
++    public void setProductId(Long value) { this.productId = value; }
++    public String getImagePath() { return imagePath; }
++    public void setImagePath(String value) { this.imagePath = value; }
++    public String getAltText() { return altText; }
++    public void setAltText(String value) { this.altText = value; }
++    public Integer getSortOrder() { return sortOrder; }
++    public void setSortOrder(Integer value) { this.sortOrder = value; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImageInput.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImageInput.java
+new file mode 100644
+index 0000000..8f1c542
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImageInput.java
+@@ -0,0 +1,9 @@
++package org.csucampuscraft.admin.catalog;
++
++/** Allowlisted raw values kept separately from the database entity for safe form redisplay. */
++public record ProductImageInput(String imagePath, String altText, String sortOrder, String productVersion) {
++    public String getImagePath() { return imagePath; }
++    public String getAltText() { return altText; }
++    public String getSortOrder() { return sortOrder; }
++    public String getProductVersion() { return productVersion; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImageMapper.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImageMapper.java
+new file mode 100644
+index 0000000..f6bfa6e
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImageMapper.java
+@@ -0,0 +1,46 @@
++package org.csucampuscraft.admin.catalog;
++
++import com.baomidou.mybatisplus.core.mapper.BaseMapper;
++import java.util.List;
++import org.apache.ibatis.annotations.Delete;
++import org.apache.ibatis.annotations.Insert;
++import org.apache.ibatis.annotations.Mapper;
++import org.apache.ibatis.annotations.Options;
++import org.apache.ibatis.annotations.Param;
++import org.apache.ibatis.annotations.Select;
++import org.apache.ibatis.annotations.Update;
++
++@Mapper
++public interface ProductImageMapper extends BaseMapper<ProductImage> {
++    @Select("SELECT id,product_id,image_path,alt_text,sort_order FROM product_image "
++            + "WHERE product_id=#{productId} ORDER BY sort_order ASC,id ASC")
++    List<ProductImage> selectImages(@Param("productId") long productId);
++
++    @Select("SELECT id,product_id,image_path,alt_text,sort_order FROM product_image "
++            + "WHERE product_id=#{productId} AND id=#{imageId}")
++    ProductImage selectImage(@Param("productId") long productId, @Param("imageId") long imageId);
++
++    @Insert("""
++            INSERT INTO product_image(product_id,image_path,alt_text,sort_order)
++            VALUES(#{image.productId},#{image.imagePath},#{image.altText},#{image.sortOrder})
++            """)
++    @Options(useGeneratedKeys = true, keyProperty = "image.id", keyColumn = "id")
++    int insertImage(@Param("image") ProductImage image);
++
++    @Update("""
++            UPDATE product_image SET image_path=#{image.imagePath},alt_text=#{image.altText},
++                sort_order=#{image.sortOrder}
++            WHERE product_id=#{image.productId} AND id=#{image.id}
++            """)
++    int updateImage(@Param("image") ProductImage image);
++
++    @Delete("DELETE FROM product_image WHERE product_id=#{productId} AND id=#{imageId}")
++    int deleteImage(@Param("productId") long productId, @Param("imageId") long imageId);
++
++    @Update("""
++            UPDATE product SET version=version+1
++            WHERE id=#{productId} AND version=#{expectedVersion} AND version<9223372036854775807
++            """)
++    int incrementProductVersion(@Param("productId") long productId,
++                                @Param("expectedVersion") long expectedVersion);
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImagePage.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImagePage.java
+new file mode 100644
+index 0000000..74f81e1
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImagePage.java
+@@ -0,0 +1,5 @@
++package org.csucampuscraft.admin.catalog;
++
++import java.util.List;
++
++public record ProductImagePage(Product product, List<ProductImage> images) { }
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImageService.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImageService.java
+new file mode 100644
+index 0000000..4fb4b3b
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImageService.java
+@@ -0,0 +1,189 @@
++package org.csucampuscraft.admin.catalog;
++
++import java.util.LinkedHashMap;
++import java.util.Map;
++import java.util.function.Supplier;
++import org.csucampuscraft.admin.auth.AdminWriteGuard;
++import org.csucampuscraft.admin.auth.SessionIdentity;
++import org.csucampuscraft.admin.foundation.validation.InputChecks;
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import org.springframework.dao.ConcurrencyFailureException;
++import org.springframework.dao.DataIntegrityViolationException;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Service;
++import org.springframework.transaction.annotation.Isolation;
++import org.springframework.transaction.annotation.Transactional;
++
++@Service
++public class ProductImageService {
++    private final ProductMapper products;
++    private final ProductImageMapper images;
++    private final AdminWriteGuard actors;
++
++    public ProductImageService(ProductMapper products, ProductImageMapper images, AdminWriteGuard actors) {
++        this.products = products;
++        this.images = images;
++        this.actors = actors;
++    }
++
++    @Transactional(readOnly = true)
++    public ProductImagePage get(long productId) {
++        Product product = products.selectProduct(productId);
++        if (product == null) throw missingProduct();
++        return new ProductImagePage(product, images.selectImages(productId));
++    }
++
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public void create(SessionIdentity actor, long productId, ProductImageInput input) {
++        try {
++            actors.lock(actor);
++            Product parent = locked(productId);
++            long expected = requireVersion(parent, input.productVersion());
++            ProductImage image = validated(input);
++            capacity(parent);
++            image.setProductId(productId);
++            if (images.insertImage(image) != 1 || image.getId() == null) {
++                throw new IllegalStateException("Album insert did not return an identity");
++            }
++            increment(productId, expected);
++        } catch (DataIntegrityViolationException | ConcurrencyFailureException conflict) {
++            throw dataConflict();
++        }
++    }
++
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public void update(SessionIdentity actor, long productId, long imageId, ProductImageInput input) {
++        try {
++            actors.lock(actor);
++            Product parent = locked(productId);
++            long expected = requireVersion(parent, input.productVersion());
++            ProductImage current = owned(productId, imageId);
++            ProductImage edited = validated(input);
++            if (sameContent(current, edited)) return;
++            capacity(parent);
++            edited.setId(imageId);
++            edited.setProductId(productId);
++            if (images.updateImage(edited) != 1) throw dataConflict();
++            increment(productId, expected);
++        } catch (DataIntegrityViolationException | ConcurrencyFailureException conflict) {
++            throw dataConflict();
++        }
++    }
++
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public void remove(SessionIdentity actor, long productId, long imageId, String rawProductVersion) {
++        try {
++            actors.lock(actor);
++            Product parent = locked(productId);
++            long expected = requireVersion(parent, rawProductVersion);
++            owned(productId, imageId);
++            capacity(parent);
++            if (images.deleteImage(productId, imageId) != 1) throw dataConflict();
++            increment(productId, expected);
++        } catch (DataIntegrityViolationException | ConcurrencyFailureException conflict) {
++            throw dataConflict();
++        }
++    }
++
++    private Product locked(long productId) {
++        Product product = products.lockProduct(productId);
++        if (product == null) throw missingProduct();
++        return product;
++    }
++
++    private ProductImage owned(long productId, long imageId) {
++        ProductImage image = images.selectImage(productId, imageId);
++        if (image == null) {
++            throw new BusinessException(HttpStatus.NOT_FOUND, "PRODUCT_IMAGE_NOT_FOUND",
++                    "未找到该商品的相册图片。");
++        }
++        return image;
++    }
++
++    private void increment(long productId, long expectedVersion) {
++        if (images.incrementProductVersion(productId, expectedVersion) != 1) throw stale();
++    }
++
++    private static long requireVersion(Product parent, String raw) {
++        if (raw == null || raw.isBlank()) {
++            throw new BusinessException(HttpStatus.CONFLICT, "PRODUCT_IMAGE_VERSION_REQUIRED",
++                    "缺少商品版本，操作未提交，请重新载入相册页。",
++                    Map.of("productVersion", "请重新载入相册页取得商品版本。"));
++        }
++        long expected = InputChecks.longInteger("productVersion", raw, 0, Long.MAX_VALUE);
++        if (parent.getVersion() != expected) throw stale();
++        return expected;
++    }
++
++    private static ProductImage validated(ProductImageInput input) {
++        Map<String, String> errors = new LinkedHashMap<>();
++        String imagePath = checked(errors,
++                () -> InputChecks.requiredText("imagePath", input.imagePath(), 255), "");
++        if (!imagePath.isEmpty() && !safeImagePath(imagePath)) {
++            errors.put("imagePath", "请填写 images/ 下的站内相对路径，且不含穿越、协议或特殊路径标记。");
++        }
++        String altText = checked(errors,
++                () -> InputChecks.text("altText", input.altText(), 0, 120), "");
++        Integer sortOrder = checked(errors,
++                () -> input.sortOrder() == null || input.sortOrder().isBlank() ? 0
++                        : InputChecks.integer("sortOrder", input.sortOrder(), 0, Integer.MAX_VALUE), 0);
++        if (!errors.isEmpty()) {
++            throw new BusinessException(HttpStatus.BAD_REQUEST, "INVALID_PRODUCT_IMAGE_FIELDS",
++                    "请检查并修正相册资料。", errors);
++        }
++        ProductImage image = new ProductImage();
++        image.setImagePath(imagePath);
++        image.setAltText(altText.isEmpty() ? null : altText);
++        image.setSortOrder(sortOrder);
++        return image;
++    }
++
++    private static boolean safeImagePath(String path) {
++        if (!path.startsWith("images/") || path.contains("..") || path.contains(":")
++                || path.contains("\\") || path.contains("%") || path.contains("?")
++                || path.contains("#") || path.codePoints().anyMatch(Character::isISOControl)) {
++            return false;
++        }
++        for (String segment : path.split("/", -1)) {
++            if (".".equals(segment)) return false;
++        }
++        return true;
++    }
++
++    private static boolean sameContent(ProductImage current, ProductImage edited) {
++        return current.getImagePath().equals(edited.getImagePath())
++                && optional(current.getAltText()).equals(optional(edited.getAltText()))
++                && current.getSortOrder().equals(edited.getSortOrder());
++    }
++
++    private static String optional(String text) { return text == null ? "" : text; }
++
++    private static <T> T checked(Map<String, String> errors, Supplier<T> validation, T fallback) {
++        try { return validation.get(); }
++        catch (BusinessException invalid) { errors.putAll(invalid.getFieldErrors()); return fallback; }
++    }
++
++    private static void capacity(Product parent) {
++        if (parent.getVersion() == Long.MAX_VALUE) {
++            throw new BusinessException(HttpStatus.CONFLICT, "PRODUCT_IMAGE_VERSION_OVERFLOW",
++                    "商品版本已到允许上限，操作未提交，请联系组员处理。",
++                    Map.of("productVersion", "商品版本已到上限，无法保存实际变更。"));
++        }
++    }
++
++    private static BusinessException stale() {
++        return new BusinessException(HttpStatus.CONFLICT, "PRODUCT_IMAGE_VERSION_CONFLICT",
++                "商品资料或相册已发生变化，操作未提交，请重新载入相册页。",
++                Map.of("productVersion", "页面版本已过期，请重新载入后确认再提交。"));
++    }
++
++    private static BusinessException dataConflict() {
++        return new BusinessException(HttpStatus.CONFLICT, "PRODUCT_IMAGE_DATA_CONFLICT",
++                "商品或相册数据已变化，操作未提交，请重新载入后重试。",
++                Map.of("productVersion", "请重新载入相册页后重试。"));
++    }
++
++    private static BusinessException missingProduct() {
++        return new BusinessException(HttpStatus.NOT_FOUND, "PRODUCT_NOT_FOUND", "未找到请求的商品。");
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/ProductImageController.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/ProductImageController.java
+new file mode 100644
+index 0000000..cc17f1e
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/ProductImageController.java
+@@ -0,0 +1,164 @@
++package org.csucampuscraft.admin.web;
++
++import jakarta.servlet.http.HttpServletRequest;
++import java.util.LinkedHashMap;
++import java.util.List;
++import java.util.Map;
++import java.util.Set;
++import org.csucampuscraft.admin.auth.SessionSupport;
++import org.csucampuscraft.admin.catalog.Product;
++import org.csucampuscraft.admin.catalog.ProductImageInput;
++import org.csucampuscraft.admin.catalog.ProductImagePage;
++import org.csucampuscraft.admin.catalog.ProductImageService;
++import org.csucampuscraft.admin.foundation.validation.InputChecks;
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import org.springframework.beans.factory.annotation.Value;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Controller;
++import org.springframework.util.MultiValueMap;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.PathVariable;
++import org.springframework.web.bind.annotation.PostMapping;
++import org.springframework.web.bind.annotation.RequestParam;
++import org.springframework.web.servlet.ModelAndView;
++import org.springframework.web.servlet.view.RedirectView;
++
++@Controller
++public final class ProductImageController {
++    private static final Set<String> IMAGE_FIELDS = Set.of("imagePath", "altText", "sortOrder", "productVersion");
++    private final ProductImageService images;
++    private final SessionSupport sessions;
++    private final String userBaseUrl;
++
++    public ProductImageController(ProductImageService images, SessionSupport sessions,
++            @Value("${csucampuscraft.user-base-url:http://127.0.0.1:8080}") String userBaseUrl) {
++        this.images = images;
++        this.sessions = sessions;
++        // Trusted server configuration only; a request cannot supply the target host or redirect URL.
++        this.userBaseUrl = userBaseUrl.strip().replaceAll("/+$", "");
++    }
++
++    @GetMapping("/products/{productId}/images")
++    public ModelAndView page(@PathVariable("productId") String productId) {
++        long id = id("productId", productId);
++        return page(images.get(id), null, null, "add", null);
++    }
++
++    @PostMapping("/products/{productId}/images")
++    public ModelAndView create(@PathVariable("productId") String productId,
++                               @RequestParam MultiValueMap<String, String> parameters,
++                               HttpServletRequest request) {
++        long id = id("productId", productId);
++        ProductImageInput input = input(parameters);
++        try {
++            rejectDuplicates(parameters, IMAGE_FIELDS);
++            images.create(sessions.identity(request), id, input);
++            return redirect(id);
++        } catch (BusinessException failure) {
++            if (!formFailure(failure)) throw failure;
++            return page(images.get(id), input, null, "add", failure);
++        }
++    }
++
++    @PostMapping("/products/{productId}/images/{imageId}")
++    public ModelAndView update(@PathVariable("productId") String productId,
++                               @PathVariable("imageId") String imageId,
++                               @RequestParam MultiValueMap<String, String> parameters,
++                               HttpServletRequest request) {
++        long parentId = id("productId", productId);
++        long rowId = id("imageId", imageId);
++        ProductImageInput input = input(parameters);
++        try {
++            rejectDuplicates(parameters, IMAGE_FIELDS);
++            images.update(sessions.identity(request), parentId, rowId, input);
++            return redirect(parentId);
++        } catch (BusinessException failure) {
++            if (!formFailure(failure)) throw failure;
++            return page(images.get(parentId), input, rowId, "edit", failure);
++        }
++    }
++
++    @PostMapping("/products/{productId}/images/{imageId}/remove")
++    public ModelAndView remove(@PathVariable("productId") String productId,
++                               @PathVariable("imageId") String imageId,
++                               @RequestParam MultiValueMap<String, String> parameters,
++                               HttpServletRequest request) {
++        long parentId = id("productId", productId);
++        long rowId = id("imageId", imageId);
++        ProductImageInput input = new ProductImageInput(null, null, null, first(parameters, "productVersion"));
++        try {
++            rejectDuplicates(parameters, Set.of("productVersion"));
++            images.remove(sessions.identity(request), parentId, rowId, input.productVersion());
++            return redirect(parentId);
++        } catch (BusinessException failure) {
++            if (!formFailure(failure)) throw failure;
++            return page(images.get(parentId), input, rowId, "remove", failure);
++        }
++    }
++
++    private ModelAndView page(ProductImagePage page, ProductImageInput input, Long formImageId,
++                              String action, BusinessException failure) {
++        Product product = page.product();
++        ModelAndView view = new ModelAndView("products/images");
++        view.addObject("product", product);
++        view.addObject("images", page.images());
++        view.addObject("productVersion", product.getVersion());
++        view.addObject("imageForm", input == null
++                ? new ProductImageInput("", "", "0", product.getVersion().toString()) : input);
++        view.addObject("formImageId", formImageId);
++        view.addObject("formImagePresent", formImageId == null || page.images().stream()
++                .anyMatch(image -> formImageId.equals(image.getId())));
++        view.addObject("formAction", action);
++        view.addObject("reloadUrl", path(product.getId()));
++        view.addObject("userDetailUrl", userBaseUrl + "/products/" + product.getId());
++        Map<String, String> fieldErrors = failure == null ? Map.of() : failure.getFieldErrors();
++        view.addObject("fieldErrors", fieldErrors);
++        Map<String, String> anchors = new LinkedHashMap<>();
++        String prefix = formImageId == null ? "add-" : "image-" + formImageId + "-";
++        fieldErrors.forEach((field, message) -> anchors.put(prefix + field, message));
++        view.addObject("errorAnchors", anchors);
++        if (failure != null) {
++            view.setStatus(failure.getStatus());
++            view.addObject("globalError", failure.getMessage());
++        }
++        return view;
++    }
++
++    private static ProductImageInput input(MultiValueMap<String, String> parameters) {
++        return new ProductImageInput(first(parameters, "imagePath"), first(parameters, "altText"),
++                first(parameters, "sortOrder"), first(parameters, "productVersion"));
++    }
++
++    private static boolean formFailure(BusinessException failure) {
++        return failure.getStatus() == HttpStatus.BAD_REQUEST || failure.getStatus() == HttpStatus.CONFLICT;
++    }
++
++    private static void rejectDuplicates(MultiValueMap<String, String> parameters, Set<String> fields) {
++        for (String field : fields) {
++            List<String> values = parameters.get(field);
++            if (values != null && values.size() != 1) {
++                throw new BusinessException(HttpStatus.BAD_REQUEST, "DUPLICATE_PRODUCT_IMAGE_FIELD",
++                        "每个相册字段只能提交一个值。", Map.of(field, "请为此字段提交一个值。"));
++            }
++        }
++    }
++
++    private static String first(MultiValueMap<String, String> parameters, String field) {
++        List<String> values = parameters.get(field);
++        return values == null || values.isEmpty() ? null : values.get(0);
++    }
++
++    private static long id(String field, String raw) {
++        return InputChecks.longInteger(field, raw, 1, Long.MAX_VALUE);
++    }
++
++    private static String path(long productId) { return "/products/" + productId + "/images"; }
++
++    private static ModelAndView redirect(long productId) {
++        RedirectView redirect = new RedirectView(path(productId), true);
++        redirect.setStatusCode(HttpStatus.SEE_OTHER);
++        redirect.setExposeModelAttributes(false);
++        redirect.setExpandUriTemplateVariables(false);
++        return new ModelAndView(redirect);
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/resources/static/css/app.css b/csucampuscraft-admin/src/main/resources/static/css/app.css
+index e51bba3..f4ca289 100644
+--- a/csucampuscraft-admin/src/main/resources/static/css/app.css
++++ b/csucampuscraft-admin/src/main/resources/static/css/app.css
+@@ -245,3 +245,57 @@ tbody tr[aria-disabled="true"] { color: var(--color-muted); background: var(--co
+ [data-page-id="A04"] .table-container { width: 100%; overflow-x: auto; }
+ [data-page-id="A05"] .panel + .panel { margin-top: var(--space-6); }
+ @media (max-width: 760px) { [data-page-id="A05"] .form-grid { grid-template-columns: 1fr; } }
++
++/* STEP06 A10 album maintenance is scoped to the management page. */
++[data-page-id="A10"] { min-width: 0; }
++[data-page-id="A10"] .admin-toolbar > div:first-child { min-width: 0; }
++[data-page-id="A10"] h1,
++[data-page-id="A10"] .album-path { overflow-wrap: anywhere; }
++[data-page-id="A10"] .button-row { margin-top: var(--space-4); }
++[data-page-id="A10"] .admin-toolbar .button-row { margin-top: 0; }
++[data-page-id="A10"] .album-product {
++    display: grid; grid-template-columns: 160px minmax(0, 1fr);
++    align-items: start; gap: var(--space-6);
++}
++[data-page-id="A10"] .album-cover,
++[data-page-id="A10"] .album-preview { margin: 0; min-width: 0; }
++[data-page-id="A10"] figcaption { margin-top: var(--space-2); color: var(--color-muted); font-size: var(--font-size-small); }
++[data-page-id="A10"] .album-meta {
++    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
++    gap: var(--space-3) var(--space-6); margin: var(--space-3) 0;
++}
++[data-page-id="A10"] .album-meta div { min-width: 0; }
++[data-page-id="A10"] .album-meta dt { color: var(--color-muted); font-size: var(--font-size-small); }
++[data-page-id="A10"] .album-meta dd { margin: 0; overflow-wrap: anywhere; }
++[data-page-id="A10"] .album-meta-wide { grid-column: 1 / -1; }
++[data-page-id="A10"] .album-failed-target { margin-bottom: var(--space-6); }
++[data-page-id="A10"] .album-add,
++[data-page-id="A10"] .album-gallery { margin-top: var(--space-6); }
++[data-page-id="A10"] .album-section-heading { margin-bottom: var(--space-4); }
++[data-page-id="A10"] .album-fields {
++    display: grid; grid-template-columns: minmax(0, 2fr) minmax(140px, 1fr);
++    gap: var(--space-4); margin-top: var(--space-4);
++}
++[data-page-id="A10"] .album-path-field { grid-column: 1 / -1; }
++[data-page-id="A10"] .album-fields .form-field { margin-bottom: 0; }
++[data-page-id="A10"] .album-fields .field-help { margin-top: var(--space-2); }
++[data-page-id="A10"] .album-records { display: grid; gap: var(--space-4); }
++[data-page-id="A10"] .album-record {
++    display: grid; grid-template-columns: 192px minmax(0, 1fr);
++    align-items: start; gap: var(--space-6);
++}
++[data-page-id="A10"] .album-record-content { min-width: 0; }
++[data-page-id="A10"] .album-preview .field-help { margin-top: var(--space-2); }
++[data-page-id="A10"] .album-remove {
++    display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-3);
++    padding-top: var(--space-4); margin-top: var(--space-4);
++    border-top: 1px solid var(--color-border);
++}
++@media (max-width: 760px) {
++    [data-page-id="A10"] .album-product,
++    [data-page-id="A10"] .album-record { grid-template-columns: 1fr; }
++    [data-page-id="A10"] .album-cover { max-width: 160px; }
++    [data-page-id="A10"] .album-preview { max-width: 240px; }
++    [data-page-id="A10"] .album-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
++    [data-page-id="A10"] .album-fields { grid-template-columns: 1fr; }
++}
+diff --git a/csucampuscraft-admin/src/main/resources/templates/products/form.html b/csucampuscraft-admin/src/main/resources/templates/products/form.html
+index a109b58..69eb391 100644
+--- a/csucampuscraft-admin/src/main/resources/templates/products/form.html
++++ b/csucampuscraft-admin/src/main/resources/templates/products/form.html
+@@ -10,6 +10,8 @@
+             <p class="muted" th:text="${editing ? '修改资料时保留现有 SKU、库存和上架状态。' : '新商品先保存为草稿，检查后再上架。'}">商品说明</p></div>
+         <div class="button-row">
+             <a class="button button-secondary" th:href="${returnUrl}">返回商品列表</a>
++            <a class="button button-secondary" th:if="${editing}"
++               th:href="@{/products/{id}/images(id=${product.id})}" data-album-link>管理商品相册</a>
+             <a class="button button-secondary" th:if="${editing}"
+                th:href="@{/products/{id}/edit(id=${product.id},returnUrl=${returnUrl})}" data-reload-product>重新载入编辑页</a>
+         </div>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/products/images.html b/csucampuscraft-admin/src/main/resources/templates/products/images.html
+new file mode 100644
+index 0000000..20478f5
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/products/images.html
+@@ -0,0 +1,161 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('商品相册 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>商品相册</title></head>
++<body>
++<div th:fragment="mainContent" data-page-id="A10"
++     th:attr="data-product-id=${product.id},data-product-version=${productVersion},data-image-count=${#lists.size(images)}">
++    <header class="page-heading admin-toolbar">
++        <div>
++            <p class="eyebrow">商品相册</p>
++            <h1 th:text="${product.name}">商品名称</h1>
++            <p class="muted">维护已有图片路径、替代文本和展示顺序。</p>
++        </div>
++        <div class="button-row">
++            <a class="button button-secondary" th:href="@{/products}">返回商品列表</a>
++            <a class="button button-secondary" th:href="@{/products/{id}/edit(id=${product.id})}">返回商品编辑</a>
++            <a class="button button-secondary" th:href="${reloadUrl}" data-reload-album>重新载入相册</a>
++            <a class="button button-secondary" th:href="${userDetailUrl}" data-user-detail>查看用户端详情</a>
++        </div>
++    </header>
++
++    <th:block th:replace="~{fragments/alerts :: summary(${errorAnchors})}"></th:block>
++
++    <section class="panel album-failed-target" th:if="${formImageId != null and !formImagePresent}"
++             th:with="prefix=${'image-' + formImageId + '-'}" aria-labelledby="album-failed-target-title">
++        <h2 id="album-failed-target-title">核对未保存的提交</h2>
++        <p>本次操作未保存，目标记录已不在当前相册。请重新载入后核对。</p>
++        <dl class="album-meta">
++            <div>
++                <dt>图片编号</dt><dd th:text="${formImageId}">图片编号</dd>
++            </div>
++            <div th:id="${prefix + 'productVersion'}">
++                <dt>提交的商品版本</dt><dd th:text="${imageForm.productVersion ?: '未填写'}">商品版本</dd>
++                <dd class="field-error" th:if="${fieldErrors.containsKey('productVersion')}" th:text="${fieldErrors.get('productVersion')}">请重新载入相册。</dd>
++            </div>
++            <div th:id="${prefix + 'sortOrder'}">
++                <dt>提交的排序值</dt><dd th:text="${imageForm.sortOrder ?: '未填写'}">排序值</dd>
++                <dd class="field-error" th:if="${fieldErrors.containsKey('sortOrder')}" th:text="${fieldErrors.get('sortOrder')}">请检查排序值。</dd>
++            </div>
++            <div class="album-meta-wide" th:id="${prefix + 'imagePath'}">
++                <dt>提交的图片路径</dt><dd th:text="${imageForm.imagePath ?: '未填写'}">图片路径</dd>
++                <dd class="field-error" th:if="${fieldErrors.containsKey('imagePath')}" th:text="${fieldErrors.get('imagePath')}">请检查图片路径。</dd>
++            </div>
++            <div class="album-meta-wide" th:id="${prefix + 'altText'}">
++                <dt>提交的替代文本</dt><dd th:text="${imageForm.altText ?: '未填写'}">替代文本</dd>
++                <dd class="field-error" th:if="${fieldErrors.containsKey('altText')}" th:text="${fieldErrors.get('altText')}">请检查替代文本。</dd>
++            </div>
++        </dl>
++        <a th:href="${reloadUrl}">重新载入相册，按当前记录继续</a>
++    </section>
++
++    <section class="panel album-product" aria-labelledby="album-product-title">
++        <figure class="album-cover">
++            <th:block th:replace="~{fragments/images :: image(${product.coverImage},${product.name})}"></th:block>
++            <figcaption>独立封面</figcaption>
++        </figure>
++        <div>
++            <h2 id="album-product-title">商品与封面</h2>
++            <dl class="album-meta">
++                <div><dt>SKU</dt><dd th:text="${product.sku}">SKU</dd></div>
++                <div><dt>商品版本</dt><dd th:text="${productVersion}" data-current-version>0</dd></div>
++                <div><dt>商品状态</dt><dd th:text="${product.status == 'ON_SALE' ? '已上架' : '草稿 / 下架'}">商品状态</dd></div>
++                <div class="album-meta-wide"><dt>封面路径</dt><dd class="album-path" th:text="${product.coverImage}">images/catalog-placeholder.svg</dd></div>
++            </dl>
++            <p class="field-help">封面独立维护；新增、编辑或移除相册记录都不会修改封面。</p>
++            <p class="field-help" th:if="${product.status != 'ON_SALE'}">当前商品未上架，用户端详情暂不可浏览；上架后可从上方入口查看。</p>
++        </div>
++    </section>
++
++    <section class="panel album-add" aria-labelledby="album-add-title"
++             th:with="addFailed=${formImageId == null and formAction == 'add'}">
++        <div class="album-section-heading">
++            <div>
++                <h2 id="album-add-title">新增相册图片</h2>
++                <p class="field-help">填写项目已有的相对图片路径，无需上传文件。</p>
++            </div>
++        </div>
++        <form method="post" th:action="@{/products/{id}/images(id=${product.id})}" data-submit-state data-image-action="add">
++            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++            <input type="hidden" name="productVersion" th:value="${addFailed ? imageForm.productVersion : productVersion}">
++            <p id="add-productVersion" class="field-help"
++               th:classappend="${addFailed and fieldErrors.containsKey('productVersion') ? 'field-error' : ''}"
++               th:text="${addFailed and fieldErrors.containsKey('productVersion') ? fieldErrors.get('productVersion') : '提交时核对商品版本；提示过期时请重新载入相册。'}">商品版本</p>
++            <div class="album-fields">
++                <div class="album-path-field">
++                    <th:block th:replace="~{fragments/fields :: text('add-imagePath','imagePath','图片路径',${addFailed ? imageForm.imagePath : ''},${addFailed ? fieldErrors : null})}"></th:block>
++                    <p class="field-help">1–255 个字符，以 images/ 开头；不接受外部地址、斜杠开头、反斜杠、..、单独的 . 路径段、:、%、?、# 或控制字符。</p>
++                </div>
++                <div>
++                    <th:block th:replace="~{fragments/fields :: text('add-altText','altText','替代文本（可选）',${addFailed ? imageForm.altText : ''},${addFailed ? fieldErrors : null})}"></th:block>
++                    <p class="field-help">最多 120 个字符；留空时使用商品名称。</p>
++                </div>
++                <div>
++                    <th:block th:replace="~{fragments/fields :: text('add-sortOrder','sortOrder','排序值（非负整数）',${addFailed ? imageForm.sortOrder : '0'},${addFailed ? fieldErrors : null})}"></th:block>
++                    <p class="field-help">留空按 0；先按排序值、再按图片编号升序显示。</p>
++                </div>
++            </div>
++            <div class="button-row"><button type="submit">新增图片记录</button></div>
++        </form>
++    </section>
++
++    <section class="album-gallery" aria-labelledby="album-gallery-title">
++        <div class="album-section-heading">
++            <div>
++                <h2 id="album-gallery-title">当前相册</h2>
++                <p class="field-help">共 <strong th:text="${#lists.size(images)}">0</strong> 张图片。保存后重新读取版本，其他表单以新版本继续操作。</p>
++            </div>
++        </div>
++        <div class="empty-state" th:if="${#lists.isEmpty(images)}" data-image-empty>
++            <p>相册为空，用户端详情回退封面；封面缺图时显示占位图。</p>
++            <p>可在上方新增相册图片，商品封面仍独立保留。</p>
++        </div>
++        <div class="album-records">
++            <article class="panel album-record" th:each="image : ${images}"
++                     th:attr="data-image-id=${image.id},data-sort-order=${image.sortOrder}"
++                     th:with="prefix=${'image-' + image.id + '-'},editFailed=${formImageId != null and formImageId == image.id and formAction == 'edit'},removeFailed=${formImageId != null and formImageId == image.id and formAction == 'remove'}">
++                <figure class="album-preview">
++                    <th:block th:replace="~{fragments/images :: image(${image.imagePath},${#strings.isEmpty(image.altText) ? product.name : image.altText})}"></th:block>
++                    <figcaption th:text="${'图片编号 ' + image.id}">图片编号</figcaption>
++                    <p class="album-path field-help" th:text="${image.imagePath}">图片路径</p>
++                </figure>
++                <div class="album-record-content">
++                    <h3 th:text="${'图片 ' + image.id}">相册图片</h3>
++                    <p th:id="${prefix + 'productVersion'}" class="field-help"
++                       th:classappend="${(editFailed or removeFailed) and fieldErrors.containsKey('productVersion') ? 'field-error' : ''}"
++                       th:text="${(editFailed or removeFailed) and fieldErrors.containsKey('productVersion') ? fieldErrors.get('productVersion') : '排序值相同时按图片编号升序显示。'}">相册顺序</p>
++                    <form method="post" th:action="@{/products/{pid}/images/{iid}(pid=${product.id},iid=${image.id})}"
++                          data-submit-state data-image-action="edit" th:attr="data-image-id=${image.id}">
++                        <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++                        <input type="hidden" name="productVersion" th:value="${editFailed ? imageForm.productVersion : productVersion}">
++                        <div class="album-fields">
++                            <div class="album-path-field">
++                                <th:block th:replace="~{fragments/fields :: text(${prefix + 'imagePath'},'imagePath','图片路径',${editFailed ? imageForm.imagePath : image.imagePath},${editFailed ? fieldErrors : null})}"></th:block>
++                            </div>
++                            <div>
++                                <th:block th:replace="~{fragments/fields :: text(${prefix + 'altText'},'altText','替代文本（可选）',${editFailed ? imageForm.altText : image.altText},${editFailed ? fieldErrors : null})}"></th:block>
++                            </div>
++                            <div>
++                                <th:block th:replace="~{fragments/fields :: text(${prefix + 'sortOrder'},'sortOrder','排序值（非负整数）',${editFailed ? imageForm.sortOrder : image.sortOrder},${editFailed ? fieldErrors : null})}"></th:block>
++                            </div>
++                        </div>
++                        <div class="button-row">
++                            <button type="submit" class="button-secondary">保存此图片</button>
++                            <span class="field-help">内容未变时保存成功且不增加商品版本。</span>
++                        </div>
++                    </form>
++                    <form method="post" class="album-remove"
++                          th:action="@{/products/{pid}/images/{iid}/remove(pid=${product.id},iid=${image.id})}"
++                          data-submit-state data-image-action="remove" th:attr="data-image-id=${image.id}">
++                        <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++                        <input type="hidden" name="productVersion" th:value="${removeFailed ? imageForm.productVersion : productVersion}">
++                        <button type="submit" class="button-danger">移除此图片记录</button>
++                        <span class="field-help">只移除相册记录，保留静态图片文件和独立封面。</span>
++                    </form>
++                </div>
++            </article>
++        </div>
++    </section>
++</div>
++</body>
++</html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/products/list.html b/csucampuscraft-admin/src/main/resources/templates/products/list.html
+index 87cd9b2..3e05f12 100644
+--- a/csucampuscraft-admin/src/main/resources/templates/products/list.html
++++ b/csucampuscraft-admin/src/main/resources/templates/products/list.html
+@@ -85,8 +85,7 @@
+                             <button type="submit" class="button-secondary">下架</button>
+                         </form>
+                     </div>
+-                    <!-- STEP06 接入相册维护；本步不注册相册路由。 -->
+-                    <p class="field-help">相册管理暂未开放</p>
++                    <p class="field-help"><a th:href="@{/products/{id}/images(id=${item.id})}" data-album-link>管理商品相册</a></p>
+                 </td>
+             </tr>
+             </tbody>

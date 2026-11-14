@@ -1,0 +1,378 @@
+{
+  "review_date": "2026-11-14",
+  "reviewer": "Codex UI sub-agent (AI review; human member cross-review remains pending)",
+  "tested_code_sha": "1aa6ad0c4a7546c5bfba7ed65ef05f5913132027",
+  "attempt": "attempt2",
+  "attempt_overall": "PASS",
+  "browser_overall": "PASS",
+  "visual_overall": "PASS",
+  "visual_source_attempt": "attempt1 (all 24 screenshots individually viewed); exact SHA256 equivalence checked for later attempts",
+  "scope": "Only the 24 individually viewed screenshots at 1366x768 and 1920x1080; appearance does not replace HTTP/database assertions.",
+  "limitations": [
+    "AI visual review is not the project's pending human cross-review.",
+    "Screenshots show rendered placeholders; raw missing-file 404 and loaded fallback 200 are established by separate HTTP/browser records.",
+    "This report does not alter or override the attempt's overall result."
+  ],
+  "observations": [
+    {
+      "path": "browser/a10-edited-gallery-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        5538
+      ],
+      "sha256": "deaaf79240493af34280dcdbe5531febba4645dfa5473e72d55272a6247b3ac8",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "十行相册按画面顺序展现；空alt、长路径和120字alt仍在各自区域，长路径预览文字换行且无横向溢出。"
+    },
+    {
+      "path": "browser/a10-seed-gallery-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        2855
+      ],
+      "sha256": "c810e5c5a92db45c25b18eadfb7736f36cb6d15f6e0b2e7272648fa738230a01",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "商品摘要、独立封面、版本、新增表单及四行相册完整；预览、标签、排序、保存和移除操作未见重叠。"
+    },
+    {
+      "path": "browser/a10-empty-fallback-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1233
+      ],
+      "sha256": "4f0cbce66e6e91f5ae69934eb7b6f5a7b11e76458a69c4429f693ca7f3337162",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "空相册说明详情回退封面；新增表单仍保留，独立封面与商品版本可见。"
+    },
+    {
+      "path": "browser/a10-missing-cover-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1233
+      ],
+      "sha256": "63cdd2794cb77e24d88c489de1ae895509c7a9dc5a2cc5ddaae5fecb09b2bc9b",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "缺失封面显示占位图，原封面路径仍以文本显示；空态及新增入口完整。"
+    },
+    {
+      "path": "browser/a04-album-entry-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1763
+      ],
+      "sha256": "ef24556e83db84a623e038e656c47e5726f26d773dd8d6d0ce16d4a8e691f250",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "商品行内相册入口清楚可见；表格、筛选及分页未见遮挡或横向溢出。"
+    },
+    {
+      "path": "browser/a05-album-entry-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1854
+      ],
+      "sha256": "d07b168bdf3b1814d335c351e8e6b8214b4f89ffa75c909b1ceb2667a1c1c785",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "编辑页页首相册入口可见；资料、状态、补货区域完整，原布局保持。"
+    },
+    {
+      "path": "browser/u03-edited-gallery-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        2366
+      ],
+      "sha256": "02bacad3f513227ec3dc2122a8648cc70af6db78c655edcfd09363eabfac72b4",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "用户端十张相册与替代文本显示完整，长替代文本自动换行；图库、设计说明及禁用加购区未见遮挡。"
+    },
+    {
+      "path": "browser/u03-seed-gallery-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1632
+      ],
+      "sha256": "e8e19daa71aaa54f6eea8fcae36dd844158ad762f3ceace78eb0046da2cd122e",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "四张种子相册及替代文本完整，封面、面包屑和详情布局正常。"
+    },
+    {
+      "path": "browser/u03-empty-cover-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1061
+      ],
+      "sha256": "e1f77f464e81c3b2c496153c321ca45d51d58b36bb7065546024cf6a9e66ab9a",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "相册零张提示可见，详情保留商品封面及原商品信息。"
+    },
+    {
+      "path": "browser/u03-missing-cover-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1061
+      ],
+      "sha256": "f7a3c20ca8e074d83d46cf7c0120663fac2364a2f1cd7fa5f2b1f5ca1412268f",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "缺失封面已显示占位图，零张相册提示可见，页面未出现破图。"
+    },
+    {
+      "path": "browser/a10-draft-product-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1267
+      ],
+      "sha256": "bc1db8971c7047fbf1411dbddf1f85d25c310b08a5d69803fe061451a1021f80",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "草稿/下架状态与用户端暂不可浏览提示清楚；相册为空仍可新增。"
+    },
+    {
+      "path": "browser/u03-sold-out-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1061
+      ],
+      "sha256": "8606f46c7a34b5ca440adfa8777657addbc2d49d6c4eecd03935441943e13458",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "售罄与库存0标识可见；详情仍可浏览，加购区保持禁用。"
+    },
+    {
+      "path": "browser/a10-edited-gallery-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        5538
+      ],
+      "sha256": "9e9323ad454dfafe41229ccc5f7a5766ff0abdd4649d9e71c6f8bcba2b77613d",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "十行相册按画面顺序展现；空alt、长路径和120字alt仍在各自区域，长路径预览文字换行且无横向溢出。"
+    },
+    {
+      "path": "browser/a10-seed-gallery-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        2855
+      ],
+      "sha256": "40dbdc85e2dda0fb61926067b4902423fac6d5173093967474f5be1662540262",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "商品摘要、独立封面、版本、新增表单及四行相册完整；预览、标签、排序、保存和移除操作未见重叠。"
+    },
+    {
+      "path": "browser/a10-empty-fallback-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1233
+      ],
+      "sha256": "83e0c9d79cdc8dcb8b98bc7144ae11ee813e3dfd14070221b6676508eeda5271",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "空相册说明详情回退封面；新增表单仍保留，独立封面与商品版本可见。"
+    },
+    {
+      "path": "browser/a10-missing-cover-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1233
+      ],
+      "sha256": "5362679d41617e3a6a1606bf4b85bb45ca990c793ed9917c734949514d811334",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "缺失封面显示占位图，原封面路径仍以文本显示；空态及新增入口完整。"
+    },
+    {
+      "path": "browser/a04-album-entry-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1763
+      ],
+      "sha256": "bbbe0d5b96660340e0b99747a21448e0f2a8247256e23c8172114035c0af17f0",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "商品行内相册入口清楚可见；表格、筛选及分页未见遮挡或横向溢出。"
+    },
+    {
+      "path": "browser/a05-album-entry-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1854
+      ],
+      "sha256": "239f1d2a75d8bdc37b7f2ddef85694258c37a79a2ab4700f280ec4fe4fda09d9",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "编辑页页首相册入口可见；资料、状态、补货区域完整，原布局保持。"
+    },
+    {
+      "path": "browser/u03-edited-gallery-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        2366
+      ],
+      "sha256": "af32289d70de984120270ea850947227c41cef6f12c60a2466a5c05e64b22595",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "用户端十张相册与替代文本显示完整，长替代文本自动换行；图库、设计说明及禁用加购区未见遮挡。"
+    },
+    {
+      "path": "browser/u03-seed-gallery-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1632
+      ],
+      "sha256": "76fdcde650107731b09173436d977a13857931394cae9df7bb2b0e71c12c0142",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "四张种子相册及替代文本完整，封面、面包屑和详情布局正常。"
+    },
+    {
+      "path": "browser/u03-empty-cover-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "sha256": "223151b53e67726483dfb71b577a4d920d8a307ba2f5c28dcf5bacb1d52dac85",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "相册零张提示可见，详情保留商品封面及原商品信息。"
+    },
+    {
+      "path": "browser/u03-missing-cover-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "sha256": "737f73dd68edf02745d70166fc57a776120627f9b30a76752fe6e5cd57bc86c5",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "缺失封面已显示占位图，零张相册提示可见，页面未出现破图。"
+    },
+    {
+      "path": "browser/a10-draft-product-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1267
+      ],
+      "sha256": "3d17c204b7dcfbcf0e3d8feb494e321238c5332f32fabb7fb7f7413383c36c3f",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "草稿/下架状态与用户端暂不可浏览提示清楚；相册为空仍可新增。"
+    },
+    {
+      "path": "browser/u03-sold-out-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "sha256": "8b60c2cc50897b122b7e595bc029c5023f961e7e4616baea272e8253554dc222",
+      "method": "SHA256-identical to the individually view_image-inspected attempt1 screenshot",
+      "visual_result": "PASS",
+      "observation": "售罄与库存0标识可见；详情仍可浏览，加购区保持禁用。"
+    }
+  ]
+}

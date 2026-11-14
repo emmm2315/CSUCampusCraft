@@ -1,0 +1,118 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.15)
+
+2026-11-14T13:22:21.530+08:00  INFO 31904 --- [csucampuscraft-admin] [           main] AlbumWriteProbe                          : Starting AlbumWriteProbe using Java 21.0.12.1 with PID 31904 (C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step06-admin-images\verification\runtime\attempt2\native-probe started by Starmetor in C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe)
+2026-11-14T13:22:21.532+08:00  INFO 31904 --- [csucampuscraft-admin] [           main] AlbumWriteProbe                          : The following 1 profile is active: "default"
+2026-11-14T13:22:22.287+08:00  INFO 31904 --- [csucampuscraft-admin] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2026-11-14T13:22:22.298+08:00  INFO 31904 --- [csucampuscraft-admin] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-14T13:22:22.298+08:00  INFO 31904 --- [csucampuscraft-admin] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-11-14T13:22:22.340+08:00  INFO 31904 --- [csucampuscraft-admin] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-14T13:22:22.340+08:00  INFO 31904 --- [csucampuscraft-admin] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 783 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.7 
+2026-11-14T13:22:22.984+08:00  INFO 31904 --- [csucampuscraft-admin] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 59011 (http) with context path '/'
+2026-11-14T13:22:22.989+08:00  INFO 31904 --- [csucampuscraft-admin] [           main] AlbumWriteProbe                          : Started AlbumWriteProbe in 1.76 seconds (process running for 1.976)
+2026-11-14T13:22:22.994+08:00  INFO 31904 --- [csucampuscraft-admin] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-14T13:22:23.246+08:00  INFO 31904 --- [csucampuscraft-admin] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5112b7
+2026-11-14T13:22:23.248+08:00  INFO 31904 --- [csucampuscraft-admin] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+SQL_TRACE create #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id, username, display_name, role, status, updated_at FROM store_user WHERE id = ? FOR UPDATE
+SQL_TRACE create #2 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT p.id,p.sku,p.category_id,p.name,p.summary,p.description,p.cover_image,p.price,p.stock,p.status,p.sort_order,p.version,p.created_at,p.updated_at FROM product p WHERE p.id=? FOR UPDATE
+SQL_TRACE create #3 active=true declaredIsolation=2 jdbcIsolation=2 sql=INSERT INTO product_image(product_id,image_path,alt_text,sort_order) VALUES(?,?,?,?)
+SQL_TRACE create #4 active=true declaredIsolation=2 jdbcIsolation=2 sql=UPDATE product SET version=version+1 WHERE id=? AND version=? AND version<9223372036854775807
+SQL_TRACE edit #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id, username, display_name, role, status, updated_at FROM store_user WHERE id = ? FOR UPDATE
+SQL_TRACE edit #2 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT p.id,p.sku,p.category_id,p.name,p.summary,p.description,p.cover_image,p.price,p.stock,p.status,p.sort_order,p.version,p.created_at,p.updated_at FROM product p WHERE p.id=? FOR UPDATE
+SQL_TRACE edit #3 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,product_id,image_path,alt_text,sort_order FROM product_image WHERE product_id=? AND id=?
+SQL_TRACE edit #4 active=true declaredIsolation=2 jdbcIsolation=2 sql=UPDATE product_image SET image_path=?,alt_text=?, sort_order=? WHERE product_id=? AND id=?
+SQL_TRACE edit #5 active=true declaredIsolation=2 jdbcIsolation=2 sql=UPDATE product SET version=version+1 WHERE id=? AND version=? AND version<9223372036854775807
+SQL_TRACE no-op #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id, username, display_name, role, status, updated_at FROM store_user WHERE id = ? FOR UPDATE
+SQL_TRACE no-op #2 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT p.id,p.sku,p.category_id,p.name,p.summary,p.description,p.cover_image,p.price,p.stock,p.status,p.sort_order,p.version,p.created_at,p.updated_at FROM product p WHERE p.id=? FOR UPDATE
+SQL_TRACE no-op #3 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,product_id,image_path,alt_text,sort_order FROM product_image WHERE product_id=? AND id=?
+SQL_TRACE stale-version #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id, username, display_name, role, status, updated_at FROM store_user WHERE id = ? FOR UPDATE
+SQL_TRACE stale-version #2 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT p.id,p.sku,p.category_id,p.name,p.summary,p.description,p.cover_image,p.price,p.stock,p.status,p.sort_order,p.version,p.created_at,p.updated_at FROM product p WHERE p.id=? FOR UPDATE
+SQL_TRACE invalid-path #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id, username, display_name, role, status, updated_at FROM store_user WHERE id = ? FOR UPDATE
+SQL_TRACE invalid-path #2 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT p.id,p.sku,p.category_id,p.name,p.summary,p.description,p.cover_image,p.price,p.stock,p.status,p.sort_order,p.version,p.created_at,p.updated_at FROM product p WHERE p.id=? FOR UPDATE
+SQL_TRACE stale-stamp #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id, username, display_name, role, status, updated_at FROM store_user WHERE id = ? FOR UPDATE
+SQL_TRACE customer-role #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id, username, display_name, role, status, updated_at FROM store_user WHERE id = ? FOR UPDATE
+SQL_TRACE disabled-actor #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id, username, display_name, role, status, updated_at FROM store_user WHERE id = ? FOR UPDATE
+SQL_TRACE remove #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id, username, display_name, role, status, updated_at FROM store_user WHERE id = ? FOR UPDATE
+SQL_TRACE remove #2 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT p.id,p.sku,p.category_id,p.name,p.summary,p.description,p.cover_image,p.price,p.stock,p.status,p.sort_order,p.version,p.created_at,p.updated_at FROM product p WHERE p.id=? FOR UPDATE
+SQL_TRACE remove #3 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,product_id,image_path,alt_text,sort_order FROM product_image WHERE product_id=? AND id=?
+SQL_TRACE remove #4 active=true declaredIsolation=2 jdbcIsolation=2 sql=DELETE FROM product_image WHERE product_id=? AND id=?
+SQL_TRACE remove #5 active=true declaredIsolation=2 jdbcIsolation=2 sql=UPDATE product SET version=version+1 WHERE id=? AND version=? AND version<9223372036854775807
+2026-11-14T13:22:23.432+08:00  INFO 31904 --- [csucampuscraft-admin] [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-14T13:22:23.433+08:00  INFO 31904 --- [csucampuscraft-admin] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-11-14T13:22:23.435+08:00  INFO 31904 --- [csucampuscraft-admin] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-11-14T13:22:23.455+08:00  INFO 31904 --- [csucampuscraft-admin] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+{"overall":"PASS","checks":63,"secretsRecorded":false,"scope":"actual JAR Service; serial direct invocation; no production route/fault hook/concurrency"}
+CHECK create-success=true
+CHECK create-first-actor-lock=true
+CHECK create-all-active-rc=true
+CHECK create-single-connection=true
+CHECK create-second-parent-lock=true
+CHECK create-one-parent-bump=true
+CHECK create-version-conditional-bump=true
+CHECK edit-success=true
+CHECK edit-first-actor-lock=true
+CHECK edit-all-active-rc=true
+CHECK edit-single-connection=true
+CHECK edit-second-parent-lock=true
+CHECK edit-scoped-image-query=true
+CHECK edit-one-parent-bump=true
+CHECK no-op-success=true
+CHECK no-op-first-actor-lock=true
+CHECK no-op-all-active-rc=true
+CHECK no-op-single-connection=true
+CHECK no-op-second-parent-lock=true
+CHECK no-op-no-dml=true
+CHECK no-op-zero-write=true
+CHECK stale-version-refused=true
+CHECK stale-version-first-actor-lock=true
+CHECK stale-version-all-active-rc=true
+CHECK stale-version-single-connection=true
+CHECK stale-version-second-parent-lock=true
+CHECK version-before-image-lookup=true
+CHECK stale-zero-write=true
+CHECK invalid-path-refused=true
+CHECK invalid-path-first-actor-lock=true
+CHECK invalid-path-all-active-rc=true
+CHECK invalid-path-single-connection=true
+CHECK invalid-path-second-parent-lock=true
+CHECK invalid-path-no-dml=true
+CHECK invalid-path-zero-write=true
+CHECK missing-actor-refused=true
+CHECK missing-actor-no-sql=true
+CHECK missing-actor-zero-write=true
+CHECK stale-stamp-refused=true
+CHECK stale-stamp-first-actor-lock=true
+CHECK stale-stamp-all-active-rc=true
+CHECK stale-stamp-single-connection=true
+CHECK stale-stamp-only-actor-query=true
+CHECK stale-stamp-zero-write=true
+CHECK customer-role-refused=true
+CHECK customer-role-first-actor-lock=true
+CHECK customer-role-all-active-rc=true
+CHECK customer-role-single-connection=true
+CHECK customer-role-only-actor-query=true
+CHECK customer-role-zero-write=true
+CHECK disabled-actor-refused=true
+CHECK disabled-actor-first-actor-lock=true
+CHECK disabled-actor-all-active-rc=true
+CHECK disabled-actor-single-connection=true
+CHECK disabled-only-actor-query=true
+CHECK disabled-zero-write=true
+CHECK remove-success=true
+CHECK remove-first-actor-lock=true
+CHECK remove-all-active-rc=true
+CHECK remove-single-connection=true
+CHECK remove-second-parent-lock=true
+CHECK remove-one-parent-bump=true
+CHECK remove-scoped-image-query=true
