@@ -1,0 +1,27 @@
+{"name": "A06-initial-all", "http_sequence": 27, "parameters": {}, "total": 10, "ordered_ids": [1, 6, 10, 2, 5, 7, 3, 8, 4, 9], "page": 1, "size": 10}
+{"name": "A06-status-ALL", "http_sequence": 28, "parameters": {"status": "ALL"}, "total": 10, "ordered_ids": [1, 6, 10, 2, 5, 7, 3, 8, 4, 9], "page": 1, "size": 10}
+{"name": "A06-status-PENDING_PAYMENT", "http_sequence": 29, "parameters": {"status": "PENDING_PAYMENT"}, "total": 2, "ordered_ids": [1, 6], "page": 1, "size": 10}
+{"name": "A06-status-PAID", "http_sequence": 30, "parameters": {"status": "PAID"}, "total": 2, "ordered_ids": [2, 7], "page": 1, "size": 10}
+{"name": "A06-status-SHIPPED", "http_sequence": 31, "parameters": {"status": "SHIPPED"}, "total": 2, "ordered_ids": [3, 8], "page": 1, "size": 10}
+{"name": "A06-status-COMPLETED", "http_sequence": 32, "parameters": {"status": "COMPLETED"}, "total": 2, "ordered_ids": [4, 9], "page": 1, "size": 10}
+{"name": "A06-status-CANCELLED", "http_sequence": 33, "parameters": {"status": "CANCELLED"}, "total": 2, "ordered_ids": [10, 5], "page": 1, "size": 10}
+{"name": "A06-CUSTOMER-1", "http_sequence": 34, "parameters": {"userId": 1, "size": 2}, "total": 5, "ordered_ids": [1, 2], "page": 1, "size": 2}
+{"name": "A06-CUSTOMER-2", "http_sequence": 35, "parameters": {"userId": 2, "size": 2}, "total": 5, "ordered_ids": [6, 10], "page": 1, "size": 2}
+{"name": "A06-CUSTOMER-3", "http_sequence": 36, "parameters": {"userId": 3, "size": 2}, "total": 0, "ordered_ids": [], "page": 1, "size": 2}
+{"name": "A06-page-zero-normalizes", "http_sequence": 37, "parameters": {"page": 0}, "total": 10, "ordered_ids": [1, 6, 10, 2, 5, 7, 3, 8, 4, 9], "page": 1, "size": 10}
+{"name": "A06-page-negative-normalizes", "http_sequence": 38, "parameters": {"page": -2}, "total": 10, "ordered_ids": [1, 6, 10, 2, 5, 7, 3, 8, 4, 9], "page": 1, "size": 10}
+{"name": "A06-paid-second-page", "http_sequence": 39, "parameters": {"page": 2, "size": 2, "status": "PAID"}, "total": 2, "ordered_ids": [], "page": 2, "size": 2}
+{"name": "A06-beyond-last", "http_sequence": 40, "parameters": {"page": 999, "size": 2, "userId": 1}, "total": 5, "ordered_ids": [], "page": 999, "size": 2}
+{"name": "A06-size-min", "http_sequence": 41, "parameters": {"size": 1}, "total": 10, "ordered_ids": [1], "page": 1, "size": 1}
+{"name": "A06-size-max", "http_sequence": 42, "parameters": {"size": 50}, "total": 10, "ordered_ids": [1, 6, 10, 2, 5, 7, 3, 8, 4, 9], "page": 1, "size": 50}
+{"name": "A06-blank-user-filter", "http_sequence": 43, "parameters": {"userId": "  "}, "total": 10, "ordered_ids": [1, 6, 10, 2, 5, 7, 3, 8, 4, 9], "page": 1, "size": 10}
+{"name": "A06-valid-max-number-empty", "http_sequence": 69, "parameters": {"orderNo": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"}, "total": 0, "ordered_ids": [], "page": 1, "size": 10}
+{"name": "A06-valid-max-codepoints-empty", "http_sequence": 70, "parameters": {"orderNo": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"}, "total": 0, "ordered_ids": [], "page": 1, "size": 10}
+{"name": "A06-maximum-page-no-offset-overflow", "http_sequence": 71, "parameters": {"page": 9223372036854775807, "size": 50}, "total": 10, "ordered_ids": [], "page": 9223372036854775807, "size": 50}
+{"name": "A06-minimum-page-normalizes", "http_sequence": 72, "parameters": {"page": -9223372036854775808}, "total": 10, "ordered_ids": [1, 6, 10, 2, 5, 7, 3, 8, 4, 9], "page": 1, "size": 10}
+{"name": "A06-fresh-unpaid", "http_sequence": 85, "parameters": {"orderNo": "CSU-6ddf8f1463c30c604dc520dba630ac43", "status": "PENDING_PAYMENT", "userId": 1}, "total": 1, "ordered_ids": [16], "page": 1, "size": 10}
+{"name": "A06-CI-trim-exact", "http_sequence": 91, "parameters": {"orderNo": " csu-6ddf8f1463c30c604dc520dba630ac43 "}, "total": 1, "ordered_ids": [16], "page": 1, "size": 10}
+{"name": "A06-partial-is-empty", "http_sequence": 92, "parameters": {"orderNo": "CSU-6ddf8f14"}, "total": 0, "ordered_ids": [], "page": 1, "size": 10}
+{"name": "A06-all-three-AND", "http_sequence": 93, "parameters": {"orderNo": "CSU-6ddf8f1463c30c604dc520dba630ac43", "status": "PAID", "userId": 1, "size": 1}, "total": 1, "ordered_ids": [16], "page": 1, "size": 1}
+{"name": "A06-other-CUSTOMER-intersection-empty", "http_sequence": 94, "parameters": {"orderNo": "CSU-6ddf8f1463c30c604dc520dba630ac43", "userId": 2}, "total": 0, "ordered_ids": [], "page": 1, "size": 10}
+{"name": "A06-other-status-intersection-empty", "http_sequence": 95, "parameters": {"orderNo": "CSU-6ddf8f1463c30c604dc520dba630ac43", "status": "CANCELLED", "userId": 1}, "total": 0, "ordered_ids": [], "page": 1, "size": 10}

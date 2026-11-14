@@ -1,0 +1,192 @@
+{
+  "kind": "author-static-self-review",
+  "tested_source_commit": "39c96aaaad18c58dce9d57450e14317a75c29b3d",
+  "scope": "Static code and private javac only; not HTTP, real database transaction, concurrency or fault-injection evidence.",
+  "private_javac": {
+    "exit_code": 0,
+    "source_files": 12,
+    "compiled_release": 17,
+    "base_admin_jar_sha256": "c64efee8726dd0027c9d6b1cce6f563148907889ec662147e13916a433d9a647",
+    "scope": "Private compile only; no Wrapper or runtime claim"
+  },
+  "published_candidates": [
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/SalesOrder.java",
+      "candidate_sha256": "aa0884e556d2e25fb61097ef40dcfed92e9e583ef9c837f860661e6486c1c911",
+      "published_sha256": "aa0884e556d2e25fb61097ef40dcfed92e9e583ef9c837f860661e6486c1c911",
+      "same": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/SalesOrderItem.java",
+      "candidate_sha256": "899e84720e68210d629a6897b7867d391a71ebb928772609cb7060d7454cee38",
+      "published_sha256": "899e84720e68210d629a6897b7867d391a71ebb928772609cb7060d7454cee38",
+      "same": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderStatus.java",
+      "candidate_sha256": "94162ad25b8e3c9d2e925020bf3c0f8177160521cf5c70b32b0ba6ba71d5841a",
+      "published_sha256": "94162ad25b8e3c9d2e925020bf3c0f8177160521cf5c70b32b0ba6ba71d5841a",
+      "same": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderDetail.java",
+      "candidate_sha256": "26020cbb3ad11e087d2fb2dfed49a8300595ab5f1543ad4d80d9bef9dea44e6b",
+      "published_sha256": "26020cbb3ad11e087d2fb2dfed49a8300595ab5f1543ad4d80d9bef9dea44e6b",
+      "same": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderCustomer.java",
+      "candidate_sha256": "59b2d1282d3e89777ba8cc19eec4f005bd87f0e340edb7d43e5ac668cd6ad543",
+      "published_sha256": "59b2d1282d3e89777ba8cc19eec4f005bd87f0e340edb7d43e5ac668cd6ad543",
+      "same": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderQuery.java",
+      "candidate_sha256": "a3f1ed34d41a421197f0b7995e96d2429f143babe351a1a244bd23d811ce7e17",
+      "published_sha256": "a3f1ed34d41a421197f0b7995e96d2429f143babe351a1a244bd23d811ce7e17",
+      "same": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderPage.java",
+      "candidate_sha256": "cb9bc6ecc6c0f0cfe9a21738ac12284be0c4bec2a56ec7e0636977dd992d8d52",
+      "published_sha256": "cb9bc6ecc6c0f0cfe9a21738ac12284be0c4bec2a56ec7e0636977dd992d8d52",
+      "same": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/ShipmentResult.java",
+      "candidate_sha256": "c55deeeca5d0f4b9ebba426bc2854023a842d2753f9655687cba38ba41c625dd",
+      "published_sha256": "c55deeeca5d0f4b9ebba426bc2854023a842d2753f9655687cba38ba41c625dd",
+      "same": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderMapper.java",
+      "candidate_sha256": "03fb0746789c998c71e8e9f3109208eb3cab901ade496426304f5dd1550c4365",
+      "published_sha256": "03fb0746789c998c71e8e9f3109208eb3cab901ade496426304f5dd1550c4365",
+      "same": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderItemMapper.java",
+      "candidate_sha256": "bbfccf23f6422662b7dd4dac1a9e2f99820443e8417c9b81a23f7afb0873fb30",
+      "published_sha256": "bbfccf23f6422662b7dd4dac1a9e2f99820443e8417c9b81a23f7afb0873fb30",
+      "same": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/AdminOrderService.java",
+      "candidate_sha256": "6ca8d448b8bbbcdaca89ba3bee63128db5087952025fe757a04b4428656a108b",
+      "published_sha256": "6ca8d448b8bbbcdaca89ba3bee63128db5087952025fe757a04b4428656a108b",
+      "same": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/AdminOrderController.java",
+      "candidate_sha256": "72399189818364ac5d94b8cb45c2489ff88cb5ebc5d92359fe96b183c7bf7ae9",
+      "published_sha256": "72399189818364ac5d94b8cb45c2489ff88cb5ebc5d92359fe96b183c7bf7ae9",
+      "same": true
+    }
+  ],
+  "observations": [
+    {
+      "id": 1,
+      "area": "scope",
+      "observation": "All twelve Java candidates live only in the independent admin order package; no storefront module import.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 2,
+      "area": "guard_first",
+      "observation": "ship first database call is AdminWriteGuard.lock(actor), before target lookup; explicit READ_COMMITTED.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 3,
+      "area": "order_lock",
+      "observation": "Target SELECT FOR UPDATE queries sales_order alone; no customer join, item read or product lock in ship.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 4,
+      "area": "state",
+      "observation": "Only PAID calls markShipped; SHIPPED/COMPLETED return before all DML; pending/cancelled raise409.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 5,
+      "area": "conditional_update",
+      "observation": "Single UPDATE requires PAID/MOCK/payment fields/absent shipped time and checks exactly1 affected row.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 6,
+      "area": "time_chain",
+      "observation": "shipped_at=GREATEST(CURRENT_TIMESTAMP(6),paid_at) preserves the original payment and all snapshot columns.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 7,
+      "area": "write_scope",
+      "observation": "Only target status/shipped_at are explicit writes; updated_at is maintained by existing MySQL definition.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 8,
+      "area": "replay",
+      "observation": "No-op returns without writing first shipped_at or updated_at; no product/cart/item mapper in the ship method.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 9,
+      "area": "rollback",
+      "observation": "Unchecked BusinessException propagates across transactional proxy; translated safe409 conflicts have no automatic retry.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 10,
+      "area": "safe_lookup",
+      "observation": "Global detail lookup uses safe path regex and unknown404; optional customer only returns CUSTOMER safe label fields.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 11,
+      "area": "filter",
+      "observation": "Count/list share a constant bound WHERE, equality orderNo, status/userId filters; fixed sorting and LIMIT/OFFSET.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 12,
+      "area": "offset",
+      "observation": "Record has exact offset() accessor and getOffset delegation; impossible Long OFFSET is skipped before computing.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 13,
+      "area": "template_contract",
+      "observation": "Published UI expressions align with getters and orderPage/orderQuery/selectedCustomer/orderDetail models.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 14,
+      "area": "redirect",
+      "observation": "Only regex-safe target paths are redirected using303 RedirectView; constant flash feedback, no private payload.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 15,
+      "area": "read_models",
+      "observation": "Password-bearing StoreUser entity is never exposed; display data is independently mapped from safe selected columns.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 16,
+      "area": "no_scope_extension",
+      "observation": "No shipping provider, upload, confirm receipt, customer profile, dashboard, new dependency, SQL change or REST API.",
+      "result": "PASS_STATIC"
+    }
+  ],
+  "actionable_findings": [],
+  "contract_choices": [
+    "Unknown or ADMIN customer filter404; disabled CUSTOMER is eligible.",
+    "Blank optional userId means unrestricted; nonblank invalid value400.",
+    "Malformed detail/shipment orderNo404; list/orderNo length40 violations400.",
+    "RedirectView303 preserves existing admin controller flash style; no ReturnUrlPolicy semantic change.",
+    "Conflict view orders/action-conflict contains only safe orderNo and fixed presentable error fields."
+  ]
+}

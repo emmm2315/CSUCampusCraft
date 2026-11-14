@@ -1,0 +1,151 @@
+{
+  "overall": "PASS",
+  "reviewer": "Root AI independent candidate source review, not a named teammate sign-off",
+  "reviewed_utc": "2026-11-14T14:42:19.088881+00:00",
+  "basis": "Actual 17 candidate files read and compared, before runtime acceptance",
+  "observations": [
+    {
+      "passed": true,
+      "description": "All 12 Java candidates are new independent administrator order classes without storefront imports."
+    },
+    {
+      "passed": true,
+      "description": "OrderQuery uses code-point trim/40 bound, fixed enums and positive nullable customer ID; negative integer pages normalize to 1."
+    },
+    {
+      "passed": true,
+      "description": "OrderQuery offset() is a real record accessor and overflow is guarded before SQL list selection."
+    },
+    {
+      "passed": true,
+      "description": "Customer filter projects only safe labels, accepts CUSTOMER regardless of status; missing or ADMIN returns 404."
+    },
+    {
+      "passed": true,
+      "description": "List/count share exactly one WHERE fragment and fixed created_at/id descending order with bound values."
+    },
+    {
+      "passed": true,
+      "description": "Detail reads order/item snapshots and safe customer labels; no mutable product join."
+    },
+    {
+      "passed": true,
+      "description": "Ship public Service uses READ_COMMITTED and first calls the existing AdminWriteGuard."
+    },
+    {
+      "passed": true,
+      "description": "Write path locks order without joins and performs no customer/item/product locks after actor guard."
+    },
+    {
+      "passed": true,
+      "description": "Only PAID has conditional DML, checks one affected row and uses greatest UTC database now/paid_at."
+    },
+    {
+      "passed": true,
+      "description": "SHIPPED/COMPLETED return before UPDATE and preserve full row including updated_at."
+    },
+    {
+      "passed": true,
+      "description": "PENDING_PAYMENT/CANCELLED produce stable 409; malformed/unknown order paths 404."
+    },
+    {
+      "passed": true,
+      "description": "Runtime write errors escape transaction proxy before controller renders conflict; no caught failure is reported successful."
+    },
+    {
+      "passed": true,
+      "description": "303 RedirectView suppresses model attributes; flash feedback is fixed non-sensitive text."
+    },
+    {
+      "passed": true,
+      "description": "A06 GET filters reset page and all pagination links preserve orderNo/status/userId/size."
+    },
+    {
+      "passed": true,
+      "description": "A07 exposes ship form only for PAID, with CSRF and pre-submit order-number confirmation."
+    },
+    {
+      "passed": true,
+      "description": "A07 uses escaped text and saved item/receiver/payment values; no unescaped HTML or extra state actions."
+    },
+    {
+      "passed": true,
+      "description": "Administrator layout changes only one authenticated order link; original CSS prefix retained, new rules scoped A06/A07."
+    },
+    {
+      "passed": true,
+      "description": "No existing user/admin Java, database scripts, dependencies or assets appear in candidate manifests."
+    }
+  ],
+  "files": [
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/SalesOrder.java",
+      "sha256": "aa0884e556d2e25fb61097ef40dcfed92e9e583ef9c837f860661e6486c1c911"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/SalesOrderItem.java",
+      "sha256": "899e84720e68210d629a6897b7867d391a71ebb928772609cb7060d7454cee38"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderStatus.java",
+      "sha256": "94162ad25b8e3c9d2e925020bf3c0f8177160521cf5c70b32b0ba6ba71d5841a"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderDetail.java",
+      "sha256": "26020cbb3ad11e087d2fb2dfed49a8300595ab5f1543ad4d80d9bef9dea44e6b"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderCustomer.java",
+      "sha256": "59b2d1282d3e89777ba8cc19eec4f005bd87f0e340edb7d43e5ac668cd6ad543"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderQuery.java",
+      "sha256": "a3f1ed34d41a421197f0b7995e96d2429f143babe351a1a244bd23d811ce7e17"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderPage.java",
+      "sha256": "cb9bc6ecc6c0f0cfe9a21738ac12284be0c4bec2a56ec7e0636977dd992d8d52"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/ShipmentResult.java",
+      "sha256": "c55deeeca5d0f4b9ebba426bc2854023a842d2753f9655687cba38ba41c625dd"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderMapper.java",
+      "sha256": "03fb0746789c998c71e8e9f3109208eb3cab901ade496426304f5dd1550c4365"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderItemMapper.java",
+      "sha256": "bbfccf23f6422662b7dd4dac1a9e2f99820443e8417c9b81a23f7afb0873fb30"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/AdminOrderService.java",
+      "sha256": "6ca8d448b8bbbcdaca89ba3bee63128db5087952025fe757a04b4428656a108b"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/AdminOrderController.java",
+      "sha256": "72399189818364ac5d94b8cb45c2489ff88cb5ebc5d92359fe96b183c7bf7ae9"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/resources/templates/orders/index.html",
+      "sha256": "34e50775c19d2556a6f7d6d84eb4a67525c6dde8516364da4054d8cd991367d9"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "sha256": "556689acf5db0a6097a8595e397b9fd765e7cecf9f1f189f60a19e615b05261b"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html",
+      "sha256": "14d2cbdabb861c1483207591f3195d92f5a6f394d11adc39debb30e576967993"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "sha256": "d45aaad555f8db838484f2d6fddabdae62f62e02bd418f3ee1d4bfab5b30328d"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/resources/static/css/app.css",
+      "sha256": "9547698616f7951bfef6213d4651aa2af4ca3d7a90ca83675797285e1d456119"
+    }
+  ],
+  "limits": "Static source and template reasoning only; build, SQL, HTTP and browser behavior must be separately executed."
+}

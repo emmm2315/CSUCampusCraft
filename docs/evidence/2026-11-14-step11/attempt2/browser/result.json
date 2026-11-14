@@ -1,0 +1,1869 @@
+{
+  "overall": "PASS",
+  "completed": true,
+  "error": null,
+  "checks": [
+    {
+      "name": "/orders-navigation-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-page-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-no-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-unique-ids-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-labels-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-all-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-images-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-no-session-url-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-new-PNG-1366",
+      "passed": true
+    },
+    {
+      "name": "/orders?orderNo=CSU-cabaaace8ab36c67930208a39acbcad2&status=PAID&userId=1&size=1-navigation-1366",
+      "passed": true
+    },
+    {
+      "name": "combined-count1-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-page-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-no-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-unique-ids-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-labels-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-all-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-images-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-no-session-url-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-new-PNG-1366",
+      "passed": true
+    },
+    {
+      "name": "confirmation-before-POST-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-page-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-no-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-unique-ids-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-labels-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-all-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-images-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-no-session-url-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-only-PAID-form-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-new-PNG-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-page-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-no-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-unique-ids-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-labels-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-all-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-images-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-no-session-url-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-new-PNG-1366",
+      "passed": true
+    },
+    {
+      "name": "/orders/CSU-cabaaace8ab36c67930208a39acbcad2-navigation-1366",
+      "passed": true
+    },
+    {
+      "name": "actual-first-shipment-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-page-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-no-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-unique-ids-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-labels-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-all-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-images-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-no-session-url-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-only-PAID-form-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-new-PNG-1366",
+      "passed": true
+    },
+    {
+      "name": "exact-shipment-global-flash-1366",
+      "passed": true
+    },
+    {
+      "name": "/orders/CSU-cabaaace8ab36c67930208a39acbcad2-navigation-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-page-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-no-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-unique-ids-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-labels-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-all-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-images-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-no-session-url-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-current-cart1-1366",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-new-PNG-1366",
+      "passed": true
+    },
+    {
+      "name": "same-receipt-both-ends-1366",
+      "passed": true
+    },
+    {
+      "name": "user-same-first-shipped-time-1366",
+      "passed": true
+    },
+    {
+      "name": "/orders?orderNo=CSU-cabaaace8ab36c67930208a39acbcad2&status=SHIPPED&userId=1&size=1-navigation-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-page-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-no-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-unique-ids-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-labels-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-all-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-images-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-no-session-url-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-new-PNG-1366",
+      "passed": true
+    },
+    {
+      "name": "/orders?status=ALL&userId=1&page=2&size=2-navigation-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-page-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-no-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-unique-ids-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-labels-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-all-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-images-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-no-session-url-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-new-PNG-1366",
+      "passed": true
+    },
+    {
+      "name": "/orders?orderNo=CSU-cabaaace8ab36c67930208a39acbcad2&userId=2-navigation-1366",
+      "passed": true
+    },
+    {
+      "name": "cross-customer-AND-empty-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-page-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-no-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-unique-ids-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-labels-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-all-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-images-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-no-session-url-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-new-PNG-1366",
+      "passed": true
+    },
+    {
+      "name": "/orders?userId=1&page=999&size=2-navigation-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-page-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-no-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-unique-ids-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-labels-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-all-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-images-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-no-session-url-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-new-PNG-1366",
+      "passed": true
+    },
+    {
+      "name": "/orders/DEMO-202611-AL-04-navigation-1366",
+      "passed": true
+    },
+    {
+      "name": "completed-no-ship-form-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-page-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-no-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-unique-ids-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-labels-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-all-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-images-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-no-session-url-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-only-PAID-form-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-new-PNG-1366",
+      "passed": true
+    },
+    {
+      "name": "/orders?size=51-navigation-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-page-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-no-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-unique-ids-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-labels-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-all-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-images-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-no-session-url-1366",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-new-PNG-1366",
+      "passed": true
+    },
+    {
+      "name": "/orders/UNKNOWN_STEP11_ORDER-navigation-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-page-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-no-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-unique-ids-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-labels-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-all-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-images-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-no-session-url-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-new-PNG-1366",
+      "passed": true
+    },
+    {
+      "name": "/orders-navigation-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-page-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-no-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-unique-ids-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-labels-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-all-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-images-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-no-session-url-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-allsite-orders-new-PNG-1920",
+      "passed": true
+    },
+    {
+      "name": "/orders?orderNo=CSU-691fe2bb0ab9b805b59852475f0b312f&status=PAID&userId=1&size=1-navigation-1920",
+      "passed": true
+    },
+    {
+      "name": "combined-count1-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-page-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-no-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-unique-ids-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-labels-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-all-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-images-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-no-session-url-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-status-exact-order-new-PNG-1920",
+      "passed": true
+    },
+    {
+      "name": "confirmation-before-POST-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-page-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-no-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-unique-ids-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-labels-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-all-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-images-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-no-session-url-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-only-PAID-form-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-paid-confirm-before-ship-new-PNG-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-page-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-no-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-unique-ids-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-labels-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-all-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-images-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-no-session-url-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-missing-CSRF-403-new-PNG-1920",
+      "passed": true
+    },
+    {
+      "name": "/orders/CSU-691fe2bb0ab9b805b59852475f0b312f-navigation-1920",
+      "passed": true
+    },
+    {
+      "name": "actual-first-shipment-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-page-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-no-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-unique-ids-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-labels-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-all-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-images-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-no-session-url-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-only-PAID-form-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-admin-first-shipped-new-PNG-1920",
+      "passed": true
+    },
+    {
+      "name": "exact-shipment-global-flash-1920",
+      "passed": true
+    },
+    {
+      "name": "/orders/CSU-691fe2bb0ab9b805b59852475f0b312f-navigation-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-page-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-no-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-unique-ids-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-labels-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-all-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-images-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-no-session-url-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-current-cart1-1920",
+      "passed": true
+    },
+    {
+      "name": "journey-user-same-shipped-snapshot-new-PNG-1920",
+      "passed": true
+    },
+    {
+      "name": "same-receipt-both-ends-1920",
+      "passed": true
+    },
+    {
+      "name": "user-same-first-shipped-time-1920",
+      "passed": true
+    },
+    {
+      "name": "/orders?orderNo=CSU-691fe2bb0ab9b805b59852475f0b312f&status=SHIPPED&userId=1&size=1-navigation-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-page-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-no-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-unique-ids-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-labels-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-all-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-images-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-no-session-url-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-after-ship-filter-new-PNG-1920",
+      "passed": true
+    },
+    {
+      "name": "/orders?status=ALL&userId=1&page=2&size=2-navigation-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-page-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-no-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-unique-ids-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-labels-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-all-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-images-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-no-session-url-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-CUSTOMER-page2-preserves-filter-new-PNG-1920",
+      "passed": true
+    },
+    {
+      "name": "/orders?orderNo=CSU-691fe2bb0ab9b805b59852475f0b312f&userId=2-navigation-1920",
+      "passed": true
+    },
+    {
+      "name": "cross-customer-AND-empty-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-page-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-no-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-unique-ids-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-labels-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-all-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-images-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-no-session-url-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-empty-intersection-new-PNG-1920",
+      "passed": true
+    },
+    {
+      "name": "/orders?userId=1&page=999&size=2-navigation-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-page-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-no-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-unique-ids-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-labels-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-all-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-images-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-no-session-url-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-outofrange-recovery-new-PNG-1920",
+      "passed": true
+    },
+    {
+      "name": "/orders/DEMO-202611-AL-04-navigation-1920",
+      "passed": true
+    },
+    {
+      "name": "completed-no-ship-form-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-page-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-no-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-unique-ids-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-labels-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-all-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-images-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-no-session-url-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-only-PAID-form-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-completed-keeps-first-shipped-time-new-PNG-1920",
+      "passed": true
+    },
+    {
+      "name": "/orders?size=51-navigation-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-page-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-no-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-unique-ids-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-labels-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-all-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-images-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-no-session-url-1920",
+      "passed": true
+    },
+    {
+      "name": "a06-invalid-query-400-new-PNG-1920",
+      "passed": true
+    },
+    {
+      "name": "/orders/UNKNOWN_STEP11_ORDER-navigation-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-page-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-no-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-unique-ids-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-labels-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-all-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-images-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-no-session-url-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-unknown-order-404-new-PNG-1920",
+      "passed": true
+    },
+    {
+      "name": "exact26screenshots",
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "a06-allsite-orders-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1660,
+      "sha256": "27b82c43afe899212cdfc49ef763520cbf14e9c7a9e37ebc22023f37d48d68e7",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "13",
+        "page": "1",
+        "size": "10",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-CUSTOMER-status-exact-order-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1005,
+      "sha256": "a90c98f714cc7febc1312f8a95c644aa3d9623edc6a8cffaeda562a503db75ff",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "1",
+        "page": "1",
+        "size": "1",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-paid-confirm-before-ship-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1811,
+      "sha256": "af34ce1b19dddf908c916278e483d7560ea2adea95623bacf25f8f02e72c66ce",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A07",
+        "orderNo": "CSU-cabaaace8ab36c67930208a39acbcad2",
+        "orderStatus": "PAID",
+        "orderTotal": "85.00",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          },
+          {
+            "action": "/orders/CSU-cabaaace8ab36c67930208a39acbcad2/ship",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "CSUPAY-5cb1c6e3f3b7218691e7abadfb7050da",
+        "shippingNodes": 3,
+        "shipForms": 1
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-missing-CSRF-403-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 768,
+      "sha256": "49a6786cdf8394eb9229ef772f72ff18e73849514ae5aca04128c4cd08982283",
+      "status": 403,
+      "observation": {
+        "port": 8081,
+        "errorStatus": "403",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "journey-admin-first-shipped-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1582,
+      "sha256": "9722eec045ba32c076675e8e42b8e7cd088944c60179244aab26779fc0c0ef85",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A07",
+        "orderNo": "CSU-cabaaace8ab36c67930208a39acbcad2",
+        "orderStatus": "SHIPPED",
+        "orderTotal": "85.00",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "CSUPAY-5cb1c6e3f3b7218691e7abadfb7050da",
+        "shippedTime": "2026-11-14 23:01:45",
+        "shippingNodes": 3,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "journey-user-same-shipped-snapshot-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1473,
+      "sha256": "ef253c1e459e69472afe7c88485c27b0805d14f5449ff68dd77b2ede3e179e8d",
+      "status": 200,
+      "observation": {
+        "port": 8080,
+        "pageId": "U08",
+        "orderNo": "CSU-cabaaace8ab36c67930208a39acbcad2",
+        "orderStatus": "SHIPPED",
+        "orderTotal": "85.00",
+        "badge": "1",
+        "badgeText": "1",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "CSUPAY-5cb1c6e3f3b7218691e7abadfb7050da",
+        "shippingNodes": 3,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-after-ship-filter-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1005,
+      "sha256": "94a7cdaf49f234714894b86b5b6e2bf15895be757f11b748d87e8c52c14973ad",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "1",
+        "page": "1",
+        "size": "1",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-CUSTOMER-page2-preserves-filter-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1096,
+      "sha256": "ef6b67eda9bc38250985a4f99604ae648f0a708a9222a1bf3c2cd104768e3e58",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "8",
+        "page": "2",
+        "size": "2",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-empty-intersection-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 937,
+      "sha256": "fc8b41fe122e7b3f5358f7f675b2b56810f75f6df5ae8714904d7380bcee7c76",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "0",
+        "page": "1",
+        "size": "10",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-outofrange-recovery-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1005,
+      "sha256": "577be07eba9fce18c65f3eee6289a45fa69197dd323d012a5a961026aadfd635",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "8",
+        "page": "999",
+        "size": "2",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-completed-keeps-first-shipped-time-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1551,
+      "sha256": "050564d2700f609026de78d81c4231fead2faa6b11fbbbc50aae97987b2c1e78",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A07",
+        "orderNo": "DEMO-202611-AL-04",
+        "orderStatus": "COMPLETED",
+        "orderTotal": "49.00",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "MOCK-DEMO-202611-AL-04",
+        "shippedTime": "2026-11-08 22:59:22",
+        "shippingNodes": 3,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-invalid-query-400-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 768,
+      "sha256": "c0ccaab1850c710891102471acdfe19d85ba70d8b049a4a47ae3b47df938fd9b",
+      "status": 400,
+      "observation": {
+        "port": 8081,
+        "errorStatus": "400",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-unknown-order-404-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 768,
+      "sha256": "56e7fbf073e23baa36f6c270e6f359659cd756a94275d34371f274aca144a137",
+      "status": 404,
+      "observation": {
+        "port": 8081,
+        "errorStatus": "404",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-allsite-orders-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1660,
+      "sha256": "1d5968f0a8c352904e7dcadf93f55bf04b1808e26231b8dd1c2ddd71d4c43430",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "13",
+        "page": "1",
+        "size": "10",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-CUSTOMER-status-exact-order-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "57d6b6db0fefcbc9e9628fe03a480e71c8114e8b3d19c45516219e4363953b6a",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "1",
+        "page": "1",
+        "size": "1",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-paid-confirm-before-ship-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1811,
+      "sha256": "92696f728d16ebf16c9694e0b3b40124c48a717986900832ad844dcee3332263",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A07",
+        "orderNo": "CSU-691fe2bb0ab9b805b59852475f0b312f",
+        "orderStatus": "PAID",
+        "orderTotal": "85.00",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          },
+          {
+            "action": "/orders/CSU-691fe2bb0ab9b805b59852475f0b312f/ship",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "CSUPAY-3705975a5c553472316dc0ddc0935354",
+        "shippingNodes": 3,
+        "shipForms": 1
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-missing-CSRF-403-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "38d65403ad300c30ee4dae35508441bdc3c472cf2d8de68dc37044118ebbb2d4",
+      "status": 403,
+      "observation": {
+        "port": 8081,
+        "errorStatus": "403",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "journey-admin-first-shipped-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1582,
+      "sha256": "9e37907695852b9f1ebb697747ab6253ea10af8b0eb0ab1c8f32baaea740566d",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A07",
+        "orderNo": "CSU-691fe2bb0ab9b805b59852475f0b312f",
+        "orderStatus": "SHIPPED",
+        "orderTotal": "85.00",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "CSUPAY-3705975a5c553472316dc0ddc0935354",
+        "shippedTime": "2026-11-14 23:01:56",
+        "shippingNodes": 3,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "journey-user-same-shipped-snapshot-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1473,
+      "sha256": "59bbc481bf53e2bfddf248daeb98dd8ec5e6cd631f5f549eaa76a30b5638afe5",
+      "status": 200,
+      "observation": {
+        "port": 8080,
+        "pageId": "U08",
+        "orderNo": "CSU-691fe2bb0ab9b805b59852475f0b312f",
+        "orderStatus": "SHIPPED",
+        "orderTotal": "85.00",
+        "badge": "1",
+        "badgeText": "1",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "CSUPAY-3705975a5c553472316dc0ddc0935354",
+        "shippingNodes": 3,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-after-ship-filter-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "c03d9b021407bc0955477402ef365b4f573375130d60727af96888fe219aaf19",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "1",
+        "page": "1",
+        "size": "1",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-CUSTOMER-page2-preserves-filter-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1096,
+      "sha256": "17145bd9298606c2130a7cfad09c8872c8256b548d1ad956b59a380237d3057f",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "8",
+        "page": "2",
+        "size": "2",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-empty-intersection-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "325f0a25818c0255fc34d83aefe6d59303355b120f4471ad26af747834ae42be",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "0",
+        "page": "1",
+        "size": "10",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-outofrange-recovery-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "6e215736971a91ba1a358645c96b471fe6d26ee4ef450054677326c8029900d8",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "8",
+        "page": "999",
+        "size": "2",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-completed-keeps-first-shipped-time-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1551,
+      "sha256": "37233b1030693fd9d457ed063ec73c8307e69c3430df1a1943cd13da65cf6d97",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A07",
+        "orderNo": "DEMO-202611-AL-04",
+        "orderStatus": "COMPLETED",
+        "orderTotal": "49.00",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "MOCK-DEMO-202611-AL-04",
+        "shippedTime": "2026-11-08 22:59:22",
+        "shippingNodes": 3,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-invalid-query-400-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "fe320ce9d5b648d74eceff0b0d053e46f19f846f652b878fa905f77fc217df28",
+      "status": 400,
+      "observation": {
+        "port": 8081,
+        "errorStatus": "400",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-unknown-order-404-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "25f57a2c5b22be72c390de2806e43a6817d97f4bdda0b80ee831c8644944c836",
+      "status": 404,
+      "observation": {
+        "port": 8081,
+        "errorStatus": "404",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    }
+  ],
+  "browser": "Microsoft Edge via Playwright",
+  "transport": "Actual browser requests to 8080/8081 continued after seven-table before snapshot; redirect responses separately observed"
+}

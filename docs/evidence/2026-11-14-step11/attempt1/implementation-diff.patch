@@ -1,0 +1,795 @@
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/AdminOrderController.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/AdminOrderController.java
+new file mode 100644
+index 0000000..1c37fbb
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/AdminOrderController.java
+@@ -0,0 +1,84 @@
++package org.csucampuscraft.admin.order;
++
++import jakarta.servlet.http.HttpServletRequest;
++import java.util.Map;
++import java.util.Set;
++import org.csucampuscraft.admin.auth.SessionExpiredException;
++import org.csucampuscraft.admin.auth.SessionIdentity;
++import org.csucampuscraft.admin.auth.SessionSupport;
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Controller;
++import org.springframework.util.MultiValueMap;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.PathVariable;
++import org.springframework.web.bind.annotation.PostMapping;
++import org.springframework.web.bind.annotation.RequestParam;
++import org.springframework.web.servlet.ModelAndView;
++import org.springframework.web.servlet.mvc.support.RedirectAttributes;
++import org.springframework.web.servlet.view.RedirectView;
++
++@Controller
++public final class AdminOrderController {
++    private final AdminOrderService orders;
++    private final SessionSupport sessions;
++    public AdminOrderController(AdminOrderService orders, SessionSupport sessions) {
++        this.orders = orders;
++        this.sessions = sessions;
++    }
++
++    @GetMapping("/orders")
++    public ModelAndView list(@RequestParam MultiValueMap<String, String> parameters) {
++        for (String field : Set.of("orderNo", "status", "userId", "page", "size")) {
++            if (parameters.containsKey(field) && parameters.get(field).size() != 1) {
++                throw new BusinessException(HttpStatus.BAD_REQUEST, "DUPLICATE_QUERY_FIELD",
++                        "查询字段只能提交一个值。", Map.of(field, "请只提交一个值。"));
++            }
++        }
++        OrderQuery query = OrderQuery.bind(parameters.getFirst("orderNo"), parameters.getFirst("status"),
++                parameters.getFirst("userId"), parameters.getFirst("page"), parameters.getFirst("size"));
++        OrderPage page = orders.page(query);
++        ModelAndView view = new ModelAndView("orders/index");
++        view.addObject("orderPage", page);
++        view.addObject("orderQuery", query);
++        view.addObject("orderStatuses", OrderStatus.values());
++        view.addObject("selectedCustomer", page.getSelectedCustomer());
++        return view;
++    }
++
++    @GetMapping("/orders/{orderNo}")
++    public ModelAndView detail(@PathVariable("orderNo") String orderNo) {
++        ModelAndView view = new ModelAndView("orders/detail");
++        view.addObject("orderDetail", orders.detail(orderNo));
++        return view;
++    }
++
++    @PostMapping("/orders/{orderNo}/ship")
++    public ModelAndView ship(@PathVariable("orderNo") String orderNo, HttpServletRequest request,
++                             RedirectAttributes feedback) {
++        try {
++            ShipmentResult result = orders.ship(actor(request), orderNo);
++            feedback.addFlashAttribute("globalMessage", result == ShipmentResult.SHIPPED
++                    ? "模拟发货已登记，请核对首次发货时间。本操作不涉及真实物流。"
++                    : "该订单已发货或已完成，保留首次发货结果，未重复改写时间。");
++            RedirectView redirect = new RedirectView("/orders/" + orderNo, true);
++            redirect.setStatusCode(HttpStatus.SEE_OTHER);
++            redirect.setExposeModelAttributes(false);
++            return new ModelAndView(redirect);
++        } catch (BusinessException failure) {
++            if (failure.getStatus() != HttpStatus.CONFLICT) throw failure;
++            ModelAndView view = new ModelAndView("orders/action-conflict");
++            view.setStatus(HttpStatus.CONFLICT);
++            view.addObject("errorStatus", 409);
++            view.addObject("errorCode", failure.getCode());
++            view.addObject("errorMessage", failure.getMessage());
++            view.addObject("orderNo", orderNo != null && orderNo.matches("[A-Za-z0-9_-]{1,40}") ? orderNo : null);
++            return view;
++        }
++    }
++    private SessionIdentity actor(HttpServletRequest request) {
++        SessionIdentity actor = sessions.identity(request);
++        if (actor == null) throw new SessionExpiredException();
++        return actor;
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/AdminOrderService.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/AdminOrderService.java
+new file mode 100644
+index 0000000..12803b5
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/AdminOrderService.java
+@@ -0,0 +1,79 @@
++package org.csucampuscraft.admin.order;
++
++import java.util.List;
++import org.csucampuscraft.admin.auth.AdminWriteGuard;
++import org.csucampuscraft.admin.auth.SessionIdentity;
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import org.springframework.dao.ConcurrencyFailureException;
++import org.springframework.dao.DataIntegrityViolationException;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Service;
++import org.springframework.transaction.annotation.Isolation;
++import org.springframework.transaction.annotation.Transactional;
++
++/** Administrator-wide reads and a single order-row state transition; no inventory mapper. */
++@Service
++public class AdminOrderService {
++    private final AdminWriteGuard administrators;
++    private final OrderMapper orders;
++    private final OrderItemMapper items;
++    public AdminOrderService(AdminWriteGuard administrators, OrderMapper orders, OrderItemMapper items) {
++        this.administrators = administrators;
++        this.orders = orders;
++        this.items = items;
++    }
++
++    @Transactional(readOnly = true)
++    public OrderPage page(OrderQuery query) {
++        OrderCustomer customer = query.userId() == null ? null : orders.selectCustomer(query.userId());
++        if (query.userId() != null && customer == null) {
++            throw new BusinessException(HttpStatus.NOT_FOUND, "ORDER_CUSTOMER_NOT_FOUND", "未找到该普通顾客。");
++        }
++        long count = orders.count(query);
++        List<SalesOrder> rows = count == 0 || !query.isOffsetRepresentable() || query.getOffset() >= count
++                ? List.of() : orders.selectPage(query);
++        return new OrderPage(rows, count, query, customer);
++    }
++
++    @Transactional(readOnly = true)
++    public OrderDetail detail(String orderNo) {
++        requireNumber(orderNo);
++        SalesOrder order = orders.selectOrder(orderNo);
++        if (order == null) throw missing();
++        return new OrderDetail(order, items.selectForOrder(order.getId()));
++    }
++
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public ShipmentResult ship(SessionIdentity actor, String orderNo) {
++        try {
++            // First database operation: lock the current administrator and revalidate the UTC stamp.
++            administrators.lock(actor);
++            requireNumber(orderNo);
++            // Deliberately no user join or product/item query in the locked write path.
++            SalesOrder order = orders.selectForUpdate(orderNo);
++            if (order == null) throw missing();
++            if ("SHIPPED".equals(order.getStatus()) || "COMPLETED".equals(order.getStatus())) {
++                return ShipmentResult.ALREADY_SHIPPED;
++            }
++            if (!"PAID".equals(order.getStatus())) {
++                throw new BusinessException(HttpStatus.CONFLICT, "SHIPMENT_STATE_CONFLICT",
++                        "当前订单尚未付款或已经取消，不能模拟发货，请核对订单状态。");
++            }
++            if (orders.markShipped(order.getId()) != 1) throw writeConflict();
++            return ShipmentResult.SHIPPED;
++        } catch (DataIntegrityViolationException | ConcurrencyFailureException failed) {
++            throw writeConflict();
++        }
++    }
++
++    private static void requireNumber(String orderNo) {
++        if (orderNo == null || !orderNo.matches("[A-Za-z0-9_-]{1,40}")) throw missing();
++    }
++    private static BusinessException missing() {
++        return new BusinessException(HttpStatus.NOT_FOUND, "ORDER_NOT_FOUND", "未找到该订单。");
++    }
++    private static BusinessException writeConflict() {
++        return new BusinessException(HttpStatus.CONFLICT, "SHIPMENT_WRITE_CONFLICT",
++                "模拟发货未能完成，请先查看订单状态，再决定是否重试。");
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderCustomer.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderCustomer.java
+new file mode 100644
+index 0000000..f07bdba
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderCustomer.java
+@@ -0,0 +1,10 @@
++package org.csucampuscraft.admin.order;
++
++/** Safe customer filter label; never contains authentication fields. */
++public record OrderCustomer(long id, String username, String displayName, String status) {
++    public long getId() { return id; }
++    public String getUsername() { return username; }
++    public String getDisplayName() { return displayName; }
++    public String getStatus() { return status; }
++    @Override public String toString() { return "OrderCustomer[id=" + id + ", details=REDACTED]"; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderDetail.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderDetail.java
+new file mode 100644
+index 0000000..4003306
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderDetail.java
+@@ -0,0 +1,10 @@
++package org.csucampuscraft.admin.order;
++
++import java.util.List;
++
++public record OrderDetail(SalesOrder order, List<SalesOrderItem> items) {
++    public OrderDetail { items = List.copyOf(items); }
++    public SalesOrder getOrder() { return order; }
++    public List<SalesOrderItem> getItems() { return items; }
++    @Override public String toString() { return "OrderDetail[receiver=REDACTED]"; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderItemMapper.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderItemMapper.java
+new file mode 100644
+index 0000000..a04af7e
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderItemMapper.java
+@@ -0,0 +1,17 @@
++package org.csucampuscraft.admin.order;
++
++import com.baomidou.mybatisplus.core.mapper.BaseMapper;
++import java.util.List;
++import org.apache.ibatis.annotations.Mapper;
++import org.apache.ibatis.annotations.Param;
++import org.apache.ibatis.annotations.Select;
++
++@Mapper
++public interface OrderItemMapper extends BaseMapper<SalesOrderItem> {
++    @Select("""
++            SELECT id,order_id,product_id,sku_snapshot,product_name_snapshot,cover_image_snapshot,
++                   unit_price,quantity,line_amount
++              FROM sales_order_item WHERE order_id=#{orderId} ORDER BY id ASC
++            """)
++    List<SalesOrderItem> selectForOrder(@Param("orderId") long orderId);
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderMapper.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderMapper.java
+new file mode 100644
+index 0000000..ae36d28
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderMapper.java
+@@ -0,0 +1,46 @@
++package org.csucampuscraft.admin.order;
++
++import com.baomidou.mybatisplus.core.mapper.BaseMapper;
++import java.util.List;
++import org.apache.ibatis.annotations.Mapper;
++import org.apache.ibatis.annotations.Param;
++import org.apache.ibatis.annotations.Select;
++import org.apache.ibatis.annotations.Update;
++
++@Mapper
++public interface OrderMapper extends BaseMapper<SalesOrder> {
++    String COLUMNS = "id,order_no,user_id,status,total_amount,receiver_name,receiver_phone,receiver_address,"
++            + "created_at,updated_at,payment_method,payment_no,paid_at,cancelled_at,shipped_at,completed_at";
++    String READ_COLUMNS = "o.id,o.order_no,o.user_id,o.status,o.total_amount,o.receiver_name,o.receiver_phone,"
++            + "o.receiver_address,o.created_at,o.updated_at,o.payment_method,o.payment_no,o.paid_at,"
++            + "o.cancelled_at,o.shipped_at,o.completed_at,u.username AS customer_username,"
++            + "u.display_name AS customer_display_name";
++    String FILTER = "<where>1=1"
++            + "<if test='query.orderNo != null and query.orderNo.length() > 0'> AND o.order_no=#{query.orderNo}</if>"
++            + "<if test='query.status != \"ALL\"'> AND o.status=#{query.status}</if>"
++            + "<if test='query.userId != null'> AND o.user_id=#{query.userId}</if></where>";
++
++    @Select("<script>SELECT COUNT(*) FROM sales_order o " + FILTER + "</script>")
++    long count(@Param("query") OrderQuery query);
++
++    @Select("<script>SELECT " + READ_COLUMNS + " FROM sales_order o LEFT JOIN store_user u ON u.id=o.user_id "
++            + FILTER + " ORDER BY o.created_at DESC,o.id DESC LIMIT #{query.size} OFFSET #{query.offset}</script>")
++    List<SalesOrder> selectPage(@Param("query") OrderQuery query);
++
++    @Select("SELECT id,username,display_name,status FROM store_user WHERE id=#{userId} AND role='CUSTOMER'")
++    OrderCustomer selectCustomer(@Param("userId") long userId);
++
++    @Select("SELECT " + READ_COLUMNS + " FROM sales_order o LEFT JOIN store_user u ON u.id=o.user_id "
++            + "WHERE o.order_no=#{orderNo}")
++    SalesOrder selectOrder(@Param("orderNo") String orderNo);
++
++    @Select("SELECT " + COLUMNS + " FROM sales_order WHERE order_no=#{orderNo} FOR UPDATE")
++    SalesOrder selectForUpdate(@Param("orderNo") String orderNo);
++
++    @Update("""
++            UPDATE sales_order SET status='SHIPPED',shipped_at=GREATEST(CURRENT_TIMESTAMP(6),paid_at)
++             WHERE id=#{orderId} AND status='PAID' AND payment_method='MOCK'
++                   AND payment_no IS NOT NULL AND paid_at IS NOT NULL AND shipped_at IS NULL
++            """)
++    int markShipped(@Param("orderId") long orderId);
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderPage.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderPage.java
+new file mode 100644
+index 0000000..9a33921
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderPage.java
+@@ -0,0 +1,21 @@
++package org.csucampuscraft.admin.order;
++
++import java.util.List;
++
++public record OrderPage(List<SalesOrder> items, long totalCount, OrderQuery query,
++                        OrderCustomer selectedCustomer) {
++    public OrderPage { items = List.copyOf(items); }
++    public List<SalesOrder> getItems() { return items; }
++    public long getTotalCount() { return totalCount; }
++    public OrderQuery getQuery() { return query; }
++    public OrderCustomer getSelectedCustomer() { return selectedCustomer; }
++    public long getPage() { return query.page(); }
++    public int getSize() { return query.size(); }
++    public long getTotalPages() { return totalCount / query.size() + (totalCount % query.size() == 0 ? 0 : 1); }
++    public long getFirstValidPage() { return Math.max(1, Math.min(query.page(), getTotalPages())); }
++    public long getPreviousPage() { return Math.max(1, query.page() - 1); }
++    public long getNextPage() { return query.page() == Long.MAX_VALUE ? Long.MAX_VALUE : query.page() + 1; }
++    public boolean isEmpty() { return items.isEmpty(); }
++    public boolean isHasPrevious() { return query.page() > 1; }
++    public boolean isHasNext() { return query.page() < getTotalPages(); }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderQuery.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderQuery.java
+new file mode 100644
+index 0000000..49bdfd3
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderQuery.java
+@@ -0,0 +1,36 @@
++package org.csucampuscraft.admin.order;
++
++import org.csucampuscraft.admin.foundation.validation.InputChecks;
++
++/** Values are bound parameters; collation provides exact case-insensitive number matching. */
++public record OrderQuery(String orderNo, String status, Long userId, long page, int size) {
++    public OrderQuery {
++        if (orderNo == null || status == null || (userId != null && userId < 1)
++                || page < 1 || size < 1 || size > 50) {
++            throw new IllegalArgumentException("Noncanonical administrator order query");
++        }
++    }
++    public static OrderQuery bind(String orderNo, String status, String userId, String page, String size) {
++        String number = InputChecks.text("orderNo", orderNo, 0, 40);
++        String state = status == null || "ALL".equals(status.strip()) ? "ALL"
++                : InputChecks.enumeration("status", status, OrderStatus.class).name();
++        Long customer = userId == null || userId.strip().isEmpty() ? null
++                : InputChecks.longInteger("userId", userId, 1, Long.MAX_VALUE);
++        long requested = page == null ? 1
++                : InputChecks.longInteger("page", page, Long.MIN_VALUE, Long.MAX_VALUE);
++        int limit = size == null ? 10 : InputChecks.integer("size", size, 1, 50);
++        return new OrderQuery(number, state, customer, Math.max(1, requested), limit);
++    }
++    public String getOrderNo() { return orderNo; }
++    public String getStatus() { return status; }
++    public Long getUserId() { return userId; }
++    public long getPage() { return page; }
++    public int getSize() { return size; }
++    public boolean isOffsetRepresentable() { return page - 1 <= Long.MAX_VALUE / size; }
++    /** MyBatis record properties require the exact accessor, including derived offset. */
++    public long offset() {
++        if (!isOffsetRepresentable()) throw new IllegalStateException("Order offset is not representable");
++        return (page - 1) * size;
++    }
++    public long getOffset() { return offset(); }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderStatus.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderStatus.java
+new file mode 100644
+index 0000000..55a0d82
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderStatus.java
+@@ -0,0 +1,10 @@
++package org.csucampuscraft.admin.order;
++
++public enum OrderStatus {
++    PENDING_PAYMENT("待支付"), PAID("待发货"), SHIPPED("已发货"),
++    COMPLETED("已完成"), CANCELLED("已取消");
++    private final String label;
++    OrderStatus(String label) { this.label = label; }
++    public String getValue() { return name(); }
++    public String getLabel() { return label; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/SalesOrder.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/SalesOrder.java
+new file mode 100644
+index 0000000..00b3e58
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/SalesOrder.java
+@@ -0,0 +1,85 @@
++package org.csucampuscraft.admin.order;
++
++import com.baomidou.mybatisplus.annotation.IdType;
++import com.baomidou.mybatisplus.annotation.TableId;
++import com.baomidou.mybatisplus.annotation.TableName;
++import java.time.ZoneId;
++import java.time.ZoneOffset;
++import java.time.format.DateTimeFormatter;
++
++/** Existing sales_order projection. Receiver data must never enter diagnostic text. */
++@TableName("sales_order")
++public final class SalesOrder {
++    @com.baomidou.mybatisplus.annotation.TableField(exist = false)
++    private String customerUsername;
++    @com.baomidou.mybatisplus.annotation.TableField(exist = false)
++    private String customerDisplayName;
++    public String getCustomerUsername() { return customerUsername; }
++    public void setCustomerUsername(String value) { customerUsername = value; }
++    public String getCustomerDisplayName() { return customerDisplayName; }
++    public void setCustomerDisplayName(String value) { customerDisplayName = value; }
++    @TableId(type = IdType.AUTO)
++    private Long id;
++    private String orderNo;
++    private Long userId;
++    private String status;
++    private java.math.BigDecimal totalAmount;
++    private String receiverName;
++    private String receiverPhone;
++    private String receiverAddress;
++    private java.time.LocalDateTime createdAt;
++    private java.time.LocalDateTime updatedAt;
++    private String paymentMethod;
++    private String paymentNo;
++    private java.time.LocalDateTime paidAt;
++    private java.time.LocalDateTime cancelledAt;
++    private java.time.LocalDateTime shippedAt;
++    private java.time.LocalDateTime completedAt;
++
++    public Long getId() { return id; }
++    public void setId(Long value) { id = value; }
++    public String getOrderNo() { return orderNo; }
++    public void setOrderNo(String value) { orderNo = value; }
++    public Long getUserId() { return userId; }
++    public void setUserId(Long value) { userId = value; }
++    public String getStatus() { return status; }
++    public void setStatus(String value) { status = value; }
++    public java.math.BigDecimal getTotalAmount() { return totalAmount; }
++    public void setTotalAmount(java.math.BigDecimal value) { totalAmount = value; }
++    public String getReceiverName() { return receiverName; }
++    public void setReceiverName(String value) { receiverName = value; }
++    public String getReceiverPhone() { return receiverPhone; }
++    public void setReceiverPhone(String value) { receiverPhone = value; }
++    public String getReceiverAddress() { return receiverAddress; }
++    public void setReceiverAddress(String value) { receiverAddress = value; }
++    public java.time.LocalDateTime getCreatedAt() { return createdAt; }
++    public void setCreatedAt(java.time.LocalDateTime value) { createdAt = value; }
++    public java.time.LocalDateTime getUpdatedAt() { return updatedAt; }
++    public void setUpdatedAt(java.time.LocalDateTime value) { updatedAt = value; }
++    public String getPaymentMethod() { return paymentMethod; }
++    public void setPaymentMethod(String value) { paymentMethod = value; }
++    public String getPaymentNo() { return paymentNo; }
++    public void setPaymentNo(String value) { paymentNo = value; }
++    public java.time.LocalDateTime getPaidAt() { return paidAt; }
++    public void setPaidAt(java.time.LocalDateTime value) { paidAt = value; }
++    public java.time.LocalDateTime getCancelledAt() { return cancelledAt; }
++    public void setCancelledAt(java.time.LocalDateTime value) { cancelledAt = value; }
++    public java.time.LocalDateTime getShippedAt() { return shippedAt; }
++    public void setShippedAt(java.time.LocalDateTime value) { shippedAt = value; }
++    public java.time.LocalDateTime getCompletedAt() { return completedAt; }
++    public void setCompletedAt(java.time.LocalDateTime value) { completedAt = value; }
++
++    public String getStatusLabel() { return OrderStatus.valueOf(status).getLabel(); }
++    public String getCreatedAtDisplay() { return display(createdAt); }
++    public String getUpdatedAtDisplay() { return display(updatedAt); }
++    public String getPaidAtDisplay() { return display(paidAt); }
++    public String getCancelledAtDisplay() { return display(cancelledAt); }
++    public String getShippedAtDisplay() { return display(shippedAt); }
++    public String getCompletedAtDisplay() { return display(completedAt); }
++    private static String display(java.time.LocalDateTime value) {
++        return value == null ? null : value.atOffset(ZoneOffset.UTC)
++                .atZoneSameInstant(ZoneId.of("Asia/Shanghai"))
++                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
++    }
++    @Override public String toString() { return "SalesOrder[receiver=REDACTED]"; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/SalesOrderItem.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/SalesOrderItem.java
+new file mode 100644
+index 0000000..fbba977
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/SalesOrderItem.java
+@@ -0,0 +1,39 @@
++package org.csucampuscraft.admin.order;
++
++import com.baomidou.mybatisplus.annotation.IdType;
++import com.baomidou.mybatisplus.annotation.TableId;
++import com.baomidou.mybatisplus.annotation.TableName;
++
++/** Transaction-time values; order views do not join the mutable catalog. */
++@TableName("sales_order_item")
++public final class SalesOrderItem {
++    @TableId(type = IdType.AUTO)
++    private Long id;
++    private Long orderId;
++    private Long productId;
++    private String skuSnapshot;
++    private String productNameSnapshot;
++    private String coverImageSnapshot;
++    private java.math.BigDecimal unitPrice;
++    private Integer quantity;
++    private java.math.BigDecimal lineAmount;
++
++    public Long getId() { return id; }
++    public void setId(Long value) { id = value; }
++    public Long getOrderId() { return orderId; }
++    public void setOrderId(Long value) { orderId = value; }
++    public Long getProductId() { return productId; }
++    public void setProductId(Long value) { productId = value; }
++    public String getSkuSnapshot() { return skuSnapshot; }
++    public void setSkuSnapshot(String value) { skuSnapshot = value; }
++    public String getProductNameSnapshot() { return productNameSnapshot; }
++    public void setProductNameSnapshot(String value) { productNameSnapshot = value; }
++    public String getCoverImageSnapshot() { return coverImageSnapshot; }
++    public void setCoverImageSnapshot(String value) { coverImageSnapshot = value; }
++    public java.math.BigDecimal getUnitPrice() { return unitPrice; }
++    public void setUnitPrice(java.math.BigDecimal value) { unitPrice = value; }
++    public Integer getQuantity() { return quantity; }
++    public void setQuantity(Integer value) { quantity = value; }
++    public java.math.BigDecimal getLineAmount() { return lineAmount; }
++    public void setLineAmount(java.math.BigDecimal value) { lineAmount = value; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/ShipmentResult.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/ShipmentResult.java
+new file mode 100644
+index 0000000..446081c
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/ShipmentResult.java
+@@ -0,0 +1,4 @@
++package org.csucampuscraft.admin.order;
++
++/** No order or receiver contents are carried into diagnostic output. */
++public enum ShipmentResult { SHIPPED, ALREADY_SHIPPED }
+diff --git a/csucampuscraft-admin/src/main/resources/static/css/app.css b/csucampuscraft-admin/src/main/resources/static/css/app.css
+index f4ca289..7bd506f 100644
+--- a/csucampuscraft-admin/src/main/resources/static/css/app.css
++++ b/csucampuscraft-admin/src/main/resources/static/css/app.css
+@@ -299,3 +299,63 @@ tbody tr[aria-disabled="true"] { color: var(--color-muted); background: var(--co
+     [data-page-id="A10"] .album-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+     [data-page-id="A10"] .album-fields { grid-template-columns: 1fr; }
+ }
++
++/* STEP11 A06/A07 order fulfilment styles; existing component rules are retained. */
++[data-page-id="A06"], [data-page-id="A07"] { min-width: 0; }
++[data-page-id="A06"] .admin-order-breadcrumb, [data-page-id="A07"] .admin-order-breadcrumb { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); font-size: var(--font-size-small); }
++[data-page-id="A06"] .admin-order-heading, [data-page-id="A07"] .admin-order-heading { display: flex; align-items: start; justify-content: space-between; gap: var(--space-6); }
++[data-page-id="A06"] .admin-order-heading > div, [data-page-id="A07"] .admin-order-heading > div { min-width: 0; }
++[data-page-id="A06"] .admin-order-heading h1, [data-page-id="A07"] .admin-order-heading h1 { margin-block: var(--space-2); }
++[data-page-id="A06"] .admin-order-filter { display: grid; grid-template-columns: minmax(220px, 2fr) minmax(140px, 1fr) minmax(140px, 1fr) 120px; gap: var(--space-4); align-items: start; }
++[data-page-id="A06"] .admin-order-filter .form-field { margin-bottom: 0; }
++[data-page-id="A06"] .admin-order-filter-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: var(--space-3); }
++[data-page-id="A06"] .admin-order-customer-filter { margin-top: var(--space-4); padding-top: var(--space-3); border-top: 1px solid var(--color-border); overflow-wrap: anywhere; }
++[data-page-id="A06"] .admin-order-customer-filter a { margin-left: var(--space-3); }
++[data-page-id="A06"] .admin-order-results-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-3); margin-block: var(--space-6) var(--space-3); }
++[data-page-id="A06"] .admin-order-table { table-layout: fixed; }
++[data-page-id="A06"] .admin-order-table th:nth-child(1) { width: 29%; }
++[data-page-id="A06"] .admin-order-table th:nth-child(2) { width: 20%; }
++[data-page-id="A06"] .admin-order-table th:nth-child(3) { width: 19%; }
++[data-page-id="A06"] .admin-order-table th:nth-child(4) { width: 12%; }
++[data-page-id="A06"] .admin-order-table th:nth-child(5) { width: 10%; }
++[data-page-id="A06"] .admin-order-table th:nth-child(6) { width: 10%; }
++[data-page-id="A06"] .admin-order-table td { overflow-wrap: anywhere; }
++[data-page-id="A06"] .admin-order-timezone { display: block; }
++[data-page-id="A06"] .admin-order-pagination { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--space-4); margin-top: var(--space-6); }
++[data-page-id="A06"] .empty-state .button { margin-top: var(--space-4); }
++[data-page-id="A06"] .admin-order-status, [data-page-id="A07"] .admin-order-status { display: inline-block; padding: var(--space-1) var(--space-2); border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-bg); color: var(--color-primary); white-space: nowrap; font-size: var(--font-size-small); font-weight: 600; }
++[data-page-id="A06"] .admin-order-money, [data-page-id="A07"] .admin-order-money { white-space: nowrap; }
++[data-page-id="A07"] .admin-order-number { overflow-wrap: anywhere; font-weight: 700; margin-top: var(--space-2); }
++[data-page-id="A07"] .admin-order-overview-heading { display: flex; justify-content: space-between; align-items: start; gap: var(--space-4); }
++[data-page-id="A07"] .admin-order-overview-heading > div { min-width: 0; }
++[data-page-id="A07"] dl { margin: 0; }
++[data-page-id="A07"] dt { color: var(--color-muted); font-size: var(--font-size-small); }
++[data-page-id="A07"] dd { margin: var(--space-1) 0 0; overflow-wrap: anywhere; }
++[data-page-id="A07"] .admin-order-metadata { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4) var(--space-6); margin-block: var(--space-4); }
++[data-page-id="A07"] .admin-order-total { color: var(--color-primary); font-size: 20px; font-weight: 700; }
++[data-page-id="A07"] .admin-order-receipt { border-top: 1px solid var(--color-border); padding-top: var(--space-4); margin-top: var(--space-4); }
++[data-page-id="A07"] .admin-order-payment-details { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.4fr) minmax(0, 1.4fr); gap: var(--space-4); margin-top: var(--space-3); }
++[data-page-id="A07"] .admin-order-items { margin-top: var(--space-6); }
++[data-page-id="A07"] .admin-order-section-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-3); margin-bottom: var(--space-4); }
++[data-page-id="A07"] .admin-order-items-table th:first-child { width: 48%; }
++[data-page-id="A07"] .admin-order-product { display: flex; align-items: center; gap: var(--space-3); min-width: 0; }
++[data-page-id="A07"] .admin-order-product > div:last-child { min-width: 0; overflow-wrap: anywhere; }
++[data-page-id="A07"] .admin-order-product-image { flex: 0 0 72px; width: 72px; }
++[data-page-id="A07"] .admin-order-sku { margin-top: var(--space-2); overflow-wrap: anywhere; }
++[data-page-id="A07"] .admin-order-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: var(--space-6); margin-top: var(--space-6); }
++[data-page-id="A07"] .admin-order-shipping-details, [data-page-id="A07"] .admin-order-timeline-details { display: grid; gap: var(--space-4); margin-top: var(--space-4); }
++[data-page-id="A07"] .admin-order-ship { margin-top: var(--space-6); }
++[data-page-id="A07"] .admin-order-ship-confirmation { margin-top: var(--space-4); }
++[data-page-id="A07"] .admin-order-ship-confirmation > summary { list-style: none; width: fit-content; }
++[data-page-id="A07"] .admin-order-ship-confirmation > summary::-webkit-details-marker { display: none; }
++[data-page-id="A07"] .admin-order-ship-content { margin-top: var(--space-3); padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-bg); overflow-wrap: anywhere; }
++[data-page-id="A07"] .admin-order-ship-content form { margin-top: var(--space-4); }
++@media (max-width: 900px) {
++    [data-page-id="A06"] .admin-order-filter { grid-template-columns: repeat(2, minmax(0, 1fr)); }
++    [data-page-id="A06"] .admin-order-table { min-width: 900px; }
++}
++@media (max-width: 600px) {
++    [data-page-id="A06"] .admin-order-heading, [data-page-id="A07"] .admin-order-heading { flex-direction: column; }
++    [data-page-id="A06"] .admin-order-filter, [data-page-id="A07"] .admin-order-metadata, [data-page-id="A07"] .admin-order-payment-details, [data-page-id="A07"] .admin-order-detail-grid { grid-template-columns: 1fr; }
++    [data-page-id="A07"] .admin-order-items-table { min-width: 660px; }
++}
+diff --git a/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html b/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html
+index 798b2d3..73c088d 100644
+--- a/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html
++++ b/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html
+@@ -19,6 +19,7 @@
+             <a th:href="@{/}">首页</a>
+             <a th:if="${authenticated}" th:href="@{/categories}">分类管理</a>
+             <a th:if="${authenticated}" th:href="@{/products}">商品管理</a>
++            <a th:if="${authenticated}" th:href="@{/orders}" data-admin-orders-link>订单管理</a>
+             <span class="app-label" th:text="${appId == 'admin' ? '管理端' : '用户端'}">用户端</span>
+             <span class="nav-placeholder" th:if="${appId == 'user'}"
+                   th:attr="aria-label=${'购物车，' + (cartQuantity ?: 0) + ' 件'}">
+diff --git a/csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html b/csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html
+new file mode 100644
+index 0000000..9278e87
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html
+@@ -0,0 +1,15 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('发货操作提示 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>发货操作提示</title></head>
++<body>
++<section th:fragment="mainContent" class="panel error-page" data-page-id="A07" data-order-action-conflict
++         th:attr="data-error-status=${errorStatus},data-error-code=${errorCode},data-order-no=${orderNo}" aria-labelledby="order-action-conflict-title">
++    <p class="error-number" th:text="${errorStatus}">409</p><h1 id="order-action-conflict-title">当前状态无法发货</h1>
++    <p th:text="${errorMessage}">请返回订单详情查看当前状态。</p>
++    <p class="muted">仅待发货订单可首次发货；请重新查看本单状态与时间记录。</p>
++    <p class="error-code">错误代码：<span th:text="${errorCode}">ORDER_SHIPPING_STATE_CONFLICT</span></p>
++    <div class="button-row"><a class="button" th:if="${orderNo != null}" th:href="@{/orders/{orderNo}(orderNo=${orderNo})}" data-return-order>查看订单详情</a><a class="button button-secondary" th:href="@{/orders}" data-return-orders>返回订单列表</a></div>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/orders/detail.html b/csucampuscraft-admin/src/main/resources/templates/orders/detail.html
+new file mode 100644
+index 0000000..1c65544
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/orders/detail.html
+@@ -0,0 +1,83 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('管理订单详情 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>管理订单详情</title></head>
++<body>
++<div th:fragment="mainContent" data-page-id="A07" class="admin-order-detail" th:with="order=${orderDetail.order}"
++     th:attr="data-order-id=${order.id},data-order-no=${order.orderNo},data-user-id=${order.userId},data-order-status=${order.status},data-order-total=${order.totalAmount},data-order-item-count=${#lists.size(orderDetail.items)}">
++    <nav class="admin-order-breadcrumb" aria-label="当前位置"><a th:href="@{/}">管理端首页</a><span aria-hidden="true">/</span><a th:href="@{/orders}">订单管理</a><span aria-hidden="true">/</span><span aria-current="page">订单详情</span></nav>
++    <header class="page-heading admin-order-heading">
++        <div><p class="eyebrow">教学模拟履约</p><h1>订单详情</h1><p class="muted">核对本单成交、收货快照及已记录的状态时间。</p></div>
++        <a class="button button-secondary" th:href="@{/orders}" data-return-orders>返回订单列表</a>
++    </header>
++    <section class="panel admin-order-overview" aria-labelledby="order-overview-title">
++        <div class="admin-order-overview-heading"><div><h2 id="order-overview-title">订单信息</h2><p class="admin-order-number" data-order-number th:text="${order.orderNo}">订单号</p></div><span class="admin-order-status" data-order-status-label th:text="${order.statusLabel}">待支付</span></div>
++        <dl class="admin-order-metadata">
++            <div><dt>创建时间</dt><dd><time th:text="${order.createdAtDisplay}">创建时间</time>（北京时间）</dd></div>
++            <div><dt>订单金额</dt><dd class="admin-order-total" data-order-amount th:text="${'¥' + #numbers.formatDecimal(order.totalAmount,1,'NONE',2,'POINT')}">¥0.00</dd></div>
++            <div><dt>顾客</dt><dd><span th:text="${order.customerDisplayName}">顾客显示名</span> / <span th:text="${order.customerUsername}">用户名</span> / ID <span th:text="${order.userId}">0</span></dd></div>
++            <div><dt>顾客资料</dt><dd class="field-help" data-customer-entry-pending>顾客详情入口将在 STEP12 接通。</dd></div>
++        </dl>
++        <p class="field-help" th:if="${order.status == 'PENDING_PAYMENT'}" data-shipping-gate>订单尚未支付，完成模拟支付后才可发货。</p>
++        <p class="field-help" th:if="${order.status == 'CANCELLED'}" data-shipping-gate>订单已取消，不能发货。保留原成交快照与取消时间。</p>
++        <p class="field-help" th:if="${order.status == 'PAID'}" data-shipping-gate>订单待发货，请先核对下方收货快照，再确认模拟发货。</p>
++        <p class="field-help" th:if="${order.status == 'SHIPPED' or order.status == 'COMPLETED'}" data-shipping-gate>本单已完成发货操作，下方展示首次发货时间。</p>
++        <div class="admin-order-receipt" th:if="${order.paymentNo != null}" data-payment-receipt aria-labelledby="order-payment-title">
++            <h3 id="order-payment-title">首次支付凭证</h3>
++            <dl class="admin-order-payment-details">
++                <div><dt>支付方式</dt><dd data-payment-method th:text="${order.paymentMethod}">MOCK</dd></div>
++                <div><dt>支付凭证</dt><dd data-payment-no th:text="${order.paymentNo}">支付凭证</dd></div>
++                <div><dt>首次支付时间</dt><dd><time data-payment-time th:text="${order.paidAtDisplay}">支付时间</time>（北京时间）</dd></div>
++            </dl>
++        </div>
++    </section>
++    <section class="admin-order-items" aria-labelledby="order-items-title">
++        <div class="admin-order-section-heading"><h2 id="order-items-title">成交商品</h2><p class="field-help">商品名称、SKU、封面与金额均为成交快照。</p></div>
++        <div class="table-container"><table class="admin-order-items-table" data-order-items>
++            <caption>本单商品快照</caption>
++            <thead><tr><th scope="col">商品</th><th scope="col">成交单价</th><th scope="col">数量</th><th scope="col">成交小计</th></tr></thead>
++            <tbody><tr th:each="line : ${orderDetail.items}"
++                th:attr="data-order-item-id=${line.id},data-order-product-id=${line.productId},data-unit-price=${line.unitPrice},data-quantity=${line.quantity},data-line-amount=${line.lineAmount},data-snapshot-sku=${line.skuSnapshot},data-snapshot-name=${line.productNameSnapshot},data-snapshot-cover=${line.coverImageSnapshot}">
++                <td><div class="admin-order-product"><div class="admin-order-product-image"><th:block th:replace="~{fragments/images :: image(${line.coverImageSnapshot},${line.productNameSnapshot})}"></th:block></div><div><strong th:text="${line.productNameSnapshot}">成交商品名称</strong><p class="field-help admin-order-sku">SKU：<span th:text="${line.skuSnapshot}">SKU</span></p></div></div></td>
++                <td class="admin-order-money" th:text="${'¥' + #numbers.formatDecimal(line.unitPrice,1,'NONE',2,'POINT')}">¥0.00</td>
++                <td th:text="${line.quantity}">0</td>
++                <td class="admin-order-money"><strong th:text="${'¥' + #numbers.formatDecimal(line.lineAmount,1,'NONE',2,'POINT')}">¥0.00</strong></td>
++            </tr></tbody>
++        </table></div>
++    </section>
++    <div class="admin-order-detail-grid">
++        <section class="panel admin-order-shipping" aria-labelledby="order-shipping-title">
++            <h2 id="order-shipping-title">收货信息</h2><p class="field-help">下单时保存的收货快照，用于教学模拟配送。</p>
++            <dl class="admin-order-shipping-details">
++                <div><dt>收货人</dt><dd data-shipping-value="receiverName" data-shipping-name th:text="${order.receiverName}">[REDACTED]</dd></div>
++                <div><dt>联系电话</dt><dd data-shipping-value="receiverPhone" data-shipping-phone th:text="${order.receiverPhone}">[REDACTED]</dd></div>
++                <div><dt>完整地址</dt><dd data-shipping-value="receiverAddress" data-shipping-address th:text="${order.receiverAddress}">[REDACTED]</dd></div>
++            </dl>
++        </section>
++        <section class="panel admin-order-timeline" aria-labelledby="order-timeline-title">
++            <h2 id="order-timeline-title">状态时间</h2><p class="field-help">仅展示已发生的状态时间，均为北京时间。</p>
++            <dl class="admin-order-timeline-details">
++                <div><dt>创建订单</dt><dd th:text="${order.createdAtDisplay}">创建时间</dd></div>
++                <div th:if="${order.paidAtDisplay != null}"><dt>支付成功</dt><dd th:text="${order.paidAtDisplay}">支付时间</dd></div>
++                <div th:if="${order.cancelledAtDisplay != null}"><dt>取消订单</dt><dd data-cancelled-time th:text="${order.cancelledAtDisplay}">取消时间</dd></div>
++                <div th:if="${order.shippedAtDisplay != null}"><dt>首次模拟发货</dt><dd data-shipped-time th:text="${order.shippedAtDisplay}">发货时间</dd></div>
++                <div th:if="${order.completedAtDisplay != null}"><dt>确认收货</dt><dd th:text="${order.completedAtDisplay}">完成时间</dd></div>
++            </dl>
++        </section>
++    </div>
++    <section class="panel admin-order-ship" th:if="${order.status == 'PAID'}" data-order-ship-actions aria-labelledby="order-ship-title">
++        <h2 id="order-ship-title">模拟发货</h2><p class="field-help">仅处理当前待发货订单；这是教学模拟，不生成真实物流单。</p>
++        <details class="admin-order-ship-confirmation" data-ship-confirmation>
++            <summary class="button">模拟发货</summary>
++            <div class="admin-order-ship-content">
++                <p id="order-ship-help">将为订单 <strong th:text="${order.orderNo}">订单号</strong> 确认模拟发货。请先核对上方收货信息；发货不会再次扣减库存。</p>
++                <form method="post" th:action="@{/orders/{orderNo}/ship(orderNo=${order.orderNo})}" data-submit-state data-ship-order-form aria-describedby="order-ship-help">
++                    <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++                    <button type="submit" data-confirm-ship data-submit-label="正在发货…">确认模拟发货</button>
++                </form>
++            </div>
++        </details>
++    </section>
++</div>
++</body>
++</html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/orders/index.html b/csucampuscraft-admin/src/main/resources/templates/orders/index.html
+new file mode 100644
+index 0000000..8f14bfc
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/orders/index.html
+@@ -0,0 +1,86 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('订单管理 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>订单管理</title></head>
++<body>
++<div th:fragment="mainContent" data-page-id="A06" class="admin-orders-page"
++     th:attr="data-order-count=${orderPage.totalCount},data-result-count=${#lists.size(orderPage.items)},data-page=${orderPage.page},data-size=${orderPage.size},data-total-pages=${orderPage.totalPages}">
++    <nav class="admin-order-breadcrumb" aria-label="当前位置"><a th:href="@{/}">管理端首页</a><span aria-hidden="true">/</span><span aria-current="page">订单管理</span></nav>
++    <header class="page-heading admin-order-heading">
++        <div><p class="eyebrow">教学模拟履约</p><h1>订单管理</h1><p class="muted">查询全站订单，核对成交快照与允许的发货操作。</p></div>
++        <a class="button button-secondary" th:href="@{/products}">商品管理</a>
++    </header>
++    <section class="panel admin-order-filter-panel" aria-labelledby="orders-filter-title">
++        <h2 id="orders-filter-title">查询订单</h2>
++        <form method="get" th:action="@{/orders}" class="admin-order-filter" data-order-filter>
++            <div class="form-field admin-order-number-field">
++                <label for="orders-number">完整订单号</label>
++                <input id="orders-number" type="search" name="orderNo" th:value="${orderQuery.orderNo}" aria-describedby="orders-number-help" placeholder="输入完整订单号">
++                <p class="field-help" id="orders-number-help">最多 40 个字符，精确匹配，不区分大小写。</p>
++            </div>
++            <div class="form-field">
++                <label for="orders-status">订单状态</label>
++                <select id="orders-status" name="status">
++                    <option value="ALL" th:selected="${orderQuery.status == 'ALL'}">全部状态</option>
++                    <option th:each="state : ${orderStatuses}" th:value="${state.value}" th:selected="${orderQuery.status == state.value}" th:text="${state.label}">订单状态</option>
++                </select>
++            </div>
++            <div class="form-field">
++                <label for="orders-user">顾客 ID</label>
++                <input id="orders-user" type="number" name="userId" min="1" step="1" th:value="${orderQuery.userId}" aria-describedby="orders-user-help">
++                <p class="field-help" id="orders-user-help">可留空；按已有普通顾客精确筛选。</p>
++            </div>
++            <div class="form-field admin-order-size-field">
++                <label for="orders-size">每页条数</label>
++                <input id="orders-size" type="number" name="size" min="1" max="50" step="1" th:value="${orderPage.size}">
++            </div>
++            <input type="hidden" name="page" value="1">
++            <div class="admin-order-filter-actions">
++                <button type="submit">查询订单</button>
++                <a class="button button-secondary" th:href="@{/orders(status='ALL',page=1,size=${orderPage.size})}" data-order-clear>清除条件</a>
++            </div>
++        </form>
++        <p class="admin-order-customer-filter field-help" th:if="${selectedCustomer != null}" data-customer-filter
++           th:attr="data-user-id=${selectedCustomer.id}">当前顾客：ID <strong th:text="${selectedCustomer.id}">0</strong> / <span th:text="${selectedCustomer.username}">用户名</span>
++            <a th:href="@{/orders(orderNo=${orderQuery.orderNo},status=${orderQuery.status},page=1,size=${orderPage.size})}" data-clear-customer>清除顾客条件</a>
++        </p>
++    </section>
++    <div class="admin-order-results-heading">
++        <p class="muted">共 <strong th:text="${orderPage.totalCount}">0</strong> 张订单<span th:if="${orderPage.totalCount > 0}">，第 <span th:text="${orderPage.page}">1</span> 页 / 共 <span th:text="${orderPage.totalPages}">1</span> 页</span></p>
++        <p class="field-help">按创建时间、订单 ID 倒序显示。</p>
++    </div>
++    <section th:if="${orderPage.empty}" class="empty-state" data-orders-empty>
++        <th:block th:if="${orderPage.page > (orderPage.totalPages > 0 ? orderPage.totalPages : 1)}">
++            <h2>当前页超出订单范围</h2><p>筛选条件保持不变，可以返回有效页面继续查看。</p>
++            <a class="button button-secondary" th:href="@{/orders(orderNo=${orderQuery.orderNo},status=${orderQuery.status},userId=${orderQuery.userId},page=${orderPage.firstValidPage},size=${orderPage.size})}"
++               th:attr="data-page-link=${orderPage.firstValidPage}" th:text="${'返回第 ' + orderPage.firstValidPage + ' 页'}">返回有效页</a>
++        </th:block>
++        <th:block th:unless="${orderPage.page > (orderPage.totalPages > 0 ? orderPage.totalPages : 1)}">
++            <h2>暂无匹配订单</h2><p>请核对完整订单号和顾客 ID，或清除条件查看全站订单。</p>
++            <a class="button button-secondary" th:href="@{/orders(status='ALL',page=1,size=${orderPage.size})}">清除条件</a>
++        </th:block>
++    </section>
++    <div th:unless="${orderPage.empty}" class="table-container admin-order-table-container">
++        <table class="admin-order-table" data-order-list>
++            <caption>全站订单清单</caption>
++            <thead><tr><th scope="col">订单号</th><th scope="col">顾客</th><th scope="col">创建时间</th><th scope="col">订单金额</th><th scope="col">状态</th><th scope="col">操作</th></tr></thead>
++            <tbody><tr th:each="item : ${orderPage.items}" th:attr="data-order-id=${item.id},data-order-no=${item.orderNo},data-user-id=${item.userId},data-order-status=${item.status},data-order-total=${item.totalAmount}">
++                <td class="admin-order-number"><a th:href="@{/orders/{orderNo}(orderNo=${item.orderNo})}" th:text="${item.orderNo}">订单号</a></td>
++                <td><strong th:text="${item.customerDisplayName}">顾客显示名</strong><p class="field-help"><span th:text="${item.customerUsername}">用户名</span> / ID <span th:text="${item.userId}">0</span></p></td>
++                <td><time th:text="${item.createdAtDisplay}">创建时间</time><span class="field-help admin-order-timezone">北京时间</span></td>
++                <td class="admin-order-money" th:text="${'¥' + #numbers.formatDecimal(item.totalAmount,1,'NONE',2,'POINT')}">¥0.00</td>
++                <td><span class="admin-order-status" th:text="${item.statusLabel}">待支付</span></td>
++                <td><a th:href="@{/orders/{orderNo}(orderNo=${item.orderNo})}" data-order-detail-link>查看详情</a></td>
++            </tr></tbody>
++        </table>
++    </div>
++    <nav class="admin-order-pagination" aria-label="订单分页" th:if="${orderPage.totalCount > 0}">
++        <a class="button button-secondary" th:if="${orderPage.hasPrevious}" th:href="@{/orders(orderNo=${orderQuery.orderNo},status=${orderQuery.status},userId=${orderQuery.userId},page=${orderPage.page - 1},size=${orderPage.size})}" th:attr="data-page-link=${orderPage.page - 1}">上一页</a>
++        <span th:unless="${orderPage.hasPrevious}" aria-disabled="true">上一页</span>
++        <span>第 <strong th:text="${orderPage.page}">1</strong> 页 / 共 <span th:text="${orderPage.totalPages}">1</span> 页</span>
++        <a class="button button-secondary" th:if="${orderPage.hasNext}" th:href="@{/orders(orderNo=${orderQuery.orderNo},status=${orderQuery.status},userId=${orderQuery.userId},page=${orderPage.page + 1},size=${orderPage.size})}" th:attr="data-page-link=${orderPage.page + 1}">下一页</a>
++        <span th:unless="${orderPage.hasNext}" aria-disabled="true">下一页</span>
++    </nav>
++</div>
++</body>
++</html>

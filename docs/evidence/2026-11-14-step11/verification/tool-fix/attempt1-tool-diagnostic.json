@@ -1,0 +1,35 @@
+{
+  "recorded_at_utc": "2026-11-14T14:58:13.001725+00:00",
+  "original_tool_sha256": "2013c00503a559528c3b7eb0765dfe0273461bfab66c0f5f116f1975e08df400",
+  "original_result_identity": "PASS retained exactly; current diagnosis does not edit original records",
+  "original_evidence_limitations": [
+    "Original assert_page bcrypt pattern was double escaped, so it did not establish absence of raw response hashes. Evidence scrubbing still removed matched hashes, and the archived sensitive scan alone cannot fill that raw-response observation gap.",
+    "Original ship helper followed a canonical database-case orderNo rather than the exact 303 Location. On a case-variant POST this did not consume the target-matched first-shipment flash. Original broad whole-page wording check did not prove the exact feedback."
+  ],
+  "new_tool_changes": [
+    "Single-escaped bcrypt response scanner with a,b,y positive and negative synthetic regression; raw available HTTP bodies checked before evidence redaction, booleans only.",
+    "Follow exact redirect Location including case and assert complete first-shipment or replay message inside the global status region; browser first-shipment feedback checked likewise."
+  ],
+  "offline_synthetic_regression": {
+    "overall": "PASS",
+    "checks": {
+      "positive-prefix-or-context-0": true,
+      "positive-prefix-or-context-1": true,
+      "positive-prefix-or-context-2": true,
+      "positive-prefix-or-context-3": true,
+      "negative-0": true,
+      "negative-1": true,
+      "negative-2": true,
+      "negative-3": true,
+      "negative-4": true
+    },
+    "positive_cases": 4,
+    "negative_cases": 5,
+    "new_positive_hits": 4,
+    "old_positive_hits": 0,
+    "synthetic_hash_values_recorded": false
+  },
+  "production_source_unchanged": "39c96aaaad18c58dce9d57450e14317a75c29b3d",
+  "fresh_attempt_required": true,
+  "old_raw_evidence_modified": false
+}

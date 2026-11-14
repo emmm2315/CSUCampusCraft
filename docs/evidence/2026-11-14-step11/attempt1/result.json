@@ -1,0 +1,6964 @@
+{
+  "date": "2026-11-14T22:49:18.566717+08:00",
+  "baseline_git_sha": "8dd7794e5b84fbc9a95069b76a74b761218e6d0a",
+  "tested_code_sha": "39c96aaaad18c58dce9d57450e14317a75c29b3d",
+  "requested_evidence_batch": "2026-11-14-step11",
+  "timestamp_policy": "actual system clock in Asia/Shanghai",
+  "checks": {
+    "tested-code-head": {
+      "passed": true,
+      "detail": ""
+    },
+    "feature-branch": {
+      "passed": true,
+      "detail": ""
+    },
+    "tested-worktree-clean": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-user": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-admin": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-pin": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-created": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-identity": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-counts": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-user-listener-owned-by-created-process": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-0 [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-admin-listener-owned-by-created-process": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-alice-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "initial-alice-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-alice-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-alice-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-alice-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-alice-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "no-session-url-rewriting-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-bob-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "initial-bob-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-bob-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-bob-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-bob-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-bob-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "no-session-url-rewriting-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-admin-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "initial-admin-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-admin-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-admin-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "initial-admin-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "login-admin-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "protected-source-unchanged-csucampuscraft-user": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-source-unchanged-database": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-source-unchanged-mvnw": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-source-unchanged-mvnw.cmd": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-source-unchanged-.mvn": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-source-unchanged-csucampuscraft-admin/pom.xml": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-0-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-alice-seed-0-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-0-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-0-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-0-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-alice-seed-0-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-0-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-0-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-0-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-1-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-alice-seed-1-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-1-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-1-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-1-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-alice-seed-1-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-1-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-1-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-1-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-11": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-2-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-alice-seed-2-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-2-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-2-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-12": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-2-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-alice-seed-2-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-2-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-2-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-2-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-13": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-3-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-alice-seed-3-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-3-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-3-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-14": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-3-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-alice-seed-3-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-3-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-3-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-3-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-15": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-4-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-alice-seed-4-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-4-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-4-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-16": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-4-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-alice-seed-4-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-4-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-4-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-4-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-17": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-5-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-alice-seed-5-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-5-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-5-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-18": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-5-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-alice-seed-5-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-5-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-5-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-5-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-alice-seed-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-19": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-0-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-bob-seed-0-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-0-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-0-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-20": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-0-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-bob-seed-0-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-0-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-0-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-0-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-21": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-1-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-bob-seed-1-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-1-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-1-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-22": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-1-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-bob-seed-1-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-1-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-1-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-1-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-23": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-2-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-bob-seed-2-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-2-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-2-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-24": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-2-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-bob-seed-2-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-2-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-2-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-2-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-25": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-3-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "clear-bob-seed-3-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-3-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-3-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-26": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-3-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "clear-bob-seed-3-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-3-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-3-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-3-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "clear-bob-seed-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-27": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-27": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-initial-all-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-row-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-row-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-row-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-row-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-row-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-row-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-row-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-row-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-row-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-initial-all-row-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-28": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-28": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-status-ALL-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-row-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-row-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-row-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-row-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-row-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-row-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-row-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-row-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-row-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-ALL-row-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-29": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-29": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PENDING_PAYMENT-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-status-PENDING_PAYMENT-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PENDING_PAYMENT-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PENDING_PAYMENT-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PENDING_PAYMENT-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PENDING_PAYMENT-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PENDING_PAYMENT-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PENDING_PAYMENT-row-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PENDING_PAYMENT-row-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-30": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-30": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PAID-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-status-PAID-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PAID-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PAID-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PAID-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PAID-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PAID-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PAID-row-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-PAID-row-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-31": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-31": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-SHIPPED-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-status-SHIPPED-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-SHIPPED-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-SHIPPED-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-SHIPPED-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-SHIPPED-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-SHIPPED-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-SHIPPED-row-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-SHIPPED-row-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-COMPLETED-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-status-COMPLETED-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-COMPLETED-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-COMPLETED-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-COMPLETED-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-COMPLETED-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-COMPLETED-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-COMPLETED-row-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-COMPLETED-row-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-CANCELLED-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-status-CANCELLED-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-CANCELLED-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-CANCELLED-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-CANCELLED-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-CANCELLED-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-CANCELLED-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-CANCELLED-row-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-status-CANCELLED-row-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-34": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-34": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-1-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-CUSTOMER-1-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-1-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-1-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-1-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-1-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-1-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-1-row-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-1-row-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-1-page-retains-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-1-page-retains-customer": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-35": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-35": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-2-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-CUSTOMER-2-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-2-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-2-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-2-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-2-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-2-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-2-row-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-2-row-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-2-page-retains-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-2-page-retains-customer": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-36": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-36": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-3-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-CUSTOMER-3-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-3-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-3-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-3-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-3-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CUSTOMER-3-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-37": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-37": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-page-zero-normalizes-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-row-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-row-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-row-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-row-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-row-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-row-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-row-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-row-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-row-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-zero-normalizes-row-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-38": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-38": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-page-negative-normalizes-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-row-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-row-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-row-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-row-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-row-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-row-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-row-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-row-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-row-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-page-negative-normalizes-row-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-39": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-39": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-paid-second-page-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-paid-second-page-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-paid-second-page-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-paid-second-page-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-paid-second-page-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-paid-second-page-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-paid-second-page-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-paid-second-page-outofrange-recovery": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-paid-second-page-page-retains-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-paid-second-page-page-retains-status": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-paid-second-page-page-retains-size [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-paid-second-page-page-retains-status [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-40": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-40": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-beyond-last-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-beyond-last-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-beyond-last-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-beyond-last-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-beyond-last-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-beyond-last-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-beyond-last-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-beyond-last-outofrange-recovery": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-beyond-last-page-retains-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-beyond-last-page-retains-customer": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-beyond-last-page-retains-size [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-beyond-last-page-retains-customer [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-41": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-41": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-min-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-size-min-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-min-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-min-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-min-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-min-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-min-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-min-row-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-min-page-retains-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-42": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-42": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-size-max-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-row-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-row-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-row-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-row-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-row-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-row-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-row-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-row-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-row-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-size-max-row-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-43": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-43": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-blank-user-filter-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-row-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-row-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-row-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-row-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-row-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-row-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-row-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-row-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-row-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-blank-user-filter-row-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-44": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-44": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-status-0-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-status-0-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-status-0-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-status-0-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-status-0-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-45": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-45": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-status-1-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-status-1-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-status-1-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-status-1-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-status-1-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-46": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-46": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-status-2-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-status-2-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-status-2-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-status-2-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-status-2-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-47": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-47": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-page-0-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-page-0-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-page-0-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-page-0-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-page-0-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-48": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-48": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-page-1-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-page-1-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-page-1-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-page-1-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-page-1-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-49": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-49": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-page-2-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-page-2-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-page-2-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-page-2-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-page-2-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-50": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-50": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-0-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-size-0-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-0-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-0-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-0-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-51": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-51": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-1-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-size-1-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-1-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-1-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-1-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-52": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-52": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-2-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-size-2-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-2-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-2-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-2-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-53": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-53": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-3-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-size-3-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-3-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-3-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-3-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-54": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-54": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-4-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-size-4-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-4-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-4-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-size-4-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-55": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-55": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-0-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-userId-0-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-0-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-0-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-0-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-1-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-userId-1-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-1-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-1-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-1-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-57": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-57": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-2-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-userId-2-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-2-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-2-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-2-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-58": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-58": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-3-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-userId-3-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-3-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-3-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-3-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-59": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-59": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-4-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-userId-4-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-4-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-4-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-userId-4-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-60": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-60": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-orderNo-0-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-orderNo-0-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-orderNo-0-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-orderNo-0-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-orderNo-0-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-61": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-61": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-orderNo-1-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-invalid-orderNo-1-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-orderNo-1-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-orderNo-1-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-invalid-orderNo-1-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-62": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-62": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-unknown-or-ADMIN-4-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "A06-unknown-or-ADMIN-4-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-unknown-or-ADMIN-4-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-unknown-or-ADMIN-4-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-unknown-or-ADMIN-4-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-63": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-63": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-unknown-or-ADMIN-999999-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "A06-unknown-or-ADMIN-999999-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-unknown-or-ADMIN-999999-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-unknown-or-ADMIN-999999-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-unknown-or-ADMIN-999999-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-64": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-64": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-status-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-duplicate-status-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-status-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-status-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-status-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-65": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-65": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-page-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-duplicate-page-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-page-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-page-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-page-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-66": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-66": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-size-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-duplicate-size-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-size-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-size-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-size-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-67": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-67": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-userId-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-duplicate-userId-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-userId-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-userId-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-userId-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-68": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-68": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-orderNo-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "A06-duplicate-orderNo-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-orderNo-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-orderNo-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-duplicate-orderNo-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-69": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-69": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-valid-max-number-empty-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-valid-max-number-empty-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-valid-max-number-empty-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-valid-max-number-empty-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-valid-max-number-empty-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-valid-max-number-empty-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-valid-max-number-empty-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-70": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-70": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-valid-max-codepoints-empty-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-valid-max-codepoints-empty-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-valid-max-codepoints-empty-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-valid-max-codepoints-empty-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-valid-max-codepoints-empty-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-valid-max-codepoints-empty-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-valid-max-codepoints-empty-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-71": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-71": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-maximum-page-no-offset-overflow-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-maximum-page-no-offset-overflow-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-maximum-page-no-offset-overflow-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-maximum-page-no-offset-overflow-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-maximum-page-no-offset-overflow-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-maximum-page-no-offset-overflow-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-maximum-page-no-offset-overflow-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-maximum-page-no-offset-overflow-outofrange-recovery": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-maximum-page-no-offset-overflow-page-retains-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-maximum-page-no-offset-overflow-page-retains-size [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-72": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-72": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-minimum-page-normalizes-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-row-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-row-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-row-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-row-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-row-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-row-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-row-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-row-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-row-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-minimum-page-normalizes-row-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-73": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-73": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PENDING_PAYMENT-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A07-seed-PENDING_PAYMENT-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PENDING_PAYMENT-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PENDING_PAYMENT-A07": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PENDING_PAYMENT-current-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PENDING_PAYMENT-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PENDING_PAYMENT-snapshot-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PENDING_PAYMENT-snapshot-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PENDING_PAYMENT-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PENDING_PAYMENT-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PENDING_PAYMENT-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PENDING_PAYMENT-only-PAID-ship-form": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PENDING_PAYMENT-timeline-createdAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PENDING_PAYMENT-no-customer-business-link": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-74": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-74": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A07-seed-PAID-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-A07": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-current-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-snapshot-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-snapshot-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-only-PAID-ship-form": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-csrf-one": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-visible-order-confirmation": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-first-payment-receipt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-timeline-createdAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-timeline-paidAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-PAID-no-customer-business-link": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-75": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-75": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A07-seed-SHIPPED-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-A07": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-current-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-snapshot-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-snapshot-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-only-PAID-ship-form": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-first-payment-receipt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-timeline-createdAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-timeline-paidAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-timeline-shippedAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-SHIPPED-no-customer-business-link": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-76": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-76": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A07-seed-COMPLETED-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-A07": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-current-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-snapshot-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-snapshot-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-only-PAID-ship-form": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-first-payment-receipt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-timeline-createdAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-timeline-paidAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-timeline-shippedAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-timeline-completedAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-COMPLETED-no-customer-business-link": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-77": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-77": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-CANCELLED-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A07-seed-CANCELLED-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-CANCELLED-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-CANCELLED-A07": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-CANCELLED-current-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-CANCELLED-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-CANCELLED-snapshot-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-CANCELLED-snapshot-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-CANCELLED-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-CANCELLED-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-CANCELLED-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-CANCELLED-only-PAID-ship-form": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-CANCELLED-timeline-createdAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-CANCELLED-timeline-cancelledAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-seed-CANCELLED-no-customer-business-link": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-clear-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-78": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-1-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "main-user-85-add-1-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-1-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-1-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-79": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-1-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "main-user-85-add-1-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-1-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-1-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-1-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-1-one-sku-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-1-quantity": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-1-version": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-80": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-56-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "main-user-85-add-56-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-56-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-56-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-81": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-56-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "main-user-85-add-56-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-56-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-56-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-56-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-56-one-sku-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-56-quantity": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-add-56-version": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-82": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-82": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-confirm-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "main-user-85-confirm-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-confirm-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-confirm-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-confirm-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "main-user-85-confirm-U06": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-confirm-opaque-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-confirm-amount-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-confirm-complete-own-cart": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-83": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "main-user-85-create-safe-detail-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-nonorder-business-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-exactly-one-new-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-correct-order-number": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-order-number-safe": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-number-unique-CI": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-owner-pending-null-payment": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-only-confirmed-own-cart-deleted": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-no-own-cart-left": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-one-line-per-confirmed-sku": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-stock-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-locked-product-snapshot-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-product-only-stock-version-time-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-stock-version-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-locked-product-snapshot-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-product-only-stock-version-time-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-only-confirmed-products-changed": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-server-total": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-create-shipping-hashes-server-trim": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-84": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-84": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-created-detail-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "main-user-85-created-detail-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-created-detail-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-created-detail-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-created-detail-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "main-user-85-created-detail-U08": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-created-detail-order-data": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-created-detail-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-created-detail-snapshot-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-created-detail-snapshot-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-created-detail-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-created-detail-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-user-85-created-detail-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-actual-order-85": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-85": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-85": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-fresh-unpaid-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-fresh-unpaid-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-fresh-unpaid-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-fresh-unpaid-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-fresh-unpaid-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-fresh-unpaid-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-fresh-unpaid-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-fresh-unpaid-row-16": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-86": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-86": {
+      "passed": true,
+      "detail": ""
+    },
+    "pending-ship-conflict-csrf-page-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "pending-ship-conflict-csrf-page-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "pending-ship-conflict-csrf-page-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-87": {
+      "passed": true,
+      "detail": ""
+    },
+    "pending-ship-conflict-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "pending-ship-conflict-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "pending-ship-conflict-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "pending-ship-conflict-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "pending-ship-conflict-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "pending-ship-conflict-rejected-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-88": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-88": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "main-real-simulated-payment-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-89": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "main-real-simulated-payment-safe-detail-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-order-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-unchanged-users-categories-images-cart-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-only-own-order-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-pending-to-paid": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-method-first-voucher-time": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-voucher-case-insensitive-unique": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-all-snapshots-and-other-order-fields-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-all-product-fields-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-90": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-90": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-303-detail-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "main-real-simulated-payment-303-detail-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-303-detail-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-303-detail-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-303-detail-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "main-real-simulated-payment-303-detail-U08": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-303-detail-order-data": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-303-detail-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-303-detail-snapshot-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-303-detail-snapshot-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-303-detail-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-303-detail-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-303-detail-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "main-real-simulated-payment-first-receipt-visible": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-91": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-91": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CI-trim-exact-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-CI-trim-exact-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CI-trim-exact-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CI-trim-exact-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CI-trim-exact-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CI-trim-exact-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CI-trim-exact-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-CI-trim-exact-row-16": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-92": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-92": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-partial-is-empty-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-partial-is-empty-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-partial-is-empty-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-partial-is-empty-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-partial-is-empty-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-partial-is-empty-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-partial-is-empty-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-93": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-93": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-all-three-AND-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-all-three-AND-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-all-three-AND-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-all-three-AND-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-all-three-AND-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-all-three-AND-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-all-three-AND-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-all-three-AND-row-16": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-94": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-94": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-other-CUSTOMER-intersection-empty-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-other-CUSTOMER-intersection-empty-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-other-CUSTOMER-intersection-empty-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-other-CUSTOMER-intersection-empty-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-other-CUSTOMER-intersection-empty-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-other-CUSTOMER-intersection-empty-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-other-CUSTOMER-intersection-empty-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-95": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-95": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-other-status-intersection-empty-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A06-other-status-intersection-empty-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-other-status-intersection-empty-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-other-status-intersection-empty-A06": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-other-status-intersection-empty-same-where-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-other-status-intersection-empty-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "A06-other-status-intersection-empty-allsite-AND-stable-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-96": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-96": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A07-CI-order-number-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-A07": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-current-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-snapshot-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-snapshot-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-only-PAID-ship-form": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-csrf-one": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-visible-order-confirmation": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-first-payment-receipt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-timeline-createdAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-timeline-paidAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-CI-order-number-no-customer-business-link": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-97": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-97": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-admin-list-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-admin-list-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-admin-list-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-admin-list-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-98": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-98": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-admin-detail-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-admin-detail-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-admin-detail-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-admin-detail-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-99": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-admin-ship-before-csrf-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-admin-ship-before-csrf-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-admin-ship-before-csrf-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-100": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-cannot-login-admin-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "customer-cannot-login-admin-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-cannot-login-admin-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-cannot-login-admin-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-cannot-login-admin-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-101": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-admin-login-rejected-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "customer-admin-login-rejected-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-admin-login-rejected-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-102": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-102": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-no-admin-session-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-no-admin-session-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-no-admin-session-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-103": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-cookie-does-not-authorize-admin-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-cookie-does-not-authorize-admin-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "user-cookie-does-not-authorize-admin-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-104": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-missing-csrf-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "ship-missing-csrf-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-missing-csrf-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-missing-csrf-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-missing-csrf-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-missing-csrf-rejected-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-105": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-wrong-csrf-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "ship-wrong-csrf-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-wrong-csrf-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-wrong-csrf-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-wrong-csrf-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-wrong-csrf-rejected-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-106": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-106": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-unknown-csrf-page-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "ship-unknown-csrf-page-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-unknown-csrf-page-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-107": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-unknown-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "ship-unknown-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-unknown-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-unknown-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-unknown-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-unknown-rejected-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "ship-unknown-unknown-no-detail-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-108": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-108": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-unknown-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "A07-unknown-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-unknown-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-unknown-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-unknown-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-unknown-no-private-detail": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-109": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-109": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-before-ship-retains-snapshots-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "U08-before-ship-retains-snapshots-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-before-ship-retains-snapshots-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-before-ship-retains-snapshots-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-before-ship-retains-snapshots-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "U08-before-ship-retains-snapshots-U08": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-before-ship-retains-snapshots-order-data": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-before-ship-retains-snapshots-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-before-ship-retains-snapshots-snapshot-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-before-ship-retains-snapshots-snapshot-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-before-ship-retains-snapshots-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-before-ship-retains-snapshots-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-before-ship-retains-snapshots-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-110": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-110": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A07-before-ship-retains-snapshots-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-A07": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-current-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-snapshot-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-snapshot-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-only-PAID-ship-form": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-csrf-one": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-visible-order-confirmation": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-first-payment-receipt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-timeline-createdAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-timeline-paidAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-before-ship-retains-snapshots-no-customer-business-link": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-111": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-111": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-csrf-page-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "first-admin-ship-CI-csrf-page-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-csrf-page-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-112": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "first-admin-ship-CI-safe-detail-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-order-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-six-nonorder-tables-entirely-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-all-product-fields-cart-and-snapshots-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-only-target-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-PAID-to-SHIPPED": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-first-shipped-time-valid": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-receipt-amount-shipping-and-all-other-fields-preserved": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-113": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-113": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "first-admin-ship-CI-303-detail-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-A07": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-current-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-snapshot-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-snapshot-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-only-PAID-ship-form": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-first-payment-receipt": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-timeline-createdAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-timeline-paidAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-timeline-shippedAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-303-detail-no-customer-business-link": {
+      "passed": true,
+      "detail": ""
+    },
+    "first-admin-ship-CI-shipment-result-flash": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-114": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-114": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-after-admin-ship-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "U08-after-admin-ship-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-after-admin-ship-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-after-admin-ship-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-after-admin-ship-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "U08-after-admin-ship-U08": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-after-admin-ship-order-data": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-after-admin-ship-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-after-admin-ship-snapshot-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-after-admin-ship-snapshot-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-after-admin-ship-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-after-admin-ship-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "U08-after-admin-ship-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-115": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-115": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "A07-after-admin-ship-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-A07": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-current-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-snapshot-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-snapshot-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-only-PAID-ship-form": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-first-payment-receipt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-timeline-createdAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-timeline-paidAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-timeline-shippedAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "A07-after-admin-ship-no-customer-business-link": {
+      "passed": true,
+      "detail": ""
+    },
+    "both-ends-identical-first-shipped-display": {
+      "passed": true,
+      "detail": ""
+    },
+    "same-first-payment-receipt-retained": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-116": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-116": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-csrf-page-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "repeat-ship-preserves-whole-row-csrf-page-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-csrf-page-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-117": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "repeat-ship-preserves-whole-row-safe-detail-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-order-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-six-nonorder-tables-entirely-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-all-product-fields-cart-and-snapshots-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-all-seven-noop": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-118": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-118": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "repeat-ship-preserves-whole-row-303-detail-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-A07": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-current-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-snapshot-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-snapshot-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-only-PAID-ship-form": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-first-payment-receipt": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-timeline-createdAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-timeline-paidAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-timeline-shippedAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-303-detail-no-customer-business-link": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-ship-preserves-whole-row-shipment-result-flash": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-119": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-119": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-csrf-page-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "seed-SHIPPED-repeat-ship-csrf-page-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-csrf-page-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-120": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "seed-SHIPPED-repeat-ship-safe-detail-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-order-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-six-nonorder-tables-entirely-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-all-product-fields-cart-and-snapshots-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-all-seven-noop": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-121": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-121": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-A07": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-current-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-snapshot-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-snapshot-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-only-PAID-ship-form": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-first-payment-receipt": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-timeline-createdAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-timeline-paidAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-timeline-shippedAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-303-detail-no-customer-business-link": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-SHIPPED-repeat-ship-shipment-result-flash": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-122": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-122": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-csrf-page-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "seed-COMPLETED-repeat-ship-csrf-page-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-csrf-page-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-123": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "seed-COMPLETED-repeat-ship-safe-detail-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-order-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-six-nonorder-tables-entirely-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-all-product-fields-cart-and-snapshots-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-all-seven-noop": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-124": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-124": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-A07": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-current-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-snapshot-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-snapshot-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-only-PAID-ship-form": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-first-payment-receipt": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-timeline-createdAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-timeline-paidAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-timeline-shippedAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-timeline-completedAt": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-303-detail-no-customer-business-link": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-COMPLETED-repeat-ship-shipment-result-flash": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-125": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-125": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-PENDING_PAYMENT-ship-conflict-csrf-page-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "seed-PENDING_PAYMENT-ship-conflict-csrf-page-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-PENDING_PAYMENT-ship-conflict-csrf-page-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-126": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-PENDING_PAYMENT-ship-conflict-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "seed-PENDING_PAYMENT-ship-conflict-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-PENDING_PAYMENT-ship-conflict-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-PENDING_PAYMENT-ship-conflict-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-PENDING_PAYMENT-ship-conflict-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-PENDING_PAYMENT-ship-conflict-rejected-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-127": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-127": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-CANCELLED-ship-conflict-csrf-page-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "seed-CANCELLED-ship-conflict-csrf-page-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-CANCELLED-ship-conflict-csrf-page-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-128": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-CANCELLED-ship-conflict-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "seed-CANCELLED-ship-conflict-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-CANCELLED-ship-conflict-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-CANCELLED-ship-conflict-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-CANCELLED-ship-conflict-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-CANCELLED-ship-conflict-rejected-all-seven-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "root-product-fixtures-fully-restored": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-129": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-admin-before-csrf-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-admin-before-csrf-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "disabled-admin-before-csrf-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-130": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-130": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenable-old-session-still-invalid-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenable-old-session-still-invalid-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenable-old-session-still-invalid-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "reenable-old-session-still-invalid-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-131": {
+      "passed": true,
+      "detail": ""
+    },
+    "fresh-admin-after-disable-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "fresh-admin-after-disable-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "fresh-admin-after-disable-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "fresh-admin-after-disable-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "fresh-admin-after-disable-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-132": {
+      "passed": true,
+      "detail": ""
+    },
+    "fresh-admin-after-disable-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "browser-order-1366-clear-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-133": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-1-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "browser-order-1366-add-1-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-1-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-1-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-134": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-1-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "browser-order-1366-add-1-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-1-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-1-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-1-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-1-one-sku-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-1-quantity": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-1-version": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-135": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-56-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "browser-order-1366-add-56-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-56-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-56-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-136": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-56-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "browser-order-1366-add-56-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-56-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-56-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-56-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-56-one-sku-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-56-quantity": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-add-56-version": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-137": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-137": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-confirm-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "browser-order-1366-confirm-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-confirm-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-confirm-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-confirm-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "browser-order-1366-confirm-U06": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-confirm-opaque-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-confirm-amount-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-confirm-complete-own-cart": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-138": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "browser-order-1366-create-safe-detail-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-nonorder-business-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-exactly-one-new-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-correct-order-number": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-order-number-safe": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-number-unique-CI": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-owner-pending-null-payment": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-only-confirmed-own-cart-deleted": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-no-own-cart-left": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-one-line-per-confirmed-sku": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-stock-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-locked-product-snapshot-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-product-only-stock-version-time-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-stock-version-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-locked-product-snapshot-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-product-only-stock-version-time-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-only-confirmed-products-changed": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-server-total": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-create-shipping-hashes-server-trim": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-139": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-139": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-created-detail-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "browser-order-1366-created-detail-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-created-detail-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-created-detail-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-created-detail-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "browser-order-1366-created-detail-U08": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-created-detail-order-data": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-created-detail-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-created-detail-snapshot-34": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-created-detail-snapshot-35": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-created-detail-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-created-detail-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1366-created-detail-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-140": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-140": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "browser-pay-setup-1366-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-141": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "browser-pay-setup-1366-safe-detail-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-order-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-unchanged-users-categories-images-cart-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-only-own-order-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-pending-to-paid": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-method-first-voucher-time": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-voucher-case-insensitive-unique": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-all-snapshots-and-other-order-fields-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-all-product-fields-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-142": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-142": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-303-detail-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "browser-pay-setup-1366-303-detail-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-303-detail-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-303-detail-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-303-detail-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "browser-pay-setup-1366-303-detail-U08": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-303-detail-order-data": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-303-detail-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-303-detail-snapshot-34": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-303-detail-snapshot-35": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-303-detail-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-303-detail-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-303-detail-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1366-first-receipt-visible": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-clear-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-143": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-1-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "browser-order-1920-add-1-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-1-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-1-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-144": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-1-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "browser-order-1920-add-1-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-1-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-1-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-1-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-1-one-sku-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-1-quantity": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-1-version": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-145": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-56-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "browser-order-1920-add-56-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-56-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-56-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-146": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-56-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "browser-order-1920-add-56-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-56-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-56-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-56-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-56-one-sku-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-56-quantity": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-add-56-version": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-147": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-147": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-confirm-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "browser-order-1920-confirm-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-confirm-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-confirm-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-confirm-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "browser-order-1920-confirm-U06": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-confirm-opaque-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-confirm-amount-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-confirm-complete-own-cart": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-148": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "browser-order-1920-create-safe-detail-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-nonorder-business-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-exactly-one-new-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-correct-order-number": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-order-number-safe": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-number-unique-CI": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-owner-pending-null-payment": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-only-confirmed-own-cart-deleted": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-no-own-cart-left": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-one-line-per-confirmed-sku": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-stock-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-locked-product-snapshot-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-product-only-stock-version-time-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-stock-version-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-locked-product-snapshot-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-product-only-stock-version-time-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-only-confirmed-products-changed": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-server-total": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-create-shipping-hashes-server-trim": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-149": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-149": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-created-detail-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "browser-order-1920-created-detail-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-created-detail-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-created-detail-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-created-detail-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "browser-order-1920-created-detail-U08": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-created-detail-order-data": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-created-detail-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-created-detail-snapshot-36": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-created-detail-snapshot-37": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-created-detail-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-created-detail-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-order-1920-created-detail-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-150": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-150": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "browser-pay-setup-1920-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-151": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "browser-pay-setup-1920-safe-detail-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-order-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-unchanged-users-categories-images-cart-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-only-own-order-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-pending-to-paid": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-method-first-voucher-time": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-voucher-case-insensitive-unique": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-all-snapshots-and-other-order-fields-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-all-product-fields-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-152": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-152": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-303-detail-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "browser-pay-setup-1920-303-detail-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-303-detail-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-303-detail-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-303-detail-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "browser-pay-setup-1920-303-detail-U08": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-303-detail-order-data": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-303-detail-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-303-detail-snapshot-36": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-303-detail-snapshot-37": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-303-detail-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-303-detail-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-303-detail-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-pay-setup-1920-first-receipt-visible": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-153": {
+      "passed": true,
+      "detail": ""
+    },
+    "unconfirmed-current-cart-survives-shipment-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "unconfirmed-current-cart-survives-shipment-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "unconfirmed-current-cart-survives-shipment-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "unconfirmed-current-cart-survives-shipment-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-154": {
+      "passed": true,
+      "detail": ""
+    },
+    "unconfirmed-current-cart-survives-shipment-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "unconfirmed-current-cart-survives-shipment-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "unconfirmed-current-cart-survives-shipment-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "unconfirmed-current-cart-survives-shipment-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "unconfirmed-current-cart-survives-shipment-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "unconfirmed-current-cart-survives-shipment-one-sku-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "unconfirmed-current-cart-survives-shipment-quantity": {
+      "passed": true,
+      "detail": ""
+    },
+    "unconfirmed-current-cart-survives-shipment-version": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1366-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1366-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1366-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1366-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1366-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-admin-ship-route-browser-1366-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-1366-6-order-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-1366-6-six-nonorder-tables-entirely-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-1366-6-all-product-fields-cart-and-snapshots-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-1366-6-only-target-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-1366-6-PAID-to-SHIPPED": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-1366-6-first-shipped-time-valid": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-1366-6-receipt-amount-shipping-and-all-other-fields-preserved": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1366-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1366-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1366-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1366-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1366-11": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1366-12": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1366-13": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1366-14": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1920-15": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1920-16": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1920-17": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1920-18": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1920-19": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-admin-ship-route-browser-1920-20": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-1920-20-order-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-1920-20-six-nonorder-tables-entirely-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-1920-20-all-product-fields-cart-and-snapshots-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-1920-20-only-target-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-1920-20-PAID-to-SHIPPED": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-1920-20-first-shipped-time-valid": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-1920-20-receipt-amount-shipping-and-all-other-fields-preserved": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1920-21": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1920-22": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1920-23": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1920-24": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1920-25": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1920-26": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1920-27": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-read-or-reject-zero-write-browser-1920-28": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-exit": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-audit-complete": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-PASS": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-clear-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-183": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-1-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "native-bob-paid-add-1-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-1-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-1-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-184": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-1-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "native-bob-paid-add-1-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-1-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-1-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-1-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-1-one-sku-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-1-quantity": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-1-version": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-185": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-56-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "native-bob-paid-add-56-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-56-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-56-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-186": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-56-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "native-bob-paid-add-56-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-56-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-56-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-56-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-56-one-sku-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-56-quantity": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-add-56-version": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-187": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-187": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-confirm-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "native-bob-paid-confirm-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-confirm-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-confirm-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-confirm-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "native-bob-paid-confirm-U06": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-confirm-opaque-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-confirm-amount-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-confirm-complete-own-cart": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-188": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "native-bob-paid-create-safe-detail-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-nonorder-business-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-exactly-one-new-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-correct-order-number": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-order-number-safe": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-number-unique-CI": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-owner-pending-null-payment": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-only-confirmed-own-cart-deleted": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-no-own-cart-left": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-one-line-per-confirmed-sku": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-stock-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-locked-product-snapshot-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-product-only-stock-version-time-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-stock-version-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-locked-product-snapshot-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-product-only-stock-version-time-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-only-confirmed-products-changed": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-server-total": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-create-shipping-hashes-server-trim": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-189": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-189": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-created-detail-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "native-bob-paid-created-detail-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-created-detail-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-created-detail-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-created-detail-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "native-bob-paid-created-detail-U08": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-created-detail-order-data": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-created-detail-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-created-detail-snapshot-38": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-created-detail-snapshot-39": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-created-detail-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-created-detail-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-paid-created-detail-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-190": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-190": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "native-payment-setup-paid-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-191": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "native-payment-setup-paid-safe-detail-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-order-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-unchanged-users-categories-images-cart-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-only-own-order-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-pending-to-paid": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-method-first-voucher-time": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-voucher-case-insensitive-unique": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-all-snapshots-and-other-order-fields-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-all-product-fields-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-192": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-192": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-303-detail-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "native-payment-setup-paid-303-detail-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-303-detail-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-303-detail-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-303-detail-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "native-payment-setup-paid-303-detail-U08": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-303-detail-order-data": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-303-detail-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-303-detail-snapshot-38": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-303-detail-snapshot-39": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-303-detail-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-303-detail-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-303-detail-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-paid-first-receipt-visible": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-clear-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-193": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-1-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "native-bob-future-add-1-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-1-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-1-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-194": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-1-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "native-bob-future-add-1-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-1-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-1-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-1-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-1-one-sku-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-1-quantity": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-1-version": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-195": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-56-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "native-bob-future-add-56-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-56-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-56-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-196": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-56-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "native-bob-future-add-56-other-six-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-56-fixed-cart-redirect": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-56-own-cart-only": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-56-at-most-one-cart-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-56-one-sku-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-56-quantity": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-add-56-version": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-197": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-197": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-confirm-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "native-bob-future-confirm-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-confirm-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-confirm-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-confirm-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 3}"
+    },
+    "native-bob-future-confirm-U06": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-confirm-opaque-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-confirm-amount-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-confirm-complete-own-cart": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-198": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "native-bob-future-create-safe-detail-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-nonorder-business-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-exactly-one-new-order": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-correct-order-number": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-order-number-safe": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-number-unique-CI": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-owner-pending-null-payment": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-only-confirmed-own-cart-deleted": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-no-own-cart-left": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-one-line-per-confirmed-sku": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-stock-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-locked-product-snapshot-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-product-only-stock-version-time-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-stock-version-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-locked-product-snapshot-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-product-only-stock-version-time-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-only-confirmed-products-changed": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-server-total": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-create-shipping-hashes-server-trim": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-199": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-199": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-created-detail-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "native-bob-future-created-detail-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-created-detail-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-created-detail-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-created-detail-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "native-bob-future-created-detail-U08": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-created-detail-order-data": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-created-detail-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-created-detail-snapshot-40": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-created-detail-snapshot-41": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-created-detail-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-created-detail-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-bob-future-created-detail-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-200": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-200": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "native-payment-setup-future-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-201": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "native-payment-setup-future-safe-detail-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-order-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-unchanged-users-categories-images-cart-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-only-own-order-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-pending-to-paid": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-method-first-voucher-time": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-voucher-case-insensitive-unique": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-all-snapshots-and-other-order-fields-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-all-product-fields-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-202": {
+      "passed": true,
+      "detail": ""
+    },
+    "read-or-rejected-order-zero-write-http-202": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-303-detail-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "native-payment-setup-future-303-detail-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-303-detail-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-303-detail-badge-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-303-detail-badge-sum": {
+      "passed": true,
+      "detail": "{'expected': 0}"
+    },
+    "native-payment-setup-future-303-detail-U08": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-303-detail-order-data": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-303-detail-all-snapshot-lines": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-303-detail-snapshot-40": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-303-detail-snapshot-41": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-303-detail-shipping-snapshot-receiverName": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-303-detail-shipping-snapshot-receiverPhone": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-303-detail-shipping-snapshot-receiverAddress": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-payment-setup-future-first-receipt-visible": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-compile": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-structural-regression": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-exit": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-PASS": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-only-two-paid-orders-changed": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-paid-shipped-preserved-fields": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-future-shipped-preserved-fields": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-all-six-other-tables-preserved": {
+      "passed": true,
+      "detail": ""
+    },
+    "native-future-paidAt-selected-exactly": {
+      "passed": true,
+      "detail": ""
+    },
+    "users-categories-images-preserved": {
+      "passed": true,
+      "detail": ""
+    },
+    "runtime-inputs-stable": {
+      "passed": true,
+      "detail": ""
+    },
+    "assets-and-packaged-images-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "protected-user-and-sql-still-unmodified": {
+      "passed": true,
+      "detail": ""
+    }
+  },
+  "scope": "STEP11 admin order reads and simulated shipment; sequential checks only; no concurrency, injected failure, real logistics or user-source changes",
+  "branch": "feat/step11-admin-orders",
+  "runtime_manifest_sha256": "eca6993a4cdffd98594ebaa48e093ec1e520d603eff407cb3747a698629822cb",
+  "runtime_file_count": 183,
+  "csucampuscraft-user_jar_sha256": "d4c099a8ea283d037842de7395cc904f20dd938e78786ce59dd70b8377f0f9e8",
+  "csucampuscraft-admin_jar_sha256": "b7f431e48e4c91d8f29320491e4f695ed0d7443d1b99c542f3e7dfc8b640d59b",
+  "static_files": 3,
+  "mysql_version": "8.4.9",
+  "mysql_port": 54774,
+  "browser_checks": 255,
+  "screenshots": 26,
+  "browser_http_audits": 28,
+  "native_checks": 175,
+  "overall": "PASS",
+  "tracked_processes_stopped": true
+}

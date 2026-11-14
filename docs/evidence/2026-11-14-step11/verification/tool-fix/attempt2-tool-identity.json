@@ -1,0 +1,36 @@
+{
+  "captured_at_utc": "2026-11-14T15:00:43.078217+00:00",
+  "capture_timing": "During attempt2; tool source copies were saved by the running harness before private DB initialization. Hash capture is not backdated to pre-run.",
+  "imported_helper": "from privacy_checks import contains_bcrypt,run_regression",
+  "source_sha": "39c96aaaad18c58dce9d57450e14317a75c29b3d",
+  "files": [
+    {
+      "path": "verify_step11.py",
+      "actual_runtime_source_sha256": "fb6e64c7198ba02793f31c31551f24d316cc2bef8a05c03b946db7ce34a15313",
+      "saved_source_sha256": "fb6e64c7198ba02793f31c31551f24d316cc2bef8a05c03b946db7ce34a15313",
+      "byte_identical": true,
+      "normalized_text_identical": true
+    },
+    {
+      "path": "privacy_checks.py",
+      "actual_runtime_source_sha256": "3338845f343cd420ce29146e5e615b77ce637ed5c7a27a22f0e45a8c04a292d5",
+      "saved_source_sha256": "3338845f343cd420ce29146e5e615b77ce637ed5c7a27a22f0e45a8c04a292d5",
+      "byte_identical": true,
+      "normalized_text_identical": true
+    },
+    {
+      "path": "verify_browser.cjs",
+      "actual_runtime_source_sha256": "d364e75a9f5bdb7e48cba1850a1b7b4d644ba1050df1737d21e5a8d5ed261fd5",
+      "saved_source_sha256": "d364e75a9f5bdb7e48cba1850a1b7b4d644ba1050df1737d21e5a8d5ed261fd5",
+      "byte_identical": true,
+      "normalized_text_identical": true
+    },
+    {
+      "path": "NativeAdminOrderProbe.java",
+      "actual_runtime_source_sha256": "ed6827b72c14339affa6ed34e4b23ed121dc6bb5d0b96856d1083144dff33e6c",
+      "saved_source_sha256": "ed6827b72c14339affa6ed34e4b23ed121dc6bb5d0b96856d1083144dff33e6c",
+      "byte_identical": true,
+      "normalized_text_identical": true
+    }
+  ]
+}

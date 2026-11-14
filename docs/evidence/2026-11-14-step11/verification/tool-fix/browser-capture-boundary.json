@@ -1,0 +1,49 @@
+{
+  "recorded_at_utc": "2026-11-14T15:06:32.013609+00:00",
+  "scope": "Read-only explanation of original attempt2 browser capture boundary; original files untouched",
+  "observations": [
+    {
+      "post_sequence": 160,
+      "post_port": 8081,
+      "post_path": "/orders/CSU-cabaaace8ab36c67930208a39acbcad2/ship",
+      "post_status": 303,
+      "location": "/orders/CSU-cabaaace8ab36c67930208a39acbcad2",
+      "post_response_body_available": false,
+      "next_archived_sequence": 161,
+      "next_archived_port": 8080,
+      "next_archived_path": "/orders/CSU-cabaaace8ab36c67930208a39acbcad2",
+      "next_archived_page_id": "U08",
+      "next_record_is_admin_redirect_response": false,
+      "admin_redirect_GET_network_body": "NOT_CAPTURED by browser observer; not reconstructed",
+      "exact_global_flash_in_actual_browser_DOM": true,
+      "actual_browser_png": "journey-admin-first-shipped-1366.png",
+      "actual_browser_png_sha256": "9722eec045ba32c076675e8e42b8e7cd088944c60179244aab26779fc0c0ef85"
+    },
+    {
+      "post_sequence": 174,
+      "post_port": 8081,
+      "post_path": "/orders/CSU-691fe2bb0ab9b805b59852475f0b312f/ship",
+      "post_status": 303,
+      "location": "/orders/CSU-691fe2bb0ab9b805b59852475f0b312f",
+      "post_response_body_available": false,
+      "next_archived_sequence": 175,
+      "next_archived_port": 8080,
+      "next_archived_path": "/orders/CSU-691fe2bb0ab9b805b59852475f0b312f",
+      "next_archived_page_id": "U08",
+      "next_record_is_admin_redirect_response": false,
+      "admin_redirect_GET_network_body": "NOT_CAPTURED by browser observer; not reconstructed",
+      "exact_global_flash_in_actual_browser_DOM": true,
+      "actual_browser_png": "journey-admin-first-shipped-1920.png",
+      "actual_browser_png_sha256": "9e37907695852b9f1ebb697747ab6253ea10af8b0eb0ab1c8f32baaea740566d"
+    }
+  ],
+  "code_line_numbers": {
+    "ids.set(req,id)": 16,
+    "const req=r.request(),id=ids.get(req);if(!id)return;": 21,
+    "exact-shipment-global-flash-": 46
+  },
+  "conclusion": "The route callback assigned IDs only to handled requests. The two redirect-following admin GETs did not receive a route ID and were omitted by the response listener. Actual browser DOM, screenshot and exact global status check observed the flash. Subsequent archived U08 GET bodies are not the missing admin response bodies. No raw bytes are retrospectively reconstructed.",
+  "counting_boundary": "202 captured HTTP records / 28 captured browser document responses; do not call these every redirect-following network response. 200 available archived raw bodies were scanned before redaction; the two omitted admin GETs are not included in that count.",
+  "production_source_changed": false,
+  "raw_evidence_changed": false
+}

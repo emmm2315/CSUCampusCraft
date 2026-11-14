@@ -1,0 +1,252 @@
+{
+  "overall": "PASS",
+  "scope": "Static checks on staged resource candidates only; runtime/browser verification is separate",
+  "checks": [
+    {
+      "name": "manifest-sha-csucampuscraft-admin/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "resources-only-csucampuscraft-admin/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "escaped-output-csucampuscraft-admin/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "unique-static-ids-csucampuscraft-admin/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "label-targets-csucampuscraft-admin/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "table-header-scopes-csucampuscraft-admin/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "no-future-customer-link-csucampuscraft-admin/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "no-client-payment-or-stock-input-csucampuscraft-admin/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "no-PII-attribute-csucampuscraft-admin/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "manifest-sha-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "resources-only-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "escaped-output-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "unique-static-ids-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "label-targets-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "table-header-scopes-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "no-future-customer-link-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "no-client-payment-or-stock-input-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "no-PII-attribute-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "manifest-sha-csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "resources-only-csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "escaped-output-csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "unique-static-ids-csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "label-targets-csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "table-header-scopes-csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "no-future-customer-link-csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "no-client-payment-or-stock-input-csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "no-PII-attribute-csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "manifest-sha-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "resources-only-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "escaped-output-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "unique-static-ids-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "label-targets-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "table-header-scopes-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "no-future-customer-link-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "no-client-payment-or-stock-input-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "no-PII-attribute-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "manifest-sha-csucampuscraft-admin/src/main/resources/static/css/app.css",
+      "passed": true
+    },
+    {
+      "name": "resources-only-csucampuscraft-admin/src/main/resources/static/css/app.css",
+      "passed": true
+    },
+    {
+      "name": "layout-only-new-order-navigation",
+      "passed": true
+    },
+    {
+      "name": "CSS-preserves-existing-raw-prefix",
+      "passed": true
+    },
+    {
+      "name": "A06-root-id",
+      "passed": true
+    },
+    {
+      "name": "A06-filter-read-only",
+      "passed": true
+    },
+    {
+      "name": "A06-five-filter-fields",
+      "passed": true
+    },
+    {
+      "name": "A06-condition-change-page-one",
+      "passed": true
+    },
+    {
+      "name": "A06-all-page-links-preserve-filters",
+      "passed": true
+    },
+    {
+      "name": "A06-customer-tag-and-clear",
+      "passed": true
+    },
+    {
+      "name": "A06-table-customer-columns",
+      "passed": true
+    },
+    {
+      "name": "A06-empty-and-out-of-range",
+      "passed": true
+    },
+    {
+      "name": "A07-root-and-versionless-order-markers",
+      "passed": true
+    },
+    {
+      "name": "A07-snapshot-fields",
+      "passed": true
+    },
+    {
+      "name": "A07-shipping-mask-targets",
+      "passed": true
+    },
+    {
+      "name": "A07-payment-original-receipt",
+      "passed": true
+    },
+    {
+      "name": "A07-five-state-timeline",
+      "passed": true
+    },
+    {
+      "name": "A07-PAID-only-action",
+      "passed": true
+    },
+    {
+      "name": "A07-ship-CSRF-and-POST",
+      "passed": true
+    },
+    {
+      "name": "A07-only-one-ship-form",
+      "passed": true
+    },
+    {
+      "name": "A07-before-submit-confirmation",
+      "passed": true
+    },
+    {
+      "name": "A07-state-gates",
+      "passed": true
+    },
+    {
+      "name": "A07-customer-entry-placeholder-only",
+      "passed": true
+    },
+    {
+      "name": "409-owned-order-recovery",
+      "passed": true
+    },
+    {
+      "name": "no-user-source-candidates",
+      "passed": true
+    }
+  ],
+  "total": 61,
+  "passed": 61
+}

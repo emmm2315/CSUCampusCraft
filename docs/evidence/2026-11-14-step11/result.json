@@ -1,0 +1,908 @@
+{
+  "attempt": "attempt2",
+  "overall": "PASS",
+  "source_sha": "39c96aaaad18c58dce9d57450e14317a75c29b3d",
+  "baseline_sha": "8dd7794e5b84fbc9a95069b76a74b761218e6d0a",
+  "mysql_port": 65113,
+  "main_assertions": 2136,
+  "main_assertion_failures": 0,
+  "http_records": 202,
+  "all_post_records": 53,
+  "automatic_database_audits": 176,
+  "database_records_including_semantic_repeats": 218,
+  "action_post_records": 17,
+  "action_classification": {
+    "rejected_409": 3,
+    "rejected_302": 3,
+    "rejected_403": 4,
+    "rejected_404": 1,
+    "first_SHIPPED": 3,
+    "successful_NOOP": 3
+  },
+  "runtime_file_count": 183,
+  "runtime_manifest_sha256": "eca6993a4cdffd98594ebaa48e093ec1e520d603eff407cb3747a698629822cb",
+  "native_checks": 175,
+  "native_check_failures": 0,
+  "native_sql_events": 22,
+  "native_phase_count": 12,
+  "browser_checks": 255,
+  "browser_navigation_records": 28,
+  "browser_posts": 4,
+  "screenshots": 26,
+  "tracked_processes_stopped": true,
+  "sensitive_scan": {
+    "overall": "PASS",
+    "files_scanned": 150,
+    "gzip_decompressed_files": 107,
+    "known_values_checked": 36,
+    "secret_values_recorded": false,
+    "findings": [],
+    "shipping_redaction": "Receiver input/textarea and U08 data-shipping-value contents structurally redacted; SQL order state contains only per-field SHA; screenshots mask shipping; no request form values recorded."
+  },
+  "http_and_native_counted_separately": true,
+  "screenshots_metadata": [
+    {
+      "path": "a06-allsite-orders-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1660,
+      "sha256": "27b82c43afe899212cdfc49ef763520cbf14e9c7a9e37ebc22023f37d48d68e7",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "13",
+        "page": "1",
+        "size": "10",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-CUSTOMER-status-exact-order-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1005,
+      "sha256": "a90c98f714cc7febc1312f8a95c644aa3d9623edc6a8cffaeda562a503db75ff",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "1",
+        "page": "1",
+        "size": "1",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-paid-confirm-before-ship-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1811,
+      "sha256": "af34ce1b19dddf908c916278e483d7560ea2adea95623bacf25f8f02e72c66ce",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A07",
+        "orderNo": "CSU-cabaaace8ab36c67930208a39acbcad2",
+        "orderStatus": "PAID",
+        "orderTotal": "85.00",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          },
+          {
+            "action": "/orders/CSU-cabaaace8ab36c67930208a39acbcad2/ship",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "CSUPAY-5cb1c6e3f3b7218691e7abadfb7050da",
+        "shippingNodes": 3,
+        "shipForms": 1
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-missing-CSRF-403-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 768,
+      "sha256": "49a6786cdf8394eb9229ef772f72ff18e73849514ae5aca04128c4cd08982283",
+      "status": 403,
+      "observation": {
+        "port": 8081,
+        "errorStatus": "403",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "journey-admin-first-shipped-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1582,
+      "sha256": "9722eec045ba32c076675e8e42b8e7cd088944c60179244aab26779fc0c0ef85",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A07",
+        "orderNo": "CSU-cabaaace8ab36c67930208a39acbcad2",
+        "orderStatus": "SHIPPED",
+        "orderTotal": "85.00",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "CSUPAY-5cb1c6e3f3b7218691e7abadfb7050da",
+        "shippedTime": "2026-11-14 23:01:45",
+        "shippingNodes": 3,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "journey-user-same-shipped-snapshot-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1473,
+      "sha256": "ef253c1e459e69472afe7c88485c27b0805d14f5449ff68dd77b2ede3e179e8d",
+      "status": 200,
+      "observation": {
+        "port": 8080,
+        "pageId": "U08",
+        "orderNo": "CSU-cabaaace8ab36c67930208a39acbcad2",
+        "orderStatus": "SHIPPED",
+        "orderTotal": "85.00",
+        "badge": "1",
+        "badgeText": "1",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "CSUPAY-5cb1c6e3f3b7218691e7abadfb7050da",
+        "shippingNodes": 3,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-after-ship-filter-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1005,
+      "sha256": "94a7cdaf49f234714894b86b5b6e2bf15895be757f11b748d87e8c52c14973ad",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "1",
+        "page": "1",
+        "size": "1",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-CUSTOMER-page2-preserves-filter-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1096,
+      "sha256": "ef6b67eda9bc38250985a4f99604ae648f0a708a9222a1bf3c2cd104768e3e58",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "8",
+        "page": "2",
+        "size": "2",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-empty-intersection-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 937,
+      "sha256": "fc8b41fe122e7b3f5358f7f675b2b56810f75f6df5ae8714904d7380bcee7c76",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "0",
+        "page": "1",
+        "size": "10",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-outofrange-recovery-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1005,
+      "sha256": "577be07eba9fce18c65f3eee6289a45fa69197dd323d012a5a961026aadfd635",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "8",
+        "page": "999",
+        "size": "2",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-completed-keeps-first-shipped-time-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1551,
+      "sha256": "050564d2700f609026de78d81c4231fead2faa6b11fbbbc50aae97987b2c1e78",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A07",
+        "orderNo": "DEMO-202611-AL-04",
+        "orderStatus": "COMPLETED",
+        "orderTotal": "49.00",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "MOCK-DEMO-202611-AL-04",
+        "shippedTime": "2026-11-08 22:59:22",
+        "shippingNodes": 3,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-invalid-query-400-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 768,
+      "sha256": "c0ccaab1850c710891102471acdfe19d85ba70d8b049a4a47ae3b47df938fd9b",
+      "status": 400,
+      "observation": {
+        "port": 8081,
+        "errorStatus": "400",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-unknown-order-404-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 768,
+      "sha256": "56e7fbf073e23baa36f6c270e6f359659cd756a94275d34371f274aca144a137",
+      "status": 404,
+      "observation": {
+        "port": 8081,
+        "errorStatus": "404",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-allsite-orders-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1660,
+      "sha256": "1d5968f0a8c352904e7dcadf93f55bf04b1808e26231b8dd1c2ddd71d4c43430",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "13",
+        "page": "1",
+        "size": "10",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-CUSTOMER-status-exact-order-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "57d6b6db0fefcbc9e9628fe03a480e71c8114e8b3d19c45516219e4363953b6a",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "1",
+        "page": "1",
+        "size": "1",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-paid-confirm-before-ship-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1811,
+      "sha256": "92696f728d16ebf16c9694e0b3b40124c48a717986900832ad844dcee3332263",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A07",
+        "orderNo": "CSU-691fe2bb0ab9b805b59852475f0b312f",
+        "orderStatus": "PAID",
+        "orderTotal": "85.00",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          },
+          {
+            "action": "/orders/CSU-691fe2bb0ab9b805b59852475f0b312f/ship",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "CSUPAY-3705975a5c553472316dc0ddc0935354",
+        "shippingNodes": 3,
+        "shipForms": 1
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-missing-CSRF-403-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "38d65403ad300c30ee4dae35508441bdc3c472cf2d8de68dc37044118ebbb2d4",
+      "status": 403,
+      "observation": {
+        "port": 8081,
+        "errorStatus": "403",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "journey-admin-first-shipped-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1582,
+      "sha256": "9e37907695852b9f1ebb697747ab6253ea10af8b0eb0ab1c8f32baaea740566d",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A07",
+        "orderNo": "CSU-691fe2bb0ab9b805b59852475f0b312f",
+        "orderStatus": "SHIPPED",
+        "orderTotal": "85.00",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "CSUPAY-3705975a5c553472316dc0ddc0935354",
+        "shippedTime": "2026-11-14 23:01:56",
+        "shippingNodes": 3,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "journey-user-same-shipped-snapshot-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1473,
+      "sha256": "59bbc481bf53e2bfddf248daeb98dd8ec5e6cd631f5f549eaa76a30b5638afe5",
+      "status": 200,
+      "observation": {
+        "port": 8080,
+        "pageId": "U08",
+        "orderNo": "CSU-691fe2bb0ab9b805b59852475f0b312f",
+        "orderStatus": "SHIPPED",
+        "orderTotal": "85.00",
+        "badge": "1",
+        "badgeText": "1",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "CSUPAY-3705975a5c553472316dc0ddc0935354",
+        "shippingNodes": 3,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-after-ship-filter-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "c03d9b021407bc0955477402ef365b4f573375130d60727af96888fe219aaf19",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "1",
+        "page": "1",
+        "size": "1",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-CUSTOMER-page2-preserves-filter-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1096,
+      "sha256": "17145bd9298606c2130a7cfad09c8872c8256b548d1ad956b59a380237d3057f",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "8",
+        "page": "2",
+        "size": "2",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-empty-intersection-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "325f0a25818c0255fc34d83aefe6d59303355b120f4471ad26af747834ae42be",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "0",
+        "page": "1",
+        "size": "10",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-outofrange-recovery-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "6e215736971a91ba1a358645c96b471fe6d26ee4ef450054677326c8029900d8",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "orderCount": "8",
+        "page": "999",
+        "size": "2",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-completed-keeps-first-shipped-time-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1551,
+      "sha256": "37233b1030693fd9d457ed063ec73c8307e69c3430df1a1943cd13da65cf6d97",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A07",
+        "orderNo": "DEMO-202611-AL-04",
+        "orderStatus": "COMPLETED",
+        "orderTotal": "49.00",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "receipt": "MOCK-DEMO-202611-AL-04",
+        "shippedTime": "2026-11-08 22:59:22",
+        "shippingNodes": 3,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a06-invalid-query-400-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "fe320ce9d5b648d74eceff0b0d053e46f19f846f652b878fa905f77fc217df28",
+      "status": 400,
+      "observation": {
+        "port": 8081,
+        "errorStatus": "400",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    },
+    {
+      "path": "a07-unknown-order-404-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "25f57a2c5b22be72c390de2806e43a6817d97f4bdda0b80ee831c8644944c836",
+      "status": 404,
+      "observation": {
+        "port": 8081,
+        "errorStatus": "404",
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false,
+        "shippingNodes": 0,
+        "shipForms": 0
+      },
+      "shippingFieldsMasked": true
+    }
+  ],
+  "redirect_bodies_not_available": 2,
+  "browser_response_capture_scope": "28 captured document responses are a subset: two admin redirect-following GETs were not assigned route IDs and were not captured. The admin DOM/PNG observations are separate from archived network GET bytes.",
+  "browser_redirect_GET_bodies_not_captured": 2,
+  "post_303_bodies_unavailable_separate_count": 2,
+  "browser_flash_proof": "Two real DOM exact-global-status checks and matching masked PNGs; do not substitute subsequent 8080 U08 response bytes for omitted 8081 A07 GETs.",
+  "acceptance_role": "Final complete acceptance after corrected external-tool assertions",
+  "raw_responses_scanned_before_redaction": 200,
+  "raw_bcrypt_scan_failures": 0,
+  "raw_scanner_coverage": "Only captured responses whose bodies were available; the two omitted admin redirect GETs and two unavailable POST303 bodies were not scanned. Historical attempt1 has no valid raw-response bcrypt observation.",
+  "baseline_git_sha": "8dd7794e5b84fbc9a95069b76a74b761218e6d0a",
+  "tested_code_sha": "39c96aaaad18c58dce9d57450e14317a75c29b3d",
+  "branch": "feat/step11-admin-orders",
+  "successful_attempt": "attempt2",
+  "attempts": [
+    {
+      "path": "attempt1/result.json",
+      "overall": "PASS"
+    },
+    {
+      "path": "attempt2/result.json",
+      "overall": "PASS"
+    }
+  ],
+  "prior_attempt_review": "Original attempt1 tool-recorded PASS preserved, privacy/flash assertion limits recorded in tool-audit.json; final acceptance uses fresh attempt2.",
+  "team_review": "待复核；姓名待填，M3前完成；旧STEP07–10台账保持原样"
+}

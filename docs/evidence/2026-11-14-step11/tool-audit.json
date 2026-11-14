@@ -1,0 +1,70 @@
+{
+  "kind": "read-only independent verification-tool audit",
+  "tested_source_sha": "39c96aaaad18c58dce9d57450e14317a75c29b3d",
+  "original_python_sha256": "2013c00503a559528c3b7eb0765dfe0273461bfab66c0f5f116f1975e08df400",
+  "original_native_java_sha256": "ed6827b72c14339affa6ed34e4b23ed121dc6bb5d0b96856d1083144dff33e6c",
+  "original_attempt": "attempt1",
+  "original_recorded_overall": "PASS",
+  "original_result_sha256": "8c1eee08db5d8716695353da97ff0c43fa83a1ac5a67c352f3869990d8a2ff43",
+  "original_result_not_rewritten": true,
+  "synthetic_regex_observation": {
+    "original_pattern_line": 133,
+    "original_pattern_matches_standard_shaped_synthetic_bcrypt": false,
+    "correct_pattern_matches_same_synthetic_bcrypt": true,
+    "raw_synthetic_value_recorded": false
+  },
+  "findings": [
+    {
+      "id": "TOOL-01",
+      "file": "verification/verify_step11.py",
+      "line": 133,
+      "category": "verification gap; not a demonstrated production leak",
+      "observation": "Double escaping in the original raw-response BCrypt regex prevents matching a normal BCrypt representation. Plaintext teaching-password comparison remains functional.",
+      "archive_limit": "scrub masks BCrypt before gzip archival, so redacted archived bodies cannot retrospectively prove the raw response lacked a hash.",
+      "recommended_resolution": "Keep original tool and PASS result identity; correct external raw-response regex, exercise a synthetic pattern regression, then rerun complete acceptance in a new private database with the same production source and JAR."
+    },
+    {
+      "id": "TOOL-02",
+      "file": "verification/verify_step11.py",
+      "line": 603,
+      "category": "weak assertion; not a demonstrated production flash failure",
+      "observation": "Checking that the whole page contains the word shipment can pass on persistent A07 text without proving the dedicated success alert exists.",
+      "related_line": 602,
+      "related_observation": "The CI first-shipment test posts a lowercase order number but then manually requests canonical uppercase from the database. That differs from the actual lowercase 303 target and misses Spring FlashMap target matching. Follow actual Location unchanged before checking complete fixed text inside the global alert area.",
+      "archive_readonly_observation": {
+        "post112_get113_has_exact_first_message": false,
+        "post117_get118_has_exact_replay_message": true,
+        "post120_get121_has_exact_replay_message": true,
+        "post123_get124_has_exact_replay_message": true
+      },
+      "recommended_resolution": "Use exact global-alert message assertion and follow the real Location case-preservingly in external tool; do not modify production redirects."
+    }
+  ],
+  "reviewed_without_actionable_core_observation": [
+    {
+      "location": "verification/verify_step11.py:175-184,281-293,578-606",
+      "observation": "HTTP shipment records all seven table counts/full ordered-field digests plus privacy-safe row states. First shipment permits one target order change only, preserving all non-status/shippedAt/updatedAt fields and all six other tables; replay/reject require equal full seven-table digests."
+    },
+    {
+      "location": "verification/verify_step11.py:622-632",
+      "observation": "Native has a separately labelled before/after seven-table pair and checks exactly two specified PAID orders transition, preserving every other order field and all six nonorder tables; it is not counted as HTTP or as new-order creation."
+    },
+    {
+      "location": "verification/NativeAdminOrderProbe.java:67-117,179-198",
+      "observation": "Real proxied Service SQL events record active RC, one physical connection, first ADMIN user lock, then global order lock, exact SQL count and committed/rolled-back completion. First shipment updates once; replay/reject forbid mapper DML. Native sequential phases do not claim concurrency or injected failure."
+    },
+    {
+      "location": "verification/verify_step11.py:770-776; NativeAdminOrderProbe.java:192",
+      "observation": "Customer cannot establish an admin HTTP identity and user-port cookie does not authenticate admin, so those HTTP requests redirect302. The native valid CUSTOMER actor is rejected403 by the write guard. These are distinct boundaries and must be reported separately."
+    },
+    {
+      "location": "verification/verify_step11.py:780-789",
+      "observation": "Current product name/price/cover/status are changed by an explicitly labelled root fixture; both user/admin detail values are compared to stored order/item/receiver snapshot digests, then first shipment preserves receipt and displays the same UTC-to-Beijing time."
+    },
+    {
+      "location": "verification/NativeAdminOrderProbe.java:44-65",
+      "observation": "Optional MyBatis ParamMap keys use containsKey before get and have a real structural regression. Native live count contains its own structural prerequisites; do not sum a separate structural run into HTTP business-case count."
+    }
+  ],
+  "boundary": "No source, frozen verification tool, original evidence or original result was edited by this audit. Fresh attempt2 is the intended final acceptance; original attempt1 PASS retains its identity with these explicit tool limitations."
+}

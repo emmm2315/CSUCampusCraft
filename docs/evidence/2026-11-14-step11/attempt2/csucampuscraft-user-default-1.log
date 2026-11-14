@@ -1,0 +1,29 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.15)
+
+2026-11-14T22:59:24.269+08:00  INFO 29548 --- [csucampuscraft-user] [           main] o.c.s.CSUCampusCraftUserApplication      : Starting CSUCampusCraftUserApplication v0.0.1-SNAPSHOT using Java 21.0.12.1 with PID 29548 (D:\Github Projects\CSUCampusCraft\csucampuscraft-user\target\csucampuscraft-user-0.0.1-SNAPSHOT.jar started by Starmetor in C:\Users\Starmetor)
+2026-11-14T22:59:24.278+08:00  INFO 29548 --- [csucampuscraft-user] [           main] o.c.s.CSUCampusCraftUserApplication      : The following 1 profile is active: "default"
+2026-11-14T22:59:25.120+08:00  INFO 29548 --- [csucampuscraft-user] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-11-14T22:59:25.129+08:00  INFO 29548 --- [csucampuscraft-user] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-14T22:59:25.129+08:00  INFO 29548 --- [csucampuscraft-user] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-11-14T22:59:25.159+08:00  INFO 29548 --- [csucampuscraft-user] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-14T22:59:25.160+08:00  INFO 29548 --- [csucampuscraft-user] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 846 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.7 
+2026-11-14T22:59:26.080+08:00  INFO 29548 --- [csucampuscraft-user] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-11-14T22:59:26.087+08:00  INFO 29548 --- [csucampuscraft-user] [           main] o.c.s.CSUCampusCraftUserApplication      : Started CSUCampusCraftUserApplication in 2.22 seconds (process running for 2.552)
+2026-11-14T22:59:26.283+08:00  INFO 29548 --- [csucampuscraft-user] [0.1-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14T22:59:26.283+08:00  INFO 29548 --- [csucampuscraft-user] [0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-14T22:59:26.284+08:00  INFO 29548 --- [csucampuscraft-user] [0.1-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-11-14T22:59:31.429+08:00  INFO 29548 --- [csucampuscraft-user] [0.1-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-14T22:59:31.652+08:00  INFO 29548 --- [csucampuscraft-user] [0.1-8080-exec-3] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@669174d8
+2026-11-14T22:59:31.654+08:00  INFO 29548 --- [csucampuscraft-user] [0.1-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
