@@ -19,5 +19,13 @@
     <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors.get(name)}">请检查输入。</p>
 </div>
 <input th:fragment="csrf" type="hidden" name="_csrf" th:value="${csrfToken}">
+<div th:fragment="password(id, name, label, errors)" class="form-field"
+     th:with="hasError=${errors != null and errors.containsKey(name)}">
+    <label th:for="${id}" th:text="${label}">密码</label>
+    <input type="password" th:id="${id}" th:name="${name}" autocomplete="current-password" required
+           th:classappend="${hasError ? 'input-error' : ''}"
+           th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}">
+    <p th:if="${hasError}" class="field-error" th:id="${id + '-error'}" th:text="${errors.get(name)}">请检查输入。</p>
+</div>
 </body>
 </html>

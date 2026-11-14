@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('管理员登录 · CSUCampusCraft', ~{::mainContent})}">
+<head><title>管理员登录</title></head>
+<body>
+<section th:fragment="mainContent" class="auth-panel" data-page-id="A01">
+    <header class="page-heading">
+        <p class="eyebrow">CSUCampusCraft 管理端</p>
+        <h1>管理员登录</h1>
+        <p class="muted">请使用已启用的管理员账号登录。</p>
+    </header>
+    <div class="panel">
+        <div th:if="${loginError != null}" class="alert alert-danger" role="alert" data-auth-error>
+            <p th:text="${loginError}">登录失败，请检查账号。</p>
+        </div>
+        <th:block th:replace="~{fragments/alerts :: summary(${fieldErrors})}"></th:block>
+        <form method="post" th:action="@{/login}" data-submit-state>
+            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+            <input type="hidden" name="returnUrl" th:value="${returnUrl}">
+            <th:block th:replace="~{fragments/fields :: text('username','username','用户名',${username},${fieldErrors})}"></th:block>
+            <th:block th:replace="~{fragments/fields :: password('password','password','密码',${fieldErrors})}"></th:block>
+            <button type="submit">登录管理端</button>
+        </form>
+    </div>
+    <p class="field-help">会话过期或退出后，请重新登录。用户端与管理端的登录状态相互独立。</p>
+</section>
+</body>
+</html>

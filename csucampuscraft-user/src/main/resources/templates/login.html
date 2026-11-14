@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('用户登录 · CSUCampusCraft', ~{::mainContent})}">
+<head><title>用户登录</title></head>
+<body>
+<section th:fragment="mainContent" class="panel auth-panel" data-page-id="U04">
+    <header class="page-heading">
+        <p class="eyebrow">CSUCampusCraft 用户端</p>
+        <h1>用户登录</h1>
+        <p class="muted">使用本项目的普通顾客教学账号登录。</p>
+    </header>
+    <p class="field-help">会话过期或退出后，请重新登录。</p>
+    <div class="alert alert-danger" role="alert" th:if="${authError != null}" data-auth-error>
+        <p th:text="${authError}">登录失败，请检查账号信息。</p>
+    </div>
+    <th:block th:replace="~{fragments/alerts :: summary(${fieldErrors})}"></th:block>
+    <form method="post" th:action="@{/login}" data-submit-state>
+        <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+        <input type="hidden" name="returnUrl" th:value="${returnUrl}">
+        <th:block th:replace="~{fragments/fields :: text('username','username','用户名',${username},${fieldErrors})}"></th:block>
+        <th:block th:replace="~{fragments/fields :: password('password','password','密码',${fieldErrors})}"></th:block>
+        <button type="submit">登录</button>
+    </form>
+    <p><a th:href="@{/}">返回首页浏览商品</a></p>
+</section>
+</body>
+</html>

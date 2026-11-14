@@ -1,5 +1,7 @@
 package org.csucampuscraft.storefront.foundation.web;
 
+import org.csucampuscraft.storefront.auth.AuthUser;
+import org.csucampuscraft.storefront.auth.SessionSupport;
 import org.csucampuscraft.storefront.foundation.security.CsrfTokenService;
 import org.csucampuscraft.storefront.foundation.view.ImagePaths;
 import jakarta.servlet.RequestDispatcher;
@@ -10,7 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-/** Shared presentation values only; authentication and cart queries belong to later steps. */
+/** Shared presentation values; identity has already been rechecked by AuthFilter. */
 @ControllerAdvice
 public final class PageModelAdvice {
     private final CsrfTokenService csrfTokens;
@@ -28,6 +30,10 @@ public final class PageModelAdvice {
         values.put("appId", "user");
         values.put("siteName", "CSUCampusCraft 用户端");
         values.put("cartQuantity", 0);
+        Object identity = request.getAttribute(SessionSupport.CURRENT_USER_ATTRIBUTE);
+        AuthUser current = identity instanceof AuthUser user ? user : null;
+        values.put("currentUser", current);
+        values.put("authenticated", current != null);
         values.put("defaultCoverImage", ImagePaths.DEFAULT_COVER);
         // An invalid write must not create a new session while rendering the rejection.
         values.put("csrfToken", "GET".equals(request.getMethod())

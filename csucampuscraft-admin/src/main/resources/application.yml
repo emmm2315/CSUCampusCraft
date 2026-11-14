@@ -7,6 +7,7 @@ server:
   port: 8081
   servlet:
     session:
+      tracking-modes: cookie
       cookie:
         name: CSUCAMPUSCRAFT_ADMIN_SESSION
 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" th:href="@{/css/app.css}">
     <script defer th:src="@{/js/app.js}"></script>
 </head>
-<body th:attr="data-csucampuscraft-app=${appId}">
+<body th:attr="data-csucampuscraft-app=${appId},data-authenticated=${currentUser != null}">
 <a class="skip-link" href="#main-content">跳到主要内容</a>
 <header class="site-header">
     <div class="container site-header-inner">
@@ -23,6 +23,13 @@
                 购物车 <span id="cart-quantity" class="quantity-badge"
                            th:attr="data-cart-quantity=${cartQuantity ?: 0}" th:text="${cartQuantity ?: 0}">0</span>
             </span>
+            <a th:if="${currentUser == null}" th:href="@{/login}">登录</a>
+            <span th:if="${currentUser != null}" class="app-label" data-current-user
+                  th:text="${currentUser.displayName}">当前用户</span>
+            <form th:if="${currentUser != null}" method="post" th:action="@{/logout}" data-submit-state data-logout-form>
+                <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
         </nav>
     </div>
 </header>

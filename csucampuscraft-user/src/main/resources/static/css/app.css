@@ -222,3 +222,7 @@ tbody tr[aria-disabled="true"] { color: var(--color-muted); background: var(--co
     .catalog-purchase-disabled { grid-template-columns: 64px 1fr; }
     .catalog-purchase-disabled > button { grid-column: 1 / -1; }
 }
+
+/* STEP04: shared login panel; colors, spacing and fields reuse foundation tokens. */
+.auth-panel { max-width: 32rem; margin-inline: auto; }
+.auth-panel > .field-help { margin-top: var(--space-4); }
