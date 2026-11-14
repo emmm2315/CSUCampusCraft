@@ -1,0 +1,122 @@
+{
+  "kind": "Author static self-review before fresh runtime acceptance",
+  "date": "2026-11-14T13:42:09.374931+00:00",
+  "tested_code_sha": "b0253a5ecc920dfa862eec0eb8358f301ac41c10",
+  "files": [
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/payment/PaymentResult.java",
+      "original_sha256": null,
+      "sha256": "66d7b21efcbb317fa9fc853f8c4c30ff6a93ecc351882d8112ff327b5d9e9956"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/payment/OrderActionResult.java",
+      "original_sha256": null,
+      "sha256": "45049c2a12a5a4b22ebd596ed927c2c58f222d59850a16827a9657560e3113e5"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/payment/OrderActionMapper.java",
+      "original_sha256": null,
+      "sha256": "7854b181d0776381222167b027f5c49f6c9efd6cfbcf20e16e68fe0c57be5d81"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/payment/PaymentService.java",
+      "original_sha256": null,
+      "sha256": "31e3155d7e68a4bcd5962e9d0ef6bc52d7d52a7e8171ec866f5892106ccfd2d0"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/payment/PaymentController.java",
+      "original_sha256": null,
+      "sha256": "e726bca631bd3a1636666d55ae7be286b920b3e8cc34b64a4421ba3d5564729d"
+    }
+  ],
+  "findings": [
+    {
+      "id": "RC-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Both pay/cancel methods explicitly declare READ_COMMITTED; first statement in each protected write branch is CustomerWriteGuard.lock(actor)."
+    },
+    {
+      "id": "LOCK-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Owned order lookup binds user_id and exact case-insensitive order_no, with FOR UPDATE; malformed/unknown/foreign resources are 404."
+    },
+    {
+      "id": "INPUT-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "result is bound after owned-order lock using InputChecks enum and rejects missing/duplicate/invalid values with 400."
+    },
+    {
+      "id": "PAY-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Pending FAILURE returns before any mapper write; all payment branches omit product and item mapper calls."
+    },
+    {
+      "id": "PAY-02",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Pending SUCCESS conditionally writes only paid status, MOCK receipt, first UTC microsecond timestamp; generation is 39 safe characters and DB unique key handles collisions."
+    },
+    {
+      "id": "PAY-03",
+      "status": "CONFIRMED_STATIC",
+      "finding": "PAID/SHIPPED/COMPLETED SUCCESS replays return without DML; FAILURE and cancelled payment are conflicts."
+    },
+    {
+      "id": "CANCEL-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "CANCELLED replay returns before item/product lookups; paid and subsequent states reject cancellation."
+    },
+    {
+      "id": "CANCEL-02",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Pending cancellation sorts immutable lines by productId, locks all products before validating or writing."
+    },
+    {
+      "id": "CANCEL-03",
+      "status": "CONFIRMED_STATIC",
+      "finding": "INT stock addition uses long precheck; BIGINT version cap checked; SQL repeats stock/version overflow guards and version predicate."
+    },
+    {
+      "id": "CANCEL-04",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Restock changes stock/version only and checks every affected row; cancellation timestamp and state update occur in same Service transaction."
+    },
+    {
+      "id": "SNAP-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "No new SQL updates cart_item, sales_order_item, receiver, total_amount or other order snapshot fields."
+    },
+    {
+      "id": "TIME-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Payment/cancellation timestamps are SQL GREATEST(CURRENT_TIMESTAMP(6),created_at), respecting UTC datasource and CHECK lower bound."
+    },
+    {
+      "id": "WEB-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "Controller uses fixed 303 RedirectView and fixed flash text; unknown/foreign errors use shared handler, owned conflicts use safe recovery page."
+    },
+    {
+      "id": "SCOPE-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "All five candidate Java paths are newly added payment package files; existing STEP09 Java sources untouched."
+    },
+    {
+      "id": "ERROR-01",
+      "status": "CONFIRMED_STATIC",
+      "finding": "DataIntegrityViolation/ConcurrencyFailure convert to safe runtime BusinessException, with no internal cause/raw input logging and no automatic writer retry."
+    }
+  ],
+  "private_compile": {
+    "exit_code": 0,
+    "source_files": 5,
+    "compiled_release": 17,
+    "application_jar_sha256": "6ea93ce7686c33778e5754157e5f863f55880fa7b8e9233bc671e69940b8792d",
+    "scope": "Private compile only, not wrapper or runtime verification"
+  },
+  "limitations": [
+    "No real HTTP, database state transition, rollback, browser screenshot or race result is asserted by this review.",
+    "Fault injection and payment/cancel concurrency are deliberately STEP13.",
+    "Private javac does not substitute for actual Wrapper builds or fresh private MySQL acceptance."
+  ],
+  "published_candidate_hashes_match": true
+}

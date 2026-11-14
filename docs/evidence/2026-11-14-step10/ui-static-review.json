@@ -1,0 +1,217 @@
+{
+  "overall": "PASS",
+  "kind": "static UI candidate review only; not a runtime or human signoff",
+  "checks": [
+    {
+      "name": "four allowed resource files",
+      "passed": true
+    },
+    {
+      "name": "candidate hash csucampuscraft-user/src/main/resources/templates/orders/payment.html",
+      "passed": true
+    },
+    {
+      "name": "utf8 LF one EOF csucampuscraft-user/src/main/resources/templates/orders/payment.html",
+      "passed": true
+    },
+    {
+      "name": "no unescaped HTML csucampuscraft-user/src/main/resources/templates/orders/payment.html",
+      "passed": true
+    },
+    {
+      "name": "unchanged original csucampuscraft-user/src/main/resources/templates/orders/payment.html",
+      "passed": true
+    },
+    {
+      "name": "candidate hash csucampuscraft-user/src/main/resources/templates/orders/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "utf8 LF one EOF csucampuscraft-user/src/main/resources/templates/orders/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "no unescaped HTML csucampuscraft-user/src/main/resources/templates/orders/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "unchanged original csucampuscraft-user/src/main/resources/templates/orders/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "candidate hash csucampuscraft-user/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "utf8 LF one EOF csucampuscraft-user/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "no unescaped HTML csucampuscraft-user/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "unchanged original csucampuscraft-user/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "candidate hash csucampuscraft-user/src/main/resources/static/css/app.css",
+      "passed": true
+    },
+    {
+      "name": "utf8 LF one EOF csucampuscraft-user/src/main/resources/static/css/app.css",
+      "passed": true
+    },
+    {
+      "name": "no unescaped HTML csucampuscraft-user/src/main/resources/static/css/app.css",
+      "passed": true
+    },
+    {
+      "name": "unchanged original csucampuscraft-user/src/main/resources/static/css/app.css",
+      "passed": true
+    },
+    {
+      "name": "U09 expected model and stable markers",
+      "passed": true
+    },
+    {
+      "name": "U09 order amount server text",
+      "passed": true
+    },
+    {
+      "name": "SUCCESS FAILURE button values",
+      "passed": true
+    },
+    {
+      "name": "all buttons use ordinary POST",
+      "passed": true
+    },
+    {
+      "name": "no client authority amounts",
+      "passed": true
+    },
+    {
+      "name": "teaching simulation clear",
+      "passed": true
+    },
+    {
+      "name": "U09 CSRF shared fragment",
+      "passed": true
+    },
+    {
+      "name": "U09 no personal-data entry",
+      "passed": true
+    },
+    {
+      "name": "pending actions conditional",
+      "passed": true
+    },
+    {
+      "name": "native cancellation disclosure",
+      "passed": true
+    },
+    {
+      "name": "cancel warning before form",
+      "passed": true
+    },
+    {
+      "name": "cancel includes order number",
+      "passed": true
+    },
+    {
+      "name": "cancel shared CSRF and POST",
+      "passed": true
+    },
+    {
+      "name": "receipt existing getter contract",
+      "passed": true
+    },
+    {
+      "name": "receipt escaped and stable markers",
+      "passed": true
+    },
+    {
+      "name": "shipping masks preserved",
+      "passed": true
+    },
+    {
+      "name": "existing product snapshot markers preserved",
+      "passed": true
+    },
+    {
+      "name": "no shipped receipt actions",
+      "passed": true
+    },
+    {
+      "name": "safe conflict links",
+      "passed": true
+    },
+    {
+      "name": "no shipping on conflict",
+      "passed": true
+    },
+    {
+      "name": "unique static IDs payment",
+      "passed": true
+    },
+    {
+      "name": "shared layout payment",
+      "passed": true
+    },
+    {
+      "name": "unique static IDs detail",
+      "passed": true
+    },
+    {
+      "name": "shared layout detail",
+      "passed": true
+    },
+    {
+      "name": "unique static IDs conflict",
+      "passed": true
+    },
+    {
+      "name": "shared layout conflict",
+      "passed": true
+    },
+    {
+      "name": "CSS only appended",
+      "passed": true
+    },
+    {
+      "name": "CSS only U08 U09 scoped",
+      "passed": true
+    }
+  ],
+  "files": [
+    {
+      "path": "csucampuscraft-user/src/main/resources/templates/orders/payment.html",
+      "original_sha256": null,
+      "sha256": "6d5e95d869cbcd9cbc75df0d0760063ac4947de66d8618ecfc6686a3319becb4"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/resources/templates/orders/action-conflict.html",
+      "original_sha256": null,
+      "sha256": "819b45f9e7498ac8cd090eebb05e5e3db828af07518ef09f9bf5b23e5aaa09b2"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/resources/templates/orders/detail.html",
+      "original_sha256": "782d9edf829866f751803125bf38af9ee57b455d8c3743d2c9ca9349c8da23bc",
+      "sha256": "6a9026c2a57bb8daf67716266001943cde8d3ea483dfd3005f5e23914e2f5967"
+    },
+    {
+      "path": "csucampuscraft-user/src/main/resources/static/css/app.css",
+      "original_sha256": "aa78cab9023ce20133d719aeeae47db019d2150eb7eaec5244a45d38d2815e34",
+      "sha256": "689991b6cd43fe5a280248f5ab97e4955f587cd4545f478c1b43456c430ba9bb"
+    }
+  ],
+  "api": {
+    "payment": "paymentOrder=SalesOrder",
+    "conflict": "errorStatus/errorCode/errorMessage/orderNo (owned-only)",
+    "detail": "existing orderDetail.order"
+  },
+  "limitations": [
+    "Thymeleaf rendering, real CSRF, HTTP transitions and visual screenshots require fresh acceptance.",
+    "Native details disclosure is opened before the cancellation POST; it adds no business request fields."
+  ]
+}

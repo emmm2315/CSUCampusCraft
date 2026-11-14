@@ -1,0 +1,17 @@
+{
+  "tested_code_sha": "b0253a5ecc920dfa862eec0eb8358f301ac41c10",
+  "jar_sha256": "89f8faed5a201443d4cb7ca02683e1b4ac7d9f66d6805425fc327e0404e24329",
+  "original_tool_source_sha256": "e43381f134d6d0d190838f7bf07e5b263c1a8b5012d1079d9fb78bf3b3097c5f",
+  "fixed_tool_source_sha256": "98d656b88e2335f84b6d9b9b22a26d0f243ee16411e8e0fc2e5c4d103b98b10a",
+  "attempt1_original_source_unchanged": true,
+  "attempt1_result_sha256_at_diagnostic": "f0cf0399aeb489126948da3fdffaec47b2d4c4d7b7bdd696e082f8f7898222e5",
+  "attempt1_native_log_sha256_at_diagnostic": "b6f30ba55b076b143fd86cae13f478e2315180db61504c41c472831e8d9628d4",
+  "offline_original_missing_key_reproduction": "confirmed BindingException before call.proceed",
+  "structural_checks": 8,
+  "structural_passed": 8,
+  "compile_exit": 0,
+  "run_exit": 0,
+  "production_source_changed": false,
+  "live_native_acceptance_rerun": "pending whole fresh attempt2",
+  "scope": "External diagnostic only; no app/DB/HTTP started and no retrospective attempt1 native zero-write proof"
+}

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step10-payment\verification\verify_step10.py", line 748, in <module>
+    native_probe(native_pay['orderNo'],native_cancel['orderNo'])
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step10-payment\verification\verify_step10.py", line 538, in native_probe
+    text=p.stdout.decode('utf-8',errors='replace');save(EV/'native-probe.log',text+p.stderr.decode('utf-8',errors='replace'));check('native-exit',p.returncode==0)
+                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step10-payment\verification\verify_step10.py", line 49, in check
+    if not ok:raise AssertionError(name)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: native-exit

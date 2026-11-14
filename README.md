@@ -9,7 +9,7 @@ CSUCampusCraft 是《软件开发架构平台》实验一的双端商城项目�
 
 ## 当前阶段
 
-M0 与 M1（STEP02–06）已通过各自范围自动实测，组员实名和交叉复核待补。STEP07 统一版和 STEP08 整车确认的原始记录保留，台账均保持待复核。STEP09 原子下单与本人订单已实现，受测 `1399c311f34c98907ee80c812cfe71606b9820c7`，本步验证：通过（修复后全新私有库attempt2；原attempt1失败保留，本步范围自动验收通过，台账待复核），台账待复核。用户端 POST /orders 的 ORDER_SUBMISSION_PENDING 占位已移除，改为事务成功后303到本人 U08，并提供 U07 查询。支付取消留 STEP10，后台订单留 STEP11，控制台 STEP12，REST 仅预留。管理端保持 STEP06 交付。
+M0 与 M1（STEP02–06）已通过各自范围自动实测，组员实名和交叉复核待补。STEP07–09原始实测与待复核台账保留。STEP10模拟支付和待支付取消已实现，受测 `b0253a5ecc920dfa862eec0eb8358f301ac41c10`，本步验证：通过（同一生产源码，修正外部验证工具后全新私有库attempt2完整实测通过；原attempt1整轮FAIL保留，台账待复核）。用户端U09教学模拟、U08支付/取消操作和首次凭证可用；支付不改库存，取消只返还一次且不回填车。STEP09下单逻辑保持原样；管理端仍为既有交付，后台订单及发货STEP11、控制台STEP12；并发/故障留STEP13，REST仅预留。
 
 MySQL 8.4（InnoDB）是项目数据库基线。首版范围与交付标准见[项目立项与范围](docs/项目立项与范围.md)。
 
@@ -243,6 +243,8 @@ U05 仅在购物车非空且全部有效时显示到 `GET /checkout` 的整车�
 
 ## STEP09 原子下单与本人订单交接
 
+本节保留STEP09当时的下单/只读订单交付与实测事实。STEP10已接入下方模拟支付/取消说明，不能把本节“动作留后续”当作当前未实现。
+
 受测源码 `1399c311f34c98907ee80c812cfe71606b9820c7`，分支 `feat/step09-orders`。修复源码1399c311f34c98907ee80c812cfe71606b9820c7下，两端均重新使用固定Microsoft JDK21.0.12.1与Maven Wrapper3.9.16执行verify，真实BUILD SUCCESS、退出0；用户端3.663秒、管理端1.680秒，完整命令和日志归档。 成功attempt2有1865项主断言、0失败，226条HTTP；88次POST均有七表自动前后对照，共184份自动审计、含具名重复观察共258份。49次POST /orders中3次303成交、46次拒绝且七表零变化（302×2、400×20、403×4、409×20）。独立重读确认3张HTTP新单与1张原生新单、31份U07及10份U08数据和SQL一致。原生真实Service另70项、14条SQL；金额受控补充另13项；浏览器326项、28次真实导航/提交、24张PNG。各层断言与记录分别计数，不合并充当业务用例数。成功轮敏感扫描159份文本、120份解压正文、148个已知私密值，0发现。 详见[STEP09 实测](docs/测试与验收用例.md#step09-实测记录)和[新证据](docs/evidence/2026-11-14-step09/README.md)。STEP07/08 台账仍待复核；未用本步自动验证替代实名组员签字。
 
 轮次与修复：首次attempt1受测f8b01088b5f4b9e335d3ee86587e2695ffba0e7a：85元下单及U08已成功，但GET /orders列表500导致整轮FAIL；该失败GET七表无变化，之前独立成功请求的订单不是此读请求的部分写入。根因是MyBatis按原方法名识别record派生getOffset，#{query.offset}缺少offset()访问器。仅新增offset()并让getOffset委托，形成1399c311f34c98907ee80c812cfe71606b9820c7；原FAIL和诊断保留，新私有库attempt2从头完整重跑PASS，新的85元成交由本轮实际请求产生，不复用旧通过项。 `backend-review.json`为首次运行前的作者静态自检，不能当最终通过证明；修复后的源码比对见`final-source-fix-review.json`，运行结果各按所属SHA和attempt读取。
@@ -258,3 +260,26 @@ U05 仅在购物车非空且全部有效时显示到 `GET /checkout` 的整车�
 `GET /orders`（U07）固定按当前会话本人过滤，完整 `orderNo` 去空白后0–40码点、普通绑定等值SQL按数据库列排序规则大小写不敏感，空值不限；状态 ALL 或5个业务状态，默认10条、1–50，页码整数小于1按1，创建时间/ID倒序，list和count共用where。超末页200空态并给有效页入口；巨大页码不计算溢出的OFFSET。`GET /orders/{orderNo}`（U08）未知、格式不符或他人单号统一404，省略其订单资料；详情只读保存的快照，时间从数据库UTC转换到北京时间展示。待支付只显示状态，支付/取消按钮与路由留STEP10。
 
 本步可验证新订单、明细、库存/version、车、徽标和用户端历史快照；管理端尚无订单详情且禁止本步修改admin，故“管理端HTTP详情同样显示快照”的完整联查留STEP11，本轮使用用户端U08和数据库快照对照，不声称已跑通管理端页面。TST-12–19/30/34只登记实际覆盖部分；TST-16/17/35并发与故障注入留STEP13，支付取消留STEP10。
+
+
+## STEP10 模拟支付与取消交接
+
+本人待支付单可从U08进入 `GET /orders/{orderNo}/payment`（U09），显示订单号、成交总额和教学模拟标识，两个按钮提交SUCCESS/FAILURE。只有待支付订单提供支付表单，其他本人状态GET支付页409并给回详情入口；未知/格式不符/他人订单GET与写请求统一404，不暴露金额/收货资料。U08待支付操作区提供模拟支付和取消确认，取消前说明“库存返还、商品不会回购物车”；已付款显示原凭证与首次时间，历史种子状态仍只读，不新增发货/收货入口。
+
+新增PaymentService的pay/cancel均显式READ_COMMITTED，首个数据库操作必须是CustomerWriteGuard.lock(actor)，复验ENABLED/CUSTOMER及完整UTC微秒authStamp；随后按订单号+user_id锁本人订单。支付在归属核对后绑定唯一result字段，缺失/非法/重复400；组合输入采用归属优先，因此未知/他人单即使result非法仍404。身份/CSRF沿用现有过滤器，游客302，缺错CSRF403；订单号大小写按现有MySQL列的排序规则精确匹配。
+
+待支付FAILURE无DML，303回详情的globalError明确仍待支付、可重试或取消。首次SUCCESS只把主单改为PAID，写MOCK、SecureRandom16字节生成的`CSUPAY-`+32位hex（39字符）及首次paid_at；现有不区分大小写唯一键兜底，冲突整笔回滚，不自动重试写。PAID/SHIPPED/COMPLETED重放SUCCESS无DML，保留首次凭证、时间和updated_at；这些状态FAILURE409，CANCELLED的任何合法模拟支付409。付款金额只读订单总额，客户端amount/userId等不参与计算或授权，所有支付分支均不锁/写商品库存。
+
+首次取消仅PENDING_PAYMENT：锁订单后按不可变明细的product_id升序锁全部商品，先核对库存INT上限、版本BIGINT上限，再以当前库存+原明细数量返库、version+1，检查每条更新影响1行；最后同事务写CANCELLED及首次cancelled_at。返库SQL带锁内version和库存/版本溢出条件，不覆盖旧页面库存，保留商品其他所有字段，DRAFT返库后仍DRAFT。重复CANCELLED直接303不再读/写商品、不返第二次、不改首次时间；PAID及后续状态取消409。新Service不改cart_item或sales_order_item，不回填购物车，不改成交商品/收货/金额快照，也不主动修改结算确认；身份失效清理仍沿用既有基础设施。
+
+支付/取消时间用数据库UTC微秒时间并以created_at为下界，符合状态配套字段与时间链CHECK；页面沿用Asia/Shanghai展示。合法写动作完成均303回本人详情，flash只保存固定反馈文字，不保存收货信息、令牌或客户端金额。所有新SQL隔离在payment包，STEP09的OrderService/Coordinator/Mapper/Controller/Query与checkout逻辑未改。
+
+受测 `b0253a5ecc920dfa862eec0eb8358f301ac41c10`。环境与构建：两端均用固定JDK21和根Maven Wrapper3.9.16执行verify，实际带已有离线settings/cache参数，真实BUILD SUCCESS、退出0；用户端3.548秒、管理端1.709秒。仅验证工具修复，第二轮复用相同受测JAR，SHA逐轮记录，不假称重构建了生产代码。 Windows11；Microsoft JDK21.0.12.1、Maven Wrapper3.9.16、MySQL8.4.9/InnoDB。成功attempt2私有端口53912，失败attempt1端口60661，两个独立UUID/目录均有身份核对；用户端8080与管理端8081同库csucampuscraft，SQL连接UTC。进程已停止；私有目录是否已删除以cleanup.json实际归档为准。
+
+输入冻结：受测源码起测工作区干净；168个运行输入，清单SHA-256为443291ac2bfd32c5ff0fe4b9f50ff584956753dca870c879304a03c44af07ca9，结束逐项未漂移。STEP09既有order/checkout/auth Java及admin/SQL保持原字节，文档与新证据随后另提交。
+
+本轮结果：成功attempt2有1786项主断言、0失败，224条HTTP、93次POST均有七表自动前后对照；187份自动审计，连同具名重复观察共266份。47次支付/取消POST分为3次首次付款、5次首次取消、8次无写入处理和31次拒绝零写（302×3、400×5、403×6、404×5、409×12）；不把状态码303等同于首次业务写入。10张订单仅用于既有STEP09真实HTTP建单准备；native只对其中两张bob订单执行独立动作，不新建订单。原生133项/25条SQL、浏览器237项/32次导航/8次POST/24张新PNG分别计数；6个实际浏览器303响应的正文不可读取时已明确标记，不补造正文。独立重读HTTP/SQL按同一分类复核通过。成功轮敏感扫描129份文本、93份解压正文、49个已知私密值，0发现。
+
+轮次与工具修复：首次attempt1使用同一生产源码b0253a5ecc920dfa862eec0eb8358f301ac41c10，生产HTTP动作和24图浏览器检查均通过，但外部Native Trace.safeNumbers对缺失可选键调用MyBatis ParamMap.get，抛出BindingException，整轮FAIL保留。原生只完成9项前置检查、SQL事件为空，旧工具没有归档该native调用的七表前后对照，不重建或声称原生零写入。离线实际原工具重现缺键异常，仅用containsKey守卫修复外部工具并通过8项结构检查；生产源码、受测SHA及JAR未改。attempt2使用全新私有库从种子完整重跑HTTP、浏览器和真实Service原生阶段后PASS，不能继承旧通过结论。旧24张原始PNG按无损ZIP保存在attempt1/browser/screenshots.zip，artifact-references.json登记各图原始字节与映射；stage原文件不动，成功轮24张直接查看。
+
+TST-18–24/34只按本轮支付、正常取消、幂等和拒绝分支登记；TST-23恢复首项后故障回滚及TST-24同步竞争留STEP13，不把串行支付/取消或重复请求当成竞争证明。真实支付、退款、物流和后台发货均未实现。详见[STEP10实测记录](docs/测试与验收用例.md#step10-实测记录)、[新证据](docs/evidence/2026-11-14-step10/README.md)。

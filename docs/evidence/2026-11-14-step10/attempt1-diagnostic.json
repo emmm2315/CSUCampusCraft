@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-14T13:58:11.164316+00:00",
+  "tested_code_sha": "b0253a5ecc920dfa862eec0eb8358f301ac41c10",
+  "overall": "FAIL retained",
+  "original_result_sha256": "f0cf0399aeb489126948da3fdffaec47b2d4c4d7b7bdd696e082f8f7898222e5",
+  "native_source_sha256": "e43381f134d6d0d190838f7bf07e5b263c1a8b5012d1079d9fb78bf3b3097c5f",
+  "root_cause": "External Native Trace.safeNumbers called MapperMethod.ParamMap.get on absent optional numeric keys; its BindingException was wrapped by MyBatis. Original helper reproduced offline; containsKey guard fixes diagnostic tool only.",
+  "production_code_changed": false,
+  "standalone_native_checks_passed_before_failure": 9,
+  "standalone_native_sql_events": 0,
+  "failed_native_seven_table_pair_archived": false,
+  "limitation": "The old helper asserted exit before writing its native before/after pair; no native zero-write hash is reconstructed. Empty trace and source order explain pre-call.proceed failure but are not a separately archived DB comparison.",
+  "observed_http_records": 224,
+  "all_http_body_indices_verified": 224,
+  "browser": "24 original PNG and all browser checks passed before native tool failure; original files remain unchanged. Archive relocation/ZIP is a parent packaging decision.",
+  "provenance": "This diagnostic and pre-archive byte inventory are captured after failure, not a fabricated failure-instant directory seal."
+}

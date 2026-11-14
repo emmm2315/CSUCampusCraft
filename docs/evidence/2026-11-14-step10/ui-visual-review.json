@@ -1,0 +1,675 @@
+{
+  "reviewed_at_utc": "2026-11-14T14:08:45.587788+00:00",
+  "tested_code_sha": "b0253a5ecc920dfa862eec0eb8358f301ac41c10",
+  "user_jar_sha256": "89f8faed5a201443d4cb7ca02683e1b4ac7d9f66d6805425fc327e0404e24329",
+  "attempt": "attempt2",
+  "reviewer": "Codex UI sub-agent; AI visual review, not human or team sign-off",
+  "overall": "PASS",
+  "raw_originals_actually_viewed": 24,
+  "review_method": "Opened each original PNG using view_image. Compared raw SHA256 and actual PNG IHDR dimensions with the attempt2 browser record. No contact-sheet replacement, image editing or regeneration was used.",
+  "browser_record_sha256": "67835308c9551b94fb0fe3287ea95fc80ca5c09c17ffa5460abbc43549857e61",
+  "viewport_pairs": [
+    {
+      "width": 1366,
+      "height": 768
+    },
+    {
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "shared_observations": [
+    "All 24 originals have readable navigation, content, controls and footers at the two requested desktop viewports.",
+    "U09 visibly uses teaching simulation text, original persisted order amount and no banking or real payment-data inputs.",
+    "Expanded cancellation prompts visibly explain the affected order, stock return and no cart restoration before the confirmation button.",
+    "Mock failure, mock success and cancellation flashes are distinguishable and explain the resulting state.",
+    "A later, deliberately nonempty Alice cart keeps badge 1 through payment and cancellation. That badge does not mean purchased goods were restored. Bob foreign-order 404 shows his own badge 0.",
+    "Paid and shipped views retain first-payment receipt/time; cancelled views retain cancellation time and omit pending actions.",
+    "Shipping values on U08 are covered with three opaque grey masks. U09/error/conflict pages contain no shipping panel."
+  ],
+  "limitations": [
+    "This is AI visual review of these exact 24 PNGs, not human acceptance, assistive-technology testing or mobile-viewport verification.",
+    "PNG content alone does not prove HTTP 303, actual request result parameters, transaction isolation, lock order, SQL effects, receipt uniqueness, microsecond timestamps or no-write branches. Those conclusions require the separate raw HTTP, browser interception, native SQL and database evidence.",
+    "The real browser FAILURE-to-SUCCESS and cancellation journeys are separately observed in attempt2 HTTP/browser records. Each screenshot represents a resulting page; it is not a replacement for the redirect response trace.",
+    "Shipping masks intentionally prevent visual checking of raw recipient, phone, address and their escaping. Screenshot review does not expose session IDs, CSRF tokens or plaintext passwords.",
+    "Full-page PNG heights differ from viewport heights and are recorded individually. A tall screenshot is not a claim that all content appeared above the fold.",
+    "No concurrency or injected failure testing is claimed; those remain STEP13.",
+    "Failed attempt1 is retained separately. Its 24 original screenshots were not modified by this review, and no missing native database proof is reconstructed from attempt2."
+  ],
+  "native_log_crosscheck": {
+    "path": "attempt2/native-probe.log",
+    "overall": "PASS",
+    "checks": 133,
+    "checks_passed": 133,
+    "sql_events": 25,
+    "transaction_phases": 9,
+    "scope": "ParamMap regression and actual private-DB PaymentService sequential operations; no HTTP, order creation, concurrency or injected-failure claim",
+    "note": "Read from the actual attempt2 log. This visual-review step did not independently execute native SQL again."
+  },
+  "screenshots": [
+    {
+      "path": "attempt2/browser/u09-pending-teaching-1366.png",
+      "raw_sha256": "9c6f722b7e689484f022a164eccee3fdca4e0f12dadb654cfe120597f77e093b",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "U09 shows the persisted 85.00 total, pending status, teaching-only notice and separate success/failure buttons. The two panels, return link and navigation are readable without visible overlap.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 0,
+        "visual_observation": "No shipping-value panel on this page."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/u08-cancel-confirmation-1366.png",
+      "raw_sha256": "d23644fdd945f1984d6cafc678f384c3461af4752af81da369299287a696ffdc",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 1679
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "Expanded cancellation disclosure visibly identifies the order and states inventory will be returned and goods will not return to the cart before the red confirmation button. Pending payment link and snapshot table remain readable.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 3,
+        "visual_observation": "Three opaque grey masks conceal recipient, phone and full address."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/u08-paid-receipt-1366.png",
+      "raw_sha256": "ef0a4f31df303d338040d61f01ea52132f71d08c8b51db6b97216626a5dfb3f9",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 1473
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "Paid order shows its first MOCK receipt and payment timestamp alongside the unchanged 85.00 purchase snapshot. Pending payment and cancellation controls are absent; timeline and masked shipping panel remain aligned.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 3,
+        "visual_observation": "Three opaque grey masks conceal recipient, phone and full address."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/u08-cancelled-1366.png",
+      "raw_sha256": "6535b97fce7a934b69409cfc9fa6241a737e356ddf9694cdf3af17b0c99c9834",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 1351
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "Cancelled order shows original 85.00 snapshot and cancellation time with no payment/cancellation controls. The text explains inventory was returned and goods were not restored to the cart.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 3,
+        "visual_observation": "Three opaque grey masks conceal recipient, phone and full address."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/u08-shipped-first-receipt-1366.png",
+      "raw_sha256": "a2f59fafb24a32251de553e8df792bba015db21e038229578561958e4d14efa1",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 1473
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "The seeded shipped order retains the first MOCK receipt, paid time and shipping timeline, with its original 66.00 snapshot and no pending payment/cancellation controls. This is a read-only seed-state display, not STEP10 shipping implementation.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 3,
+        "visual_observation": "Three opaque grey masks conceal recipient, phone and full address."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/u09-state-conflict-1366.png",
+      "raw_sha256": "f3e439be5a30f83788eac44b6c7adf18094631eecc75525d81d291bf6bbea5f0",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 409,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "The 409 page gives PAYMENT_STATE_CONFLICT, understandable state guidance, and links to the owned order detail and order list. It contains no receipt or shipping values.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 0,
+        "visual_observation": "No shipping-value panel on this page."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/u09-foreign-404-1366.png",
+      "raw_sha256": "142a97446f323097fdf133413577af850e64a590937ba65db090cb5ecd3eb03a",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 404,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "The other account sees only the generic ORDER_NOT_FOUND 404 and homepage recovery, without the foreign order identifier, total, receipt or shipping values. Its cart badge is 0.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": null,
+        "visual_observation": "No shipping-value panel on this page."
+      },
+      "visually_observed_badge": "0",
+      "browser_recorded_badge": null,
+      "browser_dom_overflow_check": null
+    },
+    {
+      "path": "attempt2/browser/u09-unknown-404-1366.png",
+      "raw_sha256": "ce3645863f4b863a88fc5f15c12b132060eaaee2661e36a40221a28c60561398",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 404,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "Unknown order uses the generic ORDER_NOT_FOUND 404 and homepage recovery, without echoing an unknown order identifier, receipt, total or shipping values.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 0,
+        "visual_observation": "No shipping-value panel on this page."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/u09-CSRF-403-1366.png",
+      "raw_sha256": "f6b840d99036877848480f3209b197b7035fb94961712e6b084ace96b74efc9a",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 403,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "The 403 page displays CSRF_REJECTED and recovery guidance without SQL, a stack trace, receipt, order details or submitted secrets. The shared navigation and footer remain readable.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 0,
+        "visual_observation": "No shipping-value panel on this page."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/journey-failure-still-pending-1366.png",
+      "raw_sha256": "b0e36f7422c782814960b91a554c57f256b9d63ce505048e0c1192814ca958c4",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 1647
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "The red flash explicitly says mock payment failed, the order remains pending and can be retried or cancelled. Pending actions remain available; total is 85.00 and no receipt is shown.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 3,
+        "visual_observation": "Three opaque grey masks conceal recipient, phone and full address."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/journey-success-first-receipt-1366.png",
+      "raw_sha256": "e00fefc21535933e106d826fbeb42062c72d86e81c23a142a25c120666b6cd5b",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 1573
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "The green flash labels mock success and no real payment. Status is awaiting shipment, total remains 85.00, and the first MOCK receipt and payment time are readable. Pending action controls are absent.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 3,
+        "visual_observation": "Three opaque grey masks conceal recipient, phone and full address."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/journey-cancelled-no-cart-restore-1366.png",
+      "raw_sha256": "481ee44b54087ce6eb6c000aa00bf9173a475e76374e8daedaaceb07587083e4",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 1451
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "The green flash and cancelled status explain inventory return and no cart restoration. The 85.00 purchase snapshots and cancellation timeline are readable; payment/cancellation controls are absent.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 3,
+        "visual_observation": "Three opaque grey masks conceal recipient, phone and full address."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/u09-pending-teaching-1920.png",
+      "raw_sha256": "9cc178053f6b50d7079f52ddaa03f0913db647025bd9f4e93f8a236529dee220",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "U09 shows the persisted 85.00 total, pending status, teaching-only notice and separate success/failure buttons. The two panels, return link and navigation are readable without visible overlap.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 0,
+        "visual_observation": "No shipping-value panel on this page."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/u08-cancel-confirmation-1920.png",
+      "raw_sha256": "15d1a2b24bd2edd9adae97e283b3646596bb42ea97de915e8b14de6409f43587",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1679
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "Expanded cancellation disclosure visibly identifies the order and states inventory will be returned and goods will not return to the cart before the red confirmation button. Pending payment link and snapshot table remain readable.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 3,
+        "visual_observation": "Three opaque grey masks conceal recipient, phone and full address."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/u08-paid-receipt-1920.png",
+      "raw_sha256": "6f0b7d9e4eb2f556ebde41180f9420d84043b681355a350c829783ab5bac127b",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1473
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "Paid order shows its first MOCK receipt and payment timestamp alongside the unchanged 85.00 purchase snapshot. Pending payment and cancellation controls are absent; timeline and masked shipping panel remain aligned.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 3,
+        "visual_observation": "Three opaque grey masks conceal recipient, phone and full address."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/u08-cancelled-1920.png",
+      "raw_sha256": "7425e06137fb2a0e2bd727e8acf3c2b0b5791f7602bfe676c18149aae20473a5",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1351
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "Cancelled order shows original 85.00 snapshot and cancellation time with no payment/cancellation controls. The text explains inventory was returned and goods were not restored to the cart.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 3,
+        "visual_observation": "Three opaque grey masks conceal recipient, phone and full address."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/u08-shipped-first-receipt-1920.png",
+      "raw_sha256": "d5c7ba9cbca0bf7b8d1a4ff20664099d20de61358b39fde1b09c9bcd6c7117c1",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1473
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "The seeded shipped order retains the first MOCK receipt, paid time and shipping timeline, with its original 66.00 snapshot and no pending payment/cancellation controls. This is a read-only seed-state display, not STEP10 shipping implementation.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 3,
+        "visual_observation": "Three opaque grey masks conceal recipient, phone and full address."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/u09-state-conflict-1920.png",
+      "raw_sha256": "3396c32eb05c5c83ee5f2af42b0a16381af9842588a04337f521ff57cd6bf33b",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 409,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "The 409 page gives PAYMENT_STATE_CONFLICT, understandable state guidance, and links to the owned order detail and order list. It contains no receipt or shipping values.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 0,
+        "visual_observation": "No shipping-value panel on this page."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/u09-foreign-404-1920.png",
+      "raw_sha256": "582c121da69f348b15b2de51f4b2d07291aaac8c36e89e84c25c105c7f6f81cd",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 404,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "The other account sees only the generic ORDER_NOT_FOUND 404 and homepage recovery, without the foreign order identifier, total, receipt or shipping values. Its cart badge is 0.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": null,
+        "visual_observation": "No shipping-value panel on this page."
+      },
+      "visually_observed_badge": "0",
+      "browser_recorded_badge": null,
+      "browser_dom_overflow_check": null
+    },
+    {
+      "path": "attempt2/browser/u09-unknown-404-1920.png",
+      "raw_sha256": "4cde10d5468454e610012fa02833b8857926bb3f5ef7f511dc4abd61a00e363b",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 404,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "Unknown order uses the generic ORDER_NOT_FOUND 404 and homepage recovery, without echoing an unknown order identifier, receipt, total or shipping values.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 0,
+        "visual_observation": "No shipping-value panel on this page."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/u09-CSRF-403-1920.png",
+      "raw_sha256": "9b673b1535e827abe14a7a599233eafb890339f5e6da266197c5e3221e6a6503",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 403,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "The 403 page displays CSRF_REJECTED and recovery guidance without SQL, a stack trace, receipt, order details or submitted secrets. The shared navigation and footer remain readable.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 0,
+        "visual_observation": "No shipping-value panel on this page."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/journey-failure-still-pending-1920.png",
+      "raw_sha256": "be2f9d74d1e15ab0f7162ae05e4c8c56ed1234845b92f7fbae06bca402e99612",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1647
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "The red flash explicitly says mock payment failed, the order remains pending and can be retried or cancelled. Pending actions remain available; total is 85.00 and no receipt is shown.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 3,
+        "visual_observation": "Three opaque grey masks conceal recipient, phone and full address."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/journey-success-first-receipt-1920.png",
+      "raw_sha256": "cb11ed7a5a0dc01f067bb97ae08d001ccc4a23567ab7d5bd2996749de4562b0c",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1573
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "The green flash labels mock success and no real payment. Status is awaiting shipment, total remains 85.00, and the first MOCK receipt and payment time are readable. Pending action controls are absent.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 3,
+        "visual_observation": "Three opaque grey masks conceal recipient, phone and full address."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    },
+    {
+      "path": "attempt2/browser/journey-cancelled-no-cart-restore-1920.png",
+      "raw_sha256": "7d46b01f72e480eb2d7a4fa9c36f10c3f8576dc053e24b6bcaf3930d96fd2549",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1451
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "capture_mode": "fullPage; image height may exceed the requested viewport",
+      "recorded_http_status": 200,
+      "visually_reviewed_original": true,
+      "review_result": "PASS",
+      "observations": "The green flash and cancelled status explain inventory return and no cart restoration. The 85.00 purchase snapshots and cancellation timeline are readable; payment/cancellation controls are absent.",
+      "visible_layout": "No visible text clipping, overlap, occluded page controls or horizontal body overflow in this original.",
+      "shipping_masks": {
+        "recorded_mask_enabled": true,
+        "shipping_value_nodes": 3,
+        "visual_observation": "Three opaque grey masks conceal recipient, phone and full address."
+      },
+      "visually_observed_badge": "1",
+      "browser_recorded_badge": "1",
+      "browser_dom_overflow_check": false
+    }
+  ]
+}
