@@ -1,5 +1,10 @@
 package org.csucampuscraft.storefront.foundation.web;
 
+import org.csucampuscraft.storefront.auth.SessionExpiredException;
+import org.csucampuscraft.storefront.auth.SessionSupport;
+import org.springframework.dao.OptimisticLockingFailureException;
+import org.springframework.dao.PessimisticLockingFailureException;
+import org.springframework.web.servlet.view.RedirectView;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -19,8 +24,28 @@ import org.springframework.web.servlet.ModelAndView;
 @ControllerAdvice
 public final class GlobalExceptionHandler {
     private final PageModelAdvice pageModels;
+    private final SessionSupport sessions;
 
-    public GlobalExceptionHandler(PageModelAdvice pageModels) { this.pageModels = pageModels; }
+    public GlobalExceptionHandler(PageModelAdvice pageModels, SessionSupport sessions) {
+        this.pageModels = pageModels;
+        this.sessions = sessions;
+    }
+
+    @ExceptionHandler(SessionExpiredException.class)
+    public ModelAndView expired(SessionExpiredException failure, HttpServletRequest request) {
+        sessions.clear(request);
+        RedirectView redirect = new RedirectView("/login?returnUrl=%2Fcart", true);
+        redirect.setStatusCode(HttpStatus.FOUND);
+        redirect.setExposeModelAttributes(false);
+        redirect.setExpandUriTemplateVariables(false);
+        return new ModelAndView(redirect);
+    }
+
+    @ExceptionHandler({PessimisticLockingFailureException.class, OptimisticLockingFailureException.class})
+    public ModelAndView writeConflict(Exception failure, HttpServletRequest request) {
+        return page(request, HttpStatus.CONFLICT, "WRITE_CONFLICT",
+                "数据已变化或正在更新，请重新载入购物车后再操作。", Map.of());
+    }
 
     @ExceptionHandler(BusinessException.class)
     public ModelAndView business(BusinessException exception, HttpServletRequest request) {
