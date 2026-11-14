@@ -1,0 +1,33 @@
+{
+  "scope": "Only byte-identical failed screenshots may reference the successful original; stage attempts stay unchanged",
+  "references": [
+    {
+      "original_path": "attempt1/journey/journey-cart-after-manual-add-1366.png",
+      "canonical_path": "attempt2/journey/journey-cart-after-manual-add-1366.png",
+      "sha256": "712af09c0fe96d66385d3a522b3f67ba7a56c220f7c11846a1061ba51dfeabf7",
+      "bytes": 62305,
+      "original_stage_file_preserved": true
+    },
+    {
+      "original_path": "attempt1/journey/journey-guest-login-link-1366.png",
+      "canonical_path": "attempt2/journey/journey-guest-login-link-1366.png",
+      "sha256": "87a1c3c7ef8311b50cdc980c9877dd5b870699cbef6bd3a325e2309da19df0be",
+      "bytes": 113909,
+      "original_stage_file_preserved": true
+    },
+    {
+      "original_path": "attempt1/journey/journey-login-page-1366.png",
+      "canonical_path": "attempt2/journey/journey-login-page-1366.png",
+      "sha256": "2b71833f54299377a2df257331c37992d46cfaa784a855f0e95fea17c9cbf206",
+      "bytes": 30945,
+      "original_stage_file_preserved": true
+    },
+    {
+      "original_path": "attempt1/journey/journey-returned-detail-manual-add-1366.png",
+      "canonical_path": "attempt2/journey/journey-returned-detail-manual-add-1366.png",
+      "sha256": "eb29960795cccb5d714c00cff67e3c1f24ddc65f8f039b88ada5aeb59743de11",
+      "bytes": 117065,
+      "original_stage_file_preserved": true
+    }
+  ]
+}

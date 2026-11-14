@@ -1,0 +1,24 @@
+{
+  "result": "PASS_STATIC_REVIEW",
+  "candidate_files": 1,
+  "authenticated_form_source_unchanged": true,
+  "existing_data_markers_preserved": [
+    "data-add-cart",
+    "data-cover-image",
+    "data-gallery-count",
+    "data-gallery-empty",
+    "data-image-id",
+    "data-image-sort",
+    "data-page-id",
+    "data-price",
+    "data-product-gallery",
+    "data-product-id",
+    "data-product-sku",
+    "data-stock",
+    "data-submit-state"
+  ],
+  "added_marker": "data-login-to-add",
+  "guest_instocks": "Login GET link with fixed product returnUrl and manual-purchase helper; no rendered POST form",
+  "guest_soldout": "Disabled non-submit button and sold-out helper; no rendered POST form",
+  "limits": "Conditional template structure inspected statically; actual SSR HTTP/browser assertions belong to new merged acceptance."
+}

@@ -1,0 +1,80 @@
+
+def guest_browser_journey(product_id):
+    from http.server import BaseHTTPRequestHandler,HTTPServer
+    from threading import Thread
+    import base64
+    check('journey-starts-with-empty-own-cart',not cartrows(1))
+    control_token=secrets.token_urlsafe(32);secret_values.append(control_token)
+    pending={};failures=[];completed=[]
+    def actual_response(info):
+        global http_no
+        text=base64.b64decode(info['body_base64']).decode('utf-8',errors='replace')
+        dom=Parser(text).root
+        for n in dom.all(lambda x:x.tag=='input' and x.a.get('name')=='_csrf'):
+            if n.a.get('value'):secret_values.append(n.a['value'])
+        http_no+=1
+        redacted=scrub(text).encode('utf-8');digest=hashlib.sha256(redacted).hexdigest()
+        filename='bodies/'+digest[:24]+'.body.gz'
+        if not (EV/filename).exists():
+            (EV/filename).parent.mkdir(exist_ok=True);(EV/filename).write_bytes(gzip.compress(redacted,mtime=0))
+        record('http.jsonl',{'sequence':http_no,'method':info['method'],'path':info['path'],'port':8080,'status':info['status'],'content_type':info['content_type'],'location':info['location'],'cookie_names':info['cookie_names'],'cookie_values_recorded':False,'set_cookie_present':info['set_cookie_present'],'form_fields':pending[info['id']]['fields'] if info['id'] in pending else None,'body_file':filename,'body_encoding':'gzip','redacted_body_sha256':digest,'redacted':True,'transport':'actual Playwright navigation','body_available':info['body_available']})
+        check('journey-no-session-url-'+str(http_no),';CSUCAMPUSCRAFT_' not in text and ';CSUCAMPUSCRAFT_' not in (info['location'] or ''))
+        if dom.find(lambda n:n.a.get('id')=='cart-quantity'):
+            authenticated=dom.find(lambda n:n.tag=='body' and n.a.get('data-authenticated')=='true') is not None
+            badge((info['status'],{'Content-Type':info['content_type']},text.encode('utf-8'),dom),1 if authenticated else None,'journey-badge-'+str(http_no))
+        if info['method']=='POST':
+            context=pending.pop(info['id'])
+            check('journey-response-path-matches-before',info['path']==context['path'])
+            after=snapshot();b=state()
+            snapshot_pair('http-post-'+str(http_no),context['before'],context['state'],after,b,http_sequence=http_no,path=info['path'],status=info['status'],automatic_all_posts=True,transport='playwright-guest-journey')
+            snapshot_pair('browser-journey-'+info['path'].strip('/').replace('/','-'),context['before'],context['state'],after,b,path=info['path'],status=info['status'],expected_status=303,actor_user_id=1,transport='playwright-guest-journey')
+            check('journey-post-303-'+info['path'],info['status']==303)
+            check('journey-post-other-six-unchanged-'+info['path'],unchanged_other(context['before'],after))
+            if info['path']=='/login':check('journey-login-not-replayed-cart',context['before']==after)
+            else:
+                delta=deltas(context['state'],b)['cart_item']
+                check('journey-manual-one-new-row',len(delta)==1 and delta[0]['before'] is None and delta[0]['after']['userId']==1 and delta[0]['after']['productId']==product_id and delta[0]['after']['quantity']==1 and delta[0]['after']['version']==0)
+        return {'ok':True,'sequence':http_no}
+    class Observer(BaseHTTPRequestHandler):
+        def log_message(self,*args):pass
+        def do_POST(self):
+            try:
+                if not secrets.compare_digest(self.headers.get('X-Audit-Token',''),control_token):raise ValueError('Observer authentication failed')
+                length=int(self.headers.get('Content-Length','0'))
+                if not 0<length<2_000_000:raise ValueError('Observer message length invalid')
+                item=json.loads(self.rfile.read(length).decode('utf-8'))
+                if self.path=='/before':
+                    check('journey-only-expected-post-path',item['path'] in ['/login','/cart/items'])
+                    check('journey-single-post-at-a-time',not pending)
+                    ident=rows('SELECT @@server_uuid,@@port,@@datadir;',None).split('\t')
+                    check('journey-private-db-identity',ident[0]==uuid and int(ident[1])==mysqlport and Path(ident[2]).resolve()==data.resolve())
+                    owner=command([Path(os.environ['SystemRoot'])/'System32/WindowsPowerShell/v1.0/powershell.exe','-NoProfile','-Command','Get-NetTCPConnection -LocalPort 8080 -State Listen | Select-Object -ExpandProperty OwningProcess'],timeout=20)
+                    pids=[int(x) for x in owner.stdout.decode().split() if x.isdigit()]
+                    check('journey-owned-user-listener',owner.returncode==0 and pids and all(x==user_process.pid for x in pids))
+                    pending[item['id']]={'path':item['path'],'fields':item['form_fields'],'before':snapshot(),'state':state()}
+                    result_body={'ok':True}
+                elif self.path=='/response':result_body=actual_response(item)
+                elif self.path=='/complete':
+                    check('journey-all-posts-audited',not pending and item['posts']==2 and item['screenshots']==4)
+                    completed.append(True);result_body={'ok':True}
+                else:raise ValueError('Observer path invalid')
+                encoded=json.dumps(result_body).encode('utf-8');self.send_response(200);self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(encoded)));self.end_headers();self.wfile.write(encoded)
+            except Exception as failure:
+                failures.append(type(failure).__name__+': '+scrub(str(failure)))
+                self.send_response(500);self.send_header('Content-Length','0');self.end_headers()
+    observer=HTTPServer(('127.0.0.1',0),Observer)
+    thread=Thread(target=observer.serve_forever,daemon=True);thread.start()
+    try:
+        e=start_env();e.update(STEP07_JOURNEY_OUT=str(EV/'journey'),STEP07_JOURNEY_PRODUCT=str(product_id),STEP07_JOURNEY_CONTROL=str(observer.server_port),STEP07_JOURNEY_CONTROL_TOKEN=control_token,STEP07_JOURNEY_PASSWORD=PASSWORD)
+        p=command([RUNTIME/'node/bin/node.exe',HERE/'verify_guest_journey.cjs'],env=e,timeout=150)
+        save(EV/'journey.log',p.stdout.decode('utf-8',errors='replace')+p.stderr.decode('utf-8',errors='replace'))
+        if failures:save(EV/'journey-observer-errors.json',json.dumps(failures,ensure_ascii=False,indent=2))
+        check('guest-real-browser-journey',p.returncode==0 and not failures and completed and not pending)
+        jr=json.loads((EV/'journey/result.json').read_text(encoding='utf-8'))
+        check('guest-real-browser-completed',jr['overall']=='PASS' and jr['completed'])
+        result['journey_checks']=len(jr['checks']);result['journey_screenshots']=len(jr['screenshots']);result['journey_posts']=len(jr['posts'])
+        check('guest-journey-four-screens-two-posts',result['journey_screenshots']==4 and result['journey_posts']==2)
+        check('guest-journey-one-manual-cart-item',len(cartrows(1))==1 and item_for(product_id)['quantity']==1)
+    finally:
+        observer.shutdown();observer.server_close();thread.join(timeout=3)
+

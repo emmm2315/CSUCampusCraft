@@ -1,0 +1,392 @@
+{
+  "status": "PASS_FINAL_REVIEW",
+  "reviewer": "Independent Codex merge_backend_compare; named human team review remains pending",
+  "tested_sha": "9e61c3e88761519fc63a4d99cafb006a51eacfa5",
+  "merge_sha": "457d77a0a2a9920262175663d6f5a480c719d38f",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "de864516cd99bba059c90e2cb405f24a3b0bffc318f78e8d40c5536adec120fe",
+      "original_sha256": "d4234a4f8ff6965ef9a4b619d31d7b9f859a89b718dbd31cf11b8ca1f7b64a91"
+    },
+    {
+      "path": "docs/开发计划与任务.md",
+      "sha256": "27ea3efcc1e1200590c7cef7c49ad81540348707793f3bfaaf6e7339e34f2826",
+      "original_sha256": "16ff480b1dc7bd04570ef07d838e1cd32a9e3cd356767f7da98090e6b24b5d1d"
+    },
+    {
+      "path": "docs/测试与验收用例.md",
+      "sha256": "f2f0d6f7a3c71e0cbde68583930880c0f6701fb1f0e53c2ae6f9fdba310a74e1",
+      "original_sha256": "ccb02481305cbfa624395df4c5739fa2a6ea11356135c0e3c0e59a190cf901af"
+    }
+  ],
+  "old_step07_preserved_sha256": "b391cae132f8cc084cee0b1497899a07d92e7ac6b346cea9b72f082454299cd3",
+  "checks": [
+    {
+      "label": "only-three-document-candidates-present",
+      "passed": true
+    },
+    {
+      "label": "new-result-placeholders-cleared",
+      "passed": true
+    },
+    {
+      "label": "legitimate-pending-payment-enum-retained",
+      "passed": true
+    },
+    {
+      "label": "old-step07-observation-block-byte-identical",
+      "passed": true
+    },
+    {
+      "label": "old-step07-still-records-3bc-and-draft404",
+      "passed": true
+    },
+    {
+      "label": "all-original-business-standards-byte-identical",
+      "passed": true
+    },
+    {
+      "label": "all-m0-through-step06-history-byte-identical",
+      "passed": true
+    },
+    {
+      "label": "new-merge-subsection-added-once",
+      "passed": true
+    },
+    {
+      "label": "new409-and-original-history-distinguished",
+      "passed": true
+    },
+    {
+      "label": "no-old-result-reuse-claim",
+      "passed": true
+    },
+    {
+      "label": "both-original-evidence-references-present",
+      "passed": true
+    },
+    {
+      "label": "new-subsection-has-final-sha",
+      "passed": true
+    },
+    {
+      "label": "new-subsection-marks-actual-date",
+      "passed": true
+    },
+    {
+      "label": "attempt1-failure-not-rewritten",
+      "passed": true
+    },
+    {
+      "label": "negative-timeout-cause-not-overclaimed",
+      "passed": true
+    },
+    {
+      "label": "native-interleaving-not-presented-as-http",
+      "passed": true
+    },
+    {
+      "label": "wait-offset-not-called-duration",
+      "passed": true
+    },
+    {
+      "label": "root-fixture-change-not-app-write",
+      "passed": true
+    },
+    {
+      "label": "unavailable303-redirect-bodies-not-fabricated",
+      "passed": true
+    },
+    {
+      "label": "guest-browser-click-flow-has-real-sequences",
+      "passed": true
+    },
+    {
+      "label": "checkout-orders-and-broad-concurrency-not-claimed",
+      "passed": true
+    },
+    {
+      "label": "double-period-editorial-points-fixed",
+      "passed": true
+    },
+    {
+      "label": "other-plan-semantics-and-operation-lists-unchanged",
+      "passed": true
+    },
+    {
+      "label": "m1-milestone-exactly-retained",
+      "passed": true
+    },
+    {
+      "label": "m2-remains-in-progress",
+      "passed": true
+    },
+    {
+      "label": "ledger-says-independent-implementations-merged",
+      "passed": true
+    },
+    {
+      "label": "ledger-awaits-human-review",
+      "passed": true
+    },
+    {
+      "label": "owner-and-reviewer-real-names-not-fabricated",
+      "passed": true
+    },
+    {
+      "label": "member-git-author-participation-explicit",
+      "passed": true
+    },
+    {
+      "label": "ai-participation-explicit",
+      "passed": true
+    },
+    {
+      "label": "ledger-preserves-old-code-and-input-digest",
+      "passed": true
+    },
+    {
+      "label": "ledger-final-source-and-input-digest",
+      "passed": true
+    },
+    {
+      "label": "ledger-editorial-period-fixed",
+      "passed": true
+    },
+    {
+      "label": "other-readme-step-handoffs-unchanged",
+      "passed": true
+    },
+    {
+      "label": "readme-current-phase-updated",
+      "passed": true
+    },
+    {
+      "label": "readme-guest-no-form-handoff",
+      "passed": true
+    },
+    {
+      "label": "readme-actual-unavailable409-noop-and-add404",
+      "passed": true
+    },
+    {
+      "label": "readme-no-product-lock-port",
+      "passed": true
+    },
+    {
+      "label": "readme-both-original-records-and-new-result-linked",
+      "passed": true
+    },
+    {
+      "label": "all-three-documents-word-unchanged-boundary",
+      "passed": true
+    },
+    {
+      "label": "new-success-is-attempt2",
+      "passed": true
+    },
+    {
+      "label": "new-success-source-sha",
+      "passed": true
+    },
+    {
+      "label": "new-main-assertions-2851",
+      "passed": true
+    },
+    {
+      "label": "new-runtime-input-count-and-exact-manifest-sha",
+      "passed": true
+    },
+    {
+      "label": "new-mysql-version-and-private-port",
+      "passed": true
+    },
+    {
+      "label": "new-http346-post157-raw-counts",
+      "passed": true
+    },
+    {
+      "label": "new-auto-seven-table157-and-journal299",
+      "passed": true
+    },
+    {
+      "label": "every-post-automatically-paired",
+      "passed": true
+    },
+    {
+      "label": "every-http-post-other-six-tables-unchanged",
+      "passed": true
+    },
+    {
+      "label": "all-non303-http-posts-zero-write",
+      "passed": true
+    },
+    {
+      "label": "badge100-raw-observations",
+      "passed": true
+    },
+    {
+      "label": "independent-observation-review-counts",
+      "passed": true
+    },
+    {
+      "label": "coverage-guest-post-audit-passed",
+      "passed": true
+    },
+    {
+      "label": "guest-real-http142-to147-present",
+      "passed": true
+    },
+    {
+      "label": "guest-two-real-posts-status-and-no-fake-body",
+      "passed": true
+    },
+    {
+      "label": "guest-two-real-posts-have-seven-table-pairs",
+      "passed": true
+    },
+    {
+      "label": "new-native-pass91",
+      "passed": true
+    },
+    {
+      "label": "native-unavailable-stable-code-observed",
+      "passed": true
+    },
+    {
+      "label": "native-performance-schema-record-matches-raw-log",
+      "passed": true
+    },
+    {
+      "label": "native-wait-root-metadata-and-cart-unchanged",
+      "passed": true
+    },
+    {
+      "label": "native-p-s-observer-is-real-source",
+      "passed": true
+    },
+    {
+      "label": "new-browser308-plus-real-journey27-equals335",
+      "passed": true
+    },
+    {
+      "label": "new-png24-plus-journey4-equals28",
+      "passed": true
+    },
+    {
+      "label": "new-browser-and-journey-all-checks-pass",
+      "passed": true
+    },
+    {
+      "label": "independent-visual-report-28-and-correct-sha",
+      "passed": true
+    },
+    {
+      "label": "28-real-success-png-files",
+      "passed": true
+    },
+    {
+      "label": "all-28-success-png-hashes-covered-by-visual-review",
+      "passed": true
+    },
+    {
+      "label": "actual-guest-journey-has-two-posts-and-four-images",
+      "passed": true
+    },
+    {
+      "label": "old-live-fail-preserved-same-source",
+      "passed": true
+    },
+    {
+      "label": "attempt1-no-recorded-failed-business-assertions",
+      "passed": true
+    },
+    {
+      "label": "attempt1-diagnostic-original-sha-matches",
+      "passed": true
+    },
+    {
+      "label": "all-four-compressed-logs-preserve-original-bytes",
+      "passed": true
+    },
+    {
+      "label": "sensitive-scan-pass-no-findings",
+      "passed": true
+    },
+    {
+      "label": "sensitive-scan238-bodies4-jsonl",
+      "passed": true
+    },
+    {
+      "label": "private-processes-stopped-and-cleanup-pass",
+      "passed": true
+    },
+    {
+      "label": "member-import96-exact-git-blobs",
+      "passed": true
+    },
+    {
+      "label": "selected-source-only-two-files",
+      "passed": true
+    },
+    {
+      "label": "selected-source-current-bytes-match",
+      "passed": true
+    },
+    {
+      "label": "head-is-new-tested-source",
+      "passed": true
+    },
+    {
+      "label": "main-not-moved",
+      "passed": true
+    },
+    {
+      "label": "original-local-feature-not-moved",
+      "passed": true
+    },
+    {
+      "label": "member-remote-tracking-ref-not-moved",
+      "passed": true
+    },
+    {
+      "label": "merge-has-both-original-parents",
+      "passed": true
+    },
+    {
+      "label": "ours-merge-original-tree-equal",
+      "passed": true
+    },
+    {
+      "label": "no-worktree-source-changes",
+      "passed": true
+    }
+  ],
+  "findings": [],
+  "observations": {
+    "primary_assertions": 2851,
+    "http": 346,
+    "posts": 157,
+    "automatic_db_pairs": 157,
+    "journal_rows": 299,
+    "badge_observations": 100,
+    "native_checks": 91,
+    "read_only_browser_checks": 308,
+    "real_guest_journey_checks": 27,
+    "browser_checks_total": 335,
+    "successful_pngs": 28,
+    "runtime_inputs": 140,
+    "runtime_manifest_sha256": "c5f13d7ad5e1fc42ef45b19bdcb246788df5add2e5baad2830d8a50cb5ef9fbb",
+    "mysql_version": "8.4.9",
+    "private_mysql_port": 53954,
+    "auth_midwait": "Actual-JAR native Service thread observed waiting via performance_schema; separate root fixture, not HTTP",
+    "wait_first_observed_offset_ms": 4,
+    "supplement_total_elapsed_ms": 20,
+    "wait_duration_measured": false,
+    "failed_attempt": "attempt1 preserved FAIL; no recorded failed business assertion; clock/pause root cause unconfirmed"
+  },
+  "limits": "This is read-only document/source/evidence consistency review. It does not rerun the applications or replace independent human review; checkout/orders, general cart concurrency and post-DML fault rollback remain outside the new acceptance scope.",
+  "repo_changed": false,
+  "document_candidates_changed": false
+}

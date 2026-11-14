@@ -1,0 +1,16 @@
+{
+  "result": "PASS_STATIC_CANDIDATE_REVIEW_NOT_RUNTIME_ACCEPTANCE",
+  "merge_source_sha": "457d77a0a2a9920262175663d6f5a480c719d38f",
+  "candidate_files": 1,
+  "changed_path": "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartService.java",
+  "observations": [
+    "Only the real changeQuantity product read/check is replaced.",
+    "Existing same-value early return precedes the new unavailable check.",
+    "DRAFT or missing product for actual change throws409 CART_PRODUCT_UNAVAILABLE with requested removal guidance.",
+    "Add still calls existing available() and keeps404 PRODUCT_NOT_AVAILABLE.",
+    "Remove, version-capacity logic, mapper, customer guard and all other files are untouched.",
+    "No product FOR UPDATE was introduced; ordinary SELECT remains."
+  ],
+  "findings": [],
+  "runtime_tests": "Pending root fresh dual Wrapper build and merged-SHA private database HTTP acceptance."
+}

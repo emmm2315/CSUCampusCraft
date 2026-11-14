@@ -1,0 +1,444 @@
+{
+  "result": "PASS_VISUAL_REVIEW",
+  "attempt": "attempt2",
+  "tested_code_sha": "9e61c3e88761519fc63a4d99cafb006a51eacfa5",
+  "reviewer": "Codex merge_ui_compare independent AI review; named human review pending",
+  "viewed_files": 28,
+  "read_only_browser_pngs": 24,
+  "actual_guest_journey_pngs": 4,
+  "viewports": [
+    [
+      1366,
+      768
+    ],
+    [
+      1920,
+      1080
+    ]
+  ],
+  "scope": "All 28 final-attempt PNG files were independently viewed; no old STEP07 screenshots or failed-attempt images substitute for final merged images.",
+  "findings": [],
+  "limits": "Visual observations do not alone establish database invariants, HTTP status/CSRF/authentication correctness, native lock behavior, or human signoff. Those claims require separate HTTP/database/native evidence. Attempt1 remains FAIL and is not relabeled by this review.",
+  "screenshots": [
+    {
+      "path": "attempt2/browser/u05-valid-85-1366.png",
+      "sha256": "e3eb7396df502a083f5dcf899954422804d407289b801825fdcaa522c0c1d94c",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1020
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "两种商品共3件；36.00与49.00小计、85.00合计及导航3清楚。数量标签、更新/移除、继续选购和禁用结算均可读，无横向溢出。"
+    },
+    {
+      "path": "attempt2/browser/u05-valid-85-1920.png",
+      "sha256": "7955b69487c73fe916bdd69ee5ff093a2c0e24e215c5805a0e58e6707af8c02d",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "两种商品共3件；36.00与49.00小计、85.00合计及导航3清楚。数量标签、更新/移除、继续选购和禁用结算均可读，无横向溢出。"
+    },
+    {
+      "path": "attempt2/browser/u05-invalid-live-status-1366.png",
+      "sha256": "c519136583f8ce67161be2bfcbb6f557bedcf62256687c704a1120143c4a50cf",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1520
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "四种商品共6件，三类失效原因分别为下架、售罄、超库存；无效小计排除，仅礼盒49.00，导航仍6，移除与禁用结算提示清楚。"
+    },
+    {
+      "path": "attempt2/browser/u05-empty-bob-1366.png",
+      "sha256": "f14542eef33cf48db412756f841ea9881f2c8a34ca0fdd610595598aa325028a",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        768
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "陈同学账号空车，导航0、合计0.00、去逛逛入口和不可结算说明完整，没有显示另一账号车行。"
+    },
+    {
+      "path": "attempt2/browser/u01-live-badge-1366.png",
+      "sha256": "bd49f393e3bccd6548ec42a9b0a4236db9a425ea232995fd54c4433695219a6a",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1819
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "首页五主题、毕业横幅及两栏卡片布局保持，搜索与图片文字可读，导航6，无裁切。"
+    },
+    {
+      "path": "attempt2/browser/u02-live-badge-1366.png",
+      "sha256": "919f7622d62d2c0045c49b0ca3a21d82e690790d29a922a2474b2608225e4e63",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1724
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "列表筛选字段、商品卡和分页完整，控制夹具下53件结果与当前页清楚，导航6，无横向溢出。"
+    },
+    {
+      "path": "attempt2/browser/u03-real-add-form-1366.png",
+      "sha256": "68b8d3e9f4723aac3491bb2516c438f26dbd2fde9c278c1231057fdd8e39e99a",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1665
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "已登录林同学详情显示数量1与加入购物车按钮及1–99说明，导航6；封面与4张相册保持原布局。"
+    },
+    {
+      "path": "attempt2/browser/u03-guest-zero-badge-1366.png",
+      "sha256": "87a1c3c7ef8311b50cdc980c9877dd5b870699cbef6bd3a325e2309da19df0be",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1616
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "游客详情仅显示登录后加购及回页手动确认说明，未见购买数量控件，导航0；封面和相册正常。"
+    },
+    {
+      "path": "attempt2/browser/error-400-badge-1366.png",
+      "sha256": "ff1252971493400326349bf52fef978e1f2096d8137ee28932d3a11adf85ebce",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        768
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "400参数错误页、恢复说明、返回首页及导航6可读，无内部异常内容。"
+    },
+    {
+      "path": "attempt2/browser/error-403-badge-1366.png",
+      "sha256": "59a55fa06dda1f6d0feb85b6f1e2b24847f0b002219a3267b0ef6440ef600d80",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        768
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "403未获允许页、恢复说明、返回首页及导航6可读，无他人车信息。"
+    },
+    {
+      "path": "attempt2/browser/error-404-badge-1366.png",
+      "sha256": "1fcb14d3ff0e6ace5b9f129698df43467030ee2b11f9fa2cbe55b6b9dd8c0ec3",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        768
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "404未找到页、继续浏览入口与导航6可读，布局完整。"
+    },
+    {
+      "path": "attempt2/browser/error-409-badge-1366.png",
+      "sha256": "133139dd14ecf413cccacd993f3d814d09d31d112690fdd59f02693f3b4713cf",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        768
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "409数据变化通用验证页说明先重读再操作，返回首页与导航6完整；这是错误布局截图，不代替真实下架改量409请求证据。"
+    },
+    {
+      "path": "attempt2/browser/error-500-badge-1366.png",
+      "sha256": "e80ba05f9c664c2f3d4e9949defea905ed1a1cf58fd142561ce4e189968f3974",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        768
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "500通用不可用文案和INTERNAL_ERROR可见，未展示SQL、堆栈或技术哨兵内容，导航6与返回入口完整。"
+    },
+    {
+      "path": "attempt2/browser/u05-invalid-live-status-1920.png",
+      "sha256": "b9120756edad655d4117e69fbb7187b2238f82583bb837418964eba3cba54c7e",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1520
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "四种商品共6件，三类失效原因分别为下架、售罄、超库存；无效小计排除，仅礼盒49.00，导航仍6，移除与禁用结算提示清楚。"
+    },
+    {
+      "path": "attempt2/browser/u05-empty-bob-1920.png",
+      "sha256": "2cb7660d4807b4d0b98bb70603860eee1c0134370a1b1f0e0f176607f5924262",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "陈同学账号空车，导航0、合计0.00、去逛逛入口和不可结算说明完整，没有显示另一账号车行。"
+    },
+    {
+      "path": "attempt2/browser/u01-live-badge-1920.png",
+      "sha256": "01f5f7598cd5630433ae4b0c56a921949311b1718f106ffc644b0ec207c99998",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1819
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "首页五主题、毕业横幅及两栏卡片布局保持，搜索与图片文字可读，导航6，无裁切。"
+    },
+    {
+      "path": "attempt2/browser/u02-live-badge-1920.png",
+      "sha256": "2d6af234e6b54b79b56ab37ec00558445f5bd0abf84ec9ea6939986968948b20",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1724
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "列表筛选字段、商品卡和分页完整，控制夹具下53件结果与当前页清楚，导航6，无横向溢出。"
+    },
+    {
+      "path": "attempt2/browser/u03-real-add-form-1920.png",
+      "sha256": "52052e5e2a28fd2ddbf96beb485d1235ad01630fe6309fe319d7a637cef57532",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1665
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "已登录林同学详情显示数量1与加入购物车按钮及1–99说明，导航6；封面与4张相册保持原布局。"
+    },
+    {
+      "path": "attempt2/browser/u03-guest-zero-badge-1920.png",
+      "sha256": "5ba1d3f67e03217c21cd2690143ac2edc1038297bb93cd61b52dcdb1cf3fc1cd",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1616
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "游客详情仅显示登录后加购及回页手动确认说明，未见购买数量控件，导航0；封面和相册正常。"
+    },
+    {
+      "path": "attempt2/browser/error-400-badge-1920.png",
+      "sha256": "d515f1d866ac2c61687be3d9508e327d67e1fbca6ab1098d87773a6dc62166b4",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "400参数错误页、恢复说明、返回首页及导航6可读，无内部异常内容。"
+    },
+    {
+      "path": "attempt2/browser/error-403-badge-1920.png",
+      "sha256": "92c8c81a87c27acdd108ad7c75c371bc6aa011027bfd8f1275f25892e919dd5e",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "403未获允许页、恢复说明、返回首页及导航6可读，无他人车信息。"
+    },
+    {
+      "path": "attempt2/browser/error-404-badge-1920.png",
+      "sha256": "591d5950d8609736e6dfbc654e585f6667f0286d4db2e713d39522c04e0c33a1",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "404未找到页、继续浏览入口与导航6可读，布局完整。"
+    },
+    {
+      "path": "attempt2/browser/error-409-badge-1920.png",
+      "sha256": "41a6991656723f39589a535d2395db08bbaeac0a8dbefd4f906370d7481788d7",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "409数据变化通用验证页说明先重读再操作，返回首页与导航6完整；这是错误布局截图，不代替真实下架改量409请求证据。"
+    },
+    {
+      "path": "attempt2/browser/error-500-badge-1920.png",
+      "sha256": "7cb87235f8587b9e91dc97955f6a3ef9e09b1fcc8252159fbf6665311204182c",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_size": [
+        1920,
+        1080
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "500通用不可用文案和INTERNAL_ERROR可见，未展示SQL、堆栈或技术哨兵内容，导航6与返回入口完整。"
+    },
+    {
+      "path": "attempt2/journey/journey-guest-login-link-1366.png",
+      "sha256": "87a1c3c7ef8311b50cdc980c9877dd5b870699cbef6bd3a325e2309da19df0be",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1616
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "真实游客点击旅程起点：详情登录后加购链接和手动确认说明可见，导航0，未显示购买数量表单。"
+    },
+    {
+      "path": "attempt2/journey/journey-login-page-1366.png",
+      "sha256": "2b71833f54299377a2df257331c37992d46cfaa784a855f0e95fea17c9cbf206",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        768
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "链接进入登录页，用户名与密码字段均未填，导航0；标签/按钮/返回入口清楚，无可见密码或令牌原值。"
+    },
+    {
+      "path": "attempt2/journey/journey-returned-detail-manual-add-1366.png",
+      "sha256": "eb29960795cccb5d714c00cff67e3c1f24ddc65f8f039b88ada5aeb59743de11",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        1665
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "登录回到原礼盒详情，显示林同学与退出、数量1和真实加购按钮，导航仍0，页面清楚要求本人确认。"
+    },
+    {
+      "path": "attempt2/journey/journey-cart-after-manual-add-1366.png",
+      "sha256": "712af09c0fe96d66385d3a522b3f67ba7a56c220f7c11846a1061ba51dfeabf7",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_size": [
+        1366,
+        826
+      ],
+      "visual_result": "PASS",
+      "method": "Individually viewed with view_image in this execution",
+      "observation": "本人点击加购后车内只有1盒礼盒、49.00，导航1；更新/移除、继续选购和结算暂未开放提示完整。"
+    }
+  ]
+}

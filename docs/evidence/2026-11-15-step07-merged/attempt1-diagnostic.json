@@ -1,0 +1,15 @@
+{
+  "recorded_at_utc": "2026-11-14T10:52:09.710442+00:00",
+  "attempt": "attempt1",
+  "overall": "FAIL",
+  "tested_code_sha": "9e61c3e88761519fc63a4d99cafb006a51eacfa5",
+  "source_result_unchanged": true,
+  "source_result_sha256": "0f5c1cad5ca2af9db62bb76c1bf74413519d3050ce32cc02cb89d6f9c17dfd13",
+  "error_verbatim": "TimeoutExpired: Command '['D:\\\\MySQL\\\\bin\\\\mysql.exe', '--no-defaults', '--no-login-paths', '--protocol=TCP', '--host=127.0.0.1', '--port=64623', '--user=root', '--connect-timeout=2', '--default-character-set=utf8mb4', '--batch', '--raw', '--skip-column-names', '--unbuffered', '--database=csucampuscraft']' timed out after -3234.9839999999967 seconds",
+  "failed_business_assertion_labels": [],
+  "tracked_processes_stopped": true,
+  "observed_context": "Timeout occurred during root mysql client invariant snapshot before the new21st-SKU request; command exception reported negative remaining timeout. Start timestamp17:45+08 and first postfailure observation18:43+08 were separated by about58minutes.",
+  "cause": "Unconfirmed timing/host interruption or client stall; no unsupported root-cause claim. Overall FAIL is retained even though preceding business assertions passed.",
+  "retest": "Same product SHA, fully fresh private MySQL and app processes in attempt2; no product fix or old PASS reuse. Helper adds a read-only guest sold-out GET assertion in attempt2; each attempt keeps its actual verifier source.",
+  "native_scope": "Actor-lock/disable interleaving runs as actual-JAR supplement, not a browser/HTTP request. Root status/timestamp fixtures restored before the outer seven-table native comparison."
+}

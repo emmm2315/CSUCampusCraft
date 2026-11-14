@@ -9,7 +9,7 @@ CSUCampusCraft 是《软件开发架构平台》实验一的双端商城项目�
 
 ## 当前阶段
 
-M0 与 M1（STEP02–06）已通过各自范围自动实测，组员实名和交叉复核待补。STEP07 用户端持久购物车、U03 加购和全站导航徽标的本步结果为 通过（attempt1；仅本步购物车范围，组员复核待补）；当前阶段以本页及对应实测记录为准。用户端支持本人车持久化、同 SKU 合并、版本改量与移除；管理端保持 STEP06 交付。结算确认、下单与订单页面尚未开发，控制台在 STEP12，REST 仅预留。
+M0 与 M1（STEP02–06）已通过各自范围自动实测，组员实名和交叉复核待补。STEP07 已由本地与组员双方独立实现后合并，统一源码固定为 `9e61c3e88761519fc63a4d99cafb006a51eacfa5`；两端新 Wrapper 构建均通过，且本轮全新私有库 HTTP、事务、徽标与截图验收已通过（全新私有库 attempt2；本步范围自动验收通过，台账仍待复核），台账保持待复核。两边旧验收分别保留，不能当作本次合并结果。管理端保持 STEP06 交付；结算确认、下单和订单页面尚未开发，控制台在 STEP12，REST 仅预留。
 
 MySQL 8.4（InnoDB）是项目数据库基线。首版范围与交付标准见[项目立项与范围](docs/项目立项与范围.md)。
 
@@ -203,14 +203,22 @@ A04 商品列表和 A05 商品编辑页可进入管理端 `GET /products/{produc
 
 ## STEP07 持久购物车与导航徽标交接
 
-用户端 `GET /cart`（U05）只读当前会话 CUSTOMER 的数据库购物车；`POST /cart/items` 加购，`POST /cart/items/{itemId}/quantity` 改量，`POST /cart/items/{itemId}/remove` 移除，均带 CSRF，成功固定 303 回 `/cart`。U03 已有真实加购表单，售罄仍可浏览但禁用购买控件。游客提交先 302 到登录，允许的商品详情作为读回跳地址；登录后由本人重新点击，绝不自动重放 POST。
+用户端 `GET /cart`（U05）只读当前会话 CUSTOMER 的数据库购物车；`POST /cart/items` 加购，`POST /cart/items/{itemId}/quantity` 改量，`POST /cart/items/{itemId}/remove` 移除，均带 CSRF，成功固定 303 回 `/cart`。已登录用户在 U03 使用真实加购表单；游客详情不渲染加购 POST 表单，显示“登录后加购”链接到 `/login?returnUrl=/products/{id}`，登录后返回商品读页，由本人手动加购，不自动重放。售罄仍可浏览但不可购买；直接构造的游客购物车 POST 仍由后端先要求登录并选择允许的 GET 回跳。
 
 所有车写 Service 均 READ COMMITTED，事务首个数据库操作是 `CustomerWriteGuard.lock(actor)`：锁 `store_user` 并复验 ENABLED、CUSTOMER 与 UTC 微秒认证戳，之后才读本人车、条目和商品当前状态。身份失效清本端身份与确认并 302 登录；已认证错角色按细化矩阵 403。三条 cart POST 的入口顺序为 AuthFilter(+10) 身份 → CsrfFilter(+20) → MVC CartRoleConfiguration.preHandle 角色 → 参数绑定；事务内复验不被入口检查替代。其他既有保护路径不扩展业务。
 
-加购数量 1–99、每人最多 20 种（含失效行），同 SKU 合并；新增条目由数据库自增回填 ID，版本从 0 起，数量实际变化才增版。更新/删除绑定本人条目、提交版本并检查受影响行数。有效版本的相同数量直接无 DML 成功，包括版本到上限或商品已失效的原值；它不会解除失效结算阻断。实际改量仍检查商品可用性及库存；旧版本、数量冲突、版本上溢均拒绝。移除不增版，版本上限的条目仍可正常移除；加购、改量、移除均不改库存或商品版本。
+加购数量 1–99、每人最多 20 种（含失效行），同 SKU 合并；新增条目由数据库自增回填 ID，版本从 0 起，数量实际变化才增版。更新/删除绑定本人条目、提交版本并检查受影响行数。有效版本的相同数量直接无 DML 成功，包括版本到上限或商品已失效的原值；它不会解除失效结算阻断。实际改量仍检查商品可用性及库存；商品已下架或不可用时改为 409 `CART_PRODUCT_UNAVAILABLE`，提示“请移除该条目后继续选购”。加购不存在或 DRAFT 仍为 404，条目不存在仍为 404。旧版本、数量冲突、版本上溢均拒绝。移除不增版，版本上限的条目仍可正常移除；加购、改量、移除均不改库存或商品版本。
 
 徽标统一为 `SELECT COALESCE(SUM(quantity),0) FROM cart_item WHERE user_id=?`，参数只取当前认证的 CUSTOMER，包含下架、售罄、超库存行，不 JOIN 过滤有效性，不以种类 COUNT 替代。PageModelAdvice 向全部用户端布局注入，303 目标页重新读，游客和失效身份为 0；直接错误页亦重查身份。只有实际查询故障的通用错误状态显示“—”表示暂不可用，不伪造已登录空车，也不因为数据库技术异常清除合法身份。失败再认证清身份时同步重置旧模型的徽标为 0。没有前端加减或跨账号缓存。
 
 U05 用当前单价与 BigDecimal 重算，只把有效行计入小计；下架、售罄、超库存行保留并给出原因，仍可移除。含失效行明确标注“有效条目小计”并阻止整车结算。正常车的结算入口本步也暂不开放，不注册或链接 `/checkout`、`/orders`。400/409 只回显本人失败表单的允许字段及原版本；重新载入由用户确认，不悄悄替换失败版本。公开详情的参数/库存冲突尽可能回显 U03，非本人条目 403 不暴露他人车。
 
-受测源码 `3bc5629bcbcbeefa6cbc8f655e8cb4d790c81b77`，起测工作区干净；双端构建 用户端和管理端均 BUILD SUCCESS、退出 0；实际 `mvnw.cmd -o -s <isolated settings> -Dmaven.repo.local=<isolated cache> -f <module>/pom.xml verify` 在无 Maven PATH 的新进程执行，完整参数见证据根 `cart-build-fresh.ps1`，元信息 `build-user.json` / `build-admin.json`，日志见 attempt1；真实 HTTP、数据库、徽标、重启与浏览器结果 通过（attempt1；仅本步购物车范围，组员复核待补）。见[STEP07 实测记录](docs/测试与验收用例.md#step07-实测记录)及[证据入口](docs/evidence/2026-11-14-step07/README.md)。TST-08–11 和 TST-17 只按本步购物车范围判定，TST-11 有效确认仍留 STEP08，真实并发/旧确认及交易留 STEP13。管理端、DDL、POM、共享素材及 Word 本轮不改。
+双方独立实现后以 `git merge --no-ff -s ours origin/feat/step07-cart` 保留组员历史：合并提交 `457d77a0a2a9920262175663d6f5a480c719d38f` 的两个父提交为本地 `dda8f8254eec3f63e9c3bede397131cbe55c6179` 和组员 `221dfb6dfa4fe93d69ffe1eecda97e98705406e1`，随后仅选择性移植上述游客登录链接、实际改量不可用 409 及允许的文案/无障碍改进。保留本地页面模型、data-* 标记、角色/CSRF 顺序与原版本回显；不移植组员商品行 `FOR UPDATE`。购物车不预留库存，仍只先锁用户行，再读取当前商品，避免无必要地阻塞后台写。逐项取舍见[合并差异报告](docs/evidence/2026-11-15-step07-merged/comparison.md)。
+
+本地原受测 `3bc5629bcbcbeefa6cbc8f655e8cb4d790c81b77` 的[旧实测与证据](docs/evidence/2026-11-14-step07/README.md)不改；组员 `221dfb6dfa4fe93d69ffe1eecda97e98705406e1` 的[原始证据副本](docs/evidence/2026-11-14-step07-member/README.md)按 Git blob 原字节保存，96 个文件的来源与哈希见[导入说明](docs/evidence/2026-11-15-step07-merged/member-import-review.json)。组员原记录按其原受测 SHA 理解，不将旧并发、三视口或其他观察自动继承为新结论。
+
+本轮统一受测源码为 `9e61c3e88761519fc63a4d99cafb006a51eacfa5`，源码预检工作区干净；两端已重新执行 Wrapper `verify`，均 BUILD SUCCESS、退出 0，完整新命令与日志已在本轮证据归档。新的运行输入及摘要 起测工作区干净，140 个输入，清单 SHA-256 `c5f13d7ad5e1fc42ef45b19bdcb246788df5add2e5baad2830d8a50cb5ef9fbb`；结束及归档前逐项未漂移；私有库端口与环境 Windows/JDK21.0.12.1/Wrapper3.9.16/MySQL 8.4.9；成功轮私有端口 53954、库 csucampuscraft，双端127.0.0.1:8080/8081；库UUID、私有datadir、监听PID、两JAR SHA及真实UTC/本地时间均在 attempt2 原始记录，SQL连接逐次UTC；执行实际日期为2026-11-14，不改为目录批次日期；新 HTTP/SQL/徽标/浏览器结论 通过（全新私有库 attempt2；本步范围自动验收通过，台账仍待复核），见[STEP07 合并说明与最终验证](docs/测试与验收用例.md#合并说明与最终验证)和[新证据入口](docs/evidence/2026-11-15-step07-merged/README.md)。不得复用两边旧结果冒充本轮重跑。
+
+台账继续待复核，负责人及复核人实名待填；组员参与的 Git 作者为 `emmm2315`，实名另补，Codex 参与集成和初稿整理，不能代替组员签字。TST-08–11、TST-17 仍只按购物车本步覆盖，结算确认留 STEP08、下单留 STEP09，未覆盖的真实购物车并发、旧确认和后段故障回滚留 STEP13。本轮新增身份中途禁用交错检查的实际结果亦须新证据证明，不扩张为所有并发通过。管理端、DDL、POM、Wrapper、共享素材和 Word 不改。
+
+新目录名按本轮指定为 `2026-11-15-step07-merged`；准备阶段实际时钟日期是 2026-11-14，执行日期与时间以新 result、HTTP 和命令原始时间戳为准，不将日志改写成目录日期。

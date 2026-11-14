@@ -1,0 +1,20 @@
+{
+  "result": "PASS_STATIC_REVIEW",
+  "reviewer": "Codex root and independent backend/UI comparison agents; human team review pending",
+  "tested_sha": "9e61c3e88761519fc63a4d99cafb006a51eacfa5",
+  "merge_sha": "457d77a0a2a9920262175663d6f5a480c719d38f",
+  "merge_parents": ["dda8f8254eec3f63e9c3bede397131cbe55c6179", "221dfb6dfa4fe93d69ffe1eecda97e98705406e1"],
+  "selected_source_files": 2,
+  "observations": [
+    "ours merge strategy retained exactly the original local tree and both histories before selected changes.",
+    "Only CartService.java and products/detail.html differ from the local source implementation.",
+    "Actual quantity changes check unavailable product after valid-version same-value early return, yielding409 CART_PRODUCT_UNAVAILABLE with removal guidance.",
+    "Add unavailable/DRAFT remains404; same-value, MAX, ownership/version/CAS and removal behavior are retained.",
+    "CartItemMapper and CustomerWriteGuard are unchanged; no explicit product FOR UPDATE was imported.",
+    "Guest in-stock detail renders a fixed login link and manual-confirmation guidance without a POST form; sold-out guest cannot buy.",
+    "Authenticated purchase form is retained, including CSRF/raw error redisplay and every pre-existing data marker; new guest link has data-login-to-add.",
+    "No admin, schema, POM, Wrapper, assets, U05/CSS, public badge model, auth/CSRF ordering or other STEP source changes."
+  ],
+  "findings": [],
+  "limits": "Static findings are separate from the fresh attempt2 HTTP/database/browser/native results. Old member/local PASS results were not reused as merged verification."
+}

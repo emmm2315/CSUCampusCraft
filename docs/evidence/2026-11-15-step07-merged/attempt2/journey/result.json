@@ -1,0 +1,212 @@
+{
+  "overall": "PASS",
+  "completed": true,
+  "error": null,
+  "checks": [
+    {
+      "name": "guest-detail-200",
+      "passed": true
+    },
+    {
+      "name": "guest-detail-no-post-form",
+      "passed": true
+    },
+    {
+      "name": "guest-detail-no-add-form",
+      "passed": true
+    },
+    {
+      "name": "guest-login-link-one",
+      "passed": true
+    },
+    {
+      "name": "guest-login-target",
+      "passed": true
+    },
+    {
+      "name": "guest-badge-zero",
+      "passed": true
+    },
+    {
+      "name": "journey-guest-login-link-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "journey-guest-login-link-labels",
+      "passed": true
+    },
+    {
+      "name": "login-return-hidden",
+      "passed": true
+    },
+    {
+      "name": "journey-login-page-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "journey-login-page-labels",
+      "passed": true
+    },
+    {
+      "name": "redirect-body-empty-POST-/login",
+      "passed": true
+    },
+    {
+      "name": "login-post-303",
+      "passed": true
+    },
+    {
+      "name": "returned-detail-authenticated",
+      "passed": true
+    },
+    {
+      "name": "returned-detail-real-add-form",
+      "passed": true
+    },
+    {
+      "name": "returned-detail-no-auto-replay",
+      "passed": true
+    },
+    {
+      "name": "journey-returned-detail-manual-add-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "journey-returned-detail-manual-add-labels",
+      "passed": true
+    },
+    {
+      "name": "manual-form-product",
+      "passed": true
+    },
+    {
+      "name": "manual-form-one-csrf",
+      "passed": true
+    },
+    {
+      "name": "redirect-body-empty-POST-/cart/items",
+      "passed": true
+    },
+    {
+      "name": "manual-add-post-303",
+      "passed": true
+    },
+    {
+      "name": "cart-after-manual-one-row",
+      "passed": true
+    },
+    {
+      "name": "cart-after-manual-badge-one",
+      "passed": true
+    },
+    {
+      "name": "cart-after-manual-product",
+      "passed": true
+    },
+    {
+      "name": "journey-cart-after-manual-add-no-overflow",
+      "passed": true
+    },
+    {
+      "name": "journey-cart-after-manual-add-labels",
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "journey-guest-login-link-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1616,
+      "sha256": "87a1c3c7ef8311b50cdc980c9877dd5b870699cbef6bd3a325e2309da19df0be",
+      "observation": {
+        "pageId": "U03",
+        "badge": "0",
+        "overflow": false,
+        "guestLink": "/login?returnUrl=/products/56",
+        "addForms": 0,
+        "postForms": 0,
+        "authenticated": "false",
+        "labels": true
+      }
+    },
+    {
+      "path": "journey-login-page-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 768,
+      "sha256": "2b71833f54299377a2df257331c37992d46cfaa784a855f0e95fea17c9cbf206",
+      "observation": {
+        "pageId": "U04",
+        "badge": "0",
+        "overflow": false,
+        "guestLink": null,
+        "addForms": 0,
+        "postForms": 1,
+        "authenticated": "false",
+        "labels": true
+      }
+    },
+    {
+      "path": "journey-returned-detail-manual-add-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1665,
+      "sha256": "eb29960795cccb5d714c00cff67e3c1f24ddc65f8f039b88ada5aeb59743de11",
+      "observation": {
+        "pageId": "U03",
+        "badge": "0",
+        "overflow": false,
+        "guestLink": null,
+        "addForms": 1,
+        "postForms": 2,
+        "authenticated": "true",
+        "labels": true
+      }
+    },
+    {
+      "path": "journey-cart-after-manual-add-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 826,
+      "sha256": "712af09c0fe96d66385d3a522b3f67ba7a56c220f7c11846a1061ba51dfeabf7",
+      "observation": {
+        "pageId": "U05",
+        "badge": "1",
+        "overflow": false,
+        "guestLink": null,
+        "addForms": 0,
+        "postForms": 3,
+        "authenticated": "true",
+        "labels": true
+      }
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "path": "/login",
+      "status": 303,
+      "location": "/products/56"
+    },
+    {
+      "id": "2",
+      "path": "/cart/items",
+      "status": 303,
+      "location": "/cart"
+    }
+  ],
+  "secretsRecorded": false
+}
