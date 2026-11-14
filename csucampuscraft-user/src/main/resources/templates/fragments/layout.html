@@ -18,11 +18,12 @@
         <nav class="site-nav" aria-label="站点导航">
             <a th:href="@{/}">首页</a>
             <span class="app-label" th:text="${appId == 'admin' ? '管理端' : '用户端'}">用户端</span>
-            <span class="nav-placeholder" th:if="${appId == 'user'}"
-                  th:attr="aria-label=${'购物车，' + (cartQuantity ?: 0) + ' 件'}">
+            <a class="nav-placeholder" th:if="${appId == 'user'}" th:href="@{/cart}" data-cart-link
+               th:attr="aria-label=${cartQuantityUnavailable == true ? '购物车数量暂不可用' : '购物车，' + (cartQuantity ?: 0) + ' 件'}">
                 购物车 <span id="cart-quantity" class="quantity-badge"
-                           th:attr="data-cart-quantity=${cartQuantity ?: 0}" th:text="${cartQuantity ?: 0}">0</span>
-            </span>
+                           th:attr="data-cart-quantity=${cartQuantityUnavailable == true ? null : (cartQuantity ?: 0)},data-cart-quantity-unavailable=${cartQuantityUnavailable == true}"
+                           th:text="${cartQuantityUnavailable == true ? '—' : (cartQuantity ?: 0)}">0</span>
+            </a>
             <a th:if="${currentUser == null}" th:href="@{/login}">登录</a>
             <span th:if="${currentUser != null}" class="app-label" data-current-user
                   th:text="${currentUser.displayName}">当前用户</span>

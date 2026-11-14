@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('我的购物车 · CSUCampusCraft', ~{::mainContent})}">
+<head><title>我的购物车</title></head>
+<body>
+<div th:fragment="mainContent" class="cart-page" data-page-id="U05"
+     th:attr="data-cart-item-count=${cart.itemCount},data-cart-quantity=${cart.quantity},data-cart-invalid-count=${cart.invalidCount},data-cart-all-valid=${cart.allValid}">
+    <header class="page-heading cart-heading">
+        <div>
+            <p class="eyebrow">CSUCampusCraft</p>
+            <h1>我的购物车</h1>
+            <p class="muted">按当前商品价格与库存核对，购物车不预留库存。</p>
+        </div>
+        <div class="button-row">
+            <a class="button button-secondary" th:href="@{/products}">继续选购</a>
+            <a class="button button-secondary" th:href="${reloadUrl}" data-reload-cart>重新载入购物车</a>
+        </div>
+    </header>
+
+    <th:block th:replace="~{fragments/alerts :: summary(${errorAnchors})}"></th:block>
+
+    <section class="panel cart-failed-target" th:if="${formItemId != null and !formItemPresent}"
+             th:with="prefix=${'item-' + formItemId + '-'}" aria-labelledby="cart-failed-target-title">
+        <h2 id="cart-failed-target-title">核对未保存的提交</h2>
+        <p>本次操作未保存，目标记录已不在当前购物车。请重新载入后核对。</p>
+        <dl class="cart-failed-values">
+            <div th:id="${prefix + 'quantity'}">
+                <dt>提交的数量</dt><dd th:text="${cartForm.quantity ?: '未填写'}">数量</dd>
+                <dd class="field-error" th:if="${fieldErrors.containsKey('quantity')}" th:text="${fieldErrors.get('quantity')}">请检查数量。</dd>
+            </div>
+            <div th:id="${prefix + 'version'}">
+                <dt>提交的购物车版本</dt><dd th:text="${cartForm.version ?: '未填写'}">版本</dd>
+                <dd class="field-error" th:if="${fieldErrors.containsKey('version')}" th:text="${fieldErrors.get('version')}">请重新载入购物车。</dd>
+            </div>
+        </dl>
+        <a th:href="${reloadUrl}">重新载入购物车，按当前记录继续</a>
+    </section>
+
+    <section class="empty-state cart-empty" th:if="${cart.empty}" data-cart-empty aria-labelledby="cart-empty-title">
+        <h2 id="cart-empty-title">购物车还是空的</h2>
+        <p>去挑选喜欢的校园文创，把心意放进购物车。</p>
+        <a class="button" th:href="@{/products}">去逛逛</a>
+    </section>
+
+    <th:block th:if="${!cart.empty}">
+        <div class="alert alert-warning" th:if="${cart.hasInvalidItems}" role="status" data-cart-invalid-notice>
+            <p>购物车中有 <strong th:text="${cart.invalidCount}">0</strong> 种失效商品，请调整数量或移除后再结算。</p>
+            <p>下架、售罄和超库存条目仍保留在车中，也计入导航件数。</p>
+        </div>
+        <div class="table-container cart-table-container">
+            <table class="cart-table">
+                <caption>共 <span th:text="${cart.itemCount}">0</span> 种商品，<span th:text="${cart.quantity}">0</span> 件</caption>
+                <thead>
+                <tr><th scope="col">商品与库存</th><th scope="col">当前单价</th><th scope="col">数量</th><th scope="col">有效小计</th><th scope="col">操作</th></tr>
+                </thead>
+                <tbody>
+                <tr th:each="line : ${cart.items}"
+                    th:with="prefix=${'item-' + line.id + '-'},quantityFailed=${formItemId != null and formItemId == line.id and formAction == 'quantity'},removeFailed=${formItemId != null and formItemId == line.id and formAction == 'remove'}"
+                    th:attr="data-cart-item-id=${line.id},data-product-id=${line.productId},data-quantity=${line.quantity},data-version=${line.version},data-cart-valid=${line.valid},data-invalid-reason=${line.invalidCode}"
+                    th:classappend="${line.valid ? '' : 'cart-line-invalid'}">
+                    <td>
+                        <div class="cart-product">
+                            <div class="cart-product-image">
+                                <th:block th:replace="~{fragments/images :: image(${line.coverImage},${line.name})}"></th:block>
+                            </div>
+                            <div class="cart-product-info">
+                                <h2>
+                                    <a th:if="${line.publicProduct}" th:href="@{/products/{id}(id=${line.productId})}" th:text="${line.name}">商品名称</a>
+                                    <span th:if="${!line.publicProduct}" th:text="${line.name}">商品名称</span>
+                                </h2>
+                                <p class="cart-sku muted">SKU：<span th:text="${line.sku}">SKU</span></p>
+                                <p class="field-help" th:text="${'当前库存：' + line.stock}">当前库存</p>
+                                <p class="cart-availability" th:classappend="${line.valid ? 'cart-availability-valid' : 'cart-availability-invalid'}"
+                                   th:text="${line.valid ? '可购买' : line.invalidReason}" data-cart-line-state>状态</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="cart-money" th:text="${'¥' + #numbers.formatDecimal(line.price,1,'NONE',2,'POINT')}">¥0.00</td>
+                    <td>
+                        <form method="post" th:action="@{/cart/items/{id}/quantity(id=${line.id})}"
+                              data-submit-state data-cart-action="quantity" th:attr="data-cart-item-id=${line.id}"
+                              th:with="quantityError=${quantityFailed and fieldErrors.containsKey('quantity')}">
+                            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+                            <input type="hidden" name="version" th:value="${quantityFailed ? cartForm.version : line.version}">
+                            <div class="form-field">
+                                <label th:for="${prefix + 'quantity'}">购买数量</label>
+                                <input type="number" name="quantity" inputmode="numeric" min="1" max="99" step="1" required
+                                       th:id="${prefix + 'quantity'}" th:type="${quantityError ? 'text' : 'number'}"
+                                       th:value="${quantityFailed ? cartForm.quantity : line.quantity}"
+                                       th:classappend="${quantityError ? 'input-error' : ''}"
+                                       th:attr="aria-invalid=${quantityError},aria-describedby=${quantityError ? prefix + 'quantity-error ' + prefix + 'quantity-help' : prefix + 'quantity-help'}">
+                                <p class="field-error" th:if="${quantityError}" th:id="${prefix + 'quantity-error'}"
+                                   th:text="${fieldErrors.get('quantity')}">请检查数量。</p>
+                                <p class="field-help" th:id="${prefix + 'quantity-help'}">每种 1–99 件，保存时核对库存。</p>
+                            </div>
+                            <button type="submit" class="button-secondary">更新数量</button>
+                        </form>
+                        <p class="field-error cart-version-feedback" th:id="${prefix + 'version'}"
+                           th:if="${(quantityFailed or removeFailed) and fieldErrors.containsKey('version')}"
+                           th:text="${fieldErrors.get('version')}" data-cart-version-feedback>请重新载入购物车。</p>
+                    </td>
+                    <td class="cart-money">
+                        <strong th:if="${line.valid}" th:text="${'¥' + #numbers.formatDecimal(line.subtotal,1,'NONE',2,'POINT')}"
+                                th:attr="data-line-subtotal=${line.subtotal}">¥0.00</strong>
+                        <span class="field-help" th:if="${!line.valid}" data-line-subtotal-excluded>不计入小计</span>
+                    </td>
+                    <td>
+                        <form method="post" th:action="@{/cart/items/{id}/remove(id=${line.id})}"
+                              data-submit-state data-cart-action="remove" th:attr="data-cart-item-id=${line.id}">
+                            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+                            <input type="hidden" name="version" th:value="${removeFailed ? cartForm.version : line.version}">
+                            <button type="submit" class="button-danger">移除</button>
+                        </form>
+                        <p class="field-help cart-remove-help">失效商品也可移除。</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </th:block>
+
+    <section class="panel cart-summary" aria-labelledby="cart-summary-title">
+        <div>
+            <h2 id="cart-summary-title" th:text="${cart.hasInvalidItems ? '有效条目小计' : '商品金额合计'}">商品金额合计</h2>
+            <p class="field-help" th:if="${cart.hasInvalidItems}">失效条目不计入小计，处理完毕后才能整车结算。</p>
+            <p class="field-help" th:if="${!cart.hasInvalidItems}">按当前单价计算，实际成交金额以确认时为准。</p>
+            <p class="cart-total product-price" th:attr="data-cart-total=${cart.validSubtotal}"
+               th:text="${'¥' + #numbers.formatDecimal(cart.validSubtotal,1,'NONE',2,'POINT')}">¥0.00</p>
+        </div>
+        <div class="cart-checkout">
+            <!-- STEP08 接入整车确认；本步不注册或链接结算与订单路由。 -->
+            <button type="button" disabled data-checkout-unavailable aria-describedby="cart-checkout-help">整车结算</button>
+            <p id="cart-checkout-help" class="field-help"
+               th:text="${cart.empty ? '请先选购商品。' : (cart.hasInvalidItems ? '请先处理失效商品后结算。' : '结算功能暂未开放。')}">结算说明</p>
+        </div>
+    </section>
+</div>
+</body>
+</html>

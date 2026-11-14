@@ -3,6 +3,12 @@ package org.csucampuscraft.storefront.foundation.web;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import org.csucampuscraft.storefront.auth.CartRequestNavigation;
+import org.csucampuscraft.storefront.auth.SessionExpiredException;
+import org.csucampuscraft.storefront.auth.SessionSupport;
+import org.csucampuscraft.storefront.foundation.security.ReturnUrlPolicy;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.springframework.beans.TypeMismatchException;
@@ -14,13 +20,33 @@ import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 /** Maps expected failures without reflecting submitted values or technical exception messages. */
 @ControllerAdvice
 public final class GlobalExceptionHandler {
     private final PageModelAdvice pageModels;
 
-    public GlobalExceptionHandler(PageModelAdvice pageModels) { this.pageModels = pageModels; }
+    private final SessionSupport sessions;
+    private final ReturnUrlPolicy returns;
+
+    public GlobalExceptionHandler(PageModelAdvice pageModels, SessionSupport sessions, ReturnUrlPolicy returns) {
+        this.pageModels = pageModels;
+        this.sessions = sessions;
+        this.returns = returns;
+    }
+
+    @ExceptionHandler(SessionExpiredException.class)
+    public ModelAndView expired(SessionExpiredException exception, HttpServletRequest request) {
+        sessions.clear(request);
+        String target = returns.resolve(CartRequestNavigation.readDestination(request), "/");
+        RedirectView redirect = new RedirectView("/login?returnUrl="
+                + URLEncoder.encode(target, StandardCharsets.UTF_8), true);
+        redirect.setStatusCode(HttpStatus.FOUND);
+        redirect.setExposeModelAttributes(false);
+        redirect.setExpandUriTemplateVariables(false);
+        return new ModelAndView(redirect);
+    }
 
     @ExceptionHandler(BusinessException.class)
     public ModelAndView business(BusinessException exception, HttpServletRequest request) {

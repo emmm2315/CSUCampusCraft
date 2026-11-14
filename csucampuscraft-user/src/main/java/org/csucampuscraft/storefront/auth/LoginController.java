@@ -42,6 +42,9 @@ public final class LoginController {
         sessions.clear(request);
         model.addAttribute("currentUser", null);
         model.addAttribute("authenticated", false);
+        // PageModelAdvice ran before reauthentication cleared the old identity.
+        model.addAttribute("cartQuantity", 0);
+        model.addAttribute("cartQuantityUnavailable", false);
         Map<String, String> fields = new LinkedHashMap<>();
         String username = single(parameters, "username", fields);
         username = username == null ? "" : username.strip();
@@ -94,4 +97,3 @@ public final class LoginController {
         return returns.resolve(values != null && values.size() == 1 ? values.get(0) : null, "/");
     }
 }
-

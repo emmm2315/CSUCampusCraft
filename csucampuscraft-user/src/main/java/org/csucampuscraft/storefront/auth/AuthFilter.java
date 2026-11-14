@@ -57,7 +57,10 @@ public final class AuthFilter extends OncePerRequestFilter {
 
     private boolean authorize(HttpServletRequest request, HttpServletResponse response) {
         String path = request.getServletPath();
-        if (publicInfrastructure(path)) return true;
+        if (publicInfrastructure(path)) {
+            if ("/error".equals(path)) response.setHeader("Cache-Control", "no-store");
+            return true;
+        }
         boolean protectedRequest = isProtected(request, path);
         if (protectedRequest || "/login".equals(path)) response.setHeader("Cache-Control", "no-store");
         SessionIdentity identity = sessions.identity(request);
@@ -80,6 +83,11 @@ public final class AuthFilter extends OncePerRequestFilter {
         }
         if (!AuthService.REQUIRED_ROLE.equals(user.getRole())) {
             if (protectedRequest) {
+                if (CartRequestNavigation.isCartWrite(request)) {
+                    // Defer only these three POSTs: CSRF must precede role and field validation.
+                    request.setAttribute(CartRequestNavigation.ROLE_REJECTED, Boolean.TRUE);
+                    return true;
+                }
                 throw new BusinessException(HttpStatus.FORBIDDEN, "AUTH_ROLE_FORBIDDEN",
                         "当前账号无权访问此页面。");
             }
@@ -107,11 +115,8 @@ public final class AuthFilter extends OncePerRequestFilter {
     }
 
     private void redirectToLogin(HttpServletRequest request, HttpServletResponse response) {
-        // Only the original GET may become a destination; POST is never replayed.
-        String requested = "GET".equals(request.getMethod())
-                ? request.getRequestURI().substring(request.getContextPath().length())
-                    + (request.getQueryString() == null ? "" : "?" + request.getQueryString())
-                : "/";
+        // Cart writes choose a fixed product/cart GET; the original POST is never replayed.
+        String requested = CartRequestNavigation.readDestination(request);
         String target = returns.resolve(requested, "/");
         response.setStatus(HttpServletResponse.SC_FOUND);
         response.setHeader("Location", request.getContextPath() + "/login?returnUrl="
@@ -144,4 +149,3 @@ public final class AuthFilter extends OncePerRequestFilter {
         }
     }
 }
-

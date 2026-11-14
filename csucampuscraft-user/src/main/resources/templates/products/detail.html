@@ -13,6 +13,10 @@
         <span aria-hidden="true">/</span><span aria-current="page" th:text="${product.name}">商品名称</span>
     </nav>
 
+    <th:block th:if="${purchaseFailure == true}">
+        <th:block th:replace="~{fragments/alerts :: summary(${errorAnchors})}"></th:block>
+    </th:block>
+
     <section class="catalog-detail-main" aria-labelledby="product-heading">
         <figure class="catalog-cover" data-cover-image>
             <th:block th:replace="~{fragments/images :: image(${product.coverImage},${product.name})}"></th:block>
@@ -25,14 +29,37 @@
             <p class="product-price detail-price" th:text="${'¥' + #numbers.formatDecimal(product.price,1,'NONE',2,'POINT')}">¥0.00</p>
             <p class="stock-badge" th:classappend="${product.stock == 0 ? 'stock-sold-out' : ''}"
                th:text="${product.stock == 0 ? '售罄 · 库存 0' : '现货 · 库存 ' + product.stock}">库存</p>
-            <div class="catalog-purchase-disabled" aria-labelledby="purchase-heading">
-                <!-- STEP07 接入：本步只读，不注册加购 POST，也不跳转登录。 -->
+            <section class="catalog-purchase" aria-labelledby="purchase-heading">
                 <h2 id="purchase-heading">选购</h2>
-                <label for="purchase-quantity">数量</label>
-                <input id="purchase-quantity" type="number" min="1" value="1" disabled aria-describedby="purchase-help">
-                <button type="button" disabled aria-describedby="purchase-help">加入购物车</button>
-                <p id="purchase-help" class="field-help">暂未开放</p>
-            </div>
+                <form method="post" th:action="@{/cart/items}" data-submit-state data-add-cart
+                      th:with="quantityError=${fieldErrors != null and fieldErrors.containsKey('quantity')}">
+                    <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+                    <input type="hidden" name="productId" th:value="${product.id}">
+                    <p id="purchase-productId" class="field-error" th:if="${fieldErrors != null and fieldErrors.containsKey('productId')}"
+                       th:text="${fieldErrors.get('productId')}">请重新载入商品详情。</p>
+                    <div class="purchase-controls">
+                        <div class="form-field">
+                            <label for="purchase-quantity">数量</label>
+                            <input id="purchase-quantity" name="quantity" type="number" inputmode="numeric" min="1" max="99" step="1" required
+                                   th:type="${quantityError ? 'text' : 'number'}"
+                                   th:value="${purchaseFailure == true ? purchaseQuantity : '1'}"
+                                   th:disabled="${product.stock == 0}"
+                                   th:classappend="${quantityError ? 'input-error' : ''}"
+                                   th:attr="aria-invalid=${quantityError},aria-describedby=${quantityError ? 'purchase-quantity-error purchase-help' : 'purchase-help'}">
+                            <p id="purchase-quantity-error" class="field-error" th:if="${quantityError}"
+                               th:text="${fieldErrors.get('quantity')}">请检查数量。</p>
+                        </div>
+                        <button type="submit" th:disabled="${product.stock == 0}" aria-describedby="purchase-help">加入购物车</button>
+                    </div>
+                    <p id="purchase-help" class="field-help"
+                       th:text="${product.stock == 0 ? '商品已售罄，暂不可购买。' : '单次可加 1–99 件，同一商品在购物车中最多 99 件；提交时核对当前库存。'}">购买数量说明</p>
+                    <p class="field-help" th:if="${currentUser == null}">游客点击后先登录，返回本页后请重新确认加购。</p>
+                    <div class="purchase-recovery" th:if="${purchaseFailure == true}">
+                        <a th:href="@{/products/{id}(id=${product.id})}">重新载入商品详情</a>
+                        <a th:href="@{/cart}">前往购物车核对数量</a>
+                    </div>
+                </form>
+            </section>
         </div>
     </section>
 
