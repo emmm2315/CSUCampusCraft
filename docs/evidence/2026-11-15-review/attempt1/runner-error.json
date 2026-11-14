@@ -1,0 +1,5 @@
+{
+  "at": "2026-11-14T17:03:26.748811+00:00",
+  "stage": "A",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\Github Projects\\CSUCampusCraft\\docs\\evidence\\2026-11-15-review\\run_review.py\", line 245, in <module>\n    for fn in [A,B,C,D]: fn(r)\n                         ~~^^^\n  File \"D:\\Github Projects\\CSUCampusCraft\\docs\\evidence\\2026-11-15-review\\run_review.py\", line 36, in A\n    r.req(r.u,'a','GET','/',302,label='user cookie cannot authenticate admin')\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Github Projects\\CSUCampusCraft\\docs\\evidence\\2026-11-15-review\\common.py\", line 60, in req\n    payload=dict(data or {})\nTypeError: 'int' object is not iterable\n"
+}

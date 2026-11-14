@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>我的购物车 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="user" data-authenticated="true">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <span class="app-label">用户端</span>
+            <a class="nav-placeholder" href="/cart" data-cart-link aria-label="购物车，8 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="8" data-cart-quantity-unavailable="false">8</span>
+            </a>
+            <a href="/orders" data-orders-link>我的订单</a>
+            
+            <span class="app-label" data-current-user>[REDACTED]</span>
+            <form method="post" action="/logout" data-submit-state data-logout-form>
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div class="cart-page" data-page-id="U05" data-cart-item-count="6" data-cart-quantity="8" data-cart-invalid-count="3" data-cart-all-valid="false">
+    <header class="page-heading cart-heading">
+        <div>
+            <p class="eyebrow">CSUCampusCraft</p>
+            <h1>我的购物车</h1>
+            <p class="muted">按当前商品价格与库存核对，购物车不预留库存。</p>
+        </div>
+        <div class="button-row">
+            <a class="button button-secondary" href="/products">继续选购</a>
+            <a class="button button-secondary" href="/cart" data-reload-cart>重新载入购物车</a>
+        </div>
+    </header>
+
+    
+
+    
+
+    
+
+    
+        <div class="alert alert-warning" role="status" data-cart-invalid-notice>
+            <p>购物车中有 <strong>3</strong> 种失效商品，请调整数量或移除后再结算。</p>
+            <p>下架、售罄和超库存条目仍保留在车中，也计入导航件数。</p>
+        </div>
+        <div class="table-container cart-table-container">
+            <table class="cart-table">
+                <caption>共 <span>6</span> 种商品，<span>8</span> 件</caption>
+                <thead>
+                <tr><th scope="col">商品与库存</th><th scope="col">当前单价</th><th scope="col">数量</th><th scope="col">有效小计</th><th scope="col">操作</th></tr>
+                </thead>
+                <tbody>
+                <tr data-cart-item-id="1" data-product-id="1" data-quantity="2" data-version="0" data-cart-valid="true" data-invalid-reason="VALID">
+                    <td>
+                        <div class="cart-product">
+                            <div class="cart-product-image">
+                                <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="潇湘校区图书馆方格本" data-image-fallback="/images/catalog-placeholder.svg">
+                            </div>
+                            <div class="cart-product-info">
+                                <h2>
+                                    <a href="/products/1">潇湘校区图书馆方格本</a>
+                                    
+                                </h2>
+                                <p class="cart-sku muted">SKU：<span>CSU-LMK-NOTE-01</span></p>
+                                <p class="field-help">当前库存：10</p>
+                                <p class="cart-availability cart-availability-valid" data-cart-line-state>可购买</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="cart-money">¥18.00</td>
+                    <td>
+                        <form method="post" action="/cart/items/1/quantity"
+                              data-submit-state data-cart-action="quantity" data-cart-item-id="1">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <div class="form-field">
+                                <label for="item-1-quantity">购买数量</label>
+                                <input type="number" name="quantity" inputmode="numeric" min="1" max="99" step="1" required
+                                       id="item-1-quantity" value="2"
+                                       aria-invalid="false" aria-describedby="item-1-quantity-help">
+                                
+                                <p class="field-help" id="item-1-quantity-help">每种 1–99 件，保存时核对库存。</p>
+                            </div>
+                            <button type="submit" class="button-secondary">更新数量</button>
+                        </form>
+                        
+                    </td>
+                    <td class="cart-money">
+                        <strong data-line-subtotal="36.00">¥36.00</strong>
+                        
+                    </td>
+                    <td>
+                        <form method="post" action="/cart/items/1/remove"
+                              data-submit-state data-cart-action="remove" data-cart-item-id="1">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <button type="submit" class="button-danger">移除</button>
+                        </form>
+                        <p class="field-help cart-remove-help">失效商品也可移除。</p>
+                    </td>
+                </tr>
+                <tr data-cart-item-id="2" data-product-id="14" data-quantity="1" data-version="0" data-cart-valid="true" data-invalid-reason="VALID">
+                    <td>
+                        <div class="cart-product">
+                            <div class="cart-product-image">
+                                <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="材料科学与工程学院晶格笔记本" data-image-fallback="/images/catalog-placeholder.svg">
+                            </div>
+                            <div class="cart-product-info">
+                                <h2>
+                                    <a href="/products/14">材料科学与工程学院晶格笔记本</a>
+                                    
+                                </h2>
+                                <p class="cart-sku muted">SKU：<span>CSU-COL-NOTE-01</span></p>
+                                <p class="field-help">当前库存：21</p>
+                                <p class="cart-availability cart-availability-valid" data-cart-line-state>可购买</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="cart-money">¥25.00</td>
+                    <td>
+                        <form method="post" action="/cart/items/2/quantity"
+                              data-submit-state data-cart-action="quantity" data-cart-item-id="2">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <div class="form-field">
+                                <label for="item-2-quantity">购买数量</label>
+                                <input type="number" name="quantity" inputmode="numeric" min="1" max="99" step="1" required
+                                       id="item-2-quantity" value="1"
+                                       aria-invalid="false" aria-describedby="item-2-quantity-help">
+                                
+                                <p class="field-help" id="item-2-quantity-help">每种 1–99 件，保存时核对库存。</p>
+                            </div>
+                            <button type="submit" class="button-secondary">更新数量</button>
+                        </form>
+                        
+                    </td>
+                    <td class="cart-money">
+                        <strong data-line-subtotal="25.00">¥25.00</strong>
+                        
+                    </td>
+                    <td>
+                        <form method="post" action="/cart/items/2/remove"
+                              data-submit-state data-cart-action="remove" data-cart-item-id="2">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <button type="submit" class="button-danger">移除</button>
+                        </form>
+                        <p class="field-help cart-remove-help">失效商品也可移除。</p>
+                    </td>
+                </tr>
+                <tr data-cart-item-id="3" data-product-id="18" data-quantity="2" data-version="0" data-cart-valid="false" data-invalid-reason="OVER_STOCK" class="cart-line-invalid">
+                    <td>
+                        <div class="cart-product">
+                            <div class="cart-product-image">
+                                <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="建筑与艺术学院线稿铅笔套装" data-image-fallback="/images/catalog-placeholder.svg">
+                            </div>
+                            <div class="cart-product-info">
+                                <h2>
+                                    <a href="/products/18">建筑与艺术学院线稿铅笔套装</a>
+                                    
+                                </h2>
+                                <p class="cart-sku muted">SKU：<span>CSU-COL-PEN-01</span></p>
+                                <p class="field-help">当前库存：1</p>
+                                <p class="cart-availability cart-availability-invalid" data-cart-line-state>数量超过当前库存，请减少数量或移除。</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="cart-money">¥13.00</td>
+                    <td>
+                        <form method="post" action="/cart/items/3/quantity"
+                              data-submit-state data-cart-action="quantity" data-cart-item-id="3">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <div class="form-field">
+                                <label for="item-3-quantity">购买数量</label>
+                                <input type="number" name="quantity" inputmode="numeric" min="1" max="99" step="1" required
+                                       id="item-3-quantity" value="2"
+                                       aria-invalid="false" aria-describedby="item-3-quantity-help">
+                                
+                                <p class="field-help" id="item-3-quantity-help">每种 1–99 件，保存时核对库存。</p>
+                            </div>
+                            <button type="submit" class="button-secondary">更新数量</button>
+                        </form>
+                        
+                    </td>
+                    <td class="cart-money">
+                        
+                        <span class="field-help" data-line-subtotal-excluded>不计入小计</span>
+                    </td>
+                    <td>
+                        <form method="post" action="/cart/items/3/remove"
+                              data-submit-state data-cart-action="remove" data-cart-item-id="3">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <button type="submit" class="button-danger">移除</button>
+                        </form>
+                        <p class="field-help cart-remove-help">失效商品也可移除。</p>
+                    </td>
+                </tr>
+                <tr data-cart-item-id="4" data-product-id="30" data-quantity="1" data-version="0" data-cart-valid="false" data-invalid-reason="DRAFT" class="cart-line-invalid">
+                    <td>
+                        <div class="cart-product">
+                            <div class="cart-product-image">
+                                <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="社团活动记录册" data-image-fallback="/images/catalog-placeholder.svg">
+                            </div>
+                            <div class="cart-product-info">
+                                <h2>
+                                    
+                                    <span>社团活动记录册</span>
+                                </h2>
+                                <p class="cart-sku muted">SKU：<span>CSU-CLB-FOLDER-02</span></p>
+                                <p class="field-help">当前库存：6</p>
+                                <p class="cart-availability cart-availability-invalid" data-cart-line-state>商品已下架，可移除此条目。</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="cart-money">¥18.50</td>
+                    <td>
+                        <form method="post" action="/cart/items/4/quantity"
+                              data-submit-state data-cart-action="quantity" data-cart-item-id="4">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <div class="form-field">
+                                <label for="item-4-quantity">购买数量</label>
+                                <input type="number" name="quantity" inputmode="numeric" min="1" max="99" step="1" required
+                                       id="item-4-quantity" value="1"
+                                       aria-invalid="false" aria-describedby="item-4-quantity-help">
+                                
+                                <p class="field-help" id="item-4-quantity-help">每种 1–99 件，保存时核对库存。</p>
+                            </div>
+                            <button type="submit" class="button-secondary">更新数量</button>
+                        </form>
+                        
+                    </td>
+                    <td class="cart-money">
+                        
+                        <span class="field-help" data-line-subtotal-excluded>不计入小计</span>
+                    </td>
+                    <td>
+                        <form method="post" action="/cart/items/4/remove"
+                              data-submit-state data-cart-action="remove" data-cart-item-id="4">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <button type="submit" class="button-danger">移除</button>
+                        </form>
+                        <p class="field-help cart-remove-help">失效商品也可移除。</p>
+                    </td>
+                </tr>
+                <tr data-cart-item-id="5" data-product-id="47" data-quantity="1" data-version="0" data-cart-valid="false" data-invalid-reason="SOLD_OUT" class="cart-line-invalid">
+                    <td>
+                        <div class="cart-product">
+                            <div class="cart-product-image">
+                                <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="校园田径主题立牌" data-image-fallback="/images/catalog-placeholder.svg">
+                            </div>
+                            <div class="cart-product-info">
+                                <h2>
+                                    <a href="/products/47">校园田径主题立牌</a>
+                                    
+                                </h2>
+                                <p class="cart-sku muted">SKU：<span>CSU-SPT-STAND-01</span></p>
+                                <p class="field-help">当前库存：0</p>
+                                <p class="cart-availability cart-availability-invalid" data-cart-line-state>商品已售罄，可移除此条目。</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="cart-money">¥27.00</td>
+                    <td>
+                        <form method="post" action="/cart/items/5/quantity"
+                              data-submit-state data-cart-action="quantity" data-cart-item-id="5">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <div class="form-field">
+                                <label for="item-5-quantity">购买数量</label>
+                                <input type="number" name="quantity" inputmode="numeric" min="1" max="99" step="1" required
+                                       id="item-5-quantity" value="1"
+                                       aria-invalid="false" aria-describedby="item-5-quantity-help">
+                                
+                                <p class="field-help" id="item-5-quantity-help">每种 1–99 件，保存时核对库存。</p>
+                            </div>
+                            <button type="submit" class="button-secondary">更新数量</button>
+                        </form>
+                        
+                    </td>
+                    <td class="cart-money">
+                        
+                        <span class="field-help" data-line-subtotal-excluded>不计入小计</span>
+                    </td>
+                    <td>
+                        <form method="post" action="/cart/items/5/remove"
+                              data-submit-state data-cart-action="remove" data-cart-item-id="5">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <button type="submit" class="button-danger">移除</button>
+                        </form>
+                        <p class="field-help cart-remove-help">失效商品也可移除。</p>
+                    </td>
+                </tr>
+                <tr data-cart-item-id="6" data-product-id="56" data-quantity="1" data-version="0" data-cart-valid="true" data-invalid-reason="VALID">
+                    <td>
+                        <div class="cart-product">
+                            <div class="cart-product-image">
+                                <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="中南毕业纪念礼盒" data-image-fallback="/images/catalog-placeholder.svg">
+                            </div>
+                            <div class="cart-product-info">
+                                <h2>
+                                    <a href="/products/56">中南毕业纪念礼盒</a>
+                                    
+                                </h2>
+                                <p class="cart-sku muted">SKU：<span>CSU-GRAD-BOX-01</span></p>
+                                <p class="field-help">当前库存：12</p>
+                                <p class="cart-availability cart-availability-valid" data-cart-line-state>可购买</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="cart-money">¥49.00</td>
+                    <td>
+                        <form method="post" action="/cart/items/6/quantity"
+                              data-submit-state data-cart-action="quantity" data-cart-item-id="6">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <div class="form-field">
+                                <label for="item-6-quantity">购买数量</label>
+                                <input type="number" name="quantity" inputmode="numeric" min="1" max="99" step="1" required
+                                       id="item-6-quantity" value="1"
+                                       aria-invalid="false" aria-describedby="item-6-quantity-help">
+                                
+                                <p class="field-help" id="item-6-quantity-help">每种 1–99 件，保存时核对库存。</p>
+                            </div>
+                            <button type="submit" class="button-secondary">更新数量</button>
+                        </form>
+                        
+                    </td>
+                    <td class="cart-money">
+                        <strong data-line-subtotal="49.00">¥49.00</strong>
+                        
+                    </td>
+                    <td>
+                        <form method="post" action="/cart/items/6/remove"
+                              data-submit-state data-cart-action="remove" data-cart-item-id="6">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <button type="submit" class="button-danger">移除</button>
+                        </form>
+                        <p class="field-help cart-remove-help">失效商品也可移除。</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    
+
+    <section class="panel cart-summary" aria-labelledby="cart-summary-title">
+        <div>
+            <h2 id="cart-summary-title">有效条目小计</h2>
+            <p class="field-help">失效条目不计入小计，处理完毕后才能整车结算。</p>
+            
+            <p class="cart-total product-price" data-cart-total="110.00">¥110.00</p>
+        </div>
+        <div class="cart-checkout">
+            
+            <button type="button" disabled data-checkout-unavailable
+                    aria-describedby="cart-checkout-help">整车结算</button>
+            <p id="cart-checkout-help" class="field-help">请先处理失效商品后结算。</p>
+        </div>
+    </section>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

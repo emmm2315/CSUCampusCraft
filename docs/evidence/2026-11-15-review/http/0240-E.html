@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>编辑商品 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="admin" data-authenticated="true">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 管理端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <a href="/categories">分类管理</a>
+            <a href="/products">商品管理</a>
+            <a href="/orders" data-admin-orders-link>订单管理</a>
+            <a href="/customers" data-admin-customers-link>顾客管理</a>
+            <span class="app-label">管理端</span>
+            
+
+            
+            <span class="app-label" data-current-user>商城管理员</span>
+            <form method="post" action="/logout" data-submit-state>
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div data-page-id="A05" data-product-id="61" data-version="0">
+    <header class="page-heading admin-toolbar">
+        <div><p class="eyebrow">商品资料</p><h1>编辑商品</h1>
+            <p class="muted">修改资料时保留现有 SKU、库存和上架状态。</p></div>
+        <div class="button-row">
+            <a class="button button-secondary" href="/products">返回商品列表</a>
+            <a class="button button-secondary" href="/products/61/images" data-album-link>管理商品相册</a>
+            <a class="button button-secondary" href="/products/61/edit?returnUrl=/products" data-reload-product>重新载入编辑页</a>
+        </div>
+    </header>
+    
+    
+    <section class="panel">
+        <form method="post" action="/products/61" data-submit-state data-product-form>
+            <input type="hidden" name="_csrf" value="[REDACTED]">
+            <input type="hidden" name="returnUrl" value="/products">
+            <input type="hidden" name="version" value="0">
+            <p id="version" class="field-help">保存时核对商品资料状态；提示过期时请重新载入。</p>
+            <div class="form-grid">
+                
+                <div class="form-field">
+                    <label for="sku">SKU（只读）</label>
+                    <input id="sku" type="text" readonly value="REVIEW-20261115-170629952093">
+                </div>
+                <div class="form-field">
+                    <label for="categoryId">二级分类</label>
+                    <select id="categoryId" name="categoryId" aria-invalid="false">
+                        <option value="">请选择二级分类</option>
+                        <option value="101">校园地标 / 文具</option>
+                        <option value="102">校园地标 / 纪念周边</option>
+                        <option value="201">学院风采 / 文具</option>
+                        <option value="202">学院风采 / 纪念周边</option>
+                        <option value="301">社团活动 / 文具</option>
+                        <option value="302">社团活动 / 纪念周边</option>
+                        <option value="401">校园运动 / 文具</option>
+                        <option value="402">校园运动 / 纪念周边</option>
+                        <option value="501">毕业纪念 / 文具</option>
+                        <option value="502">毕业纪念 / 纪念周边</option>
+                        <option value="504"
+                                selected="selected">复核主题170629952093改 / 复核文具170629952093</option>
+                    </select>
+                    
+                </div>
+                <div class="form-field">
+    <label for="name">商品名称</label>
+    <input type="text" id="name" name="name" value="复核商品170629952093"
+           aria-invalid="false">
+    
+</div>
+                <div class="form-field">
+    <label for="price">售价（元）</label>
+    <input type="text" id="price" name="price" value="7.25"
+           aria-invalid="false">
+    
+</div>
+                
+                <div class="form-field">
+                    <label for="stock">当前库存（只读）</label>
+                    <input id="stock" type="number" readonly value="4">
+                </div>
+                <div class="form-field">
+    <label for="sortOrder">排序值</label>
+    <input type="number" id="sortOrder" name="sortOrder" value="900"
+           min="0" max="2147483647" step="1"
+           aria-invalid="false">
+    
+</div>
+            </div>
+            <p class="field-help">SKU 最多 40 个字符，名称最多 120 个字符。售价为 0.01–9,999,999,999.99 元，最多两位小数。</p>
+            <div class="form-field">
+                <label for="summary">商品摘要</label>
+                <textarea id="summary" name="summary" rows="3" aria-invalid="false" aria-describedby="summary-help">独立复核夹具</textarea>
+                <p id="summary-help" class="field-help">可选，最多 500 个字符。</p>
+                
+            </div>
+            <div class="form-field">
+                <label for="description">设计说明</label>
+                <textarea id="description" name="description" rows="6" aria-invalid="false" aria-describedby="description-help">纯文本说明</textarea>
+                <p id="description-help" class="field-help">可选，按普通文本保存；内容总量最多 65,535 字节。</p>
+                
+            </div>
+            <div class="form-field">
+    <label for="coverImage">封面路径</label>
+    <input type="text" id="coverImage" name="coverImage" value="images/catalog-placeholder.svg"
+           aria-invalid="false">
+    
+</div>
+            <p class="field-help">可留空。填写时使用 images/ 下的站内相对路径，最多 255 个字符。</p>
+            <div class="button-row">
+                <button type="submit">保存资料</button>
+                <a class="button button-secondary" href="/products">取消</a>
+            </div>
+        </form>
+    </section>
+    <section class="panel" aria-labelledby="status-heading">
+        <h2 id="status-heading">商品状态</h2>
+        <p>当前为 <strong>草稿</strong>
+            </p>
+        <div class="button-row">
+            <form method="post" action="/products/61/publish"
+                  data-submit-state data-product-action="publish">
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <input type="hidden" name="returnUrl" value="/products">
+                <input type="hidden" name="version" value="0">
+                <button type="submit">上架商品</button>
+            </form>
+            
+        </div>
+    </section>
+    <section class="panel" aria-labelledby="restock-heading">
+        <h2 id="restock-heading">增量补货</h2>
+        <p>当前库存 <strong>4</strong> 件。提交一次表示增加一次指定数量。</p>
+        <form method="post" action="/products/61/restock" data-submit-state data-restock-form>
+            <input type="hidden" name="_csrf" value="[REDACTED]">
+            <input type="hidden" name="returnUrl" value="/products">
+            <div class="form-field">
+    <label for="quantity">本次增加数量</label>
+    <input type="number" id="quantity" name="quantity" value="1"
+           min="1" max="2147483647" step="1"
+           aria-invalid="false">
+    
+</div>
+            <button type="submit">确认补货</button>
+        </form>
+    </section>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

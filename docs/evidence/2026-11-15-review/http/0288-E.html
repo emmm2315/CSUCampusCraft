@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>顾客状态操作提示 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="admin" data-authenticated="true">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 管理端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <a href="/categories">分类管理</a>
+            <a href="/products">商品管理</a>
+            <a href="/orders" data-admin-orders-link>订单管理</a>
+            <a href="/customers" data-admin-customers-link>顾客管理</a>
+            <span class="app-label">管理端</span>
+            
+
+            
+            <span class="app-label" data-current-user>商城管理员</span>
+            <form method="post" action="/logout" data-submit-state>
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <section class="panel error-page" data-page-id="A09" data-customer-action-conflict aria-labelledby="customer-conflict-title" data-error-status="400" data-error-code="INVALID_ENUM"><p class="error-number">400</p><h1 id="customer-conflict-title">未能更新顾客状态</h1><p>请选择允许的选项。</p><p class="muted">请先核对实际启停状态；本页不显示成功结果。</p><p class="error-code">错误代码：<span>INVALID_ENUM</span></p><div class="button-row"><a class="button" href="/customers/1" data-return-customer>查看顾客详情</a><a class="button button-secondary" href="/customers" data-return-customers>返回顾客列表</a></div></section>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

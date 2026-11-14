@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>商品相册 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="admin" data-authenticated="true">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 管理端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <a href="/categories">分类管理</a>
+            <a href="/products">商品管理</a>
+            <a href="/orders" data-admin-orders-link>订单管理</a>
+            <a href="/customers" data-admin-customers-link>顾客管理</a>
+            <span class="app-label">管理端</span>
+            
+
+            
+            <span class="app-label" data-current-user>商城管理员</span>
+            <form method="post" action="/logout" data-submit-state>
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    <div class="alert alert-danger" role="alert">
+        <p>缺少商品版本，操作未提交，请重新载入相册页。</p>
+    </div>
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div data-page-id="A10" data-product-id="61" data-product-version="5" data-image-count="0">
+    <header class="page-heading admin-toolbar">
+        <div>
+            <p class="eyebrow">商品相册</p>
+            <h1>复核商品编辑170629952093</h1>
+            <p class="muted">维护已有图片路径、替代文本和展示顺序。</p>
+        </div>
+        <div class="button-row">
+            <a class="button button-secondary" href="/products">返回商品列表</a>
+            <a class="button button-secondary" href="/products/61/edit">返回商品编辑</a>
+            <a class="button button-secondary" href="/products/61/images" data-reload-album>重新载入相册</a>
+            <a class="button button-secondary" href="http://127.0.0.1:8080/products/61" data-user-detail>查看用户端详情</a>
+        </div>
+    </header>
+
+    <section class="alert alert-danger error-summary" role="alert" aria-labelledby="error-summary-title" tabindex="-1">
+    <h2 id="error-summary-title">请修正以下输入</h2>
+    <ul>
+        <li>
+            <a href="#add-productVersion">请重新载入相册页取得商品版本。</a>
+        </li>
+    </ul>
+</section>
+
+    
+
+    <section class="panel album-product" aria-labelledby="album-product-title">
+        <figure class="album-cover">
+            <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="复核商品编辑170629952093" data-image-fallback="/images/catalog-placeholder.svg">
+            <figcaption>独立封面</figcaption>
+        </figure>
+        <div>
+            <h2 id="album-product-title">商品与封面</h2>
+            <dl class="album-meta">
+                <div><dt>SKU</dt><dd>REVIEW-20261115-170629952093</dd></div>
+                <div><dt>商品版本</dt><dd data-current-version>5</dd></div>
+                <div><dt>商品状态</dt><dd>已上架</dd></div>
+                <div class="album-meta-wide"><dt>封面路径</dt><dd class="album-path">images/catalog-placeholder.svg</dd></div>
+            </dl>
+            <p class="field-help">封面独立维护；新增、编辑或移除相册记录都不会修改封面。</p>
+            
+        </div>
+    </section>
+
+    <section class="panel album-add" aria-labelledby="album-add-title">
+        <div class="album-section-heading">
+            <div>
+                <h2 id="album-add-title">新增相册图片</h2>
+                <p class="field-help">填写项目已有的相对图片路径，无需上传文件。</p>
+            </div>
+        </div>
+        <form method="post" action="/products/61/images" data-submit-state data-image-action="add">
+            <input type="hidden" name="_csrf" value="[REDACTED]">
+            <input type="hidden" name="productVersion" value="">
+            <p id="add-productVersion" class="field-help field-error">请重新载入相册页取得商品版本。</p>
+            <div class="album-fields">
+                <div class="album-path-field">
+                    <div class="form-field">
+    <label for="add-imagePath">图片路径</label>
+    <input type="text" id="add-imagePath" name="imagePath" value="images/catalog-placeholder.svg"
+           aria-invalid="false">
+    
+</div>
+                    <p class="field-help">1–255 个字符，以 images/ 开头；不接受外部地址、斜杠开头、反斜杠、..、单独的 . 路径段、:、%、?、# 或控制字符。</p>
+                </div>
+                <div>
+                    <div class="form-field">
+    <label for="add-altText">替代文本（可选）</label>
+    <input type="text" id="add-altText" name="altText" value="复核后图"
+           aria-invalid="false">
+    
+</div>
+                    <p class="field-help">最多 120 个字符；留空时使用商品名称。</p>
+                </div>
+                <div>
+                    <div class="form-field">
+    <label for="add-sortOrder">排序值（非负整数）</label>
+    <input type="text" id="add-sortOrder" name="sortOrder" value="20"
+           aria-invalid="false">
+    
+</div>
+                    <p class="field-help">留空按 0；先按排序值、再按图片编号升序显示。</p>
+                </div>
+            </div>
+            <div class="button-row"><button type="submit">新增图片记录</button></div>
+        </form>
+    </section>
+
+    <section class="album-gallery" aria-labelledby="album-gallery-title">
+        <div class="album-section-heading">
+            <div>
+                <h2 id="album-gallery-title">当前相册</h2>
+                <p class="field-help">共 <strong>0</strong> 张图片。保存后重新读取版本，其他表单以新版本继续操作。</p>
+            </div>
+        </div>
+        <div class="empty-state" data-image-empty>
+            <p>相册为空，用户端详情回退封面；封面缺图时显示占位图。</p>
+            <p>可在上方新增相册图片，商品封面仍独立保留。</p>
+        </div>
+        <div class="album-records">
+            
+        </div>
+    </section>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

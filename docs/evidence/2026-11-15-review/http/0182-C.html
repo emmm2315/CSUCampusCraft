@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>结算确认 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="user" data-authenticated="true">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <span class="app-label">用户端</span>
+            <a class="nav-placeholder" href="/cart" data-cart-link aria-label="购物车，3 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="3" data-cart-quantity-unavailable="false">3</span>
+            </a>
+            <a href="/orders" data-orders-link>我的订单</a>
+            
+            <span class="app-label" data-current-user>[REDACTED]</span>
+            <form method="post" action="/logout" data-submit-state data-logout-form>
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div class="checkout-page" data-page-id="U06" data-checkout-item-count="2" data-checkout-quantity="3" data-checkout-total="85.00" data-error-status="0">
+    <header class="page-heading checkout-heading">
+        <div>
+            <p class="eyebrow">CSUCampusCraft</p>
+            <h1>结算确认</h1>
+            <p class="muted">核对整车商品与收货信息，金额由当前商品价格计算。</p>
+        </div>
+        <a class="button button-secondary" href="/cart" data-return-cart>返回购物车</a>
+    </header>
+
+    
+
+    <div class="checkout-grid">
+        <section class="checkout-overview" aria-labelledby="checkout-items-title">
+            <div class="checkout-section-heading">
+                <h2 id="checkout-items-title">整车商品</h2>
+                <span class="muted">2 种 · 3 件</span>
+            </div>
+            <div class="table-container">
+                <table class="checkout-table">
+                    <caption class="small">本次确认的全部购物车条目</caption>
+                    <thead>
+                    <tr><th scope="col">商品</th><th scope="col">当前单价</th><th scope="col">数量</th><th scope="col">小计</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr data-checkout-item-id="37" data-product-id="1" data-quantity="2" data-item-version="2" data-unit-price="18.00" data-line-subtotal="36.00">
+                        <td>
+                            <div class="checkout-product">
+                                <div class="checkout-product-image">
+                                    <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="潇湘校区图书馆方格本" data-image-fallback="/images/catalog-placeholder.svg">
+                                </div>
+                                <div>
+                                    <a href="/products/1">潇湘校区图书馆方格本</a>
+                                    <p class="field-help checkout-sku">SKU：<span>CSU-LMK-NOTE-01</span></p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="checkout-money">¥18.00</td>
+                        <td>2</td>
+                        <td class="checkout-money"><strong>¥36.00</strong></td>
+                    </tr>
+                    <tr data-checkout-item-id="38" data-product-id="56" data-quantity="1" data-item-version="0" data-unit-price="49.00" data-line-subtotal="49.00">
+                        <td>
+                            <div class="checkout-product">
+                                <div class="checkout-product-image">
+                                    <img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="中南毕业纪念礼盒" data-image-fallback="/images/catalog-placeholder.svg">
+                                </div>
+                                <div>
+                                    <a href="/products/56">中南毕业纪念礼盒</a>
+                                    <p class="field-help checkout-sku">SKU：<span>CSU-GRAD-BOX-01</span></p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="checkout-money">¥49.00</td>
+                        <td>1</td>
+                        <td class="checkout-money"><strong>¥49.00</strong></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="panel checkout-total-panel" aria-labelledby="checkout-total-title">
+                <div>
+                    <h2 id="checkout-total-title">商品金额合计</h2>
+                    <p class="field-help">人民币，包含整车全部商品；模拟配送不另计运费。</p>
+                </div>
+                <strong class="product-price checkout-total" data-checkout-amount>¥85.00</strong>
+            </div>
+            <div class="checkout-confirmation-help field-help">
+                <p>确认不预留库存。购物车内容、价格或可购状态变化后，需要重新确认。</p>
+                <p>重新打开本页会替换上一次确认。当前确认到期时间：
+                    <time data-confirmation-expires-at datetime="2026-11-14T17:05:00.200209200Z">2026-11-14T17:05:00.200209200Z</time>（UTC）。
+                </p>
+            </div>
+        </section>
+
+        <section class="panel checkout-shipping" aria-labelledby="checkout-shipping-title">
+            <h2 id="checkout-shipping-title">收货信息</h2>
+            <p id="checkout-delivery-help" class="field-help">使用收货地址进行教学模拟配送。以下三项均为必填，去除首尾空白后核对长度。</p>
+            <form method="post" action="/orders" data-submit-state data-checkout-form aria-describedby="checkout-delivery-help checkout-stage-help">
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <input type="hidden" name="confirmationToken" value="[REDACTED]">
+                <div class="form-field">
+    <label for="receiverName">收货人（1–50 字符）</label>
+    <input type="text" id="receiverName" name="receiverName" value=""
+           aria-invalid="false">
+    
+</div>
+                <div class="form-field">
+    <label for="receiverPhone">联系电话（1–30 字符）</label>
+    <input type="text" id="receiverPhone" name="receiverPhone" value=""
+           aria-invalid="false">
+    
+</div>
+                <div class="form-field">
+    <label for="receiverAddress">完整收货地址（1–255 字符）</label>
+    <textarea id="receiverAddress" name="receiverAddress" aria-invalid="false"></textarea>
+    
+</div>
+                <p id="checkout-stage-help" class="field-help">提交后生成待支付订单，并扣减本次商品库存。提交前请再次核对收货信息。</p>
+                <div class="button-row">
+                    <button type="submit" data-submit-order data-submit-label="提交中…">提交订单</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

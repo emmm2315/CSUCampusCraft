@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>订单操作提示 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="user" data-authenticated="true">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <span class="app-label">用户端</span>
+            <a class="nav-placeholder" href="/cart" data-cart-link aria-label="购物车，0 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="0" data-cart-quantity-unavailable="false">0</span>
+            </a>
+            <a href="/orders" data-orders-link>我的订单</a>
+            
+            <span class="app-label" data-current-user>[REDACTED]</span>
+            <form method="post" action="/logout" data-submit-state data-logout-form>
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <section class="panel error-page order-action-conflict" data-page-id="U09" data-order-action-conflict
+         aria-labelledby="order-action-conflict-title" data-error-status="409" data-error-code="PAYMENT_STATE_CONFLICT" data-order-no="CSU-7df1c3e8521677d7043e92066497667f">
+    <p class="error-number">409</p>
+    <h1 id="order-action-conflict-title">当前状态无法完成此操作</h1>
+    <p>当前订单状态不允许这次模拟支付，请查看订单详情。</p>
+    <p class="muted">请先查看本单的状态、首次凭证或时间记录，再选择可用操作。</p>
+    <p class="error-code">错误代码：<span>PAYMENT_STATE_CONFLICT</span></p>
+    <div class="button-row">
+        <a class="button" href="/orders/CSU-7df1c3e8521677d7043e92066497667f" data-return-order>查看订单详情</a>
+        <a class="button button-secondary" href="/orders" data-return-orders>返回我的订单</a>
+    </div>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

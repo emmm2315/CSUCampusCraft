@@ -1,0 +1,6 @@
+{
+  "source": "Observed tool output; this JSON is a failure summary, not a reconstructed stdout log.",
+  "command": "python -X utf8 docs/evidence/2026-11-15-review/write_db_report.py C:/Users/Starmetor/AppData/Local/Temp/review-connection.json",
+  "exitCode": 1,
+  "error": "MySQL ERROR 1064 near lines,SUM(i.line_amount): LINES is reserved; read-only summary SELECT failed before report was written."
+}

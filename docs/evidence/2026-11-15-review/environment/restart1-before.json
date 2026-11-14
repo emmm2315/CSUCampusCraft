@@ -1,0 +1,42 @@
+[
+  {
+    "side": "user",
+    "oldPid": 36828,
+    "port": 8080,
+    "jar": "csucampuscraft-user/target/csucampuscraft-user-0.0.1-SNAPSHOT.jar",
+    "sha256": "c8a1bea5305186af82cb5f505f67cbce8600f424103f79cc2f825a0a709eb868",
+    "before": {
+      "ProcessId": 36828,
+      "ParentProcessId": 2152,
+      "Name": "java.exe",
+      "CommandLine": "\"C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe\" -jar csucampuscraft-user/target/csucampuscraft-user-0.0.1-SNAPSHOT.jar",
+      "ExecutablePath": "C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe",
+      "CreationDate": "2026-11-15T00:57:49.239474+08:00"
+    },
+    "stopSucceeded": false,
+    "newPid": null,
+    "running": false,
+    "processExitCode": null,
+    "listenerOwned": false
+  },
+  {
+    "side": "admin",
+    "oldPid": 36332,
+    "port": 8081,
+    "jar": "csucampuscraft-admin/target/csucampuscraft-admin-0.0.1-SNAPSHOT.jar",
+    "sha256": "1dba0cfacee7186afe9933a325945fb4689612b4992de656be2619f083eb4c4d",
+    "before": {
+      "ProcessId": 36332,
+      "ParentProcessId": 2152,
+      "Name": "java.exe",
+      "CommandLine": "\"C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe\" -jar csucampuscraft-admin/target/csucampuscraft-admin-0.0.1-SNAPSHOT.jar",
+      "ExecutablePath": "C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe",
+      "CreationDate": "2026-11-15T00:57:49.248096+08:00"
+    },
+    "stopSucceeded": false,
+    "newPid": null,
+    "running": false,
+    "processExitCode": null,
+    "listenerOwned": false
+  }
+]

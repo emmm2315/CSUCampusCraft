@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>订单管理 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="admin" data-authenticated="true">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 管理端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <a href="/categories">分类管理</a>
+            <a href="/products">商品管理</a>
+            <a href="/orders" data-admin-orders-link>订单管理</a>
+            <a href="/customers" data-admin-customers-link>顾客管理</a>
+            <span class="app-label">管理端</span>
+            
+
+            
+            <span class="app-label" data-current-user>商城管理员</span>
+            <form method="post" action="/logout" data-submit-state>
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div data-page-id="A06" class="admin-orders-page" data-order-count="1" data-result-count="1" data-page="1" data-size="10" data-total-pages="1">
+    <nav class="admin-order-breadcrumb" aria-label="当前位置"><a href="/">管理端首页</a><span aria-hidden="true">/</span><span aria-current="page">订单管理</span></nav>
+    <header class="page-heading admin-order-heading">
+        <div><p class="eyebrow">教学模拟履约</p><h1>订单管理</h1><p class="muted">查询全站订单，核对成交快照与允许的发货操作。</p></div>
+        <a class="button button-secondary" href="/products">商品管理</a>
+    </header>
+    <section class="panel admin-order-filter-panel" aria-labelledby="orders-filter-title">
+        <h2 id="orders-filter-title">查询订单</h2>
+        <form method="get" action="/orders" class="admin-order-filter" data-order-filter>
+            <div class="form-field admin-order-number-field">
+                <label for="orders-number">完整订单号</label>
+                <input id="orders-number" type="search" name="orderNo" value="csu-7df1c3e8521677d7043e92066497667f" aria-describedby="orders-number-help" placeholder="输入完整订单号">
+                <p class="field-help" id="orders-number-help">最多 40 个字符，精确匹配，不区分大小写。</p>
+            </div>
+            <div class="form-field">
+                <label for="orders-status">订单状态</label>
+                <select id="orders-status" name="status">
+                    <option value="ALL" selected="selected">全部状态</option>
+                    <option value="PENDING_PAYMENT">待支付</option>
+                    <option value="PAID">待发货</option>
+                    <option value="SHIPPED">已发货</option>
+                    <option value="COMPLETED">已完成</option>
+                    <option value="CANCELLED">已取消</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for="orders-user">顾客 ID</label>
+                <input id="orders-user" type="number" name="userId" min="1" step="1" value="" aria-describedby="orders-user-help">
+                <p class="field-help" id="orders-user-help">可留空；按已有普通顾客精确筛选。</p>
+            </div>
+            <div class="form-field admin-order-size-field">
+                <label for="orders-size">每页条数</label>
+                <input id="orders-size" type="number" name="size" min="1" max="50" step="1" value="10">
+            </div>
+            <input type="hidden" name="page" value="1">
+            <div class="admin-order-filter-actions">
+                <button type="submit">查询订单</button>
+                <a class="button button-secondary" href="/orders?status=ALL&amp;page=1&amp;size=10" data-order-clear>清除条件</a>
+            </div>
+        </form>
+        
+    </section>
+    <div class="admin-order-results-heading">
+        <p class="muted">共 <strong>1</strong> 张订单<span>，第 <span>1</span> 页 / 共 <span>1</span> 页</span></p>
+        <p class="field-help">按创建时间、订单 ID 倒序显示。</p>
+    </div>
+    
+    <div class="table-container admin-order-table-container">
+        <table class="admin-order-table" data-order-list>
+            <caption>全站订单清单</caption>
+            <thead><tr><th scope="col">订单号</th><th scope="col">顾客</th><th scope="col">创建时间</th><th scope="col">订单金额</th><th scope="col">状态</th><th scope="col">操作</th></tr></thead>
+            <tbody><tr data-order-id="16" data-order-no="CSU-7df1c3e8521677d7043e92066497667f" data-user-id="1" data-order-status="PAID" data-order-total="85.00">
+                <td class="admin-order-number"><a href="/orders/CSU-7df1c3e8521677d7043e92066497667f">CSU-7df1c3e8521677d7043e92066497667f</a></td>
+                <td><strong>[REDACTED]</strong><p class="field-help"><span>alice</span> / ID <span>1</span></p></td>
+                <td><time>2026-11-15 01:05:02</time><span class="field-help admin-order-timezone">北京时间</span></td>
+                <td class="admin-order-money">¥85.00</td>
+                <td><span class="admin-order-status">待发货</span></td>
+                <td><a href="/orders/CSU-7df1c3e8521677d7043e92066497667f" data-order-detail-link>查看详情</a></td>
+            </tr></tbody>
+        </table>
+    </div>
+    <nav class="admin-order-pagination" aria-label="订单分页">
+        
+        <span aria-disabled="true">上一页</span>
+        <span>第 <strong>1</strong> 页 / 共 <span>1</span> 页</span>
+        
+        <span aria-disabled="true">下一页</span>
+    </nav>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

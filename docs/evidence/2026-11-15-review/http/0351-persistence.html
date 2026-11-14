@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>订单详情 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="user" data-authenticated="true">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <span class="app-label">用户端</span>
+            <a class="nav-placeholder" href="/cart" data-cart-link aria-label="购物车，1 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="1" data-cart-quantity-unavailable="false">1</span>
+            </a>
+            <a href="/orders" data-orders-link>我的订单</a>
+            
+            <span class="app-label" data-current-user>[REDACTED]</span>
+            <form method="post" action="/logout" data-submit-state data-logout-form>
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div class="order-detail-page" data-page-id="U08" data-order-id="16" data-order-no="CSU-7df1c3e8521677d7043e92066497667f" data-order-status="SHIPPED" data-order-total="85.00" data-order-item-count="2">
+    <nav class="catalog-breadcrumb" aria-label="当前位置">
+        <a href="/">首页</a><span aria-hidden="true">/</span><a href="/orders">我的订单</a><span aria-hidden="true">/</span><span aria-current="page">订单详情</span>
+    </nav>
+    <header class="page-heading order-detail-heading">
+        <div>
+            <p class="eyebrow">CSUCampusCraft</p>
+            <h1>订单详情</h1>
+            <p class="muted">查看本单成交时的商品、金额与收货信息。</p>
+        </div>
+        <a class="button button-secondary" href="/orders" data-return-orders>返回我的订单</a>
+    </header>
+
+    <section class="panel order-overview" aria-labelledby="order-overview-title">
+        <div class="order-overview-heading">
+            <div>
+                <h2 id="order-overview-title">订单信息</h2>
+                <p class="order-number" data-order-number>CSU-7df1c3e8521677d7043e92066497667f</p>
+            </div>
+            <span class="order-status" data-order-status-label>已发货</span>
+        </div>
+        <dl class="order-metadata">
+            <div><dt>创建时间</dt><dd><time>2026-11-15 01:05:02</time>（北京时间）</dd></div>
+            <div><dt>订单金额</dt><dd class="product-price" data-order-amount>¥85.00</dd></div>
+        </dl>
+        
+        
+        <p class="field-help">当前展示已记录的订单状态与历史信息。</p>
+        <div class="order-payment-receipt" data-payment-receipt aria-labelledby="order-payment-title">
+            <h3 id="order-payment-title">首次支付凭证</h3>
+            <dl class="order-payment-details">
+                <div><dt>支付方式</dt><dd data-payment-method>MOCK</dd></div>
+                <div><dt>支付凭证</dt><dd data-payment-no>CSUPAY-940160a21530cfb5d0ea0951d7446b0a</dd></div>
+                <div><dt>首次支付时间</dt><dd><time data-payment-time>2026-11-15 01:05:07</time>（北京时间）</dd></div>
+            </dl>
+        </div>
+    </section>
+
+    
+
+    <section class="order-items" aria-labelledby="order-items-title">
+        <div class="order-section-heading">
+            <h2 id="order-items-title">成交商品</h2>
+            <p class="field-help">商品名称、封面与金额保留成交时的内容。</p>
+        </div>
+        <div class="table-container">
+            <table class="order-items-table" data-order-items>
+                <caption class="small">本单商品快照</caption>
+                <thead><tr><th scope="col">商品</th><th scope="col">成交单价</th><th scope="col">数量</th><th scope="col">成交小计</th></tr></thead>
+                <tbody>
+                <tr data-order-item-id="32" data-order-product-id="1" data-unit-price="18.00" data-quantity="2" data-line-amount="36.00" data-snapshot-sku="CSU-LMK-NOTE-01" data-snapshot-name="潇湘校区图书馆方格本" data-snapshot-cover="images/catalog-placeholder.svg">
+                    <td>
+                        <div class="order-product">
+                            <div class="order-product-image"><img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="潇湘校区图书馆方格本" data-image-fallback="/images/catalog-placeholder.svg"></div>
+                            <div>
+                                <strong>潇湘校区图书馆方格本</strong>
+                                <p class="field-help order-sku">SKU：<span>CSU-LMK-NOTE-01</span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="orders-money">¥18.00</td>
+                    <td>2</td>
+                    <td class="orders-money"><strong>¥36.00</strong></td>
+                </tr>
+                <tr data-order-item-id="33" data-order-product-id="56" data-unit-price="49.00" data-quantity="1" data-line-amount="49.00" data-snapshot-sku="CSU-GRAD-BOX-01" data-snapshot-name="中南毕业纪念礼盒" data-snapshot-cover="images/catalog-placeholder.svg">
+                    <td>
+                        <div class="order-product">
+                            <div class="order-product-image"><img class="catalog-image" width="400" height="300" loading="lazy"
+     src="/images/catalog-placeholder.svg" alt="中南毕业纪念礼盒" data-image-fallback="/images/catalog-placeholder.svg"></div>
+                            <div>
+                                <strong>中南毕业纪念礼盒</strong>
+                                <p class="field-help order-sku">SKU：<span>CSU-GRAD-BOX-01</span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="orders-money">¥49.00</td>
+                    <td>1</td>
+                    <td class="orders-money"><strong>¥49.00</strong></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="order-detail-grid">
+        <section class="panel order-shipping" aria-labelledby="order-shipping-title">
+            <h2 id="order-shipping-title">收货信息</h2>
+            <p class="field-help">下单时保存的收货快照，用于教学模拟配送。</p>
+            <dl class="order-shipping-details">
+                <div><dt>收货人</dt><dd data-shipping-value="receiverName" data-shipping-name>[REDACTED]</dd></div>
+                <div><dt>联系电话</dt><dd data-shipping-value="receiverPhone" data-shipping-phone>[REDACTED]</dd></div>
+                <div><dt>完整地址</dt><dd data-shipping-value="receiverAddress" data-shipping-address>[REDACTED]</dd></div>
+            </dl>
+        </section>
+        <section class="panel order-timeline" aria-labelledby="order-timeline-title">
+            <h2 id="order-timeline-title">状态时间</h2>
+            <p class="field-help">按已发生的状态记录显示，时间均为北京时间。</p>
+            <dl class="order-timeline-details">
+                <div><dt>创建订单</dt><dd>2026-11-15 01:05:02</dd></div>
+                <div><dt>支付成功</dt><dd>2026-11-15 01:05:07</dd></div>
+                
+                <div><dt>模拟发货</dt><dd>2026-11-15 01:06:39</dd></div>
+                
+            </dl>
+        </section>
+    </div>
+    <div class="button-row"><a class="button button-secondary" href="/products">继续选购</a></div>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

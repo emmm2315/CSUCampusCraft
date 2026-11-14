@@ -1,0 +1,12 @@
+2026-11-14T16:57:03.659060Z 0 [System] [MY-015017] [Server] MySQL Server Initialization - start.
+2026-11-14T16:57:03.664859Z 0 [System] [MY-013169] [Server] D:\MySQL\bin\mysqld.exe (mysqld 8.4.9) initializing of server in progress as process 39280
+2026-11-14T16:57:03.680947Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-11-14T16:57:03.745745Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 5 in a file operation.
+2026-11-14T16:57:03.745781Z 1 [ERROR] [MY-012614] [InnoDB] The error means mysqld does not have the access rights to the directory. It may also be you have created a subdirectory of the same name as a data file.
+2026-11-14T16:57:03.745788Z 1 [ERROR] [MY-013904] [InnoDB] Failed to mark unused redo log file .\#innodb_redo\#ib_redo0_tmp as in use (by renaming to .\#innodb_redo\#ib_redo0).
+2026-11-14T16:57:03.745801Z 1 [ERROR] [MY-013891] [InnoDB] Failed to rename .\#innodb_redo\#ib_redo0_tmp when creating redo log file .\#innodb_redo\#ib_redo0 (error: 11)
+2026-11-14T16:57:03.745812Z 1 [ERROR] [MY-012929] [InnoDB] InnoDB Database creation was aborted with error Generic error. You may need to delete the ibdata1 file before trying to start up again.
+2026-11-14T16:57:03.788658Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2026-11-14T16:57:03.788681Z 0 [ERROR] [MY-013455] [Server] The newly created data directory C:\Users\Starmetor\AppData\Local\Packages\openai.codex_2p2nqsd0c76g0\AC\#!sandbox.{1c73837d-3f78-465d-bb61-08606559fbd7}\Temp\csucampuscraft-review-20261115-9ab54c7ca6bf43dda7275d09685a047c\data\ by --initialize is unusable. You can remove it.
+2026-11-14T16:57:03.788695Z 0 [ERROR] [MY-010119] [Server] Aborting
+2026-11-14T16:57:03.789260Z 0 [System] [MY-015018] [Server] MySQL Server Initialization - end.

@@ -1,0 +1,1064 @@
+{
+  "audited_at": "2026-11-15T01:16:02.671871+08:00",
+  "executor": "Codex AI independent read-only audit; human review pending",
+  "scope": "Snapshot of current review files; parent may add supplemental evidence later",
+  "read_only_private_lookups": [
+    {
+      "argv": [
+        "D:\\MySQL\\bin\\mysql.exe",
+        "--defaults-extra-file=C:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-review-20261115-b53811e5a70e42d792037669ec7cad67\\root.cnf",
+        "--default-character-set=utf8mb4",
+        "--batch",
+        "--raw",
+        "--skip-column-names",
+        "--database=csucampuscraft",
+        "--execute",
+        "SELECT email,phone FROM store_user"
+      ],
+      "exit_code": 0,
+      "raw_result_not_archived": true
+    },
+    {
+      "argv": [
+        "D:\\MySQL\\bin\\mysql.exe",
+        "--defaults-extra-file=C:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-review-20261115-b53811e5a70e42d792037669ec7cad67\\root.cnf",
+        "--default-character-set=utf8mb4",
+        "--batch",
+        "--raw",
+        "--skip-column-names",
+        "--database=csucampuscraft",
+        "--execute",
+        "SELECT receiver_name,receiver_phone,receiver_address FROM sales_order"
+      ],
+      "exit_code": 0,
+      "raw_result_not_archived": true
+    },
+    {
+      "argv": [
+        "D:\\MySQL\\bin\\mysql.exe",
+        "--defaults-extra-file=C:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-review-20261115-b53811e5a70e42d792037669ec7cad67\\root.cnf",
+        "--default-character-set=utf8mb4",
+        "--batch",
+        "--raw",
+        "--skip-column-names",
+        "--database=csucampuscraft",
+        "--execute",
+        "SELECT password_hash FROM store_user"
+      ],
+      "exit_code": 0,
+      "raw_result_not_archived": true
+    }
+  ],
+  "known_value_counts": {
+    "contact": 4,
+    "recipient": 9,
+    "BCrypt": 4,
+    "ephemeral_password": 1
+  },
+  "known_short_recipient_values": 0,
+  "captured_text_files_scanned": 503,
+  "known_value_findings_without_values": [
+    {
+      "path": "checks.jsonl",
+      "category": "recipient",
+      "value_length": 3,
+      "occurrences": 6,
+      "first_line": 733
+    },
+    {
+      "path": "sql.jsonl",
+      "category": "recipient",
+      "value_length": 3,
+      "occurrences": 4,
+      "first_line": 114
+    }
+  ],
+  "HTML_token_password_session_pattern_findings": [],
+  "HTTP_collections": [
+    {
+      "scope": ".",
+      "http_records": 364,
+      "post_records": 192,
+      "unique_contiguous_ids": true,
+      "response_hash_and_before_after_failures": [
+        {
+          "id": 1,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 4,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 5,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 7,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 8,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 10,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 11,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 13,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 14,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 16,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 17,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 19,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 20,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 22,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 24,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 26,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 27,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 29,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 30,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 32,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 34,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 35,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 37,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 41,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 42,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 43,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 44,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 45,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 47,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 48,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 50,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 51,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 54,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 56,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 60,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 64,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 69,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 73,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 77,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 79,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 81,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 83,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 84,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 85,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 86,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 87,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 88,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 89,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 90,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 91,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 92,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 93,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 94,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 95,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 96,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 97,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 98,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 99,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 100,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 101,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 102,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 109,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 113,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 114,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 115,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 116,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 117,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 118,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 120,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 121,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 122,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 123,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 145,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 168,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 169,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 170,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 171,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 172,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 173,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 174,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 176,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 178,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 179,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 180,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 182,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 183,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 184,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 186,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 187,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 188,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 190,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 194,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 195,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 196,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 197,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 198,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 202,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 203,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 208,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 214,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 215,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 216,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 217,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 218,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 219,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 220,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 221,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 222,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 223,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 224,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 225,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 226,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 227,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 228,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 229,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 231,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 234,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 235,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 239,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 240,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 242,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 244,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 245,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 246,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 248,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 250,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 251,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 252,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 254,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 255,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 256,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 257,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 258,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 259,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 260,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 261,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 264,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 265,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 266,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 267,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 268,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 269,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 270,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 271,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 272,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 273,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 274,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 275,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 276,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 278,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 287,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 288,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 289,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 290,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 292,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 293,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 294,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 295,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 298,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 299,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 300,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 303,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 304,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 307,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 308,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 309,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 310,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 311,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 312,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 313,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 314,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 315,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 316,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 317,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 318,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 319,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 320,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 321,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 323,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 327,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 331,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 332,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 333,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 334,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 335,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 337,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 339,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 340,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 341,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 343,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 345,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 347,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 348,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 349,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 350,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 351,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 352,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 353,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 355,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 357,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 362,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 364,
+          "kind": "missing or mismatched response body"
+        }
+      ]
+    },
+    {
+      "scope": "attempt1",
+      "http_records": 38,
+      "post_records": 15,
+      "unique_contiguous_ids": true,
+      "response_hash_and_before_after_failures": [
+        {
+          "id": 1,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 4,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 5,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 7,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 8,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 10,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 11,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 13,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 14,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 16,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 17,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 19,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 20,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 22,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 24,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 26,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 27,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 28,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 29,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 30,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 32,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 34,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 35,
+          "kind": "missing or mismatched response body"
+        },
+        {
+          "id": 37,
+          "kind": "missing or mismatched response body"
+        }
+      ]
+    }
+  ],
+  "main_checks": 996,
+  "main_failed_checks": [
+    {
+      "stage": "E",
+      "name": "E A10 SQL order",
+      "detail": {
+        "actual": [
+          "160",
+          "160",
+          "160",
+          "159",
+          "159",
+          "159"
+        ],
+        "expected": [
+          "160",
+          "159"
+        ]
+      }
+    }
+  ],
+  "script_sha256": {
+    "common.py": "3190b688c20a4ba1fc8b9851837d64ffe524bdd52e3dade4d6c482ec60b9928b",
+    "run_review.py": "4bde87cf16f1d942bee398302f2bc45f6bf3e47d67e22ff109adafe158ac6fe1",
+    "admin/admin_review.py": "2ca757e0839beb66e5968a264c78bb8ef02d73bcb6a0b60f4079ec57ee7c8c0f"
+  },
+  "source_read_review": [
+    {
+      "id": "QA-01",
+      "severity": "P2",
+      "finding": "C initially submits the same placeholder cover as the original product. Original C note saying cover changed is too broad; parent notified and separate cover-change supplement requested."
+    },
+    {
+      "id": "QA-02",
+      "severity": "P2",
+      "finding": "E A10 ordering assertion collected repeated nested data-image-id markers. Original failure is retained; independent row-scoped supplement required, rather than replacing original result."
+    },
+    {
+      "id": "QA-03",
+      "severity": "P2",
+      "finding": "B original search HTTP checks only a no-result keyword; positive keyword and literal wildcard matching are not established by the original checks. Parent notified."
+    },
+    {
+      "id": "QA-04",
+      "severity": "scope",
+      "finding": "A does not inspect server session internals for checkout removal. HTTP relogin rejection cannot alone prove confirmation attribute removed before relogin. Existing A note correctly discloses this."
+    },
+    {
+      "id": "QA-05",
+      "severity": "scope",
+      "finding": "F covers full-database amounts/orphans/unique fields and representative time/null conditions. 35 CHECK metadata plus one negative-stock rejection is not exhaustive illegal-write testing; existing note correctly limits scope."
+    },
+    {
+      "id": "QA-06",
+      "severity": "scope",
+      "finding": "Only root new-evidence directory and .gitattributes may change. Runtime/old-evidence end-of-run protection audit remains parent finalization work."
+    }
+  ],
+  "human_and_unverified_scope_review": {
+    "AI_executor_declared_in_stage_summaries": true,
+    "checklist_explicitly_human_signature_pending": true,
+    "concurrency_fault_injection_real_payment_logistics_performance_not_covered": true,
+    "empty_dashboard_error_configuration_not_rerun": true,
+    "restart_persistence_and_full_independent_member_reproduction_not_rerun": true
+  }
+}

@@ -1,0 +1,5 @@
+version	server_uuid	port	datadir	pid_file	global_time_zone	root_session_time_zone	system_time_zone	default_storage_engine
+8.4.9	8323950c-e04c-11f1-bb8f-005056c00001	59315	C:\Users\Starmetor\AppData\Local\Temp\csucampuscraft-review-20261115-b53811e5a70e42d792037669ec7cad67\data\	C:\Users\Starmetor\AppData\Local\Temp\csucampuscraft-review-20261115-b53811e5a70e42d792037669ec7cad67\data\LAPTOP-VEECE6BI.pid	+00:00	+00:00	?й???׼ʱ?	InnoDB
+Grants for review_app@127.0.0.1
+GRANT USAGE ON *.* TO `review_app`@`127.0.0.1`
+GRANT SELECT, INSERT, UPDATE, DELETE ON `csucampuscraft`.* TO `review_app`@`127.0.0.1`

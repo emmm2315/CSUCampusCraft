@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "docs/evidence/2026-11-15-review/integrity/verify_integrity.py"
+  ],
+  "exit_code": 0,
+  "stdout": "Auditing 2026-11-12-step02\r\nAuditing 2026-11-13-step03\r\nAuditing 2026-11-14-step04\r\nAuditing 2026-11-14-step05\r\nAuditing 2026-11-14-step06\r\nAuditing 2026-11-14-step07\r\nAuditing 2026-11-14-step07-member\r\nAuditing 2026-11-14-step08\r\nAuditing 2026-11-14-step09\r\nAuditing 2026-11-14-step10\r\nAuditing 2026-11-14-step11\r\nAuditing 2026-11-15-step07-merged\r\nAuditing 2026-11-15-step12\r\n{\"archives\": 13, \"archive_files_checked\": 4764, \"archive_mismatches\": 0, \"runtime_manifests\": 37, \"runtime_manifest_source_mismatches_allowing_only_line_endings\": 0, \"final_step12_diff_empty\": true}\r\n",
+  "stderr": "Failed to find real location of C:\\Users\\Starmetor\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe\n",
+  "finished_at": "2026-11-15T01:00:00.932943+08:00"
+}

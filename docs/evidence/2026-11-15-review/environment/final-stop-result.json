@@ -1,0 +1,40 @@
+{
+  "mysqladminExitCode": 0,
+  "result": "PASS",
+  "appDefaultsRetained": true,
+  "processExits": [
+    {
+      "operation": "Stop-Process",
+      "pid": 37480,
+      "commandSucceeded": true,
+      "actualProcessExitCode": -1,
+      "waitForExit": true
+    },
+    {
+      "operation": "Stop-Process",
+      "pid": 3936,
+      "commandSucceeded": true,
+      "actualProcessExitCode": -1,
+      "waitForExit": true
+    },
+    {
+      "operation": "mysqladmin shutdown",
+      "pid": 36524,
+      "actualProcessExitCode": 0,
+      "waitForExit": true
+    },
+    {
+      "operation": "mysqladmin shutdown",
+      "pid": 29576,
+      "actualProcessExitCode": 0,
+      "waitForExit": true
+    }
+  ],
+  "privateStateRetained": true,
+  "datadirRetained": true,
+  "remainingReviewListenerPorts": [],
+  "otherDevelopmentInstancesTouched": false,
+  "remainingReviewProcesses": [],
+  "stoppedAt": "2026-11-15T01:16:48.5204905+08:00",
+  "rootDefaultsRetained": true
+}

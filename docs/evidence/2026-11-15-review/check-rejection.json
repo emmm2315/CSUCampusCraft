@@ -1,0 +1,5 @@
+{
+  "sql": "START TRANSACTION; UPDATE product SET stock=-1 WHERE id=1; ROLLBACK",
+  "exit": 1,
+  "stderr": "ERROR 3819 (HY000) at line 1: Check constraint 'ck_product_stock' is violated.\n"
+}

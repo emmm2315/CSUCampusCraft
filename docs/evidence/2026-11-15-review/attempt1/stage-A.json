@@ -1,0 +1,26 @@
+{
+  "stage": "A",
+  "tested_sha": "0329c9810c4ad2719c4ae95190ff516d1d21a9ed",
+  "finished": "2026-11-14T17:03:26.750623+00:00",
+  "executor": "Codex (AI)",
+  "checks": 90,
+  "failed": [
+    {
+      "at": "2026-11-14T17:03:24.733834+00:00",
+      "stage": "A",
+      "name": "POST /logout",
+      "passed": false,
+      "detail": {
+        "http": 28,
+        "expected": [
+          303
+        ],
+        "actual": 403
+      }
+    }
+  ],
+  "result": "FAIL",
+  "notes": [
+    "Execution interrupted: see runner-error.json. Do not inherit unrun checks."
+  ]
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>商品管理 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="admin" data-authenticated="true">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 管理端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <a href="/categories">分类管理</a>
+            <a href="/products">商品管理</a>
+            <a href="/orders" data-admin-orders-link>订单管理</a>
+            <a href="/customers" data-admin-customers-link>顾客管理</a>
+            <span class="app-label">管理端</span>
+            
+
+            
+            <span class="app-label" data-current-user>商城管理员</span>
+            <form method="post" action="/logout" data-submit-state>
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div data-page-id="A04" data-product-count="7" data-result-count="7" data-page="1" data-size="10">
+    <header class="page-heading admin-toolbar">
+        <div><p class="eyebrow">商品维护</p><h1>商品管理</h1><p class="muted">按主题或二级分类查找草稿与上架商品。</p></div>
+        <div class="button-row">
+            <a class="button" href="/products/new?returnUrl=/products?q%3D%26status%3DDRAFT%26page%3D1%26size%3D10">新建商品</a>
+            <a class="button button-secondary" href="/categories">分类管理</a>
+        </div>
+    </header>
+    <section class="panel" aria-labelledby="filter-heading">
+        <h2 id="filter-heading">筛选商品</h2>
+        <form method="get" action="/products" class="admin-filter-form">
+            <div class="form-grid">
+                <div class="form-field">
+                    <label for="categoryId">主题或分类</label>
+                    <select name="categoryId" id="categoryId">
+                        <option value="" selected="selected">全部分类</option>
+                        <option value="1">主题：校园地标</option>
+                        <option value="101">校园地标 / 文具</option>
+                        <option value="102">校园地标 / 纪念周边</option>
+                        <option value="2">主题：学院风采</option>
+                        <option value="201">学院风采 / 文具</option>
+                        <option value="202">学院风采 / 纪念周边</option>
+                        <option value="3">主题：社团活动</option>
+                        <option value="301">社团活动 / 文具</option>
+                        <option value="302">社团活动 / 纪念周边</option>
+                        <option value="4">主题：校园运动</option>
+                        <option value="401">校园运动 / 文具</option>
+                        <option value="402">校园运动 / 纪念周边</option>
+                        <option value="5">主题：毕业纪念</option>
+                        <option value="501">毕业纪念 / 文具</option>
+                        <option value="502">毕业纪念 / 纪念周边</option>
+                        <option value="503">主题：复核主题170629952093改</option>
+                        <option value="504">复核主题170629952093改 / 复核文具170629952093</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="q">商品名称</label>
+                    <input type="search" id="q" name="q" value="" aria-describedby="q-help">
+                    <p id="q-help" class="field-help">名称包含查询，最多 120 个字符。</p>
+                </div>
+                <div class="form-field">
+                    <label for="status">商品状态</label>
+                    <select name="status" id="status">
+                        <option value="ALL">全部</option>
+                        <option value="DRAFT" selected="selected">草稿</option>
+                        <option value="ON_SALE">上架</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="size">每页条数</label>
+                    <input type="number" id="size" name="size" min="1" max="50" step="1" value="10">
+                </div>
+            </div>
+            <input type="hidden" name="page" value="1">
+            <button type="submit">查询</button>
+            <a class="button button-secondary" href="/products">清除筛选</a>
+        </form>
+    </section>
+    <p class="field-help">共 <strong>7</strong> 件商品，默认按排序值和商品编号升序展示。</p>
+    
+    <div class="table-container">
+        <table>
+            <caption>商品列表</caption>
+            <thead><tr><th scope="col">商品 / SKU</th><th scope="col">分类</th><th scope="col">售价</th><th scope="col">库存</th><th scope="col">状态</th><th scope="col">排序</th><th scope="col">操作</th></tr></thead>
+            <tbody>
+            <tr data-product-id="1" data-sku="CSU-LMK-NOTE-01" data-stock="8" data-version="8" data-status="DRAFT">
+                <td><strong>潇湘校区图书馆方格本</strong><p class="field-help">CSU-LMK-NOTE-01</p></td>
+                <td>文具</td>
+                <td>¥18.00</td>
+                <td>8</td>
+                <td><span>草稿</span>
+                    </td>
+                <td>0</td>
+                <td>
+                    <div class="admin-row-actions">
+                        <a class="button button-secondary" href="/products/1/edit?returnUrl=/products?q%3D%26status%3DDRAFT%26page%3D1%26size%3D10">编辑</a>
+                        <form method="post"
+                              action="/products/1/publish" data-submit-state data-product-action="publish">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="8">
+                            <input type="hidden" name="returnUrl" value="/products?q=&amp;status=DRAFT&amp;page=1&amp;size=10">
+                            <button type="submit">上架</button>
+                        </form>
+                        
+                    </div>
+                    <p class="field-help"><a href="/products/1/images" data-album-link>管理商品相册</a></p>
+                </td>
+            </tr>
+            <tr data-product-id="12" data-sku="CSU-LMK-STICKER-01" data-stock="18" data-version="0" data-status="DRAFT">
+                <td><strong>潇湘地标贴纸包</strong><p class="field-help">CSU-LMK-STICKER-01</p></td>
+                <td>纪念周边</td>
+                <td>¥9.90</td>
+                <td>18</td>
+                <td><span>草稿</span>
+                    </td>
+                <td>120</td>
+                <td>
+                    <div class="admin-row-actions">
+                        <a class="button button-secondary" href="/products/12/edit?returnUrl=/products?q%3D%26status%3DDRAFT%26page%3D1%26size%3D10">编辑</a>
+                        <form method="post"
+                              action="/products/12/publish" data-submit-state data-product-action="publish">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <input type="hidden" name="returnUrl" value="/products?q=&amp;status=DRAFT&amp;page=1&amp;size=10">
+                            <button type="submit">上架</button>
+                        </form>
+                        
+                    </div>
+                    <p class="field-help"><a href="/products/12/images" data-album-link>管理商品相册</a></p>
+                </td>
+            </tr>
+            <tr data-product-id="24" data-sku="CSU-COL-STICKER-01" data-stock="12" data-version="0" data-status="DRAFT">
+                <td><strong>学院风采插画贴纸包</strong><p class="field-help">CSU-COL-STICKER-01</p></td>
+                <td>纪念周边</td>
+                <td>¥12.90</td>
+                <td>12</td>
+                <td><span>草稿</span>
+                    </td>
+                <td>240</td>
+                <td>
+                    <div class="admin-row-actions">
+                        <a class="button button-secondary" href="/products/24/edit?returnUrl=/products?q%3D%26status%3DDRAFT%26page%3D1%26size%3D10">编辑</a>
+                        <form method="post"
+                              action="/products/24/publish" data-submit-state data-product-action="publish">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <input type="hidden" name="returnUrl" value="/products?q=&amp;status=DRAFT&amp;page=1&amp;size=10">
+                            <button type="submit">上架</button>
+                        </form>
+                        
+                    </div>
+                    <p class="field-help"><a href="/products/24/images" data-album-link>管理商品相册</a></p>
+                </td>
+            </tr>
+            <tr data-product-id="30" data-sku="CSU-CLB-FOLDER-02" data-stock="6" data-version="0" data-status="DRAFT">
+                <td><strong>社团活动记录册</strong><p class="field-help">CSU-CLB-FOLDER-02</p></td>
+                <td>文具</td>
+                <td>¥18.50</td>
+                <td>6</td>
+                <td><span>草稿</span>
+                    </td>
+                <td>300</td>
+                <td>
+                    <div class="admin-row-actions">
+                        <a class="button button-secondary" href="/products/30/edit?returnUrl=/products?q%3D%26status%3DDRAFT%26page%3D1%26size%3D10">编辑</a>
+                        <form method="post"
+                              action="/products/30/publish" data-submit-state data-product-action="publish">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <input type="hidden" name="returnUrl" value="/products?q=&amp;status=DRAFT&amp;page=1&amp;size=10">
+                            <button type="submit">上架</button>
+                        </form>
+                        
+                    </div>
+                    <p class="field-help"><a href="/products/30/images" data-album-link>管理商品相册</a></p>
+                </td>
+            </tr>
+            <tr data-product-id="42" data-sku="CSU-SPT-FOLDER-01" data-stock="11" data-version="0" data-status="DRAFT">
+                <td><strong>校园球赛文件夹</strong><p class="field-help">CSU-SPT-FOLDER-01</p></td>
+                <td>文具</td>
+                <td>¥13.00</td>
+                <td>11</td>
+                <td><span>草稿</span>
+                    </td>
+                <td>420</td>
+                <td>
+                    <div class="admin-row-actions">
+                        <a class="button button-secondary" href="/products/42/edit?returnUrl=/products?q%3D%26status%3DDRAFT%26page%3D1%26size%3D10">编辑</a>
+                        <form method="post"
+                              action="/products/42/publish" data-submit-state data-product-action="publish">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <input type="hidden" name="returnUrl" value="/products?q=&amp;status=DRAFT&amp;page=1&amp;size=10">
+                            <button type="submit">上架</button>
+                        </form>
+                        
+                    </div>
+                    <p class="field-help"><a href="/products/42/images" data-album-link>管理商品相册</a></p>
+                </td>
+            </tr>
+            <tr data-product-id="54" data-sku="CSU-GRAD-NOTE-02" data-stock="13" data-version="0" data-status="DRAFT">
+                <td><strong>毕业季回忆册</strong><p class="field-help">CSU-GRAD-NOTE-02</p></td>
+                <td>文具</td>
+                <td>¥29.90</td>
+                <td>13</td>
+                <td><span>草稿</span>
+                    </td>
+                <td>540</td>
+                <td>
+                    <div class="admin-row-actions">
+                        <a class="button button-secondary" href="/products/54/edit?returnUrl=/products?q%3D%26status%3DDRAFT%26page%3D1%26size%3D10">编辑</a>
+                        <form method="post"
+                              action="/products/54/publish" data-submit-state data-product-action="publish">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <input type="hidden" name="returnUrl" value="/products?q=&amp;status=DRAFT&amp;page=1&amp;size=10">
+                            <button type="submit">上架</button>
+                        </form>
+                        
+                    </div>
+                    <p class="field-help"><a href="/products/54/images" data-album-link>管理商品相册</a></p>
+                </td>
+            </tr>
+            <tr data-product-id="60" data-sku="CSU-GRAD-STICKER-01" data-stock="10" data-version="0" data-status="DRAFT">
+                <td><strong>毕业寄语贴纸套装</strong><p class="field-help">CSU-GRAD-STICKER-01</p></td>
+                <td>纪念周边</td>
+                <td>¥11.90</td>
+                <td>10</td>
+                <td><span>草稿</span>
+                    </td>
+                <td>600</td>
+                <td>
+                    <div class="admin-row-actions">
+                        <a class="button button-secondary" href="/products/60/edit?returnUrl=/products?q%3D%26status%3DDRAFT%26page%3D1%26size%3D10">编辑</a>
+                        <form method="post"
+                              action="/products/60/publish" data-submit-state data-product-action="publish">
+                            <input type="hidden" name="_csrf" value="[REDACTED]">
+                            <input type="hidden" name="version" value="0">
+                            <input type="hidden" name="returnUrl" value="/products?q=&amp;status=DRAFT&amp;page=1&amp;size=10">
+                            <button type="submit">上架</button>
+                        </form>
+                        
+                    </div>
+                    <p class="field-help"><a href="/products/60/images" data-album-link>管理商品相册</a></p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <nav class="admin-pagination button-row" aria-label="商品分页">
+        
+        <span aria-disabled="true">上一页</span>
+        <span>第 <strong>1</strong> 页 / 共 <span>1</span> 页</span>
+        
+        <span aria-disabled="true">下一页</span>
+    </nav>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

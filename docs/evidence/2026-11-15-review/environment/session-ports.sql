@@ -1,0 +1,2 @@
+SELECT p.ID,p.USER,p.DB,p.HOST,v.VARIABLE_VALUE time_zone FROM information_schema.PROCESSLIST p JOIN performance_schema.threads t ON t.PROCESSLIST_ID=p.ID JOIN performance_schema.variables_by_thread v ON v.THREAD_ID=t.THREAD_ID AND v.VARIABLE_NAME='time_zone' WHERE p.USER='review_app' ORDER BY p.ID;
+SELECT THREAD_ID,EVENT_NAME,IP,PORT,STATE FROM performance_schema.socket_instances WHERE EVENT_NAME='wait/io/socket/sql/client_connection' ORDER BY THREAD_ID;

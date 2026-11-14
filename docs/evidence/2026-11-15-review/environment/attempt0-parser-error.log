@@ -1,0 +1,47 @@
+At D:\Github Projects\CSUCampusCraft\docs\evidence\2026-11-15-review\environment\prepare.ps1:9 char:79
++ ... ng]$command) { Add-Content -LiteralPath $commands -Value ('`' + $comm ...
++                                                                ~~
+Unexpected token '`'' in expression or statement.
+At D:\Github Projects\CSUCampusCraft\docs\evidence\2026-11-15-review\environment\prepare.ps1:9 char:100
++ ... -LiteralPath $commands -Value ('`' + $command + '`') -Encoding utf8 }
++                                                          ~~~~~~~~~
+Unexpected token '-Encoding' in expression or statement.
+At D:\Github Projects\CSUCampusCraft\docs\evidence\2026-11-15-review\environment\prepare.ps1:9 char:110
++ ... -LiteralPath $commands -Value ('`' + $command + '`') -Encoding utf8 }
++                                                                    ~~~~
+Unexpected token 'utf8' in expression or statement.
+At D:\Github Projects\CSUCampusCraft\docs\evidence\2026-11-15-review\environment\prepare.ps1:9 char:115
++ ... -LiteralPath $commands -Value ('`' + $command + '`') -Encoding utf8 }
++                                                                         ~
+Unexpected token '}' in expression or statement.
+At D:\Github Projects\CSUCampusCraft\docs\evidence\2026-11-15-review\environment\prepare.ps1:15 char:7
++ Note '& $env:JAVA_HOME\bin\java.exe -version'
++       ~
+Unexpected token '&' in expression or statement.
+At D:\Github Projects\CSUCampusCraft\docs\evidence\2026-11-15-review\environment\prepare.ps1:28 char:7
++ Note '& D:\MySQL\bin\mysqld.exe --version; & D:\MySQL\bin\mysql.exe - ...
++       ~
+The ampersand (&) character is not allowed. The & operator is reserved for future use; wrap an ampersand in double quot
+ation marks ("&") to pass it as part of a string.
+At D:\Github Projects\CSUCampusCraft\docs\evidence\2026-11-15-review\environment\prepare.ps1:54 char:117
++ ... -password (stdin CREATE DATABASE csucampuscraft/review_schema; CREATE ...
++                                                                  ~
+Missing closing ')' in expression.
+At D:\Github Projects\CSUCampusCraft\docs\evidence\2026-11-15-review\environment\prepare.ps1:14 char:25
++ if ($procs.Count -ne 0) { throw '鍙戠幇鐜版湁 java/mysqld锛涢渶鍏堟牳瀵瑰懡浠よ锛屼笉鑷姩 ...
++                         ~
+Missing closing '}' in statement block or type definition.
+At D:\Github Projects\CSUCampusCraft\docs\evidence\2026-11-15-review\environment\prepare.ps1:54 char:201
++ ... iew_app; GRANT SELECT,INSERT,UPDATE,DELETE; random password omitted)'
++                                                                        ~
+Unexpected token ')' in expression or statement.
+At D:\Github Projects\CSUCampusCraft\docs\evidence\2026-11-15-review\environment\prepare.ps1:55 char:128
++ ... ntent -LiteralPath (Join-Path $out 'mysql-create.log') -Encoding utf8
++                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'mysql-create.log') -Encoding utf8
+if ($LASTEXITCODE -ne 0) { throw '寤哄簱/鎺堟潈澶辫触' }
+Note 'mysql' in expression or statement.
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+ 

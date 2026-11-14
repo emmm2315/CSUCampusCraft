@@ -1,0 +1,65 @@
+{
+  "tested_sha": "0329c9810c4ad2719c4ae95190ff516d1d21a9ed",
+  "branch": {
+    "args": [
+      "branch",
+      "--show-current"
+    ],
+    "exit": 0,
+    "stdout": "feat/review-2026-11-15\n",
+    "stderr": ""
+  },
+  "head_before_review_commit": {
+    "args": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit": 0,
+    "stdout": "0329c9810c4ad2719c4ae95190ff516d1d21a9ed\n",
+    "stderr": ""
+  },
+  "product_unchanged": {
+    "args": [
+      "diff",
+      "--exit-code",
+      "0329c9810c4ad2719c4ae95190ff516d1d21a9ed",
+      "--",
+      "csucampuscraft-user/src",
+      "csucampuscraft-admin/src",
+      "csucampuscraft-user/pom.xml",
+      "csucampuscraft-admin/pom.xml",
+      "database",
+      "assets",
+      ".mvn",
+      "mvnw",
+      "mvnw.cmd"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "old_docs_unchanged": {
+    "args": [
+      "diff",
+      "--exit-code",
+      "0329c9810c4ad2719c4ae95190ff516d1d21a9ed",
+      "--",
+      "README.md",
+      "docs",
+      ":(exclude)docs/evidence/2026-11-15-review"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "allowed_changed_paths": {
+    "args": [
+      "status",
+      "--short"
+    ],
+    "exit": 0,
+    "stdout": " M .gitattributes\n?? docs/evidence/2026-11-15-review/\n",
+    "stderr": ""
+  },
+  "runtime_file_count": 199
+}

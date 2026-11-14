@@ -1,0 +1,996 @@
+{"at": "2026-11-14T17:04:05.612580+00:00", "stage": "A", "name": "guest public 200", "passed": true, "detail": {"http": 1, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:05.612937+00:00", "stage": "A", "name": "response does not expose BCrypt hash 1", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:06.066442+00:00", "stage": "A", "name": "unauthenticated before CSRF u", "passed": true, "detail": {"http": 2, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:06.066768+00:00", "stage": "A", "name": "unauthenticated before CSRF u zero seven-table writes", "passed": true, "detail": {"http": 2, "changed": []}}
+{"at": "2026-11-14T17:04:06.067054+00:00", "stage": "A", "name": "response does not expose BCrypt hash 2", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:06.543150+00:00", "stage": "A", "name": "unauthenticated before CSRF a", "passed": true, "detail": {"http": 3, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:06.543404+00:00", "stage": "A", "name": "unauthenticated before CSRF a zero seven-table writes", "passed": true, "detail": {"http": 3, "changed": []}}
+{"at": "2026-11-14T17:04:06.543735+00:00", "stage": "A", "name": "response does not expose BCrypt hash 3", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:06.569854+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 4, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:06.570227+00:00", "stage": "A", "name": "response does not expose BCrypt hash 4", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:07.061231+00:00", "stage": "A", "name": "u login alice", "passed": true, "detail": {"http": 5, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:07.061464+00:00", "stage": "A", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 5, "changed": []}}
+{"at": "2026-11-14T17:04:07.061686+00:00", "stage": "A", "name": "response does not expose BCrypt hash 5", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:07.064134+00:00", "stage": "A", "name": "rejected login has no protected identity", "passed": true, "detail": {"http": 6, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:07.064451+00:00", "stage": "A", "name": "response does not expose BCrypt hash 6", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:07.082657+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 7, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:07.082981+00:00", "stage": "A", "name": "response does not expose BCrypt hash 7", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:07.574529+00:00", "stage": "A", "name": "u login disabled", "passed": true, "detail": {"http": 8, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:07.574856+00:00", "stage": "A", "name": "u login disabled zero seven-table writes", "passed": true, "detail": {"http": 8, "changed": []}}
+{"at": "2026-11-14T17:04:07.575203+00:00", "stage": "A", "name": "response does not expose BCrypt hash 8", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:07.577383+00:00", "stage": "A", "name": "rejected login has no protected identity", "passed": true, "detail": {"http": 9, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:07.577592+00:00", "stage": "A", "name": "response does not expose BCrypt hash 9", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:07.600563+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 10, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:07.600908+00:00", "stage": "A", "name": "response does not expose BCrypt hash 10", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:08.102858+00:00", "stage": "A", "name": "u login admin", "passed": true, "detail": {"http": 11, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:08.103147+00:00", "stage": "A", "name": "u login admin zero seven-table writes", "passed": true, "detail": {"http": 11, "changed": []}}
+{"at": "2026-11-14T17:04:08.103374+00:00", "stage": "A", "name": "response does not expose BCrypt hash 11", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:08.105822+00:00", "stage": "A", "name": "rejected login has no protected identity", "passed": true, "detail": {"http": 12, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:08.106053+00:00", "stage": "A", "name": "response does not expose BCrypt hash 12", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:08.133108+00:00", "stage": "A", "name": "a login form", "passed": true, "detail": {"http": 13, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:08.133399+00:00", "stage": "A", "name": "response does not expose BCrypt hash 13", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:08.622287+00:00", "stage": "A", "name": "a login admin", "passed": true, "detail": {"http": 14, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:08.622551+00:00", "stage": "A", "name": "a login admin zero seven-table writes", "passed": true, "detail": {"http": 14, "changed": []}}
+{"at": "2026-11-14T17:04:08.622982+00:00", "stage": "A", "name": "response does not expose BCrypt hash 14", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:08.625287+00:00", "stage": "A", "name": "rejected login has no protected identity", "passed": true, "detail": {"http": 15, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:08.625521+00:00", "stage": "A", "name": "response does not expose BCrypt hash 15", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:08.650001+00:00", "stage": "A", "name": "a login form", "passed": true, "detail": {"http": 16, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:08.650273+00:00", "stage": "A", "name": "response does not expose BCrypt hash 16", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:09.138629+00:00", "stage": "A", "name": "a login disabled", "passed": true, "detail": {"http": 17, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:09.138902+00:00", "stage": "A", "name": "a login disabled zero seven-table writes", "passed": true, "detail": {"http": 17, "changed": []}}
+{"at": "2026-11-14T17:04:09.139257+00:00", "stage": "A", "name": "response does not expose BCrypt hash 17", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:09.141669+00:00", "stage": "A", "name": "rejected login has no protected identity", "passed": true, "detail": {"http": 18, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:09.141898+00:00", "stage": "A", "name": "response does not expose BCrypt hash 18", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:09.163980+00:00", "stage": "A", "name": "a login form", "passed": true, "detail": {"http": 19, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:09.164507+00:00", "stage": "A", "name": "response does not expose BCrypt hash 19", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:09.669743+00:00", "stage": "A", "name": "a login alice", "passed": true, "detail": {"http": 20, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:09.670061+00:00", "stage": "A", "name": "a login alice zero seven-table writes", "passed": true, "detail": {"http": 20, "changed": []}}
+{"at": "2026-11-14T17:04:09.670360+00:00", "stage": "A", "name": "response does not expose BCrypt hash 20", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:09.672841+00:00", "stage": "A", "name": "rejected login has no protected identity", "passed": true, "detail": {"http": 21, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:09.673095+00:00", "stage": "A", "name": "response does not expose BCrypt hash 21", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:09.696164+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 22, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:09.696533+00:00", "stage": "A", "name": "response does not expose BCrypt hash 22", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:10.174279+00:00", "stage": "A", "name": "u login alice", "passed": true, "detail": {"http": 23, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:10.174537+00:00", "stage": "A", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 23, "changed": []}}
+{"at": "2026-11-14T17:04:10.174776+00:00", "stage": "A", "name": "response does not expose BCrypt hash 23", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:10.195313+00:00", "stage": "A", "name": "a login form", "passed": true, "detail": {"http": 24, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:10.195644+00:00", "stage": "A", "name": "response does not expose BCrypt hash 24", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:10.683431+00:00", "stage": "A", "name": "a login admin", "passed": true, "detail": {"http": 25, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:10.683681+00:00", "stage": "A", "name": "a login admin zero seven-table writes", "passed": true, "detail": {"http": 25, "changed": []}}
+{"at": "2026-11-14T17:04:10.683939+00:00", "stage": "A", "name": "response does not expose BCrypt hash 25", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:10.684292+00:00", "stage": "A", "name": "two different cookie names coexist", "passed": true, "detail": ["CSUCAMPUSCRAFT_USER_SESSION", "CSUCAMPUSCRAFT_ADMIN_SESSION"]}
+{"at": "2026-11-14T17:04:10.697677+00:00", "stage": "A", "name": "GET /cart", "passed": true, "detail": {"http": 26, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:10.697980+00:00", "stage": "A", "name": "response does not expose BCrypt hash 26", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:10.706361+00:00", "stage": "A", "name": "GET /", "passed": true, "detail": {"http": 27, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:10.706621+00:00", "stage": "A", "name": "response does not expose BCrypt hash 27", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:11.155526+00:00", "stage": "A", "name": "POST /logout", "passed": true, "detail": {"http": 28, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:11.155787+00:00", "stage": "A", "name": "response does not expose BCrypt hash 28", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:11.163720+00:00", "stage": "A", "name": "admin survives user logout", "passed": true, "detail": {"http": 29, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:11.164183+00:00", "stage": "A", "name": "response does not expose BCrypt hash 29", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:11.168588+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 30, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:11.168854+00:00", "stage": "A", "name": "response does not expose BCrypt hash 30", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:11.658477+00:00", "stage": "A", "name": "u login alice", "passed": true, "detail": {"http": 31, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:11.658753+00:00", "stage": "A", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 31, "changed": []}}
+{"at": "2026-11-14T17:04:11.659067+00:00", "stage": "A", "name": "response does not expose BCrypt hash 31", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:11.667309+00:00", "stage": "A", "name": "GET /", "passed": true, "detail": {"http": 32, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:11.667593+00:00", "stage": "A", "name": "response does not expose BCrypt hash 32", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:12.102567+00:00", "stage": "A", "name": "POST /logout", "passed": true, "detail": {"http": 33, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:12.102823+00:00", "stage": "A", "name": "response does not expose BCrypt hash 33", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:12.117640+00:00", "stage": "A", "name": "user survives admin logout", "passed": true, "detail": {"http": 34, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:12.117962+00:00", "stage": "A", "name": "response does not expose BCrypt hash 34", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:12.122150+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 35, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:12.122410+00:00", "stage": "A", "name": "response does not expose BCrypt hash 35", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:12.625500+00:00", "stage": "A", "name": "u login alice", "passed": true, "detail": {"http": 36, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:12.625757+00:00", "stage": "A", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 36, "changed": []}}
+{"at": "2026-11-14T17:04:12.626076+00:00", "stage": "A", "name": "response does not expose BCrypt hash 36", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:12.649384+00:00", "stage": "A", "name": "a login form", "passed": true, "detail": {"http": 37, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:12.649716+00:00", "stage": "A", "name": "response does not expose BCrypt hash 37", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:13.140531+00:00", "stage": "A", "name": "a login admin", "passed": true, "detail": {"http": 38, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:13.140817+00:00", "stage": "A", "name": "a login admin zero seven-table writes", "passed": true, "detail": {"http": 38, "changed": []}}
+{"at": "2026-11-14T17:04:13.141064+00:00", "stage": "A", "name": "response does not expose BCrypt hash 38", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:13.144192+00:00", "stage": "A", "name": "user cookie cannot authenticate admin", "passed": true, "detail": {"http": 39, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:13.144443+00:00", "stage": "A", "name": "response does not expose BCrypt hash 39", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:13.147137+00:00", "stage": "A", "name": "admin cookie cannot authenticate user", "passed": true, "detail": {"http": 40, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:13.147371+00:00", "stage": "A", "name": "response does not expose BCrypt hash 40", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:13.590344+00:00", "stage": "A", "name": "authenticated missing CSRF u", "passed": true, "detail": {"http": 41, "expected": [403], "actual": 403}}
+{"at": "2026-11-14T17:04:13.590687+00:00", "stage": "A", "name": "authenticated missing CSRF u zero seven-table writes", "passed": true, "detail": {"http": 41, "changed": []}}
+{"at": "2026-11-14T17:04:13.591052+00:00", "stage": "A", "name": "response does not expose BCrypt hash 41", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:14.057397+00:00", "stage": "A", "name": "authenticated wrong CSRF u", "passed": true, "detail": {"http": 42, "expected": [403], "actual": 403}}
+{"at": "2026-11-14T17:04:14.057741+00:00", "stage": "A", "name": "authenticated wrong CSRF u zero seven-table writes", "passed": true, "detail": {"http": 42, "changed": []}}
+{"at": "2026-11-14T17:04:14.058015+00:00", "stage": "A", "name": "response does not expose BCrypt hash 42", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:14.500207+00:00", "stage": "A", "name": "authenticated missing CSRF a", "passed": true, "detail": {"http": 43, "expected": [403], "actual": 403}}
+{"at": "2026-11-14T17:04:14.500505+00:00", "stage": "A", "name": "authenticated missing CSRF a zero seven-table writes", "passed": true, "detail": {"http": 43, "changed": []}}
+{"at": "2026-11-14T17:04:14.500867+00:00", "stage": "A", "name": "response does not expose BCrypt hash 43", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:14.947848+00:00", "stage": "A", "name": "authenticated wrong CSRF a", "passed": true, "detail": {"http": 44, "expected": [403], "actual": 403}}
+{"at": "2026-11-14T17:04:14.948148+00:00", "stage": "A", "name": "authenticated wrong CSRF a zero seven-table writes", "passed": true, "detail": {"http": 44, "changed": []}}
+{"at": "2026-11-14T17:04:14.948395+00:00", "stage": "A", "name": "response does not expose BCrypt hash 44", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:15.001222+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 45, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:15.001606+00:00", "stage": "A", "name": "response does not expose BCrypt hash 45", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:15.497505+00:00", "stage": "A", "name": "u login alice", "passed": true, "detail": {"http": 46, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:15.497751+00:00", "stage": "A", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 46, "changed": []}}
+{"at": "2026-11-14T17:04:15.498052+00:00", "stage": "A", "name": "response does not expose BCrypt hash 46", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:15.547234+00:00", "stage": "A", "name": "valid authStamp wrong role u", "passed": true, "detail": {"http": 47, "expected": [403], "actual": 403}}
+{"at": "2026-11-14T17:04:15.547572+00:00", "stage": "A", "name": "response does not expose BCrypt hash 47", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:15.636655+00:00", "stage": "A", "name": "a login form", "passed": true, "detail": {"http": 48, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:15.636908+00:00", "stage": "A", "name": "response does not expose BCrypt hash 48", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:16.127520+00:00", "stage": "A", "name": "a login admin", "passed": true, "detail": {"http": 49, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:16.127805+00:00", "stage": "A", "name": "a login admin zero seven-table writes", "passed": true, "detail": {"http": 49, "changed": []}}
+{"at": "2026-11-14T17:04:16.128110+00:00", "stage": "A", "name": "response does not expose BCrypt hash 49", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:16.177032+00:00", "stage": "A", "name": "valid authStamp wrong role a", "passed": true, "detail": {"http": 50, "expected": [403], "actual": 403}}
+{"at": "2026-11-14T17:04:16.177413+00:00", "stage": "A", "name": "response does not expose BCrypt hash 50", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:16.251818+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 51, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:16.252190+00:00", "stage": "A", "name": "response does not expose BCrypt hash 51", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:16.756611+00:00", "stage": "A", "name": "u login alice", "passed": true, "detail": {"http": 52, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:16.756850+00:00", "stage": "A", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 52, "changed": []}}
+{"at": "2026-11-14T17:04:16.757079+00:00", "stage": "A", "name": "response does not expose BCrypt hash 52", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:16.800005+00:00", "stage": "A", "name": "disabled next protected request u", "passed": true, "detail": {"http": 53, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:16.800279+00:00", "stage": "A", "name": "response does not expose BCrypt hash 53", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:16.812985+00:00", "stage": "A", "name": "disabled public/protected u", "passed": true, "detail": {"http": 54, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:16.813494+00:00", "stage": "A", "name": "response does not expose BCrypt hash 54", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:16.856129+00:00", "stage": "A", "name": "cleared identity does not revive u", "passed": true, "detail": {"http": 55, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:16.856393+00:00", "stage": "A", "name": "response does not expose BCrypt hash 55", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:16.860946+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 56, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:16.861220+00:00", "stage": "A", "name": "response does not expose BCrypt hash 56", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:17.368234+00:00", "stage": "A", "name": "u login alice", "passed": true, "detail": {"http": 57, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:17.368653+00:00", "stage": "A", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 57, "changed": []}}
+{"at": "2026-11-14T17:04:17.368948+00:00", "stage": "A", "name": "response does not expose BCrypt hash 57", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:17.408571+00:00", "stage": "A", "name": "u authStamp change 1 MICROSECOND", "passed": true, "detail": {"http": 58, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:17.408839+00:00", "stage": "A", "name": "response does not expose BCrypt hash 58", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:17.447560+00:00", "stage": "A", "name": "stamp identity cleared u", "passed": true, "detail": {"http": 59, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:17.447829+00:00", "stage": "A", "name": "response does not expose BCrypt hash 59", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:17.463994+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 60, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:17.464452+00:00", "stage": "A", "name": "response does not expose BCrypt hash 60", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:17.948880+00:00", "stage": "A", "name": "u login alice", "passed": true, "detail": {"http": 61, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:17.949127+00:00", "stage": "A", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 61, "changed": []}}
+{"at": "2026-11-14T17:04:17.949435+00:00", "stage": "A", "name": "response does not expose BCrypt hash 61", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:17.989927+00:00", "stage": "A", "name": "u authStamp change 1 SECOND", "passed": true, "detail": {"http": 62, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:17.990274+00:00", "stage": "A", "name": "response does not expose BCrypt hash 62", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:18.029143+00:00", "stage": "A", "name": "stamp identity cleared u", "passed": true, "detail": {"http": 63, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:18.029448+00:00", "stage": "A", "name": "response does not expose BCrypt hash 63", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:18.097997+00:00", "stage": "A", "name": "a login form", "passed": true, "detail": {"http": 64, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:18.098318+00:00", "stage": "A", "name": "response does not expose BCrypt hash 64", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:18.603793+00:00", "stage": "A", "name": "a login admin", "passed": true, "detail": {"http": 65, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:18.604059+00:00", "stage": "A", "name": "a login admin zero seven-table writes", "passed": true, "detail": {"http": 65, "changed": []}}
+{"at": "2026-11-14T17:04:18.604297+00:00", "stage": "A", "name": "response does not expose BCrypt hash 65", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:18.652139+00:00", "stage": "A", "name": "disabled next protected request a", "passed": true, "detail": {"http": 66, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:18.652495+00:00", "stage": "A", "name": "response does not expose BCrypt hash 66", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:18.654325+00:00", "stage": "A", "name": "disabled public/protected a", "passed": true, "detail": {"http": 67, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:18.654648+00:00", "stage": "A", "name": "response does not expose BCrypt hash 67", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:18.692875+00:00", "stage": "A", "name": "cleared identity does not revive a", "passed": true, "detail": {"http": 68, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:18.693190+00:00", "stage": "A", "name": "response does not expose BCrypt hash 68", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:18.711765+00:00", "stage": "A", "name": "a login form", "passed": true, "detail": {"http": 69, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:18.712081+00:00", "stage": "A", "name": "response does not expose BCrypt hash 69", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:19.197107+00:00", "stage": "A", "name": "a login admin", "passed": true, "detail": {"http": 70, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:19.197390+00:00", "stage": "A", "name": "a login admin zero seven-table writes", "passed": true, "detail": {"http": 70, "changed": []}}
+{"at": "2026-11-14T17:04:19.197632+00:00", "stage": "A", "name": "response does not expose BCrypt hash 70", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:19.239801+00:00", "stage": "A", "name": "a authStamp change 1 MICROSECOND", "passed": true, "detail": {"http": 71, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:19.240254+00:00", "stage": "A", "name": "response does not expose BCrypt hash 71", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:19.279439+00:00", "stage": "A", "name": "stamp identity cleared a", "passed": true, "detail": {"http": 72, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:19.279737+00:00", "stage": "A", "name": "response does not expose BCrypt hash 72", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:19.301088+00:00", "stage": "A", "name": "a login form", "passed": true, "detail": {"http": 73, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:19.301372+00:00", "stage": "A", "name": "response does not expose BCrypt hash 73", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:19.794893+00:00", "stage": "A", "name": "a login admin", "passed": true, "detail": {"http": 74, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:19.795219+00:00", "stage": "A", "name": "a login admin zero seven-table writes", "passed": true, "detail": {"http": 74, "changed": []}}
+{"at": "2026-11-14T17:04:19.795526+00:00", "stage": "A", "name": "response does not expose BCrypt hash 74", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:19.841735+00:00", "stage": "A", "name": "a authStamp change 1 SECOND", "passed": true, "detail": {"http": 75, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:19.842050+00:00", "stage": "A", "name": "response does not expose BCrypt hash 75", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:19.884541+00:00", "stage": "A", "name": "stamp identity cleared a", "passed": true, "detail": {"http": 76, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:04:19.884801+00:00", "stage": "A", "name": "response does not expose BCrypt hash 76", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:19.936592+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 77, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:19.936906+00:00", "stage": "A", "name": "response does not expose BCrypt hash 77", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:20.521038+00:00", "stage": "A", "name": "u login alice", "passed": true, "detail": {"http": 78, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:20.521302+00:00", "stage": "A", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 78, "changed": []}}
+{"at": "2026-11-14T17:04:20.521652+00:00", "stage": "A", "name": "response does not expose BCrypt hash 78", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:20.526742+00:00", "stage": "A", "name": "a login form", "passed": true, "detail": {"http": 79, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:20.527009+00:00", "stage": "A", "name": "response does not expose BCrypt hash 79", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:21.023608+00:00", "stage": "A", "name": "a login admin", "passed": true, "detail": {"http": 80, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:21.023878+00:00", "stage": "A", "name": "a login admin zero seven-table writes", "passed": true, "detail": {"http": 80, "changed": []}}
+{"at": "2026-11-14T17:04:21.024223+00:00", "stage": "A", "name": "response does not expose BCrypt hash 80", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:21.044903+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 81, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:21.045311+00:00", "stage": "A", "name": "response does not expose BCrypt hash 81", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:21.551572+00:00", "stage": "A", "name": "u login bob", "passed": true, "detail": {"http": 82, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:21.551796+00:00", "stage": "A", "name": "u login bob zero seven-table writes", "passed": true, "detail": {"http": 82, "changed": []}}
+{"at": "2026-11-14T17:04:21.552018+00:00", "stage": "A", "name": "response does not expose BCrypt hash 82", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:22.042557+00:00", "stage": "A", "name": "other cart quantity", "passed": true, "detail": {"http": 83, "expected": [403], "actual": 403}}
+{"at": "2026-11-14T17:04:22.042830+00:00", "stage": "A", "name": "other cart quantity zero seven-table writes", "passed": true, "detail": {"http": 83, "changed": []}}
+{"at": "2026-11-14T17:04:22.043099+00:00", "stage": "A", "name": "response does not expose BCrypt hash 83", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:22.489950+00:00", "stage": "A", "name": "other cart remove", "passed": true, "detail": {"http": 84, "expected": [403], "actual": 403}}
+{"at": "2026-11-14T17:04:22.490210+00:00", "stage": "A", "name": "other cart remove zero seven-table writes", "passed": true, "detail": {"http": 84, "changed": []}}
+{"at": "2026-11-14T17:04:22.490487+00:00", "stage": "A", "name": "response does not expose BCrypt hash 84", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:22.532625+00:00", "stage": "A", "name": "other order concealed", "passed": true, "detail": {"http": 85, "expected": [404], "actual": 404}}
+{"at": "2026-11-14T17:04:22.532907+00:00", "stage": "A", "name": "response does not expose BCrypt hash 85", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:23.011897+00:00", "stage": "A", "name": "other order action concealed /payment", "passed": true, "detail": {"http": 86, "expected": [404], "actual": 404}}
+{"at": "2026-11-14T17:04:23.012180+00:00", "stage": "A", "name": "other order action concealed /payment zero seven-table writes", "passed": true, "detail": {"http": 86, "changed": []}}
+{"at": "2026-11-14T17:04:23.012597+00:00", "stage": "A", "name": "response does not expose BCrypt hash 86", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:23.459039+00:00", "stage": "A", "name": "other order action concealed /cancel", "passed": true, "detail": {"http": 87, "expected": [404], "actual": 404}}
+{"at": "2026-11-14T17:04:23.459282+00:00", "stage": "A", "name": "other order action concealed /cancel zero seven-table writes", "passed": true, "detail": {"http": 87, "changed": []}}
+{"at": "2026-11-14T17:04:23.459569+00:00", "stage": "A", "name": "response does not expose BCrypt hash 87", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:23.705694+00:00", "stage": "A", "name": "A fixtures fully restored seven tables", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:23.842612+00:00", "stage": "B", "name": "GET /", "passed": true, "detail": {"http": 88, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:23.842898+00:00", "stage": "B", "name": "response does not expose BCrypt hash 88", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:23.844312+00:00", "stage": "B", "name": "five homepage themes", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:23.918443+00:00", "stage": "B", "name": "homepage newest SQL order", "passed": true, "detail": {"actual": ["59", "58", "57"], "expected": ["59", "58", "57"]}}
+{"at": "2026-11-14T17:04:23.918781+00:00", "stage": "B", "name": "homepage featured SQL order", "passed": true, "detail": {"actual": ["1", "2", "3", "4"], "expected": ["1", "2", "3", "4"]}}
+{"at": "2026-11-14T17:04:23.980852+00:00", "stage": "B", "name": "GET /products?categoryId=5&type=SOUVENIR&page=1&size=3", "passed": true, "detail": {"http": 89, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:23.981232+00:00", "stage": "B", "name": "response does not expose BCrypt hash 89", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.022652+00:00", "stage": "B", "name": "list SQL exact /products?categoryId=5&type=SOUVENIR&page=1&size=3", "passed": true, "detail": {"actual": ["55", "56", "57"], "expected": ["55", "56", "57"]}}
+{"at": "2026-11-14T17:04:24.076904+00:00", "stage": "B", "name": "GET /products?sort=PRICE_ASC&page=2&size=3", "passed": true, "detail": {"http": 90, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:24.077195+00:00", "stage": "B", "name": "response does not expose BCrypt hash 90", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.114313+00:00", "stage": "B", "name": "list SQL exact /products?sort=PRICE_ASC&page=2&size=3", "passed": true, "detail": {"actual": ["16", "28", "4"], "expected": ["16", "28", "4"]}}
+{"at": "2026-11-14T17:04:24.160352+00:00", "stage": "B", "name": "GET /products?sort=PRICE_DESC&size=6", "passed": true, "detail": {"http": 91, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:24.160686+00:00", "stage": "B", "name": "response does not expose BCrypt hash 91", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.197842+00:00", "stage": "B", "name": "list SQL exact /products?sort=PRICE_DESC&size=6", "passed": true, "detail": {"actual": ["56", "11", "20", "36", "15", "59"], "expected": ["56", "11", "20", "36", "15", "59"]}}
+{"at": "2026-11-14T17:04:24.242296+00:00", "stage": "B", "name": "GET /products?sort=NEWEST&size=6", "passed": true, "detail": {"http": 92, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:24.242588+00:00", "stage": "B", "name": "response does not expose BCrypt hash 92", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.277416+00:00", "stage": "B", "name": "list SQL exact /products?sort=NEWEST&size=6", "passed": true, "detail": {"actual": ["59", "58", "57", "56", "55", "53"], "expected": ["59", "58", "57", "56", "55", "53"]}}
+{"at": "2026-11-14T17:04:24.287125+00:00", "stage": "B", "name": "GET /products?q=ZZZ_REVIEW_NO_MATCH", "passed": true, "detail": {"http": 93, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:24.287572+00:00", "stage": "B", "name": "response does not expose BCrypt hash 93", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.296080+00:00", "stage": "B", "name": "GET /products?page=99999", "passed": true, "detail": {"http": 94, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:24.296413+00:00", "stage": "B", "name": "response does not expose BCrypt hash 94", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.303095+00:00", "stage": "B", "name": "GET /products?type=WRONG", "passed": true, "detail": {"http": 95, "expected": [400], "actual": 400}}
+{"at": "2026-11-14T17:04:24.303365+00:00", "stage": "B", "name": "response does not expose BCrypt hash 95", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.330088+00:00", "stage": "B", "name": "GET /products?size=51", "passed": true, "detail": {"http": 96, "expected": [400], "actual": 400}}
+{"at": "2026-11-14T17:04:24.330381+00:00", "stage": "B", "name": "response does not expose BCrypt hash 96", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.347421+00:00", "stage": "B", "name": "GET /products/999999999", "passed": true, "detail": {"http": 97, "expected": [404], "actual": 404}}
+{"at": "2026-11-14T17:04:24.347754+00:00", "stage": "B", "name": "response does not expose BCrypt hash 97", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.361653+00:00", "stage": "B", "name": "GET /products/1", "passed": true, "detail": {"http": 98, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:24.362027+00:00", "stage": "B", "name": "response does not expose BCrypt hash 98", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.362763+00:00", "stage": "B", "name": "guest U03 login wording", "passed": true, "detail": {"wording": "登录后加购"}}
+{"at": "2026-11-14T17:04:24.398041+00:00", "stage": "B", "name": "detail gallery SQL order", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.478209+00:00", "stage": "B", "name": "GET /products/12", "passed": true, "detail": {"http": 99, "expected": [404], "actual": 404}}
+{"at": "2026-11-14T17:04:24.478617+00:00", "stage": "B", "name": "response does not expose BCrypt hash 99", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.485314+00:00", "stage": "B", "name": "GET /products/11", "passed": true, "detail": {"http": 100, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:24.485586+00:00", "stage": "B", "name": "response does not expose BCrypt hash 100", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.485825+00:00", "stage": "B", "name": "sold out visible", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.488928+00:00", "stage": "B", "name": "GET /images/catalog-placeholder.svg", "passed": true, "detail": {"http": 101, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:24.489263+00:00", "stage": "B", "name": "response does not expose BCrypt hash 101", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.489638+00:00", "stage": "B", "name": "shared image bytes u", "passed": true, "detail": "image/svg+xml"}
+{"at": "2026-11-14T17:04:24.499891+00:00", "stage": "B", "name": "GET /images/catalog-placeholder.svg", "passed": true, "detail": {"http": 102, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:24.500216+00:00", "stage": "B", "name": "response does not expose BCrypt hash 102", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:24.500658+00:00", "stage": "B", "name": "shared image bytes a", "passed": true, "detail": "image/svg+xml"}
+{"at": "2026-11-14T17:04:25.000405+00:00", "stage": "B", "name": "clear alice cart row 1", "passed": true, "detail": {"http": 103, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:25.000649+00:00", "stage": "B", "name": "response does not expose BCrypt hash 103", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:25.463224+00:00", "stage": "B", "name": "clear alice cart row 2", "passed": true, "detail": {"http": 104, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:25.463627+00:00", "stage": "B", "name": "response does not expose BCrypt hash 104", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:25.933130+00:00", "stage": "B", "name": "clear alice cart row 3", "passed": true, "detail": {"http": 105, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:25.933455+00:00", "stage": "B", "name": "response does not expose BCrypt hash 105", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:26.392732+00:00", "stage": "B", "name": "clear alice cart row 4", "passed": true, "detail": {"http": 106, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:26.392996+00:00", "stage": "B", "name": "response does not expose BCrypt hash 106", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:26.844340+00:00", "stage": "B", "name": "clear alice cart row 5", "passed": true, "detail": {"http": 107, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:26.844620+00:00", "stage": "B", "name": "response does not expose BCrypt hash 107", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:27.309118+00:00", "stage": "B", "name": "clear alice cart row 6", "passed": true, "detail": {"http": 108, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:27.309386+00:00", "stage": "B", "name": "response does not expose BCrypt hash 108", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:27.319632+00:00", "stage": "B", "name": "empty cart checkout", "passed": true, "detail": {"http": 109, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:04:27.319953+00:00", "stage": "B", "name": "response does not expose BCrypt hash 109", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:27.793108+00:00", "stage": "B", "name": "add 1 x 1", "passed": true, "detail": {"http": 110, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:27.793502+00:00", "stage": "B", "name": "response does not expose BCrypt hash 110", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:28.243765+00:00", "stage": "B", "name": "add 1 x 1", "passed": true, "detail": {"http": 111, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:28.244033+00:00", "stage": "B", "name": "response does not expose BCrypt hash 111", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:28.308639+00:00", "stage": "B", "name": "same SKU merged quantity 2", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:28.766945+00:00", "stage": "B", "name": "change cart quantity", "passed": true, "detail": {"http": 112, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:28.767201+00:00", "stage": "B", "name": "response does not expose BCrypt hash 112", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:29.237665+00:00", "stage": "B", "name": "stale cart version", "passed": true, "detail": {"http": 113, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:04:29.237906+00:00", "stage": "B", "name": "stale cart version zero seven-table writes", "passed": true, "detail": {"http": 113, "changed": []}}
+{"at": "2026-11-14T17:04:29.238131+00:00", "stage": "B", "name": "response does not expose BCrypt hash 113", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:29.696307+00:00", "stage": "B", "name": "add 1 x 0", "passed": true, "detail": {"http": 114, "expected": [400], "actual": 400}}
+{"at": "2026-11-14T17:04:29.696656+00:00", "stage": "B", "name": "add 1 x 0 zero seven-table writes", "passed": true, "detail": {"http": 114, "changed": []}}
+{"at": "2026-11-14T17:04:29.696970+00:00", "stage": "B", "name": "response does not expose BCrypt hash 114", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:30.156332+00:00", "stage": "B", "name": "add 1 x 100", "passed": true, "detail": {"http": 115, "expected": [400], "actual": 400}}
+{"at": "2026-11-14T17:04:30.156662+00:00", "stage": "B", "name": "add 1 x 100 zero seven-table writes", "passed": true, "detail": {"http": 115, "changed": []}}
+{"at": "2026-11-14T17:04:30.156951+00:00", "stage": "B", "name": "response does not expose BCrypt hash 115", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:30.653216+00:00", "stage": "B", "name": "add 1 x 1.5", "passed": true, "detail": {"http": 116, "expected": [400], "actual": 400}}
+{"at": "2026-11-14T17:04:30.653485+00:00", "stage": "B", "name": "add 1 x 1.5 zero seven-table writes", "passed": true, "detail": {"http": 116, "changed": []}}
+{"at": "2026-11-14T17:04:30.653798+00:00", "stage": "B", "name": "response does not expose BCrypt hash 116", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:31.119861+00:00", "stage": "B", "name": "add 12 x 1", "passed": true, "detail": {"http": 117, "expected": [404], "actual": 404}}
+{"at": "2026-11-14T17:04:31.120152+00:00", "stage": "B", "name": "add 12 x 1 zero seven-table writes", "passed": true, "detail": {"http": 117, "changed": []}}
+{"at": "2026-11-14T17:04:31.120495+00:00", "stage": "B", "name": "response does not expose BCrypt hash 117", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:31.585455+00:00", "stage": "B", "name": "add 11 x 1", "passed": true, "detail": {"http": 118, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:04:31.585788+00:00", "stage": "B", "name": "add 11 x 1 zero seven-table writes", "passed": true, "detail": {"http": 118, "changed": []}}
+{"at": "2026-11-14T17:04:31.586099+00:00", "stage": "B", "name": "response does not expose BCrypt hash 118", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:32.150865+00:00", "stage": "B", "name": "99 upper boundary", "passed": true, "detail": {"http": 119, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:32.151185+00:00", "stage": "B", "name": "response does not expose BCrypt hash 119", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:32.610607+00:00", "stage": "B", "name": "add 1 x 1", "passed": true, "detail": {"http": 120, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:04:32.610877+00:00", "stage": "B", "name": "add 1 x 1 zero seven-table writes", "passed": true, "detail": {"http": 120, "changed": []}}
+{"at": "2026-11-14T17:04:32.611209+00:00", "stage": "B", "name": "response does not expose BCrypt hash 120", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:32.656229+00:00", "stage": "B", "name": "GET /cart", "passed": true, "detail": {"http": 121, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:32.656567+00:00", "stage": "B", "name": "response does not expose BCrypt hash 121", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:32.657831+00:00", "stage": "B", "name": "invalid row badge includes all quantity", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:32.664261+00:00", "stage": "B", "name": "invalid cart checkout", "passed": true, "detail": {"http": 122, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:04:32.664603+00:00", "stage": "B", "name": "response does not expose BCrypt hash 122", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:33.154096+00:00", "stage": "B", "name": "invalid product quantity actual 409", "passed": true, "detail": {"http": 123, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:04:33.154382+00:00", "stage": "B", "name": "invalid product quantity actual 409 zero seven-table writes", "passed": true, "detail": {"http": 123, "changed": []}}
+{"at": "2026-11-14T17:04:33.154749+00:00", "stage": "B", "name": "response does not expose BCrypt hash 123", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:33.626669+00:00", "stage": "B", "name": "invalid product can remove", "passed": true, "detail": {"http": 124, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:33.627047+00:00", "stage": "B", "name": "response does not expose BCrypt hash 124", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:34.149559+00:00", "stage": "B", "name": "add 1 x 1", "passed": true, "detail": {"http": 125, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:34.149840+00:00", "stage": "B", "name": "response does not expose BCrypt hash 125", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:34.597849+00:00", "stage": "B", "name": "add 2 x 1", "passed": true, "detail": {"http": 126, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:34.598160+00:00", "stage": "B", "name": "response does not expose BCrypt hash 126", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:35.065260+00:00", "stage": "B", "name": "add 3 x 1", "passed": true, "detail": {"http": 127, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:35.065547+00:00", "stage": "B", "name": "response does not expose BCrypt hash 127", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:35.519572+00:00", "stage": "B", "name": "add 4 x 1", "passed": true, "detail": {"http": 128, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:35.519894+00:00", "stage": "B", "name": "response does not expose BCrypt hash 128", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:35.968866+00:00", "stage": "B", "name": "add 5 x 1", "passed": true, "detail": {"http": 129, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:35.969139+00:00", "stage": "B", "name": "response does not expose BCrypt hash 129", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:36.436145+00:00", "stage": "B", "name": "add 6 x 1", "passed": true, "detail": {"http": 130, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:36.436406+00:00", "stage": "B", "name": "response does not expose BCrypt hash 130", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:36.906256+00:00", "stage": "B", "name": "add 7 x 1", "passed": true, "detail": {"http": 131, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:36.906538+00:00", "stage": "B", "name": "response does not expose BCrypt hash 131", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:37.385544+00:00", "stage": "B", "name": "add 8 x 1", "passed": true, "detail": {"http": 132, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:37.385789+00:00", "stage": "B", "name": "response does not expose BCrypt hash 132", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:37.850132+00:00", "stage": "B", "name": "add 9 x 1", "passed": true, "detail": {"http": 133, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:37.850412+00:00", "stage": "B", "name": "response does not expose BCrypt hash 133", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:38.323354+00:00", "stage": "B", "name": "add 10 x 1", "passed": true, "detail": {"http": 134, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:38.323667+00:00", "stage": "B", "name": "response does not expose BCrypt hash 134", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:38.776665+00:00", "stage": "B", "name": "add 13 x 1", "passed": true, "detail": {"http": 135, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:38.777011+00:00", "stage": "B", "name": "response does not expose BCrypt hash 135", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:39.233530+00:00", "stage": "B", "name": "add 14 x 1", "passed": true, "detail": {"http": 136, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:39.233779+00:00", "stage": "B", "name": "response does not expose BCrypt hash 136", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:39.704637+00:00", "stage": "B", "name": "add 15 x 1", "passed": true, "detail": {"http": 137, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:39.704888+00:00", "stage": "B", "name": "response does not expose BCrypt hash 137", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:40.149780+00:00", "stage": "B", "name": "add 16 x 1", "passed": true, "detail": {"http": 138, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:40.150059+00:00", "stage": "B", "name": "response does not expose BCrypt hash 138", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:40.605977+00:00", "stage": "B", "name": "add 17 x 1", "passed": true, "detail": {"http": 139, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:40.606276+00:00", "stage": "B", "name": "response does not expose BCrypt hash 139", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:41.069211+00:00", "stage": "B", "name": "add 18 x 1", "passed": true, "detail": {"http": 140, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:41.069509+00:00", "stage": "B", "name": "response does not expose BCrypt hash 140", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:41.522657+00:00", "stage": "B", "name": "add 19 x 1", "passed": true, "detail": {"http": 141, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:41.522913+00:00", "stage": "B", "name": "response does not expose BCrypt hash 141", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:41.973810+00:00", "stage": "B", "name": "add 20 x 1", "passed": true, "detail": {"http": 142, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:41.974164+00:00", "stage": "B", "name": "response does not expose BCrypt hash 142", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:42.426836+00:00", "stage": "B", "name": "add 21 x 1", "passed": true, "detail": {"http": 143, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:42.427105+00:00", "stage": "B", "name": "response does not expose BCrypt hash 143", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:42.890546+00:00", "stage": "B", "name": "add 22 x 1", "passed": true, "detail": {"http": 144, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:42.890828+00:00", "stage": "B", "name": "response does not expose BCrypt hash 144", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:43.347243+00:00", "stage": "B", "name": "add 23 x 1", "passed": true, "detail": {"http": 145, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:04:43.347661+00:00", "stage": "B", "name": "add 23 x 1 zero seven-table writes", "passed": true, "detail": {"http": 145, "changed": []}}
+{"at": "2026-11-14T17:04:43.347933+00:00", "stage": "B", "name": "response does not expose BCrypt hash 145", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:43.383714+00:00", "stage": "B", "name": "20 SKU retained", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:43.901641+00:00", "stage": "B", "name": "clear alice cart row 17", "passed": true, "detail": {"http": 146, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:43.901926+00:00", "stage": "B", "name": "response does not expose BCrypt hash 146", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:44.417446+00:00", "stage": "B", "name": "clear alice cart row 18", "passed": true, "detail": {"http": 147, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:44.417705+00:00", "stage": "B", "name": "response does not expose BCrypt hash 147", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:44.891722+00:00", "stage": "B", "name": "clear alice cart row 19", "passed": true, "detail": {"http": 148, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:44.891990+00:00", "stage": "B", "name": "response does not expose BCrypt hash 148", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:45.366532+00:00", "stage": "B", "name": "clear alice cart row 20", "passed": true, "detail": {"http": 149, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:45.366901+00:00", "stage": "B", "name": "response does not expose BCrypt hash 149", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:45.840838+00:00", "stage": "B", "name": "clear alice cart row 21", "passed": true, "detail": {"http": 150, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:45.841135+00:00", "stage": "B", "name": "response does not expose BCrypt hash 150", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:46.300358+00:00", "stage": "B", "name": "clear alice cart row 22", "passed": true, "detail": {"http": 151, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:46.300608+00:00", "stage": "B", "name": "response does not expose BCrypt hash 151", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:46.749789+00:00", "stage": "B", "name": "clear alice cart row 23", "passed": true, "detail": {"http": 152, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:46.750069+00:00", "stage": "B", "name": "response does not expose BCrypt hash 152", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:47.225664+00:00", "stage": "B", "name": "clear alice cart row 24", "passed": true, "detail": {"http": 153, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:47.226006+00:00", "stage": "B", "name": "response does not expose BCrypt hash 153", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:47.682003+00:00", "stage": "B", "name": "clear alice cart row 25", "passed": true, "detail": {"http": 154, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:47.682259+00:00", "stage": "B", "name": "response does not expose BCrypt hash 154", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:48.140235+00:00", "stage": "B", "name": "clear alice cart row 26", "passed": true, "detail": {"http": 155, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:48.140663+00:00", "stage": "B", "name": "response does not expose BCrypt hash 155", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:48.618164+00:00", "stage": "B", "name": "clear alice cart row 27", "passed": true, "detail": {"http": 156, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:48.618523+00:00", "stage": "B", "name": "response does not expose BCrypt hash 156", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:49.100628+00:00", "stage": "B", "name": "clear alice cart row 28", "passed": true, "detail": {"http": 157, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:49.101230+00:00", "stage": "B", "name": "response does not expose BCrypt hash 157", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:49.601281+00:00", "stage": "B", "name": "clear alice cart row 29", "passed": true, "detail": {"http": 158, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:49.601543+00:00", "stage": "B", "name": "response does not expose BCrypt hash 158", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:50.073732+00:00", "stage": "B", "name": "clear alice cart row 30", "passed": true, "detail": {"http": 159, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:50.074098+00:00", "stage": "B", "name": "response does not expose BCrypt hash 159", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:50.540544+00:00", "stage": "B", "name": "clear alice cart row 31", "passed": true, "detail": {"http": 160, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:50.540821+00:00", "stage": "B", "name": "response does not expose BCrypt hash 160", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:50.990903+00:00", "stage": "B", "name": "clear alice cart row 32", "passed": true, "detail": {"http": 161, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:50.991173+00:00", "stage": "B", "name": "response does not expose BCrypt hash 161", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:51.445312+00:00", "stage": "B", "name": "clear alice cart row 33", "passed": true, "detail": {"http": 162, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:51.445616+00:00", "stage": "B", "name": "response does not expose BCrypt hash 162", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:51.921832+00:00", "stage": "B", "name": "clear alice cart row 34", "passed": true, "detail": {"http": 163, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:51.922117+00:00", "stage": "B", "name": "response does not expose BCrypt hash 163", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:52.371006+00:00", "stage": "B", "name": "clear alice cart row 35", "passed": true, "detail": {"http": 164, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:52.371345+00:00", "stage": "B", "name": "response does not expose BCrypt hash 164", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:52.828000+00:00", "stage": "B", "name": "clear alice cart row 36", "passed": true, "detail": {"http": 165, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:52.828270+00:00", "stage": "B", "name": "response does not expose BCrypt hash 165", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:53.313936+00:00", "stage": "B", "name": "add 1 x 2", "passed": true, "detail": {"http": 166, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:53.314194+00:00", "stage": "B", "name": "response does not expose BCrypt hash 166", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:53.765199+00:00", "stage": "B", "name": "add 56 x 1", "passed": true, "detail": {"http": 167, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:53.765460+00:00", "stage": "B", "name": "response does not expose BCrypt hash 167", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:53.774129+00:00", "stage": "B", "name": "GET /cart", "passed": true, "detail": {"http": 168, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:53.774393+00:00", "stage": "B", "name": "response does not expose BCrypt hash 168", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:53.775901+00:00", "stage": "B", "name": "85 setup cart and badge", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:54.014274+00:00", "stage": "C", "name": "new confirmation", "passed": true, "detail": {"http": 169, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:54.014621+00:00", "stage": "C", "name": "response does not expose BCrypt hash 169", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:54.015822+00:00", "stage": "C", "name": "U06 total85", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:54.239987+00:00", "stage": "C", "name": "confirmation no database writes", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:54.247805+00:00", "stage": "C", "name": "new confirmation", "passed": true, "detail": {"http": 170, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:54.248162+00:00", "stage": "C", "name": "response does not expose BCrypt hash 170", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:54.249120+00:00", "stage": "C", "name": "reopen replaces opaque token", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:54.712644+00:00", "stage": "C", "name": "submit order", "passed": true, "detail": {"http": 171, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:04:54.712923+00:00", "stage": "C", "name": "submit order zero seven-table writes", "passed": true, "detail": {"http": 171, "changed": []}}
+{"at": "2026-11-14T17:04:54.713254+00:00", "stage": "C", "name": "response does not expose BCrypt hash 171", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:54.719967+00:00", "stage": "C", "name": "new confirmation", "passed": true, "detail": {"http": 172, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:54.720298+00:00", "stage": "C", "name": "response does not expose BCrypt hash 172", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:55.178032+00:00", "stage": "C", "name": "submit order", "passed": true, "detail": {"http": 173, "expected": [400], "actual": 400}}
+{"at": "2026-11-14T17:04:55.178397+00:00", "stage": "C", "name": "submit order zero seven-table writes", "passed": true, "detail": {"http": 173, "changed": []}}
+{"at": "2026-11-14T17:04:55.178759+00:00", "stage": "C", "name": "response does not expose BCrypt hash 173", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:55.624005+00:00", "stage": "C", "name": "overlong shipping field", "passed": true, "detail": {"http": 174, "expected": [400], "actual": 400}}
+{"at": "2026-11-14T17:04:55.624289+00:00", "stage": "C", "name": "overlong shipping field zero seven-table writes", "passed": true, "detail": {"http": 174, "changed": []}}
+{"at": "2026-11-14T17:04:55.624546+00:00", "stage": "C", "name": "response does not expose BCrypt hash 174", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:55.625428+00:00", "stage": "C", "name": "field400 preserves token", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:56.155732+00:00", "stage": "C", "name": "POST /cart/items/37/quantity", "passed": true, "detail": {"http": 175, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:56.156026+00:00", "stage": "C", "name": "response does not expose BCrypt hash 175", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:56.610372+00:00", "stage": "C", "name": "submit order", "passed": true, "detail": {"http": 176, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:04:56.610643+00:00", "stage": "C", "name": "submit order zero seven-table writes", "passed": true, "detail": {"http": 176, "changed": []}}
+{"at": "2026-11-14T17:04:56.610941+00:00", "stage": "C", "name": "response does not expose BCrypt hash 176", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:57.105053+00:00", "stage": "C", "name": "POST /cart/items/37/quantity", "passed": true, "detail": {"http": 177, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:57.105296+00:00", "stage": "C", "name": "response does not expose BCrypt hash 177", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:57.112372+00:00", "stage": "C", "name": "new confirmation", "passed": true, "detail": {"http": 178, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:57.112761+00:00", "stage": "C", "name": "response does not expose BCrypt hash 178", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:57.641756+00:00", "stage": "C", "name": "submit order", "passed": true, "detail": {"http": 179, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:04:57.642040+00:00", "stage": "C", "name": "submit order zero seven-table writes", "passed": true, "detail": {"http": 179, "changed": []}}
+{"at": "2026-11-14T17:04:57.642392+00:00", "stage": "C", "name": "response does not expose BCrypt hash 179", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:57.700560+00:00", "stage": "C", "name": "u login form", "passed": true, "detail": {"http": 180, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:57.700850+00:00", "stage": "C", "name": "response does not expose BCrypt hash 180", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:58.188674+00:00", "stage": "C", "name": "u login alice", "passed": true, "detail": {"http": 181, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:04:58.188927+00:00", "stage": "C", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 181, "changed": []}}
+{"at": "2026-11-14T17:04:58.189239+00:00", "stage": "C", "name": "response does not expose BCrypt hash 181", "passed": true, "detail": null}
+{"at": "2026-11-14T17:04:58.217704+00:00", "stage": "C", "name": "new confirmation", "passed": true, "detail": {"http": 182, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:04:58.217985+00:00", "stage": "C", "name": "response does not expose BCrypt hash 182", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:01.692430+00:00", "stage": "C", "name": "submit order", "passed": true, "detail": {"http": 183, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:05:01.692753+00:00", "stage": "C", "name": "submit order zero seven-table writes", "passed": true, "detail": {"http": 183, "changed": []}}
+{"at": "2026-11-14T17:05:01.693075+00:00", "stage": "C", "name": "response does not expose BCrypt hash 183", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:01.798664+00:00", "stage": "C", "name": "new confirmation", "passed": true, "detail": {"http": 184, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:05:01.799112+00:00", "stage": "C", "name": "response does not expose BCrypt hash 184", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:02.272740+00:00", "stage": "C", "name": "submit order", "passed": true, "detail": {"http": 185, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:02.273027+00:00", "stage": "C", "name": "response does not expose BCrypt hash 185", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:02.430842+00:00", "stage": "C", "name": "one main two lines amount and owner", "passed": true, "detail": {"order": {"id": "16", "order_no": "CSU-7df1c3e8521677d7043e92066497667f", "user_id": "1", "status": "PENDING_PAYMENT", "total_amount": "85.00", "created_at": "2026-11-14 17:05:02.026072", "payment_method": "NULL", "payment_no": "NULL", "paid_at": "NULL"}, "items": [{"id": "32", "order_id": "16", "product_id": "1", "sku_snapshot": "CSU-LMK-NOTE-01", "product_name_snapshot": "潇湘校区图书馆方格本", "cover_image_snapshot": "images/catalog-placeholder.svg", "unit_price": "18.00", "quantity": "2", "line_amount": "36.00"}, {"id": "33", "order_id": "16", "product_id": "56", "sku_snapshot": "CSU-GRAD-BOX-01", "product_name_snapshot": "中南毕业纪念礼盒", "cover_image_snapshot": "images/catalog-placeholder.svg", "unit_price": "49.00", "quantity": "1", "line_amount": "49.00"}]}}
+{"at": "2026-11-14T17:05:02.431149+00:00", "stage": "C", "name": "inventory10/12 to8/11 and version+1", "passed": true, "detail": {"before": [{"id": "1", "sku": "CSU-LMK-NOTE-01", "name": "潇湘校区图书馆方格本", "price": "18.00", "stock": "10", "status": "ON_SALE", "version": "0", "cover_image": "images/catalog-placeholder.svg"}, {"id": "56", "sku": "CSU-GRAD-BOX-01", "name": "中南毕业纪念礼盒", "price": "49.00", "stock": "12", "status": "ON_SALE", "version": "1", "cover_image": "images/catalog-placeholder.svg"}], "after": [{"id": "1", "sku": "CSU-LMK-NOTE-01", "name": "潇湘校区图书馆方格本", "price": "18.00", "stock": "8", "status": "ON_SALE", "version": "1", "cover_image": "images/catalog-placeholder.svg"}, {"id": "56", "sku": "CSU-GRAD-BOX-01", "name": "中南毕业纪念礼盒", "price": "49.00", "stock": "11", "status": "ON_SALE", "version": "2", "cover_image": "images/catalog-placeholder.svg"}]}}
+{"at": "2026-11-14T17:05:02.444989+00:00", "stage": "C", "name": "GET /orders/CSU-7df1c3e8521677d7043e92066497667f", "passed": true, "detail": {"http": 186, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:05:02.445285+00:00", "stage": "C", "name": "response does not expose BCrypt hash 186", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:02.478986+00:00", "stage": "C", "name": "U08 cart badge zero", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:02.494529+00:00", "stage": "C", "name": "U07 order list", "passed": true, "detail": {"http": 187, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:05:02.494803+00:00", "stage": "C", "name": "response does not expose BCrypt hash 187", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:02.944230+00:00", "stage": "C", "name": "submit order", "passed": true, "detail": {"http": 188, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:05:02.944486+00:00", "stage": "C", "name": "submit order zero seven-table writes", "passed": true, "detail": {"http": 188, "changed": []}}
+{"at": "2026-11-14T17:05:02.944731+00:00", "stage": "C", "name": "response does not expose BCrypt hash 188", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:03.402863+00:00", "stage": "C", "name": "add 1 x 1", "passed": true, "detail": {"http": 189, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:03.403219+00:00", "stage": "C", "name": "response does not expose BCrypt hash 189", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:03.867741+00:00", "stage": "C", "name": "submit order", "passed": true, "detail": {"http": 190, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:05:03.868086+00:00", "stage": "C", "name": "submit order zero seven-table writes", "passed": true, "detail": {"http": 190, "changed": []}}
+{"at": "2026-11-14T17:05:03.868386+00:00", "stage": "C", "name": "response does not expose BCrypt hash 190", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:03.900692+00:00", "stage": "C", "name": "old confirmation preserves later cart", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:04.383935+00:00", "stage": "C", "name": "clear alice cart row 39", "passed": true, "detail": {"http": 191, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:04.384212+00:00", "stage": "C", "name": "response does not expose BCrypt hash 191", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:04.945491+00:00", "stage": "C", "name": "admin changes purchased product details", "passed": true, "detail": {"http": 192, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:04.945767+00:00", "stage": "C", "name": "response does not expose BCrypt hash 192", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:05.460829+00:00", "stage": "C", "name": "admin unpublishes purchased product", "passed": true, "detail": {"http": 193, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:05.461174+00:00", "stage": "C", "name": "response does not expose BCrypt hash 193", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:05.469722+00:00", "stage": "C", "name": "GET /orders/CSU-7df1c3e8521677d7043e92066497667f", "passed": true, "detail": {"http": 194, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:05:05.470123+00:00", "stage": "C", "name": "response does not expose BCrypt hash 194", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:05.470403+00:00", "stage": "C", "name": "snapshot rendering unchanged u", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:05.497851+00:00", "stage": "C", "name": "GET /orders/CSU-7df1c3e8521677d7043e92066497667f", "passed": true, "detail": {"http": 195, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:05:05.498171+00:00", "stage": "C", "name": "response does not expose BCrypt hash 195", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:05.498445+00:00", "stage": "C", "name": "snapshot rendering unchanged a", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:05.561455+00:00", "stage": "C", "name": "snapshot both tables byte identical after product changes", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:05.635177+00:00", "stage": "D", "name": "U09 mock payment page", "passed": true, "detail": {"http": 196, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:05:05.635552+00:00", "stage": "D", "name": "response does not expose BCrypt hash 196", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:06.087642+00:00", "stage": "D", "name": "illegal payment result", "passed": true, "detail": {"http": 197, "expected": [400], "actual": 400}}
+{"at": "2026-11-14T17:05:06.087903+00:00", "stage": "D", "name": "illegal payment result zero seven-table writes", "passed": true, "detail": {"http": 197, "changed": []}}
+{"at": "2026-11-14T17:05:06.088205+00:00", "stage": "D", "name": "response does not expose BCrypt hash 197", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:06.551069+00:00", "stage": "D", "name": "U09 missing CSRF", "passed": true, "detail": {"http": 198, "expected": [403], "actual": 403}}
+{"at": "2026-11-14T17:05:06.551339+00:00", "stage": "D", "name": "U09 missing CSRF zero seven-table writes", "passed": true, "detail": {"http": 198, "changed": []}}
+{"at": "2026-11-14T17:05:06.551688+00:00", "stage": "D", "name": "response does not expose BCrypt hash 198", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:07.019988+00:00", "stage": "D", "name": "mock failure", "passed": true, "detail": {"http": 199, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:07.020262+00:00", "stage": "D", "name": "mock failure zero seven-table writes", "passed": true, "detail": {"http": 199, "changed": []}}
+{"at": "2026-11-14T17:05:07.020546+00:00", "stage": "D", "name": "response does not expose BCrypt hash 199", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:07.052341+00:00", "stage": "D", "name": "FAILURE retains pending and null triple", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:07.542243+00:00", "stage": "D", "name": "first mock success", "passed": true, "detail": {"http": 200, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:07.542498+00:00", "stage": "D", "name": "response does not expose BCrypt hash 200", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:07.575869+00:00", "stage": "D", "name": "SUCCESS PAID MOCK receipt and time", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:08.018309+00:00", "stage": "D", "name": "success replay", "passed": true, "detail": {"http": 201, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:08.018632+00:00", "stage": "D", "name": "success replay zero seven-table writes", "passed": true, "detail": {"http": 201, "changed": []}}
+{"at": "2026-11-14T17:05:08.018883+00:00", "stage": "D", "name": "response does not expose BCrypt hash 201", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:08.052761+00:00", "stage": "D", "name": "first payment fields immutable", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:08.118785+00:00", "stage": "D", "name": "payment no inventory changes", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:08.604313+00:00", "stage": "D", "name": "PAID illegal payment", "passed": true, "detail": {"http": 202, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:05:08.604591+00:00", "stage": "D", "name": "PAID illegal payment zero seven-table writes", "passed": true, "detail": {"http": 202, "changed": []}}
+{"at": "2026-11-14T17:05:08.604938+00:00", "stage": "D", "name": "response does not expose BCrypt hash 202", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:09.089289+00:00", "stage": "D", "name": "PAID illegal cancel", "passed": true, "detail": {"http": 203, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:05:09.089568+00:00", "stage": "D", "name": "PAID illegal cancel zero seven-table writes", "passed": true, "detail": {"http": 203, "changed": []}}
+{"at": "2026-11-14T17:05:09.089884+00:00", "stage": "D", "name": "response does not expose BCrypt hash 203", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:09.640940+00:00", "stage": "D", "name": "restore product name price cover", "passed": true, "detail": {"http": 204, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:09.641235+00:00", "stage": "D", "name": "response does not expose BCrypt hash 204", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:10.147574+00:00", "stage": "D", "name": "restore ON_SALE for second order", "passed": true, "detail": {"http": 205, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:10.147837+00:00", "stage": "D", "name": "response does not expose BCrypt hash 205", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:10.589220+00:00", "stage": "D", "name": "add 1 x 2", "passed": true, "detail": {"http": 206, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:10.589556+00:00", "stage": "D", "name": "response does not expose BCrypt hash 206", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:11.041282+00:00", "stage": "D", "name": "add 56 x 1", "passed": true, "detail": {"http": 207, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:11.041527+00:00", "stage": "D", "name": "response does not expose BCrypt hash 207", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:11.049080+00:00", "stage": "D", "name": "new confirmation", "passed": true, "detail": {"http": 208, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:05:11.049353+00:00", "stage": "D", "name": "response does not expose BCrypt hash 208", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:11.514513+00:00", "stage": "D", "name": "submit order", "passed": true, "detail": {"http": 209, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:11.514771+00:00", "stage": "D", "name": "response does not expose BCrypt hash 209", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:11.994984+00:00", "stage": "D", "name": "down product before cancellation", "passed": true, "detail": {"http": 210, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:11.995283+00:00", "stage": "D", "name": "response does not expose BCrypt hash 210", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:12.534648+00:00", "stage": "D", "name": "add 56 x 1", "passed": true, "detail": {"http": 211, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:12.535020+00:00", "stage": "D", "name": "response does not expose BCrypt hash 211", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:13.070840+00:00", "stage": "D", "name": "cancel two-item pending order", "passed": true, "detail": {"http": 212, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:13.071113+00:00", "stage": "D", "name": "response does not expose BCrypt hash 212", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:13.170501+00:00", "stage": "D", "name": "cancel returns2/1 and increments each version once", "passed": true, "detail": {"before": [{"id": "1", "sku": "CSU-LMK-NOTE-01", "name": "潇湘校区图书馆方格本", "price": "18.00", "stock": "6", "status": "DRAFT", "version": "7", "cover_image": "images/catalog-placeholder.svg"}, {"id": "56", "sku": "CSU-GRAD-BOX-01", "name": "中南毕业纪念礼盒", "price": "49.00", "stock": "10", "status": "ON_SALE", "version": "3", "cover_image": "images/catalog-placeholder.svg"}], "after": [{"id": "1", "sku": "CSU-LMK-NOTE-01", "name": "潇湘校区图书馆方格本", "price": "18.00", "stock": "8", "status": "DRAFT", "version": "8", "cover_image": "images/catalog-placeholder.svg"}, {"id": "56", "sku": "CSU-GRAD-BOX-01", "name": "中南毕业纪念礼盒", "price": "49.00", "stock": "11", "status": "ON_SALE", "version": "4", "cover_image": "images/catalog-placeholder.svg"}]}}
+{"at": "2026-11-14T17:05:13.170816+00:00", "stage": "D", "name": "cancel state no payment and draft preserved", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:13.203372+00:00", "stage": "D", "name": "cancel does not refill or delete subsequent cart", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:13.689649+00:00", "stage": "D", "name": "repeat cancellation", "passed": true, "detail": {"http": 213, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:05:13.690014+00:00", "stage": "D", "name": "repeat cancellation zero seven-table writes", "passed": true, "detail": {"http": 213, "changed": []}}
+{"at": "2026-11-14T17:05:13.690349+00:00", "stage": "D", "name": "response does not expose BCrypt hash 213", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:13.723390+00:00", "stage": "D", "name": "repeat cancellation preserves first time", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:14.187557+00:00", "stage": "D", "name": "cancelled cannot pay", "passed": true, "detail": {"http": 214, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:05:14.187985+00:00", "stage": "D", "name": "cancelled cannot pay zero seven-table writes", "passed": true, "detail": {"http": 214, "changed": []}}
+{"at": "2026-11-14T17:05:14.188292+00:00", "stage": "D", "name": "response does not expose BCrypt hash 214", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:14.195081+00:00", "stage": "D", "name": "other U09 hidden", "passed": true, "detail": {"http": 215, "expected": [404], "actual": 404}}
+{"at": "2026-11-14T17:05:14.195469+00:00", "stage": "D", "name": "response does not expose BCrypt hash 215", "passed": true, "detail": null}
+{"at": "2026-11-14T17:05:14.660488+00:00", "stage": "D", "name": "cancelled cannot ship", "passed": true, "detail": {"http": 216, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:05:14.660837+00:00", "stage": "D", "name": "cancelled cannot ship zero seven-table writes", "passed": true, "detail": {"http": 216, "changed": []}}
+{"at": "2026-11-14T17:05:14.661208+00:00", "stage": "D", "name": "response does not expose BCrypt hash 216", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:29.680060+00:00", "stage": "E", "name": "E A01 public login", "passed": true, "detail": {"http": 217, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:29.680354+00:00", "stage": "E", "name": "response does not expose BCrypt hash 217", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:29.680969+00:00", "stage": "E", "name": "E A01 page", "passed": true, "detail": {"actual": ["A01"], "expected": ["A01"]}}
+{"at": "2026-11-14T17:06:29.725230+00:00", "stage": "E", "name": "E A02 baseline", "passed": true, "detail": {"http": 218, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:29.725546+00:00", "stage": "E", "name": "response does not expose BCrypt hash 218", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:29.726300+00:00", "stage": "E", "name": "E baseline dashboard on_sale", "passed": true, "detail": {"actual": 53, "expected": 53}}
+{"at": "2026-11-14T17:06:29.726900+00:00", "stage": "E", "name": "E baseline dashboard draft", "passed": true, "detail": {"actual": 7, "expected": 7}}
+{"at": "2026-11-14T17:06:29.727590+00:00", "stage": "E", "name": "E baseline dashboard paid", "passed": true, "detail": {"actual": 3, "expected": 3}}
+{"at": "2026-11-14T17:06:29.728288+00:00", "stage": "E", "name": "E baseline dashboard enabled", "passed": true, "detail": {"actual": 2, "expected": 2}}
+{"at": "2026-11-14T17:06:29.728907+00:00", "stage": "E", "name": "E baseline dashboard disabled", "passed": true, "detail": {"actual": 1, "expected": 1}}
+{"at": "2026-11-14T17:06:29.729532+00:00", "stage": "E", "name": "E dashboard card target on-sale-products", "passed": true, "detail": {"actual": "/products?status=ON_SALE", "expected": "/products?status=ON_SALE"}}
+{"at": "2026-11-14T17:06:29.791514+00:00", "stage": "E", "name": "E dashboard card on-sale-products", "passed": true, "detail": {"http": 219, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:29.791819+00:00", "stage": "E", "name": "response does not expose BCrypt hash 219", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:29.793455+00:00", "stage": "E", "name": "E dashboard filtered count on-sale-products", "passed": true, "detail": {"actual": 53, "expected": 53}}
+{"at": "2026-11-14T17:06:29.793766+00:00", "stage": "E", "name": "E dashboard card target draft-products", "passed": true, "detail": {"actual": "/products?status=DRAFT", "expected": "/products?status=DRAFT"}}
+{"at": "2026-11-14T17:06:29.808493+00:00", "stage": "E", "name": "E dashboard card draft-products", "passed": true, "detail": {"http": 220, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:29.808788+00:00", "stage": "E", "name": "response does not expose BCrypt hash 220", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:29.810193+00:00", "stage": "E", "name": "E dashboard filtered count draft-products", "passed": true, "detail": {"actual": 7, "expected": 7}}
+{"at": "2026-11-14T17:06:29.810449+00:00", "stage": "E", "name": "E dashboard card target paid-orders", "passed": true, "detail": {"actual": "/orders?status=PAID", "expected": "/orders?status=PAID"}}
+{"at": "2026-11-14T17:06:29.834203+00:00", "stage": "E", "name": "E dashboard card paid-orders", "passed": true, "detail": {"http": 221, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:29.834565+00:00", "stage": "E", "name": "response does not expose BCrypt hash 221", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:29.835689+00:00", "stage": "E", "name": "E dashboard filtered count paid-orders", "passed": true, "detail": {"actual": 3, "expected": 3}}
+{"at": "2026-11-14T17:06:29.835974+00:00", "stage": "E", "name": "E dashboard card target enabled-customers", "passed": true, "detail": {"actual": "/customers?status=ENABLED", "expected": "/customers?status=ENABLED"}}
+{"at": "2026-11-14T17:06:29.852235+00:00", "stage": "E", "name": "E dashboard card enabled-customers", "passed": true, "detail": {"http": 222, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:29.852507+00:00", "stage": "E", "name": "response does not expose BCrypt hash 222", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:29.853284+00:00", "stage": "E", "name": "E dashboard filtered count enabled-customers", "passed": true, "detail": {"actual": 2, "expected": 2}}
+{"at": "2026-11-14T17:06:29.853534+00:00", "stage": "E", "name": "E dashboard card target disabled-customers", "passed": true, "detail": {"actual": "/customers?status=DISABLED", "expected": "/customers?status=DISABLED"}}
+{"at": "2026-11-14T17:06:29.861622+00:00", "stage": "E", "name": "E dashboard card disabled-customers", "passed": true, "detail": {"http": 223, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:29.862008+00:00", "stage": "E", "name": "response does not expose BCrypt hash 223", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:29.862864+00:00", "stage": "E", "name": "E dashboard filtered count disabled-customers", "passed": true, "detail": {"actual": 1, "expected": 1}}
+{"at": "2026-11-14T17:06:29.879769+00:00", "stage": "E", "name": "E A03 core read", "passed": true, "detail": {"http": 224, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:29.880190+00:00", "stage": "E", "name": "response does not expose BCrypt hash 224", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:29.881599+00:00", "stage": "E", "name": "E A03 page marker", "passed": true, "detail": {"actual": ["A03"], "expected": ["A03"]}}
+{"at": "2026-11-14T17:06:29.895755+00:00", "stage": "E", "name": "E A04 core read", "passed": true, "detail": {"http": 225, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:29.896210+00:00", "stage": "E", "name": "response does not expose BCrypt hash 225", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:29.897845+00:00", "stage": "E", "name": "E A04 page marker", "passed": true, "detail": {"actual": ["A04"], "expected": ["A04"]}}
+{"at": "2026-11-14T17:06:29.915916+00:00", "stage": "E", "name": "E A05 core read", "passed": true, "detail": {"http": 226, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:29.916317+00:00", "stage": "E", "name": "response does not expose BCrypt hash 226", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:29.917266+00:00", "stage": "E", "name": "E A05 page marker", "passed": true, "detail": {"actual": ["A05"], "expected": ["A05"]}}
+{"at": "2026-11-14T17:06:29.928641+00:00", "stage": "E", "name": "E A06 core read", "passed": true, "detail": {"http": 227, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:29.928938+00:00", "stage": "E", "name": "response does not expose BCrypt hash 227", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:29.930373+00:00", "stage": "E", "name": "E A06 page marker", "passed": true, "detail": {"actual": ["A06"], "expected": ["A06"]}}
+{"at": "2026-11-14T17:06:29.939598+00:00", "stage": "E", "name": "E A08 core read", "passed": true, "detail": {"http": 228, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:29.939906+00:00", "stage": "E", "name": "response does not expose BCrypt hash 228", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:29.940785+00:00", "stage": "E", "name": "E A08 page marker", "passed": true, "detail": {"actual": ["A08"], "expected": ["A08"]}}
+{"at": "2026-11-14T17:06:29.950660+00:00", "stage": "E", "name": "E A09 core read", "passed": true, "detail": {"http": 229, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:29.950982+00:00", "stage": "E", "name": "response does not expose BCrypt hash 229", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:29.951796+00:00", "stage": "E", "name": "E A09 page marker", "passed": true, "detail": {"actual": ["A09"], "expected": ["A09"]}}
+{"at": "2026-11-14T17:06:30.405963+00:00", "stage": "E", "name": "E A03 create root", "passed": true, "detail": {"http": 230, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:30.406256+00:00", "stage": "E", "name": "response does not expose BCrypt hash 230", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:30.437798+00:00", "stage": "E", "name": "E category generated id exists", "passed": true, "detail": {"id": "503", "code": "RV170629952093", "parent_id": "NULL", "name": "复核主题170629952093", "sort_order": "901"}}
+{"at": "2026-11-14T17:06:30.464290+00:00", "stage": "E", "name": "E A03 edit form", "passed": true, "detail": {"http": 231, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:30.464624+00:00", "stage": "E", "name": "response does not expose BCrypt hash 231", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:30.938688+00:00", "stage": "E", "name": "E A03 edit root", "passed": true, "detail": {"http": 232, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:30.938939+00:00", "stage": "E", "name": "response does not expose BCrypt hash 232", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:30.971994+00:00", "stage": "E", "name": "E category edit preserves code", "passed": true, "detail": {"actual": "RV170629952093", "expected": "RV170629952093"}}
+{"at": "2026-11-14T17:06:30.972250+00:00", "stage": "E", "name": "E category edit name", "passed": true, "detail": {"actual": "复核主题170629952093改", "expected": "复核主题170629952093改"}}
+{"at": "2026-11-14T17:06:31.443288+00:00", "stage": "E", "name": "E A03 create child", "passed": true, "detail": {"http": 233, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:31.443613+00:00", "stage": "E", "name": "response does not expose BCrypt hash 233", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:31.475181+00:00", "stage": "E", "name": "E child generated id / parent / suffix", "passed": true, "detail": {"id": "504", "code": "RV170629952093_STATIONERY", "parent_id": "503"}}
+{"at": "2026-11-14T17:06:31.935549+00:00", "stage": "E", "name": "E A03 referenced parent removal", "passed": true, "detail": {"http": 234, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:06:31.935809+00:00", "stage": "E", "name": "E A03 referenced parent removal zero seven-table writes", "passed": true, "detail": {"http": 234, "changed": []}}
+{"at": "2026-11-14T17:06:31.936054+00:00", "stage": "E", "name": "response does not expose BCrypt hash 234", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:32.395897+00:00", "stage": "E", "name": "E A03 code22 rejected", "passed": true, "detail": {"http": 235, "expected": [400], "actual": 400}}
+{"at": "2026-11-14T17:06:32.396184+00:00", "stage": "E", "name": "E A03 code22 rejected zero seven-table writes", "passed": true, "detail": {"http": 235, "changed": []}}
+{"at": "2026-11-14T17:06:32.396569+00:00", "stage": "E", "name": "response does not expose BCrypt hash 235", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:32.881613+00:00", "stage": "E", "name": "E A03 create empty root", "passed": true, "detail": {"http": 236, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:32.881926+00:00", "stage": "E", "name": "response does not expose BCrypt hash 236", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:33.384378+00:00", "stage": "E", "name": "E A03 remove empty root", "passed": true, "detail": {"http": 237, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:33.384643+00:00", "stage": "E", "name": "response does not expose BCrypt hash 237", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:33.416529+00:00", "stage": "E", "name": "E empty category deleted", "passed": true, "detail": {"actual": [], "expected": []}}
+{"at": "2026-11-14T17:06:33.872670+00:00", "stage": "E", "name": "E A05 create draft SKU", "passed": true, "detail": {"http": 238, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:33.872976+00:00", "stage": "E", "name": "response does not expose BCrypt hash 238", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:33.904690+00:00", "stage": "E", "name": "E product generated id exists", "passed": true, "detail": {"id": "61"}}
+{"at": "2026-11-14T17:06:33.937242+00:00", "stage": "E", "name": "E new product initial state", "passed": true, "detail": {"actual": ["DRAFT", 0, 4], "expected": ["DRAFT", 0, 4]}}
+{"at": "2026-11-14T17:06:33.950285+00:00", "stage": "E", "name": "E draft not public", "passed": true, "detail": {"http": 239, "expected": [404], "actual": 404}}
+{"at": "2026-11-14T17:06:33.950579+00:00", "stage": "E", "name": "response does not expose BCrypt hash 239", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:33.962916+00:00", "stage": "E", "name": "E A05 edit form", "passed": true, "detail": {"http": 240, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:33.963214+00:00", "stage": "E", "name": "response does not expose BCrypt hash 240", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:33.964263+00:00", "stage": "E", "name": "E A05 edit page marker", "passed": true, "detail": {"actual": ["A05"], "expected": ["A05"]}}
+{"at": "2026-11-14T17:06:34.441666+00:00", "stage": "E", "name": "E A05 edit ignores SKU and stock", "passed": true, "detail": {"http": 241, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:34.441941+00:00", "stage": "E", "name": "response does not expose BCrypt hash 241", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:34.473590+00:00", "stage": "E", "name": "E edit SKU stock retained", "passed": true, "detail": {"actual": ["REVIEW-20261115-170629952093", 4], "expected": ["REVIEW-20261115-170629952093", 4]}}
+{"at": "2026-11-14T17:06:34.473843+00:00", "stage": "E", "name": "E edit increments product version", "passed": true, "detail": {"actual": 1, "expected": 1}}
+{"at": "2026-11-14T17:06:34.921432+00:00", "stage": "E", "name": "E A05 old edit 409", "passed": true, "detail": {"http": 242, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:06:34.921737+00:00", "stage": "E", "name": "E A05 old edit 409 zero seven-table writes", "passed": true, "detail": {"http": 242, "changed": []}}
+{"at": "2026-11-14T17:06:34.922093+00:00", "stage": "E", "name": "response does not expose BCrypt hash 242", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:35.380900+00:00", "stage": "E", "name": "E A04 publish", "passed": true, "detail": {"http": 243, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:35.381155+00:00", "stage": "E", "name": "response does not expose BCrypt hash 243", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:35.413826+00:00", "stage": "E", "name": "E publish status/version", "passed": true, "detail": {"actual": ["ON_SALE", 2], "expected": ["ON_SALE", 2]}}
+{"at": "2026-11-14T17:06:35.420694+00:00", "stage": "E", "name": "E published public and escaped text", "passed": true, "detail": {"http": 244, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:35.421023+00:00", "stage": "E", "name": "response does not expose BCrypt hash 244", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:35.421316+00:00", "stage": "E", "name": "E description escaped in user HTML", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:35.887835+00:00", "stage": "E", "name": "E A04 repeated state 409", "passed": true, "detail": {"http": 245, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:06:35.888120+00:00", "stage": "E", "name": "E A04 repeated state 409 zero seven-table writes", "passed": true, "detail": {"http": 245, "changed": []}}
+{"at": "2026-11-14T17:06:35.888373+00:00", "stage": "E", "name": "response does not expose BCrypt hash 245", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:35.926734+00:00", "stage": "E", "name": "E A02 after publish", "passed": true, "detail": {"http": 246, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:35.927156+00:00", "stage": "E", "name": "response does not expose BCrypt hash 246", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:35.927895+00:00", "stage": "E", "name": "E after publish dashboard on_sale", "passed": true, "detail": {"actual": 54, "expected": 54}}
+{"at": "2026-11-14T17:06:35.928549+00:00", "stage": "E", "name": "E after publish dashboard draft", "passed": true, "detail": {"actual": 7, "expected": 7}}
+{"at": "2026-11-14T17:06:35.929258+00:00", "stage": "E", "name": "E after publish dashboard paid", "passed": true, "detail": {"actual": 3, "expected": 3}}
+{"at": "2026-11-14T17:06:35.929917+00:00", "stage": "E", "name": "E after publish dashboard enabled", "passed": true, "detail": {"actual": 2, "expected": 2}}
+{"at": "2026-11-14T17:06:35.930545+00:00", "stage": "E", "name": "E after publish dashboard disabled", "passed": true, "detail": {"actual": 1, "expected": 1}}
+{"at": "2026-11-14T17:06:36.389840+00:00", "stage": "E", "name": "E A04 unpublish", "passed": true, "detail": {"http": 247, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:36.390140+00:00", "stage": "E", "name": "response does not expose BCrypt hash 247", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:36.422142+00:00", "stage": "E", "name": "E unpublish status/version", "passed": true, "detail": {"actual": ["DRAFT", 3], "expected": ["DRAFT", 3]}}
+{"at": "2026-11-14T17:06:36.445622+00:00", "stage": "E", "name": "E unpublished public 404", "passed": true, "detail": {"http": 248, "expected": [404], "actual": 404}}
+{"at": "2026-11-14T17:06:36.445950+00:00", "stage": "E", "name": "response does not expose BCrypt hash 248", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:36.903319+00:00", "stage": "E", "name": "E A05 restock increment 3", "passed": true, "detail": {"http": 249, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:36.903612+00:00", "stage": "E", "name": "response does not expose BCrypt hash 249", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:36.935225+00:00", "stage": "E", "name": "E restock stock/version", "passed": true, "detail": {"actual": [7, 4], "expected": [7, 4]}}
+{"at": "2026-11-14T17:06:37.401125+00:00", "stage": "E", "name": "E A05 pre-restock edit 409", "passed": true, "detail": {"http": 250, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:06:37.401449+00:00", "stage": "E", "name": "E A05 pre-restock edit 409 zero seven-table writes", "passed": true, "detail": {"http": 250, "changed": []}}
+{"at": "2026-11-14T17:06:37.401761+00:00", "stage": "E", "name": "response does not expose BCrypt hash 250", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:37.879787+00:00", "stage": "E", "name": "E A05 invalid restock 400", "passed": true, "detail": {"http": 251, "expected": [400], "actual": 400}}
+{"at": "2026-11-14T17:06:37.880118+00:00", "stage": "E", "name": "E A05 invalid restock 400 zero seven-table writes", "passed": true, "detail": {"http": 251, "changed": []}}
+{"at": "2026-11-14T17:06:37.880375+00:00", "stage": "E", "name": "response does not expose BCrypt hash 251", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:38.325987+00:00", "stage": "E", "name": "E A03 draft product reference removal409", "passed": true, "detail": {"http": 252, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:06:38.326301+00:00", "stage": "E", "name": "E A03 draft product reference removal409 zero seven-table writes", "passed": true, "detail": {"http": 252, "changed": []}}
+{"at": "2026-11-14T17:06:38.326555+00:00", "stage": "E", "name": "response does not expose BCrypt hash 252", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:38.788540+00:00", "stage": "E", "name": "E A04 publish fixture for A10", "passed": true, "detail": {"http": 253, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:38.788812+00:00", "stage": "E", "name": "response does not expose BCrypt hash 253", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:38.789078+00:00", "stage": "E", "name": "E paid_order prerequisite from A-D", "passed": true, "detail": "No fallback seed order is substituted for a missing new-order prerequisite."}
+{"at": "2026-11-14T17:06:38.789395+00:00", "stage": "E", "name": "E cancelled_order prerequisite from A-D", "passed": true, "detail": "No fallback seed order is substituted for a missing new-order prerequisite."}
+{"at": "2026-11-14T17:06:38.832439+00:00", "stage": "E", "name": "E A07 newly placed paid order", "passed": true, "detail": {"http": 254, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:38.832728+00:00", "stage": "E", "name": "response does not expose BCrypt hash 254", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:38.833758+00:00", "stage": "E", "name": "E A07 page marker", "passed": true, "detail": {"actual": ["A07"], "expected": ["A07"]}}
+{"at": "2026-11-14T17:06:38.841891+00:00", "stage": "E", "name": "E A06 CI/exact/AND {'orderNo': 'csu-7df1c3e8521677d7043e92066497667f'}", "passed": true, "detail": {"http": 255, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:38.842233+00:00", "stage": "E", "name": "response does not expose BCrypt hash 255", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:38.843104+00:00", "stage": "E", "name": "E order filter total {'orderNo': 'csu-7df1c3e8521677d7043e92066497667f'}", "passed": true, "detail": {"actual": 1, "expected": 1}}
+{"at": "2026-11-14T17:06:38.849860+00:00", "stage": "E", "name": "E A06 CI/exact/AND {'orderNo': 'CSU-7df1c3e8521677d7043e920664976'}", "passed": true, "detail": {"http": 256, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:38.850254+00:00", "stage": "E", "name": "response does not expose BCrypt hash 256", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:38.850952+00:00", "stage": "E", "name": "E order filter total {'orderNo': 'CSU-7df1c3e8521677d7043e920664976'}", "passed": true, "detail": {"actual": 0, "expected": 0}}
+{"at": "2026-11-14T17:06:38.860237+00:00", "stage": "E", "name": "E A06 CI/exact/AND {'orderNo': 'csu-7df1c3e8521677d7043e92066497667f', 'status': 'PAID', 'userId': 1}", "passed": true, "detail": {"http": 257, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:38.860516+00:00", "stage": "E", "name": "response does not expose BCrypt hash 257", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:38.861428+00:00", "stage": "E", "name": "E order filter total {'orderNo': 'csu-7df1c3e8521677d7043e92066497667f', 'status': 'PAID', 'userId': 1}", "passed": true, "detail": {"actual": 1, "expected": 1}}
+{"at": "2026-11-14T17:06:38.868914+00:00", "stage": "E", "name": "E A06 CI/exact/AND {'orderNo': 'CSU-7df1c3e8521677d7043e92066497667f', 'userId': 2}", "passed": true, "detail": {"http": 258, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:38.869275+00:00", "stage": "E", "name": "response does not expose BCrypt hash 258", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:38.870044+00:00", "stage": "E", "name": "E order filter total {'orderNo': 'CSU-7df1c3e8521677d7043e92066497667f', 'userId': 2}", "passed": true, "detail": {"actual": 0, "expected": 0}}
+{"at": "2026-11-14T17:06:38.877470+00:00", "stage": "E", "name": "E A06 invalid query", "passed": true, "detail": {"http": 259, "expected": [404], "actual": 404}}
+{"at": "2026-11-14T17:06:38.877739+00:00", "stage": "E", "name": "response does not expose BCrypt hash 259", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:38.883853+00:00", "stage": "E", "name": "E A06 invalid query", "passed": true, "detail": {"http": 260, "expected": [400], "actual": 400}}
+{"at": "2026-11-14T17:06:38.884197+00:00", "stage": "E", "name": "response does not expose BCrypt hash 260", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:38.890390+00:00", "stage": "E", "name": "E A06 invalid query", "passed": true, "detail": {"http": 261, "expected": [400], "actual": 400}}
+{"at": "2026-11-14T17:06:38.890809+00:00", "stage": "E", "name": "response does not expose BCrypt hash 261", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:39.394512+00:00", "stage": "E", "name": "E A07 first ship", "passed": true, "detail": {"http": 262, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:39.394767+00:00", "stage": "E", "name": "response does not expose BCrypt hash 262", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:39.426190+00:00", "stage": "E", "name": "E first ship SHIPPED with timestamp", "passed": true, "detail": {"id": "16", "order_no": "CSU-7df1c3e8521677d7043e92066497667f", "user_id": "1", "status": "SHIPPED", "total_amount": "85.00", "payment_method": "MOCK", "payment_no": "CSUPAY-940160a21530cfb5d0ea0951d7446b0a", "paid_at": "2026-11-14 17:05:07.277356", "shipped_at": "2026-11-14 17:06:39.158863", "cancelled_at": "NULL"}}
+{"at": "2026-11-14T17:06:39.426481+00:00", "stage": "E", "name": "E ship payment retained", "passed": true, "detail": {"actual": ["MOCK", "CSUPAY-940160a21530cfb5d0ea0951d7446b0a", "2026-11-14 17:05:07.277356"], "expected": ["MOCK", "CSUPAY-940160a21530cfb5d0ea0951d7446b0a", "2026-11-14 17:05:07.277356"]}}
+{"at": "2026-11-14T17:06:39.458035+00:00", "stage": "E", "name": "E ship stocks and versions unchanged", "passed": true, "detail": {"actual": [{"id": "1", "stock": "8", "version": "8"}, {"id": "2", "stock": "23", "version": "1"}, {"id": "3", "stock": "22", "version": "0"}, {"id": "4", "stock": "45", "version": "0"}, {"id": "5", "stock": "24", "version": "0"}, {"id": "6", "stock": "8", "version": "0"}, {"id": "7", "stock": "24", "version": "1"}, {"id": "8", "stock": "29", "version": "1"}, {"id": "9", "stock": "14", "version": "0"}, {"id": "10", "stock": "20", "version": "0"}, {"id": "11", "stock": "0", "version": "0"}, {"id": "12", "stock": "18", "version": "0"}, {"id": "13", "stock": "33", "version": "1"}, {"id": "14", "stock": "21", "version": "1"}, {"id": "15", "stock": "12", "version": "0"}, {"id": "16", "stock": "17", "version": "0"}, {"id": "17", "stock": "12", "version": "0"}, {"id": "18", "stock": "1", "version": "0"}, {"id": "19", "stock": "25", "version": "1"}, {"id": "20", "stock": "14", "version": "1"}, {"id": "21", "stock": "17", "version": "0"}, {"id": "22", "stock": "20", "version": "0"}, {"id": "23", "stock": "18", "version": "0"}, {"id": "24", "stock": "12", "version": "0"}, {"id": "25", "stock": "30", "version": "0"}, {"id": "26", "stock": "29", "version": "1"}, {"id": "27", "stock": "15", "version": "0"}, {"id": "28", "stock": "35", "version": "0"}, {"id": "29", "stock": "0", "version": "0"}, {"id": "30", "stock": "6", "version": "0"}, {"id": "31", "stock": "21", "version": "1"}, {"id": "32", "stock": "19", "version": "0"}, {"id": "33", "stock": "13", "version": "0"}, {"id": "34", "stock": "24", "version": "0"}, {"id": "35", "stock": "9", "version": "0"}, {"id": "36", "stock": "7", "version": "0"}, {"id": "37", "stock": "16", "version": "1"}, {"id": "38", "stock": "20", "version": "0"}, {"id": "39", "stock": "16", "version": "0"}, {"id": "40", "stock": "21", "version": "0"}, {"id": "41", "stock": "18", "version": "0"}, {"id": "42", "stock": "11", "version": "0"}, {"id": "43", "stock": "16", "version": "1"}, {"id": "44", "stock": "20", "version": "1"}, {"id": "45", "stock": "14", "version": "0"}, {"id": "46", "stock": "11", "version": "0"}, {"id": "47", "stock": "0", "version": "0"}, {"id": "48", "stock": "16", "version": "0"}, {"id": "49", "stock": "24", "version": "1"}, {"id": "50", "stock": "18", "version": "1"}, {"id": "51", "stock": "16", "version": "0"}, {"id": "52", "stock": "20", "version": "0"}, {"id": "53", "stock": "16", "version": "0"}, {"id": "54", "stock": "13", "version": "0"}, {"id": "55", "stock": "28", "version": "1"}, {"id": "56", "stock": "11", "version": "4"}, {"id": "57", "stock": "30", "version": "0"}, {"id": "58", "stock": "18", "version": "0"}, {"id": "59", "stock": "11", "version": "0"}, {"id": "60", "stock": "10", "version": "0"}, {"id": "61", "stock": "7", "version": "5"}], "expected": [{"id": "1", "stock": "8", "version": "8"}, {"id": "2", "stock": "23", "version": "1"}, {"id": "3", "stock": "22", "version": "0"}, {"id": "4", "stock": "45", "version": "0"}, {"id": "5", "stock": "24", "version": "0"}, {"id": "6", "stock": "8", "version": "0"}, {"id": "7", "stock": "24", "version": "1"}, {"id": "8", "stock": "29", "version": "1"}, {"id": "9", "stock": "14", "version": "0"}, {"id": "10", "stock": "20", "version": "0"}, {"id": "11", "stock": "0", "version": "0"}, {"id": "12", "stock": "18", "version": "0"}, {"id": "13", "stock": "33", "version": "1"}, {"id": "14", "stock": "21", "version": "1"}, {"id": "15", "stock": "12", "version": "0"}, {"id": "16", "stock": "17", "version": "0"}, {"id": "17", "stock": "12", "version": "0"}, {"id": "18", "stock": "1", "version": "0"}, {"id": "19", "stock": "25", "version": "1"}, {"id": "20", "stock": "14", "version": "1"}, {"id": "21", "stock": "17", "version": "0"}, {"id": "22", "stock": "20", "version": "0"}, {"id": "23", "stock": "18", "version": "0"}, {"id": "24", "stock": "12", "version": "0"}, {"id": "25", "stock": "30", "version": "0"}, {"id": "26", "stock": "29", "version": "1"}, {"id": "27", "stock": "15", "version": "0"}, {"id": "28", "stock": "35", "version": "0"}, {"id": "29", "stock": "0", "version": "0"}, {"id": "30", "stock": "6", "version": "0"}, {"id": "31", "stock": "21", "version": "1"}, {"id": "32", "stock": "19", "version": "0"}, {"id": "33", "stock": "13", "version": "0"}, {"id": "34", "stock": "24", "version": "0"}, {"id": "35", "stock": "9", "version": "0"}, {"id": "36", "stock": "7", "version": "0"}, {"id": "37", "stock": "16", "version": "1"}, {"id": "38", "stock": "20", "version": "0"}, {"id": "39", "stock": "16", "version": "0"}, {"id": "40", "stock": "21", "version": "0"}, {"id": "41", "stock": "18", "version": "0"}, {"id": "42", "stock": "11", "version": "0"}, {"id": "43", "stock": "16", "version": "1"}, {"id": "44", "stock": "20", "version": "1"}, {"id": "45", "stock": "14", "version": "0"}, {"id": "46", "stock": "11", "version": "0"}, {"id": "47", "stock": "0", "version": "0"}, {"id": "48", "stock": "16", "version": "0"}, {"id": "49", "stock": "24", "version": "1"}, {"id": "50", "stock": "18", "version": "1"}, {"id": "51", "stock": "16", "version": "0"}, {"id": "52", "stock": "20", "version": "0"}, {"id": "53", "stock": "16", "version": "0"}, {"id": "54", "stock": "13", "version": "0"}, {"id": "55", "stock": "28", "version": "1"}, {"id": "56", "stock": "11", "version": "4"}, {"id": "57", "stock": "30", "version": "0"}, {"id": "58", "stock": "18", "version": "0"}, {"id": "59", "stock": "11", "version": "0"}, {"id": "60", "stock": "10", "version": "0"}, {"id": "61", "stock": "7", "version": "5"}]}}
+{"at": "2026-11-14T17:06:39.912306+00:00", "stage": "E", "name": "E A07 repeat ship idempotent", "passed": true, "detail": {"http": 263, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:39.912572+00:00", "stage": "E", "name": "E A07 repeat ship idempotent zero seven-table writes", "passed": true, "detail": {"http": 263, "changed": []}}
+{"at": "2026-11-14T17:06:39.912818+00:00", "stage": "E", "name": "response does not expose BCrypt hash 263", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:39.944500+00:00", "stage": "E", "name": "E repeat ship original order fields", "passed": true, "detail": {"actual": {"id": "16", "order_no": "CSU-7df1c3e8521677d7043e92066497667f", "user_id": "1", "status": "SHIPPED", "total_amount": "85.00", "payment_method": "MOCK", "payment_no": "CSUPAY-940160a21530cfb5d0ea0951d7446b0a", "paid_at": "2026-11-14 17:05:07.277356", "shipped_at": "2026-11-14 17:06:39.158863", "cancelled_at": "NULL"}, "expected": {"id": "16", "order_no": "CSU-7df1c3e8521677d7043e92066497667f", "user_id": "1", "status": "SHIPPED", "total_amount": "85.00", "payment_method": "MOCK", "payment_no": "CSUPAY-940160a21530cfb5d0ea0951d7446b0a", "paid_at": "2026-11-14 17:05:07.277356", "shipped_at": "2026-11-14 17:06:39.158863", "cancelled_at": "NULL"}}}
+{"at": "2026-11-14T17:06:39.953539+00:00", "stage": "E", "name": "E U08 sees shipped", "passed": true, "detail": {"http": 264, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:39.953804+00:00", "stage": "E", "name": "response does not expose BCrypt hash 264", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:39.954773+00:00", "stage": "E", "name": "E user sees SHIPPED", "passed": true, "detail": {"actual": ["SHIPPED"], "expected": ["SHIPPED"]}}
+{"at": "2026-11-14T17:06:39.994663+00:00", "stage": "E", "name": "E A02 after ship", "passed": true, "detail": {"http": 265, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:39.994945+00:00", "stage": "E", "name": "response does not expose BCrypt hash 265", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:39.995652+00:00", "stage": "E", "name": "E after ship dashboard on_sale", "passed": true, "detail": {"actual": 54, "expected": 54}}
+{"at": "2026-11-14T17:06:39.996478+00:00", "stage": "E", "name": "E after ship dashboard draft", "passed": true, "detail": {"actual": 7, "expected": 7}}
+{"at": "2026-11-14T17:06:39.997189+00:00", "stage": "E", "name": "E after ship dashboard paid", "passed": true, "detail": {"actual": 2, "expected": 2}}
+{"at": "2026-11-14T17:06:39.997857+00:00", "stage": "E", "name": "E after ship dashboard enabled", "passed": true, "detail": {"actual": 2, "expected": 2}}
+{"at": "2026-11-14T17:06:39.998541+00:00", "stage": "E", "name": "E after ship dashboard disabled", "passed": true, "detail": {"actual": 1, "expected": 1}}
+{"at": "2026-11-14T17:06:40.458288+00:00", "stage": "E", "name": "E A07 cancelled ship409", "passed": true, "detail": {"http": 266, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:06:40.458562+00:00", "stage": "E", "name": "E A07 cancelled ship409 zero seven-table writes", "passed": true, "detail": {"http": 266, "changed": []}}
+{"at": "2026-11-14T17:06:40.458920+00:00", "stage": "E", "name": "response does not expose BCrypt hash 266", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:40.928930+00:00", "stage": "E", "name": "E A07 pending ship409", "passed": true, "detail": {"http": 267, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:06:40.929321+00:00", "stage": "E", "name": "E A07 pending ship409 zero seven-table writes", "passed": true, "detail": {"http": 267, "changed": []}}
+{"at": "2026-11-14T17:06:40.929615+00:00", "stage": "E", "name": "response does not expose BCrypt hash 267", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:40.937884+00:00", "stage": "E", "name": "E A08 CUSTOMER only", "passed": true, "detail": {"http": 268, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:40.938220+00:00", "stage": "E", "name": "response does not expose BCrypt hash 268", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:40.972389+00:00", "stage": "E", "name": "E A08 customer row ids", "passed": true, "detail": {"actual": ["1", "2", "3"], "expected": ["1", "2", "3"]}}
+{"at": "2026-11-14T17:06:40.980214+00:00", "stage": "E", "name": "E A08 ENABLED", "passed": true, "detail": {"http": 269, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:40.980475+00:00", "stage": "E", "name": "response does not expose BCrypt hash 269", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:41.013626+00:00", "stage": "E", "name": "E A08 filtered count ENABLED", "passed": true, "detail": {"actual": 2, "expected": 2}}
+{"at": "2026-11-14T17:06:41.021217+00:00", "stage": "E", "name": "E A08 DISABLED", "passed": true, "detail": {"http": 270, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:41.021525+00:00", "stage": "E", "name": "response does not expose BCrypt hash 270", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:41.056060+00:00", "stage": "E", "name": "E A08 filtered count DISABLED", "passed": true, "detail": {"actual": 1, "expected": 1}}
+{"at": "2026-11-14T17:06:41.064001+00:00", "stage": "E", "name": "E A08 username literal/page", "passed": true, "detail": {"http": 271, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:41.064299+00:00", "stage": "E", "name": "response does not expose BCrypt hash 271", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:41.065083+00:00", "stage": "E", "name": "E A08 alice filter", "passed": true, "detail": {"actual": ["1"], "expected": ["1"]}}
+{"at": "2026-11-14T17:06:41.071075+00:00", "stage": "E", "name": "E A09 ADMIN excluded", "passed": true, "detail": {"http": 272, "expected": [404], "actual": 404}}
+{"at": "2026-11-14T17:06:41.071405+00:00", "stage": "E", "name": "response does not expose BCrypt hash 272", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:41.077276+00:00", "stage": "E", "name": "E A09 unknown excluded", "passed": true, "detail": {"http": 273, "expected": [404], "actual": 404}}
+{"at": "2026-11-14T17:06:41.077567+00:00", "stage": "E", "name": "response does not expose BCrypt hash 273", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:41.083531+00:00", "stage": "E", "name": "E A09 safe detail", "passed": true, "detail": {"http": 274, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:41.083828+00:00", "stage": "E", "name": "response does not expose BCrypt hash 274", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:41.084136+00:00", "stage": "E", "name": "E A09 no password hash", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:41.084791+00:00", "stage": "E", "name": "E A09 to A06 customer link", "passed": true, "detail": {"actual": ["/orders?userId=1"], "expected": ["/orders?userId=1"]}}
+{"at": "2026-11-14T17:06:41.092330+00:00", "stage": "E", "name": "E A06 customer paging", "passed": true, "detail": {"http": 275, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:41.092596+00:00", "stage": "E", "name": "response does not expose BCrypt hash 275", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:41.110479+00:00", "stage": "E", "name": "u login form", "passed": true, "detail": {"http": 276, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:41.110775+00:00", "stage": "E", "name": "response does not expose BCrypt hash 276", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:41.596070+00:00", "stage": "E", "name": "u login alice", "passed": true, "detail": {"http": 277, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:41.596334+00:00", "stage": "E", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 277, "changed": []}}
+{"at": "2026-11-14T17:06:41.596633+00:00", "stage": "E", "name": "response does not expose BCrypt hash 277", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:41.625030+00:00", "stage": "E", "name": "u login form", "passed": true, "detail": {"http": 278, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:41.625379+00:00", "stage": "E", "name": "response does not expose BCrypt hash 278", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:42.122249+00:00", "stage": "E", "name": "u login alice", "passed": true, "detail": {"http": 279, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:42.122507+00:00", "stage": "E", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 279, "changed": []}}
+{"at": "2026-11-14T17:06:42.122789+00:00", "stage": "E", "name": "response does not expose BCrypt hash 279", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:42.700780+00:00", "stage": "E", "name": "E A09 disable alice", "passed": true, "detail": {"http": 280, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:42.701109+00:00", "stage": "E", "name": "response does not expose BCrypt hash 280", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:42.733709+00:00", "stage": "E", "name": "E disable stamp strictly increases", "passed": true, "detail": {"before": {"id": "1", "username": "alice", "display_name": "林同学", "role": "CUSTOMER", "status": "ENABLED", "stamp": "2026-11-14 16:57:48.855390"}, "after": {"id": "1", "username": "alice", "display_name": "林同学", "role": "CUSTOMER", "status": "DISABLED", "stamp": "2026-11-14 17:06:42.477413"}}}
+{"at": "2026-11-14T17:06:43.179717+00:00", "stage": "E", "name": "E A09 repeated disable no-write", "passed": true, "detail": {"http": 281, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:43.179972+00:00", "stage": "E", "name": "E A09 repeated disable no-write zero seven-table writes", "passed": true, "detail": {"http": 281, "changed": []}}
+{"at": "2026-11-14T17:06:43.180200+00:00", "stage": "E", "name": "response does not expose BCrypt hash 281", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:43.214028+00:00", "stage": "E", "name": "E repeat disable stamp unchanged", "passed": true, "detail": {"actual": {"id": "1", "username": "alice", "display_name": "林同学", "role": "CUSTOMER", "status": "DISABLED", "stamp": "2026-11-14 17:06:42.477413"}, "expected": {"id": "1", "username": "alice", "display_name": "林同学", "role": "CUSTOMER", "status": "DISABLED", "stamp": "2026-11-14 17:06:42.477413"}}}
+{"at": "2026-11-14T17:06:43.217642+00:00", "stage": "E", "name": "E old user next protected read302", "passed": true, "detail": {"http": 282, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:06:43.217915+00:00", "stage": "E", "name": "response does not expose BCrypt hash 282", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:43.684637+00:00", "stage": "E", "name": "E A09 enable alice", "passed": true, "detail": {"http": 283, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:43.684903+00:00", "stage": "E", "name": "response does not expose BCrypt hash 283", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:43.717286+00:00", "stage": "E", "name": "E enable stamp strictly increases", "passed": true, "detail": {"before": {"id": "1", "username": "alice", "display_name": "林同学", "role": "CUSTOMER", "status": "DISABLED", "stamp": "2026-11-14 17:06:42.477413"}, "after": {"id": "1", "username": "alice", "display_name": "林同学", "role": "CUSTOMER", "status": "ENABLED", "stamp": "2026-11-14 17:06:43.453777"}}}
+{"at": "2026-11-14T17:06:44.158540+00:00", "stage": "E", "name": "E A09 repeated enable no-write", "passed": true, "detail": {"http": 284, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:44.158803+00:00", "stage": "E", "name": "E A09 repeated enable no-write zero seven-table writes", "passed": true, "detail": {"http": 284, "changed": []}}
+{"at": "2026-11-14T17:06:44.159053+00:00", "stage": "E", "name": "response does not expose BCrypt hash 284", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:44.163015+00:00", "stage": "E", "name": "E quiet old session disabled-enabled302", "passed": true, "detail": {"http": 285, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:06:44.163254+00:00", "stage": "E", "name": "response does not expose BCrypt hash 285", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:44.165251+00:00", "stage": "E", "name": "E cleared old user remains302", "passed": true, "detail": {"http": 286, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:06:44.165579+00:00", "stage": "E", "name": "response does not expose BCrypt hash 286", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:44.260076+00:00", "stage": "E", "name": "E status changes retain cart/orders/stocks", "passed": true, "detail": {"actual": {"cart": [{"id": "7", "user_id": "2", "product_id": "8", "quantity": "1", "version": "0"}, {"id": "8", "user_id": "2", "product_id": "26", "quantity": "2", "version": "0"}, {"id": "9", "user_id": "2", "product_id": "43", "quantity": "1", "version": "0"}, {"id": "10", "user_id": "2", "product_id": "55", "quantity": "1", "version": "0"}, {"id": "42", "user_id": "1", "product_id": "56", "quantity": "1", "version": "0"}], "orders": [{"id": "1", "user_id": "1", "status": "PENDING_PAYMENT", "total_amount": "74.60", "payment_no": "NULL"}, {"id": "2", "user_id": "1", "status": "PAID", "total_amount": "45.00", "payment_no": "MOCK-DEMO-202611-AL-02"}, {"id": "3", "user_id": "1", "status": "SHIPPED", "total_amount": "66.00", "payment_no": "MOCK-DEMO-202611-AL-03"}, {"id": "4", "user_id": "1", "status": "COMPLETED", "total_amount": "49.00", "payment_no": "MOCK-DEMO-202611-AL-04"}, {"id": "5", "user_id": "1", "status": "CANCELLED", "total_amount": "54.80", "payment_no": "NULL"}, {"id": "6", "user_id": "2", "status": "PENDING_PAYMENT", "total_amount": "64.00", "payment_no": "NULL"}, {"id": "7", "user_id": "2", "status": "PAID", "total_amount": "45.90", "payment_no": "MOCK-DEMO-202611-BO-02"}, {"id": "8", "user_id": "2", "status": "SHIPPED", "total_amount": "28.00", "payment_no": "MOCK-DEMO-202611-BO-03"}, {"id": "9", "user_id": "2", "status": "COMPLETED", "total_amount": "53.90", "payment_no": "MOCK-DEMO-202611-BO-04"}, {"id": "10", "user_id": "2", "status": "CANCELLED", "total_amount": "42.00", "payment_no": "NULL"}, {"id": "16", "user_id": "1", "status": "SHIPPED", "total_amount": "85.00", "payment_no": "CSUPAY-940160a21530cfb5d0ea0951d7446b0a"}, {"id": "17", "user_id": "1", "status": "CANCELLED", "total_amount": "85.00", "payment_no": "NULL"}], "products": [{"id": "1", "stock": "8", "version": "8", "status": "DRAFT"}, {"id": "2", "stock": "23", "version": "1", "status": "ON_SALE"}, {"id": "3", "stock": "22", "version": "0", "status": "ON_SALE"}, {"id": "4", "stock": "45", "version": "0", "status": "ON_SALE"}, {"id": "5", "stock": "24", "version": "0", "status": "ON_SALE"}, {"id": "6", "stock": "8", "version": "0", "status": "ON_SALE"}, {"id": "7", "stock": "24", "version": "1", "status": "ON_SALE"}, {"id": "8", "stock": "29", "version": "1", "status": "ON_SALE"}, {"id": "9", "stock": "14", "version": "0", "status": "ON_SALE"}, {"id": "10", "stock": "20", "version": "0", "status": "ON_SALE"}, {"id": "11", "stock": "0", "version": "0", "status": "ON_SALE"}, {"id": "12", "stock": "18", "version": "0", "status": "DRAFT"}, {"id": "13", "stock": "33", "version": "1", "status": "ON_SALE"}, {"id": "14", "stock": "21", "version": "1", "status": "ON_SALE"}, {"id": "15", "stock": "12", "version": "0", "status": "ON_SALE"}, {"id": "16", "stock": "17", "version": "0", "status": "ON_SALE"}, {"id": "17", "stock": "12", "version": "0", "status": "ON_SALE"}, {"id": "18", "stock": "1", "version": "0", "status": "ON_SALE"}, {"id": "19", "stock": "25", "version": "1", "status": "ON_SALE"}, {"id": "20", "stock": "14", "version": "1", "status": "ON_SALE"}, {"id": "21", "stock": "17", "version": "0", "status": "ON_SALE"}, {"id": "22", "stock": "20", "version": "0", "status": "ON_SALE"}, {"id": "23", "stock": "18", "version": "0", "status": "ON_SALE"}, {"id": "24", "stock": "12", "version": "0", "status": "DRAFT"}, {"id": "25", "stock": "30", "version": "0", "status": "ON_SALE"}, {"id": "26", "stock": "29", "version": "1", "status": "ON_SALE"}, {"id": "27", "stock": "15", "version": "0", "status": "ON_SALE"}, {"id": "28", "stock": "35", "version": "0", "status": "ON_SALE"}, {"id": "29", "stock": "0", "version": "0", "status": "ON_SALE"}, {"id": "30", "stock": "6", "version": "0", "status": "DRAFT"}, {"id": "31", "stock": "21", "version": "1", "status": "ON_SALE"}, {"id": "32", "stock": "19", "version": "0", "status": "ON_SALE"}, {"id": "33", "stock": "13", "version": "0", "status": "ON_SALE"}, {"id": "34", "stock": "24", "version": "0", "status": "ON_SALE"}, {"id": "35", "stock": "9", "version": "0", "status": "ON_SALE"}, {"id": "36", "stock": "7", "version": "0", "status": "ON_SALE"}, {"id": "37", "stock": "16", "version": "1", "status": "ON_SALE"}, {"id": "38", "stock": "20", "version": "0", "status": "ON_SALE"}, {"id": "39", "stock": "16", "version": "0", "status": "ON_SALE"}, {"id": "40", "stock": "21", "version": "0", "status": "ON_SALE"}, {"id": "41", "stock": "18", "version": "0", "status": "ON_SALE"}, {"id": "42", "stock": "11", "version": "0", "status": "DRAFT"}, {"id": "43", "stock": "16", "version": "1", "status": "ON_SALE"}, {"id": "44", "stock": "20", "version": "1", "status": "ON_SALE"}, {"id": "45", "stock": "14", "version": "0", "status": "ON_SALE"}, {"id": "46", "stock": "11", "version": "0", "status": "ON_SALE"}, {"id": "47", "stock": "0", "version": "0", "status": "ON_SALE"}, {"id": "48", "stock": "16", "version": "0", "status": "ON_SALE"}, {"id": "49", "stock": "24", "version": "1", "status": "ON_SALE"}, {"id": "50", "stock": "18", "version": "1", "status": "ON_SALE"}, {"id": "51", "stock": "16", "version": "0", "status": "ON_SALE"}, {"id": "52", "stock": "20", "version": "0", "status": "ON_SALE"}, {"id": "53", "stock": "16", "version": "0", "status": "ON_SALE"}, {"id": "54", "stock": "13", "version": "0", "status": "DRAFT"}, {"id": "55", "stock": "28", "version": "1", "status": "ON_SALE"}, {"id": "56", "stock": "11", "version": "4", "status": "ON_SALE"}, {"id": "57", "stock": "30", "version": "0", "status": "ON_SALE"}, {"id": "58", "stock": "18", "version": "0", "status": "ON_SALE"}, {"id": "59", "stock": "11", "version": "0", "status": "ON_SALE"}, {"id": "60", "stock": "10", "version": "0", "status": "DRAFT"}, {"id": "61", "stock": "7", "version": "5", "status": "ON_SALE"}]}, "expected": {"cart": [{"id": "7", "user_id": "2", "product_id": "8", "quantity": "1", "version": "0"}, {"id": "8", "user_id": "2", "product_id": "26", "quantity": "2", "version": "0"}, {"id": "9", "user_id": "2", "product_id": "43", "quantity": "1", "version": "0"}, {"id": "10", "user_id": "2", "product_id": "55", "quantity": "1", "version": "0"}, {"id": "42", "user_id": "1", "product_id": "56", "quantity": "1", "version": "0"}], "orders": [{"id": "1", "user_id": "1", "status": "PENDING_PAYMENT", "total_amount": "74.60", "payment_no": "NULL"}, {"id": "2", "user_id": "1", "status": "PAID", "total_amount": "45.00", "payment_no": "MOCK-DEMO-202611-AL-02"}, {"id": "3", "user_id": "1", "status": "SHIPPED", "total_amount": "66.00", "payment_no": "MOCK-DEMO-202611-AL-03"}, {"id": "4", "user_id": "1", "status": "COMPLETED", "total_amount": "49.00", "payment_no": "MOCK-DEMO-202611-AL-04"}, {"id": "5", "user_id": "1", "status": "CANCELLED", "total_amount": "54.80", "payment_no": "NULL"}, {"id": "6", "user_id": "2", "status": "PENDING_PAYMENT", "total_amount": "64.00", "payment_no": "NULL"}, {"id": "7", "user_id": "2", "status": "PAID", "total_amount": "45.90", "payment_no": "MOCK-DEMO-202611-BO-02"}, {"id": "8", "user_id": "2", "status": "SHIPPED", "total_amount": "28.00", "payment_no": "MOCK-DEMO-202611-BO-03"}, {"id": "9", "user_id": "2", "status": "COMPLETED", "total_amount": "53.90", "payment_no": "MOCK-DEMO-202611-BO-04"}, {"id": "10", "user_id": "2", "status": "CANCELLED", "total_amount": "42.00", "payment_no": "NULL"}, {"id": "16", "user_id": "1", "status": "SHIPPED", "total_amount": "85.00", "payment_no": "CSUPAY-940160a21530cfb5d0ea0951d7446b0a"}, {"id": "17", "user_id": "1", "status": "CANCELLED", "total_amount": "85.00", "payment_no": "NULL"}], "products": [{"id": "1", "stock": "8", "version": "8", "status": "DRAFT"}, {"id": "2", "stock": "23", "version": "1", "status": "ON_SALE"}, {"id": "3", "stock": "22", "version": "0", "status": "ON_SALE"}, {"id": "4", "stock": "45", "version": "0", "status": "ON_SALE"}, {"id": "5", "stock": "24", "version": "0", "status": "ON_SALE"}, {"id": "6", "stock": "8", "version": "0", "status": "ON_SALE"}, {"id": "7", "stock": "24", "version": "1", "status": "ON_SALE"}, {"id": "8", "stock": "29", "version": "1", "status": "ON_SALE"}, {"id": "9", "stock": "14", "version": "0", "status": "ON_SALE"}, {"id": "10", "stock": "20", "version": "0", "status": "ON_SALE"}, {"id": "11", "stock": "0", "version": "0", "status": "ON_SALE"}, {"id": "12", "stock": "18", "version": "0", "status": "DRAFT"}, {"id": "13", "stock": "33", "version": "1", "status": "ON_SALE"}, {"id": "14", "stock": "21", "version": "1", "status": "ON_SALE"}, {"id": "15", "stock": "12", "version": "0", "status": "ON_SALE"}, {"id": "16", "stock": "17", "version": "0", "status": "ON_SALE"}, {"id": "17", "stock": "12", "version": "0", "status": "ON_SALE"}, {"id": "18", "stock": "1", "version": "0", "status": "ON_SALE"}, {"id": "19", "stock": "25", "version": "1", "status": "ON_SALE"}, {"id": "20", "stock": "14", "version": "1", "status": "ON_SALE"}, {"id": "21", "stock": "17", "version": "0", "status": "ON_SALE"}, {"id": "22", "stock": "20", "version": "0", "status": "ON_SALE"}, {"id": "23", "stock": "18", "version": "0", "status": "ON_SALE"}, {"id": "24", "stock": "12", "version": "0", "status": "DRAFT"}, {"id": "25", "stock": "30", "version": "0", "status": "ON_SALE"}, {"id": "26", "stock": "29", "version": "1", "status": "ON_SALE"}, {"id": "27", "stock": "15", "version": "0", "status": "ON_SALE"}, {"id": "28", "stock": "35", "version": "0", "status": "ON_SALE"}, {"id": "29", "stock": "0", "version": "0", "status": "ON_SALE"}, {"id": "30", "stock": "6", "version": "0", "status": "DRAFT"}, {"id": "31", "stock": "21", "version": "1", "status": "ON_SALE"}, {"id": "32", "stock": "19", "version": "0", "status": "ON_SALE"}, {"id": "33", "stock": "13", "version": "0", "status": "ON_SALE"}, {"id": "34", "stock": "24", "version": "0", "status": "ON_SALE"}, {"id": "35", "stock": "9", "version": "0", "status": "ON_SALE"}, {"id": "36", "stock": "7", "version": "0", "status": "ON_SALE"}, {"id": "37", "stock": "16", "version": "1", "status": "ON_SALE"}, {"id": "38", "stock": "20", "version": "0", "status": "ON_SALE"}, {"id": "39", "stock": "16", "version": "0", "status": "ON_SALE"}, {"id": "40", "stock": "21", "version": "0", "status": "ON_SALE"}, {"id": "41", "stock": "18", "version": "0", "status": "ON_SALE"}, {"id": "42", "stock": "11", "version": "0", "status": "DRAFT"}, {"id": "43", "stock": "16", "version": "1", "status": "ON_SALE"}, {"id": "44", "stock": "20", "version": "1", "status": "ON_SALE"}, {"id": "45", "stock": "14", "version": "0", "status": "ON_SALE"}, {"id": "46", "stock": "11", "version": "0", "status": "ON_SALE"}, {"id": "47", "stock": "0", "version": "0", "status": "ON_SALE"}, {"id": "48", "stock": "16", "version": "0", "status": "ON_SALE"}, {"id": "49", "stock": "24", "version": "1", "status": "ON_SALE"}, {"id": "50", "stock": "18", "version": "1", "status": "ON_SALE"}, {"id": "51", "stock": "16", "version": "0", "status": "ON_SALE"}, {"id": "52", "stock": "20", "version": "0", "status": "ON_SALE"}, {"id": "53", "stock": "16", "version": "0", "status": "ON_SALE"}, {"id": "54", "stock": "13", "version": "0", "status": "DRAFT"}, {"id": "55", "stock": "28", "version": "1", "status": "ON_SALE"}, {"id": "56", "stock": "11", "version": "4", "status": "ON_SALE"}, {"id": "57", "stock": "30", "version": "0", "status": "ON_SALE"}, {"id": "58", "stock": "18", "version": "0", "status": "ON_SALE"}, {"id": "59", "stock": "11", "version": "0", "status": "ON_SALE"}, {"id": "60", "stock": "10", "version": "0", "status": "DRAFT"}, {"id": "61", "stock": "7", "version": "5", "status": "ON_SALE"}]}}}
+{"at": "2026-11-14T17:06:44.714070+00:00", "stage": "E", "name": "E A09 rejected target/status", "passed": true, "detail": {"http": 287, "expected": [404], "actual": 404}}
+{"at": "2026-11-14T17:06:44.714392+00:00", "stage": "E", "name": "E A09 rejected target/status zero seven-table writes", "passed": true, "detail": {"http": 287, "changed": []}}
+{"at": "2026-11-14T17:06:44.714760+00:00", "stage": "E", "name": "response does not expose BCrypt hash 287", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:45.161966+00:00", "stage": "E", "name": "E A09 rejected target/status", "passed": true, "detail": {"http": 288, "expected": [400], "actual": 400}}
+{"at": "2026-11-14T17:06:45.162232+00:00", "stage": "E", "name": "E A09 rejected target/status zero seven-table writes", "passed": true, "detail": {"http": 288, "changed": []}}
+{"at": "2026-11-14T17:06:45.162532+00:00", "stage": "E", "name": "response does not expose BCrypt hash 288", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:45.634481+00:00", "stage": "E", "name": "E A09 missing csrf403", "passed": true, "detail": {"http": 289, "expected": [403], "actual": 403}}
+{"at": "2026-11-14T17:06:45.634748+00:00", "stage": "E", "name": "E A09 missing csrf403 zero seven-table writes", "passed": true, "detail": {"http": 289, "changed": []}}
+{"at": "2026-11-14T17:06:45.635038+00:00", "stage": "E", "name": "response does not expose BCrypt hash 289", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:45.639473+00:00", "stage": "E", "name": "u login form", "passed": true, "detail": {"http": 290, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:45.639832+00:00", "stage": "E", "name": "response does not expose BCrypt hash 290", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:46.131297+00:00", "stage": "E", "name": "u login alice", "passed": true, "detail": {"http": 291, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:46.131557+00:00", "stage": "E", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 291, "changed": []}}
+{"at": "2026-11-14T17:06:46.131877+00:00", "stage": "E", "name": "response does not expose BCrypt hash 291", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:46.138718+00:00", "stage": "E", "name": "E reenabled normal relogin200", "passed": true, "detail": {"http": 292, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:46.138994+00:00", "stage": "E", "name": "response does not expose BCrypt hash 292", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:46.179849+00:00", "stage": "E", "name": "E A02 after customer toggle", "passed": true, "detail": {"http": 293, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:46.180322+00:00", "stage": "E", "name": "response does not expose BCrypt hash 293", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:46.181001+00:00", "stage": "E", "name": "E after customer toggle dashboard on_sale", "passed": true, "detail": {"actual": 54, "expected": 54}}
+{"at": "2026-11-14T17:06:46.181615+00:00", "stage": "E", "name": "E after customer toggle dashboard draft", "passed": true, "detail": {"actual": 7, "expected": 7}}
+{"at": "2026-11-14T17:06:46.182237+00:00", "stage": "E", "name": "E after customer toggle dashboard paid", "passed": true, "detail": {"actual": 2, "expected": 2}}
+{"at": "2026-11-14T17:06:46.182904+00:00", "stage": "E", "name": "E after customer toggle dashboard enabled", "passed": true, "detail": {"actual": 2, "expected": 2}}
+{"at": "2026-11-14T17:06:46.183645+00:00", "stage": "E", "name": "E after customer toggle dashboard disabled", "passed": true, "detail": {"actual": 1, "expected": 1}}
+{"at": "2026-11-14T17:06:46.230012+00:00", "stage": "E", "name": "E A10 initial empty", "passed": true, "detail": {"http": 294, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:46.230307+00:00", "stage": "E", "name": "response does not expose BCrypt hash 294", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:46.701710+00:00", "stage": "E", "name": "E A10 missing parent version409 doc discrepancy", "passed": true, "detail": {"http": 295, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:06:46.701966+00:00", "stage": "E", "name": "E A10 missing parent version409 doc discrepancy zero seven-table writes", "passed": true, "detail": {"http": 295, "changed": []}}
+{"at": "2026-11-14T17:06:46.702221+00:00", "stage": "E", "name": "response does not expose BCrypt hash 295", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:47.183485+00:00", "stage": "E", "name": "E A10 add 复核后图", "passed": true, "detail": {"http": 296, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:47.183798+00:00", "stage": "E", "name": "response does not expose BCrypt hash 296", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:47.216423+00:00", "stage": "E", "name": "E album add parent version+1 复核后图", "passed": true, "detail": {"actual": 6, "expected": 6}}
+{"at": "2026-11-14T17:06:47.709495+00:00", "stage": "E", "name": "E A10 add 复核前图", "passed": true, "detail": {"http": 297, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:47.709793+00:00", "stage": "E", "name": "response does not expose BCrypt hash 297", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:47.744240+00:00", "stage": "E", "name": "E album add parent version+1 复核前图", "passed": true, "detail": {"actual": 7, "expected": 7}}
+{"at": "2026-11-14T17:06:47.792680+00:00", "stage": "E", "name": "E A10 album order", "passed": true, "detail": {"http": 298, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:47.792969+00:00", "stage": "E", "name": "response does not expose BCrypt hash 298", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:47.801121+00:00", "stage": "E", "name": "E U03 album order", "passed": true, "detail": {"http": 299, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:47.801466+00:00", "stage": "E", "name": "response does not expose BCrypt hash 299", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:47.802657+00:00", "stage": "E", "name": "E A10 SQL order", "passed": false, "detail": {"actual": ["160", "160", "160", "159", "159", "159"], "expected": ["160", "159"]}}
+{"at": "2026-11-14T17:06:47.803316+00:00", "stage": "E", "name": "E U03 SQL order", "passed": true, "detail": {"actual": ["160", "159"], "expected": ["160", "159"]}}
+{"at": "2026-11-14T17:06:48.250900+00:00", "stage": "E", "name": "E A05 old form after album409", "passed": true, "detail": {"http": 300, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:06:48.251216+00:00", "stage": "E", "name": "E A05 old form after album409 zero seven-table writes", "passed": true, "detail": {"http": 300, "changed": []}}
+{"at": "2026-11-14T17:06:48.251516+00:00", "stage": "E", "name": "response does not expose BCrypt hash 300", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:48.731106+00:00", "stage": "E", "name": "E A10 same-value edit idempotent", "passed": true, "detail": {"http": 301, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:48.731349+00:00", "stage": "E", "name": "E A10 same-value edit idempotent zero seven-table writes", "passed": true, "detail": {"http": 301, "changed": []}}
+{"at": "2026-11-14T17:06:48.731606+00:00", "stage": "E", "name": "response does not expose BCrypt hash 301", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:49.193348+00:00", "stage": "E", "name": "E A10 actual edit", "passed": true, "detail": {"http": 302, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:49.193644+00:00", "stage": "E", "name": "response does not expose BCrypt hash 302", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:49.227544+00:00", "stage": "E", "name": "E album edit parent version+1", "passed": true, "detail": {"actual": 8, "expected": 8}}
+{"at": "2026-11-14T17:06:49.686135+00:00", "stage": "E", "name": "E A10 stale parent409", "passed": true, "detail": {"http": 303, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:06:49.686390+00:00", "stage": "E", "name": "E A10 stale parent409 zero seven-table writes", "passed": true, "detail": {"http": 303, "changed": []}}
+{"at": "2026-11-14T17:06:49.686634+00:00", "stage": "E", "name": "response does not expose BCrypt hash 303", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:50.201662+00:00", "stage": "E", "name": "E A10 cross-parent404", "passed": true, "detail": {"http": 304, "expected": [404], "actual": 404}}
+{"at": "2026-11-14T17:06:50.202053+00:00", "stage": "E", "name": "E A10 cross-parent404 zero seven-table writes", "passed": true, "detail": {"http": 304, "changed": []}}
+{"at": "2026-11-14T17:06:50.202304+00:00", "stage": "E", "name": "response does not expose BCrypt hash 304", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:50.744606+00:00", "stage": "E", "name": "E A10 remove image", "passed": true, "detail": {"http": 305, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:50.744893+00:00", "stage": "E", "name": "response does not expose BCrypt hash 305", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:50.780084+00:00", "stage": "E", "name": "E album remove parent version+1 159", "passed": true, "detail": {"actual": 9, "expected": 9}}
+{"at": "2026-11-14T17:06:51.281833+00:00", "stage": "E", "name": "E A10 remove image", "passed": true, "detail": {"http": 306, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:06:51.282098+00:00", "stage": "E", "name": "response does not expose BCrypt hash 306", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.314508+00:00", "stage": "E", "name": "E album remove parent version+1 160", "passed": true, "detail": {"actual": 10, "expected": 10}}
+{"at": "2026-11-14T17:06:51.321640+00:00", "stage": "E", "name": "E A10 after final deletion", "passed": true, "detail": {"http": 307, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:51.321899+00:00", "stage": "E", "name": "response does not expose BCrypt hash 307", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.329267+00:00", "stage": "E", "name": "E U03 after final deletion cover fallback", "passed": true, "detail": {"http": 308, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:51.329542+00:00", "stage": "E", "name": "response does not expose BCrypt hash 308", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.329803+00:00", "stage": "E", "name": "E final album empty UI", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.361856+00:00", "stage": "E", "name": "E no album rows remain", "passed": true, "detail": {"actual": [], "expected": []}}
+{"at": "2026-11-14T17:06:51.393013+00:00", "stage": "E", "name": "E album removes retain sku/cover/stock/status", "passed": true, "detail": {"actual": ["REVIEW-20261115-170629952093", "images/catalog-placeholder.svg", "7", "ON_SALE"], "expected": ["REVIEW-20261115-170629952093", "images/catalog-placeholder.svg", "7", "ON_SALE"]}}
+{"at": "2026-11-14T17:06:51.412917+00:00", "stage": "E", "name": "E shared asset remains u", "passed": true, "detail": {"http": 309, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:51.413222+00:00", "stage": "E", "name": "response does not expose BCrypt hash 309", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.413603+00:00", "stage": "E", "name": "E shared asset SVG u", "passed": true, "detail": "image/svg+xml"}
+{"at": "2026-11-14T17:06:51.428540+00:00", "stage": "E", "name": "E shared asset remains a", "passed": true, "detail": {"http": 310, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:51.428778+00:00", "stage": "E", "name": "response does not expose BCrypt hash 310", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.429246+00:00", "stage": "E", "name": "E shared asset SVG a", "passed": true, "detail": "image/svg+xml"}
+{"at": "2026-11-14T17:06:51.467665+00:00", "stage": "E", "name": "E A02 final", "passed": true, "detail": {"http": 311, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:51.468014+00:00", "stage": "E", "name": "response does not expose BCrypt hash 311", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.468703+00:00", "stage": "E", "name": "E final dashboard on_sale", "passed": true, "detail": {"actual": 54, "expected": 54}}
+{"at": "2026-11-14T17:06:51.469338+00:00", "stage": "E", "name": "E final dashboard draft", "passed": true, "detail": {"actual": 7, "expected": 7}}
+{"at": "2026-11-14T17:06:51.470009+00:00", "stage": "E", "name": "E final dashboard paid", "passed": true, "detail": {"actual": 2, "expected": 2}}
+{"at": "2026-11-14T17:06:51.470616+00:00", "stage": "E", "name": "E final dashboard enabled", "passed": true, "detail": {"actual": 2, "expected": 2}}
+{"at": "2026-11-14T17:06:51.471209+00:00", "stage": "E", "name": "E final dashboard disabled", "passed": true, "detail": {"actual": 1, "expected": 1}}
+{"at": "2026-11-14T17:06:51.471796+00:00", "stage": "E", "name": "E dashboard card target on-sale-products", "passed": true, "detail": {"actual": "/products?status=ON_SALE", "expected": "/products?status=ON_SALE"}}
+{"at": "2026-11-14T17:06:51.482935+00:00", "stage": "E", "name": "E dashboard card on-sale-products", "passed": true, "detail": {"http": 312, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:51.483221+00:00", "stage": "E", "name": "response does not expose BCrypt hash 312", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.484816+00:00", "stage": "E", "name": "E dashboard filtered count on-sale-products", "passed": true, "detail": {"actual": 54, "expected": 54}}
+{"at": "2026-11-14T17:06:51.485138+00:00", "stage": "E", "name": "E dashboard card target draft-products", "passed": true, "detail": {"actual": "/products?status=DRAFT", "expected": "/products?status=DRAFT"}}
+{"at": "2026-11-14T17:06:51.495863+00:00", "stage": "E", "name": "E dashboard card draft-products", "passed": true, "detail": {"http": 313, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:51.496237+00:00", "stage": "E", "name": "response does not expose BCrypt hash 313", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.497655+00:00", "stage": "E", "name": "E dashboard filtered count draft-products", "passed": true, "detail": {"actual": 7, "expected": 7}}
+{"at": "2026-11-14T17:06:51.497938+00:00", "stage": "E", "name": "E dashboard card target paid-orders", "passed": true, "detail": {"actual": "/orders?status=PAID", "expected": "/orders?status=PAID"}}
+{"at": "2026-11-14T17:06:51.505758+00:00", "stage": "E", "name": "E dashboard card paid-orders", "passed": true, "detail": {"http": 314, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:51.506091+00:00", "stage": "E", "name": "response does not expose BCrypt hash 314", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.506932+00:00", "stage": "E", "name": "E dashboard filtered count paid-orders", "passed": true, "detail": {"actual": 2, "expected": 2}}
+{"at": "2026-11-14T17:06:51.507229+00:00", "stage": "E", "name": "E dashboard card target enabled-customers", "passed": true, "detail": {"actual": "/customers?status=ENABLED", "expected": "/customers?status=ENABLED"}}
+{"at": "2026-11-14T17:06:51.513064+00:00", "stage": "E", "name": "E dashboard card enabled-customers", "passed": true, "detail": {"http": 315, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:51.513323+00:00", "stage": "E", "name": "response does not expose BCrypt hash 315", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.514099+00:00", "stage": "E", "name": "E dashboard filtered count enabled-customers", "passed": true, "detail": {"actual": 2, "expected": 2}}
+{"at": "2026-11-14T17:06:51.514348+00:00", "stage": "E", "name": "E dashboard card target disabled-customers", "passed": true, "detail": {"actual": "/customers?status=DISABLED", "expected": "/customers?status=DISABLED"}}
+{"at": "2026-11-14T17:06:51.519647+00:00", "stage": "E", "name": "E dashboard card disabled-customers", "passed": true, "detail": {"http": 316, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:51.520129+00:00", "stage": "E", "name": "response does not expose BCrypt hash 316", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.520879+00:00", "stage": "E", "name": "E dashboard filtered count disabled-customers", "passed": true, "detail": {"actual": 1, "expected": 1}}
+{"at": "2026-11-14T17:06:51.554606+00:00", "stage": "F", "name": "orders_amount no violations", "passed": true, "detail": []}
+{"at": "2026-11-14T17:06:51.585449+00:00", "stage": "F", "name": "line_amount no violations", "passed": true, "detail": []}
+{"at": "2026-11-14T17:06:51.616564+00:00", "stage": "F", "name": "orphan_items no violations", "passed": true, "detail": []}
+{"at": "2026-11-14T17:06:51.648434+00:00", "stage": "F", "name": "cart_unique no violations", "passed": true, "detail": []}
+{"at": "2026-11-14T17:06:51.679666+00:00", "stage": "F", "name": "payment_unique no violations", "passed": true, "detail": []}
+{"at": "2026-11-14T17:06:51.711209+00:00", "stage": "F", "name": "time_and_fields no violations", "passed": true, "detail": []}
+{"at": "2026-11-14T17:06:51.742604+00:00", "stage": "F", "name": "seed stock minus review net orders exact", "passed": true, "detail": [{"id": "1", "sku": "CSU-LMK-NOTE-01", "stock": "8", "net_review_sold": "2"}, {"id": "56", "sku": "CSU-GRAD-BOX-01", "stock": "11", "net_review_sold": "1"}]}
+{"at": "2026-11-14T17:06:51.749479+00:00", "stage": "F", "name": "GET /cart", "passed": true, "detail": {"http": 317, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:51.749862+00:00", "stage": "F", "name": "response does not expose BCrypt hash 317", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.783163+00:00", "stage": "F", "name": "badge SQL SUM user1", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.805774+00:00", "stage": "F", "name": "GET /cart", "passed": true, "detail": {"http": 318, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:51.806210+00:00", "stage": "F", "name": "response does not expose BCrypt hash 318", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.841740+00:00", "stage": "F", "name": "badge SQL SUM user2", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.879034+00:00", "stage": "F", "name": "35 CHECK constraints enforced", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.912138+00:00", "stage": "F", "name": "negative stock CHECK rejection observed", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.921099+00:00", "stage": "F", "name": "GET /orders/CSU-7df1c3e8521677d7043e92066497667f", "passed": true, "detail": {"http": 319, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:51.921370+00:00", "stage": "F", "name": "response does not expose BCrypt hash 319", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.931382+00:00", "stage": "F", "name": "GET /orders/CSU-7df1c3e8521677d7043e92066497667f", "passed": true, "detail": {"http": 320, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:06:51.931749+00:00", "stage": "F", "name": "response does not expose BCrypt hash 320", "passed": true, "detail": null}
+{"at": "2026-11-14T17:06:51.966657+00:00", "stage": "F", "name": "both pages Asia Shanghai created-time", "passed": true, "detail": {"db_UTC": "2026-11-14 17:05:02.026072", "expected_display": "2026-11-15 01:05:02"}}
+{"at": "2026-11-14T17:09:57.842440+00:00", "stage": "supplement", "name": "u login form", "passed": true, "detail": {"http": 321, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:09:57.842712+00:00", "stage": "supplement", "name": "response does not expose BCrypt hash 321", "passed": true, "detail": null}
+{"at": "2026-11-14T17:09:58.329128+00:00", "stage": "supplement", "name": "u login alice", "passed": true, "detail": {"http": 322, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:09:58.329334+00:00", "stage": "supplement", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 322, "changed": []}}
+{"at": "2026-11-14T17:09:58.329630+00:00", "stage": "supplement", "name": "response does not expose BCrypt hash 322", "passed": true, "detail": null}
+{"at": "2026-11-14T17:09:58.347801+00:00", "stage": "supplement", "name": "a login form", "passed": true, "detail": {"http": 323, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:09:58.348037+00:00", "stage": "supplement", "name": "response does not expose BCrypt hash 323", "passed": true, "detail": null}
+{"at": "2026-11-14T17:09:58.829923+00:00", "stage": "supplement", "name": "a login admin", "passed": true, "detail": {"http": 324, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:09:58.830126+00:00", "stage": "supplement", "name": "a login admin zero seven-table writes", "passed": true, "detail": {"http": 324, "changed": []}}
+{"at": "2026-11-14T17:09:58.830306+00:00", "stage": "supplement", "name": "response does not expose BCrypt hash 324", "passed": true, "detail": null}
+{"at": "2026-11-14T17:09:59.333283+00:00", "stage": "supplement", "name": "supplement album add", "passed": true, "detail": {"http": 325, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:09:59.333501+00:00", "stage": "supplement", "name": "response does not expose BCrypt hash 325", "passed": true, "detail": null}
+{"at": "2026-11-14T17:09:59.819967+00:00", "stage": "supplement", "name": "supplement album add", "passed": true, "detail": {"http": 326, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:09:59.820170+00:00", "stage": "supplement", "name": "response does not expose BCrypt hash 326", "passed": true, "detail": null}
+{"at": "2026-11-14T17:09:59.858833+00:00", "stage": "supplement", "name": "supplement album precise row selector", "passed": true, "detail": {"http": 327, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:09:59.859060+00:00", "stage": "supplement", "name": "response does not expose BCrypt hash 327", "passed": true, "detail": null}
+{"at": "2026-11-14T17:09:59.860089+00:00", "stage": "supplement", "name": "A10 article rows order equals SQL", "passed": true, "detail": {"actual": ["162", "161"], "expected": ["162", "161"], "correction": "Original E compared article plus two form markers per image; original FAIL retained."}}
+{"at": "2026-11-14T17:09:59.861303+00:00", "stage": "supplement", "name": "original E article rows matched its SQL order", "passed": true, "detail": {"original_http": 298, "actual_article_rows": ["160", "159"], "expected_from_original_checks": ["160", "159"]}}
+{"at": "2026-11-14T17:10:00.344001+00:00", "stage": "supplement", "name": "supplement album remove", "passed": true, "detail": {"http": 328, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:10:00.344210+00:00", "stage": "supplement", "name": "response does not expose BCrypt hash 328", "passed": true, "detail": null}
+{"at": "2026-11-14T17:10:00.825818+00:00", "stage": "supplement", "name": "supplement album remove", "passed": true, "detail": {"http": 329, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:10:00.826103+00:00", "stage": "supplement", "name": "response does not expose BCrypt hash 329", "passed": true, "detail": null}
+{"at": "2026-11-14T17:10:00.923420+00:00", "stage": "supplement", "name": "supplement cover path will actually change", "passed": true, "detail": {"before": "images/catalog-placeholder.svg", "after": "images/review-missing-cover.svg"}}
+{"at": "2026-11-14T17:10:01.382825+00:00", "stage": "supplement", "name": "actual cover-path change after order", "passed": true, "detail": {"http": 330, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:10:01.383020+00:00", "stage": "supplement", "name": "response does not expose BCrypt hash 330", "passed": true, "detail": null}
+{"at": "2026-11-14T17:10:01.413519+00:00", "stage": "supplement", "name": "cover changed in current product", "passed": true, "detail": null}
+{"at": "2026-11-14T17:10:01.478359+00:00", "stage": "supplement", "name": "cover change leaves both historical tables identical", "passed": true, "detail": null}
+{"at": "2026-11-14T17:10:01.486185+00:00", "stage": "supplement", "name": "historical cover remains u", "passed": true, "detail": {"http": 331, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:10:01.486418+00:00", "stage": "supplement", "name": "response does not expose BCrypt hash 331", "passed": true, "detail": null}
+{"at": "2026-11-14T17:10:01.487205+00:00", "stage": "supplement", "name": "historical cover path from snapshot u", "passed": true, "detail": ["/js/app.js", "/images/catalog-placeholder.svg", "/images/catalog-placeholder.svg"]}
+{"at": "2026-11-14T17:10:01.495054+00:00", "stage": "supplement", "name": "historical cover remains a", "passed": true, "detail": {"http": 332, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:10:01.495318+00:00", "stage": "supplement", "name": "response does not expose BCrypt hash 332", "passed": true, "detail": null}
+{"at": "2026-11-14T17:10:01.496184+00:00", "stage": "supplement", "name": "historical cover path from snapshot a", "passed": true, "detail": ["/js/app.js", "/images/catalog-placeholder.svg", "/images/catalog-placeholder.svg"]}
+{"at": "2026-11-14T17:10:01.539494+00:00", "stage": "supplement", "name": "exact name search", "passed": true, "detail": {"http": 333, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:10:01.539877+00:00", "stage": "supplement", "name": "response does not expose BCrypt hash 333", "passed": true, "detail": null}
+{"at": "2026-11-14T17:10:01.541144+00:00", "stage": "supplement", "name": "literal full name result and total", "passed": true, "detail": null}
+{"at": "2026-11-14T17:10:01.578207+00:00", "stage": "supplement", "name": "all60 seed inventory = imported seed minus net review orders", "passed": true, "detail": {"products": 60, "mismatches": []}}
+{"at": "2026-11-14T17:10:01.612085+00:00", "stage": "supplement", "name": "independent fixture stock4 plus restock3 remains7", "passed": true, "detail": {"stock": "7", "version": "14"}}
+{"at": "2026-11-14T17:10:02.138927+00:00", "stage": "supplement", "name": "authenticated wrong admin role refuses write", "passed": true, "detail": {"http": 334, "expected": [403], "actual": 403}}
+{"at": "2026-11-14T17:10:02.139226+00:00", "stage": "supplement", "name": "authenticated wrong admin role refuses write zero seven-table writes", "passed": true, "detail": {"http": 334, "changed": []}}
+{"at": "2026-11-14T17:10:02.139447+00:00", "stage": "supplement", "name": "response does not expose BCrypt hash 334", "passed": true, "detail": null}
+{"at": "2026-11-14T17:11:36.097977+00:00", "stage": "persistence", "name": "a login form", "passed": true, "detail": {"http": 335, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:11:36.098472+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 335", "passed": true, "detail": null}
+{"at": "2026-11-14T17:11:36.585037+00:00", "stage": "persistence", "name": "a login admin", "passed": true, "detail": {"http": 336, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:11:36.585293+00:00", "stage": "persistence", "name": "a login admin zero seven-table writes", "passed": true, "detail": {"http": 336, "changed": []}}
+{"at": "2026-11-14T17:11:36.585583+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 336", "passed": true, "detail": null}
+{"at": "2026-11-14T17:11:36.589982+00:00", "stage": "persistence", "name": "u login form", "passed": true, "detail": {"http": 337, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:11:36.590236+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 337", "passed": true, "detail": null}
+{"at": "2026-11-14T17:11:37.073353+00:00", "stage": "persistence", "name": "u login alice", "passed": true, "detail": {"http": 338, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:11:37.073586+00:00", "stage": "persistence", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 338, "changed": []}}
+{"at": "2026-11-14T17:11:37.073825+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 338", "passed": true, "detail": null}
+{"at": "2026-11-14T17:11:37.120103+00:00", "stage": "persistence", "name": "same DB theme changed u", "passed": true, "detail": {"http": 339, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:11:37.120546+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 339", "passed": true, "detail": null}
+{"at": "2026-11-14T17:11:37.120813+00:00", "stage": "persistence", "name": "theme visible u", "passed": true, "detail": null}
+{"at": "2026-11-14T17:11:37.130176+00:00", "stage": "persistence", "name": "same DB theme changed a", "passed": true, "detail": {"http": 340, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:11:37.130451+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 340", "passed": true, "detail": null}
+{"at": "2026-11-14T17:11:37.130703+00:00", "stage": "persistence", "name": "theme visible a", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:44.867574+00:00", "stage": "persistence", "name": "a login form", "passed": true, "detail": {"http": 341, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:13:44.867881+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 341", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:45.635187+00:00", "stage": "persistence", "name": "a login admin", "passed": true, "detail": {"http": 342, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:13:45.635426+00:00", "stage": "persistence", "name": "a login admin zero seven-table writes", "passed": true, "detail": {"http": 342, "changed": []}}
+{"at": "2026-11-14T17:13:45.635722+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 342", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:45.652289+00:00", "stage": "persistence", "name": "u login form", "passed": true, "detail": {"http": 343, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:13:45.652758+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 343", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:46.165953+00:00", "stage": "persistence", "name": "u login alice", "passed": true, "detail": {"http": 344, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:13:46.166306+00:00", "stage": "persistence", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 344, "changed": []}}
+{"at": "2026-11-14T17:13:46.166605+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 344", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:46.187170+00:00", "stage": "persistence", "name": "u login form", "passed": true, "detail": {"http": 345, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:13:46.187455+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 345", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:46.684637+00:00", "stage": "persistence", "name": "u login bob", "passed": true, "detail": {"http": 346, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:13:46.684890+00:00", "stage": "persistence", "name": "u login bob zero seven-table writes", "passed": true, "detail": {"http": 346, "changed": []}}
+{"at": "2026-11-14T17:13:46.685215+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 346", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:46.711449+00:00", "stage": "persistence", "name": "theme after restart u", "passed": true, "detail": {"http": 347, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:13:46.711731+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 347", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:46.712240+00:00", "stage": "persistence", "name": "theme persisted after restart u", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:46.755763+00:00", "stage": "persistence", "name": "theme after restart a", "passed": true, "detail": {"http": 348, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:13:46.756055+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 348", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:46.756406+00:00", "stage": "persistence", "name": "theme persisted after restart a", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:47.202592+00:00", "stage": "persistence", "name": "all seven full-row hashes unchanged across app restarts", "passed": true, "detail": {"before": {"store_user": {"rows": 4, "sha256": "21c6139ff37fc486d20caedcb8b089207fd8cf49c319e7e4a6edd009cbdfcef3"}, "category": {"rows": 17, "sha256": "e44ab86ca824a748e401ddd3c7e632613173654a7fc4a7f7c6c41fe4658f8c33"}, "product": {"rows": 61, "sha256": "6829cb9ab651ac3ad3d2d62f742ea502ec7fdc9a42d7c4312e6f78e6b4a5e692"}, "product_image": {"rows": 100, "sha256": "71d50d87824e3788f70de71619ff9bb1c9b915a1eb4be73287b09b0cf6bb0561"}, "cart_item": {"rows": 5, "sha256": "219ba9efaee880ea2a1aebbdd7e6d5ddba31accf6ddfa4460b5faa7bb7d25f37"}, "sales_order": {"rows": 12, "sha256": "370c85a7faf9db0ba0103769532c82b29b3888053431d1d20d7682789c064efb"}, "sales_order_item": {"rows": 24, "sha256": "9560bbc68392b239806a21ce9a1c91c35942cc3cbb4bcb20136e784780f8d3e6"}}, "after": {"store_user": {"rows": 4, "sha256": "21c6139ff37fc486d20caedcb8b089207fd8cf49c319e7e4a6edd009cbdfcef3"}, "category": {"rows": 17, "sha256": "e44ab86ca824a748e401ddd3c7e632613173654a7fc4a7f7c6c41fe4658f8c33"}, "product": {"rows": 61, "sha256": "6829cb9ab651ac3ad3d2d62f742ea502ec7fdc9a42d7c4312e6f78e6b4a5e692"}, "product_image": {"rows": 100, "sha256": "71d50d87824e3788f70de71619ff9bb1c9b915a1eb4be73287b09b0cf6bb0561"}, "cart_item": {"rows": 5, "sha256": "219ba9efaee880ea2a1aebbdd7e6d5ddba31accf6ddfa4460b5faa7bb7d25f37"}, "sales_order": {"rows": 12, "sha256": "370c85a7faf9db0ba0103769532c82b29b3888053431d1d20d7682789c064efb"}, "sales_order_item": {"rows": 24, "sha256": "9560bbc68392b239806a21ce9a1c91c35942cc3cbb4bcb20136e784780f8d3e6"}}}}
+{"at": "2026-11-14T17:13:47.227428+00:00", "stage": "persistence", "name": "GET /cart", "passed": true, "detail": {"http": 349, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:13:47.227794+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 349", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:47.264132+00:00", "stage": "persistence", "name": "cart persists including badge user1", "passed": true, "detail": {"rows_": "1", "qty": "1"}}
+{"at": "2026-11-14T17:13:47.279532+00:00", "stage": "persistence", "name": "GET /cart", "passed": true, "detail": {"http": 350, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:13:47.279813+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 350", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:47.315260+00:00", "stage": "persistence", "name": "cart persists including badge user2", "passed": true, "detail": {"rows_": "4", "qty": "5"}}
+{"at": "2026-11-14T17:13:47.338593+00:00", "stage": "persistence", "name": "new order persists after restart u", "passed": true, "detail": {"http": 351, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:13:47.338891+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 351", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:47.367774+00:00", "stage": "persistence", "name": "new order persists after restart a", "passed": true, "detail": {"http": 352, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:13:47.368088+00:00", "stage": "persistence", "name": "response does not expose BCrypt hash 352", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:47.630986+00:00", "stage": "persistence", "name": "temporary theme fully restored", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:56.891138+00:00", "stage": "final-checks", "name": "u login form", "passed": true, "detail": {"http": 353, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:13:56.891413+00:00", "stage": "final-checks", "name": "response does not expose BCrypt hash 353", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:57.378889+00:00", "stage": "final-checks", "name": "u login alice", "passed": true, "detail": {"http": 354, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:13:57.379098+00:00", "stage": "final-checks", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 354, "changed": []}}
+{"at": "2026-11-14T17:13:57.379274+00:00", "stage": "final-checks", "name": "response does not expose BCrypt hash 354", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:57.384309+00:00", "stage": "final-checks", "name": "a login form", "passed": true, "detail": {"http": 355, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:13:57.384523+00:00", "stage": "final-checks", "name": "response does not expose BCrypt hash 355", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:57.876063+00:00", "stage": "final-checks", "name": "a login admin", "passed": true, "detail": {"http": 356, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:13:57.876268+00:00", "stage": "final-checks", "name": "a login admin zero seven-table writes", "passed": true, "detail": {"http": 356, "changed": []}}
+{"at": "2026-11-14T17:13:57.876456+00:00", "stage": "final-checks", "name": "response does not expose BCrypt hash 356", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:57.897341+00:00", "stage": "final-checks", "name": "valid confirmation before disable", "passed": true, "detail": {"http": 357, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:13:57.897659+00:00", "stage": "final-checks", "name": "response does not expose BCrypt hash 357", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:57.898395+00:00", "stage": "final-checks", "name": "confirmation existed before disable", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:58.369686+00:00", "stage": "final-checks", "name": "disable with outstanding confirmation", "passed": true, "detail": {"http": 358, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:13:58.369938+00:00", "stage": "final-checks", "name": "response does not expose BCrypt hash 358", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:58.805276+00:00", "stage": "final-checks", "name": "disabled old confirmation protected POST before CSRF", "passed": true, "detail": {"http": 359, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:13:58.805501+00:00", "stage": "final-checks", "name": "disabled old confirmation protected POST before CSRF zero seven-table writes", "passed": true, "detail": {"http": 359, "changed": []}}
+{"at": "2026-11-14T17:13:58.805695+00:00", "stage": "final-checks", "name": "response does not expose BCrypt hash 359", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:59.273630+00:00", "stage": "final-checks", "name": "reenable after invalid protected POST", "passed": true, "detail": {"http": 360, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:13:59.273908+00:00", "stage": "final-checks", "name": "response does not expose BCrypt hash 360", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:59.276417+00:00", "stage": "final-checks", "name": "cleared old identity remains invalid", "passed": true, "detail": {"http": 361, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:13:59.276616+00:00", "stage": "final-checks", "name": "response does not expose BCrypt hash 361", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:59.280524+00:00", "stage": "final-checks", "name": "u login form", "passed": true, "detail": {"http": 362, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:13:59.280725+00:00", "stage": "final-checks", "name": "response does not expose BCrypt hash 362", "passed": true, "detail": null}
+{"at": "2026-11-14T17:13:59.772438+00:00", "stage": "final-checks", "name": "u login alice", "passed": true, "detail": {"http": 363, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:13:59.772673+00:00", "stage": "final-checks", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 363, "changed": []}}
+{"at": "2026-11-14T17:13:59.772873+00:00", "stage": "final-checks", "name": "response does not expose BCrypt hash 363", "passed": true, "detail": null}
+{"at": "2026-11-14T17:14:00.226045+00:00", "stage": "final-checks", "name": "old confirmation unavailable after relogin", "passed": true, "detail": {"http": 364, "expected": [409], "actual": 409}}
+{"at": "2026-11-14T17:14:00.226354+00:00", "stage": "final-checks", "name": "old confirmation unavailable after relogin zero seven-table writes", "passed": true, "detail": {"http": 364, "changed": []}}
+{"at": "2026-11-14T17:14:00.226624+00:00", "stage": "final-checks", "name": "response does not expose BCrypt hash 364", "passed": true, "detail": null}
+{"at": "2026-11-14T17:14:00.258358+00:00", "stage": "final-checks", "name": "payment_pairing no violations", "passed": true, "detail": null}
+{"at": "2026-11-14T17:14:00.290729+00:00", "stage": "final-checks", "name": "cancel_time_pairing no violations", "passed": true, "detail": null}
+{"at": "2026-11-14T17:14:00.324167+00:00", "stage": "final-checks", "name": "ship_time_pairing no violations", "passed": true, "detail": null}
+{"at": "2026-11-14T17:14:00.355323+00:00", "stage": "final-checks", "name": "completed_time_pairing no violations", "passed": true, "detail": null}
+{"at": "2026-11-14T17:14:00.385533+00:00", "stage": "final-checks", "name": "time_sequence no violations", "passed": true, "detail": null}

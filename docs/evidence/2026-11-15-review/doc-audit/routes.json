@@ -1,0 +1,23 @@
+{
+  "user": {
+    "source_count": 17,
+    "documented_p0_count": 17,
+    "source_only": [],
+    "document_only": [],
+    "p1_excluded": [
+      {
+        "method": "POST",
+        "path": "/orders/{orderNo}/receipt",
+        "line": 82,
+        "p1": true
+      }
+    ]
+  },
+  "admin": {
+    "source_count": 28,
+    "documented_p0_count": 28,
+    "source_only": [],
+    "document_only": [],
+    "p1_excluded": []
+  }
+}

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>分类管理 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="admin" data-authenticated="true">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 管理端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <a href="/categories">分类管理</a>
+            <a href="/products">商品管理</a>
+            <a href="/orders" data-admin-orders-link>订单管理</a>
+            <a href="/customers" data-admin-customers-link>顾客管理</a>
+            <span class="app-label">管理端</span>
+            
+
+            
+            <span class="app-label" data-current-user>商城管理员</span>
+            <form method="post" action="/logout" data-submit-state>
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <section data-page-id="A03" class="admin-categories" data-category-count="15">
+    <nav aria-label="当前位置"><a href="/">管理端首页</a> / <span aria-current="page">分类管理</span></nav>
+    <header class="page-heading">
+        <h1>分类管理</h1>
+        <p class="muted">一级校园主题包含文具或纪念周边二级分类。编码和父级创建后固定。</p>
+        <div><a class="button" href="/categories/new">新增分类</a> <a class="button button-secondary" href="/products">商品列表</a></div>
+    </header>
+    
+    
+    <div class="admin-table-wrap">
+        <table>
+            <caption>校园主题及二级商品分类</caption>
+            <thead><tr><th scope="col">ID / 层级</th><th scope="col">名称</th><th scope="col">编码</th><th scope="col">父级 / 类型</th><th scope="col">排序</th><th scope="col">操作</th></tr></thead>
+            <tbody>
+            <tr data-category-id="1" data-category-code="LANDMARK">
+                <td><span>1</span> / <span>一级</span></td>
+                <td>校园地标</td>
+                <td>LANDMARK</td>
+                <td>
+                    无父级 / 校园主题
+                    
+                </td>
+                <td>10</td>
+                <td>
+                    <a href="/categories/1/edit">编辑名称和排序</a>
+                    <form method="post" action="/categories/1/remove" data-submit-state>
+                        <input type="hidden" name="_csrf" value="[REDACTED]">
+                        <p class="field-help">确认删除「校园地标」？仅无子类、无商品引用的空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            <tr data-category-id="101" data-category-code="LANDMARK_STATIONERY" data-parent-id="1">
+                <td><span>101</span> / <span>二级</span></td>
+                <td>文具</td>
+                <td>LANDMARK_STATIONERY</td>
+                <td>
+                    
+                    
+                        <span>校园地标</span> /
+                        <span>文具</span>
+                    
+                </td>
+                <td>10</td>
+                <td>
+                    <a href="/categories/101/edit">编辑名称和排序</a>
+                    <form method="post" action="/categories/101/remove" data-submit-state>
+                        <input type="hidden" name="_csrf" value="[REDACTED]">
+                        <p class="field-help">确认删除「文具」？仅无子类、无商品引用的空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            <tr data-category-id="102" data-category-code="LANDMARK_SOUVENIR" data-parent-id="1">
+                <td><span>102</span> / <span>二级</span></td>
+                <td>纪念周边</td>
+                <td>LANDMARK_SOUVENIR</td>
+                <td>
+                    
+                    
+                        <span>校园地标</span> /
+                        <span>纪念周边</span>
+                    
+                </td>
+                <td>20</td>
+                <td>
+                    <a href="/categories/102/edit">编辑名称和排序</a>
+                    <form method="post" action="/categories/102/remove" data-submit-state>
+                        <input type="hidden" name="_csrf" value="[REDACTED]">
+                        <p class="field-help">确认删除「纪念周边」？仅无子类、无商品引用的空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            <tr data-category-id="2" data-category-code="COLLEGE">
+                <td><span>2</span> / <span>一级</span></td>
+                <td>学院风采</td>
+                <td>COLLEGE</td>
+                <td>
+                    无父级 / 校园主题
+                    
+                </td>
+                <td>20</td>
+                <td>
+                    <a href="/categories/2/edit">编辑名称和排序</a>
+                    <form method="post" action="/categories/2/remove" data-submit-state>
+                        <input type="hidden" name="_csrf" value="[REDACTED]">
+                        <p class="field-help">确认删除「学院风采」？仅无子类、无商品引用的空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            <tr data-category-id="201" data-category-code="COLLEGE_STATIONERY" data-parent-id="2">
+                <td><span>201</span> / <span>二级</span></td>
+                <td>文具</td>
+                <td>COLLEGE_STATIONERY</td>
+                <td>
+                    
+                    
+                        <span>学院风采</span> /
+                        <span>文具</span>
+                    
+                </td>
+                <td>10</td>
+                <td>
+                    <a href="/categories/201/edit">编辑名称和排序</a>
+                    <form method="post" action="/categories/201/remove" data-submit-state>
+                        <input type="hidden" name="_csrf" value="[REDACTED]">
+                        <p class="field-help">确认删除「文具」？仅无子类、无商品引用的空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            <tr data-category-id="202" data-category-code="COLLEGE_SOUVENIR" data-parent-id="2">
+                <td><span>202</span> / <span>二级</span></td>
+                <td>纪念周边</td>
+                <td>COLLEGE_SOUVENIR</td>
+                <td>
+                    
+                    
+                        <span>学院风采</span> /
+                        <span>纪念周边</span>
+                    
+                </td>
+                <td>20</td>
+                <td>
+                    <a href="/categories/202/edit">编辑名称和排序</a>
+                    <form method="post" action="/categories/202/remove" data-submit-state>
+                        <input type="hidden" name="_csrf" value="[REDACTED]">
+                        <p class="field-help">确认删除「纪念周边」？仅无子类、无商品引用的空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            <tr data-category-id="3" data-category-code="CLUB">
+                <td><span>3</span> / <span>一级</span></td>
+                <td>社团活动</td>
+                <td>CLUB</td>
+                <td>
+                    无父级 / 校园主题
+                    
+                </td>
+                <td>30</td>
+                <td>
+                    <a href="/categories/3/edit">编辑名称和排序</a>
+                    <form method="post" action="/categories/3/remove" data-submit-state>
+                        <input type="hidden" name="_csrf" value="[REDACTED]">
+                        <p class="field-help">确认删除「社团活动」？仅无子类、无商品引用的空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            <tr data-category-id="301" data-category-code="CLUB_STATIONERY" data-parent-id="3">
+                <td><span>301</span> / <span>二级</span></td>
+                <td>文具</td>
+                <td>CLUB_STATIONERY</td>
+                <td>
+                    
+                    
+                        <span>社团活动</span> /
+                        <span>文具</span>
+                    
+                </td>
+                <td>10</td>
+                <td>
+                    <a href="/categories/301/edit">编辑名称和排序</a>
+                    <form method="post" action="/categories/301/remove" data-submit-state>
+                        <input type="hidden" name="_csrf" value="[REDACTED]">
+                        <p class="field-help">确认删除「文具」？仅无子类、无商品引用的空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            <tr data-category-id="302" data-category-code="CLUB_SOUVENIR" data-parent-id="3">
+                <td><span>302</span> / <span>二级</span></td>
+                <td>纪念周边</td>
+                <td>CLUB_SOUVENIR</td>
+                <td>
+                    
+                    
+                        <span>社团活动</span> /
+                        <span>纪念周边</span>
+                    
+                </td>
+                <td>20</td>
+                <td>
+                    <a href="/categories/302/edit">编辑名称和排序</a>
+                    <form method="post" action="/categories/302/remove" data-submit-state>
+                        <input type="hidden" name="_csrf" value="[REDACTED]">
+                        <p class="field-help">确认删除「纪念周边」？仅无子类、无商品引用的空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            <tr data-category-id="4" data-category-code="SPORTS">
+                <td><span>4</span> / <span>一级</span></td>
+                <td>校园运动</td>
+                <td>SPORTS</td>
+                <td>
+                    无父级 / 校园主题
+                    
+                </td>
+                <td>40</td>
+                <td>
+                    <a href="/categories/4/edit">编辑名称和排序</a>
+                    <form method="post" action="/categories/4/remove" data-submit-state>
+                        <input type="hidden" name="_csrf" value="[REDACTED]">
+                        <p class="field-help">确认删除「校园运动」？仅无子类、无商品引用的空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            <tr data-category-id="401" data-category-code="SPORTS_STATIONERY" data-parent-id="4">
+                <td><span>401</span> / <span>二级</span></td>
+                <td>文具</td>
+                <td>SPORTS_STATIONERY</td>
+                <td>
+                    
+                    
+                        <span>校园运动</span> /
+                        <span>文具</span>
+                    
+                </td>
+                <td>10</td>
+                <td>
+                    <a href="/categories/401/edit">编辑名称和排序</a>
+                    <form method="post" action="/categories/401/remove" data-submit-state>
+                        <input type="hidden" name="_csrf" value="[REDACTED]">
+                        <p class="field-help">确认删除「文具」？仅无子类、无商品引用的空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            <tr data-category-id="402" data-category-code="SPORTS_SOUVENIR" data-parent-id="4">
+                <td><span>402</span> / <span>二级</span></td>
+                <td>纪念周边</td>
+                <td>SPORTS_SOUVENIR</td>
+                <td>
+                    
+                    
+                        <span>校园运动</span> /
+                        <span>纪念周边</span>
+                    
+                </td>
+                <td>20</td>
+                <td>
+                    <a href="/categories/402/edit">编辑名称和排序</a>
+                    <form method="post" action="/categories/402/remove" data-submit-state>
+                        <input type="hidden" name="_csrf" value="[REDACTED]">
+                        <p class="field-help">确认删除「纪念周边」？仅无子类、无商品引用的空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            <tr data-category-id="5" data-category-code="GRADUATION">
+                <td><span>5</span> / <span>一级</span></td>
+                <td>毕业纪念</td>
+                <td>GRADUATION</td>
+                <td>
+                    无父级 / 校园主题
+                    
+                </td>
+                <td>50</td>
+                <td>
+                    <a href="/categories/5/edit">编辑名称和排序</a>
+                    <form method="post" action="/categories/5/remove" data-submit-state>
+                        <input type="hidden" name="_csrf" value="[REDACTED]">
+                        <p class="field-help">确认删除「毕业纪念」？仅无子类、无商品引用的空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            <tr data-category-id="501" data-category-code="GRADUATION_STATIONERY" data-parent-id="5">
+                <td><span>501</span> / <span>二级</span></td>
+                <td>文具</td>
+                <td>GRADUATION_STATIONERY</td>
+                <td>
+                    
+                    
+                        <span>毕业纪念</span> /
+                        <span>文具</span>
+                    
+                </td>
+                <td>10</td>
+                <td>
+                    <a href="/categories/501/edit">编辑名称和排序</a>
+                    <form method="post" action="/categories/501/remove" data-submit-state>
+                        <input type="hidden" name="_csrf" value="[REDACTED]">
+                        <p class="field-help">确认删除「文具」？仅无子类、无商品引用的空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            <tr data-category-id="502" data-category-code="GRADUATION_SOUVENIR" data-parent-id="5">
+                <td><span>502</span> / <span>二级</span></td>
+                <td>纪念周边</td>
+                <td>GRADUATION_SOUVENIR</td>
+                <td>
+                    
+                    
+                        <span>毕业纪念</span> /
+                        <span>纪念周边</span>
+                    
+                </td>
+                <td>20</td>
+                <td>
+                    <a href="/categories/502/edit">编辑名称和排序</a>
+                    <form method="post" action="/categories/502/remove" data-submit-state>
+                        <input type="hidden" name="_csrf" value="[REDACTED]">
+                        <p class="field-help">确认删除「纪念周边」？仅无子类、无商品引用的空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

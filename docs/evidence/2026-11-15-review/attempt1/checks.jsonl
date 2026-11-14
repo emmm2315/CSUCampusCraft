@@ -1,0 +1,90 @@
+{"at": "2026-11-14T17:03:19.175052+00:00", "stage": "A", "name": "guest public 200", "passed": true, "detail": {"http": 1, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:19.175405+00:00", "stage": "A", "name": "response does not expose BCrypt hash 1", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:19.643644+00:00", "stage": "A", "name": "unauthenticated before CSRF u", "passed": true, "detail": {"http": 2, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:03:19.643961+00:00", "stage": "A", "name": "unauthenticated before CSRF u zero seven-table writes", "passed": true, "detail": {"http": 2, "changed": []}}
+{"at": "2026-11-14T17:03:19.644272+00:00", "stage": "A", "name": "response does not expose BCrypt hash 2", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:20.117706+00:00", "stage": "A", "name": "unauthenticated before CSRF a", "passed": true, "detail": {"http": 3, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:03:20.117929+00:00", "stage": "A", "name": "unauthenticated before CSRF a zero seven-table writes", "passed": true, "detail": {"http": 3, "changed": []}}
+{"at": "2026-11-14T17:03:20.118209+00:00", "stage": "A", "name": "response does not expose BCrypt hash 3", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:20.133990+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 4, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:20.134245+00:00", "stage": "A", "name": "response does not expose BCrypt hash 4", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:20.623401+00:00", "stage": "A", "name": "u login alice", "passed": true, "detail": {"http": 5, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:20.623647+00:00", "stage": "A", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 5, "changed": []}}
+{"at": "2026-11-14T17:03:20.623979+00:00", "stage": "A", "name": "response does not expose BCrypt hash 5", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:20.626508+00:00", "stage": "A", "name": "rejected login has no protected identity", "passed": true, "detail": {"http": 6, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:03:20.626774+00:00", "stage": "A", "name": "response does not expose BCrypt hash 6", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:20.648912+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 7, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:20.649160+00:00", "stage": "A", "name": "response does not expose BCrypt hash 7", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:21.145601+00:00", "stage": "A", "name": "u login disabled", "passed": true, "detail": {"http": 8, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:21.145907+00:00", "stage": "A", "name": "u login disabled zero seven-table writes", "passed": true, "detail": {"http": 8, "changed": []}}
+{"at": "2026-11-14T17:03:21.146150+00:00", "stage": "A", "name": "response does not expose BCrypt hash 8", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:21.148659+00:00", "stage": "A", "name": "rejected login has no protected identity", "passed": true, "detail": {"http": 9, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:03:21.148948+00:00", "stage": "A", "name": "response does not expose BCrypt hash 9", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:21.175341+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 10, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:21.175678+00:00", "stage": "A", "name": "response does not expose BCrypt hash 10", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:21.663875+00:00", "stage": "A", "name": "u login admin", "passed": true, "detail": {"http": 11, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:21.664132+00:00", "stage": "A", "name": "u login admin zero seven-table writes", "passed": true, "detail": {"http": 11, "changed": []}}
+{"at": "2026-11-14T17:03:21.664465+00:00", "stage": "A", "name": "response does not expose BCrypt hash 11", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:21.666765+00:00", "stage": "A", "name": "rejected login has no protected identity", "passed": true, "detail": {"http": 12, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:03:21.667049+00:00", "stage": "A", "name": "response does not expose BCrypt hash 12", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:21.672691+00:00", "stage": "A", "name": "a login form", "passed": true, "detail": {"http": 13, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:21.673022+00:00", "stage": "A", "name": "response does not expose BCrypt hash 13", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:22.163579+00:00", "stage": "A", "name": "a login admin", "passed": true, "detail": {"http": 14, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:22.163827+00:00", "stage": "A", "name": "a login admin zero seven-table writes", "passed": true, "detail": {"http": 14, "changed": []}}
+{"at": "2026-11-14T17:03:22.164076+00:00", "stage": "A", "name": "response does not expose BCrypt hash 14", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:22.166585+00:00", "stage": "A", "name": "rejected login has no protected identity", "passed": true, "detail": {"http": 15, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:03:22.166809+00:00", "stage": "A", "name": "response does not expose BCrypt hash 15", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:22.192284+00:00", "stage": "A", "name": "a login form", "passed": true, "detail": {"http": 16, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:22.192533+00:00", "stage": "A", "name": "response does not expose BCrypt hash 16", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:22.695974+00:00", "stage": "A", "name": "a login disabled", "passed": true, "detail": {"http": 17, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:22.696238+00:00", "stage": "A", "name": "a login disabled zero seven-table writes", "passed": true, "detail": {"http": 17, "changed": []}}
+{"at": "2026-11-14T17:03:22.696563+00:00", "stage": "A", "name": "response does not expose BCrypt hash 17", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:22.698976+00:00", "stage": "A", "name": "rejected login has no protected identity", "passed": true, "detail": {"http": 18, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:03:22.699231+00:00", "stage": "A", "name": "response does not expose BCrypt hash 18", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:22.721795+00:00", "stage": "A", "name": "a login form", "passed": true, "detail": {"http": 19, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:22.722075+00:00", "stage": "A", "name": "response does not expose BCrypt hash 19", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:23.212289+00:00", "stage": "A", "name": "a login alice", "passed": true, "detail": {"http": 20, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:23.212635+00:00", "stage": "A", "name": "a login alice zero seven-table writes", "passed": true, "detail": {"http": 20, "changed": []}}
+{"at": "2026-11-14T17:03:23.212990+00:00", "stage": "A", "name": "response does not expose BCrypt hash 20", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:23.215626+00:00", "stage": "A", "name": "rejected login has no protected identity", "passed": true, "detail": {"http": 21, "expected": [302], "actual": 302}}
+{"at": "2026-11-14T17:03:23.215884+00:00", "stage": "A", "name": "response does not expose BCrypt hash 21", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:23.231819+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 22, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:23.232077+00:00", "stage": "A", "name": "response does not expose BCrypt hash 22", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:23.739637+00:00", "stage": "A", "name": "u login alice", "passed": true, "detail": {"http": 23, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:03:23.740045+00:00", "stage": "A", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 23, "changed": []}}
+{"at": "2026-11-14T17:03:23.740296+00:00", "stage": "A", "name": "response does not expose BCrypt hash 23", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:23.745117+00:00", "stage": "A", "name": "a login form", "passed": true, "detail": {"http": 24, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:23.745395+00:00", "stage": "A", "name": "response does not expose BCrypt hash 24", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:24.238177+00:00", "stage": "A", "name": "a login admin", "passed": true, "detail": {"http": 25, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:03:24.238504+00:00", "stage": "A", "name": "a login admin zero seven-table writes", "passed": true, "detail": {"http": 25, "changed": []}}
+{"at": "2026-11-14T17:03:24.238823+00:00", "stage": "A", "name": "response does not expose BCrypt hash 25", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:24.239094+00:00", "stage": "A", "name": "two different cookie names coexist", "passed": true, "detail": ["CSUCAMPUSCRAFT_USER_SESSION", "CSUCAMPUSCRAFT_ADMIN_SESSION"]}
+{"at": "2026-11-14T17:03:24.272004+00:00", "stage": "A", "name": "GET /cart", "passed": true, "detail": {"http": 26, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:24.272310+00:00", "stage": "A", "name": "response does not expose BCrypt hash 26", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:24.280875+00:00", "stage": "A", "name": "GET /", "passed": true, "detail": {"http": 27, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:24.281247+00:00", "stage": "A", "name": "response does not expose BCrypt hash 27", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:24.733834+00:00", "stage": "A", "name": "POST /logout", "passed": false, "detail": {"http": 28, "expected": [303], "actual": 403}}
+{"at": "2026-11-14T17:03:24.734166+00:00", "stage": "A", "name": "response does not expose BCrypt hash 28", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:24.742731+00:00", "stage": "A", "name": "admin survives user logout", "passed": true, "detail": {"http": 29, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:24.742997+00:00", "stage": "A", "name": "response does not expose BCrypt hash 29", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:24.751690+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 30, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:24.752027+00:00", "stage": "A", "name": "response does not expose BCrypt hash 30", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:25.235889+00:00", "stage": "A", "name": "u login alice", "passed": true, "detail": {"http": 31, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:03:25.236232+00:00", "stage": "A", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 31, "changed": []}}
+{"at": "2026-11-14T17:03:25.236523+00:00", "stage": "A", "name": "response does not expose BCrypt hash 31", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:25.245081+00:00", "stage": "A", "name": "GET /", "passed": true, "detail": {"http": 32, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:25.245330+00:00", "stage": "A", "name": "response does not expose BCrypt hash 32", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:25.708993+00:00", "stage": "A", "name": "POST /logout", "passed": true, "detail": {"http": 33, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:03:25.709240+00:00", "stage": "A", "name": "response does not expose BCrypt hash 33", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:25.724303+00:00", "stage": "A", "name": "user survives admin logout", "passed": true, "detail": {"http": 34, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:25.724611+00:00", "stage": "A", "name": "response does not expose BCrypt hash 34", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:25.746884+00:00", "stage": "A", "name": "u login form", "passed": true, "detail": {"http": 35, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:25.747220+00:00", "stage": "A", "name": "response does not expose BCrypt hash 35", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:26.234849+00:00", "stage": "A", "name": "u login alice", "passed": true, "detail": {"http": 36, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:03:26.235172+00:00", "stage": "A", "name": "u login alice zero seven-table writes", "passed": true, "detail": {"http": 36, "changed": []}}
+{"at": "2026-11-14T17:03:26.235534+00:00", "stage": "A", "name": "response does not expose BCrypt hash 36", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:26.261779+00:00", "stage": "A", "name": "a login form", "passed": true, "detail": {"http": 37, "expected": [200], "actual": 200}}
+{"at": "2026-11-14T17:03:26.262248+00:00", "stage": "A", "name": "response does not expose BCrypt hash 37", "passed": true, "detail": null}
+{"at": "2026-11-14T17:03:26.747970+00:00", "stage": "A", "name": "a login admin", "passed": true, "detail": {"http": 38, "expected": [303], "actual": 303}}
+{"at": "2026-11-14T17:03:26.748218+00:00", "stage": "A", "name": "a login admin zero seven-table writes", "passed": true, "detail": {"http": 38, "changed": []}}
+{"at": "2026-11-14T17:03:26.748518+00:00", "stage": "A", "name": "response does not expose BCrypt hash 38", "passed": true, "detail": null}

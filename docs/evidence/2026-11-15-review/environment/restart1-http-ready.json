@@ -1,0 +1,23 @@
+[
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8080/",
+    "status": 200,
+    "location": null,
+    "at": "2026-11-15T01:13:24.146741+08:00"
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8081/",
+    "status": 302,
+    "location": "/login?returnUrl=%2F",
+    "at": "2026-11-15T01:13:24.205326+08:00"
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8081/login",
+    "status": 200,
+    "location": null,
+    "at": "2026-11-15T01:13:24.393716+08:00"
+  }
+]

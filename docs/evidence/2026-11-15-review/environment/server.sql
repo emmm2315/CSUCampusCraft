@@ -1,0 +1,1 @@
+SELECT VERSION() version,@@server_uuid server_uuid,@@port port,@@datadir datadir,@@pid_file pid_file,@@global.time_zone global_time_zone,@@session.time_zone root_session_time_zone,@@system_time_zone system_time_zone,@@default_storage_engine default_storage_engine; SHOW GRANTS FOR 'review_app'@'127.0.0.1';

@@ -1,0 +1,377 @@
+{
+  "date": "2026-11-15",
+  "timezone": "Asia/Shanghai",
+  "tested_sha": "0329c9810c4ad2719c4ae95190ff516d1d21a9ed",
+  "branch": "feat/review-2026-11-15",
+  "overall": "存疑",
+  "interpretation": "AI执行的核心顺序交叉检查已完成；STEP06文字契约不一致，真人独立复核/签署未完成，不替代STEP13。",
+  "executor": "Codex (AI)",
+  "reviewer": "本人（真实姓名待填）",
+  "reviewer_statement_to_be_signed": "组员互评因时间未实施，由本人执行复核",
+  "statement_status": "待本人真实执行/签署；不得将AI操作冒充本人或组员已通过",
+  "main_http_records": 364,
+  "main_assertions": 996,
+  "raw_assertion_failures": [
+    {
+      "at": "2026-11-14T17:06:47.802657+00:00",
+      "stage": "E",
+      "name": "E A10 SQL order",
+      "passed": false,
+      "detail": {
+        "actual": [
+          "160",
+          "160",
+          "160",
+          "159",
+          "159",
+          "159"
+        ],
+        "expected": [
+          "160",
+          "159"
+        ]
+      }
+    }
+  ],
+  "raw_E_failure_corrected_by_separate_supplement": true,
+  "steps": [
+    {
+      "step": "STEP01",
+      "cases": "INIT-01–05技术子项",
+      "result": "PASS",
+      "evidence": "environment.md；stage-persistence.json",
+      "notes": "clean verify、双脚本/35CHECK、同库主题、重启七表/订单/两账号车、共享图字节。种子故障回滚未跑。"
+    },
+    {
+      "step": "STEP02",
+      "cases": "TST-04/05/31基础子项",
+      "result": "PASS",
+      "evidence": "stage-A.json；stage-B.json",
+      "notes": "登录密码正反、CSRF/状态码、共享资源与文本转义抽查；组件/错误探针未穷举。"
+    },
+    {
+      "step": "STEP03",
+      "cases": "TST-01–04/33",
+      "result": "PASS",
+      "evidence": "stage-B.json；stage-supplement.json",
+      "notes": "首页排序、主题类型/排序分页、命中及空搜索、详情相册、草稿/售罄、游客文案。"
+    },
+    {
+      "step": "STEP04",
+      "cases": "TST-05–07/18/31/39身份",
+      "result": "PASS",
+      "evidence": "stage-A.json；stage-final-checks.json",
+      "notes": "双Cookie、退出隔离、Auth先CSRF、双端禁用/1微秒/1秒戳、错角色、他人车403/订单404。内部确认删除时点未直接观测。"
+    },
+    {
+      "step": "STEP05",
+      "cases": "TST-25–28顺序子项",
+      "result": "PASS",
+      "evidence": "stage-E.json；stage-C.json",
+      "notes": "分类增改删引用、商品资料/上下架、增量补货、旧表单409；并发与故障未跑。"
+    },
+    {
+      "step": "STEP06",
+      "cases": "TST-04/40顺序子项",
+      "result": "存疑",
+      "evidence": "stage-E.json；stage-supplement.json",
+      "notes": "增改删/父版本/跨父/末图回封面通过；缺版本实测409，TST-40文字标准400，该子项按标准FAIL。原排序工具FAIL补证通过，原记录不改。"
+    },
+    {
+      "step": "STEP07",
+      "cases": "TST-08–11/17车子项",
+      "result": "PASS",
+      "evidence": "stage-B.json；stage-persistence.json",
+      "notes": "加改删/同SKU合并、99/20边界、失效全行SUM徽标、版本409、持久性；失效改量409文档缺项。"
+    },
+    {
+      "step": "STEP08",
+      "cases": "TST-11–13",
+      "result": "PASS",
+      "evidence": "stage-C.json",
+      "notes": "85确认无DB写、令牌替换/车价变409、字段400保留、短PT2S实例实等3秒过期409；未实等默认10分钟。"
+    },
+    {
+      "step": "STEP09",
+      "cases": "TST-12–19/30核心",
+      "result": "PASS",
+      "evidence": "stage-C.json；stage-supplement.json",
+      "notes": "新85单1+2明细、10/12→8/11、version+1、清车/徽标0/303、顺序重放一次、篡改金额身份无效、历史快照。"
+    },
+    {
+      "step": "STEP10",
+      "cases": "TST-18–22/34部分",
+      "result": "PASS",
+      "evidence": "stage-D.json",
+      "notes": "失败NULL三字段、成功MOCK首次凭证/时间、重放不改；两明细取消返库一次/保留下架/不回填车；U09拒绝分支。"
+    },
+    {
+      "step": "STEP11",
+      "cases": "TST-19/22/29/30",
+      "result": "PASS",
+      "evidence": "stage-E.json；stage-F.json",
+      "notes": "新单CI完整号/状态/userId过滤、首次发货/重复/非法409、双端快照/北京时间。"
+    },
+    {
+      "step": "STEP12",
+      "cases": "TST-37–39主库子项",
+      "result": "PASS",
+      "evidence": "stage-E.json；stage-final-checks.json",
+      "notes": "五统计/卡片与SQL、仅CUSTOMER、启停幂等/单调戳/旧会话失效、正常重登。空库/错误配置未重跑。"
+    }
+  ],
+  "issues": [
+    {
+      "id": "REV-01",
+      "severity": "P1",
+      "category": "验收身份条件",
+      "phenomenon": "本轮实际操作者为Codex AI；真人本人独立执行/真实姓名签署条件尚未完成，组员互评未实施。",
+      "reproduce": "查看本轮执行声明与所有脚本/工具记录；没有真人签署记录。",
+      "evidence": "checklist.md；review.json",
+      "recommendation": "本人按清单人工抽验并实名签署；不要将本轮写成组员或真人已复核通过。"
+    },
+    {
+      "id": "REV-02",
+      "severity": "P2",
+      "category": "契约差异",
+      "phenomenon": "A10缺失productVersion实测409 PRODUCT_IMAGE_VERSION_REQUIRED；TST-40标准写400。按该文字标准此子项FAIL，STEP06存疑。",
+      "reproduce": "ADMIN登录，POST /products/61/images，仅提交合法imagePath、sortOrder及CSRF，省略productVersion。",
+      "evidence": "http.jsonl 原E缺版本请求；doc-audit/audit.json；stage-E.json",
+      "recommendation": "后续统一产品与用例/文档决定；本轮不改实现或标准。"
+    },
+    {
+      "id": "REV-03",
+      "severity": "P2",
+      "category": "文档缺项",
+      "phenomenon": "有有效版本的失效商品实际改量返回409；需求“改量”行未明列该原因。",
+      "reproduce": "B把车商品设DRAFT，提交新数量与有效条目版本，409且七表零写。",
+      "evidence": "http.jsonl B invalid product quantity actual 409；doc-audit/summary.md",
+      "recommendation": "文档补齐失效改量及同值幂等条件。"
+    },
+    {
+      "id": "REV-04",
+      "severity": "P2",
+      "category": "措辞观察（非功能失败）",
+      "phenomenon": "游客U03真实链接“登录后加购”，提示回本页由本人确认；规格未规定该链接精确标签。",
+      "reproduce": "游客GET /products/1（上架有货夹具）；检查data-login-to-add。",
+      "evidence": "http/0098-B.html；screenshots/03-U03-guest-login.jpg",
+      "recommendation": "后续交互文案统一/记录；流程符合先登录再手动加购。"
+    },
+    {
+      "id": "REV-05",
+      "severity": "P2",
+      "category": "文档过时",
+      "phenomenon": "README当前阶段已写M2，后文仍写购物车/订单后续版本、下一步STEP08；测试导语仍称TST39待实施；首页路由当前行为句过时。",
+      "reproduce": "读取当前README第100/130行、测试文档业务用例导语和首页路由行。",
+      "evidence": "doc-audit/audit.json；doc-audit/summary.md",
+      "recommendation": "STEP13前更新当前说明，保留历史实测原文身份。"
+    },
+    {
+      "id": "REV-06",
+      "severity": "P2",
+      "category": "指导书待更新",
+      "phenomenon": "Word仍称M0已完成、M1尚未开工/仅主题初始化，与当前实现不符。",
+      "reproduce": "只读解包Word document.xml读取前言；SHA前后相同。",
+      "evidence": "doc-audit/audit.json word；doc-audit/summary.md",
+      "recommendation": "本人复核后更新Word，本轮保持不动。"
+    },
+    {
+      "id": "REV-07",
+      "severity": "P2",
+      "category": "新证据摘要索引工具缺陷",
+      "phenomenon": "402条含失败轮HTTP中226条body_sha256是写盘前文本摘要，Windows换行后不等于归档原始字节；176条直接相等。",
+      "reproduce": "运行integrity/capture_bytes.py并比较原索引和原文件字节。",
+      "evidence": "capture-byte-audit-final.json；quality-final.json",
+      "recommendation": "使用新增raw_file_sha256补偿索引校验所有原文件；原正文/索引不改。后续工具直接哈希写盘字节。"
+    },
+    {
+      "id": "REV-08",
+      "severity": "P2",
+      "category": "覆盖边界",
+      "phenomenon": "STEP02–11受测SHA到当前基线产品diff非空，是后续业务实现；只有最新STEP12到基线为空，不能称历史所有步骤源码此后未变。",
+      "reproduce": "integrity/verify_integrity.py重算各步清单与受测blob，再git diff各SHA..基线 --产品路径。",
+      "evidence": "evidence-integrity.json；integrity/stage-G-summary.md",
+      "recommendation": "STEP13对最终SHA整体验收，不能以旧记录结论替代。"
+    }
+  ],
+  "unverified": [
+    "并发/竞争：TST-17、24、28并发、35末件、并发启停/相册/发货及锁等待交错。顺序重放不等于并发证明。",
+    "故障注入：TST-16/23、种子提交前故障、部分写入/连接失败回滚；本轮无此类注入。",
+    "P1/TST-36确认收货未选做；REST仅预留；真实支付/退款/物流不在项目范围。",
+    "性能、压力、全量安全攻击、完整可访问性/浏览器矩阵、1366×768和1920×1080双视口全量回归未做。截图实际尺寸见screenshots/index.json。",
+    "TST-37空业务库控制台与自然错误配置页面本轮未重跑（结构库DDL/CHECK已跑，不能替代页面）。",
+    "默认PT10M未实等10分钟，过期机制通过同一JAR独立PT2S实例实等3秒验证。",
+    "Tomcat内部确认属性删除的具体时点未直接读会话；仅观察禁用旧POST302、旧身份不复活、重登旧确认409，并结合当前源码。",
+    "未穷举TST-01–40所有边界：%/_/!正向字面搜索、金额上溢、双礼盒数量2的独立链、全部字段长度/路径边界、错误探针全部方法等；不得把核心抽查扩大为整条用例全验。",
+    "TST-32技术持久性子项已新跑，但“另一位真人组员复现”及本人实名签字尚未完成。"
+  ],
+  "stages": {
+    "A": {
+      "stage": "A",
+      "tested_sha": "0329c9810c4ad2719c4ae95190ff516d1d21a9ed",
+      "finished": "2026-11-14T17:04:23.706165+00:00",
+      "executor": "Codex (AI)",
+      "checks": 208,
+      "failed": [],
+      "result": "PASS",
+      "notes": [
+        "登录/错密/禁用/错角色、Cookie并存与互用拒绝、两向退出隔离、Auth先CSRF、双端微秒与秒认证戳、他人车403/订单404均为本轮HTTP。",
+        "会话身份清理通过恢复原戳后仍302观察；结算确认内部清除未在A直接读取会话，E以旧确认重新登录后409补充（登录本身也会清确认，不单独证明内部移除）。",
+        "身份root夹具仅修改本次隔离实例账号role/status/stamp，并完整恢复。"
+      ]
+    },
+    "B": {
+      "stage": "B",
+      "tested_sha": "0329c9810c4ad2719c4ae95190ff516d1d21a9ed",
+      "finished": "2026-11-14T17:04:53.776244+00:00",
+      "executor": "Codex (AI)",
+      "checks": 187,
+      "failed": [],
+      "result": "PASS",
+      "notes": [
+        "首页/四种排序/筛选分页与独立SQL逐项比对；U03游客文案记录为“登录后加购”。",
+        "本轮真实HTTP覆盖同SKU合并、改量、移除、99/100、20/21 SKU、旧版本409、草稿404/售罄409及失效徽标。stock=200与DRAFT仅为隔离SQL边界夹具，结束恢复库存/状态，未改种子SQL文件。",
+        "已清alice种子车并使用HTTP备好2×18+1×49；后续阶段将成交。未测试并发及重启持久性。"
+      ]
+    },
+    "C": {
+      "stage": "C",
+      "tested_sha": "0329c9810c4ad2719c4ae95190ff516d1d21a9ed",
+      "finished": "2026-11-14T17:05:05.561853+00:00",
+      "executor": "Codex (AI)",
+      "checks": 74,
+      "failed": [],
+      "result": "PASS",
+      "notes": [
+        "新85元主单和两明细通过真实POST产生；篡改金额/userId不采信；10/12→8/11且各version+1，成功303到U08，清车/徽标0。",
+        "旧令牌/车变/价变/字段400及令牌保留、短TTL过期按实际check记录；重复提交是顺序重放，不是并发证明。",
+        "通过管理端HTTP改商品名/价/封面/描述再下架，订单两表完整行摘要/快照内容不变，U08/A07仍旧名称和85元。该商品暂保留DRAFT供D取消分支，下阶段恢复资料后重建另单。"
+      ]
+    },
+    "D": {
+      "stage": "D",
+      "tested_sha": "0329c9810c4ad2719c4ae95190ff516d1d21a9ed",
+      "finished": "2026-11-14T17:05:14.661520+00:00",
+      "executor": "Codex (AI)",
+      "checks": 59,
+      "failed": [],
+      "result": "PASS",
+      "notes": [
+        "FAILURE零写/NULL三字段，SUCCESS首次凭证时间、重放不改、PAID拒绝失败支付/取消409。支付未变商品库存/版本。",
+        "第二张新两明细单取消返2/1各version+1；下架状态保留，重复取消零写/首次时间保留、不回填或清掉后续车条目，已取消支付/发货409。",
+        "U09页面/CSRF/他人404/非法result400均新跑；支付取消竞争/返库故障注入明确未跑。"
+      ]
+    },
+    "E": {
+      "stage": "E",
+      "tested_sha": "0329c9810c4ad2719c4ae95190ff516d1d21a9ed",
+      "finished": "2026-11-14T17:06:51.521223+00:00",
+      "executor": "Codex (AI)",
+      "checks": 323,
+      "failed": [
+        {
+          "at": "2026-11-14T17:06:47.802657+00:00",
+          "stage": "E",
+          "name": "E A10 SQL order",
+          "passed": false,
+          "detail": {
+            "actual": [
+              "160",
+              "160",
+              "160",
+              "159",
+              "159",
+              "159"
+            ],
+            "expected": [
+              "160",
+              "159"
+            ]
+          }
+        }
+      ],
+      "result": "FAIL",
+      "notes": [
+        "全部为本轮顺序HTTP请求与隔离库SQL；未执行并发、竞争或故障注入。",
+        "独立HTTP新增分类/SKU保留给F核对；未编辑seed SQL文件。",
+        "补货仅按quantity增量；以补货后的旧商品表单409验证版本保护，不宣称补货接收版本参数。",
+        "缺失productVersion当前实现409，与TST-40缺失400并列记录；不改旧文档。",
+        "主库五项统计及卡片过滤已重跑；空业务库/错误配置未在本阶段重跑，应列未验证。",
+        "AI执行的新复核证据不等于本人或组员已完成手工复核。"
+      ]
+    },
+    "F": {
+      "stage": "F",
+      "tested_sha": "0329c9810c4ad2719c4ae95190ff516d1d21a9ed",
+      "finished": "2026-11-14T17:06:51.966923+00:00",
+      "executor": "Codex (AI)",
+      "checks": 20,
+      "failed": [],
+      "result": "PASS",
+      "notes": [
+        "独立SQL核对全库金额/小计/孤儿/车唯一/支付凭证唯一/时间链字段；主线库存按种子10/12减本轮未取消成交核对。",
+        "管理员新增REVIEW商品及补货单列为E夹具，不能套用原60商品种子公式。35个CHECK元数据均核对，仅负库存运行拒绝做代表，不称穷举35种非法写。",
+        "订单业务状态迁移会改主单状态时间；商品改资料后的“快照两表不变”在C动作前后已精确比较，不声称支付/发货后主单所有列不变。"
+      ]
+    },
+    "final-checks": {
+      "stage": "final-checks",
+      "tested_sha": "0329c9810c4ad2719c4ae95190ff516d1d21a9ed",
+      "finished": "2026-11-14T17:14:00.386179+00:00",
+      "executor": "Codex (AI)",
+      "checks": 35,
+      "failed": [],
+      "result": "PASS",
+      "notes": [
+        "已有效确认→管理端禁用→原确认POST无CSRF仍先302且七表零写→启用后旧身份不复活→正常重登后原确认409。",
+        "HTTP只能证明旧确认不可用；登录动作本身也会清确认，未直接读取Tomcat内部会话属性，不能单独证明AuthFilter删除确认的具体内部时点。",
+        "全库支付三字段/取消发货完成时间与状态配套及时间链逐项独立SQL零违规；不等于逐个CHECK非法写穷举。"
+      ]
+    },
+    "H": {
+      "stage": "H",
+      "result": "存疑",
+      "finished": "2026-11-14T17:21:17.061190+00:00",
+      "summary": "New core checks and summaries complete; human sign-off and STEP06 contract decision pending. No push or merge.",
+      "screenshots": 8,
+      "old_documents_modified": false,
+      "product_modified": false
+    },
+    "persistence": {
+      "stage": "persistence",
+      "tested_sha": "0329c9810c4ad2719c4ae95190ff516d1d21a9ed",
+      "finished": "2026-11-14T17:13:47.631379+00:00",
+      "executor": "Codex (AI)",
+      "checks": 49,
+      "failed": [],
+      "result": "PASS",
+      "notes": [
+        "INIT-03/04同库改名及双端应用重启持久性新跑；管理端当前根为统计，主题在当前分类页核对，不把历史M0根主题页当当前行为。",
+        "完整七表行摘要跨重启相同，alice和bob非空车与徽标恢复，新85元订单双端可读。",
+        "TST-32技术重启子项已补，另一位真人组员复现/实名条件仍未满足；没有故障注入。"
+      ]
+    },
+    "supplement": {
+      "stage": "supplement",
+      "tested_sha": "0329c9810c4ad2719c4ae95190ff516d1d21a9ed",
+      "finished": "2026-11-14T17:10:02.181210+00:00",
+      "executor": "Codex (AI)",
+      "checks": 41,
+      "failed": [],
+      "result": "PASS",
+      "notes": [
+        "E原始FAIL保留。新相册操作按article[data-image-id]对应独立SQL，原已归档页面按同样行选择器复查，证明重复data标记造成工具误报。",
+        "C原小结声称封面变化过强：该次仅提交同一placeholder路径。本补充真实把当前封面换为合法但不存在的images/review-missing-cover.svg，历史两表整行不变，U08/A07仍读旧封面路径。源素材只有placeholder，未新增产品素材。",
+        "全60种子SKU基于新导入reference schema比较库存公式；独立新增REVIEW商品为4+3=7。",
+        "HTTP日志续编号，不覆写原响应；原C短TTL为http180–183，使用environment/short-ttl-state.json中的18080；其余本轮请求u=8080/a=8081。"
+      ]
+    }
+  },
+  "evidence_caveats": [
+    "原attempt1工具失败保留；E原始FAIL保留。",
+    "C最初小结“改封面”过强：C提交原路径未变；独立supplement真实更换合法缺图封面路径后完成快照证明。",
+    "原body_sha256不是所有归档文件字节摘要，以capture-byte-audit-final.json的raw_file_sha256为准。",
+    "截图06只含脚本声明的虚构收货输入且未遮盖；不称全部截图收货字段已脱敏。"
+  ],
+  "completed_at_utc": "2026-11-14T17:21:17.368710+00:00"
+}

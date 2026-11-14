@@ -1,0 +1,31 @@
+[
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8080/",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8081/login",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:8081/login",
+    "fields": [
+      "username",
+      "password",
+      "_csrf"
+    ],
+    "status": 303,
+    "location": "/",
+    "cookieNames": [
+      "CSUCAMPUSCRAFT_ADMIN_SESSION"
+    ]
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:8081/",
+    "status": 200
+  }
+]

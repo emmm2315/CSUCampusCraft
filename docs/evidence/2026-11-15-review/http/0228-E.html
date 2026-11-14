@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>普通顾客管理 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="admin" data-authenticated="true">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 管理端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <a href="/categories">分类管理</a>
+            <a href="/products">商品管理</a>
+            <a href="/orders" data-admin-orders-link>订单管理</a>
+            <a href="/customers" data-admin-customers-link>顾客管理</a>
+            <span class="app-label">管理端</span>
+            
+
+            
+            <span class="app-label" data-current-user>商城管理员</span>
+            <form method="post" action="/logout" data-submit-state>
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div data-page-id="A08" class="admin-customers-page" data-customer-count="3" data-result-count="3" data-page="1" data-size="10" data-total-pages="1">
+    <nav class="customer-breadcrumb" aria-label="当前位置"><a href="/">管理控制台</a><span aria-hidden="true">/</span><span aria-current="page">普通顾客管理</span></nav>
+    <header class="page-heading customer-heading"><div><p class="eyebrow">教学账号管理</p><h1>普通顾客管理</h1><p class="muted">按用户名与启停状态查询普通顾客，查看教学资料与关联订单。</p></div><a class="button button-secondary" href="/">返回控制台</a></header>
+    <section class="panel customer-filter-panel" aria-labelledby="customer-filter-title"><h2 id="customer-filter-title">查询顾客</h2>
+        <form method="get" action="/customers" class="customer-filter" data-customer-filter>
+            <div class="form-field customer-query-field"><label for="customers-q">用户名包含</label><input id="customers-q" type="search" name="q" value="" aria-describedby="customers-q-help" placeholder="输入用户名的一部分"><p id="customers-q-help" class="field-help">最多 50 个字符；% 和 _ 按普通字符查询。</p></div>
+            <div class="form-field"><label for="customers-status">启停状态</label><select id="customers-status" name="status"><option value="ALL" selected="selected">全部状态</option><option value="ENABLED">启用</option><option value="DISABLED">禁用</option></select></div>
+            <div class="form-field customer-size-field"><label for="customers-size">每页条数</label><input id="customers-size" type="number" name="size" min="1" max="50" step="1" value="10"></div>
+            <input type="hidden" name="page" value="1"><div class="customer-filter-actions"><button type="submit">查询顾客</button><a class="button button-secondary" href="/customers?status=ALL&amp;page=1&amp;size=10" data-customer-clear>清除条件</a></div>
+        </form>
+    </section>
+    <div class="customer-results-heading"><p class="muted">共 <strong>3</strong> 位普通顾客<span>，第 <span>1</span> 页 / 共 <span>1</span> 页</span></p><p class="field-help">按顾客 ID 升序显示，仅包含普通顾客。</p></div>
+    
+    <div class="table-container customer-table-container"><table class="customer-table" data-customer-list>
+        <caption>普通顾客清单</caption><thead><tr><th scope="col">顾客 ID</th><th scope="col">用户名</th><th scope="col">显示名</th><th scope="col">启停状态</th><th scope="col">创建时间</th><th scope="col">操作</th></tr></thead>
+        <tbody><tr data-customer-id="1" data-customer-username="alice" data-customer-status="ENABLED"><td>1</td><td><a href="/customers/1">alice</a></td><td>[REDACTED]</td><td><span class="customer-status">启用</span></td><td><time>2026-11-15 00:57:48</time><span class="field-help customer-timezone">北京时间</span></td><td><a href="/customers/1" data-customer-detail-link>查看详情</a></td></tr><tr data-customer-id="2" data-customer-username="bob" data-customer-status="ENABLED"><td>2</td><td><a href="/customers/2">bob</a></td><td>[REDACTED]</td><td><span class="customer-status">启用</span></td><td><time>2026-11-15 00:57:48</time><span class="field-help customer-timezone">北京时间</span></td><td><a href="/customers/2" data-customer-detail-link>查看详情</a></td></tr><tr data-customer-id="3" data-customer-username="disabled" data-customer-status="DISABLED"><td>3</td><td><a href="/customers/3">disabled</a></td><td>禁用教学账号</td><td><span class="customer-status">禁用</span></td><td><time>2026-11-15 00:57:48</time><span class="field-help customer-timezone">北京时间</span></td><td><a href="/customers/3" data-customer-detail-link>查看详情</a></td></tr></tbody>
+    </table></div>
+    <nav class="customer-pagination" aria-label="顾客分页"><span aria-disabled="true">上一页</span><span>第 <strong>1</strong> 页 / 共 <span>1</span> 页</span><span aria-disabled="true">下一页</span></nav>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "payment_pairing": {
+    "sql": "SELECT id FROM sales_order WHERE (status IN ('PENDING_PAYMENT','CANCELLED') AND NOT(payment_method IS NULL AND payment_no IS NULL AND paid_at IS NULL)) OR (status IN ('PAID','SHIPPED','COMPLETED') AND (payment_method IS NULL OR payment_method<>'MOCK' OR payment_no IS NULL OR CHAR_LENGTH(TRIM(payment_no))=0 OR paid_at IS NULL))",
+    "rows": []
+  },
+  "cancel_time_pairing": {
+    "sql": "SELECT id FROM sales_order WHERE (status='CANCELLED')<>(cancelled_at IS NOT NULL)",
+    "rows": []
+  },
+  "ship_time_pairing": {
+    "sql": "SELECT id FROM sales_order WHERE (status IN ('SHIPPED','COMPLETED'))<>(shipped_at IS NOT NULL)",
+    "rows": []
+  },
+  "completed_time_pairing": {
+    "sql": "SELECT id FROM sales_order WHERE (status='COMPLETED')<>(completed_at IS NOT NULL)",
+    "rows": []
+  },
+  "time_sequence": {
+    "sql": "SELECT id FROM sales_order WHERE paid_at<created_at OR cancelled_at<created_at OR shipped_at<paid_at OR completed_at<shipped_at",
+    "rows": []
+  }
+}

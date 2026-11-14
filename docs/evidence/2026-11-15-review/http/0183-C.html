@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>结算提示 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="user" data-authenticated="true">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <span class="app-label">用户端</span>
+            <a class="nav-placeholder" href="/cart" data-cart-link aria-label="购物车，3 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="3" data-cart-quantity-unavailable="false">3</span>
+            </a>
+            <a href="/orders" data-orders-link>我的订单</a>
+            
+            <span class="app-label" data-current-user>[REDACTED]</span>
+            <form method="post" action="/logout" data-submit-state data-logout-form>
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <section class="panel error-page checkout-conflict" data-page-id="U06" data-checkout-conflict
+         aria-labelledby="checkout-conflict-title" data-error-status="409" data-error-code="CHECKOUT_CONFIRMATION_EXPIRED">
+    <p class="error-number">409</p>
+    <h1 id="checkout-conflict-title">请重新核对购物车</h1>
+    <p>确认已过期，请重新进入结算。</p>
+    <p class="muted">购物车保持不变。请先查看购物车，处理商品或数量后再重新确认。</p>
+    <p class="error-code">错误代码：<span>CHECKOUT_CONFIRMATION_EXPIRED</span></p>
+    <div class="button-row">
+        <a class="button" href="/cart" data-return-cart>返回购物车</a>
+        <a class="button button-secondary" href="/checkout" data-retry-checkout>重新确认整车</a>
+    </div>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

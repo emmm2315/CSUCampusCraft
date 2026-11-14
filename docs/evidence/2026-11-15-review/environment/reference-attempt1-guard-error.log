@@ -1,0 +1,6 @@
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Exception: D:\Github Projects\CSUCampusCraft\docs\evidence\2026-11-15-review\environment\import-reference.ps1:11
+Line |
+  11 |  …  $fields[1]) -ne (& $normalize $s.datadir)){throw '连接未指向本轮隔离实例；拒绝建库'}
+     |                                                ~~~~~~~~~~~~~~~~~~~~~~~~
+     | 连接未指向本轮隔离实例；拒绝建库

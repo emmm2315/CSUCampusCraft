@@ -1,0 +1,19 @@
+Failed to find real location of C:\Users\Starmetor\AppData\Local\Python\pythoncore-3.14-64\python.exe
+Traceback (most recent call last):
+  File "D:\Github Projects\CSUCampusCraft\docs\evidence\2026-11-15-review\environment\inspect.py", line 1, in <module>
+    import json, subprocess, pathlib, re, hashlib, requests, html
+  File "C:\Users\Starmetor\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\requests\__init__.py", line 45, in <module>
+    import urllib3
+  File "C:\Users\Starmetor\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\urllib3\__init__.py", line 8, in <module>
+    import logging
+  File "C:\Users\Starmetor\AppData\Local\Python\pythoncore-3.14-64\Lib\logging\__init__.py", line 26, in <module>
+    import sys, os, time, io, re, traceback, warnings, weakref, collections.abc
+  File "C:\Users\Starmetor\AppData\Local\Python\pythoncore-3.14-64\Lib\traceback.py", line 13, in <module>
+    import _colorize
+  File "C:\Users\Starmetor\AppData\Local\Python\pythoncore-3.14-64\Lib\_colorize.py", line 5, in <module>
+    from dataclasses import dataclass, field, Field
+  File "C:\Users\Starmetor\AppData\Local\Python\pythoncore-3.14-64\Lib\dataclasses.py", line 5, in <module>
+    import inspect
+  File "D:\Github Projects\CSUCampusCraft\docs\evidence\2026-11-15-review\environment\inspect.py", line 16, in <module>
+    r=requests.get(url,timeout=15);http.append({'method':'GET','url':url,'status':r.status_code})
+AttributeError: partially initialized module 'requests' from 'C:\Users\Starmetor\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\requests\__init__.py' has no attribute 'get' (most likely due to a circular import)

@@ -1,0 +1,61 @@
+{
+  "targetQueryExitCode": 0,
+  "target": [
+    "59315\tC:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-review-20261115-b53811e5a70e42d792037669ec7cad67\\data\\\t8323950c-e04c-11f1-bb8f-005056c00001"
+  ],
+  "listeners": [
+    {
+      "LocalAddress": "::",
+      "LocalPort": 8081,
+      "State": 2,
+      "OwningProcess": 3936
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 8080,
+      "State": 2,
+      "OwningProcess": 37480
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 59315,
+      "State": 2,
+      "OwningProcess": 29576
+    }
+  ],
+  "capturedAt": "2026-11-15T01:16:47.4449729+08:00",
+  "processes": [
+    {
+      "ProcessId": 36524,
+      "ParentProcessId": 2152,
+      "Name": "mysqld.exe",
+      "CommandLine": "\"D:\\MySQL\\bin\\mysqld.exe\" --no-defaults --basedir=D:\\MySQL --datadir=C:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-review-20261115-b53811e5a70e42d792037669ec7cad67\\data --bind-address=127.0.0.1 --port=59315 --mysqlx=0 --default-time-zone=+00:00 --console",
+      "ExecutablePath": "D:\\MySQL\\bin\\mysqld.exe",
+      "CreationDate": "2026-11-15T00:57:47.478542+08:00"
+    },
+    {
+      "ProcessId": 29576,
+      "ParentProcessId": 36524,
+      "Name": "mysqld.exe",
+      "CommandLine": "D:\\MySQL\\bin\\mysqld.exe --no-defaults --basedir=D:\\MySQL --datadir=C:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-review-20261115-b53811e5a70e42d792037669ec7cad67\\data --bind-address=127.0.0.1 --port=59315 --mysqlx=0 --default-time-zone=+00:00 --console",
+      "ExecutablePath": "D:\\MySQL\\bin\\mysqld.exe",
+      "CreationDate": "2026-11-15T00:57:47.519729+08:00"
+    },
+    {
+      "ProcessId": 37480,
+      "ParentProcessId": 36284,
+      "Name": "java.exe",
+      "CommandLine": "\"C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe\" -jar csucampuscraft-user/target/csucampuscraft-user-0.0.1-SNAPSHOT.jar",
+      "ExecutablePath": "C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe",
+      "CreationDate": "2026-11-15T01:13:02.364488+08:00"
+    },
+    {
+      "ProcessId": 3936,
+      "ParentProcessId": 36284,
+      "Name": "java.exe",
+      "CommandLine": "\"C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe\" -jar csucampuscraft-admin/target/csucampuscraft-admin-0.0.1-SNAPSHOT.jar",
+      "ExecutablePath": "C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe",
+      "CreationDate": "2026-11-15T01:13:02.373377+08:00"
+    }
+  ]
+}
