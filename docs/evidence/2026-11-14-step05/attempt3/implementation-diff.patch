@@ -1,0 +1,1744 @@
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AdminWriteGuard.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AdminWriteGuard.java
+new file mode 100644
+index 0000000..5f5bd82
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AdminWriteGuard.java
+@@ -0,0 +1,37 @@
++package org.csucampuscraft.admin.auth;
++
++import java.sql.Connection;
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Service;
++import org.springframework.transaction.annotation.Propagation;
++import org.springframework.transaction.annotation.Transactional;
++import org.springframework.transaction.support.TransactionSynchronizationManager;
++
++/** Must be the first database operation inside every protected write Service transaction. */
++@Service
++public class AdminWriteGuard {
++    private final StoreUserMapper users;
++    public AdminWriteGuard(StoreUserMapper users) { this.users = users; }
++
++    @Transactional(propagation = Propagation.MANDATORY)
++    public StoreUser lock(SessionIdentity actor) {
++        Integer isolation = TransactionSynchronizationManager.getCurrentTransactionIsolationLevel();
++        if (!TransactionSynchronizationManager.isActualTransactionActive()
++                || TransactionSynchronizationManager.isCurrentTransactionReadOnly()
++                || isolation == null || isolation != Connection.TRANSACTION_READ_COMMITTED) {
++            throw new IllegalStateException("Administrator write requires a READ COMMITTED transaction");
++        }
++        if (actor == null) throw new SessionExpiredException();
++        StoreUser current = users.selectForUpdate(actor.userId());
++        if (current == null || !"ENABLED".equals(current.getStatus())
++                || !actor.authStamp().equals(current.getUpdatedAt())) {
++            throw new SessionExpiredException();
++        }
++        if (!"ADMIN".equals(current.getRole())) {
++            throw new BusinessException(HttpStatus.FORBIDDEN, "AUTH_ROLE_FORBIDDEN",
++                    "当前账号无权执行此操作。");
++        }
++        return current;
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionExpiredException.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionExpiredException.java
+new file mode 100644
+index 0000000..840bd5a
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionExpiredException.java
+@@ -0,0 +1,6 @@
++package org.csucampuscraft.admin.auth;
++
++/** Transaction-time identity failure; the MVC handler clears only this application's session identity. */
++public final class SessionExpiredException extends RuntimeException {
++    public SessionExpiredException() { super("Authentication must be renewed"); }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUserMapper.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUserMapper.java
+index dbe8137..e6ee0cd 100644
+--- a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUserMapper.java
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUserMapper.java
+@@ -12,4 +12,10 @@ public interface StoreUserMapper extends BaseMapper<StoreUser> {
+             FROM store_user WHERE username = #{username}
+             """)
+     StoreUser selectForLoginByUsername(@Param("username") String username);
++
++    @Select("""
++            SELECT id, username, display_name, role, status, updated_at
++            FROM store_user WHERE id = #{id} FOR UPDATE
++            """)
++    StoreUser selectForUpdate(@Param("id") long id);
+ }
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/Category.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/Category.java
+index fd1cdcf..c1f80c1 100644
+--- a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/Category.java
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/Category.java
+@@ -13,23 +13,18 @@ public class Category {
+     private String name;
+     private Integer sortOrder;
+ 
+-    public Long getId() {
+-        return id;
+-    }
+-
+-    public String getCode() {
+-        return code;
+-    }
++    public Category() { }
+ 
+-    public Long getParentId() {
+-        return parentId;
++    public Category(String code, Long parentId, String name, int sortOrder) {
++        this.code = code;
++        this.parentId = parentId;
++        this.name = name;
++        this.sortOrder = sortOrder;
+     }
+ 
+-    public String getName() {
+-        return name;
+-    }
+-
+-    public Integer getSortOrder() {
+-        return sortOrder;
+-    }
++    public Long getId() { return id; }
++    public String getCode() { return code; }
++    public Long getParentId() { return parentId; }
++    public String getName() { return name; }
++    public Integer getSortOrder() { return sortOrder; }
+ }
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryForm.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryForm.java
+new file mode 100644
+index 0000000..e2fe93c
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryForm.java
+@@ -0,0 +1,57 @@
++package org.csucampuscraft.admin.catalog;
++
++import java.util.LinkedHashMap;
++import java.util.List;
++import java.util.Map;
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import org.springframework.http.HttpStatus;
++import org.springframework.util.MultiValueMap;
++
++/** Only these named fields are read; this is never bound into the database entity. */
++public record CategoryForm(String code, String parentId, String type, String name, String sortOrder) {
++    public static CategoryForm empty() { return new CategoryForm("", "", "STATIONERY", "", "0"); }
++
++    public static CategoryForm edit(Category category) {
++        return new CategoryForm(category.getCode(), category.getParentId() == null ? ""
++                : category.getParentId().toString(), "", category.getName(), category.getSortOrder().toString());
++    }
++
++    public static CategoryForm bind(MultiValueMap<String, String> parameters, boolean editing) {
++        Map<String, String> errors = new LinkedHashMap<>();
++        String code = editing ? "" : single(parameters, "code", errors);
++        String parent = editing ? "" : single(parameters, "parentId", errors);
++        String type = editing ? "" : single(parameters, "type", errors);
++        String name = single(parameters, "name", errors);
++        String sort = single(parameters, "sortOrder", errors);
++        if (!errors.isEmpty()) throw new BusinessException(HttpStatus.BAD_REQUEST, "INVALID_FIELDS",
++                "请为每个字段只提交一个值。", errors);
++        return new CategoryForm(code, parent, type, name, sort);
++    }
++
++    public static CategoryForm display(MultiValueMap<String, String> parameters) {
++        return new CategoryForm(display(parameters, "code"), display(parameters, "parentId"),
++                display(parameters, "type"), display(parameters, "name"), display(parameters, "sortOrder"));
++    }
++
++    private static String single(MultiValueMap<String, String> values, String name,
++                                 Map<String, String> errors) {
++        List<String> items = values.get(name);
++        if (items == null) return "";
++        if (items.size() != 1) {
++            errors.put(name, "每个字段只能提交一个值。");
++            return "";
++        }
++        return items.get(0);
++    }
++
++    private static String display(MultiValueMap<String, String> values, String name) {
++        List<String> items = values.get(name);
++        return items != null && items.size() == 1 && items.get(0) != null ? items.get(0) : "";
++    }
++
++    public String getCode() { return code; }
++    public String getParentId() { return parentId; }
++    public String getType() { return type; }
++    public String getName() { return name; }
++    public String getSortOrder() { return sortOrder; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryMapper.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryMapper.java
+index daaa055..d8ce25a 100644
+--- a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryMapper.java
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryMapper.java
+@@ -1,8 +1,53 @@
+ package org.csucampuscraft.admin.catalog;
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
++import java.util.List;
+ import org.apache.ibatis.annotations.Mapper;
++import org.apache.ibatis.annotations.Param;
++import org.apache.ibatis.annotations.Select;
++import org.apache.ibatis.annotations.Update;
+ 
+ @Mapper
+ public interface CategoryMapper extends BaseMapper<Category> {
++    String COLUMNS = "id, code, parent_id, name, sort_order";
++
++    @Select("""
++            SELECT c.id, c.code, c.parent_id, c.name, c.sort_order
++            FROM category c LEFT JOIN category p ON p.id = c.parent_id
++            ORDER BY COALESCE(p.sort_order, c.sort_order), COALESCE(p.id, c.id),
++                     (c.parent_id IS NOT NULL), c.sort_order, c.id
++            """)
++    List<Category> selectHierarchy();
++
++    @Select("SELECT " + COLUMNS + " FROM category WHERE parent_id IS NOT NULL ORDER BY parent_id, sort_order, id")
++    List<Category> selectSecondLevel();
++
++    @Select("SELECT " + COLUMNS + " FROM category WHERE id = #{id} FOR UPDATE")
++    Category lockById(@Param("id") long id);
++
++    @Select("SELECT COUNT(*) FROM category WHERE code = #{code}")
++    long countCode(@Param("code") String code);
++
++    @Select("""
++            SELECT COUNT(*) FROM category
++            WHERE parent_key = #{parentKey} AND name = #{name} AND id != #{excludedId}
++            """)
++    long countSiblingName(@Param("parentKey") long parentKey, @Param("name") String name,
++                          @Param("excludedId") long excludedId);
++
++    @Select("""
++            SELECT COUNT(*) FROM category
++            WHERE parent_id = #{parentId} AND RIGHT(code, #{suffixLength}) = #{suffix}
++            """)
++    long countType(@Param("parentId") long parentId, @Param("suffix") String suffix,
++                   @Param("suffixLength") int suffixLength);
++
++    @Select("SELECT COUNT(*) FROM category WHERE parent_id = #{id}")
++    long countChildren(@Param("id") long id);
++
++    @Select("SELECT COUNT(*) FROM product WHERE category_id = #{id}")
++    long countProductReferences(@Param("id") long id);
++
++    @Update("UPDATE category SET name = #{name}, sort_order = #{sortOrder} WHERE id = #{id}")
++    int updateDetails(@Param("id") long id, @Param("name") String name, @Param("sortOrder") int sortOrder);
+ }
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryService.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryService.java
+index 3faa6ea..56a9045 100644
+--- a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryService.java
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryService.java
+@@ -2,20 +2,142 @@ package org.csucampuscraft.admin.catalog;
+ 
+ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+ import java.util.List;
++import java.util.Map;
++import java.util.Objects;
++import org.csucampuscraft.admin.auth.AdminWriteGuard;
++import org.csucampuscraft.admin.auth.SessionIdentity;
++import org.csucampuscraft.admin.foundation.validation.InputChecks;
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import org.springframework.dao.DataIntegrityViolationException;
++import org.springframework.http.HttpStatus;
+ import org.springframework.stereotype.Service;
++import org.springframework.transaction.annotation.Isolation;
++import org.springframework.transaction.annotation.Transactional;
+ 
+ @Service
+ public class CategoryService {
+-    private final CategoryMapper categoryMapper;
++    private final CategoryMapper categories;
++    private final AdminWriteGuard writeGuard;
+ 
+-    public CategoryService(CategoryMapper categoryMapper) {
+-        this.categoryMapper = categoryMapper;
++    public CategoryService(CategoryMapper categories, AdminWriteGuard writeGuard) {
++        this.categories = categories;
++        this.writeGuard = writeGuard;
+     }
+ 
++    @Transactional(readOnly = true)
+     public List<Category> listTopLevelThemes() {
+-        return categoryMapper.selectList(Wrappers.lambdaQuery(Category.class)
++        return categories.selectList(Wrappers.lambdaQuery(Category.class)
+                 .select(Category::getId, Category::getCode, Category::getName)
+-                .isNull(Category::getParentId)
+-                .orderByAsc(Category::getSortOrder, Category::getId));
++                .isNull(Category::getParentId).orderByAsc(Category::getSortOrder, Category::getId));
+     }
++
++    @Transactional(readOnly = true)
++    public List<Category> listAll() { return categories.selectHierarchy(); }
++
++    @Transactional(readOnly = true)
++    public List<Category> listSecondLevel() { return categories.selectSecondLevel(); }
++
++    @Transactional(readOnly = true)
++    public Category getRequired(long id) { return require(categories.selectById(id)); }
++
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public Category create(SessionIdentity actor, CategoryForm form) {
++        writeGuard.lock(actor);
++        String name = InputChecks.requiredText("name", form.name(), 50);
++        int sort = sortOrder(form.sortOrder());
++        String parentText = form.parentId() == null ? "" : form.parentId().strip();
++        Long parentId = null;
++        String code;
++        if (parentText.isEmpty()) {
++            code = InputChecks.requiredText("code", form.code(), 21);
++        } else {
++            parentId = InputChecks.longInteger("parentId", parentText, 1, Long.MAX_VALUE);
++            ChildType type = InputChecks.enumeration("type", form.type(), ChildType.class);
++            Category parent = require(categories.lockById(parentId));
++            if (parent.getParentId() != null) {
++                throw conflict("CATEGORY_PARENT_LEVEL", "二级分类只能选择一级主题作为父级。", "parentId");
++            }
++            String suffix = "_" + type.name();
++            if (categories.countType(parentId, suffix, suffix.length()) != 0) {
++                throw conflict("CATEGORY_TYPE_EXISTS", "该主题下已经有此类型的分类。", "type");
++            }
++            code = InputChecks.requiredText("code", parent.getCode() + suffix, 32);
++        }
++        if (categories.countCode(code) != 0) {
++            throw conflict("CATEGORY_CODE_EXISTS", "分类编码已占用，请修改编码或类型。", parentId == null ? "code" : "type");
++        }
++        ensureUniqueName(parentId, name, 0);
++        Category created = new Category(code, parentId, name, sort);
++        try {
++            if (categories.insert(created) != 1 || created.getId() == null || created.getId() <= 0) {
++                throw new IllegalStateException("Category generated ID was not returned");
++            }
++            Category inserted = categories.selectById(created.getId());
++            if (inserted == null || !Objects.equals(created.getId(), inserted.getId())
++                    || !code.equals(inserted.getCode()) || !Objects.equals(parentId, inserted.getParentId())
++                    || !name.equals(inserted.getName()) || sort != inserted.getSortOrder()) {
++                throw new IllegalStateException("Generated category ID verification failed");
++            }
++            return inserted;
++        } catch (DataIntegrityViolationException failure) {
++            throw conflict("CATEGORY_CONFLICT", "分类编码、名称或关联数据已变化，请刷新后重试。", null);
++        }
++    }
++
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public void update(SessionIdentity actor, long id, CategoryForm form) {
++        writeGuard.lock(actor);
++        Category current = require(categories.lockById(id));
++        String name = InputChecks.requiredText("name", form.name(), 50);
++        int sort = sortOrder(form.sortOrder());
++        ensureUniqueName(current.getParentId(), name, id);
++        if (name.equals(current.getName()) && sort == current.getSortOrder()) return;
++        try {
++            if (categories.updateDetails(id, name, sort) != 1) {
++                throw conflict("CATEGORY_CHANGED", "分类已变化，请刷新列表后重试。", null);
++            }
++        } catch (DataIntegrityViolationException failure) {
++            throw conflict("CATEGORY_CONFLICT", "同父级的分类名称已占用，请修改后重试。", "name");
++        }
++    }
++
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public void remove(SessionIdentity actor, long id) {
++        writeGuard.lock(actor);
++        require(categories.lockById(id));
++        if (categories.countChildren(id) != 0 || categories.countProductReferences(id) != 0) {
++            throw conflict("CATEGORY_REFERENCED", "分类含子类或仍被商品引用（包括草稿），请先处理关联数据。", null);
++        }
++        try {
++            if (categories.deleteById(id) != 1) {
++                throw conflict("CATEGORY_CHANGED", "分类已变化，请刷新列表后重试。", null);
++            }
++        } catch (DataIntegrityViolationException failure) {
++            throw conflict("CATEGORY_REFERENCED", "分类仍有新的关联引用，暂时无法删除。", null);
++        }
++    }
++
++    private void ensureUniqueName(Long parentId, String name, long excludedId) {
++        if (categories.countSiblingName(parentId == null ? 0 : parentId, name, excludedId) != 0) {
++            throw conflict("CATEGORY_NAME_EXISTS", "同父级已存在该分类名称。", "name");
++        }
++    }
++
++    private int sortOrder(String raw) {
++        return raw == null || raw.isBlank() ? 0 : InputChecks.integer("sortOrder", raw, 0, Integer.MAX_VALUE);
++    }
++
++    private Category require(Category category) {
++        if (category == null) {
++            throw new BusinessException(HttpStatus.NOT_FOUND, "CATEGORY_NOT_FOUND", "未找到请求的分类。");
++        }
++        return category;
++    }
++
++    private BusinessException conflict(String code, String message, String field) {
++        return new BusinessException(HttpStatus.CONFLICT, code, message,
++                field == null ? Map.of() : Map.of(field, message));
++    }
++
++    private enum ChildType { STATIONERY, SOUVENIR }
+ }
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/Product.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/Product.java
+new file mode 100644
+index 0000000..1fbaba4
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/Product.java
+@@ -0,0 +1,54 @@
++package org.csucampuscraft.admin.catalog;
++
++import com.baomidou.mybatisplus.annotation.*;
++
++@TableName("product")
++public class Product {
++    @TableId(type = IdType.AUTO)
++    private Long id;
++    private String sku;
++    private Long categoryId;
++    private String name;
++    private String summary;
++    private String description;
++    private String coverImage;
++    private java.math.BigDecimal price;
++    private Integer stock;
++    private String status;
++    private Integer sortOrder;
++    private Long version;
++    private java.time.LocalDateTime createdAt;
++    private java.time.LocalDateTime updatedAt;
++    @TableField(exist = false)
++    private String categoryName;
++    public Long getId() { return id; }
++    public void setId(Long value) { this.id = value; }
++    public String getSku() { return sku; }
++    public void setSku(String value) { this.sku = value; }
++    public Long getCategoryId() { return categoryId; }
++    public void setCategoryId(Long value) { this.categoryId = value; }
++    public String getName() { return name; }
++    public void setName(String value) { this.name = value; }
++    public String getSummary() { return summary; }
++    public void setSummary(String value) { this.summary = value; }
++    public String getDescription() { return description; }
++    public void setDescription(String value) { this.description = value; }
++    public String getCoverImage() { return coverImage; }
++    public void setCoverImage(String value) { this.coverImage = value; }
++    public java.math.BigDecimal getPrice() { return price; }
++    public void setPrice(java.math.BigDecimal value) { this.price = value; }
++    public Integer getStock() { return stock; }
++    public void setStock(Integer value) { this.stock = value; }
++    public String getStatus() { return status; }
++    public void setStatus(String value) { this.status = value; }
++    public Integer getSortOrder() { return sortOrder; }
++    public void setSortOrder(Integer value) { this.sortOrder = value; }
++    public Long getVersion() { return version; }
++    public void setVersion(Long value) { this.version = value; }
++    public java.time.LocalDateTime getCreatedAt() { return createdAt; }
++    public void setCreatedAt(java.time.LocalDateTime value) { this.createdAt = value; }
++    public java.time.LocalDateTime getUpdatedAt() { return updatedAt; }
++    public void setUpdatedAt(java.time.LocalDateTime value) { this.updatedAt = value; }
++    public String getCategoryName() { return categoryName; }
++    public void setCategoryName(String value) { this.categoryName = value; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductCategoryChoice.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductCategoryChoice.java
+new file mode 100644
+index 0000000..42913ae
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductCategoryChoice.java
+@@ -0,0 +1,7 @@
++package org.csucampuscraft.admin.catalog;
++
++public record ProductCategoryChoice(Long id, String label, boolean secondLevel) {
++    public Long getId() { return id; }
++    public String getLabel() { return label; }
++    public boolean isSecondLevel() { return secondLevel; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductInput.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductInput.java
+new file mode 100644
+index 0000000..c9f786b
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductInput.java
+@@ -0,0 +1,22 @@
++package org.csucampuscraft.admin.catalog;
++
++/** Raw allowlisted form strings only; never bind request data directly to the database entity. */
++public record ProductInput(String sku, String categoryId, String name, String price,
++                           String summary, String description, String coverImage,
++                           String stock, String sortOrder, String version) {
++    public static ProductInput fromProduct(Product p) {
++        return new ProductInput(p.getSku(), p.getCategoryId().toString(), p.getName(),
++                p.getPrice().toPlainString(), p.getSummary(), p.getDescription(), p.getCoverImage(),
++                p.getStock().toString(), p.getSortOrder().toString(), p.getVersion().toString());
++    }
++    public String getSku() { return sku; }
++    public String getCategoryId() { return categoryId; }
++    public String getName() { return name; }
++    public String getPrice() { return price; }
++    public String getSummary() { return summary; }
++    public String getDescription() { return description; }
++    public String getCoverImage() { return coverImage; }
++    public String getStock() { return stock; }
++    public String getSortOrder() { return sortOrder; }
++    public String getVersion() { return version; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductMapper.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductMapper.java
+new file mode 100644
+index 0000000..9f71827
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductMapper.java
+@@ -0,0 +1,81 @@
++package org.csucampuscraft.admin.catalog;
++
++import com.baomidou.mybatisplus.core.mapper.BaseMapper;
++import java.util.List;
++import org.apache.ibatis.annotations.*;
++
++@Mapper
++public interface ProductMapper extends BaseMapper<Product> {
++    String COLUMNS = "p.id,p.sku,p.category_id,p.name,p.summary,p.description,p.cover_image,p.price,"
++            + "p.stock,p.status,p.sort_order,p.version,p.created_at,p.updated_at";
++    String FROM = " FROM product p JOIN category c ON c.id=p.category_id ";
++    String WHERE = """
++            <bind name="likePattern" value="query.getLikePattern()"/>
++            WHERE 1=1
++            <if test="query.categoryId != null">
++                <choose>
++                    <when test="rootScope">AND c.parent_id=#{query.categoryId}</when>
++                    <otherwise>AND p.category_id=#{query.categoryId}</otherwise>
++                </choose>
++            </if>
++            <if test="query.status.name() != 'ALL'">AND p.status=#{query.status}</if>
++            <if test="likePattern != null">AND p.name LIKE #{likePattern} ESCAPE '!'</if>
++            """;
++
++    @Select("<script>SELECT COUNT(*)" + FROM + WHERE + "</script>")
++    long countProducts(@Param("query") ProductQuery query, @Param("rootScope") boolean rootScope);
++
++    @Select("<script>SELECT " + COLUMNS + ",c.name AS category_name" + FROM + WHERE
++            + " ORDER BY p.sort_order ASC,p.id ASC LIMIT #{query.size} OFFSET #{offset}</script>")
++    List<Product> selectProducts(@Param("query") ProductQuery query, @Param("rootScope") boolean rootScope,
++                                 @Param("offset") long offset);
++
++    @Select("SELECT " + COLUMNS + ",c.name AS category_name" + FROM + " WHERE p.id=#{id}")
++    Product selectProduct(@Param("id") long id);
++
++    @Select("SELECT " + COLUMNS + " FROM product p WHERE p.id=#{id} FOR UPDATE")
++    Product lockProduct(@Param("id") long id);
++
++    @Select("SELECT id,code,parent_id,name,sort_order FROM category ORDER BY sort_order ASC,id ASC")
++    List<Category> selectCategories();
++
++    @Select("SELECT id,code,parent_id,name,sort_order FROM category WHERE id=#{id}")
++    Category selectCategory(@Param("id") long id);
++
++    @Select("SELECT id,code,parent_id,name,sort_order FROM category WHERE id=#{id} FOR UPDATE")
++    Category lockCategory(@Param("id") long id);
++
++    @Select("SELECT COUNT(*) FROM product WHERE sku=#{sku}")
++    long countSku(@Param("sku") String sku);
++
++    @Insert("""
++            INSERT INTO product(sku,category_id,name,summary,description,cover_image,price,stock,status,sort_order,version)
++            VALUES(#{product.sku},#{product.categoryId},#{product.name},#{product.summary},#{product.description},
++                   #{product.coverImage},#{product.price},#{product.stock},'DRAFT',#{product.sortOrder},0)
++            """)
++    @Options(useGeneratedKeys = true, keyProperty = "product.id", keyColumn = "id")
++    int insertProduct(@Param("product") Product product);
++
++    @Update("""
++            UPDATE product SET category_id=#{product.categoryId},name=#{product.name},
++                summary=#{product.summary},description=#{product.description},cover_image=#{product.coverImage},
++                price=#{product.price},sort_order=#{product.sortOrder},version=version+1
++            WHERE id=#{product.id} AND version=#{expectedVersion} AND version<9223372036854775807
++            """)
++    int updateDetails(@Param("product") Product product, @Param("expectedVersion") long expectedVersion);
++
++    @Update("""
++            UPDATE product SET status=#{target},version=version+1
++            WHERE id=#{id} AND version=#{expectedVersion} AND status=#{expectedStatus}
++              AND version<9223372036854775807
++            """)
++    int updateStatus(@Param("id") long id, @Param("expectedVersion") long expectedVersion,
++                     @Param("expectedStatus") String expectedStatus, @Param("target") String target);
++
++    @Update("""
++            UPDATE product SET stock=stock+#{quantity},version=version+1
++            WHERE id=#{id} AND stock<=#{maximumBeforeAdd} AND version<9223372036854775807
++            """)
++    int addStock(@Param("id") long id, @Param("quantity") int quantity,
++                 @Param("maximumBeforeAdd") int maximumBeforeAdd);
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductPage.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductPage.java
+new file mode 100644
+index 0000000..e83da11
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductPage.java
+@@ -0,0 +1,6 @@
++package org.csucampuscraft.admin.catalog;
++
++import java.util.List;
++
++public record ProductPage(ProductQuery query, List<Product> products, long total, long totalPages,
++                          long previousPage, long nextPage, boolean hasPrevious, boolean hasNext) { }
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductQuery.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductQuery.java
+new file mode 100644
+index 0000000..12c5b49
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductQuery.java
+@@ -0,0 +1,37 @@
++package org.csucampuscraft.admin.catalog;
++
++import java.net.URLEncoder;
++import java.util.Objects;
++import java.nio.charset.StandardCharsets;
++import org.csucampuscraft.admin.foundation.validation.InputChecks;
++
++public record ProductQuery(Long categoryId, String q, ProductStatus status, long page, int size) {
++    public ProductQuery {
++        Objects.requireNonNull(q);
++        Objects.requireNonNull(status);
++        if (page < 1 || size < 1 || size > 50) throw new IllegalArgumentException("Noncanonical product query");
++    }
++    public static ProductQuery bind(String categoryId, String q, String status, String page, String size) {
++        Long category = categoryId == null || categoryId.isBlank() ? null
++                : InputChecks.longInteger("categoryId", categoryId, Long.MIN_VALUE, Long.MAX_VALUE);
++        String keyword = InputChecks.text("q", q, 0, 120);
++        ProductStatus state = status == null ? ProductStatus.ALL
++                : InputChecks.enumeration("status", status, ProductStatus.class);
++        long requestedPage = page == null ? 1 : InputChecks.longInteger("page", page, Long.MIN_VALUE, Long.MAX_VALUE);
++        int requestedSize = size == null ? 10 : InputChecks.integer("size", size, 1, 50);
++        return new ProductQuery(category, keyword, state, Math.max(1, requestedPage), requestedSize);
++    }
++    public Long getCategoryId() { return categoryId; }
++    public String getQ() { return q; }
++    public ProductStatus getStatus() { return status; }
++    public long getPage() { return page; }
++    public int getSize() { return size; }
++    public String getLikePattern() {
++        return q.isEmpty() ? null : "%" + q.replace("!", "!!").replace("%", "!%").replace("_", "!_") + "%";
++    }
++    public String path(long targetPage) {
++        return "/products?" + (categoryId == null ? "" : "categoryId=" + categoryId + "&")
++                + "q=" + URLEncoder.encode(q, StandardCharsets.UTF_8)
++                + "&status=" + status.name() + "&page=" + targetPage + "&size=" + size;
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductService.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductService.java
+new file mode 100644
+index 0000000..74c150d
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductService.java
+@@ -0,0 +1,282 @@
++package org.csucampuscraft.admin.catalog;
++
++import java.math.BigDecimal;
++import java.nio.charset.StandardCharsets;
++import java.util.*;
++import java.util.function.Supplier;
++import org.csucampuscraft.admin.auth.AdminWriteGuard;
++import org.csucampuscraft.admin.auth.SessionIdentity;
++import org.csucampuscraft.admin.foundation.validation.InputChecks;
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import org.springframework.dao.ConcurrencyFailureException;
++import org.springframework.dao.DataIntegrityViolationException;
++import org.springframework.dao.DuplicateKeyException;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Service;
++import org.springframework.transaction.annotation.Isolation;
++import org.springframework.transaction.annotation.Transactional;
++
++@Service
++public class ProductService {
++    private static final String DEFAULT_COVER = "images/catalog-placeholder.svg";
++    private static final BigDecimal MIN_PRICE = new BigDecimal("0.01");
++    private final ProductMapper products;
++    private final AdminWriteGuard actors;
++
++    public ProductService(ProductMapper products, AdminWriteGuard actors) {
++        this.products = products;
++        this.actors = actors;
++    }
++
++    @Transactional(readOnly = true)
++    public ProductPage list(ProductQuery query) {
++        Category scope = query.categoryId() == null ? null : products.selectCategory(query.categoryId());
++        if (query.categoryId() != null && scope == null) throw missingCategory();
++        boolean root = scope != null && scope.getParentId() == null;
++        long total = products.countProducts(query, root);
++        long pages = total == 0 ? 0 : 1 + (total - 1) / query.size();
++        boolean inRange = query.page() <= pages;
++        List<Product> rows = inRange
++                ? products.selectProducts(query, root, Math.multiplyExact(query.page() - 1, (long) query.size()))
++                : List.of();
++        return new ProductPage(query, rows, total, pages,
++                inRange ? Math.max(1, query.page() - 1) : Math.max(1, pages),
++                inRange && query.page() < pages ? query.page() + 1 : query.page(),
++                query.page() > 1, inRange && query.page() < pages);
++    }
++
++    @Transactional(readOnly = true)
++    public Product get(long id) {
++        Product product = products.selectProduct(id);
++        if (product == null) throw missingProduct();
++        return product;
++    }
++
++    @Transactional(readOnly = true)
++    public List<ProductCategoryChoice> categories() {
++        List<Category> all = products.selectCategories();
++        Map<Long, Category> roots = new HashMap<>();
++        for (Category c : all) if (c.getParentId() == null) roots.put(c.getId(), c);
++        List<ProductCategoryChoice> result = new ArrayList<>();
++        for (Category c : all) {
++            if (c.getParentId() == null) {
++                result.add(new ProductCategoryChoice(c.getId(), "主题：" + c.getName(), false));
++                for (Category child : all) {
++                    if (c.getId().equals(child.getParentId())) {
++                        result.add(new ProductCategoryChoice(child.getId(),
++                                c.getName() + " / " + child.getName(), true));
++                    }
++                }
++            }
++        }
++        return result;
++    }
++
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public Product create(SessionIdentity actor, ProductInput input) {
++        try {
++            actors.lock(actor);
++            Product validated = validated(input, null);
++            requireSecondLevel(validated.getCategoryId());
++            if (products.countSku(validated.getSku()) != 0) throw duplicateSku();
++            validated.setStatus("DRAFT");
++            validated.setVersion(0L);
++            if (products.insertProduct(validated) != 1 || validated.getId() == null) {
++                throw new IllegalStateException("Product insert did not return an identity");
++            }
++            Product created = products.selectProduct(validated.getId());
++            if (created == null || !validated.getSku().equals(created.getSku())) {
++                throw new IllegalStateException("Product insert identity could not be verified");
++            }
++            return created;
++        } catch (DuplicateKeyException duplicate) {
++            throw duplicateSku();
++        } catch (DataIntegrityViolationException | ConcurrencyFailureException conflict) {
++            throw databaseConflict();
++        }
++    }
++
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public void update(SessionIdentity actor, long id, ProductInput input) {
++        try {
++            actors.lock(actor);
++            Product current = locked(id);
++            long version = version(input.version());
++            expectVersion(current, version);
++            Product edited = validated(input, current);
++            requireSecondLevel(edited.getCategoryId());
++            if (sameDetails(current, edited)) return;
++            capacity(current);
++            edited.setId(current.getId());
++            if (products.updateDetails(edited, version) != 1) throw stale();
++        } catch (DataIntegrityViolationException | ConcurrencyFailureException conflict) {
++            throw databaseConflict();
++        }
++    }
++
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public void publish(SessionIdentity actor, long id, String rawVersion) {
++        try {
++            actors.lock(actor);
++            Product current = locked(id);
++            long version = version(rawVersion);
++            expectVersion(current, version);
++            if (!"DRAFT".equals(current.getStatus())) throw stateConflict();
++            // Validate current locked data without changing name, price, stock or any snapshot.
++            validated(ProductInput.fromProduct(current), current);
++            requireSecondLevel(current.getCategoryId());
++            capacity(current);
++            if (products.updateStatus(id, version, "DRAFT", "ON_SALE") != 1) throw stale();
++        } catch (DataIntegrityViolationException | ConcurrencyFailureException conflict) {
++            throw databaseConflict();
++        }
++    }
++
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public void unpublish(SessionIdentity actor, long id, String rawVersion) {
++        try {
++            actors.lock(actor);
++            Product current = locked(id);
++            long version = version(rawVersion);
++            expectVersion(current, version);
++            if (!"ON_SALE".equals(current.getStatus())) throw stateConflict();
++            capacity(current);
++            if (products.updateStatus(id, version, "ON_SALE", "DRAFT") != 1) throw stale();
++        } catch (DataIntegrityViolationException | ConcurrencyFailureException conflict) {
++            throw databaseConflict();
++        }
++    }
++
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public void restock(SessionIdentity actor, long id, String rawQuantity) {
++        try {
++            actors.lock(actor);
++            Product current = locked(id);
++            int quantity = InputChecks.integer("quantity", rawQuantity, 1, Integer.MAX_VALUE);
++            capacity(current);
++            int maximumBeforeAdd = Integer.MAX_VALUE - quantity;
++            if (current.getStock() > maximumBeforeAdd) {
++                throw conflict("STOCK_OVERFLOW", "本次补货会超过库存范围，请减少补货量。",
++                        Map.of("quantity", "本次增加量超过库存允许范围。"));
++            }
++            // The SQL adds to the locked database value; no submitted stock/version is used.
++            if (products.addStock(id, quantity, maximumBeforeAdd) != 1) throw stale();
++        } catch (DataIntegrityViolationException | ConcurrencyFailureException conflict) {
++            throw databaseConflict();
++        }
++    }
++
++    private Product locked(long id) {
++        Product current = products.lockProduct(id);
++        if (current == null) throw missingProduct();
++        return current;
++    }
++
++    private void requireSecondLevel(long id) {
++        Category category = products.lockCategory(id);
++        if (category == null) throw missingCategory();
++        Category parent = category.getParentId() == null ? null : products.selectCategory(category.getParentId());
++        if (parent == null || parent.getParentId() != null) {
++            throw invalid("categoryId", "请选择有效的二级分类。");
++        }
++    }
++
++    private Product validated(ProductInput input, Product current) {
++        Map<String, String> errors = new LinkedHashMap<>();
++        String sku = current == null
++                ? checked(errors, () -> InputChecks.requiredText("sku", input.sku(), 40), "")
++                : current.getSku();
++        Long categoryId = checked(errors,
++                () -> InputChecks.longInteger("categoryId", input.categoryId(), 1, Long.MAX_VALUE), null);
++        String name = checked(errors, () -> InputChecks.requiredText("name", input.name(), 120), "");
++        BigDecimal price = checked(errors,
++                () -> InputChecks.money("price", input.price(), MIN_PRICE, InputChecks.MAX_MONEY), null);
++        String summary = checked(errors, () -> InputChecks.text("summary", input.summary(), 0, 500), "");
++        String description = input.description() == null ? "" : input.description();
++        if (description.getBytes(StandardCharsets.UTF_8).length > 65535) {
++            errors.put("description", "设计说明内容过长，请缩短到 65,535 字节以内。");
++        }
++        String cover = checked(errors, () -> InputChecks.text("coverImage", input.coverImage(), 0, 255), "");
++        if (cover.isEmpty()) cover = DEFAULT_COVER;
++        if (!cover.startsWith("images/") || cover.contains("..") || cover.contains(":")
++                || cover.contains("%") || cover.contains("?") || cover.contains("#")
++                || cover.contains("\\") || cover.codePoints().anyMatch(c -> c < 32 || c == 127)) {
++            errors.put("coverImage", "封面应是 images/ 下的站内相对路径，不得含特殊路径标记。");
++        }
++        Integer stock = current == null ? checked(errors,
++                () -> optionalInteger("stock", input.stock()), 0) : current.getStock();
++        Integer sortOrder = checked(errors, () -> optionalInteger("sortOrder", input.sortOrder()), 0);
++        if (!errors.isEmpty()) {
++            throw new BusinessException(HttpStatus.BAD_REQUEST, "INVALID_PRODUCT_FIELDS",
++                    "请检查并修正商品资料。", errors);
++        }
++        Product value = new Product();
++        value.setSku(sku);
++        value.setCategoryId(categoryId);
++        value.setName(name);
++        value.setPrice(price);
++        value.setSummary(summary);
++        value.setDescription(description);
++        value.setCoverImage(cover);
++        value.setStock(stock);
++        value.setSortOrder(sortOrder);
++        return value;
++    }
++
++    private static int optionalInteger(String name, String raw) {
++        return raw == null || raw.isBlank() ? 0 : InputChecks.integer(name, raw, 0, Integer.MAX_VALUE);
++    }
++
++    private static <T> T checked(Map<String, String> errors, Supplier<T> check, T fallback) {
++        try { return check.get(); }
++        catch (BusinessException invalid) { errors.putAll(invalid.getFieldErrors()); return fallback; }
++    }
++
++    private static String optional(String text) { return text == null ? "" : text; }
++
++    private static boolean sameDetails(Product a, Product b) {
++        return a.getCategoryId().equals(b.getCategoryId()) && a.getName().equals(b.getName())
++                && a.getPrice().compareTo(b.getPrice()) == 0
++                && optional(a.getSummary()).equals(optional(b.getSummary()))
++                && optional(a.getDescription()).equals(optional(b.getDescription()))
++                && a.getCoverImage().equals(b.getCoverImage())
++                && a.getSortOrder().equals(b.getSortOrder());
++    }
++
++    private static long version(String value) {
++        return InputChecks.longInteger("version", value, 0, Long.MAX_VALUE);
++    }
++    private static void expectVersion(Product current, long expected) {
++        if (current.getVersion() != expected) throw stale();
++    }
++    private static void capacity(Product current) {
++        if (current.getVersion() == Long.MAX_VALUE) {
++            throw conflict("PRODUCT_VERSION_OVERFLOW", "商品版本已到允许上限，操作未提交，请联系组员处理。", Map.of());
++        }
++    }
++    private static BusinessException invalid(String field, String message) {
++        return new BusinessException(HttpStatus.BAD_REQUEST, "INVALID_PRODUCT_FIELD", message, Map.of(field, message));
++    }
++    private static BusinessException duplicateSku() {
++        return conflict("SKU_ALREADY_EXISTS", "该 SKU 已存在，请修改后再提交。", Map.of("sku", "该 SKU 已被使用。"));
++    }
++    private static BusinessException stale() {
++        return conflict("PRODUCT_VERSION_CONFLICT", "商品资料已发生变化，请重新载入后确认再提交。",
++                Map.of("version", "页面已过期，请重新载入编辑页。"));
++    }
++    private static BusinessException stateConflict() {
++        return conflict("PRODUCT_STATE_CONFLICT", "商品状态已变化，请刷新列表后重新操作。", Map.of());
++    }
++    private static BusinessException databaseConflict() {
++        return conflict("PRODUCT_DATA_CONFLICT", "商品或分类数据已变化，请刷新后重试。", Map.of());
++    }
++    private static BusinessException conflict(String code, String message, Map<String, String> fields) {
++        return new BusinessException(HttpStatus.CONFLICT, code, message, fields);
++    }
++    private static BusinessException missingProduct() {
++        return new BusinessException(HttpStatus.NOT_FOUND, "PRODUCT_NOT_FOUND", "未找到请求的商品。");
++    }
++    private static BusinessException missingCategory() {
++        return new BusinessException(HttpStatus.NOT_FOUND, "CATEGORY_NOT_FOUND", "未找到请求的商品分类。");
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductStatus.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductStatus.java
+new file mode 100644
+index 0000000..602a80c
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductStatus.java
+@@ -0,0 +1,3 @@
++package org.csucampuscraft.admin.catalog;
++
++public enum ProductStatus { ALL, DRAFT, ON_SALE }
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/GlobalExceptionHandler.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/GlobalExceptionHandler.java
+index c37ad44..8ec5130 100644
+--- a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/GlobalExceptionHandler.java
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/GlobalExceptionHandler.java
+@@ -1,5 +1,10 @@
+ package org.csucampuscraft.admin.foundation.web;
+ 
++import org.csucampuscraft.admin.auth.SessionExpiredException;
++import org.csucampuscraft.admin.auth.SessionSupport;
++import org.springframework.web.servlet.view.RedirectView;
++import org.springframework.dao.PessimisticLockingFailureException;
++import org.springframework.dao.OptimisticLockingFailureException;
+ import jakarta.servlet.http.HttpServletRequest;
+ import jakarta.servlet.http.HttpServletResponse;
+ import java.io.IOException;
+@@ -20,7 +25,28 @@ import org.springframework.web.servlet.ModelAndView;
+ public final class GlobalExceptionHandler {
+     private final PageModelAdvice pageModels;
+ 
+-    public GlobalExceptionHandler(PageModelAdvice pageModels) { this.pageModels = pageModels; }
++    private final SessionSupport sessions;
++
++    public GlobalExceptionHandler(PageModelAdvice pageModels, SessionSupport sessions) {
++        this.pageModels = pageModels;
++        this.sessions = sessions;
++    }
++
++    @ExceptionHandler(SessionExpiredException.class)
++    public ModelAndView expired(SessionExpiredException failure, HttpServletRequest request) {
++        sessions.clear(request);
++        RedirectView redirect = new RedirectView("/login?returnUrl=%2F", true);
++        redirect.setStatusCode(HttpStatus.FOUND);
++        redirect.setExposeModelAttributes(false);
++        redirect.setExpandUriTemplateVariables(false);
++        return new ModelAndView(redirect);
++    }
++
++    @ExceptionHandler({PessimisticLockingFailureException.class, OptimisticLockingFailureException.class})
++    public ModelAndView writeConflict(Exception failure, HttpServletRequest request) {
++        return page(request, HttpStatus.CONFLICT, "WRITE_CONFLICT",
++                "数据已变化或正在更新，请刷新页面后重试。", Map.of());
++    }
+ 
+     @ExceptionHandler(BusinessException.class)
+     public ModelAndView business(BusinessException exception, HttpServletRequest request) {
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/CategoryController.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/CategoryController.java
+new file mode 100644
+index 0000000..023f683
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/CategoryController.java
+@@ -0,0 +1,122 @@
++package org.csucampuscraft.admin.web;
++
++import jakarta.servlet.http.HttpServletRequest;
++import java.util.LinkedHashMap;
++import java.util.List;
++import java.util.Map;
++import org.csucampuscraft.admin.auth.SessionSupport;
++import org.csucampuscraft.admin.catalog.Category;
++import org.csucampuscraft.admin.catalog.CategoryForm;
++import org.csucampuscraft.admin.catalog.CategoryService;
++import org.csucampuscraft.admin.foundation.validation.InputChecks;
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Controller;
++import org.springframework.ui.Model;
++import org.springframework.util.MultiValueMap;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.PathVariable;
++import org.springframework.web.bind.annotation.PostMapping;
++import org.springframework.web.bind.annotation.RequestParam;
++import org.springframework.web.servlet.ModelAndView;
++import org.springframework.web.servlet.view.RedirectView;
++
++@Controller
++public final class CategoryController {
++    private final CategoryService categories;
++    private final SessionSupport sessions;
++
++    public CategoryController(CategoryService categories, SessionSupport sessions) {
++        this.categories = categories;
++        this.sessions = sessions;
++    }
++
++    @GetMapping("/categories")
++    public String list(@RequestParam(required = false) String createdId, Model model) {
++        List<Category> rows = categories.listAll();
++        Map<Long, String> parentNames = new LinkedHashMap<>();
++        for (Category row : rows) parentNames.put(row.getId(), row.getName());
++        model.addAttribute("categories", rows);
++        model.addAttribute("parentNames", parentNames);
++        model.addAttribute("createdCategory", createdId == null ? null
++                : categories.getRequired(InputChecks.longInteger("createdId", createdId, 1, Long.MAX_VALUE)));
++        return "categories/list";
++    }
++
++    @GetMapping("/categories/new")
++    public String newForm(Model model) {
++        fillForm(model, CategoryForm.empty(), null);
++        return "categories/form";
++    }
++
++    @GetMapping("/categories/{categoryId}/edit")
++    public String editForm(@PathVariable String categoryId, Model model) {
++        Category category = categories.getRequired(id(categoryId));
++        fillForm(model, CategoryForm.edit(category), category);
++        return "categories/form";
++    }
++
++    @PostMapping("/categories")
++    public ModelAndView create(@RequestParam MultiValueMap<String, String> parameters,
++                               HttpServletRequest request, Model model) {
++        try {
++            Category created = categories.create(sessions.identity(request), CategoryForm.bind(parameters, false));
++            return seeOther("/categories?createdId=" + created.getId());
++        } catch (BusinessException failure) {
++            if (!formError(failure)) throw failure;
++            fillForm(model, CategoryForm.display(parameters), null);
++            return formFailure(model, failure);
++        }
++    }
++
++    @PostMapping("/categories/{categoryId}")
++    public ModelAndView update(@PathVariable String categoryId,
++                               @RequestParam MultiValueMap<String, String> parameters,
++                               HttpServletRequest request, Model model) {
++        long target = id(categoryId);
++        try {
++            categories.update(sessions.identity(request), target, CategoryForm.bind(parameters, true));
++            return seeOther("/categories");
++        } catch (BusinessException failure) {
++            if (!formError(failure)) throw failure;
++            Category current = categories.getRequired(target);
++            CategoryForm raw = CategoryForm.display(parameters);
++            fillForm(model, new CategoryForm(current.getCode(),
++                    current.getParentId() == null ? "" : current.getParentId().toString(), "",
++                    raw.name(), raw.sortOrder()), current);
++            return formFailure(model, failure);
++        }
++    }
++
++    @PostMapping("/categories/{categoryId}/remove")
++    public ModelAndView remove(@PathVariable String categoryId, HttpServletRequest request) {
++        categories.remove(sessions.identity(request), id(categoryId));
++        return seeOther("/categories");
++    }
++
++    private ModelAndView formFailure(Model model, BusinessException failure) {
++        model.addAttribute("fieldErrors", failure.getFieldErrors());
++        model.addAttribute("globalError", failure.getMessage());
++        return new ModelAndView("categories/form", model.asMap(), failure.getStatus());
++    }
++
++    private boolean formError(BusinessException error) {
++        return error.getStatus() == HttpStatus.BAD_REQUEST || error.getStatus() == HttpStatus.CONFLICT;
++    }
++
++    private void fillForm(Model model, CategoryForm form, Category category) {
++        model.addAttribute("form", form);
++        model.addAttribute("category", category);
++        model.addAttribute("parentThemes", categories.listTopLevelThemes());
++    }
++
++    private long id(String raw) { return InputChecks.longInteger("categoryId", raw, 1, Long.MAX_VALUE); }
++
++    private ModelAndView seeOther(String target) {
++        RedirectView view = new RedirectView(target, true);
++        view.setStatusCode(HttpStatus.SEE_OTHER);
++        view.setExposeModelAttributes(false);
++        view.setExpandUriTemplateVariables(false);
++        return new ModelAndView(view);
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/ProductController.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/ProductController.java
+new file mode 100644
+index 0000000..b223366
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/ProductController.java
+@@ -0,0 +1,210 @@
++package org.csucampuscraft.admin.web;
++
++import jakarta.servlet.http.HttpServletRequest;
++import java.util.*;
++import org.csucampuscraft.admin.auth.SessionSupport;
++import org.csucampuscraft.admin.catalog.*;
++import org.csucampuscraft.admin.foundation.validation.InputChecks;
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Controller;
++import org.springframework.ui.Model;
++import org.springframework.util.MultiValueMap;
++import org.springframework.web.bind.annotation.*;
++import org.springframework.web.servlet.ModelAndView;
++import org.springframework.web.servlet.view.RedirectView;
++
++@Controller
++public final class ProductController {
++    private static final Set<String> CREATE_FIELDS = Set.of("sku", "categoryId", "name", "price",
++            "summary", "description", "coverImage", "stock", "sortOrder");
++    private static final Set<String> EDIT_FIELDS = Set.of("categoryId", "name", "price",
++            "summary", "description", "coverImage", "sortOrder", "version");
++    private final ProductService products;
++    private final SessionSupport sessions;
++
++    public ProductController(ProductService products, SessionSupport sessions) {
++        this.products = products;
++        this.sessions = sessions;
++    }
++
++    @GetMapping("/products")
++    public String list(@RequestParam MultiValueMap<String, String> parameters, Model model) {
++        ProductQuery query = ProductQuery.bind(single(parameters, "categoryId"), single(parameters, "q"),
++                single(parameters, "status"), single(parameters, "page"), single(parameters, "size"));
++        ProductPage page = products.list(query);
++        model.addAttribute("query", query);
++        model.addAttribute("products", page.products());
++        model.addAttribute("total", page.total());
++        model.addAttribute("totalPages", page.totalPages());
++        model.addAttribute("page", query.page());
++        model.addAttribute("size", query.size());
++        model.addAttribute("hasPrevious", page.hasPrevious());
++        model.addAttribute("previousPage", page.previousPage());
++        model.addAttribute("hasNext", page.hasNext());
++        model.addAttribute("nextPage", page.nextPage());
++        model.addAttribute("categories", products.categories());
++        model.addAttribute("returnUrl", query.path(query.page()));
++        return "products/list";
++    }
++
++    @GetMapping("/products/new")
++    public ModelAndView createPage(@RequestParam MultiValueMap<String, String> parameters) {
++        return form(null, new ProductInput("", "", "", "", "", "", "", "0", "0", "0"),
++                returnUrl(parameters), null, null);
++    }
++
++    @GetMapping("/products/{productId}/edit")
++    public ModelAndView editPage(@PathVariable("productId") String productId,
++                                 @RequestParam MultiValueMap<String, String> parameters) {
++        Product product = products.get(id(productId));
++        return form(product, ProductInput.fromProduct(product), returnUrl(parameters), null, null);
++    }
++
++    @PostMapping("/products")
++    public ModelAndView create(@RequestParam MultiValueMap<String, String> parameters,
++                               HttpServletRequest request) {
++        ProductInput input = input(parameters, true);
++        String target = returnUrl(parameters);
++        try {
++            rejectDuplicates(parameters, CREATE_FIELDS);
++            products.create(sessions.identity(request), input);
++            return redirect(target);
++        } catch (BusinessException failure) {
++            if (!formFailure(failure)) throw failure;
++            return form(null, input, target, failure, null);
++        }
++    }
++
++    @PostMapping("/products/{productId}")
++    public ModelAndView update(@PathVariable("productId") String productId,
++                               @RequestParam MultiValueMap<String, String> parameters,
++                               HttpServletRequest request) {
++        long id = id(productId);
++        ProductInput input = input(parameters, false);
++        String target = returnUrl(parameters);
++        try {
++            rejectDuplicates(parameters, EDIT_FIELDS);
++            products.update(sessions.identity(request), id, input);
++            return redirect(target);
++        } catch (BusinessException failure) {
++            if (!formFailure(failure)) throw failure;
++            return form(products.get(id), input, target, failure, null);
++        }
++    }
++
++    @PostMapping("/products/{productId}/publish")
++    public ModelAndView publish(@PathVariable("productId") String productId,
++                                @RequestParam MultiValueMap<String, String> parameters,
++                                HttpServletRequest request) {
++        return state(productId, parameters, request, true);
++    }
++
++    @PostMapping("/products/{productId}/unpublish")
++    public ModelAndView unpublish(@PathVariable("productId") String productId,
++                                  @RequestParam MultiValueMap<String, String> parameters,
++                                  HttpServletRequest request) {
++        return state(productId, parameters, request, false);
++    }
++
++    @PostMapping("/products/{productId}/restock")
++    public ModelAndView restock(@PathVariable("productId") String productId,
++                               @RequestParam MultiValueMap<String, String> parameters,
++                               HttpServletRequest request) {
++        long id = id(productId);
++        String target = returnUrl(parameters);
++        String quantity = first(parameters, "quantity");
++        try {
++            products.restock(sessions.identity(request), id, single(parameters, "quantity"));
++            return redirect(target);
++        } catch (BusinessException failure) {
++            if (!formFailure(failure)) throw failure;
++            Product product = products.get(id);
++            return form(product, ProductInput.fromProduct(product), target, failure, quantity);
++        }
++    }
++
++    private ModelAndView state(String rawId, MultiValueMap<String, String> parameters,
++                               HttpServletRequest request, boolean publish) {
++        long id = id(rawId);
++        String target = returnUrl(parameters);
++        try {
++            String version = single(parameters, "version");
++            if (publish) products.publish(sessions.identity(request), id, version);
++            else products.unpublish(sessions.identity(request), id, version);
++            return redirect(target);
++        } catch (BusinessException failure) {
++            if (!formFailure(failure)) throw failure;
++            Product product = products.get(id);
++            return form(product, ProductInput.fromProduct(product), target, failure, null);
++        }
++    }
++
++    private ModelAndView form(Product product, ProductInput input, String target,
++                              BusinessException failure, String quantity) {
++        ModelAndView view = new ModelAndView("products/form");
++        view.addObject("product", product);
++        view.addObject("editing", product != null);
++        view.addObject("form", input);
++        view.addObject("returnUrl", target);
++        List<ProductCategoryChoice> categories = products.categories().stream()
++                .filter(ProductCategoryChoice::secondLevel).toList();
++        view.addObject("categories", categories);
++        view.addObject("restockQuantity", quantity == null ? "1" : quantity);
++        if (failure != null) {
++            view.setStatus(failure.getStatus());
++            view.addObject("fieldErrors", failure.getFieldErrors());
++            view.addObject("globalError", failure.getMessage());
++        }
++        return view;
++    }
++
++    private static boolean formFailure(BusinessException failure) {
++        return (failure.getStatus() == HttpStatus.BAD_REQUEST || failure.getStatus() == HttpStatus.CONFLICT)
++                && !failure.getFieldErrors().isEmpty();
++    }
++
++    private static ProductInput input(MultiValueMap<String, String> p, boolean creating) {
++        return new ProductInput(creating ? first(p, "sku") : null, first(p, "categoryId"),
++                first(p, "name"), first(p, "price"), first(p, "summary"), first(p, "description"),
++                first(p, "coverImage"), creating ? first(p, "stock") : null,
++                first(p, "sortOrder"), creating ? null : first(p, "version"));
++    }
++
++    private static String first(MultiValueMap<String, String> p, String key) {
++        List<String> values = p.get(key);
++        return values == null || values.isEmpty() ? null : values.get(0);
++    }
++
++    private static String single(MultiValueMap<String, String> p, String key) {
++        rejectDuplicates(p, Set.of(key));
++        return first(p, key);
++    }
++
++    private static void rejectDuplicates(MultiValueMap<String, String> parameters, Set<String> fields) {
++        for (String key : fields) {
++            List<String> values = parameters.get(key);
++            if (values != null && values.size() != 1) {
++                throw new BusinessException(HttpStatus.BAD_REQUEST, "DUPLICATE_PRODUCT_FIELD",
++                        "每个字段只能提交一个值。", Map.of(key, "请为此字段提交一个值。"));
++            }
++        }
++    }
++
++    private static long id(String raw) {
++        return InputChecks.longInteger("productId", raw, 1, Long.MAX_VALUE);
++    }
++
++    private static String returnUrl(MultiValueMap<String, String> parameters) {
++        List<String> values = parameters.get("returnUrl");
++        return ProductReturnUrls.resolve(values != null && values.size() == 1 ? values.get(0) : null);
++    }
++
++    private static ModelAndView redirect(String target) {
++        RedirectView redirect = new RedirectView(target, true);
++        redirect.setStatusCode(HttpStatus.SEE_OTHER);
++        redirect.setExposeModelAttributes(false);
++        redirect.setExpandUriTemplateVariables(false);
++        return new ModelAndView(redirect);
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/ProductReturnUrls.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/ProductReturnUrls.java
+new file mode 100644
+index 0000000..9c71e1e
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/ProductReturnUrls.java
+@@ -0,0 +1,38 @@
++package org.csucampuscraft.admin.web;
++
++import java.net.URI;
++import java.net.URLDecoder;
++import java.nio.charset.StandardCharsets;
++import java.util.*;
++import org.csucampuscraft.admin.catalog.ProductQuery;
++
++/** Business return context only. A fixed list path plus validated filters is never an arbitrary redirect. */
++public final class ProductReturnUrls {
++    private static final Set<String> KEYS = Set.of("categoryId", "q", "status", "page", "size");
++    private ProductReturnUrls() { }
++
++    public static String resolve(String raw) {
++        String fallback = "/products";
++        if (raw == null || raw.isBlank()) return fallback;
++        try {
++            URI uri = new URI(raw);
++            if (uri.isAbsolute() || uri.getRawAuthority() != null || uri.getRawFragment() != null
++                    || !"/products".equals(uri.getRawPath())) return fallback;
++            Map<String, String> parameters = new HashMap<>();
++            String query = uri.getRawQuery();
++            if (query != null && !query.isEmpty()) {
++                for (String part : query.split("&", -1)) {
++                    String[] pair = part.split("=", 2);
++                    String key = URLDecoder.decode(pair[0], StandardCharsets.UTF_8);
++                    String value = pair.length == 1 ? "" : URLDecoder.decode(pair[1], StandardCharsets.UTF_8);
++                    if (!KEYS.contains(key) || parameters.putIfAbsent(key, value) != null) return fallback;
++                }
++            }
++            ProductQuery bound = ProductQuery.bind(parameters.get("categoryId"), parameters.get("q"),
++                    parameters.get("status"), parameters.get("page"), parameters.get("size"));
++            return bound.path(bound.page());
++        } catch (Exception invalid) {
++            return fallback;
++        }
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/resources/static/css/app.css b/csucampuscraft-admin/src/main/resources/static/css/app.css
+index 4f6f9be..e51bba3 100644
+--- a/csucampuscraft-admin/src/main/resources/static/css/app.css
++++ b/csucampuscraft-admin/src/main/resources/static/css/app.css
+@@ -226,3 +226,22 @@ tbody tr[aria-disabled="true"] { color: var(--color-muted); background: var(--co
+ /* STEP04: shared login panel; colors, spacing and fields reuse foundation tokens. */
+ .auth-panel { max-width: 32rem; margin-inline: auto; }
+ .auth-panel > .field-help { margin-top: var(--space-4); }
++
++/* STEP05: management-only page arrangements; shared tokens/components above are unchanged. */
++.admin-toolbar, .admin-actions, .admin-row-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
++.admin-toolbar { justify-content: space-between; margin-bottom: var(--space-6); }
++.admin-actions form, .admin-row-actions form { margin: 0; }
++.admin-form { display: grid; gap: var(--space-4); }
++.admin-form .form-field { margin-bottom: 0; }
++.admin-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
++.admin-filter, .admin-filter-form { display: flex; flex-wrap: wrap; align-items: end; gap: var(--space-4); }
++.admin-filter .form-field, .admin-filter-form .form-field { flex: 1 1 160px; }
++.admin-table-wrap { width: 100%; overflow-x: auto; }
++.admin-description { white-space: pre-wrap; overflow-wrap: anywhere; }
++@media (max-width: 760px) { .admin-form-grid { grid-template-columns: 1fr; } }
++.admin-pagination { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; justify-content: center; margin-top: var(--space-6); }
++[data-page-id="A05"] .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
++[data-page-id="A04"] .button-row, [data-page-id="A05"] .button-row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
++[data-page-id="A04"] .table-container { width: 100%; overflow-x: auto; }
++[data-page-id="A05"] .panel + .panel { margin-top: var(--space-6); }
++@media (max-width: 760px) { [data-page-id="A05"] .form-grid { grid-template-columns: 1fr; } }
+diff --git a/csucampuscraft-admin/src/main/resources/templates/categories/form.html b/csucampuscraft-admin/src/main/resources/templates/categories/form.html
+new file mode 100644
+index 0000000..0249453
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/categories/form.html
+@@ -0,0 +1,58 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('分类表单 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>分类表单</title></head>
++<body>
++<section th:fragment="mainContent" data-page-id="A03" class="admin-category-form"
++         th:attr="data-category-id=${category == null ? null : category.id}">
++    <nav aria-label="当前位置"><a th:href="@{/categories}">分类列表</a> / <span aria-current="page" th:text="${category == null ? '新增分类' : '编辑分类'}">分类表单</span></nav>
++    <header class="page-heading">
++        <h1 th:text="${category == null ? '新增分类' : '编辑分类'}">分类表单</h1>
++        <p class="muted" th:if="${category == null}">留空父级创建一级主题；选择一级父主题创建二级分类，编码由父编码和商品类型自动生成。</p>
++        <p class="muted" th:if="${category != null}">仅修改名称和排序，编码、父级和类型保持原值。</p>
++    </header>
++    <div class="panel">
++        <th:block th:replace="~{fragments/alerts :: summary(${fieldErrors})}"></th:block>
++        <form method="post" th:action="${category == null ? '/categories' : '/categories/' + category.id}"
++              data-submit-state data-category-form>
++            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++            <th:block th:if="${category == null}">
++                <div class="form-field" th:with="bad=${fieldErrors.containsKey('parentId')}">
++                    <label for="parentId">父级一级主题</label>
++                    <select id="parentId" name="parentId"
++                            th:attr="aria-invalid=${bad},aria-describedby=${bad ? 'parentId-error' : 'parentId-help'}">
++                        <option value="" th:selected="${#strings.isEmpty(form.parentId)}">无父级（创建一级）</option>
++                        <option th:each="parent : ${parentThemes}" th:value="${parent.id}" th:text="${parent.name}"
++                                th:selected="${form.parentId == parent.id.toString()}">校园主题</option>
++                    </select>
++                    <p id="parentId-help" class="field-help">二级只能归入一级主题，不支持三级。</p>
++                    <p th:if="${bad}" id="parentId-error" class="field-error" th:text="${fieldErrors.get('parentId')}">请检查父级。</p>
++                </div>
++                <th:block th:replace="~{fragments/fields :: text('code','code','一级编码（创建一级时必填）',${form.code},${fieldErrors})}"></th:block>
++                <p class="field-help">一级编码最多 21 个字符，最长二级编码为 21 + 11 = 32；创建二级时忽略此输入并由服务端生成。</p>
++                <div class="form-field" th:with="bad=${fieldErrors.containsKey('type')}">
++                    <label for="type">二级商品类型</label>
++                    <select id="type" name="type" th:attr="aria-invalid=${bad},aria-describedby=${bad ? 'type-error' : 'type-help'}">
++                        <option value="STATIONERY" th:selected="${form.type == 'STATIONERY'}">文具</option>
++                        <option value="SOUVENIR" th:selected="${form.type == 'SOUVENIR'}">纪念周边</option>
++                    </select>
++                    <p id="type-help" class="field-help">创建二级时必须选择；创建一级时不使用此字段。</p>
++                    <p th:if="${bad}" id="type-error" class="field-error" th:text="${fieldErrors.get('type')}">请检查类型。</p>
++                </div>
++            </th:block>
++            <dl th:if="${category != null}">
++                <dt>分类 ID</dt><dd th:text="${category.id}">0</dd>
++                <dt>固定编码</dt><dd th:text="${category.code}" data-readonly-code>CODE</dd>
++                <dt>固定父级 ID</dt><dd th:text="${category.parentId == null ? '无（一级主题）' : category.parentId}" data-readonly-parent>无</dd>
++            </dl>
++            <th:block th:replace="~{fragments/fields :: text('name','name','分类名称',${form.name},${fieldErrors})}"></th:block>
++            <p class="field-help">名称为 1–50 个字符，同父级名称不重复。</p>
++            <th:block th:replace="~{fragments/fields :: number('sortOrder','sortOrder','排序值',${form.sortOrder},0,2147483647,1,${fieldErrors})}"></th:block>
++            <p class="field-help">非负整数，留空按 0 保存。</p>
++            <button type="submit" th:text="${category == null ? '新增分类' : '保存分类'}">保存分类</button>
++            <a class="button button-secondary" th:href="@{/categories}">返回分类列表</a>
++        </form>
++    </div>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/categories/list.html b/csucampuscraft-admin/src/main/resources/templates/categories/list.html
+new file mode 100644
+index 0000000..37a6928
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/categories/list.html
+@@ -0,0 +1,52 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('分类管理 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>分类管理</title></head>
++<body>
++<section th:fragment="mainContent" data-page-id="A03" class="admin-categories"
++         th:attr="data-category-count=${#lists.size(categories)},data-created-id=${createdCategory == null ? null : createdCategory.id}">
++    <nav aria-label="当前位置"><a th:href="@{/}">管理端首页</a> / <span aria-current="page">分类管理</span></nav>
++    <header class="page-heading">
++        <h1>分类管理</h1>
++        <p class="muted">一级校园主题包含文具或纪念周边二级分类。编码和父级创建后固定。</p>
++        <div><a class="button" th:href="@{/categories/new}">新增分类</a> <a class="button button-secondary" th:href="@{/products}">商品列表</a></div>
++    </header>
++    <p th:if="${createdCategory != null}" class="alert alert-success" role="status">
++        已定位分类：<strong th:text="${createdCategory.name}">分类</strong>，ID <span th:text="${createdCategory.id}" data-generated-id>0</span>。
++    </p>
++    <div th:if="${#lists.isEmpty(categories)}" class="empty-state" data-category-empty>
++        <h2>暂无分类</h2><p>先新增一级校园主题，再为其新增文具或纪念周边。</p>
++    </div>
++    <div class="admin-table-wrap" th:unless="${#lists.isEmpty(categories)}">
++        <table>
++            <caption>校园主题及二级商品分类</caption>
++            <thead><tr><th scope="col">ID / 层级</th><th scope="col">名称</th><th scope="col">编码</th><th scope="col">父级 / 类型</th><th scope="col">排序</th><th scope="col">操作</th></tr></thead>
++            <tbody>
++            <tr th:each="item : ${categories}"
++                th:attr="data-category-id=${item.id},data-category-code=${item.code},data-parent-id=${item.parentId == null ? '' : item.parentId}">
++                <td><span th:text="${item.id}">0</span> / <span th:text="${item.parentId == null ? '一级' : '二级'}">一级</span></td>
++                <td th:text="${item.name}">校园主题</td>
++                <td th:text="${item.code}">CODE</td>
++                <td>
++                    <th:block th:if="${item.parentId == null}">无父级 / 校园主题</th:block>
++                    <th:block th:if="${item.parentId != null}">
++                        <span th:text="${parentNames.get(item.parentId)}">父主题</span> /
++                        <span th:text="${#strings.endsWith(item.code, '_STATIONERY') ? '文具' : (#strings.endsWith(item.code, '_SOUVENIR') ? '纪念周边' : '其他')}">文具</span>
++                    </th:block>
++                </td>
++                <td th:text="${item.sortOrder}">0</td>
++                <td>
++                    <a th:href="@{/categories/{id}/edit(id=${item.id})}">编辑名称和排序</a>
++                    <form method="post" th:action="@{/categories/{id}/remove(id=${item.id})}" data-submit-state>
++                        <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++                        <p class="field-help" th:text="${'确认删除「' + item.name + '」？仅无子类、无商品引用的空分类可删除。'}">仅空分类可删除。</p>
++                        <button type="submit" class="button-secondary">确认删除空分类</button>
++                    </form>
++                </td>
++            </tr>
++            </tbody>
++        </table>
++    </div>
++</section>
++</body>
++</html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html b/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html
+index 897c8ee..798b2d3 100644
+--- a/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html
++++ b/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html
+@@ -17,6 +17,8 @@
+         </a>
+         <nav class="site-nav" aria-label="站点导航">
+             <a th:href="@{/}">首页</a>
++            <a th:if="${authenticated}" th:href="@{/categories}">分类管理</a>
++            <a th:if="${authenticated}" th:href="@{/products}">商品管理</a>
+             <span class="app-label" th:text="${appId == 'admin' ? '管理端' : '用户端'}">用户端</span>
+             <span class="nav-placeholder" th:if="${appId == 'user'}"
+                   th:attr="aria-label=${'购物车，' + (cartQuantity ?: 0) + ' 件'}">
+diff --git a/csucampuscraft-admin/src/main/resources/templates/products/form.html b/csucampuscraft-admin/src/main/resources/templates/products/form.html
+new file mode 100644
+index 0000000..a109b58
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/products/form.html
+@@ -0,0 +1,110 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page(${editing ? '编辑商品 · CSUCampusCraft' : '新建商品 · CSUCampusCraft'}, ~{::mainContent})}">
++<head><title>商品资料</title></head>
++<body>
++<div th:fragment="mainContent" data-page-id="A05"
++     th:attr="data-product-id=${product == null ? null : product.id},data-version=${product == null ? 0 : product.version}">
++    <header class="page-heading admin-toolbar">
++        <div><p class="eyebrow">商品资料</p><h1 th:text="${editing ? '编辑商品' : '新建商品'}">商品资料</h1>
++            <p class="muted" th:text="${editing ? '修改资料时保留现有 SKU、库存和上架状态。' : '新商品先保存为草稿，检查后再上架。'}">商品说明</p></div>
++        <div class="button-row">
++            <a class="button button-secondary" th:href="${returnUrl}">返回商品列表</a>
++            <a class="button button-secondary" th:if="${editing}"
++               th:href="@{/products/{id}/edit(id=${product.id},returnUrl=${returnUrl})}" data-reload-product>重新载入编辑页</a>
++        </div>
++    </header>
++    <div class="empty-state" th:if="${#lists.isEmpty(categories)}">
++        <p>还没有可用的二级分类，请先创建分类。</p><a th:href="@{/categories/new}">前往分类管理</a>
++    </div>
++    <th:block th:replace="~{fragments/alerts :: summary(${fieldErrors})}"></th:block>
++    <section class="panel">
++        <form method="post" th:action="${editing ? '/products/' + product.id : '/products'}" data-submit-state data-product-form>
++            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++            <input type="hidden" name="returnUrl" th:value="${returnUrl}">
++            <input th:if="${editing}" type="hidden" name="version" th:value="${form.version}">
++            <p id="version" class="field-help" th:if="${editing}" th:classappend="${fieldErrors.containsKey('version') ? 'field-error' : ''}"
++               th:text="${fieldErrors.containsKey('version') ? fieldErrors.get('version') : '保存时核对商品资料状态；提示过期时请重新载入。'}">资料状态</p>
++            <div class="form-grid">
++                <th:block th:if="${!editing}"><th:block th:replace="~{fragments/fields :: text('sku','sku','SKU',${form.sku},${fieldErrors})}"></th:block></th:block>
++                <div class="form-field" th:if="${editing}">
++                    <label for="sku">SKU（只读）</label>
++                    <input id="sku" type="text" readonly th:value="${product.sku}">
++                </div>
++                <div class="form-field" th:with="hasError=${fieldErrors.containsKey('categoryId')}">
++                    <label for="categoryId">二级分类</label>
++                    <select id="categoryId" name="categoryId"
++                            th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? 'categoryId-error' : null}">
++                        <option value="">请选择二级分类</option>
++                        <option th:each="choice : ${categories}" th:value="${choice.id}"
++                                th:selected="${form.categoryId != null and form.categoryId.strip() == choice.id.toString()}"
++                                th:text="${choice.label}">二级分类</option>
++                    </select>
++                    <p class="field-error" id="categoryId-error" th:if="${hasError}" th:text="${fieldErrors.get('categoryId')}">请选择分类。</p>
++                </div>
++                <th:block th:replace="~{fragments/fields :: text('name','name','商品名称',${form.name},${fieldErrors})}"></th:block>
++                <th:block th:replace="~{fragments/fields :: text('price','price','售价（元）',${form.price},${fieldErrors})}"></th:block>
++                <th:block th:if="${!editing}"><th:block th:replace="~{fragments/fields :: number('stock','stock','初始库存',${form.stock},0,2147483647,1,${fieldErrors})}"></th:block></th:block>
++                <div class="form-field" th:if="${editing}">
++                    <label for="stock">当前库存（只读）</label>
++                    <input id="stock" type="number" readonly th:value="${product.stock}">
++                </div>
++                <th:block th:replace="~{fragments/fields :: number('sortOrder','sortOrder','排序值',${form.sortOrder},0,2147483647,1,${fieldErrors})}"></th:block>
++            </div>
++            <p class="field-help">SKU 最多 40 个字符，名称最多 120 个字符。售价为 0.01–9,999,999,999.99 元，最多两位小数。</p>
++            <div class="form-field" th:with="hasError=${fieldErrors.containsKey('summary')}">
++                <label for="summary">商品摘要</label>
++                <textarea id="summary" name="summary" rows="3" th:text="${form.summary}"
++                          th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? 'summary-error' : 'summary-help'}"></textarea>
++                <p id="summary-help" class="field-help">可选，最多 500 个字符。</p>
++                <p id="summary-error" class="field-error" th:if="${hasError}" th:text="${fieldErrors.get('summary')}">摘要过长。</p>
++            </div>
++            <div class="form-field" th:with="hasError=${fieldErrors.containsKey('description')}">
++                <label for="description">设计说明</label>
++                <textarea id="description" name="description" rows="6" th:text="${form.description}"
++                          th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? 'description-error' : 'description-help'}"></textarea>
++                <p id="description-help" class="field-help">可选，按普通文本保存；内容总量最多 65,535 字节。</p>
++                <p id="description-error" class="field-error" th:if="${hasError}" th:text="${fieldErrors.get('description')}">设计说明过长。</p>
++            </div>
++            <th:block th:replace="~{fragments/fields :: text('coverImage','coverImage','封面路径',${form.coverImage},${fieldErrors})}"></th:block>
++            <p class="field-help">可留空。填写时使用 images/ 下的站内相对路径，最多 255 个字符。</p>
++            <div class="button-row">
++                <button type="submit" th:disabled="${#lists.isEmpty(categories)}" th:text="${editing ? '保存资料' : '保存草稿'}">保存</button>
++                <a class="button button-secondary" th:href="${returnUrl}">取消</a>
++            </div>
++        </form>
++    </section>
++    <section class="panel" th:if="${editing}" aria-labelledby="status-heading">
++        <h2 id="status-heading">商品状态</h2>
++        <p>当前为 <strong th:text="${product.status == 'DRAFT' ? '草稿' : '上架'}">草稿</strong>
++            <span th:if="${product.status == 'ON_SALE' and product.stock == 0}">（售罄）</span></p>
++        <div class="button-row">
++            <form th:if="${product.status == 'DRAFT'}" method="post" th:action="@{/products/{id}/publish(id=${product.id})}"
++                  data-submit-state data-product-action="publish">
++                <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++                <input type="hidden" name="returnUrl" th:value="${returnUrl}">
++                <input type="hidden" name="version" th:value="${product.version}">
++                <button type="submit">上架商品</button>
++            </form>
++            <form th:if="${product.status == 'ON_SALE'}" method="post" th:action="@{/products/{id}/unpublish(id=${product.id})}"
++                  data-submit-state data-product-action="unpublish">
++                <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++                <input type="hidden" name="returnUrl" th:value="${returnUrl}">
++                <input type="hidden" name="version" th:value="${product.version}">
++                <button type="submit" class="button-secondary">下架商品</button>
++            </form>
++        </div>
++    </section>
++    <section class="panel" th:if="${editing}" aria-labelledby="restock-heading">
++        <h2 id="restock-heading">增量补货</h2>
++        <p>当前库存 <strong th:text="${product.stock}">0</strong> 件。提交一次表示增加一次指定数量。</p>
++        <form method="post" th:action="@{/products/{id}/restock(id=${product.id})}" data-submit-state data-restock-form>
++            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++            <input type="hidden" name="returnUrl" th:value="${returnUrl}">
++            <th:block th:replace="~{fragments/fields :: number('quantity','quantity','本次增加数量',${restockQuantity},1,2147483647,1,${fieldErrors})}"></th:block>
++            <button type="submit">确认补货</button>
++        </form>
++    </section>
++</div>
++</body>
++</html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/products/list.html b/csucampuscraft-admin/src/main/resources/templates/products/list.html
+new file mode 100644
+index 0000000..87cd9b2
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/products/list.html
+@@ -0,0 +1,104 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
++      th:replace="~{fragments/layout :: page('商品管理 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>商品管理</title></head>
++<body>
++<div th:fragment="mainContent" data-page-id="A04"
++     th:attr="data-product-count=${total},data-result-count=${#lists.size(products)},data-page=${page},data-size=${size}">
++    <header class="page-heading admin-toolbar">
++        <div><p class="eyebrow">商品维护</p><h1>商品管理</h1><p class="muted">按主题或二级分类查找草稿与上架商品。</p></div>
++        <div class="button-row">
++            <a class="button" th:href="@{/products/new(returnUrl=${returnUrl})}">新建商品</a>
++            <a class="button button-secondary" th:href="@{/categories}">分类管理</a>
++        </div>
++    </header>
++    <section class="panel" aria-labelledby="filter-heading">
++        <h2 id="filter-heading">筛选商品</h2>
++        <form method="get" th:action="@{/products}" class="admin-filter-form">
++            <div class="form-grid">
++                <div class="form-field">
++                    <label for="categoryId">主题或分类</label>
++                    <select name="categoryId" id="categoryId">
++                        <option value="" th:selected="${query.categoryId == null}">全部分类</option>
++                        <option th:each="choice : ${categories}" th:value="${choice.id}"
++                                th:selected="${query.categoryId != null and query.categoryId == choice.id}"
++                                th:text="${choice.label}">分类</option>
++                    </select>
++                </div>
++                <div class="form-field">
++                    <label for="q">商品名称</label>
++                    <input type="search" id="q" name="q" th:value="${query.q}" aria-describedby="q-help">
++                    <p id="q-help" class="field-help">名称包含查询，最多 120 个字符。</p>
++                </div>
++                <div class="form-field">
++                    <label for="status">商品状态</label>
++                    <select name="status" id="status">
++                        <option value="ALL" th:selected="${query.status.name() == 'ALL'}">全部</option>
++                        <option value="DRAFT" th:selected="${query.status.name() == 'DRAFT'}">草稿</option>
++                        <option value="ON_SALE" th:selected="${query.status.name() == 'ON_SALE'}">上架</option>
++                    </select>
++                </div>
++                <div class="form-field">
++                    <label for="size">每页条数</label>
++                    <input type="number" id="size" name="size" min="1" max="50" step="1" th:value="${size}">
++                </div>
++            </div>
++            <input type="hidden" name="page" value="1">
++            <button type="submit">查询</button>
++            <a class="button button-secondary" th:href="@{/products}">清除筛选</a>
++        </form>
++    </section>
++    <p class="field-help">共 <strong th:text="${total}">0</strong> 件商品，默认按排序值和商品编号升序展示。</p>
++    <div class="empty-state" th:if="${#lists.isEmpty(products)}" data-product-empty>
++        <p th:text="${total > 0 ? '当前页没有商品，请返回有效页面。' : '暂无符合条件的商品，可调整筛选或新建草稿。'}">暂无商品。</p>
++        <a th:href="${query.path(1)}" data-page-link="1">返回第 1 页</a>
++    </div>
++    <div class="table-container" th:unless="${#lists.isEmpty(products)}">
++        <table>
++            <caption>商品列表</caption>
++            <thead><tr><th scope="col">商品 / SKU</th><th scope="col">分类</th><th scope="col">售价</th><th scope="col">库存</th><th scope="col">状态</th><th scope="col">排序</th><th scope="col">操作</th></tr></thead>
++            <tbody>
++            <tr th:each="item : ${products}"
++                th:attr="data-product-id=${item.id},data-sku=${item.sku},data-stock=${item.stock},data-version=${item.version},data-status=${item.status}">
++                <td><strong th:text="${item.name}">商品</strong><p class="field-help" th:text="${item.sku}">SKU</p></td>
++                <td th:text="${item.categoryName}">分类</td>
++                <td th:text="${'¥' + #numbers.formatDecimal(item.price,1,'NONE',2,'POINT')}">¥0.00</td>
++                <td th:text="${item.stock}">0</td>
++                <td><span th:text="${item.status == 'DRAFT' ? '草稿' : '上架'}">草稿</span>
++                    <p class="field-help" th:if="${item.status == 'ON_SALE' and item.stock == 0}">售罄</p></td>
++                <td th:text="${item.sortOrder}">0</td>
++                <td>
++                    <div class="admin-row-actions">
++                        <a class="button button-secondary" th:href="@{/products/{id}/edit(id=${item.id},returnUrl=${returnUrl})}">编辑</a>
++                        <form th:if="${item.status == 'DRAFT'}" method="post"
++                              th:action="@{/products/{id}/publish(id=${item.id})}" data-submit-state data-product-action="publish">
++                            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++                            <input type="hidden" name="version" th:value="${item.version}">
++                            <input type="hidden" name="returnUrl" th:value="${returnUrl}">
++                            <button type="submit">上架</button>
++                        </form>
++                        <form th:if="${item.status == 'ON_SALE'}" method="post"
++                              th:action="@{/products/{id}/unpublish(id=${item.id})}" data-submit-state data-product-action="unpublish">
++                            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
++                            <input type="hidden" name="version" th:value="${item.version}">
++                            <input type="hidden" name="returnUrl" th:value="${returnUrl}">
++                            <button type="submit" class="button-secondary">下架</button>
++                        </form>
++                    </div>
++                    <!-- STEP06 接入相册维护；本步不注册相册路由。 -->
++                    <p class="field-help">相册管理暂未开放</p>
++                </td>
++            </tr>
++            </tbody>
++        </table>
++    </div>
++    <nav class="admin-pagination button-row" aria-label="商品分页" th:if="${total > 0}">
++        <a class="button button-secondary" th:if="${hasPrevious}" th:href="${query.path(previousPage)}" th:attr="data-page-link=${previousPage}">上一页</a>
++        <span th:unless="${hasPrevious}" aria-disabled="true">上一页</span>
++        <span>第 <strong th:text="${page}">1</strong> 页 / 共 <span th:text="${totalPages}">1</span> 页</span>
++        <a class="button button-secondary" th:if="${hasNext}" th:href="${query.path(nextPage)}" th:attr="data-page-link=${nextPage}">下一页</a>
++        <span th:unless="${hasNext}" aria-disabled="true">下一页</span>
++    </nav>
++</div>
++</body>
++</html>

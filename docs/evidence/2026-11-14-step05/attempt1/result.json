@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-14T11:46:52.339232+08:00",
+  "baseline_git_sha": "a8438b72493fba108577e0ba4918e61b043b8916",
+  "tested_code_sha": "93f3c461163ff09f54b667299360068d450ca254",
+  "checks": {
+    "tested-code-head": {
+      "passed": true,
+      "detail": ""
+    },
+    "feature-branch": {
+      "passed": true,
+      "detail": ""
+    },
+    "tested-worktree-clean": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-user": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-admin": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-pin": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-created": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-identity": {
+      "passed": true,
+      "detail": ""
+    }
+  },
+  "scope": "STEP05 admin category/product/replenishment only; concurrency and faults remain STEP13",
+  "branch": "feat/step05-admin-catalog",
+  "runtime_manifest_sha256": "bb0cd1144b5d2b09ddc4e4d29ff381416066a6f8afbafcc804f287644623d591",
+  "runtime_file_count": 121,
+  "csucampuscraft-user_jar_sha256": "c2b5aa4b8a04e9494618af994ac62762f1b635df169216caeed868985beb00db",
+  "csucampuscraft-admin_jar_sha256": "b56444c0b92b66e1ee295c1c309a9615b6743c2dd360fc1a435362a52a95d230",
+  "mysql_version": "8.4.9",
+  "mysql_port": 58079,
+  "overall": "FAIL",
+  "error": "RuntimeError: Isolated SQL command failed",
+  "tracked_processes_stopped": true
+}

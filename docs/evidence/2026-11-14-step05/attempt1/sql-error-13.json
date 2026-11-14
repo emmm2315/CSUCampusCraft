@@ -1,0 +1,5 @@
+{
+  "query": "GRANT INSERT,UPDATE,DELETE ON csucampuscraft.category TO 'csucampuscraft'@'127.0.0.1';",
+  "exit_code": 1,
+  "stderr": "ERROR 1146 (42S02) at line 1: Table 'csucampuscraft.category' doesn't exist\r\n"
+}

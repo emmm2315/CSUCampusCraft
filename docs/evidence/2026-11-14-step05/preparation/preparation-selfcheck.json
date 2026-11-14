@@ -1,0 +1,21 @@
+{
+  "overall": "PASS",
+  "checks": [
+    "empty-303-status",
+    "inline-400-status",
+    "inline-400-html",
+    "inline-400-no-secrets",
+    "inline-400-error-feedback",
+    "inline-400-no-technical-leak",
+    "inline-409-status",
+    "inline-409-html",
+    "inline-409-no-secrets",
+    "inline-409-error-feedback",
+    "inline-409-no-technical-leak",
+    "ordered-multiline-snapshot-lf",
+    "ordered-multiline-snapshot-crlf"
+  ],
+  "browser_cases": 14,
+  "planned_screenshots": 28,
+  "live_application_test": false
+}

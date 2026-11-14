@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step05-admin-catalog\verification\verify_step05.py", line 368, in <module>
+    write(cl,'/categories',{'code':code,'name':'非法编码','sortOrder':''},400,'invalid-code-length-'+str(len(code)))
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step05-admin-catalog\verification\verify_step05.py", line 224, in write
+    assert_page(r,status,name)
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step05-admin-catalog\verification\verify_step05.py", line 123, in assert_page
+    check(name+'-status',r[0]==status,str(status))
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step05-admin-catalog\verification\verify_step05.py", line 49, in check
+    if not ok:raise AssertionError(name)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: invalid-code-length-0-status

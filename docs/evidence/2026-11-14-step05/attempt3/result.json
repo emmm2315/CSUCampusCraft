@@ -1,0 +1,5111 @@
+{
+  "date": "2026-11-14T11:50:40.689116+08:00",
+  "baseline_git_sha": "a8438b72493fba108577e0ba4918e61b043b8916",
+  "tested_code_sha": "93f3c461163ff09f54b667299360068d450ca254",
+  "checks": {
+    "tested-code-head": {
+      "passed": true,
+      "detail": ""
+    },
+    "feature-branch": {
+      "passed": true,
+      "detail": ""
+    },
+    "tested-worktree-clean": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-user": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-admin": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-pin": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-created": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-identity": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-counts": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-user-listener-owned-by-created-process": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-0 [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-admin-listener-owned-by-created-process": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/categories-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/categories-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/categories-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/products-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/products-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/products-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/products/new-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/products/new-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/products/new-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/categories-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/categories-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/categories-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-zero-write-/categories": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/products-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/products-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/products-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-zero-write-/products": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/products/1/restock-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/products/1/restock-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/products/1/restock-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-zero-write-/products/1/restock": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-end-customer-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "wrong-end-customer-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-end-customer-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-end-customer-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-end-customer-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-cannot-admin-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "customer-cannot-admin-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-cannot-admin-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-no-admin-session-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-no-admin-session-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-no-admin-session-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "admin-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-11": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-login-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-12": {
+      "passed": true,
+      "detail": ""
+    },
+    "categories-list-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "categories-list-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "categories-list-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-13": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-list-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "product-list-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-list-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-14": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-zero-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "missing-csrf-zero-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-zero-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-zero-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-zero-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-zero-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-zero-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-15": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-zero-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "wrong-csrf-zero-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-zero-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-zero-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-zero-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-zero-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-zero-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-16": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-17": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-code-length-0-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-code-length-0-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-code-length-0-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-code-length-0-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-code-length-0-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-code-length-0-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-code-length-0-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-18": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [2]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-19": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-code-length-22-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-code-length-22-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-code-length-22-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-code-length-22-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-code-length-22-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-code-length-22-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-code-length-22-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-20": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [3]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-21": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-115-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "category-field-boundary-115-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-115-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-115-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-115-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-115-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-115-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-22": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [4]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-23": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-128-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "category-field-boundary-128-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-128-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-128-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-128-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-128-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-128-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-24": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [5]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-25": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-141-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "category-field-boundary-141-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-141-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-141-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-141-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-141-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-141-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-26": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [6]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [6]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [6]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [6]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-27": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-154-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "category-field-boundary-154-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-154-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-154-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-154-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-154-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-field-boundary-154-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-28": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [7]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [7]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [7]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [7]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-29": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-category-STEP05新增主题-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "create-category-STEP05新增主题-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-category-STEP05新增主题-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-category-STEP05新增主题-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "auto-id-positive": {
+      "passed": true,
+      "detail": ""
+    },
+    "auto-id-exists": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-30": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [8]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [8]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [8]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [8]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-31": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-category-21字符主题-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "create-category-21字符主题-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-category-21字符主题-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-category-21字符主题-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "auto-id-positive [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "auto-id-exists [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [9]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [9]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [9]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [9]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-33": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-category-STEP05文具-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "create-category-STEP05文具-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-category-STEP05文具-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-category-STEP05文具-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "auto-id-positive [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "auto-id-exists [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-34": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [10]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [10]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [10]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [10]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-35": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-category-32字符二级-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "create-category-32字符二级-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-category-32字符二级-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-category-32字符二级-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "auto-id-positive [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "auto-id-exists [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "long-code-32": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-36": {
+      "passed": true,
+      "detail": ""
+    },
+    "new-root-frontend": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-37": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [11]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [11]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [11]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [11]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-38": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-218-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "category-conflict-218-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-218-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-218-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-218-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-218-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-218-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-39": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [12]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [12]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [12]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [12]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-40": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-231-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "category-conflict-231-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-231-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-231-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-231-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-231-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-231-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-41": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [13]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [13]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [13]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [13]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-42": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-244-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "category-conflict-244-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-244-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-244-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-244-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-244-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-244-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-43": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [14]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [14]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [14]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [14]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-44": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-257-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "category-conflict-257-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-257-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-257-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-257-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-257-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-conflict-257-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-45": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [15]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [15]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [15]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [15]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-46": {
+      "passed": true,
+      "detail": ""
+    },
+    "unknown-parent-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "unknown-parent-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "unknown-parent-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "unknown-parent-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "unknown-parent-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "unknown-parent-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "unknown-parent-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-47": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [16]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [16]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [16]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [16]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-48": {
+      "passed": true,
+      "detail": ""
+    },
+    "nonroot-parent-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "nonroot-parent-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "nonroot-parent-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "nonroot-parent-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "nonroot-parent-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "nonroot-parent-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "nonroot-parent-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-49": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [17]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [17]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [17]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [17]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-50": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-type-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-type-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-type-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-type-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-type-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-type-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-type-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-51": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [18]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [18]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [18]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [18]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-52": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-edit-tamper-ignored-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "category-edit-tamper-ignored-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-edit-tamper-ignored-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-edit-tamper-ignored-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-code-parent-fixed": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-53": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [19]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [19]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [19]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [19]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-54": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-edit-duplicate-name-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "category-edit-duplicate-name-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-edit-duplicate-name-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-edit-duplicate-name-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-edit-duplicate-name-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-edit-duplicate-name-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-edit-duplicate-name-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-55": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [20]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [20]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [20]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [20]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-56": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-edit-unknown-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "category-edit-unknown-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-edit-unknown-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-edit-unknown-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-edit-unknown-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-edit-unknown-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-edit-unknown-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-57": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [21]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [21]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [21]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [21]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-58": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-delete-unknown-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "category-delete-unknown-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-delete-unknown-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-delete-unknown-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-delete-unknown-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-delete-unknown-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "category-delete-unknown-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-59": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [22]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [22]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [22]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [22]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-60": {
+      "passed": true,
+      "detail": ""
+    },
+    "delete-parent-with-child-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "delete-parent-with-child-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "delete-parent-with-child-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "delete-parent-with-child-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "delete-parent-with-child-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "delete-parent-with-child-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "delete-parent-with-child-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-61": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [23]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [23]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [23]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [23]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-62": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-category-待删除空主题-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "create-category-待删除空主题-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-category-待删除空主题-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-category-待删除空主题-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "auto-id-positive [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "auto-id-exists [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-63": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [24]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [24]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [24]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [24]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-64": {
+      "passed": true,
+      "detail": ""
+    },
+    "delete-empty-category-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "delete-empty-category-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "delete-empty-category-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "delete-empty-category-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "empty-category-removed": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-65": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [25]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-66": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-draft-product-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "create-draft-product-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-draft-product-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-draft-product-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "new-product-draft-version": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-67": {
+      "passed": true,
+      "detail": ""
+    },
+    "new-draft-hidden-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "new-draft-hidden-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "new-draft-hidden-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "new-draft-hidden-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "new-draft-hidden-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-68": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status [25]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html [25]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets [25]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [26]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-69": {
+      "passed": true,
+      "detail": ""
+    },
+    "delete-category-with-draft-product-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "delete-category-with-draft-product-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "delete-category-with-draft-product-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "delete-category-with-draft-product-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "delete-category-with-draft-product-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "delete-category-with-draft-product-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "delete-category-with-draft-product-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-70": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [2]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [27]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-71": {
+      "passed": true,
+      "detail": ""
+    },
+    "duplicate-sku-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "duplicate-sku-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "duplicate-sku-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "duplicate-sku-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "duplicate-sku-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "duplicate-sku-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "duplicate-sku-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-72": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [3]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [28]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-73": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sku-438-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-sku-438-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sku-438-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sku-438-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sku-438-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sku-438-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sku-438-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-74": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [4]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [29]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-75": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sku-451-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-sku-451-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sku-451-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sku-451-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sku-451-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sku-451-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sku-451-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-76": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [5]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [30]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-77": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-name-464-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-name-464-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-name-464-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-name-464-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-name-464-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-name-464-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-name-464-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-78": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [6]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [6]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [6]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [31]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-79": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-name-477-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-name-477-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-name-477-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-name-477-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-name-477-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-name-477-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-name-477-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-80": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [7]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [7]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [7]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [32]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-81": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-490-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-price-490-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-490-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-490-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-490-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-490-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-490-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-82": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [8]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [8]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [8]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [33]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-83": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-503-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-price-503-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-503-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-503-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-503-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-503-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-503-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-84": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [9]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [9]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [9]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [34]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-85": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-516-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-price-516-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-516-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-516-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-516-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-516-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-516-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-86": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [10]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [10]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [10]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [35]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-87": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-529-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-price-529-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-529-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-529-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-529-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-529-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-529-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-88": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [11]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [11]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [11]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [36]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-89": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-542-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-price-542-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-542-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-542-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-542-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-542-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-542-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-90": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [12]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [12]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [12]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [37]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-91": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-555-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-price-555-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-555-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-555-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-555-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-555-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-price-555-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-92": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [13]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [13]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [13]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [38]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-93": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-summary-568-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-summary-568-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-summary-568-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-summary-568-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-summary-568-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-summary-568-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-summary-568-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-94": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [14]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [14]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [14]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [39]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-95": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-description-581-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-description-581-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-description-581-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-description-581-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-description-581-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-description-581-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-description-581-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-96": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [15]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [15]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [15]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [40]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-97": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-stock-594-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-stock-594-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-stock-594-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-stock-594-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-stock-594-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-stock-594-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-stock-594-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-98": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [16]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [16]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [16]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [41]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-99": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-stock-607-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-stock-607-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-stock-607-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-stock-607-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-stock-607-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-stock-607-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-stock-607-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-100": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [17]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [17]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [17]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [42]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-101": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sortOrder-620-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-sortOrder-620-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sortOrder-620-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sortOrder-620-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sortOrder-620-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sortOrder-620-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-sortOrder-620-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-102": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [18]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [18]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [18]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [43]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-103": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-633-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-coverImage-633-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-633-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-633-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-633-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-633-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-633-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-104": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [19]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [19]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [19]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [44]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-105": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-646-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-coverImage-646-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-646-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-646-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-646-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-646-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-646-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-106": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [20]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [20]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [20]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [45]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-107": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-659-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-coverImage-659-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-659-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-659-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-659-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-659-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-659-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-108": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [21]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [21]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [21]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [46]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-109": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-672-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-coverImage-672-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-672-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-672-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-672-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-672-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-672-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-110": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [22]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [22]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [22]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [47]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-111": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-685-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-coverImage-685-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-685-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-685-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-685-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-685-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-685-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-112": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [23]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [23]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [23]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [48]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-113": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-698-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-coverImage-698-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-698-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-698-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-698-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-698-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-698-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-114": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [24]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [24]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [24]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [49]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-115": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-711-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "product-boundary-coverImage-711-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-711-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-711-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-711-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-711-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-boundary-coverImage-711-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-116": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [25]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [25]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [25]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [50]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-117": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-product-category-503-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-product-category-503-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-product-category-503-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-product-category-503-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-product-category-503-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-product-category-503-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-product-category-503-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-118": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [26]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [26]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [26]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [51]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-119": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-product-category-99999999-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "invalid-product-category-99999999-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-product-category-99999999-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-product-category-99999999-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-product-category-99999999-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-product-category-99999999-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-product-category-99999999-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-120": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [27]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [27]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [27]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [52]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-121": {
+      "passed": true,
+      "detail": ""
+    },
+    "max-product-boundaries-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "max-product-boundaries-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "max-product-boundaries-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "max-product-boundaries-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "description-65535-bytes": {
+      "passed": true,
+      "detail": ""
+    },
+    "defaults-empty-stock-sort-cover": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-122": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/62/edit-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/62/edit-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/62/edit-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [53]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-123": {
+      "passed": true,
+      "detail": ""
+    },
+    "cover-255-chars-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "cover-255-chars-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "cover-255-chars-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "cover-255-chars-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "cover-255-stored": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-124": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [28]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [28]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [28]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [54]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-125": {
+      "passed": true,
+      "detail": ""
+    },
+    "cover-256-rejected-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "cover-256-rejected-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "cover-256-rejected-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "cover-256-rejected-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "cover-256-rejected-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "cover-256-rejected-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "cover-256-rejected-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-126": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [29]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [29]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [29]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [55]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-127": {
+      "passed": true,
+      "detail": ""
+    },
+    "minimum-price-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "minimum-price-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "minimum-price-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "minimum-price-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-128": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [56]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-129": {
+      "passed": true,
+      "detail": ""
+    },
+    "edit-product-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "edit-product-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "edit-product-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "edit-product-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "edit-sku-stock-immutable": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-130": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [30]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [30]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [30]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [57]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-131": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-edit-unknown-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "product-edit-unknown-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-edit-unknown-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-edit-unknown-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-edit-unknown-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-edit-unknown-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-edit-unknown-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-132": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [31]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [31]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [31]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [58]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-133": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-restock-unknown-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "product-restock-unknown-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-restock-unknown-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-restock-unknown-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-restock-unknown-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-restock-unknown-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-restock-unknown-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-134": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [2]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [59]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-135": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-op-edit-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "no-op-edit-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-op-edit-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-op-edit-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-op-version-and-row": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-136": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [3]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [3]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [60]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-137": {
+      "passed": true,
+      "detail": ""
+    },
+    "stale-version-edit-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "stale-version-edit-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "stale-version-edit-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "stale-version-edit-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "stale-version-edit-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "stale-version-edit-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "stale-version-edit-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-138": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [4]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [4]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [61]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-139": {
+      "passed": true,
+      "detail": ""
+    },
+    "malformed-version-edit-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "malformed-version-edit-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "malformed-version-edit-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "malformed-version-edit-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "malformed-version-edit-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "malformed-version-edit-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "malformed-version-edit-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-140": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [5]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [5]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [62]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-141": {
+      "passed": true,
+      "detail": ""
+    },
+    "publish-new-product-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "publish-new-product-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "publish-new-product-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "publish-new-product-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-142": {
+      "passed": true,
+      "detail": ""
+    },
+    "published-visible-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "published-visible-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "published-visible-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "published-visible-id": {
+      "passed": true,
+      "detail": ""
+    },
+    "published-visible-stock": {
+      "passed": true,
+      "detail": ""
+    },
+    "published-visible-price": {
+      "passed": true,
+      "detail": ""
+    },
+    "description-plain-text": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-143": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [6]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [6]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [6]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [63]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-144": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-publish-state-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "repeat-publish-state-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-publish-state-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-publish-state-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-publish-state-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-publish-state-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "repeat-publish-state-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-145": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [7]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [7]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [7]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [64]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-146": {
+      "passed": true,
+      "detail": ""
+    },
+    "incremental-restock-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "incremental-restock-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "incremental-restock-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "incremental-restock-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "restock-current-plus3": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-147": {
+      "passed": true,
+      "detail": ""
+    },
+    "restock-user-visible-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "restock-user-visible-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "restock-user-visible-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "restock-user-visible-id": {
+      "passed": true,
+      "detail": ""
+    },
+    "restock-user-visible-stock": {
+      "passed": true,
+      "detail": ""
+    },
+    "restock-user-visible-price": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-148": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [8]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [8]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [8]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [65]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-149": {
+      "passed": true,
+      "detail": ""
+    },
+    "old-form-after-restock-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "old-form-after-restock-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "old-form-after-restock-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "old-form-after-restock-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "old-form-after-restock-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "old-form-after-restock-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "old-form-after-restock-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-150": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [9]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [9]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [9]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [66]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-151": {
+      "passed": true,
+      "detail": ""
+    },
+    "second-independent-restock-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "second-independent-restock-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "second-independent-restock-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "second-independent-restock-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "second-restock-is-new-increment": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-152": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [10]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [10]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [10]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [67]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-153": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock--status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-restock--html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock--no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock--error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock--no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock--noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock--rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-154": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [11]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [11]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [11]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [68]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-155": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-0-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-restock-0-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-0-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-0-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-0-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-0-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-0-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-156": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [12]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [12]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [12]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [69]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-157": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock--1-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-restock--1-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock--1-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock--1-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock--1-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock--1-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock--1-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-158": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [13]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [13]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [13]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [70]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-159": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-1.5-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-restock-1.5-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-1.5-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-1.5-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-1.5-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-1.5-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-1.5-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-160": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [14]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [14]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [14]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [71]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-161": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-2147483648-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "invalid-restock-2147483648-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-2147483648-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-2147483648-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-2147483648-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-2147483648-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-restock-2147483648-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-162": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [15]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [15]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [15]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [72]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-163": {
+      "passed": true,
+      "detail": ""
+    },
+    "restock-return-filter-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "restock-return-filter-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "restock-return-filter-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "restock-return-filter-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "return-all-filter-values": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-164": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [16]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [16]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [16]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [73]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-165": {
+      "passed": true,
+      "detail": ""
+    },
+    "external-return-fallback-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "external-return-fallback-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "external-return-fallback-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "external-return-fallback-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "external-return-safe": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-166": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [17]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [17]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [17]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [74]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-167": {
+      "passed": true,
+      "detail": ""
+    },
+    "unpublish-new-product-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "unpublish-new-product-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "unpublish-new-product-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "unpublish-new-product-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-168": {
+      "passed": true,
+      "detail": ""
+    },
+    "unpublished-detail-404-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "unpublished-detail-404-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "unpublished-detail-404-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "unpublished-detail-404-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "unpublished-detail-404-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-169": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/56/edit-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/56/edit-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/56/edit-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [75]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-170": {
+      "passed": true,
+      "detail": ""
+    },
+    "gift-unpublish-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "gift-unpublish-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "gift-unpublish-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "gift-unpublish-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-171": {
+      "passed": true,
+      "detail": ""
+    },
+    "gift-hidden-status": {
+      "passed": true,
+      "detail": "404"
+    },
+    "gift-hidden-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "gift-hidden-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "gift-hidden-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "gift-hidden-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-172": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/56/edit-status [2]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/56/edit-html [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/56/edit-no-secrets [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [76]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-173": {
+      "passed": true,
+      "detail": ""
+    },
+    "gift-republish-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "gift-republish-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "gift-republish-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "gift-republish-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-174": {
+      "passed": true,
+      "detail": ""
+    },
+    "gift-visible-again-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "gift-visible-again-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "gift-visible-again-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "gift-visible-again-id": {
+      "passed": true,
+      "detail": ""
+    },
+    "gift-visible-again-stock": {
+      "passed": true,
+      "detail": ""
+    },
+    "gift-visible-again-price": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-175": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1079-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "admin-query-1079-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1079-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1079-page-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1079-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1079-ids": {
+      "passed": true,
+      "detail": "{'actual': [61, 62, 63, 1, 2, 3, 4, 5, 6, 7], 'expected': [61, 62, 63, 1, 2, 3, 4, 5, 6, 7]}"
+    },
+    "admin-query-1079-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-176": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1087-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "admin-query-1087-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1087-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1087-page-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1087-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1087-ids": {
+      "passed": true,
+      "detail": "{'actual': [61, 62, 63], 'expected': [61, 62, 63]}"
+    },
+    "admin-query-1087-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-177": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1095-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "admin-query-1095-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1095-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1095-page-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1095-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1095-ids": {
+      "passed": true,
+      "detail": "{'actual': [61, 62, 63], 'expected': [61, 62, 63]}"
+    },
+    "admin-query-1095-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-178": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1103-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "admin-query-1103-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1103-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1103-page-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1103-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1103-ids": {
+      "passed": true,
+      "detail": "{'actual': [], 'expected': []}"
+    },
+    "admin-query-1103-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-179": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1111-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "admin-query-1111-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1111-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1111-page-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1111-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1111-ids": {
+      "passed": true,
+      "detail": "{'actual': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 55], 'expected': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 55]}"
+    },
+    "admin-query-1111-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-180": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1119-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "admin-query-1119-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1119-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1119-page-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1119-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1119-ids": {
+      "passed": true,
+      "detail": "{'actual': [], 'expected': []}"
+    },
+    "admin-query-1119-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-181": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1127-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "admin-query-1127-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1127-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1127-page-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1127-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-query-1127-ids": {
+      "passed": true,
+      "detail": "{'actual': [61, 62, 63, 1, 2, 3, 4, 5, 6, 7], 'expected': [61, 62, 63, 1, 2, 3, 4, 5, 6, 7]}"
+    },
+    "admin-query-1127-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-182": {
+      "passed": true,
+      "detail": ""
+    },
+    "sold-out-admin-list-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "sold-out-admin-list-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "sold-out-admin-list-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "sold-out-admin-list-page-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "sold-out-admin-list-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "sold-out-admin-list-ids": {
+      "passed": true,
+      "detail": "{'actual': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 55], 'expected': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 55]}"
+    },
+    "sold-out-admin-list-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "sold-out-admin-label": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-183": {
+      "passed": true,
+      "detail": ""
+    },
+    "sold-out-still-public-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "sold-out-still-public-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "sold-out-still-public-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "sold-out-still-public-id": {
+      "passed": true,
+      "detail": ""
+    },
+    "sold-out-still-public-stock": {
+      "passed": true,
+      "detail": ""
+    },
+    "sold-out-still-public-price": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-184": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1152-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "query-invalid-1152-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1152-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1152-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1152-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-185": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1158-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "query-invalid-1158-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1158-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1158-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1158-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-186": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1164-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "query-invalid-1164-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1164-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1164-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1164-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-187": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1170-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "query-invalid-1170-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1170-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1170-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1170-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-188": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1176-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "query-invalid-1176-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1176-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1176-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-invalid-1176-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-189": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-keyword-121-rejected-status": {
+      "passed": true,
+      "detail": "400"
+    },
+    "query-keyword-121-rejected-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-keyword-121-rejected-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-keyword-121-rejected-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "query-keyword-121-rejected-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-190": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-status [32]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/new-html [32]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/new-no-secrets [32]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [77]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-191": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-literal-product-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "create-literal-product-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-literal-product-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "create-literal-product-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-192": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-37-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "literal-like-37-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-37-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-37-page-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-37-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-37-ids": {
+      "passed": true,
+      "detail": "{'actual': [64], 'expected': [64]}"
+    },
+    "literal-like-37-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-193": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-95-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "literal-like-95-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-95-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-95-page-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-95-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-95-ids": {
+      "passed": true,
+      "detail": "{'actual': [64], 'expected': [64]}"
+    },
+    "literal-like-95-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-194": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-92-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "literal-like-92-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-92-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-92-page-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-92-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-92-ids": {
+      "passed": true,
+      "detail": "{'actual': [64], 'expected': [64]}"
+    },
+    "literal-like-92-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-195": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-33-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "literal-like-33-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-33-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-33-page-marker": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-33-count": {
+      "passed": true,
+      "detail": ""
+    },
+    "literal-like-33-ids": {
+      "passed": true,
+      "detail": "{'actual': [64], 'expected': [64]}"
+    },
+    "literal-like-33-page-size": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-196": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/63/edit-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/63/edit-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/63/edit-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [78]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-197": {
+      "passed": true,
+      "detail": ""
+    },
+    "stock-overflow-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "stock-overflow-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "stock-overflow-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "stock-overflow-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "stock-overflow-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "stock-overflow-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "stock-overflow-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-198": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/63/edit-status [2]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/63/edit-html [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/63/edit-no-secrets [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [79]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-199": {
+      "passed": true,
+      "detail": ""
+    },
+    "version-overflow-status": {
+      "passed": true,
+      "detail": "409"
+    },
+    "version-overflow-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "version-overflow-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "version-overflow-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "version-overflow-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "version-overflow-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "version-overflow-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "actor-probe-compile": {
+      "passed": true,
+      "detail": ""
+    },
+    "actor-probe": {
+      "passed": true,
+      "detail": ""
+    },
+    "actor-probe-noncatalog-stable": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-200": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-status [18]": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/products/61/edit-html [18]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/products/61/edit-no-secrets [18]": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token [80]": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-201": {
+      "passed": true,
+      "detail": ""
+    },
+    "republish-for-browser-read-status": {
+      "passed": true,
+      "detail": "303"
+    },
+    "republish-for-browser-read-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "republish-for-browser-read-internal-readable-location": {
+      "passed": true,
+      "detail": ""
+    },
+    "republish-for-browser-read-location-no-public-model": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-critical-pages": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-completed": {
+      "passed": true,
+      "detail": ""
+    },
+    "browser-rejected-writes-zero-change": {
+      "passed": true,
+      "detail": ""
+    },
+    "final-five-noncatalog-tables-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "runtime-inputs-stable": {
+      "passed": true,
+      "detail": ""
+    }
+  },
+  "scope": "STEP05 admin category/product/replenishment only; concurrency and faults remain STEP13",
+  "branch": "feat/step05-admin-catalog",
+  "runtime_manifest_sha256": "bb0cd1144b5d2b09ddc4e4d29ff381416066a6f8afbafcc804f287644623d591",
+  "runtime_file_count": 121,
+  "csucampuscraft-user_jar_sha256": "c2b5aa4b8a04e9494618af994ac62762f1b635df169216caeed868985beb00db",
+  "csucampuscraft-admin_jar_sha256": "b56444c0b92b66e1ee295c1c309a9615b6743c2dd360fc1a435362a52a95d230",
+  "mysql_version": "8.4.9",
+  "mysql_port": 58353,
+  "browser_checks": 280,
+  "screenshots": 28,
+  "overall": "PASS",
+  "tracked_processes_stopped": true
+}

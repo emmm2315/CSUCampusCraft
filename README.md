@@ -9,7 +9,7 @@ CSUCampusCraft 是《软件开发架构平台》实验一的双端商城项目�
 
 ## 当前阶段
 
-M0、STEP02 基础设施、STEP03 公开目录及 STEP04 双端身份代码已交付并通过自动实测，STEP03/04 组员交叉复核待补。用户端公开首页、列表、详情和毕业专区；两端提供独立登录/退出及逐请求身份检查。管理端根页需启用 ADMIN 登录，登录后仍显示初始化主题页；STEP12 再替换控制台。购物车、订单、后台分类/商品/补货/相册/顾客/发货和真实控制台按后续步骤开发，REST 仅作预留。
+M0、STEP02基础设施、STEP03公开目录、STEP04双端身份及STEP05后台分类/商品/增量补货已交付并通过各自范围自动实测；STEP03–05组员交叉复核待补。用户端页面保持现状；管理端ADMIN登录后可从导航进入分类和商品管理，根页仍是初始化主题页。相册STEP06、购物车/订单及其他后台模块按后续计划开发，控制台STEP12，REST仅预留。
 
 MySQL 8.4（InnoDB）是项目数据库基线。首版范围与交付标准见[项目立项与范围](docs/项目立项与范围.md)。
 
@@ -127,7 +127,7 @@ M0 已完成本地独立目录复现与 INIT-01 至 INIT-05 核对，详细版�
 
 推送前用 `git status --short` 核对两端源码、SQL、共享素材、七份文档、指导书与归档证据均纳入提交。`docs/evidence/` 下经过检查的 `.log` 属于验收资料；构建 `target/`、本机口令文件和普通运行日志继续忽略。提交后可记录新的完整 SHA，保留本轮「基线 SHA + 工作区快照」证据的原始身份，不把它改写成该新提交已测试。
 
-STEP02、STEP03、STEP04 代码及自动实测已交付，STEP03/04 组员交叉复核待补；下一步按 STEP05 实现后台分类/商品/补货。新成员先按 README 在自己的环境复现 STEP01，并阅读下方 STEP02 交接约定；后台及交易写入口须等 STEP04 鉴权通过。
+STEP02–STEP05 代码及各自范围自动实测已交付，组员交叉复核待补；下一步按 STEP06 接商品相册。新成员先按 README 在自己的环境复现 STEP01，并阅读下方 STEP02 交接约定；后台及交易写入口须等 STEP04 鉴权通过。
 
 ## STEP02 工具链与公共基础交接
 
@@ -173,4 +173,15 @@ AuthFilter为HIGHEST_PRECEDENCE+10，CsrfFilter仍为+20。公开基础路径为
 
 会话只存SessionIdentity(userId,authStamp)，authStamp为数据库updated_at的UTC微秒LocalDateTime原值；每次受保护请求查库以equals比较，不格式化或截断。失效清本端身份与结算确认；公共目录遇旧身份失效按游客继续。模型仅放安全AuthUser；cartQuantity仍为0，STEP07接查询。两端Cookie名保持原值，tracking-modes=cookie，不再把会话ID写入链接。真实通过范围、失败复测及截图见[STEP04实测记录](docs/测试与验收用例.md#step04-实测记录)和[证据目录](docs/evidence/2026-11-14-step04/README.md)。
 
-STEP05可先做受保护的后台分类/商品读取，再做维护和补货。每个数据库写Service事务必须先锁ADMIN操作者行，复核启用状态、角色和会话authStamp，再按BR-01取得业务目标锁。不要把当前初始化主题页当成已完成控制台，也不要将root SQL夹具当成后台启停接口验收；TST-39留STEP12。
+STEP05 已接入受保护后台分类、商品及补货，详见下方交接。数据库业务写继续要求事务内操作者锁，入口过滤器不替代事务授权；初始化主题页不是控制台，root SQL夹具不是后台启停接口，TST-39留STEP12。
+
+
+## STEP05 后台分类、商品与补货交接
+
+ADMIN登录后使用/categories及/products，分类按两级维护，商品新增DRAFT、编辑保留SKU/库存、上下架按版本、补货按增量。表单POST带CSRF，成功303回列表；旧版409需手动重新载入。相册仅显示暂未开放，下一步STEP06再接。用户端代码、初始化SQL、POM、Wrapper和共享素材保持原状。
+
+每个写Service声明READ_COMMITTED，第一步调用AdminWriteGuard.lock(SessionIdentity)。该守卫要求已有写事务，先锁store_user操作者，再复核ENABLED、ADMIN及LocalDateTime.equals(authStamp)，之后才触业务目标。会话失效清本端身份/确认并302登录；角色错误403。商品资料和状态UPDATE带id/version条件并检查行数，真实变化增版；同值资料不更新。补货直接SQL stock=stock+quantity，数据库当前值为基准，库存/version上溢拒绝。
+
+产品写后的返回上下文只接受固定/products及五个重新绑定的查询参数；允许q里合法字面反斜杠等字符，不把它作为任意returnUrl，也不放宽登录回跳白名单。管理端新增样式仅服务A03/A04/A05，原公共Token不改。真实覆盖、失败配置诊断及28图见[STEP05实测记录](docs/测试与验收用例.md#step05-实测记录)和[证据目录](docs/evidence/2026-11-14-step05/README.md)。TST-25–28只按本步覆盖判定，真实购买、并发与故障注入留STEP13。
+
+正常开发按前文数据库授权即可支持锁读。隔离验收账号限制其他五表无DML时，额外授schema级LOCK TABLES以允许store_user的FOR UPDATE，实测不会写操作者行；这属于测试角色配置，未改变初始化SQL。权限要求参考[MySQL8.4官方说明](https://dev.mysql.com/doc/refman/8.4/en/innodb-locking-reads.html)。

@@ -1,0 +1,402 @@
+{
+  "date": "2026-11-14T11:47:33.693189+08:00",
+  "baseline_git_sha": "a8438b72493fba108577e0ba4918e61b043b8916",
+  "tested_code_sha": "93f3c461163ff09f54b667299360068d450ca254",
+  "checks": {
+    "tested-code-head": {
+      "passed": true,
+      "detail": ""
+    },
+    "feature-branch": {
+      "passed": true,
+      "detail": ""
+    },
+    "tested-worktree-clean": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-user": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-build-admin": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-pin": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-created": {
+      "passed": true,
+      "detail": ""
+    },
+    "isolated-mysql-identity": {
+      "passed": true,
+      "detail": ""
+    },
+    "seed-counts": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-user-listener-owned-by-created-process": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-0 [2]": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-admin-listener-owned-by-created-process": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/categories-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/categories-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/categories-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/products-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/products-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/products-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/products/new-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/products/new-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-/products/new-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-4": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/categories-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/categories-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/categories-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-zero-write-/categories": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-5": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/products-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/products-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/products-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-zero-write-/products": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-6": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/products/1/restock-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/products/1/restock-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-write-/products/1/restock-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "guest-zero-write-/products/1/restock": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-7": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-end-customer-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "wrong-end-customer-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-end-customer-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-end-customer-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-end-customer-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-8": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-cannot-admin-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "customer-cannot-admin-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-cannot-admin-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-9": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-no-admin-session-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-no-admin-session-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "customer-no-admin-session-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-10": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-form-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "admin-form-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-form-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-form-password-empty": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-form-csrf": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-11": {
+      "passed": true,
+      "detail": ""
+    },
+    "admin-login-303": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-12": {
+      "passed": true,
+      "detail": ""
+    },
+    "categories-list-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "categories-list-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "categories-list-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-13": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-list-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "product-list-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "product-list-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-14": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-zero-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "missing-csrf-zero-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-zero-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-zero-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-zero-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-zero-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "missing-csrf-zero-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-15": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-zero-status": {
+      "passed": true,
+      "detail": "403"
+    },
+    "wrong-csrf-zero-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-zero-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-zero-error-feedback": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-zero-no-technical-leak": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-zero-noncatalog-unchanged": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrong-csrf-zero-rejected-zero-write": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-16": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-status": {
+      "passed": true,
+      "detail": "200"
+    },
+    "write-form-/categories/new-html": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-/categories/new-no-secrets": {
+      "passed": true,
+      "detail": ""
+    },
+    "write-form-token": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-17": {
+      "passed": true,
+      "detail": ""
+    },
+    "invalid-code-length-0-status": {
+      "passed": false,
+      "detail": "400"
+    }
+  },
+  "scope": "STEP05 admin category/product/replenishment only; concurrency and faults remain STEP13",
+  "branch": "feat/step05-admin-catalog",
+  "runtime_manifest_sha256": "bb0cd1144b5d2b09ddc4e4d29ff381416066a6f8afbafcc804f287644623d591",
+  "runtime_file_count": 121,
+  "csucampuscraft-user_jar_sha256": "c2b5aa4b8a04e9494618af994ac62762f1b635df169216caeed868985beb00db",
+  "csucampuscraft-admin_jar_sha256": "b56444c0b92b66e1ee295c1c309a9615b6743c2dd360fc1a435362a52a95d230",
+  "mysql_version": "8.4.9",
+  "mysql_port": 58126,
+  "overall": "FAIL",
+  "error": "AssertionError: invalid-code-length-0-status",
+  "tracked_processes_stopped": true
+}

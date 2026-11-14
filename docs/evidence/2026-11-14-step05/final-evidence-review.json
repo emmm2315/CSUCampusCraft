@@ -1,0 +1,101 @@
+{
+  "reviewed_at": "2026-11-14T12:04:18.851665+08:00",
+  "reviewer": "Codex independent raw evidence reviewer; no validator import; not human member review",
+  "reviewed_code_sha": "93f3c461163ff09f54b667299360068d450ca254",
+  "attempt": "attempt3",
+  "conclusion": "PASS_WITH_DECLARED_SCOPE",
+  "assertions": 1984,
+  "http_records": 201,
+  "http_statuses": {
+    "302": 7,
+    "200": 102,
+    "303": 24,
+    "403": 2,
+    "400": 43,
+    "409": 14,
+    "404": 9
+  },
+  "write_records": 83,
+  "catalog_HTTP_writes": 82,
+  "successful_HTTP_writes": 23,
+  "rejected_HTTP_writes": 59,
+  "native_write_record_separate": 1,
+  "product_success_actions": {
+    "62": 1,
+    "61": 1,
+    "no-op": 1,
+    "publish": 3,
+    "restock": 4,
+    "unpublish": 2
+  },
+  "SQL_reference_records": 12,
+  "native_checks_observed": 38,
+  "native_trace_groups": {
+    "valid-restock": 3,
+    "stale-stamp": 1,
+    "customer-role": 1,
+    "disabled-admin": 1,
+    "native-category-create": 5
+  },
+  "browser_checks": 280,
+  "PNG_hashes_dimensions_verified": 28,
+  "runtime_files_rehashed": 121,
+  "five_noncatalog_tables_unchanged": true,
+  "blocking_findings": [],
+  "limitations": [
+    "I independently parsed gzip response bytes, per-write summaries/deltas, SQL-reference observations and raw Native SQL_TRACE text; I did not replay HTTP or run the original validator.",
+    "Native same-connection assertion is observed from its boolean checks and audited code; raw connection object identifiers are not emitted, so not independently reconstructed here.",
+    "All59 rejected per-ledger HTTP writes have identical seven-table before/after summaries. Three earlier guest-auth POSTs have original zero-write booleans and a combined original-to-first-ledger equal envelope, not individual archived raw snapshots; no per-request snapshots were reconstructed.",
+    "PNG SHA and dimensions are independently checked, not all images visually opened by this review. Separate UI agent performs visual review.",
+    "DB snapshots are row-count/full-row hashes, not an archive of database metadata/counters. AUTO_INCREMENT gaps after rejected insertion are not application-row writes.",
+    "No human reviewer identity or completed human cross-review inferred.",
+    "SQL references omit HTTP sequence. Correlation used request order, method/port/route/query and DB-expected IDs/totals, skipping earlier same-URL observations at pre-CRUD data state."
+  ],
+  "catalog_HTTP_posts_total": 85,
+  "per_post_catalog_delta_records": 82,
+  "initial_guest_auth_rejections": {
+    "HTTP_sequences": [
+      4,
+      5,
+      6
+    ],
+    "statuses": [
+      302,
+      302,
+      302
+    ],
+    "individual_raw_snapshots": "not archived; original zero-write booleans and independent combined envelope only",
+    "independent_batch_envelope_equal": true
+  },
+  "SQL_reference_HTTP_sequences": [
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    192,
+    193,
+    194,
+    195
+  ],
+  "earlier_same_query_versions_skipped": [
+    {
+      "sequence": 13,
+      "reference": "admin-query-1079",
+      "reason": "same URL observed at an earlier data state"
+    }
+  ],
+  "supplement_review": {
+    "path": "supplement-evidence-review.json",
+    "source_sha": "93f3c461163ff09f54b667299360068d450ca254",
+    "new_HTTP": 3,
+    "new_raw_database_records": 3,
+    "mysql_port": 63571,
+    "checks": 25,
+    "conclusion": "PASS",
+    "boundary": "Main3 guest snapshot gap preserved historically; supplement has3 new actual before/after pairs, not reconstructed old ones."
+  }
+}

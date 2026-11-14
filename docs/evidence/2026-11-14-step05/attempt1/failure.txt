@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step05-admin-catalog\verification\verify_step05.py", line 349, in <module>
+    for t in ['category','product']:sql("GRANT INSERT,UPDATE,DELETE ON csucampuscraft."+t+" TO 'csucampuscraft'@'127.0.0.1';")
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step05-admin-catalog\verification\verify_step05.py", line 165, in sql
+    raise RuntimeError('Isolated SQL command failed')
+RuntimeError: Isolated SQL command failed

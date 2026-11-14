@@ -1,0 +1,81 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.15)
+
+2026-11-14T11:51:27.780+08:00  INFO 28036 --- [csucampuscraft-admin] [           main] ActorWriteProbe                          : Starting ActorWriteProbe using Java 21.0.12.1 with PID 28036 (C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step05-admin-catalog\verification\runtime\attempt3\actor-probe started by Starmetor in D:\Github Projects\CSUCampusCraft)
+2026-11-14T11:51:27.780+08:00  INFO 28036 --- [csucampuscraft-admin] [           main] ActorWriteProbe                          : The following 1 profile is active: "default"
+2026-11-14T11:51:28.590+08:00  INFO 28036 --- [csucampuscraft-admin] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2026-11-14T11:51:28.602+08:00  INFO 28036 --- [csucampuscraft-admin] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-14T11:51:28.602+08:00  INFO 28036 --- [csucampuscraft-admin] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-11-14T11:51:28.643+08:00  INFO 28036 --- [csucampuscraft-admin] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-14T11:51:28.644+08:00  INFO 28036 --- [csucampuscraft-admin] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 837 ms
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.7 
+2026-11-14T11:51:29.322+08:00  INFO 28036 --- [csucampuscraft-admin] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 52587 (http) with context path '/'
+2026-11-14T11:51:29.329+08:00  INFO 28036 --- [csucampuscraft-admin] [           main] ActorWriteProbe                          : Started ActorWriteProbe in 1.872 seconds (process running for 2.118)
+2026-11-14T11:51:29.333+08:00  INFO 28036 --- [csucampuscraft-admin] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-14T11:51:29.576+08:00  INFO 28036 --- [csucampuscraft-admin] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6aad919c
+2026-11-14T11:51:29.577+08:00  INFO 28036 --- [csucampuscraft-admin] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+SQL_TRACE valid-restock #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id, username, display_name, role, status, updated_at FROM store_user WHERE id = ? FOR UPDATE
+SQL_TRACE valid-restock #2 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT p.id,p.sku,p.category_id,p.name,p.summary,p.description,p.cover_image,p.price,p.stock,p.status,p.sort_order,p.version,p.created_at,p.updated_at FROM product p WHERE p.id=? FOR UPDATE
+SQL_TRACE valid-restock #3 active=true declaredIsolation=2 jdbcIsolation=2 sql=UPDATE product SET stock=stock+?,version=version+1 WHERE id=? AND stock<=? AND version<9223372036854775807
+SQL_TRACE stale-stamp #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id, username, display_name, role, status, updated_at FROM store_user WHERE id = ? FOR UPDATE
+SQL_TRACE customer-role #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id, username, display_name, role, status, updated_at FROM store_user WHERE id = ? FOR UPDATE
+SQL_TRACE disabled-admin #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id, username, display_name, role, status, updated_at FROM store_user WHERE id = ? FOR UPDATE
+SQL_TRACE native-category-create #1 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id, username, display_name, role, status, updated_at FROM store_user WHERE id = ? FOR UPDATE
+SQL_TRACE native-category-create #2 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT COUNT(*) FROM category WHERE code = ?
+SQL_TRACE native-category-create #3 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT COUNT(*) FROM category WHERE parent_key = ? AND name = ? AND id != ?
+SQL_TRACE native-category-create #4 active=true declaredIsolation=2 jdbcIsolation=2 sql=INSERT INTO category ( code, name, sort_order ) VALUES ( ?, ?, ? )
+SQL_TRACE native-category-create #5 active=true declaredIsolation=2 jdbcIsolation=2 sql=SELECT id,code,parent_id,name,sort_order FROM category WHERE id=?
+AUTO_ID_RETURNED=508
+2026-11-14T11:51:29.744+08:00  INFO 28036 --- [csucampuscraft-admin] [           main] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-14T11:51:29.746+08:00  INFO 28036 --- [csucampuscraft-admin] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-11-14T11:51:29.747+08:00  INFO 28036 --- [csucampuscraft-admin] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-11-14T11:51:29.760+08:00  INFO 28036 --- [csucampuscraft-admin] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+{"overall":"PASS","checks":38,"rawCredentialsRecorded":false,"scope":"actual JAR Service transaction, no concurrent request or production fault hook"}
+CHECK valid-restock-call=true
+CHECK valid-restock-sql-present=true
+CHECK valid-restock-actor-for-update-first=true
+CHECK valid-restock-all-active-rc=true
+CHECK valid-restock-same-connection=true
+CHECK product-lock-after-actor=true
+CHECK increment-update-sql=true
+CHECK committed-stock-version-plus1=true
+CHECK missing-actor-refused=true
+CHECK missing-actor-no-product-write=true
+CHECK stale-stamp-refused=true
+CHECK stale-stamp-sql-present=true
+CHECK stale-stamp-actor-for-update-first=true
+CHECK stale-stamp-all-active-rc=true
+CHECK stale-stamp-same-connection=true
+CHECK stale-stamp-only-actor-query=true
+CHECK stale-stamp-no-product-write=true
+CHECK customer-role-refused=true
+CHECK customer-role-sql-present=true
+CHECK customer-role-actor-for-update-first=true
+CHECK customer-role-all-active-rc=true
+CHECK customer-role-same-connection=true
+CHECK customer-role-only-actor-query=true
+CHECK customer-role-no-product-write=true
+CHECK disabled-admin-refused=true
+CHECK disabled-admin-sql-present=true
+CHECK disabled-admin-actor-for-update-first=true
+CHECK disabled-admin-all-active-rc=true
+CHECK disabled-admin-same-connection=true
+CHECK disabled-only-actor-query=true
+CHECK disabled-no-product-write=true
+CHECK actor-status-stamp-restored=true
+CHECK native-category-create-sql-present=true
+CHECK native-category-create-actor-for-update-first=true
+CHECK native-category-create-all-active-rc=true
+CHECK native-category-create-same-connection=true
+CHECK native-returned-auto-id=true
+CHECK native-id-select-same-row=true

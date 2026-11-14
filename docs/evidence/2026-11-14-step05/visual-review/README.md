@@ -1,0 +1,35 @@
+# STEP05 最终截图独立复核
+
+受测源码：93f3c461163ff09f54b667299360068d450ca254。仅使用 attempt3 最终图集；Codex AI 辅助复核，组员实名交叉复核仍待补。
+
+28/28 张图片均已逐张调用 view_image 检查，1366×768、1920×1080 各 14 张。逐图 SHA256 与 PNG 尺寸已从原文件重新计算，全部与浏览器记录一致。详见 [逐图结果](final-step05.json) 与 [已打开清单](viewed-files.json)。
+
+未见阻断的遮挡、内容裁切或页面横向溢出。A03 分类层级/长度与冲突反馈，A04 搜索回显/总数/列表，A05 新建/编辑/字段错误/旧版本指引，以及后台写后前台只读显示均可辨。
+
+保留一项非阻断观察 UI-STEP05-01：A04 的 120 字符名称/最大价格边界夹具挤窄库存、状态、排序及动作列，编辑和上下架文字换行，但文字完整可辨、控件未被覆盖。两视口使用相同 1120px 内容容器；本次不修改已冻结源码。具体截图：
+
+- [1366×768 商品列表](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/products-1366.png)
+- [1920×1080 商品列表](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/products-1920.png)
+
+像素与行为证据分开：只读 SKU/库存的标签及单一控件可见；实际 readonly、篡改拒绝、CSRF 拦截、无变化不增版本、旧版本零写入、补货增量和锁顺序仍以源码、HTTP、SQL、原生事务探针为准。每表单一个 CSRF 字段、标签关联、图片加载、无会话 URL 重写等是原浏览器 DOM 记录，不由静态图片推断。
+
+下列每种状态各检查两张完整页面截图；完整页面高度大于视口高度属于正常采集方式。
+
+|状态|1366×768|1920×1080|结果|
+|---|---|---|---|
+|categories|[categories-1366.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/categories-1366.png)|[categories-1920.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/categories-1920.png)|通过|
+|new-category|[new-category-1366.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/new-category-1366.png)|[new-category-1920.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/new-category-1920.png)|通过|
+|category-code-400|[category-code-400-1366.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/category-code-400-1366.png)|[category-code-400-1920.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/category-code-400-1920.png)|通过|
+|category-duplicate-409|[category-duplicate-409-1366.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/category-duplicate-409-1366.png)|[category-duplicate-409-1920.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/category-duplicate-409-1920.png)|通过|
+|products|[products-1366.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/products-1366.png)|[products-1920.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/products-1920.png)|通过；有密度观察|
+|literal-filter|[literal-filter-1366.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/literal-filter-1366.png)|[literal-filter-1920.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/literal-filter-1920.png)|通过|
+|new-product|[new-product-1366.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/new-product-1366.png)|[new-product-1920.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/new-product-1920.png)|通过|
+|product-price-400|[product-price-400-1366.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/product-price-400-1366.png)|[product-price-400-1920.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/product-price-400-1920.png)|通过|
+|product-sku-409|[product-sku-409-1366.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/product-sku-409-1366.png)|[product-sku-409-1920.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/product-sku-409-1920.png)|通过|
+|edit-product|[edit-product-1366.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/edit-product-1366.png)|[edit-product-1920.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/edit-product-1920.png)|通过|
+|product-old-version-409|[product-old-version-409-1366.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/product-old-version-409-1366.png)|[product-old-version-409-1920.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/product-old-version-409-1920.png)|通过|
+|user-gift-detail|[user-gift-detail-1366.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/user-gift-detail-1366.png)|[user-gift-detail-1920.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/user-gift-detail-1920.png)|通过|
+|user-new-detail|[user-new-detail-1366.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/user-new-detail-1366.png)|[user-new-detail-1920.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/user-new-detail-1920.png)|通过|
+|user-new-theme|[user-new-theme-1366.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/user-new-theme-1366.png)|[user-new-theme-1920.png](C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/user-new-theme-1920.png)|通过|
+
+原浏览器记录未被修改；失败的 attempt1/attempt2 独立保留，不与本次图片拼接为通过结论。报告仅覆盖本轮指定的两种桌面视口，不扩展为移动端或人工可用性验收。

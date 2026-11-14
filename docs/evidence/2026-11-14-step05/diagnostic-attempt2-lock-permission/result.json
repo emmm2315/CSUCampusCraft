@@ -1,0 +1,30 @@
+{
+  "copied_failed_data_only": true,
+  "source_datadir_unchanged": true,
+  "actual_source_sha": "93f3c461163ff09f54b667299360068d450ca254",
+  "private_port": 58315,
+  "checks": [
+    {
+      "check": "plain-read",
+      "exit_code": 0,
+      "stderr": "",
+      "row_count": 1
+    },
+    {
+      "check": "locking-read-before",
+      "exit_code": 1,
+      "stderr": "ERROR 1142 (42000) at line 1: SELECT with locking clause command denied to user 'csucampuscraft'@'localhost' for table 'store_user'\r\n",
+      "row_count": 0
+    },
+    {
+      "check": "original-grants",
+      "value": "GRANT USAGE ON *.* TO `csucampuscraft`@`127.0.0.1`\r\nGRANT SELECT ON `csucampuscraft`.* TO `csucampuscraft`@`127.0.0.1`\r\nGRANT INSERT, UPDATE, DELETE ON `csucampuscraft`.`category` TO `csucampuscraft`@`127.0.0.1`\r\nGRANT INSERT, UPDATE, DELETE ON `csucampuscraft`.`product` TO `csucampuscraft`@`127.0.0.1`\r\n"
+    },
+    {
+      "check": "locking-read-after-lock-privilege",
+      "exit_code": 0,
+      "stderr": "",
+      "row_count": 1
+    }
+  ]
+}

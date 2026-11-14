@@ -1,0 +1,166 @@
+{
+  "date": "2026-11-14T12:04:59.817519+08:00",
+  "baseline_git_sha": "a8438b72493fba108577e0ba4918e61b043b8916",
+  "tested_code_sha": "93f3c461163ff09f54b667299360068d450ca254",
+  "checks": {
+    "tested-code-head": {
+      "passed": true,
+      "detail": ""
+    },
+    "feature-branch": {
+      "passed": true,
+      "detail": ""
+    },
+    "worktree-clean": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "tool-version-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "wrapper-maven-pin": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-user-same-jar-as-full-attempt3": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-admin-same-jar-as-full-attempt3": {
+      "passed": true,
+      "detail": ""
+    },
+    "private-mysql-initialized": {
+      "passed": true,
+      "detail": ""
+    },
+    "private-mysql-identity": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-0": {
+      "passed": true,
+      "detail": ""
+    },
+    "csucampuscraft-admin-listener-owned-by-created-process": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-protected-post-1-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-protected-post-1-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-protected-post-1-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-protected-post-1-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "seven-tables-zero-write-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "catalog-key-rows-identical-1": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-protected-post-2-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-protected-post-2-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-protected-post-2-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-protected-post-2-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "seven-tables-zero-write-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "catalog-key-rows-identical-2": {
+      "passed": true,
+      "detail": ""
+    },
+    "no-session-url-rewriting-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-protected-post-3-302": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-protected-post-3-same-end-login": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-protected-post-3-return-url-present": {
+      "passed": true,
+      "detail": ""
+    },
+    "anonymous-protected-post-3-return-url": {
+      "passed": true,
+      "detail": ""
+    },
+    "seven-tables-zero-write-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "catalog-key-rows-identical-3": {
+      "passed": true,
+      "detail": ""
+    },
+    "all-seven-final-original": {
+      "passed": true,
+      "detail": ""
+    },
+    "runtime-inputs-stable": {
+      "passed": true,
+      "detail": ""
+    }
+  },
+  "scope": "independent supplementary 3 anonymous POST observations; not replacement or retroactive evidence for attempt3",
+  "branch": "feat/step05-admin-catalog",
+  "runtime_manifest_sha256": "bb0cd1144b5d2b09ddc4e4d29ff381416066a6f8afbafcc804f287644623d591",
+  "runtime_file_count": 121,
+  "csucampuscraft-user_jar_sha256": "c2b5aa4b8a04e9494618af994ac62762f1b635df169216caeed868985beb00db",
+  "csucampuscraft-admin_jar_sha256": "b56444c0b92b66e1ee295c1c309a9615b6743c2dd360fc1a435362a52a95d230",
+  "mysql_version": "8.4.9",
+  "mysql_port": 63571,
+  "admin_port": 8081,
+  "user_jar_launched": false,
+  "http_records": 3,
+  "database_write_records": 3,
+  "screenshots": 0,
+  "overall": "PASS",
+  "tracked_processes_stopped": true
+}

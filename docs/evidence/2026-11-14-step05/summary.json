@@ -1,0 +1,82 @@
+{
+  "final_attempt": "attempt3",
+  "attempts": [
+    {
+      "attempt": "attempt1",
+      "overall": "FAIL",
+      "tested_code_sha": "93f3c461163ff09f54b667299360068d450ca254",
+      "checks": 11,
+      "http_records": 0,
+      "error": "RuntimeError: Isolated SQL command failed",
+      "tracked_processes_stopped": true
+    },
+    {
+      "attempt": "attempt2",
+      "overall": "FAIL",
+      "tested_code_sha": "93f3c461163ff09f54b667299360068d450ca254",
+      "checks": 96,
+      "http_records": 17,
+      "error": "AssertionError: invalid-code-length-0-status",
+      "tracked_processes_stopped": true
+    },
+    {
+      "attempt": "attempt3",
+      "overall": "PASS",
+      "tested_code_sha": "93f3c461163ff09f54b667299360068d450ca254",
+      "checks": 1273,
+      "http_records": 201,
+      "error": null,
+      "tracked_processes_stopped": true
+    }
+  ],
+  "overall": "PASS",
+  "tested_code_sha": "93f3c461163ff09f54b667299360068d450ca254",
+  "main_checks": 1273,
+  "http_records": 201,
+  "http_statuses": {
+    "302": 7,
+    "200": 102,
+    "303": 24,
+    "403": 2,
+    "400": 43,
+    "409": 14,
+    "404": 9
+  },
+  "database_write_records": 83,
+  "browser_checks": 280,
+  "screenshots": 28,
+  "browser_completed": true,
+  "mysql_port": 58353,
+  "runtime_files": 121,
+  "runtime_manifest_sha256": "bb0cd1144b5d2b09ddc4e4d29ff381416066a6f8afbafcc804f287644623d591",
+  "tracked_processes_stopped": true,
+  "gzip_unique_bodies": 97,
+  "raw_evidence_bytes": 4095488,
+  "native_probe": {
+    "overall": "PASS",
+    "checks": 38,
+    "rawCredentialsRecorded": false,
+    "scope": "actual JAR Service transaction, no concurrent request or production fault hook"
+  },
+  "main_ledger_composition": {
+    "http_catalog_posts": 82,
+    "native_service_probe_records": 1,
+    "total": 83,
+    "early_anonymous_posts_without_saved_original_deltas": 3,
+    "note": "Those old requests have immediate equality assertions only; do not fabricate or backfill old measurements."
+  },
+  "supplements": [
+    {
+      "name": "supplement-guest-rejections",
+      "overall": "PASS",
+      "tested_code_sha": "93f3c461163ff09f54b667299360068d450ca254",
+      "checks": 36,
+      "http_records": 3,
+      "database_write_records": 3,
+      "mysql_port": 63571,
+      "screenshots": 0,
+      "tracked_processes_stopped": true,
+      "scope": "new independent observations for the three anonymous POST routes, not replacement/backfill of old full-run requests"
+    }
+  ]
+}

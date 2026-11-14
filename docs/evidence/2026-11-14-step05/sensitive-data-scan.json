@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "scope": "all text plus every gzip-decompressed HTTP body, HTML CSRF values, actual cookie/session/BCrypt and known teaching secret; indexed decompressed SHA verified",
+  "counts": {
+    "text_files": 247,
+    "gzip_bodies_decoded": 106,
+    "http_records_verified": 221,
+    "csrf_values": 0,
+    "session_values": 0,
+    "cookie_headers": 0,
+    "bcrypt_values": 0,
+    "teaching_password_values": 0
+  },
+  "findings": []
+}

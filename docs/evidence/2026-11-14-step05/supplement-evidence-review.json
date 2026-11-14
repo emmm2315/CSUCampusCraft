@@ -1,0 +1,113 @@
+{
+  "reviewed_at": "2026-11-14T12:07:16.674538+08:00",
+  "reviewer": "Codex independent raw supplement reviewer; not human member",
+  "source_sha": "93f3c461163ff09f54b667299360068d450ca254",
+  "scope": "three new guest requests; not retroactive snapshots for original attempt3",
+  "conclusion": "PASS",
+  "checks": [
+    {
+      "name": "supplement-pass",
+      "passed": true
+    },
+    {
+      "name": "same-source",
+      "passed": true
+    },
+    {
+      "name": "separate-port",
+      "passed": true
+    },
+    {
+      "name": "same-both-JARs",
+      "passed": true
+    },
+    {
+      "name": "three-http-three-raw-deltas",
+      "passed": true
+    },
+    {
+      "name": "index-1",
+      "passed": true
+    },
+    {
+      "name": "anonymous-post-302-1",
+      "passed": true
+    },
+    {
+      "name": "login-safe-default-1",
+      "passed": true
+    },
+    {
+      "name": "raw-body-sha-1",
+      "passed": true
+    },
+    {
+      "name": "seven-table-same-1",
+      "passed": true
+    },
+    {
+      "name": "key-rows-same-1",
+      "passed": true
+    },
+    {
+      "name": "index-2",
+      "passed": true
+    },
+    {
+      "name": "anonymous-post-302-2",
+      "passed": true
+    },
+    {
+      "name": "login-safe-default-2",
+      "passed": true
+    },
+    {
+      "name": "raw-body-sha-2",
+      "passed": true
+    },
+    {
+      "name": "seven-table-same-2",
+      "passed": true
+    },
+    {
+      "name": "key-rows-same-2",
+      "passed": true
+    },
+    {
+      "name": "index-3",
+      "passed": true
+    },
+    {
+      "name": "anonymous-post-302-3",
+      "passed": true
+    },
+    {
+      "name": "login-safe-default-3",
+      "passed": true
+    },
+    {
+      "name": "raw-body-sha-3",
+      "passed": true
+    },
+    {
+      "name": "seven-table-same-3",
+      "passed": true
+    },
+    {
+      "name": "key-rows-same-3",
+      "passed": true
+    },
+    {
+      "name": "original-final-seven-equal",
+      "passed": true
+    },
+    {
+      "name": "processes-stopped",
+      "passed": true
+    }
+  ],
+  "mysql_port": 63571,
+  "HTTP_records": 3,
+  "per_request_raw_database_records": 3,
+  "source_and_JAR_match": true
+}

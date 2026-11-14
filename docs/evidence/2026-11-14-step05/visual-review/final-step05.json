@@ -1,0 +1,1451 @@
+{
+  "created_at_utc": "2026-11-14T04:01:15.477568+00:00",
+  "reviewer": "Codex independent UI visual review unit",
+  "review_type": "AI-assisted screenshot review; not named human member cross-review",
+  "source_sha": "93f3c461163ff09f54b667299360068d450ca254",
+  "source_sha_confirmed_against": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/result.json",
+  "reviewed_attempt": 3,
+  "only_current_attempt_used": true,
+  "original_evidence_edited": false,
+  "repository_edited_by_this_review": false,
+  "screenshots_expected": 28,
+  "screenshots_opened_and_reviewed": 28,
+  "screenshots_verified_by_hash_and_png_header": 28,
+  "viewport_counts": {
+    "1366x768": 14,
+    "1920x1080": 14
+  },
+  "overall": "PASS_WITH_NONBLOCKING_FINDINGS",
+  "blocking_findings": [],
+  "nonblocking_findings": [
+    {
+      "id": "UI-STEP05-01",
+      "severity": "non-blocking",
+      "page_id": "A04",
+      "summary": "长名称/最大金额边界夹具使商品列表末列偏窄，操作中文字换行。",
+      "detail": "1366和1920视口均使用同一1120px内容容器。测试行的120字符名称及最大金额占据较宽列，库存、状态、排序和操作列变窄；编辑、上下架中文字换行，但内容仍完整可辨，未看到覆盖或页面水平溢出。",
+      "screenshots": [
+        "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/products-1366.png",
+        "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/products-1920.png"
+      ],
+      "decision": "按root确认保留受测93f3c461源码；作为后续列表列宽/密度优化记录，不以该观察推翻本次功能验收，也不宣称完全无排版差异。"
+    }
+  ],
+  "scope": "A03/A04/A05 normal and field/conflict states plus existing public reads in two desktop viewports",
+  "browser_record_source": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/result.json",
+  "browser_record_sha256": "3cea3a4780360d0ac0c9493316c51e5d5eb4eabbeb79a183c6b5358441793075",
+  "run_record_sha256": "b949692455d870e57afd73c85bebfbb46f9281c0ba91bcf9298c578ff82f9ea7",
+  "independently_verified_file_integrity": "All 28 PNG SHA256 values and dimensions equal browser result.json; viewport widths equal PNG widths.",
+  "supplementary_browser_metadata_summary": {
+    "screenshot_records": 28,
+    "recorded_browser_checks": 280,
+    "recorded_browser_checks_passed": 280,
+    "all_no_page_horizontal_overflow": true,
+    "all_label_problem_counts_zero": true,
+    "all_recorded_post_forms_have_one_csrf_field": true,
+    "all_images_loaded": true,
+    "all_cookie_only_links": true,
+    "all_password_empty_observations": true
+  },
+  "boundaries": [
+    "Still images prove visible labels, controls, messages, field echoes and layout only; a visible readonly label does not alone prove the DOM readonly attribute or tamper resistance.",
+    "HTTP statuses are copied from original browser result.json, not inferred from image text.",
+    "Per-form CSRF field presence is recorded DOM metadata; hidden token values are neither read nor included, and token validation/zero writes require HTTP/SQL evidence.",
+    "No-op version retention, optimistic locking, restock increment, transaction isolation, actor-first locks and zero writes on refusal require the separate HTTP/SQL/native-probe acceptance records.",
+    "Description <script> text is visibly plain text; screenshots alone cannot prove no JavaScript executed.",
+    "Full-page PNG heights may exceed viewport heights and do not represent a viewport-size error.",
+    "This review does not replace pending named human cross-review before M3, and does not combine failed earlier attempts into current PASS."
+  ],
+  "screenshots": [
+    {
+      "file_name": "categories-1366.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/categories-1366.png",
+      "attempt_relative_path": "browser/categories-1366.png",
+      "sha256_independently_recomputed": "09406f48a08417dd6a21ef815c732527f6211e6711e6fd2099801b91602d497a",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions_independently_read": {
+        "width": 1366,
+        "height": 3318
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "A03 标题、分类新增入口、一级/二级层级及编码、名称、排序、操作列可辨；21字符一级及32字符二级测试类目可见。",
+        "删除说明指出仅能删除无子类、无商品引用的空分类；页面内容完整，表头少量中文换行但无相互遮挡。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "A03",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "new-category-1366.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/new-category-1366.png",
+      "attempt_relative_path": "browser/new-category-1366.png",
+      "sha256_independently_recomputed": "0a2442d250deece37b43106a4e2cc4fc3d82f11ec0e9c7feb195cc4d78d033ec",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions_independently_read": {
+        "width": 1366,
+        "height": 1031
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "A03 新建分类的父级、一级编码、二级类型、名称、排序输入与提交/返回控件均完整。",
+        "一级编码1–21字符及21字符加后缀可组成32字符二级编码的提示可读，空父级的一级创建状态清楚。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "A03",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "category-code-400-1366.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/category-code-400-1366.png",
+      "attempt_relative_path": "browser/category-code-400-1366.png",
+      "sha256_independently_recomputed": "5a60df6b1b3cb07273f60ee5216aecfa5b6557f6ed0be370a573aeea5df3e760",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions_independently_read": {
+        "width": 1366,
+        "height": 1270
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "全局提示、错误摘要和编码旁字段消息可见，22字符编码与其余可修字段保留。",
+        "具体编码长度提示与被拒绝输入处于同一表单上下文；HTTP400取自浏览器记录，不由截图推断。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 400,
+      "browser_reported_dom_observation": {
+        "pageId": "A03",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 1,
+        "alerts": 2,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "category-duplicate-409-1366.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/category-duplicate-409-1366.png",
+      "attempt_relative_path": "browser/category-duplicate-409-1366.png",
+      "sha256_independently_recomputed": "43cbdbb37ed490ad98f1664eb0b7d56c0e2300ad49b20598c39670ca4a35f670",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions_independently_read": {
+        "width": 1366,
+        "height": 1270
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "编码已占用的全局消息、错误摘要、字段消息均清楚；冲突编码STEP05_QA与名称保留以便修改。",
+        "HTTP409取自浏览器记录；截图没有可见的堆栈、SQL、凭据或异常实现细节。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 409,
+      "browser_reported_dom_observation": {
+        "pageId": "A03",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 1,
+        "alerts": 2,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "products-1366.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/products-1366.png",
+      "attempt_relative_path": "browser/products-1366.png",
+      "sha256_independently_recomputed": "e9da22f952af74056de9ed396dc8acef1c5f03b7eadb15ce9b18596739065f22",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions_independently_read": {
+        "width": 1366,
+        "height": 3076
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "A04 筛选区域、总数、商品表、库存/状态和分页可辨，行内编辑及上下架控件可见；相册为暂未开放文本。",
+        "边界120字符商品名称与最大价格夹具使自动表格分配偏向名称/SKU，库存、状态、排序、操作列变窄；部分操作中文字换行。文字完整，没有覆盖或页面横向溢出，记为非阻断密度观察。"
+      ],
+      "pixel_review_result": "PASS_WITH_NONBLOCKING_DENSITY_OBSERVATION",
+      "linked_finding_ids": [
+        "UI-STEP05-01"
+      ],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "A04",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "literal-filter-1366.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/literal-filter-1366.png",
+      "attempt_relative_path": "browser/literal-filter-1366.png",
+      "sha256_independently_recomputed": "36e9b6854a1a72c221bd421e854c7eefbd412880ba43663147a62cbdab8e5cc6",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions_independently_read": {
+        "width": 1366,
+        "height": 922
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "A04 搜索框保留字面百分号，结果计数1；100% under_score back\\slash bang!商品名称及CSU-QA-LITERAL行可读。",
+        "普通单行表格的编辑/上下架按钮清楚，相册暂未开放文案与1/1分页状态完整。LIKE匹配正确性以HTTP/SQL证据为准。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "A04",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "new-product-1366.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/new-product-1366.png",
+      "attempt_relative_path": "browser/new-product-1366.png",
+      "sha256_independently_recomputed": "33a9944dfb8eae01d87d40b75273a2d9db0049ff24e8daacaab97cc7624d0373",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions_independently_read": {
+        "width": 1366,
+        "height": 1347
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "A05 新建商品SKU、二级分类、名称、价格、初始库存0和排序0布局清楚；摘要、纯文本说明、封面路径及范围帮助文字完整。",
+        "保存草稿与返回/取消控件可见，普通两列字段及跨列文本区无重叠。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "A05",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "product-price-400-1366.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/product-price-400-1366.png",
+      "attempt_relative_path": "browser/product-price-400-1366.png",
+      "sha256_independently_recomputed": "dbef000beb6f092cdcd9798e557ed770a1a9fc1a9a6bc9e315b75be7f7cfa84e",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions_independently_read": {
+        "width": 1366,
+        "height": 1586
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "非法价格0.001保留，SKU、名称、分类等可修字段仍在；全局错误、错误摘要及价格字段反馈均可见。",
+        "HTTP400取自浏览器记录，错误文本有明确的两位小数/金额范围上下文，无布局遮挡。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 400,
+      "browser_reported_dom_observation": {
+        "pageId": "A05",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 1,
+        "alerts": 2,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "product-sku-409-1366.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/product-sku-409-1366.png",
+      "attempt_relative_path": "browser/product-sku-409-1366.png",
+      "sha256_independently_recomputed": "14f32869cd66e7bf9e7f03d7b29accc8ddd2d8fb8ad17633b6bafc91920a04d6",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions_independently_read": {
+        "width": 1366,
+        "height": 1586
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "重复SKU及12.50价格等可修字段保留，SKU冲突的全局提示、错误摘要与字段反馈均可读。",
+        "HTTP409取自浏览器记录，未见技术异常泄漏；提交/取消等控件仍有完整显示。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 409,
+      "browser_reported_dom_observation": {
+        "pageId": "A05",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 1,
+        "alerts": 2,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "edit-product-1366.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/edit-product-1366.png",
+      "attempt_relative_path": "browser/edit-product-1366.png",
+      "sha256_independently_recomputed": "2f3ab9d6ca1bdbcd4e4ffd9c1fb3e0ded5bde3297bc59e988d75520df7522636",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions_independently_read": {
+        "width": 1366,
+        "height": 1854
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "A05 编辑页只出现一组带只读标签的SKU及当前库存17，未出现新建时的可编辑SKU/初始库存重复控件。",
+        "名称STEP05资料更新、价格19.90及分类可见；说明文本框中的<script>notExecutable()</script>作为可见文字存在。",
+        "资料保存、商品状态/下架、增量补货分区明确；当前库存17、正增量输入及每次提交增加指定数量的提示可读。实际readonly/增量SQL/无变化不增版由源码和HTTP/SQL证明。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "A05",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "product-old-version-409-1366.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/product-old-version-409-1366.png",
+      "attempt_relative_path": "browser/product-old-version-409-1366.png",
+      "sha256_independently_recomputed": "adde7f41955548d144f6221662a821d2683a6a2a712261d4bd9ccc36bdd52b33",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions_independently_read": {
+        "width": 1366,
+        "height": 2062
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "A05 顶部明确提示资料变化并要求重新载入，摘要指出页面过期，重新载入编辑页链接可见。",
+        "旧表单中的名称、价格19.90、分类、摘要/说明及只读库存17仍保留；资料、状态、补货分区没有遮挡。",
+        "HTTP409及拒绝零写入由浏览器/HTTP/SQL记录证明；截图只证明冲突反馈和回显。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 409,
+      "browser_reported_dom_observation": {
+        "pageId": "A05",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 1,
+        "alerts": 2,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "user-new-theme-1366.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/user-new-theme-1366.png",
+      "attempt_relative_path": "browser/user-new-theme-1366.png",
+      "sha256_independently_recomputed": "362382b450953a18d5b9be79e6c467e792e873a69871f5196ccd3ce600469da1",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions_independently_read": {
+        "width": 1366,
+        "height": 1902
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "用户端首页主题卡片中可见本步新增/编辑主题和二级分类，毕业专区及通用搜索、导航保持可读。",
+        "新品与精选中可见新增商品CSU-QA-STEP05-01、更新名称、19.90及库存17；3张新品/4张精选布局完整。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "U01",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "user-gift-detail-1366.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/user-gift-detail-1366.png",
+      "attempt_relative_path": "browser/user-gift-detail-1366.png",
+      "sha256_independently_recomputed": "31199f514b97bc30875780ac6677e850f4054bfaff22594dcd3f9529bbd3245c",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions_independently_read": {
+        "width": 1366,
+        "height": 1632
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "用户端礼盒详情显示毕业纪念/纪念周边面包屑、CSU-GRAD-BOX-01、49.00价格及库存12。",
+        "封面、4张现有占位相册图片及说明完整；暂未开放的禁用选购控件可辨。此页为既有只读能力回归，不表示本步实现相册写入或购物车。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "U03",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "user-new-detail-1366.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/user-new-detail-1366.png",
+      "attempt_relative_path": "browser/user-new-detail-1366.png",
+      "sha256_independently_recomputed": "b765e4aa8bc9197f7b88da3b2e568fdb04a03b13d952f878622a0696153a56b3",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_dimensions_independently_read": {
+        "width": 1366,
+        "height": 1061
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "用户端新增上架商品详情显示STEP05主题改名/STEP05文具、CSU-QA-STEP05-01、资料更新名称、19.90及库存17。",
+        "设计说明中的<script>notExecutable()</script>以普通文本可见；无相册空态与封面占位清楚，禁用选购区域完整。实际未执行脚本结论以HTTP/浏览器检查为准。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "U03",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "categories-1920.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/categories-1920.png",
+      "attempt_relative_path": "browser/categories-1920.png",
+      "sha256_independently_recomputed": "61fb3fadcd312f394d4729e0473186ba1bea039df58dc2018e902306b35a811b",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_dimensions_independently_read": {
+        "width": 1920,
+        "height": 3318
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "A03 标题、分类新增入口、一级/二级层级及编码、名称、排序、操作列可辨；21字符一级及32字符二级测试类目可见。",
+        "删除说明指出仅能删除无子类、无商品引用的空分类；页面内容完整，表头少量中文换行但无相互遮挡。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "A03",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "new-category-1920.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/new-category-1920.png",
+      "attempt_relative_path": "browser/new-category-1920.png",
+      "sha256_independently_recomputed": "38b5ca998b23710ef01156f926db7d5a0974a478c77348324022238203639e5a",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_dimensions_independently_read": {
+        "width": 1920,
+        "height": 1080
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "A03 新建分类的父级、一级编码、二级类型、名称、排序输入与提交/返回控件均完整。",
+        "一级编码1–21字符及21字符加后缀可组成32字符二级编码的提示可读，空父级的一级创建状态清楚。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "A03",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "category-code-400-1920.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/category-code-400-1920.png",
+      "attempt_relative_path": "browser/category-code-400-1920.png",
+      "sha256_independently_recomputed": "950771ab60000bd425c80fc9e5dd6b75dd2f43bb8f8c3a02e4847e6fa5db7d7b",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_dimensions_independently_read": {
+        "width": 1920,
+        "height": 1270
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "全局提示、错误摘要和编码旁字段消息可见，22字符编码与其余可修字段保留。",
+        "具体编码长度提示与被拒绝输入处于同一表单上下文；HTTP400取自浏览器记录，不由截图推断。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 400,
+      "browser_reported_dom_observation": {
+        "pageId": "A03",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 1,
+        "alerts": 2,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "category-duplicate-409-1920.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/category-duplicate-409-1920.png",
+      "attempt_relative_path": "browser/category-duplicate-409-1920.png",
+      "sha256_independently_recomputed": "604f3553153d5c94d6e3d9eca4ce3e78ec0bfde135f2ccde30dcb1f90693ee80",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_dimensions_independently_read": {
+        "width": 1920,
+        "height": 1270
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "编码已占用的全局消息、错误摘要、字段消息均清楚；冲突编码STEP05_QA与名称保留以便修改。",
+        "HTTP409取自浏览器记录；截图没有可见的堆栈、SQL、凭据或异常实现细节。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 409,
+      "browser_reported_dom_observation": {
+        "pageId": "A03",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 1,
+        "alerts": 2,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "products-1920.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/products-1920.png",
+      "attempt_relative_path": "browser/products-1920.png",
+      "sha256_independently_recomputed": "e2646efc8a6fc8996c3a9e5012e84231d00552f17c33ddf8668a7681acdd88b1",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_dimensions_independently_read": {
+        "width": 1920,
+        "height": 3076
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "A04 筛选区域、总数、商品表、库存/状态和分页可辨，行内编辑及上下架控件可见；相册为暂未开放文本。",
+        "边界120字符商品名称与最大价格夹具使自动表格分配偏向名称/SKU，库存、状态、排序、操作列变窄；部分操作中文字换行。文字完整，没有覆盖或页面横向溢出，记为非阻断密度观察。"
+      ],
+      "pixel_review_result": "PASS_WITH_NONBLOCKING_DENSITY_OBSERVATION",
+      "linked_finding_ids": [
+        "UI-STEP05-01"
+      ],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "A04",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "literal-filter-1920.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/literal-filter-1920.png",
+      "attempt_relative_path": "browser/literal-filter-1920.png",
+      "sha256_independently_recomputed": "93f85b2e0d4fcb55658047d4a2b60582ec45376e8634c0f50ce116f6dcf39ccc",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_dimensions_independently_read": {
+        "width": 1920,
+        "height": 1080
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "A04 搜索框保留字面百分号，结果计数1；100% under_score back\\slash bang!商品名称及CSU-QA-LITERAL行可读。",
+        "普通单行表格的编辑/上下架按钮清楚，相册暂未开放文案与1/1分页状态完整。LIKE匹配正确性以HTTP/SQL证据为准。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "A04",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "new-product-1920.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/new-product-1920.png",
+      "attempt_relative_path": "browser/new-product-1920.png",
+      "sha256_independently_recomputed": "d4d7b8f2c395356862407cc0c57e662a9c8af619da4254ab5d51aa2bbf82e570",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_dimensions_independently_read": {
+        "width": 1920,
+        "height": 1347
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "A05 新建商品SKU、二级分类、名称、价格、初始库存0和排序0布局清楚；摘要、纯文本说明、封面路径及范围帮助文字完整。",
+        "保存草稿与返回/取消控件可见，普通两列字段及跨列文本区无重叠。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "A05",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "product-price-400-1920.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/product-price-400-1920.png",
+      "attempt_relative_path": "browser/product-price-400-1920.png",
+      "sha256_independently_recomputed": "d878ed61837c358c090663f85fdc265203285fbf4a80e30e0913ae5adb7b729e",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_dimensions_independently_read": {
+        "width": 1920,
+        "height": 1586
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "非法价格0.001保留，SKU、名称、分类等可修字段仍在；全局错误、错误摘要及价格字段反馈均可见。",
+        "HTTP400取自浏览器记录，错误文本有明确的两位小数/金额范围上下文，无布局遮挡。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 400,
+      "browser_reported_dom_observation": {
+        "pageId": "A05",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 1,
+        "alerts": 2,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "product-sku-409-1920.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/product-sku-409-1920.png",
+      "attempt_relative_path": "browser/product-sku-409-1920.png",
+      "sha256_independently_recomputed": "af99cd03e97b8dbd0cfed72b92ed42d72fb7bda4095a944e712751100cee2dd2",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_dimensions_independently_read": {
+        "width": 1920,
+        "height": 1586
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "重复SKU及12.50价格等可修字段保留，SKU冲突的全局提示、错误摘要与字段反馈均可读。",
+        "HTTP409取自浏览器记录，未见技术异常泄漏；提交/取消等控件仍有完整显示。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 409,
+      "browser_reported_dom_observation": {
+        "pageId": "A05",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 1,
+        "alerts": 2,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "edit-product-1920.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/edit-product-1920.png",
+      "attempt_relative_path": "browser/edit-product-1920.png",
+      "sha256_independently_recomputed": "f36eea92157a01cfd308f56ff8dce85a405afee4afd148dc7de1410dcf78feb6",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_dimensions_independently_read": {
+        "width": 1920,
+        "height": 1854
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "A05 编辑页只出现一组带只读标签的SKU及当前库存17，未出现新建时的可编辑SKU/初始库存重复控件。",
+        "名称STEP05资料更新、价格19.90及分类可见；说明文本框中的<script>notExecutable()</script>作为可见文字存在。",
+        "资料保存、商品状态/下架、增量补货分区明确；当前库存17、正增量输入及每次提交增加指定数量的提示可读。实际readonly/增量SQL/无变化不增版由源码和HTTP/SQL证明。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "A05",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "product-old-version-409-1920.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/product-old-version-409-1920.png",
+      "attempt_relative_path": "browser/product-old-version-409-1920.png",
+      "sha256_independently_recomputed": "70d98aad418b6374bfaf8c7ff865ed28dcc7c035b8727193d996caa2fb1b2f97",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_dimensions_independently_read": {
+        "width": 1920,
+        "height": 2062
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "A05 顶部明确提示资料变化并要求重新载入，摘要指出页面过期，重新载入编辑页链接可见。",
+        "旧表单中的名称、价格19.90、分类、摘要/说明及只读库存17仍保留；资料、状态、补货分区没有遮挡。",
+        "HTTP409及拒绝零写入由浏览器/HTTP/SQL记录证明；截图只证明冲突反馈和回显。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 409,
+      "browser_reported_dom_observation": {
+        "pageId": "A05",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          },
+          {
+            "csrfCount": 1
+          }
+        ],
+        "fieldErrors": 1,
+        "alerts": 2,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "user-new-theme-1920.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/user-new-theme-1920.png",
+      "attempt_relative_path": "browser/user-new-theme-1920.png",
+      "sha256_independently_recomputed": "c03e9373b58855c1c14edbd19bea2567f991d224ff53b253645ea7e8cb517833",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_dimensions_independently_read": {
+        "width": 1920,
+        "height": 1902
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "用户端首页主题卡片中可见本步新增/编辑主题和二级分类，毕业专区及通用搜索、导航保持可读。",
+        "新品与精选中可见新增商品CSU-QA-STEP05-01、更新名称、19.90及库存17；3张新品/4张精选布局完整。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "U01",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "user-gift-detail-1920.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/user-gift-detail-1920.png",
+      "attempt_relative_path": "browser/user-gift-detail-1920.png",
+      "sha256_independently_recomputed": "9869f8af8bdfe70dbdf769036c74040843c9452362bc2f7be26727aa576d9db6",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_dimensions_independently_read": {
+        "width": 1920,
+        "height": 1632
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "用户端礼盒详情显示毕业纪念/纪念周边面包屑、CSU-GRAD-BOX-01、49.00价格及库存12。",
+        "封面、4张现有占位相册图片及说明完整；暂未开放的禁用选购控件可辨。此页为既有只读能力回归，不表示本步实现相册写入或购物车。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "U03",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    },
+    {
+      "file_name": "user-new-detail-1920.png",
+      "absolute_reviewed_path": "C:/Users/Starmetor/.codex/visualizations/2026/11/10/01a1c2de-c7a6-7290-8ee3-510d0f746abe/step05-admin-catalog/verification/evidence/attempt3/browser/user-new-detail-1920.png",
+      "attempt_relative_path": "browser/user-new-detail-1920.png",
+      "sha256_independently_recomputed": "95e649fa3fd34729685fe989f6b8a46c863f4f54b4de38b6bad766acb82f428b",
+      "sha256_matches_browser_record": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_dimensions_independently_read": {
+        "width": 1920,
+        "height": 1080
+      },
+      "full_page_capture": true,
+      "opened_individually_with": "functions.exec -> tools.view_image",
+      "pixel_review_complete": true,
+      "pixel_review_observations": [
+        "用户端新增上架商品详情显示STEP05主题改名/STEP05文具、CSU-QA-STEP05-01、资料更新名称、19.90及库存17。",
+        "设计说明中的<script>notExecutable()</script>以普通文本可见；无相册空态与封面占位清楚，禁用选购区域完整。实际未执行脚本结论以HTTP/浏览器检查为准。"
+      ],
+      "pixel_review_result": "PASS",
+      "linked_finding_ids": [],
+      "browser_reported_http_status": 200,
+      "browser_reported_dom_observation": {
+        "pageId": "U03",
+        "overflow": false,
+        "passwordEmpty": true,
+        "sessionInLinks": false,
+        "labelProblems": 0,
+        "postForms": [],
+        "fieldErrors": 0,
+        "alerts": 0,
+        "allImagesLoaded": true
+      },
+      "metadata_is_not_pixel_inference": true
+    }
+  ]
+}

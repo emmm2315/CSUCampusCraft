@@ -1,0 +1,401 @@
+{
+  "reviewed_at": "2026-11-14T11:41:50.822745+08:00",
+  "reviewer": "Codex independent cross-module static review; not human member review",
+  "result": "PASS_STATIC_SCOPE",
+  "checks": [
+    {
+      "name": "mandatory-actor-guard",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "active-write-RC-required",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "session-user-row-first",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "locked-projection-no-password",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "enabled-stamp-role-recheck",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "lost-session-cleared-and-302",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "expired-redirect-no-model-leak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "role-403",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "pessimistic-conflict-409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "create-RC-actor-first",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "update-RC-actor-first",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "publish-RC-actor-first",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "unpublish-RC-actor-first",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "restock-RC-actor-first",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "business-locks",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "details-conditional-version",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "details-immutable-stock-sku",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "state-conditional-version-and-status",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "stock-database-increment",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "stock-version-SQL-capacity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "affected-row-counts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "version-capacity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "stock-capacity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "same-fields-no-op",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "bounded-BigDecimal-money",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "UTF8-description-limit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover-path-rules",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "new-product-DRAFT",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no-snapshot-write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "count-list-shared-where",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "derived-LIKE-explicit-bind",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fixed-sort",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no-request-SQL-interpolation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "success-303-no-model-leak",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "strict-list-return-context",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "form-no-utext",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "form-fragment-condition-outside",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "form-post-0-csrf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "form-post-1-csrf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "form-post-2-csrf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "form-post-3-csrf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "list-no-utext",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "list-fragment-condition-outside",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "list-post-1-csrf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "list-post-2-csrf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "album-placeholder",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "source_file_hashes": [
+    {
+      "scope": "common",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AdminWriteGuard.java",
+      "sha256": "0312d5391afeb3546242bbc55adc3c488877a42b1aaebb3b8734faa3fec60f22"
+    },
+    {
+      "scope": "common",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionExpiredException.java",
+      "sha256": "348ac837f4e7ffa6d34f8a5f6e4b7848015bc831a2f0721f67b4b8f4c1e526ef"
+    },
+    {
+      "scope": "common",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUserMapper.java",
+      "sha256": "f2c3546a28b12ee463473e7e034c5c68f235ee5e65360cd3196ba4979d752bad"
+    },
+    {
+      "scope": "common",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/GlobalExceptionHandler.java",
+      "sha256": "c8bf2b76b3bd33c4a0ed7205c9223a0041bac2fe9c9cbc05c93c2db5d4c5b8f5"
+    },
+    {
+      "scope": "common",
+      "path": "csucampuscraft-admin/src/main/resources/static/css/app.css",
+      "sha256": "e9dae4739909b50fc4765bad72b9fce58ef8df6c892ae75443637e849c775420"
+    },
+    {
+      "scope": "common",
+      "path": "csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "sha256": "37bfb93c17ae26f998ad7e69bf8a295ac2038434c6f5f7a88b971a2b8db14520"
+    },
+    {
+      "scope": "category",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/Category.java",
+      "sha256": "aebd92efe0eda2e65bd2c3cc30f625a79ae48280bb4fd3fe3cf99c9ed8cf701c"
+    },
+    {
+      "scope": "category",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryForm.java",
+      "sha256": "540a87f3d8b0875f373562c1de46aaa6e200cbecb78f4d0175056e5e2ebe73a8"
+    },
+    {
+      "scope": "category",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryMapper.java",
+      "sha256": "aa0e74083b5dd040c6b45b14422f5b6e3e97cd9307494c966d8de5cd4c318489"
+    },
+    {
+      "scope": "category",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryService.java",
+      "sha256": "ebf71836c37d17021ccfe0e0212d45f328718fc556b0ad2580eb54813f6fefcd"
+    },
+    {
+      "scope": "category",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/CategoryController.java",
+      "sha256": "e2ec6fcdaf04a56721bbd2be1104965615ed681fa13bcccc3b4ef2f4897cae9e"
+    },
+    {
+      "scope": "category",
+      "path": "csucampuscraft-admin/src/main/resources/templates/categories/form.html",
+      "sha256": "32e70269e33994a4e75a38a2c37b5f8e5e2ed640ea90081d4e3c86a612ccb475"
+    },
+    {
+      "scope": "category",
+      "path": "csucampuscraft-admin/src/main/resources/templates/categories/list.html",
+      "sha256": "0d939500f72f8314fb72e2e9931b7b4859942244e5742961ad385387665b8d21"
+    },
+    {
+      "scope": "product",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/Product.java",
+      "sha256": "2cccef9a64e21a67d1e315bc0286aaa6c738fea6a880b39fba45b1e779a39c9b"
+    },
+    {
+      "scope": "product",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductCategoryChoice.java",
+      "sha256": "e92e7479b2d0b7ba399b011cd5f122379c635b6d3b7728cffdd506526de94d5d"
+    },
+    {
+      "scope": "product",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductInput.java",
+      "sha256": "7dca54e2e86ab0b9b15d4c3e3dec85a379e64e259bd7d781433243efedc1158b"
+    },
+    {
+      "scope": "product",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductMapper.java",
+      "sha256": "3cd3764968f8ea6312134bfb2e5a182165fb7ebd0ee9dd9fe46a009212b920b6"
+    },
+    {
+      "scope": "product",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductPage.java",
+      "sha256": "0895b2179645a3dae58812cbd0c1c0dedb5898ed270008cc096aad6a9ac3f8c2"
+    },
+    {
+      "scope": "product",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductQuery.java",
+      "sha256": "a13cd6bc32ac1ea45097708d2eafa73547f8081e12e8fa21ad1d4a2520c98dbe"
+    },
+    {
+      "scope": "product",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductService.java",
+      "sha256": "929adcd538d536d99eac381649e2587cf5f2f02c09a678f8d3ed7f523396b974"
+    },
+    {
+      "scope": "product",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductStatus.java",
+      "sha256": "4f49a46dd1967770dfddefb5e10428ff75ffa134c5ad7396bcf821133c7dc59e"
+    },
+    {
+      "scope": "product",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/ProductController.java",
+      "sha256": "7af539a909966292fdca5e657615dc479e5c3ebe75d86e24fb21672849aa9f64"
+    },
+    {
+      "scope": "product",
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/ProductReturnUrls.java",
+      "sha256": "62ff5c28676d3c6bd6ef6ffeb64a321fa184a5a8a254cfd57bfbc1a602517bca"
+    },
+    {
+      "scope": "product",
+      "path": "csucampuscraft-admin/src/main/resources/templates/products/form.html",
+      "sha256": "8eb2ab262f6023c5b4930adbb28e72fe4e81dfb32afbad5bf5e5d625d8b246b2"
+    },
+    {
+      "scope": "product",
+      "path": "csucampuscraft-admin/src/main/resources/templates/products/list.html",
+      "sha256": "c0f495bcffb9c67649e79d4033a9e0e599ecb8ae8fa86a22019b269de7c7935f"
+    }
+  ],
+  "blocking_findings": [],
+  "resolved_findings": [
+    {
+      "id": "REVIEW-01",
+      "issue": "SKU/initial-stock same-element th:if plus th:replace could discard create-only condition",
+      "resolution": "Final template wraps condition outside inner replacement",
+      "status": "fixed before frozen candidate"
+    },
+    {
+      "id": "REVIEW-02",
+      "issue": "Narrow CannotAcquireLockException handler did not include sibling deadlock mappings",
+      "resolution": "Common catches PessimisticLockingFailureException with safe409",
+      "status": "fixed statically; concurrency not accepted"
+    }
+  ],
+  "manual_observations": [
+    "All writes affect category/product only. Actor row select omits hash; invalid identity rolls back and global handler clears identity/confirmation then302.",
+    "ProductInput allowlists raw values. Edit reads SKU/stock from locked row; update SQL omits those immutable columns.",
+    "Product returns are restricted to fixed /products plus five rebound query fields, so literal search can be preserved without allowing external/actions.",
+    "400/409 field failures retain allowed input; stale edit version remains submitted until reload, with explicit reload link.",
+    "Category preserves homepage API and verifies AUTO ID by immediate primary-key read and five field comparisons."
+  ],
+  "limitations": [
+    "Static inspection does not prove runtime transaction isolation, actual lock sequence, generated ID, rollback, JDBC parameters or template rendering. Root actual repository verification is required.",
+    "Concurrent writers/fault injection remain STEP13; annotation checks do not establish concurrency correctness.",
+    "AI review does not establish named human cross-review."
+  ],
+  "targeted_revisions": [
+    {
+      "at": "2026-11-14T11:42:52.901762+08:00",
+      "path": "csucampuscraft-admin/src/main/resources/static/css/app.css",
+      "old_sha256": "033bb0a6ebfbaba68405f0a0bfec4da9a57d3027e2c42ddf17d1d4f3cb0789e4",
+      "new_sha256": "e9dae4739909b50fc4765bad72b9fce58ef8df6c892ae75443637e849c775420",
+      "reason": "Root appended A04/A05-specific scoped CSS; Java/SQL audit unchanged",
+      "visual_acceptance": "pending actual browser screenshots"
+    }
+  ]
+}

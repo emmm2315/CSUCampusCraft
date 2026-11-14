@@ -1,0 +1,34 @@
+{
+  "reviewer": "Codex independent UI visual review unit; AI-assisted, not named human cross-review",
+  "tested_code_sha": "93f3c461163ff09f54b667299360068d450ca254",
+  "expected_screenshot_count": 28,
+  "viewports": [
+    {
+      "width": 1366,
+      "height": 768
+    },
+    {
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "visual_checks": [
+    "readable page title and current module navigation",
+    "no clipped/overlapping content or page-level horizontal overflow",
+    "A03 root/child classification/code/name/order and field error context",
+    "A04 filters/count/row status/stock/actions and literal-search result",
+    "A05 new/edit field labels, readonly SKU and current stock, separate restock and state forms",
+    "HTTP400/409 screenshots have visible correction/refresh guidance and retained editable fields",
+    "no nested forms or visually duplicated editable/readonly SKU-stock controls",
+    "CSRF checked by recorded per-form boolean metadata, never claim hidden token value from pixels",
+    "plain text description/script text and actual image placeholder loading on public read screenshots",
+    "no visible password/hash/session/CSRF or complete order-address data"
+  ],
+  "evidence_boundary": [
+    "images are read-only and opened individually with view_image",
+    "no-op/version/database outcomes rely on HTTP/SQL evidence, not visual inference",
+    "POST failure screenshots show returned page; actual response status from browser metadata",
+    "fullPage PNG height may exceed viewport height",
+    "old failed attempts remain independent and cannot become full acceptance by combining partial images"
+  ]
+}
