@@ -1,5 +1,10 @@
 package org.csucampuscraft.admin.foundation.web;
 
+import org.csucampuscraft.admin.auth.SessionExpiredException;
+import org.csucampuscraft.admin.auth.SessionSupport;
+import org.springframework.web.servlet.view.RedirectView;
+import org.springframework.dao.PessimisticLockingFailureException;
+import org.springframework.dao.OptimisticLockingFailureException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -20,7 +25,28 @@ import org.springframework.web.servlet.ModelAndView;
 public final class GlobalExceptionHandler {
     private final PageModelAdvice pageModels;
 
-    public GlobalExceptionHandler(PageModelAdvice pageModels) { this.pageModels = pageModels; }
+    private final SessionSupport sessions;
+
+    public GlobalExceptionHandler(PageModelAdvice pageModels, SessionSupport sessions) {
+        this.pageModels = pageModels;
+        this.sessions = sessions;
+    }
+
+    @ExceptionHandler(SessionExpiredException.class)
+    public ModelAndView expired(SessionExpiredException failure, HttpServletRequest request) {
+        sessions.clear(request);
+        RedirectView redirect = new RedirectView("/login?returnUrl=%2F", true);
+        redirect.setStatusCode(HttpStatus.FOUND);
+        redirect.setExposeModelAttributes(false);
+        redirect.setExpandUriTemplateVariables(false);
+        return new ModelAndView(redirect);
+    }
+
+    @ExceptionHandler({PessimisticLockingFailureException.class, OptimisticLockingFailureException.class})
+    public ModelAndView writeConflict(Exception failure, HttpServletRequest request) {
+        return page(request, HttpStatus.CONFLICT, "WRITE_CONFLICT",
+                "数据已变化或正在更新，请刷新页面后重试。", Map.of());
+    }
 
     @ExceptionHandler(BusinessException.class)
     public ModelAndView business(BusinessException exception, HttpServletRequest request) {

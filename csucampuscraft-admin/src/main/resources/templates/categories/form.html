@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('分类表单 · CSUCampusCraft', ~{::mainContent})}">
+<head><title>分类表单</title></head>
+<body>
+<section th:fragment="mainContent" data-page-id="A03" class="admin-category-form"
+         th:attr="data-category-id=${category == null ? null : category.id}">
+    <nav aria-label="当前位置"><a th:href="@{/categories}">分类列表</a> / <span aria-current="page" th:text="${category == null ? '新增分类' : '编辑分类'}">分类表单</span></nav>
+    <header class="page-heading">
+        <h1 th:text="${category == null ? '新增分类' : '编辑分类'}">分类表单</h1>
+        <p class="muted" th:if="${category == null}">留空父级创建一级主题；选择一级父主题创建二级分类，编码由父编码和商品类型自动生成。</p>
+        <p class="muted" th:if="${category != null}">仅修改名称和排序，编码、父级和类型保持原值。</p>
+    </header>
+    <div class="panel">
+        <th:block th:replace="~{fragments/alerts :: summary(${fieldErrors})}"></th:block>
+        <form method="post" th:action="${category == null ? '/categories' : '/categories/' + category.id}"
+              data-submit-state data-category-form>
+            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+            <th:block th:if="${category == null}">
+                <div class="form-field" th:with="bad=${fieldErrors.containsKey('parentId')}">
+                    <label for="parentId">父级一级主题</label>
+                    <select id="parentId" name="parentId"
+                            th:attr="aria-invalid=${bad},aria-describedby=${bad ? 'parentId-error' : 'parentId-help'}">
+                        <option value="" th:selected="${#strings.isEmpty(form.parentId)}">无父级（创建一级）</option>
+                        <option th:each="parent : ${parentThemes}" th:value="${parent.id}" th:text="${parent.name}"
+                                th:selected="${form.parentId == parent.id.toString()}">校园主题</option>
+                    </select>
+                    <p id="parentId-help" class="field-help">二级只能归入一级主题，不支持三级。</p>
+                    <p th:if="${bad}" id="parentId-error" class="field-error" th:text="${fieldErrors.get('parentId')}">请检查父级。</p>
+                </div>
+                <th:block th:replace="~{fragments/fields :: text('code','code','一级编码（创建一级时必填）',${form.code},${fieldErrors})}"></th:block>
+                <p class="field-help">一级编码最多 21 个字符，最长二级编码为 21 + 11 = 32；创建二级时忽略此输入并由服务端生成。</p>
+                <div class="form-field" th:with="bad=${fieldErrors.containsKey('type')}">
+                    <label for="type">二级商品类型</label>
+                    <select id="type" name="type" th:attr="aria-invalid=${bad},aria-describedby=${bad ? 'type-error' : 'type-help'}">
+                        <option value="STATIONERY" th:selected="${form.type == 'STATIONERY'}">文具</option>
+                        <option value="SOUVENIR" th:selected="${form.type == 'SOUVENIR'}">纪念周边</option>
+                    </select>
+                    <p id="type-help" class="field-help">创建二级时必须选择；创建一级时不使用此字段。</p>
+                    <p th:if="${bad}" id="type-error" class="field-error" th:text="${fieldErrors.get('type')}">请检查类型。</p>
+                </div>
+            </th:block>
+            <dl th:if="${category != null}">
+                <dt>分类 ID</dt><dd th:text="${category.id}">0</dd>
+                <dt>固定编码</dt><dd th:text="${category.code}" data-readonly-code>CODE</dd>
+                <dt>固定父级 ID</dt><dd th:text="${category.parentId == null ? '无（一级主题）' : category.parentId}" data-readonly-parent>无</dd>
+            </dl>
+            <th:block th:replace="~{fragments/fields :: text('name','name','分类名称',${form.name},${fieldErrors})}"></th:block>
+            <p class="field-help">名称为 1–50 个字符，同父级名称不重复。</p>
+            <th:block th:replace="~{fragments/fields :: number('sortOrder','sortOrder','排序值',${form.sortOrder},0,2147483647,1,${fieldErrors})}"></th:block>
+            <p class="field-help">非负整数，留空按 0 保存。</p>
+            <button type="submit" th:text="${category == null ? '新增分类' : '保存分类'}">保存分类</button>
+            <a class="button button-secondary" th:href="@{/categories}">返回分类列表</a>
+        </form>
+    </div>
+</section>
+</body>
+</html>

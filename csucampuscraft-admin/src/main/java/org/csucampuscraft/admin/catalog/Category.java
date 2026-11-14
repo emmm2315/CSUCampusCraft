@@ -13,23 +13,18 @@ public class Category {
     private String name;
     private Integer sortOrder;
 
-    public Long getId() {
-        return id;
+    public Category() { }
+
+    public Category(String code, Long parentId, String name, int sortOrder) {
+        this.code = code;
+        this.parentId = parentId;
+        this.name = name;
+        this.sortOrder = sortOrder;
     }
 
-    public String getCode() {
-        return code;
-    }
-
-    public Long getParentId() {
-        return parentId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Integer getSortOrder() {
-        return sortOrder;
-    }
+    public Long getId() { return id; }
+    public String getCode() { return code; }
+    public Long getParentId() { return parentId; }
+    public String getName() { return name; }
+    public Integer getSortOrder() { return sortOrder; }
 }

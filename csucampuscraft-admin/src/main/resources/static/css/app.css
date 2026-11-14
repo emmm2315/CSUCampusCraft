@@ -226,3 +226,22 @@ tbody tr[aria-disabled="true"] { color: var(--color-muted); background: var(--co
 /* STEP04: shared login panel; colors, spacing and fields reuse foundation tokens. */
 .auth-panel { max-width: 32rem; margin-inline: auto; }
 .auth-panel > .field-help { margin-top: var(--space-4); }
+
+/* STEP05: management-only page arrangements; shared tokens/components above are unchanged. */
+.admin-toolbar, .admin-actions, .admin-row-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+.admin-toolbar { justify-content: space-between; margin-bottom: var(--space-6); }
+.admin-actions form, .admin-row-actions form { margin: 0; }
+.admin-form { display: grid; gap: var(--space-4); }
+.admin-form .form-field { margin-bottom: 0; }
+.admin-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
+.admin-filter, .admin-filter-form { display: flex; flex-wrap: wrap; align-items: end; gap: var(--space-4); }
+.admin-filter .form-field, .admin-filter-form .form-field { flex: 1 1 160px; }
+.admin-table-wrap { width: 100%; overflow-x: auto; }
+.admin-description { white-space: pre-wrap; overflow-wrap: anywhere; }
+@media (max-width: 760px) { .admin-form-grid { grid-template-columns: 1fr; } }
+.admin-pagination { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; justify-content: center; margin-top: var(--space-6); }
+[data-page-id="A05"] .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
+[data-page-id="A04"] .button-row, [data-page-id="A05"] .button-row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+[data-page-id="A04"] .table-container { width: 100%; overflow-x: auto; }
+[data-page-id="A05"] .panel + .panel { margin-top: var(--space-6); }
+@media (max-width: 760px) { [data-page-id="A05"] .form-grid { grid-template-columns: 1fr; } }

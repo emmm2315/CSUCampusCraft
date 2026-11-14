@@ -12,4 +12,10 @@ public interface StoreUserMapper extends BaseMapper<StoreUser> {
             FROM store_user WHERE username = #{username}
             """)
     StoreUser selectForLoginByUsername(@Param("username") String username);
+
+    @Select("""
+            SELECT id, username, display_name, role, status, updated_at
+            FROM store_user WHERE id = #{id} FOR UPDATE
+            """)
+    StoreUser selectForUpdate(@Param("id") long id);
 }

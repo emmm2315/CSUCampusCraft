@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('分类管理 · CSUCampusCraft', ~{::mainContent})}">
+<head><title>分类管理</title></head>
+<body>
+<section th:fragment="mainContent" data-page-id="A03" class="admin-categories"
+         th:attr="data-category-count=${#lists.size(categories)},data-created-id=${createdCategory == null ? null : createdCategory.id}">
+    <nav aria-label="当前位置"><a th:href="@{/}">管理端首页</a> / <span aria-current="page">分类管理</span></nav>
+    <header class="page-heading">
+        <h1>分类管理</h1>
+        <p class="muted">一级校园主题包含文具或纪念周边二级分类。编码和父级创建后固定。</p>
+        <div><a class="button" th:href="@{/categories/new}">新增分类</a> <a class="button button-secondary" th:href="@{/products}">商品列表</a></div>
+    </header>
+    <p th:if="${createdCategory != null}" class="alert alert-success" role="status">
+        已定位分类：<strong th:text="${createdCategory.name}">分类</strong>，ID <span th:text="${createdCategory.id}" data-generated-id>0</span>。
+    </p>
+    <div th:if="${#lists.isEmpty(categories)}" class="empty-state" data-category-empty>
+        <h2>暂无分类</h2><p>先新增一级校园主题，再为其新增文具或纪念周边。</p>
+    </div>
+    <div class="admin-table-wrap" th:unless="${#lists.isEmpty(categories)}">
+        <table>
+            <caption>校园主题及二级商品分类</caption>
+            <thead><tr><th scope="col">ID / 层级</th><th scope="col">名称</th><th scope="col">编码</th><th scope="col">父级 / 类型</th><th scope="col">排序</th><th scope="col">操作</th></tr></thead>
+            <tbody>
+            <tr th:each="item : ${categories}"
+                th:attr="data-category-id=${item.id},data-category-code=${item.code},data-parent-id=${item.parentId == null ? '' : item.parentId}">
+                <td><span th:text="${item.id}">0</span> / <span th:text="${item.parentId == null ? '一级' : '二级'}">一级</span></td>
+                <td th:text="${item.name}">校园主题</td>
+                <td th:text="${item.code}">CODE</td>
+                <td>
+                    <th:block th:if="${item.parentId == null}">无父级 / 校园主题</th:block>
+                    <th:block th:if="${item.parentId != null}">
+                        <span th:text="${parentNames.get(item.parentId)}">父主题</span> /
+                        <span th:text="${#strings.endsWith(item.code, '_STATIONERY') ? '文具' : (#strings.endsWith(item.code, '_SOUVENIR') ? '纪念周边' : '其他')}">文具</span>
+                    </th:block>
+                </td>
+                <td th:text="${item.sortOrder}">0</td>
+                <td>
+                    <a th:href="@{/categories/{id}/edit(id=${item.id})}">编辑名称和排序</a>
+                    <form method="post" th:action="@{/categories/{id}/remove(id=${item.id})}" data-submit-state>
+                        <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+                        <p class="field-help" th:text="${'确认删除「' + item.name + '」？仅无子类、无商品引用的空分类可删除。'}">仅空分类可删除。</p>
+                        <button type="submit" class="button-secondary">确认删除空分类</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+</body>
+</html>

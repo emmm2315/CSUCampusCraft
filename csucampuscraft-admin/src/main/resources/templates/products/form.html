@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page(${editing ? '编辑商品 · CSUCampusCraft' : '新建商品 · CSUCampusCraft'}, ~{::mainContent})}">
+<head><title>商品资料</title></head>
+<body>
+<div th:fragment="mainContent" data-page-id="A05"
+     th:attr="data-product-id=${product == null ? null : product.id},data-version=${product == null ? 0 : product.version}">
+    <header class="page-heading admin-toolbar">
+        <div><p class="eyebrow">商品资料</p><h1 th:text="${editing ? '编辑商品' : '新建商品'}">商品资料</h1>
+            <p class="muted" th:text="${editing ? '修改资料时保留现有 SKU、库存和上架状态。' : '新商品先保存为草稿，检查后再上架。'}">商品说明</p></div>
+        <div class="button-row">
+            <a class="button button-secondary" th:href="${returnUrl}">返回商品列表</a>
+            <a class="button button-secondary" th:if="${editing}"
+               th:href="@{/products/{id}/edit(id=${product.id},returnUrl=${returnUrl})}" data-reload-product>重新载入编辑页</a>
+        </div>
+    </header>
+    <div class="empty-state" th:if="${#lists.isEmpty(categories)}">
+        <p>还没有可用的二级分类，请先创建分类。</p><a th:href="@{/categories/new}">前往分类管理</a>
+    </div>
+    <th:block th:replace="~{fragments/alerts :: summary(${fieldErrors})}"></th:block>
+    <section class="panel">
+        <form method="post" th:action="${editing ? '/products/' + product.id : '/products'}" data-submit-state data-product-form>
+            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+            <input type="hidden" name="returnUrl" th:value="${returnUrl}">
+            <input th:if="${editing}" type="hidden" name="version" th:value="${form.version}">
+            <p id="version" class="field-help" th:if="${editing}" th:classappend="${fieldErrors.containsKey('version') ? 'field-error' : ''}"
+               th:text="${fieldErrors.containsKey('version') ? fieldErrors.get('version') : '保存时核对商品资料状态；提示过期时请重新载入。'}">资料状态</p>
+            <div class="form-grid">
+                <th:block th:if="${!editing}"><th:block th:replace="~{fragments/fields :: text('sku','sku','SKU',${form.sku},${fieldErrors})}"></th:block></th:block>
+                <div class="form-field" th:if="${editing}">
+                    <label for="sku">SKU（只读）</label>
+                    <input id="sku" type="text" readonly th:value="${product.sku}">
+                </div>
+                <div class="form-field" th:with="hasError=${fieldErrors.containsKey('categoryId')}">
+                    <label for="categoryId">二级分类</label>
+                    <select id="categoryId" name="categoryId"
+                            th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? 'categoryId-error' : null}">
+                        <option value="">请选择二级分类</option>
+                        <option th:each="choice : ${categories}" th:value="${choice.id}"
+                                th:selected="${form.categoryId != null and form.categoryId.strip() == choice.id.toString()}"
+                                th:text="${choice.label}">二级分类</option>
+                    </select>
+                    <p class="field-error" id="categoryId-error" th:if="${hasError}" th:text="${fieldErrors.get('categoryId')}">请选择分类。</p>
+                </div>
+                <th:block th:replace="~{fragments/fields :: text('name','name','商品名称',${form.name},${fieldErrors})}"></th:block>
+                <th:block th:replace="~{fragments/fields :: text('price','price','售价（元）',${form.price},${fieldErrors})}"></th:block>
+                <th:block th:if="${!editing}"><th:block th:replace="~{fragments/fields :: number('stock','stock','初始库存',${form.stock},0,2147483647,1,${fieldErrors})}"></th:block></th:block>
+                <div class="form-field" th:if="${editing}">
+                    <label for="stock">当前库存（只读）</label>
+                    <input id="stock" type="number" readonly th:value="${product.stock}">
+                </div>
+                <th:block th:replace="~{fragments/fields :: number('sortOrder','sortOrder','排序值',${form.sortOrder},0,2147483647,1,${fieldErrors})}"></th:block>
+            </div>
+            <p class="field-help">SKU 最多 40 个字符，名称最多 120 个字符。售价为 0.01–9,999,999,999.99 元，最多两位小数。</p>
+            <div class="form-field" th:with="hasError=${fieldErrors.containsKey('summary')}">
+                <label for="summary">商品摘要</label>
+                <textarea id="summary" name="summary" rows="3" th:text="${form.summary}"
+                          th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? 'summary-error' : 'summary-help'}"></textarea>
+                <p id="summary-help" class="field-help">可选，最多 500 个字符。</p>
+                <p id="summary-error" class="field-error" th:if="${hasError}" th:text="${fieldErrors.get('summary')}">摘要过长。</p>
+            </div>
+            <div class="form-field" th:with="hasError=${fieldErrors.containsKey('description')}">
+                <label for="description">设计说明</label>
+                <textarea id="description" name="description" rows="6" th:text="${form.description}"
+                          th:attr="aria-invalid=${hasError},aria-describedby=${hasError ? 'description-error' : 'description-help'}"></textarea>
+                <p id="description-help" class="field-help">可选，按普通文本保存；内容总量最多 65,535 字节。</p>
+                <p id="description-error" class="field-error" th:if="${hasError}" th:text="${fieldErrors.get('description')}">设计说明过长。</p>
+            </div>
+            <th:block th:replace="~{fragments/fields :: text('coverImage','coverImage','封面路径',${form.coverImage},${fieldErrors})}"></th:block>
+            <p class="field-help">可留空。填写时使用 images/ 下的站内相对路径，最多 255 个字符。</p>
+            <div class="button-row">
+                <button type="submit" th:disabled="${#lists.isEmpty(categories)}" th:text="${editing ? '保存资料' : '保存草稿'}">保存</button>
+                <a class="button button-secondary" th:href="${returnUrl}">取消</a>
+            </div>
+        </form>
+    </section>
+    <section class="panel" th:if="${editing}" aria-labelledby="status-heading">
+        <h2 id="status-heading">商品状态</h2>
+        <p>当前为 <strong th:text="${product.status == 'DRAFT' ? '草稿' : '上架'}">草稿</strong>
+            <span th:if="${product.status == 'ON_SALE' and product.stock == 0}">（售罄）</span></p>
+        <div class="button-row">
+            <form th:if="${product.status == 'DRAFT'}" method="post" th:action="@{/products/{id}/publish(id=${product.id})}"
+                  data-submit-state data-product-action="publish">
+                <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+                <input type="hidden" name="returnUrl" th:value="${returnUrl}">
+                <input type="hidden" name="version" th:value="${product.version}">
+                <button type="submit">上架商品</button>
+            </form>
+            <form th:if="${product.status == 'ON_SALE'}" method="post" th:action="@{/products/{id}/unpublish(id=${product.id})}"
+                  data-submit-state data-product-action="unpublish">
+                <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+                <input type="hidden" name="returnUrl" th:value="${returnUrl}">
+                <input type="hidden" name="version" th:value="${product.version}">
+                <button type="submit" class="button-secondary">下架商品</button>
+            </form>
+        </div>
+    </section>
+    <section class="panel" th:if="${editing}" aria-labelledby="restock-heading">
+        <h2 id="restock-heading">增量补货</h2>
+        <p>当前库存 <strong th:text="${product.stock}">0</strong> 件。提交一次表示增加一次指定数量。</p>
+        <form method="post" th:action="@{/products/{id}/restock(id=${product.id})}" data-submit-state data-restock-form>
+            <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+            <input type="hidden" name="returnUrl" th:value="${returnUrl}">
+            <th:block th:replace="~{fragments/fields :: number('quantity','quantity','本次增加数量',${restockQuantity},1,2147483647,1,${fieldErrors})}"></th:block>
+            <button type="submit">确认补货</button>
+        </form>
+    </section>
+</div>
+</body>
+</html>
