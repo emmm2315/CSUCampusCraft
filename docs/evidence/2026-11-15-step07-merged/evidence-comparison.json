@@ -1,0 +1,165 @@
+{
+  "kind": "READ_ONLY_COMPARISON",
+  "ours_tip": "dda8f8254eec3f63e9c3bede397131cbe55c6179",
+  "ours_tested_sha": "3bc5629bcbcbeefa6cbc8f655e8cb4d790c81b77",
+  "member_tip": "221dfb6dfa4fe93d69ffe1eecda97e98705406e1",
+  "shared_baseline": "a1d4f3523f557af63fc77ea883986c099edcd93e",
+  "member_evidence_blob_identity": {
+    "README.md": {
+      "bytes": 3004,
+      "sha256": "6cbaec9951e404cdb065a0d8aec0cab8660d83cf284c3147f8649dd53b0a504b"
+    },
+    "summary.json": {
+      "bytes": 1150,
+      "sha256": "5f6f50aa3a0429d463a14353afb941b24000f27b6fb46cf1dc56ddd96a383893",
+      "top_level_keys": [
+        "scope",
+        "baseline_git_sha",
+        "tested_worktree",
+        "runtime_input_count",
+        "runtime_input_digest",
+        "runtime_inputs_unchanged",
+        "database_version",
+        "http_checks",
+        "http_failed",
+        "serial_cart_post_records",
+        "concurrent_cart_post_groups",
+        "completed",
+        "service_probe_checks",
+        "model_probe_checks",
+        "browser_checks",
+        "page_screenshots",
+        "toolchain_used",
+        "limitations"
+      ]
+    },
+    "publication.json": {
+      "bytes": 1809,
+      "sha256": "c99a302eeabba958cd64d348cd82de4727cd98b24206c5051148b51db2b67a18",
+      "top_level_keys": [
+        "date",
+        "purpose",
+        "branch",
+        "code_commit",
+        "evidence_commit",
+        "commits",
+        "original_test_baseline",
+        "original_test_identity_preserved",
+        "runtime_input_count",
+        "runtime_input_digest",
+        "runtime_disk_hashes_match_test_snapshot",
+        "git_filtered_blobs_match_code_commit",
+        "runtime_changed_paths",
+        "committed_content_mismatch_paths",
+        "both_jars_match_test_snapshot",
+        "evidence_index_metadata_update",
+        "human_review",
+        "main_merge"
+      ]
+    },
+    "publication-audit.json": {
+      "bytes": 3659,
+      "sha256": "6901b4455bcdff65564d97fc53166a015f0aa7cdb173c526d40c5430da451574",
+      "top_level_keys": [
+        "overall",
+        "date",
+        "method",
+        "code_commit",
+        "evidence_commit",
+        "original_archive_files",
+        "unchanged_original_files",
+        "changed_original_paths",
+        "new_paths_before_this_audit",
+        "assertions",
+        "runtime_input_count",
+        "runtime_input_digest",
+        "runtime_disk_mismatches",
+        "filtered_blob_mismatches",
+        "jar_mismatches",
+        "index_sha256",
+        "commit_messages",
+        "sensitive_findings",
+        "publication_file_sha256",
+        "original_test_and_audit_records_rewritten",
+        "limits"
+      ]
+    },
+    "toolchain.json": {
+      "bytes": 2039,
+      "sha256": "26bc8140aba21e2f7d8f47fa2a18b8f36b150494dac6f83086a715d1a5dedc2c",
+      "top_level_keys": [
+        "repo",
+        "java_home",
+        "python",
+        "node",
+        "maven",
+        "cached_wrapper_distribution",
+        "mysql",
+        "mysqld",
+        "mysql80_compatibility_bin",
+        "mysql_baseline",
+        "mysql_discovered_version",
+        "mysql84_instance_manifest",
+        "playwright",
+        "browser",
+        "private_maven_home",
+        "private_maven_repository",
+        "read_only_findings"
+      ]
+    }
+  },
+  "differences": [
+    {
+      "item": "tested identity",
+      "ours": "Committed source3bc5629 with clean start; later docsdda8f82",
+      "member": "Uncommitted workspace at acceptance; publication.json later links exact source snapshot to function aggregateceb4059; do not claim postcommit rerun",
+      "choice": "Preserve both original identities; execute new clean merged SHA"
+    },
+    {
+      "item": "runtime manifest",
+      "ours": "140 files;606956a7a7ff516732e9c3484b3573386899fdb346d4210ec93c5addf9e1f5a9",
+      "member": "137 files before/after JSON manifests; publication raw mapping retained",
+      "choice": "New140+input manifest and exact JAR digests from merged source"
+    },
+    {
+      "item": "environment",
+      "ours": "JDK21.0.12.1/Maven3.9.16/MySQL8.4.9; all SQL clients UTC",
+      "member": "JDK21.0.7.6/Maven3.9.16/MySQL8.4.13; auxiliary SQL clients not each SET UTC;8.0.44 compatibility pass not baseline",
+      "choice": "Fresh local8.4.9 instance; every SQL connection UTC; record actual versions"
+    },
+    {
+      "item": "HTTP audit boundary",
+      "ours": "335HTTP;154allPOST includinglogin/logout/guest/CSRF;154automatic7tablepairs;293journalrecords",
+      "member": "73sequentialcartPOST+4overlapping2requestgroups=81cartPOST; GET/login/logout not each audited7tables",
+      "choice": "New fullcartmatrix and every newPOST7table pairs; no old result reuse"
+    },
+    {
+      "item": "native tests",
+      "ours": "50 actualJAR Service observations; no concurrency/fault proof",
+      "member": "31 ServiceProbe and18 ModelProbe observations; lockwait disable andMAX; four real concurrentcartgroups",
+      "choice": "New serialactualJAR guard/RC/no-product-lock/noop proof; retain member old concurrency evidence only under member prefix"
+    },
+    {
+      "item": "browser",
+      "ours": "24screens2desktopviewports;302checks; independent fullPNG review",
+      "member": "30screens3viewports1366/1920/390;463checks;2contact sheets",
+      "choice": "New20-30screens1366/1920 including true guestlink/login/manualadd journey; oldimages not newproof"
+    },
+    {
+      "item": "documentation",
+      "ours": "STEP07section detailedperREQpartial TST, sourceSHA andcurrentstatus; originalbusinessstandards preserved",
+      "member": "AlternateSTEP07history with publicationassociation, concurrency scope andSQLUTClimitation explicitly disclosed",
+      "choice": "Keepoursoriginalrecord; link immutable member raw copy; add finalmerge subsection plus newcomparison/newvalidation"
+    }
+  ],
+  "merge_evidence_destination": "docs/evidence/2026-11-14-step07-member/",
+  "new_validation_destination": "docs/evidence/2026-11-15-step07-merged/",
+  "constraints": [
+    "no main/remote ref changes",
+    "no network",
+    "read-only comparison before implementation",
+    "old evidence bytes retained",
+    "AI comparisons do not replace human group review"
+  ],
+  "timestamp_note": "Directory date2026-11-15 is explicitly requested batch label; actual test timestamps must follow actual system clock rather than fabricate future date."
+}

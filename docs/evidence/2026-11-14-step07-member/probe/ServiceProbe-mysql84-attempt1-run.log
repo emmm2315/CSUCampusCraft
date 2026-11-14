@@ -1,0 +1,39 @@
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.7 
+PASS CartService is a real Spring transaction proxy
+PASS CustomerWriteGuard is a real Spring transaction proxy
+PASS proxied guard refuses no transaction
+PASS direct guard refuses no transaction
+DATABASE_VERSION=8.4.13
+ORIGINAL_TABLE_HASHES={store_user=74a7fcb64141afbec0dab919bdc814ba348892bd4f8692f28d8771717f7c27c5, category=18e12182ebd31cc1bd642e6d8b52f167d86426a12076a5ce45763d3ab0706e03, product=0eb0e306df0434d1fb1168c60fdd503838eea9f5acec27889497e058df94db52, product_image=1508503e119237cebf991c153a8aa310946d9a8a24af242cf454899be8a65b1d, cart_item=0c87326682755ed9a3fa575b869f5f6ecb5bcc198ea6f51b7906670c855103cb, sales_order=d35b05d5dbc0f96dc991cc17dd6dad093b801a3835d62e31b2fd835c17025210, sales_order_item=6812cc2617de1f57640f467447b5607e27a9b4a5e4ffb85202c1a08bd95e894f}
+PASS dedicated CUSTOMER fixture inserted
+PASS guard refuses REPEATABLE READ
+PASS guard refuses read-only transaction
+PASS real proxied Service add commits one owned row
+PASS same quantity preserves row version and timestamps
+PASS whole cart badge sums quantity
+PASS negative direct Service quantity rejected
+PASS invalid direct quantity has no mutation
+PASS real Service remove commits
+PASS independent connection locks actor
+PASS write worker starts
+PASS Service waits for actor row lock
+PASS disable commits before waiting write resumes
+PASS waiting write rechecks identity inside lock
+PASS lock-time authentication refusal preserves empty cart
+PASS re-enabled account cannot reuse old auth stamp
+PASS old stamp refusal has no mutation
+PASS max version permits a valid same-value no-op
+PASS max version real change rejected
+PASS max version merged add rejected
+PASS max version conflicts preserve all cart fields
+PASS max version item remains removable
+PASS Service cart writes never alter product
+PASS direct Service rejects enabled wrong role
+PASS wrong role refusal keeps cart empty
+PASS dedicated fixture cleaned
+FINAL_TABLE_HASHES={store_user=74a7fcb64141afbec0dab919bdc814ba348892bd4f8692f28d8771717f7c27c5, category=18e12182ebd31cc1bd642e6d8b52f167d86426a12076a5ce45763d3ab0706e03, product=0eb0e306df0434d1fb1168c60fdd503838eea9f5acec27889497e058df94db52, product_image=1508503e119237cebf991c153a8aa310946d9a8a24af242cf454899be8a65b1d, cart_item=0c87326682755ed9a3fa575b869f5f6ecb5bcc198ea6f51b7906670c855103cb, sales_order=d35b05d5dbc0f96dc991cc17dd6dad093b801a3835d62e31b2fd835c17025210, sales_order_item=6812cc2617de1f57640f467447b5607e27a9b4a5e4ffb85202c1a08bd95e894f}
+PASS all seven tables restored after dedicated fixture cleanup
+SERVICE_PROBE_PASSED=31

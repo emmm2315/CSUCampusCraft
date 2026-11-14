@@ -1,0 +1,26 @@
+{
+  "repo": "D:/severlt/实验1/CSUCampusCraft",
+  "java_home": "C:/Program Files/Microsoft/jdk-21.0.7.6-hotspot",
+  "python": "D:/Python3.17/python.exe",
+  "node": "C:/Program Files/nodejs/node.exe",
+  "maven": "F:/apache-maven-3.9.14/apache-maven-3.9.14/bin/mvn.cmd",
+  "cached_wrapper_distribution": "C:/Users/lenovo/.m2/wrapper/dists/apache-maven-3.9.16-bin/5grr65jo27hi51sujmtcldfovl/apache-maven-3.9.16-bin.zip",
+  "mysql": "D:/severlt/tmp/step07-validation/tools/mysql-8.4.13-winx64/bin/mysql.exe",
+  "mysqld": "D:/severlt/tmp/step07-validation/tools/mysql-8.4.13-winx64/bin/mysqld.exe",
+  "mysql80_compatibility_bin": "F:/MySQL/bin",
+  "mysql_baseline": "8.4",
+  "mysql_discovered_version": "8.4.13",
+  "mysql84_instance_manifest": "D:/severlt/tmp/step07-validation/runtime/mysql84-attempt1/instance.json",
+  "playwright": "C:/Program Files/WindowsApps/OpenAI.CodexPrimaryRuntime.v26-1112-611-0_26.1112.611.0_x64__3k8sg7r9htsxt/dependencies/node/node_modules/playwright",
+  "browser": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+  "private_maven_home": "D:/severlt/tmp/step07-validation/maven-home",
+  "private_maven_repository": "D:/severlt/tmp/step07-validation/m2",
+  "read_only_findings": [
+    "JDK21, Python3.13.5, Node24.11.1, Maven3.9.14, Playwright1.62.1, Chrome and Edge are available.",
+    "MySQL8.4.13 official noinstall ZIP was downloaded, full MD5 matched, and a workspace-only independent instance was initialized. The original F:/MySQL8.0.44 remains untouched.",
+    "The repository Wrapper3.3.4 expects Maven3.9.16 under a SHA256 cache directory. The existing base36 cache is not automatically reused.",
+    "An existing local Maven3.9.16 ZIP can seed a workspace-local Wrapper cache without downloading Maven.",
+    "The existing Maven artifact cache has Spring Boot parent3.5.14 but not required3.5.15; full builds may need dependency downloads.",
+    "Service/CIM inventory is unavailable in the sandbox; do not control system services or infer that no existing database is running."
+  ]
+}

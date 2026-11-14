@@ -1,0 +1,328 @@
+{
+  "result": "READ_ONLY_COMPARISON_COMPLETE",
+  "scope": "Actual git blobs at fixed parallel branch tips; no application execution or source mutation",
+  "refs": {
+    "ours": "dda8f8254eec3f63e9c3bede397131cbe55c6179",
+    "member": "221dfb6dfa4fe93d69ffe1eecda97e98705406e1"
+  },
+  "file_sha256": {
+    "ours": {
+      "csucampuscraft-user/src/main/resources/templates/products/detail.html": "ee685a9109d151402e10fd09ecf3420e827dab6f7fffaa7dc897479456e2280a",
+      "csucampuscraft-user/src/main/resources/templates/cart/index.html": "79bacd24b397cd996785f373fa6fe7d7c8fdd9d94880d82337d1d47b6df82bcf",
+      "csucampuscraft-user/src/main/resources/templates/fragments/layout.html": "17ad6e50247219ec8e8fac013981aedbbd5df3e25d03a65c05d67db574d742f9",
+      "csucampuscraft-user/src/main/resources/static/css/app.css": "2aff631685c06ded11bd0a5605b5662e15a5922225c497068a74811fed6312ea",
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthFilter.java": "6ec78b970735f9573a6ed8ef3e9c1de7eb170ac6cc1ec102fb9f6c88e9a21c88",
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java": "5fed6ae445ec997fcb2fcf0ac5f99bc6a1120bf4ee74c6678557d0953758722f",
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/LoginController.java": "1134bab8035a6c6edc2726ef4d112e96db846493d4f3ad72904ee1570f942dde",
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartItemMapper.java": "deafffa4dcf5599eac3b616deb0011d8b4e005751ac3a71416091b4ac59cebe1"
+    },
+    "member": {
+      "csucampuscraft-user/src/main/resources/templates/products/detail.html": "75d34b83c479fcc7a47965f05b39c6ffebe4f4e0edfb62acc39f173631da6fa2",
+      "csucampuscraft-user/src/main/resources/templates/cart/index.html": "15039221fc8b1949fc4994ca4e6f9385e1b6a6665b6d305962d6b1333c69637e",
+      "csucampuscraft-user/src/main/resources/templates/fragments/layout.html": "ca31c4fbfc471e477b40b072f55a63b77d5a9f61c0a34ec8a042874c88e3251b",
+      "csucampuscraft-user/src/main/resources/static/css/app.css": "014c303d517cb663d72fc77683d789c729f9f6080a83ce4ae9cd41ffb2139b7b",
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthFilter.java": "70e41dbe31e94752002f4c2ff13b99cdd21c574835319f780a311df3bc6af583",
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java": "164d9f4135b684d301e996af29c80e42bd7d703a70b767a43f88f4ff84ad0972",
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/LoginController.java": "e81fa9ebf1e12ecfcacae44f5d4bee4e002cbcff77583552753141c2bb7ff302",
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartItemMapper.java": "169fcae6a4f6bb7392d064ee1107baab209325ca7ab34fa47e5de609e27e0854"
+    }
+  },
+  "data_markers": {
+    "ours": {
+      "csucampuscraft-user/src/main/resources/templates/products/detail.html": [
+        "data-add-cart",
+        "data-cover-image",
+        "data-gallery-count",
+        "data-gallery-empty",
+        "data-image-id",
+        "data-image-sort",
+        "data-page-id",
+        "data-price",
+        "data-product-gallery",
+        "data-product-id",
+        "data-product-sku",
+        "data-stock",
+        "data-submit-state"
+      ],
+      "csucampuscraft-user/src/main/resources/templates/cart/index.html": [
+        "data-cart-action",
+        "data-cart-all-valid",
+        "data-cart-empty",
+        "data-cart-invalid-count",
+        "data-cart-invalid-notice",
+        "data-cart-item-count",
+        "data-cart-item-id",
+        "data-cart-line-state",
+        "data-cart-quantity",
+        "data-cart-total",
+        "data-cart-valid",
+        "data-cart-version-feedback",
+        "data-checkout-unavailable",
+        "data-invalid-reason",
+        "data-line-subtotal",
+        "data-line-subtotal-excluded",
+        "data-page-id",
+        "data-product-id",
+        "data-quantity",
+        "data-reload-cart",
+        "data-submit-state",
+        "data-version"
+      ],
+      "csucampuscraft-user/src/main/resources/templates/fragments/layout.html": [
+        "data-authenticated",
+        "data-cart-link",
+        "data-cart-quantity",
+        "data-cart-quantity-unavailable",
+        "data-csucampuscraft-app",
+        "data-current-user",
+        "data-logout-form",
+        "data-submit-state"
+      ]
+    },
+    "member": {
+      "csucampuscraft-user/src/main/resources/templates/products/detail.html": [
+        "data-add-to-cart",
+        "data-cover-image",
+        "data-gallery-count",
+        "data-gallery-empty",
+        "data-image-id",
+        "data-image-sort",
+        "data-page-id",
+        "data-price",
+        "data-product-gallery",
+        "data-product-id",
+        "data-product-sku",
+        "data-stock",
+        "data-submit-state"
+      ],
+      "csucampuscraft-user/src/main/resources/templates/cart/index.html": [
+        "data-cart-empty",
+        "data-cart-invalid",
+        "data-cart-item-id",
+        "data-cart-quantity-form",
+        "data-cart-remove-form",
+        "data-cart-total",
+        "data-cart-total-quantity",
+        "data-checkout-allowed",
+        "data-page-id",
+        "data-product-id",
+        "data-quantity",
+        "data-submit-state",
+        "data-valid",
+        "data-version"
+      ],
+      "csucampuscraft-user/src/main/resources/templates/fragments/layout.html": [
+        "data-authenticated",
+        "data-cart-quantity",
+        "data-csucampuscraft-app",
+        "data-current-user",
+        "data-logout-form",
+        "data-submit-state"
+      ]
+    }
+  },
+  "landmarks": {
+    "ours": {
+      "csucampuscraft-user/src/main/resources/templates/products/detail.html": {
+        "<form": [
+          34
+        ],
+        "currentUser == null": [
+          56
+        ],
+        "data-add": [
+          34
+        ],
+        "登录后加购": []
+      },
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthFilter.java": {
+        "HIGHEST_PRECEDENCE": [
+          24
+        ],
+        "ROLE_REJECTED": [
+          88
+        ],
+        "AUTH_ROLE_FORBIDDEN": [
+          91
+        ],
+        "readDestination": [
+          119
+        ]
+      },
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java": {
+        "cartQuantity": [
+          26,
+          60,
+          61
+        ],
+        "currentCustomer": [
+          48,
+          76
+        ],
+        "TransactionException": []
+      },
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/LoginController.java": {
+        "sessions.clear": [
+          42
+        ],
+        "cartQuantity": [
+          46,
+          47
+        ]
+      },
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartItemMapper.java": {
+        "SUM(quantity)": [
+          24
+        ],
+        "countKinds": [],
+        "FOR UPDATE": []
+      }
+    },
+    "member": {
+      "csucampuscraft-user/src/main/resources/templates/products/detail.html": {
+        "<form": [
+          36
+        ],
+        "currentUser == null": [
+          50,
+          55
+        ],
+        "data-add": [
+          36
+        ],
+        "登录后加购": [
+          51
+        ]
+      },
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthFilter.java": {
+        "HIGHEST_PRECEDENCE": [
+          24
+        ],
+        "ROLE_REJECTED": [],
+        "AUTH_ROLE_FORBIDDEN": [
+          83
+        ],
+        "readDestination": []
+      },
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java": {
+        "cartQuantity": [
+          41,
+          42,
+          45,
+          48,
+          49
+        ],
+        "currentCustomer": [],
+        "TransactionException": [
+          14,
+          46
+        ]
+      },
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/LoginController.java": {
+        "sessions.clear": [
+          42
+        ],
+        "cartQuantity": []
+      },
+      "csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartItemMapper.java": {
+        "SUM(quantity)": [
+          32
+        ],
+        "countKinds": [
+          42
+        ],
+        "FOR UPDATE": [
+          19,
+          46
+        ]
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "topic": "U03 guest purchase",
+      "ours": "Guest and CUSTOMER both receive POST /cart/items form; guest submit relies on AuthFilter302 fixed product GET return.",
+      "member": "Only authenticated users receive POST form; in-stock guest receives login link with product returnUrl, sold-out guest disabled button.",
+      "decision": "Take only the guest conditional/link pattern; retain ours authenticated form, raw quantity error redisplay, fixed min/max1–99, marker data-add-cart and recovery links. Add guest-link marker data-login-to-add.",
+      "reason": "User explicitly selected this UX; avoids unnecessary guest POST while preserving backend defense and manual resubmission."
+    },
+    {
+      "topic": "U03 form validation/error feedback",
+      "ours": "Invalid quantity switches input to text to preserve raw abc; failed input and original status/current product view redisplay. productId field-error anchor exists.",
+      "member": "Number input remains number; quantityInput/cartConflict model and different form marker data-add-to-cart; conflicts disable fieldset.",
+      "decision": "Keep ours model/error behavior; no import of member model names, fieldset conflict policy or quantityInput.",
+      "reason": "Selective merge must not replace API/view contract or erase invalid raw values; valid-user form data marker remains compatible."
+    },
+    {
+      "topic": "U05 model and selectors",
+      "ours": "CartPage quantity/validSubtotal/itemCount/invalidCount/hasInvalidItems/allValid; root data-cart-item-count/quantity/invalid-count/all-valid; rows data-cart-valid/data-invalid-reason; separate action markers and numeric subtotal attrs.",
+      "member": "CartPage totalQuantity/total/checkoutAllowed; root data-checkout-allowed/data-cart-total-quantity; row data-valid; form markers data-cart-quantity-form/data-cart-remove-form.",
+      "decision": "Keep all ours U05 model, selectors and template.",
+      "reason": "Both are parallel view contracts; mixing them would break tested mapping and evidence tools without functional benefit for requested changes."
+    },
+    {
+      "topic": "U05 conflict recovery",
+      "ours": "Failed action keeps submitted quantity/version while other forms use current version; disappeared target has readonly failed-submission summary.",
+      "member": "On cartConflict, row fieldset/removal disabled and hidden versions use current item.version; explicit reload note.",
+      "decision": "Keep ours conflict semantics and raw submitted version; optional wording may be considered without view-model changes.",
+      "reason": "Prevents quiet rebasing of a stale submission; full existing recovery behavior is already independently audited."
+    },
+    {
+      "topic": "Per-row accessibility",
+      "ours": "Labels connect unique item-ID-prefixed quantity inputs; generic button labels appear in their table row.",
+      "member": "Quantity label adds hidden product name; update/remove buttons include product-specific aria-label.",
+      "decision": "Optional small improvement only if parent elects it; not required for guest/status changes. Do not import global CSS or different IDs.",
+      "reason": "Product-specific accessible labels are a concrete small improvement, unlike replacing the page layout."
+    },
+    {
+      "topic": "Navigation badge DOM/error state",
+      "ours": "Stable data-cart-link, #cart-quantity, data-cart-quantity and data-cart-quantity-unavailable; unavailable state renders dash in the same span.",
+      "member": "No data-cart-link; cartQuantityAvailable flag drives either numeric span or separate unavailable text span.",
+      "decision": "Keep ours layout and marker/error flag contract.",
+      "reason": "Both represent unavailable separately from0, but importing member flag names/DOM is unnecessary and would change existing verification markers."
+    },
+    {
+      "topic": "Badge SQL",
+      "ours": "CartService.quantityFor -> CartItemMapper.selectQuantity uses COALESCE(SUM(quantity),0) WHERE user_id, no join.",
+      "member": "CartService.quantity -> CartItemMapper.sumQuantity uses same SUM SQL; separate COUNT(*) is only countKinds for20-SKU validation.",
+      "decision": "Keep ours method names and implementation; report both satisfy all-row badge rule.",
+      "reason": "COUNT kinds must not be mistaken for a badge bug; no functional badge-query advantage to port."
+    },
+    {
+      "topic": "Badge model and technical failures",
+      "ours": "Resolves authenticated CUSTOMER, fallback revalidation for direct Boot/error views, clear invalid identity; query failure flag prevents repeat query and generic500 can show unavailable dash.",
+      "member": "Uses request CURRENT_USER_ATTRIBUTE only; catches DataAccessException or TransactionException and displays unavailable on existing response.",
+      "decision": "Keep ours model and error-status behavior.",
+      "reason": "Preserves tested error-page identity fallback and technical-error500 policy; swallowing failures or changing flag names is outside selected improvements."
+    },
+    {
+      "topic": "Identity/CSRF/role order",
+      "ours": "AuthFilter +10 verifies identity, marks wrong-role cartPOST; CsrfFilter +20 runs next; CartRoleConfiguration MVC preHandle rejects role before parameter binding.",
+      "member": "AuthFilter +10 rejects protected wrong role immediately, before CsrfFilter +20. No CartRoleConfiguration.",
+      "decision": "Keep ours deferred cartPOST role flow.",
+      "reason": "Detailed STEP07 order is identity -> CSRF -> role -> fields; errors share403 but stable code distinguishes actual rejection order."
+    },
+    {
+      "topic": "Direct guest cartPOST fallback",
+      "ours": "CartRequestNavigation derives only fixed /products/{positiveLongId} or/cart GET; no POST replay.",
+      "member": "NonGET fallback in AuthFilter is/; normal guest UI link already carries safe detail GET return.",
+      "decision": "Take member guest link but retain ours backend fixed read destination for crafted/no-JS/direct POSTs.",
+      "reason": "Frontend UX and backend defense are complementary; ordinary guest link must not remove backend protection."
+    },
+    {
+      "topic": "Failed reauthentication badge",
+      "ours": "LoginController clears identity and resets preconstructed cartQuantity0/unavailablefalse model.",
+      "member": "Clears currentUser/authenticated only, without resetting the previously populated badge model.",
+      "decision": "Keep ours reset.",
+      "reason": "Code inspection implies possible stale badge after failed reauth in member implementation; this is an inference, not a newly executed member failure."
+    },
+    {
+      "topic": "CSS scope",
+      "ours": "STEP07 additions scoped by data-page-id U03/U05; existing foundation/catalog styling retained.",
+      "member": "Replaces purchase/cart CSS and adds global visually-hidden/quantity-unavailable/cart selectors, changes table layout.",
+      "decision": "Keep ours CSS unchanged for selected guest link.",
+      "reason": "Existing button/helper classes suffice; broad CSS import would exceed selective functional merge and may change other page states."
+    }
+  ],
+  "new_acceptance": "Not yet run; both original evidence sets remain distinct and do not prove the merged SHA."
+}

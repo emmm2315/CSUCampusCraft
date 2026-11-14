@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>购物车 · CSUCampusCraft</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-csucampuscraft-app="user" data-authenticated="true">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header">
+    <div class="container site-header-inner">
+        <a class="site-brand" href="/" aria-label="CSUCampusCraft 首页">
+            <span class="brand-mark" aria-hidden="true">CSU</span>
+            <span>CSUCampusCraft 用户端</span>
+        </a>
+        <nav class="site-nav" aria-label="站点导航">
+            <a href="/">首页</a>
+            <span class="app-label">用户端</span>
+            <a class="nav-placeholder" href="/cart" aria-label="购物车，0 件">
+                购物车 <span id="cart-quantity" class="quantity-badge"
+                           data-cart-quantity="0">0</span>
+                
+            </a>
+            
+            <span class="app-label" data-current-user>林同学</span>
+            <form method="post" action="/logout" data-submit-state data-logout-form>
+                <input type="hidden" name="_csrf" value="[REDACTED]">
+                <button type="submit" class="button-secondary">退出</button>
+            </form>
+        </nav>
+    </div>
+</header>
+<div class="container global-alerts" aria-label="全局提示区">
+    
+    
+    <div class="alert alert-danger" role="alert">
+        <p>请输入允许范围内的整数。</p>
+    </div>
+
+</div>
+<main id="main-content" class="container main-content" tabindex="-1">
+    <div class="cart-page" data-page-id="U05" data-checkout-allowed="false" data-cart-total="0.00" data-cart-total-quantity="0">
+    <nav class="catalog-breadcrumb" aria-label="当前位置">
+        <a href="/">首页</a><span aria-hidden="true">/</span><span aria-current="page">购物车</span>
+    </nav>
+    <header class="page-heading">
+        <p class="eyebrow">CSUCampusCraft 用户端</p>
+        <h1>我的购物车</h1>
+        <p class="muted">购物车随账号保存。这里展示商品现价，加购不预留库存。</p>
+    </header>
+
+    
+    <p class="cart-reload-help">
+        <a href="/cart">重新载入最新购物车</a>
+        <span class="muted">请核对当前数量、状态与版本后，再重新提交。</span>
+    </p>
+
+    <section class="panel cart-empty" data-cart-empty aria-labelledby="cart-empty-heading">
+        <h2 id="cart-empty-heading">购物车还是空的</h2>
+        <p class="muted">挑选一件校园文创，把熟悉的校园带在身边。</p>
+        <div class="button-row"><a class="button" href="/products">去逛逛</a></div>
+    </section>
+
+    
+
+    <section class="panel cart-summary" aria-labelledby="cart-summary-heading">
+        <div>
+            <h2 id="cart-summary-heading">商品合计</h2>
+            <p class="product-price cart-total" data-cart-total>¥0.00</p>
+            
+            
+        </div>
+        <div class="cart-summary-actions">
+            <a class="button button-secondary" href="/products">继续选购</a>
+            <button type="button" disabled aria-describedby="checkout-help">结算暂未开放</button>
+            <p id="checkout-help" class="field-help">请先添加商品。</p>
+        </div>
+    </section>
+</div>
+</main>
+<footer class="site-footer">
+    <div class="container">
+        <span>CSUCampusCraft 校园文创商城</span>
+        <span class="muted">课程实验 · 教学模拟</span>
+    </div>
+</footer>
+</body>
+</html>

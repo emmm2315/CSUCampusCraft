@@ -31,6 +31,7 @@
                th:text="${product.stock == 0 ? '售罄 · 库存 0' : '现货 · 库存 ' + product.stock}">库存</p>
             <section class="catalog-purchase" aria-labelledby="purchase-heading">
                 <h2 id="purchase-heading">选购</h2>
+                <th:block th:if="${currentUser != null}">
                 <form method="post" th:action="@{/cart/items}" data-submit-state data-add-cart
                       th:with="quantityError=${fieldErrors != null and fieldErrors.containsKey('quantity')}">
                     <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
@@ -59,6 +60,14 @@
                         <a th:href="@{/cart}">前往购物车核对数量</a>
                     </div>
                 </form>
+                </th:block>
+                <div th:if="${currentUser == null}" class="catalog-guest-purchase">
+                    <a th:if="${product.stock > 0}" class="button" data-login-to-add
+                       th:href="@{/login(returnUrl=${'/products/' + product.id})}" aria-describedby="guest-purchase-help">登录后加购</a>
+                    <button th:if="${product.stock == 0}" type="button" disabled aria-describedby="guest-purchase-help">加入购物车</button>
+                    <p id="guest-purchase-help" class="field-help"
+                       th:text="${product.stock == 0 ? '商品已售罄，暂不可购买。' : '请先登录，返回本页后由本人选择数量并确认加购。'}">购买说明</p>
+                </div>
             </section>
         </div>
     </section>

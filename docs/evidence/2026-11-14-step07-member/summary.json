@@ -1,0 +1,29 @@
+{
+  "scope": "STEP07 only; no STEP08 checkout or order implementation; named human review pending",
+  "baseline_git_sha": "a1d4f3523f557af63fc77ea883986c099edcd93e",
+  "tested_worktree": "uncommitted feat/step07-cart",
+  "runtime_input_count": 137,
+  "runtime_input_digest": "10c0e25b002aa31a37353ab375974dfd5e837dcc274e0f1513d6865b5474d7e9",
+  "runtime_inputs_unchanged": true,
+  "database_version": "8.4.13",
+  "http_checks": 590,
+  "http_failed": 0,
+  "serial_cart_post_records": 73,
+  "concurrent_cart_post_groups": 4,
+  "completed": true,
+  "service_probe_checks": 31,
+  "model_probe_checks": 18,
+  "browser_checks": 463,
+  "page_screenshots": 30,
+  "toolchain_used": {
+    "java": "Microsoft JDK21.0.7.6",
+    "maven": "Maven Wrapper3.9.16",
+    "mysql": "8.4.13"
+  },
+  "limitations": [
+    "GET/login/logout use assertions; HTTP array records cart POST responses only.",
+    "The SQL helper does not explicitly SET UTC per connection; no such claim is made.",
+    "Maven verify is build verification; HTTP/SQL/native/browser checks are external scripts.",
+    "Human group review and STEP08+ remain pending."
+  ]
+}

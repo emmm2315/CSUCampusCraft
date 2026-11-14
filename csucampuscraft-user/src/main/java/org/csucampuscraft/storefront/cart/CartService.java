@@ -93,7 +93,11 @@ public class CartService {
             requireVersion(current, version);
             // A valid same-value request does not modify an invalid row or consume a version.
             if (current.getQuantity() == quantity) return;
-            Product product = available(items.selectProduct(current.getProductId()));
+            Product product = items.selectProduct(current.getProductId());
+            if (product == null || !"ON_SALE".equals(product.getStatus())) {
+                throw new BusinessException(HttpStatus.CONFLICT, "CART_PRODUCT_UNAVAILABLE",
+                        "商品已下架或不可用，请移除该条目后继续选购。");
+            }
             requireStock(product, quantity);
             capacity(current);
             if (items.updateQuantity(userId, itemId, quantity, version) != 1) throw versionConflict();
