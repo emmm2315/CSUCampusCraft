@@ -3,6 +3,9 @@ package org.csucampuscraft.storefront.checkout;
 import jakarta.servlet.http.HttpServletRequest;
 import java.util.Map;
 import org.csucampuscraft.storefront.foundation.web.BusinessException;
+import org.csucampuscraft.storefront.order.OrderSubmissionCoordinator;
+import org.csucampuscraft.storefront.order.OrderSubmissionResult;
+import org.springframework.web.servlet.view.RedirectView;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.MultiValueMap;
@@ -11,12 +14,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-/** U06 and a validation-only POST boundary, replaced by the real transaction in STEP09. */
+/** U06 confirmation and the real atomic order-submission boundary. */
 @Controller
 public final class CheckoutController {
     private final CheckoutService checkout;
 
-    public CheckoutController(CheckoutService checkout) { this.checkout = checkout; }
+    private final OrderSubmissionCoordinator submissions;
+
+    public CheckoutController(CheckoutService checkout, OrderSubmissionCoordinator submissions) {
+        this.checkout = checkout;
+        this.submissions = submissions;
+    }
 
     @GetMapping("/checkout")
     public ModelAndView page(HttpServletRequest request) {
@@ -31,11 +39,15 @@ public final class CheckoutController {
     public ModelAndView submit(@RequestParam MultiValueMap<String, String> parameters,
                                HttpServletRequest request) {
         try {
-            CheckoutService.Validation result = checkout.validate(request, parameters);
-            if (!result.isValid()) return form(result.confirmation(), result.form(), result.fieldErrors());
-            // This is not a successful submission: retain the valid confirmation, never write an order.
-            return conflict(new BusinessException(HttpStatus.CONFLICT, "ORDER_SUBMISSION_PENDING",
-                    "下单将在 STEP09 接入。本次仅完成确认校验，未生成订单，购物车和库存保持原状。"));
+            OrderSubmissionResult result = submissions.submit(request, parameters);
+            if (!result.isCreated()) {
+                CheckoutService.Validation invalid = result.getValidation();
+                return form(invalid.confirmation(), invalid.form(), invalid.fieldErrors());
+            }
+            RedirectView redirect = new RedirectView("/orders/" + result.getOrderNo(), true);
+            redirect.setStatusCode(HttpStatus.SEE_OTHER);
+            redirect.setExposeModelAttributes(false);
+            return new ModelAndView(redirect);
         } catch (BusinessException failure) {
             return conflict(failure);
         }
@@ -66,7 +78,7 @@ public final class CheckoutController {
         view.addObject("errorCode", failure.getCode());
         view.addObject("errorMessage", failure.getMessage());
         view.addObject("canRetryConfirmation", true);
-        view.addObject("tokenPreserved", "ORDER_SUBMISSION_PENDING".equals(failure.getCode()));
+        view.addObject("tokenPreserved", false);
         return view;
     }
 }

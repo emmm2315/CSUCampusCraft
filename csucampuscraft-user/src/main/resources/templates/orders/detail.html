@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('订单详情 · CSUCampusCraft', ~{::mainContent})}">
+<head><title>订单详情</title></head>
+<body>
+<div th:fragment="mainContent" class="order-detail-page" data-page-id="U08" th:with="order=${orderDetail.order}"
+     th:attr="data-order-id=${order.id},data-order-no=${order.orderNo},data-order-status=${order.status},data-order-total=${order.totalAmount},data-order-item-count=${#lists.size(orderDetail.items)}">
+    <nav class="catalog-breadcrumb" aria-label="当前位置">
+        <a th:href="@{/}">首页</a><span aria-hidden="true">/</span><a th:href="@{/orders}">我的订单</a><span aria-hidden="true">/</span><span aria-current="page">订单详情</span>
+    </nav>
+    <header class="page-heading order-detail-heading">
+        <div>
+            <p class="eyebrow">CSUCampusCraft</p>
+            <h1>订单详情</h1>
+            <p class="muted">查看本单成交时的商品、金额与收货信息。</p>
+        </div>
+        <a class="button button-secondary" th:href="@{/orders}" data-return-orders>返回我的订单</a>
+    </header>
+
+    <section class="panel order-overview" aria-labelledby="order-overview-title">
+        <div class="order-overview-heading">
+            <div>
+                <h2 id="order-overview-title">订单信息</h2>
+                <p class="order-number" data-order-number th:text="${order.orderNo}">订单号</p>
+            </div>
+            <span class="order-status" data-order-status-label th:text="${order.statusLabel}">待支付</span>
+        </div>
+        <dl class="order-metadata">
+            <div><dt>创建时间</dt><dd><time th:text="${order.createdAtDisplay}">创建时间</time>（北京时间）</dd></div>
+            <div><dt>订单金额</dt><dd class="product-price" data-order-amount th:text="${'¥' + #numbers.formatDecimal(order.totalAmount,1,'NONE',2,'POINT')}">¥0.00</dd></div>
+        </dl>
+        <p class="field-help" th:if="${order.status == 'PENDING_PAYMENT'}" data-order-pending-note>当前订单待支付，商品信息与金额以本单成交记录为准。</p>
+        <p class="field-help" th:unless="${order.status == 'PENDING_PAYMENT'}">当前展示已记录的订单状态与历史信息。</p>
+    </section>
+
+    <section class="order-items" aria-labelledby="order-items-title">
+        <div class="order-section-heading">
+            <h2 id="order-items-title">成交商品</h2>
+            <p class="field-help">商品名称、封面与金额保留成交时的内容。</p>
+        </div>
+        <div class="table-container">
+            <table class="order-items-table" data-order-items>
+                <caption class="small">本单商品快照</caption>
+                <thead><tr><th scope="col">商品</th><th scope="col">成交单价</th><th scope="col">数量</th><th scope="col">成交小计</th></tr></thead>
+                <tbody>
+                <tr th:each="line : ${orderDetail.items}"
+                    th:attr="data-order-item-id=${line.id},data-order-product-id=${line.productId},data-unit-price=${line.unitPrice},data-quantity=${line.quantity},data-line-amount=${line.lineAmount},data-snapshot-sku=${line.skuSnapshot},data-snapshot-name=${line.productNameSnapshot},data-snapshot-cover=${line.coverImageSnapshot}">
+                    <td>
+                        <div class="order-product">
+                            <div class="order-product-image"><th:block th:replace="~{fragments/images :: image(${line.coverImageSnapshot},${line.productNameSnapshot})}"></th:block></div>
+                            <div>
+                                <strong th:text="${line.productNameSnapshot}">成交商品名称</strong>
+                                <p class="field-help order-sku">SKU：<span th:text="${line.skuSnapshot}">SKU</span></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="orders-money" th:text="${'¥' + #numbers.formatDecimal(line.unitPrice,1,'NONE',2,'POINT')}">¥0.00</td>
+                    <td th:text="${line.quantity}">0</td>
+                    <td class="orders-money"><strong th:text="${'¥' + #numbers.formatDecimal(line.lineAmount,1,'NONE',2,'POINT')}">¥0.00</strong></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="order-detail-grid">
+        <section class="panel order-shipping" aria-labelledby="order-shipping-title">
+            <h2 id="order-shipping-title">收货信息</h2>
+            <p class="field-help">下单时保存的收货快照，用于教学模拟配送。</p>
+            <dl class="order-shipping-details">
+                <div><dt>收货人</dt><dd data-shipping-value="receiverName" data-shipping-name th:text="${order.receiverName}">收货人</dd></div>
+                <div><dt>联系电话</dt><dd data-shipping-value="receiverPhone" data-shipping-phone th:text="${order.receiverPhone}">联系电话</dd></div>
+                <div><dt>完整地址</dt><dd data-shipping-value="receiverAddress" data-shipping-address th:text="${order.receiverAddress}">收货地址</dd></div>
+            </dl>
+        </section>
+        <section class="panel order-timeline" aria-labelledby="order-timeline-title">
+            <h2 id="order-timeline-title">状态时间</h2>
+            <p class="field-help">按已发生的状态记录显示，时间均为北京时间。</p>
+            <dl class="order-timeline-details">
+                <div><dt>创建订单</dt><dd th:text="${order.createdAtDisplay}">创建时间</dd></div>
+                <div th:if="${order.paidAtDisplay != null}"><dt>支付成功</dt><dd th:text="${order.paidAtDisplay}">支付时间</dd></div>
+                <div th:if="${order.cancelledAtDisplay != null}"><dt>取消订单</dt><dd th:text="${order.cancelledAtDisplay}">取消时间</dd></div>
+                <div th:if="${order.shippedAtDisplay != null}"><dt>模拟发货</dt><dd th:text="${order.shippedAtDisplay}">发货时间</dd></div>
+                <div th:if="${order.completedAtDisplay != null}"><dt>确认收货</dt><dd th:text="${order.completedAtDisplay}">完成时间</dd></div>
+            </dl>
+        </section>
+    </div>
+    <div class="button-row"><a class="button button-secondary" th:href="@{/products}">继续选购</a></div>
+</div>
+</body>
+</html>

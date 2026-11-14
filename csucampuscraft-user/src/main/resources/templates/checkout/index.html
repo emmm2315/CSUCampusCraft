@@ -75,9 +75,9 @@
                 <th:block th:replace="~{fragments/fields :: text('receiverName','receiverName','收货人（1–50 字符）',${checkoutForm.receiverName},${fieldErrors})}"></th:block>
                 <th:block th:replace="~{fragments/fields :: text('receiverPhone','receiverPhone','联系电话（1–30 字符）',${checkoutForm.receiverPhone},${fieldErrors})}"></th:block>
                 <th:block th:replace="~{fragments/fields :: textarea('receiverAddress','receiverAddress','完整收货地址（1–255 字符）',${checkoutForm.receiverAddress},${fieldErrors})}"></th:block>
-                <p id="checkout-stage-help" class="field-help">目前仅支持结算确认，尚不能提交真实订单。提交后会显示下单尚未开放的说明。</p>
+                <p id="checkout-stage-help" class="field-help">提交后生成待支付订单，并扣减本次商品库存。提交前请再次核对收货信息。</p>
                 <div class="button-row">
-                    <button type="submit" data-submit-order data-submit-label="核对中…">提交订单</button>
+                    <button type="submit" data-submit-order data-submit-label="提交中…">提交订单</button>
                 </div>
             </form>
         </section>

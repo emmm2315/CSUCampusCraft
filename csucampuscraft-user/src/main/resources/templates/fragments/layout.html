@@ -24,6 +24,7 @@
                            th:attr="data-cart-quantity=${cartQuantityUnavailable == true ? null : (cartQuantity ?: 0)},data-cart-quantity-unavailable=${cartQuantityUnavailable == true}"
                            th:text="${cartQuantityUnavailable == true ? '—' : (cartQuantity ?: 0)}">0</span>
             </a>
+            <a th:if="${appId == 'user'}" th:href="@{/orders}" data-orders-link>我的订单</a>
             <a th:if="${currentUser == null}" th:href="@{/login}">登录</a>
             <span th:if="${currentUser != null}" class="app-label" data-current-user
                   th:text="${currentUser.displayName}">当前用户</span>

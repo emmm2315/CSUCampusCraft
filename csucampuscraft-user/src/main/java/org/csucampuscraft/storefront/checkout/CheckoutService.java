@@ -137,6 +137,23 @@ public final class CheckoutService {
         }
     }
 
+    /** Recheck after product lock waits and immediately before the first order write. No SQL. */
+    public void requireCurrent(HttpServletRequest request, CheckoutConfirmation expected) {
+        HttpSession session = session(request);
+        try {
+            synchronized (session) {
+                SessionIdentity current = actor(request);
+                if (expected == null || expected.getUserId() != current.userId()
+                        || session.getAttribute(SessionSupport.CHECKOUT_CONFIRMATION_ATTRIBUTE) != expected) {
+                    throw conflict("CHECKOUT_CONFIRMATION_INVALID", "确认已失效，请重新进入结算。");
+                }
+                requireUnexpired(expected);
+            }
+        } catch (IllegalStateException expiredSession) {
+            throw sessionFailure(session, expiredSession);
+        }
+    }
+
     private CartValues currentCart(long userId) {
         CartPage cart = carts.read(userId);
         if (cart.isEmpty()) {

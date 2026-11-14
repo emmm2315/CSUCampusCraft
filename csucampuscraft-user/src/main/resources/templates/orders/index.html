@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('我的订单 · CSUCampusCraft', ~{::mainContent})}">
+<head><title>我的订单</title></head>
+<body>
+<div th:fragment="mainContent" class="orders-page" data-page-id="U07"
+     th:attr="data-order-count=${orderPage.totalCount},data-result-count=${#lists.size(orderPage.items)},data-page=${orderPage.page},data-size=${orderPage.size},data-total-pages=${orderPage.totalPages}">
+    <header class="page-heading orders-heading">
+        <div>
+            <p class="eyebrow">CSUCampusCraft</p>
+            <h1>我的订单</h1>
+            <p class="muted">查看本人订单，按完整订单号或状态查询。</p>
+        </div>
+        <a class="button button-secondary" th:href="@{/products}">继续选购</a>
+    </header>
+
+    <section class="panel orders-filter-panel" aria-labelledby="orders-filter-title">
+        <h2 id="orders-filter-title">查询订单</h2>
+        <form method="get" th:action="@{/orders}" class="orders-filter-form" data-order-filter>
+            <div class="form-field orders-number-field">
+                <label for="orders-number">完整订单号</label>
+                <input id="orders-number" type="search" name="orderNo" th:value="${orderQuery.orderNo}"
+                       placeholder="输入完整订单号" aria-describedby="orders-number-help">
+                <p id="orders-number-help" class="field-help">最多 40 个字符，精确匹配，不区分大小写。</p>
+            </div>
+            <div class="form-field">
+                <label for="orders-status">订单状态</label>
+                <select id="orders-status" name="status">
+                    <option value="ALL" th:selected="${orderQuery.status == 'ALL'}">全部状态</option>
+                    <option th:each="state : ${orderStatuses}" th:value="${state.value}"
+                            th:selected="${orderQuery.status == state.value}" th:text="${state.label}">订单状态</option>
+                </select>
+            </div>
+            <div class="form-field orders-size-field">
+                <label for="orders-size">每页条数</label>
+                <input id="orders-size" type="number" name="size" min="1" max="50" step="1" th:value="${orderPage.size}">
+            </div>
+            <input type="hidden" name="page" value="1">
+            <div class="orders-filter-actions">
+                <button type="submit">查询订单</button>
+                <a class="button button-secondary" th:href="@{/orders(status='ALL',page=1,size=${orderPage.size})}" data-order-clear>清除条件</a>
+            </div>
+        </form>
+    </section>
+
+    <div class="orders-results-heading">
+        <p class="muted">共 <strong th:text="${orderPage.totalCount}">0</strong> 张订单
+            <span th:if="${orderPage.totalCount > 0}">，第 <span th:text="${orderPage.page}">1</span> 页 / 共 <span th:text="${orderPage.totalPages}">1</span> 页</span>
+        </p>
+        <p class="field-help">最近创建的订单显示在前。</p>
+    </div>
+
+    <section th:if="${orderPage.empty}" class="empty-state" data-orders-empty>
+        <th:block th:if="${orderPage.page > (orderPage.totalPages > 0 ? orderPage.totalPages : 1)}">
+            <h2>当前页超出订单范围</h2>
+            <p>筛选条件保持不变，可以返回有效页面继续查看。</p>
+            <a class="button button-secondary"
+               th:href="@{/orders(orderNo=${orderQuery.orderNo},status=${orderQuery.status},page=${orderPage.firstValidPage},size=${orderPage.size})}"
+               th:attr="data-page-link=${orderPage.firstValidPage}" th:text="${'返回第 ' + orderPage.firstValidPage + ' 页'}">返回有效页</a>
+        </th:block>
+        <th:block th:unless="${orderPage.page > (orderPage.totalPages > 0 ? orderPage.totalPages : 1)}">
+            <h2 th:text="${orderQuery.orderNo != '' or orderQuery.status != 'ALL' ? '暂无匹配订单' : '暂无订单'}">暂无订单</h2>
+            <p th:text="${orderQuery.orderNo != '' or orderQuery.status != 'ALL' ? '请核对完整订单号，或清除筛选条件再试。' : '选好喜欢的校园文创后，可从购物车整车结算。'}">暂无可显示的订单。</p>
+            <div class="button-row">
+                <a class="button" th:href="@{/products}">去逛逛</a>
+                <a class="button button-secondary" th:if="${orderQuery.orderNo != '' or orderQuery.status != 'ALL'}"
+                   th:href="@{/orders(status='ALL',page=1,size=${orderPage.size})}">清除条件</a>
+            </div>
+        </th:block>
+    </section>
+
+    <div th:unless="${orderPage.empty}" class="table-container orders-table-container">
+        <table class="orders-table" data-order-list>
+            <caption class="small">本人订单清单</caption>
+            <thead><tr><th scope="col">订单号</th><th scope="col">创建时间</th><th scope="col">状态</th><th scope="col">订单金额</th><th scope="col">操作</th></tr></thead>
+            <tbody>
+            <tr th:each="item : ${orderPage.items}"
+                th:attr="data-order-id=${item.id},data-order-no=${item.orderNo},data-order-status=${item.status},data-order-total=${item.totalAmount}">
+                <td class="orders-number"><a th:href="@{/orders/{orderNo}(orderNo=${item.orderNo})}" th:text="${item.orderNo}">订单号</a></td>
+                <td><time th:text="${item.createdAtDisplay}">创建时间</time><span class="field-help orders-timezone">北京时间</span></td>
+                <td><span class="order-status" th:text="${item.statusLabel}">待支付</span></td>
+                <td class="orders-money" th:text="${'¥' + #numbers.formatDecimal(item.totalAmount,1,'NONE',2,'POINT')}">¥0.00</td>
+                <td><a th:href="@{/orders/{orderNo}(orderNo=${item.orderNo})}" data-order-detail-link>查看详情</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <nav class="orders-pagination" aria-label="订单分页" th:if="${orderPage.totalCount > 0}">
+        <a class="button button-secondary" th:if="${orderPage.hasPrevious}"
+           th:href="@{/orders(orderNo=${orderQuery.orderNo},status=${orderQuery.status},page=${orderPage.page - 1},size=${orderPage.size})}"
+           th:attr="data-page-link=${orderPage.page - 1}">上一页</a>
+        <span class="pagination-disabled" th:unless="${orderPage.hasPrevious}" aria-disabled="true">上一页</span>
+        <span class="pagination-position">第 <strong th:text="${orderPage.page}">1</strong> 页 / 共 <span th:text="${orderPage.totalPages}">1</span> 页</span>
+        <a class="button button-secondary" th:if="${orderPage.hasNext}"
+           th:href="@{/orders(orderNo=${orderQuery.orderNo},status=${orderQuery.status},page=${orderPage.page + 1},size=${orderPage.size})}"
+           th:attr="data-page-link=${orderPage.page + 1}">下一页</a>
+        <span class="pagination-disabled" th:unless="${orderPage.hasNext}" aria-disabled="true">下一页</span>
+    </nav>
+</div>
+</body>
+</html>
