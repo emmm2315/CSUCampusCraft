@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('模拟支付 · CSUCampusCraft', ~{::mainContent})}">
+<head><title>模拟支付</title></head>
+<body>
+<div th:fragment="mainContent" class="payment-page" data-page-id="U09"
+     th:attr="data-order-id=${paymentOrder.id},data-order-no=${paymentOrder.orderNo},data-order-status=${paymentOrder.status},data-order-total=${paymentOrder.totalAmount}">
+    <nav class="catalog-breadcrumb" aria-label="当前位置">
+        <a th:href="@{/orders}">我的订单</a><span aria-hidden="true">/</span>
+        <a th:href="@{/orders/{orderNo}(orderNo=${paymentOrder.orderNo})}">订单详情</a><span aria-hidden="true">/</span>
+        <span aria-current="page">模拟支付</span>
+    </nav>
+    <header class="page-heading payment-heading">
+        <div>
+            <p class="eyebrow">CSUCampusCraft</p>
+            <h1>模拟支付</h1>
+            <p class="muted">选择本次教学模拟结果，订单金额以成交记录为准。</p>
+        </div>
+        <a class="button button-secondary" th:href="@{/orders/{orderNo}(orderNo=${paymentOrder.orderNo})}" data-return-order>返回订单详情</a>
+    </header>
+
+    <div class="payment-grid">
+        <section class="panel payment-order-summary" aria-labelledby="payment-order-title">
+            <h2 id="payment-order-title">本次订单</h2>
+            <dl class="payment-metadata">
+                <div><dt>订单号</dt><dd data-payment-order-number th:text="${paymentOrder.orderNo}">订单号</dd></div>
+                <div><dt>订单状态</dt><dd th:text="${paymentOrder.statusLabel}">待支付</dd></div>
+                <div><dt>成交金额</dt><dd class="product-price payment-total" data-payment-amount
+                    th:text="${'¥' + #numbers.formatDecimal(paymentOrder.totalAmount,1,'NONE',2,'POINT')}">¥0.00</dd></div>
+            </dl>
+            <p class="field-help">人民币；本页只使用已保存的订单金额。</p>
+        </section>
+
+        <section class="panel payment-choice" aria-labelledby="payment-choice-title">
+            <h2 id="payment-choice-title">教学模拟</h2>
+            <p id="payment-simulation-help" class="payment-simulation-note" data-payment-simulation>本功能用于课程实验，不会发生真实付款，也无需输入银行卡或支付账号。</p>
+            <form method="post" th:action="@{/orders/{orderNo}/payment(orderNo=${paymentOrder.orderNo})}"
+                  data-submit-state data-payment-form aria-describedby="payment-simulation-help payment-result-help">
+                <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+                <div class="payment-buttons">
+                    <button type="submit" name="result" value="SUCCESS" data-payment-result="SUCCESS" data-submit-label="正在模拟…">模拟支付成功</button>
+                    <button type="submit" name="result" value="FAILURE" class="button-secondary" data-payment-result="FAILURE" data-submit-label="正在模拟…">模拟支付失败</button>
+                </div>
+                <p id="payment-result-help" class="field-help">模拟失败后订单仍为待支付，可返回详情重试或取消；模拟成功后显示首次支付凭证。</p>
+            </form>
+        </section>
+    </div>
+</div>
+</body>
+</html>

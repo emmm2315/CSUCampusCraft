@@ -360,3 +360,30 @@ tbody tr[aria-disabled="true"] { color: var(--color-muted); background: var(--co
     [data-page-id="U07"] .orders-filter-form,
     [data-page-id="U08"] .order-detail-grid { grid-template-columns: 1fr; }
 }
+
+/* STEP10 payment and cancellation use existing storefront tokens. */
+[data-page-id="U09"] { min-width: 0; }
+[data-page-id="U09"] .payment-heading { display: flex; align-items: start; justify-content: space-between; flex-wrap: wrap; gap: var(--space-6); }
+[data-page-id="U09"] .payment-heading h1 { margin-block: var(--space-2); }
+[data-page-id="U09"] .payment-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-6); align-items: start; }
+[data-page-id="U09"] .payment-metadata { display: grid; gap: var(--space-4); margin: var(--space-4) 0; }
+[data-page-id="U09"] dt { color: var(--color-muted); font-size: var(--font-size-small); }
+[data-page-id="U09"] dd { margin: var(--space-1) 0 0; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+[data-page-id="U09"] .payment-total { font-size: 28px; }
+[data-page-id="U09"] .payment-simulation-note { padding: var(--space-4); background: var(--color-bg); border-radius: var(--radius); }
+[data-page-id="U09"] .payment-buttons { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-block: var(--space-6) var(--space-4); }
+[data-page-id="U08"] .order-payment-receipt { padding-top: var(--space-4); margin-top: var(--space-4); border-top: 1px solid var(--color-border); }
+[data-page-id="U08"] .order-payment-details { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 2fr); gap: var(--space-4); margin: var(--space-3) 0 0; }
+[data-page-id="U08"] .order-pending-actions { margin-top: var(--space-6); }
+[data-page-id="U08"] .order-action-controls { display: flex; align-items: start; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-4); }
+[data-page-id="U08"] .order-cancel-confirmation { min-width: 0; flex: 1 1 300px; }
+[data-page-id="U08"] .order-cancel-confirmation > summary { cursor: pointer; width: fit-content; }
+[data-page-id="U08"] .order-cancel-content { padding: var(--space-4); margin-top: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-bg); }
+[data-page-id="U08"] .order-cancel-content p { overflow-wrap: anywhere; }
+[data-page-id="U08"] .order-cancel-content form { margin-top: var(--space-4); }
+@media (max-width: 760px) {
+    [data-page-id="U09"] .payment-grid,
+    [data-page-id="U08"] .order-payment-details { grid-template-columns: 1fr; }
+    [data-page-id="U09"] .payment-buttons > button { width: 100%; }
+    [data-page-id="U08"] .order-cancel-confirmation { flex-basis: 100%; }
+}

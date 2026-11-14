@@ -29,8 +29,36 @@
             <div><dt>创建时间</dt><dd><time th:text="${order.createdAtDisplay}">创建时间</time>（北京时间）</dd></div>
             <div><dt>订单金额</dt><dd class="product-price" data-order-amount th:text="${'¥' + #numbers.formatDecimal(order.totalAmount,1,'NONE',2,'POINT')}">¥0.00</dd></div>
         </dl>
-        <p class="field-help" th:if="${order.status == 'PENDING_PAYMENT'}" data-order-pending-note>当前订单待支付，商品信息与金额以本单成交记录为准。</p>
-        <p class="field-help" th:unless="${order.status == 'PENDING_PAYMENT'}">当前展示已记录的订单状态与历史信息。</p>
+        <p class="field-help" th:if="${order.status == 'PENDING_PAYMENT'}" data-order-pending-note>当前订单待支付，可选择教学模拟支付，或取消订单释放库存。</p>
+        <p class="field-help" th:if="${order.status == 'CANCELLED'}" data-order-cancelled-note>订单已取消，库存已按本单数量返还，商品未放回购物车。</p>
+        <p class="field-help" th:if="${order.status != 'PENDING_PAYMENT' and order.status != 'CANCELLED'}">当前展示已记录的订单状态与历史信息。</p>
+        <div class="order-payment-receipt" th:if="${order.paymentNo != null}" data-payment-receipt aria-labelledby="order-payment-title">
+            <h3 id="order-payment-title">首次支付凭证</h3>
+            <dl class="order-payment-details">
+                <div><dt>支付方式</dt><dd data-payment-method th:text="${order.paymentMethod}">MOCK</dd></div>
+                <div><dt>支付凭证</dt><dd data-payment-no th:text="${order.paymentNo}">支付凭证</dd></div>
+                <div><dt>首次支付时间</dt><dd><time data-payment-time th:text="${order.paidAtDisplay}">支付时间</time>（北京时间）</dd></div>
+            </dl>
+        </div>
+    </section>
+
+    <section class="panel order-pending-actions" th:if="${order.status == 'PENDING_PAYMENT'}" data-order-pending-actions aria-labelledby="order-actions-title">
+        <h2 id="order-actions-title">待支付操作</h2>
+        <p class="field-help">模拟支付使用本单成交金额；若不再购买，可取消并返还库存。</p>
+        <div class="order-action-controls">
+            <a class="button" th:href="@{/orders/{orderNo}/payment(orderNo=${order.orderNo})}" data-open-payment>模拟支付</a>
+            <details class="order-cancel-confirmation" data-cancel-confirmation>
+                <summary class="button button-secondary">取消订单</summary>
+                <div class="order-cancel-content">
+                    <p id="order-cancel-help">将取消订单 <strong th:text="${order.orderNo}">订单号</strong>。库存会返还，商品不会放回购物车。</p>
+                    <form method="post" th:action="@{/orders/{orderNo}/cancel(orderNo=${order.orderNo})}"
+                          data-submit-state data-cancel-order-form aria-describedby="order-cancel-help">
+                        <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
+                        <button type="submit" class="button-danger" data-confirm-cancel data-submit-label="正在取消…">确认取消订单</button>
+                    </form>
+                </div>
+            </details>
+        </div>
     </section>
 
     <section class="order-items" aria-labelledby="order-items-title">

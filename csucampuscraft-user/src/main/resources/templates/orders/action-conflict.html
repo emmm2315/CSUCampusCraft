@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: page('订单操作提示 · CSUCampusCraft', ~{::mainContent})}">
+<head><title>订单操作提示</title></head>
+<body>
+<section th:fragment="mainContent" class="panel error-page order-action-conflict" data-page-id="U09" data-order-action-conflict
+         th:attr="data-error-status=${errorStatus},data-error-code=${errorCode},data-order-no=${orderNo}" aria-labelledby="order-action-conflict-title">
+    <p class="error-number" th:text="${errorStatus}">409</p>
+    <h1 id="order-action-conflict-title">当前状态无法完成此操作</h1>
+    <p th:text="${errorMessage}">请返回订单详情查看当前状态。</p>
+    <p class="muted">请先查看本单的状态、首次凭证或时间记录，再选择可用操作。</p>
+    <p class="error-code">错误代码：<span th:text="${errorCode}">ORDER_ACTION_CONFLICT</span></p>
+    <div class="button-row">
+        <a class="button" th:if="${orderNo != null}" th:href="@{/orders/{orderNo}(orderNo=${orderNo})}" data-return-order>查看订单详情</a>
+        <a class="button button-secondary" th:href="@{/orders}" data-return-orders>返回我的订单</a>
+    </div>
+</section>
+</body>
+</html>
