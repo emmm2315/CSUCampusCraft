@@ -1,0 +1,217 @@
+{
+  "overall": "PASS",
+  "reviewer": "Root AI independent candidate review, not named teammate signoff",
+  "reviewed_utc": "2026-11-14T15:52:31.929782+00:00",
+  "observations": [
+    {
+      "passed": true,
+      "description": "All13Java administrator-local; user/SQL/POM/auth untouched"
+    },
+    {
+      "passed": true,
+      "description": "Only authorized old HomeController deletion; new DashboardController sole GET root"
+    },
+    {
+      "passed": true,
+      "description": "Customer list/count share CUSTOMER filter and literal bound LIKE ESCAPE !"
+    },
+    {
+      "passed": true,
+      "description": "Exact record offset()/likePattern() accessors, Unicode50/enum/page bounds and overflow handling"
+    },
+    {
+      "passed": true,
+      "description": "Safe profiles omit password hash; locked target role/stamp never enter page model"
+    },
+    {
+      "passed": true,
+      "description": "Detail positive ID400; missing or ADMIN404; escaped contacts with blank fallback"
+    },
+    {
+      "passed": true,
+      "description": "RC Service first AdminWriteGuard then target row lock"
+    },
+    {
+      "passed": true,
+      "description": "Resource CUSTOMER verified before required unique targetStatus enum; extra fields ignored"
+    },
+    {
+      "passed": true,
+      "description": "Conditional update checks role/old status/raw microsecond stamp and affected1"
+    },
+    {
+      "passed": true,
+      "description": "GREATEST(now6,old+1micro); identical target no DML"
+    },
+    {
+      "passed": true,
+      "description": "Write failures cross transaction proxy before conflict page; no retry"
+    },
+    {
+      "passed": true,
+      "description": "Canonical safe303 and fixed flash; no client identity or mutable account binding"
+    },
+    {
+      "passed": true,
+      "description": "One dashboard SELECT with5 exact independent COUNT subqueries"
+    },
+    {
+      "passed": true,
+      "description": "Missing result throws; query failure500 retry without zero fallback or SQL detail"
+    },
+    {
+      "passed": true,
+      "description": "A08 filters resetpage; pagination/recovery preserve conditions"
+    },
+    {
+      "passed": true,
+      "description": "A09 targetStatus+CSRF only with disable disclosure and history retention"
+    },
+    {
+      "passed": true,
+      "description": "A09 orders userId and A07 reverse customer read link"
+    },
+    {
+      "passed": true,
+      "description": "Five cards exact required URLs; authenticated customer navigation"
+    },
+    {
+      "passed": true,
+      "description": "Texts escaped, private contact markers fixed, no roles/password management"
+    },
+    {
+      "passed": true,
+      "description": "CSS original prefix retained, additions scoped A02/A08/A09"
+    }
+  ],
+  "files": [
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerStatus.java",
+      "original_sha256": null,
+      "sha256": "72a38bc8d3bf140954ac274b15f197698a137b29d48ff2d45e8d6e3df025b4d1"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerProfile.java",
+      "original_sha256": null,
+      "sha256": "94a16a3a9be0c0941b7fb2a69c9a39e06f68d7f48aafb6ded8fe2bb0c82998cf"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerTarget.java",
+      "original_sha256": null,
+      "sha256": "a517643e24c6f47cae1b973fdb35699e816a71932e1d8c3732568e017c12701f"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerQuery.java",
+      "original_sha256": null,
+      "sha256": "a0e44ff2bf1a92d77d60607e23a442e61b55969d6ab4f76a9f7b6dd70c33173d"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerPage.java",
+      "original_sha256": null,
+      "sha256": "5b0224fd644b3a6b75ba837f44ff29356de30caf591acd16c2eb194da5977a5e"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerStatusResult.java",
+      "original_sha256": null,
+      "sha256": "fa910253a6f236dc2d856e41a8ce19633835dbe33a5276201deb14ec68b235d8"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerMapper.java",
+      "original_sha256": null,
+      "sha256": "2a12a804c501cadd035faa0632280926a1c122fe9a8a116edd525f44a4ee2d3b"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerService.java",
+      "original_sha256": null,
+      "sha256": "dfafb4e22ddab453b3b62608d15da5630a79986e25b8cf282b9c000242057e4a"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerController.java",
+      "original_sha256": null,
+      "sha256": "5d8903c2abbddc84b261bf1e722dec1f300ecee14263c48a98f35bd33aa8104b"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardSummary.java",
+      "original_sha256": null,
+      "sha256": "4e8e6d031d3c0a61612a6de7faf9e0daf1e40c2433c09bf57cde0c2125c11b5f"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardMapper.java",
+      "original_sha256": null,
+      "sha256": "3714feeb9813f5ab53da0b79eeb53c1f4cf6a002b9f1367935bb0bc694fe0fe0"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardService.java",
+      "original_sha256": null,
+      "sha256": "2cd1cc3954a97149b193590ed12ed7ad4ba72a7b8d1a62fd19d5b372be5fa4b8"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardController.java",
+      "original_sha256": null,
+      "sha256": "cc8cedc5d0a3ffc3400719594d80bfad25480c274cff03b2fc3d5345ade65ef5"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/HomeController.java",
+      "original_sha256": "9188157c8012f7eba6be79064cc3f3b475d9c950a6e5be922a5252bc76a971d4",
+      "sha256": null,
+      "action": "delete"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/resources/templates/home.html",
+      "change": "modified",
+      "original_sha256": "97093ae272d0e58477e4b1a7ed6f13239255d58c00ecf64d49a8ea1a29a17c7d",
+      "sha256": "2222bf0ce29fc02a9b1e428fd9611898d32194884e5e67c1d98254c0f48e742a",
+      "bytes": 4290
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/resources/templates/dashboard-error.html",
+      "change": "new",
+      "original_sha256": null,
+      "sha256": "f74cac12f5707dddd6c06094e66273c55d3b2ea58a35cdad9ca7b9ed98fd006a",
+      "bytes": 939
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/resources/templates/customers/index.html",
+      "change": "new",
+      "original_sha256": null,
+      "sha256": "23c117708e1b47ad4935dd2a5574a88abaa5ad55c3f8b0f9dfa51a0e9892b74a",
+      "bytes": 6109
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/resources/templates/customers/detail.html",
+      "change": "new",
+      "original_sha256": null,
+      "sha256": "4930620586bc1964eb37716c569c9b08e3a74c34c2535c0d584dc64bcf4c26b8",
+      "bytes": 4177
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/resources/templates/customers/action-conflict.html",
+      "change": "new",
+      "original_sha256": null,
+      "sha256": "df310a3492ef09b59ddb08c4bd6d3ff9bd64214b7586a290312b3d9647714253",
+      "bytes": 1150
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "change": "modified",
+      "original_sha256": "d45aaad555f8db838484f2d6fddabdae62f62e02bd418f3ee1d4bfab5b30328d",
+      "sha256": "371dad3cc2ed562d20fe7250b1f83918413477b968a9746fab257324d30a3200",
+      "bytes": 2924
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "change": "modified",
+      "original_sha256": "50a08d83f121a1646229fb76a8707774526366da0f8221701e166ad3cf2e767b",
+      "sha256": "a80372a9149e0c8c459c28203607a61cbaa084870b91df2cad15f05d5bb91c6f",
+      "bytes": 8625
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/resources/static/css/app.css",
+      "change": "modified",
+      "original_sha256": "d4cfca33959e96532ced5912c3955968349d0f908c4b57ae5d029986c27b59f9",
+      "sha256": "635a498b340ef18d9c383d281cc1a16afb05d9fa943b947f9e9d4fc7ab29d6f5",
+      "bytes": 35160
+    }
+  ],
+  "limits": "Static actual candidate file review only; build, real Service SQL, HTTP and browser results are separate."
+}

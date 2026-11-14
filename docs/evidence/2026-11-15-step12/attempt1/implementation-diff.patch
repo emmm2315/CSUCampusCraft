@@ -1,0 +1,689 @@
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerController.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerController.java
+new file mode 100644
+index 0000000..381fbd8
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerController.java
+@@ -0,0 +1,86 @@
++package org.csucampuscraft.admin.customer;
++
++import jakarta.servlet.http.HttpServletRequest;
++import java.util.Map;
++import java.util.Set;
++import org.csucampuscraft.admin.auth.SessionExpiredException;
++import org.csucampuscraft.admin.auth.SessionIdentity;
++import org.csucampuscraft.admin.auth.SessionSupport;
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Controller;
++import org.springframework.util.MultiValueMap;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.PathVariable;
++import org.springframework.web.bind.annotation.PostMapping;
++import org.springframework.web.bind.annotation.RequestParam;
++import org.springframework.web.servlet.ModelAndView;
++import org.springframework.web.servlet.mvc.support.RedirectAttributes;
++import org.springframework.web.servlet.view.RedirectView;
++
++@Controller
++public final class CustomerController {
++    private final CustomerService customers;
++    private final SessionSupport sessions;
++    public CustomerController(CustomerService customers, SessionSupport sessions) {
++        this.customers = customers;
++        this.sessions = sessions;
++    }
++    @GetMapping("/customers")
++    public ModelAndView list(@RequestParam MultiValueMap<String, String> parameters) {
++        for (String field : Set.of("q", "status", "page", "size")) {
++            if (parameters.containsKey(field) && parameters.get(field).size() != 1) {
++                throw new BusinessException(HttpStatus.BAD_REQUEST, "DUPLICATE_QUERY_FIELD",
++                        "查询字段只能提交一个值。", Map.of(field, "请只提交一个值。"));
++            }
++        }
++        CustomerQuery query = CustomerQuery.bind(parameters.getFirst("q"), parameters.getFirst("status"),
++                parameters.getFirst("page"), parameters.getFirst("size"));
++        ModelAndView view = new ModelAndView("customers/index");
++        view.addObject("customerPage", customers.page(query));
++        view.addObject("customerQuery", query);
++        view.addObject("customerStatuses", CustomerStatus.values());
++        return view;
++    }
++    @GetMapping("/customers/{userId}")
++    public ModelAndView detail(@PathVariable("userId") String userId) {
++        return new ModelAndView("customers/detail", "customer", customers.detail(userId));
++    }
++    @PostMapping("/customers/{userId}/status")
++    public ModelAndView status(@PathVariable("userId") String userId, @RequestParam MultiValueMap<String, String> parameters,
++                               HttpServletRequest request, RedirectAttributes feedback) {
++        try {
++            CustomerStatusResult result = customers.changeStatus(actor(request), userId, parameters.get("targetStatus"));
++            feedback.addFlashAttribute("globalMessage", result == CustomerStatusResult.CHANGED
++                    ? "顾客状态已更新。真实切换后的既有会话需重新登录，购物车与历史订单保留。"
++                    : "顾客已处于目标状态，未重复更新状态或时间。");
++            RedirectView redirect = new RedirectView("/customers/" + Long.parseLong(userId.strip()), true);
++            redirect.setStatusCode(HttpStatus.SEE_OTHER);
++            redirect.setExposeModelAttributes(false);
++            return new ModelAndView(redirect);
++        } catch (BusinessException failure) {
++            if (failure.getStatus() != HttpStatus.BAD_REQUEST && failure.getStatus() != HttpStatus.CONFLICT) throw failure;
++            ModelAndView view = new ModelAndView("customers/action-conflict");
++            view.setStatus(failure.getStatus());
++            view.addObject("errorStatus", failure.getStatus().value());
++            view.addObject("errorCode", failure.getCode());
++            view.addObject("errorMessage", failure.getMessage());
++            view.addObject("fieldErrors", failure.getFieldErrors());
++            view.addObject("userId", safeId(userId));
++            return view;
++        }
++    }
++    private SessionIdentity actor(HttpServletRequest request) {
++        SessionIdentity actor = sessions.identity(request);
++        if (actor == null) throw new SessionExpiredException();
++        return actor;
++    }
++    private static Long safeId(String value) {
++        try {
++            String stripped = value == null ? "" : value.strip();
++            if (!stripped.matches("[0-9]+")) return null;
++            long id = Long.parseLong(stripped);
++            return id > 0 ? id : null;
++        } catch (NumberFormatException invalid) { return null; }
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerMapper.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerMapper.java
+new file mode 100644
+index 0000000..6b7e9db
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerMapper.java
+@@ -0,0 +1,38 @@
++package org.csucampuscraft.admin.customer;
++
++import java.time.LocalDateTime;
++import java.util.List;
++import org.apache.ibatis.annotations.Mapper;
++import org.apache.ibatis.annotations.Param;
++import org.apache.ibatis.annotations.Select;
++import org.apache.ibatis.annotations.Update;
++
++/** All projections explicitly omit password_hash; no BaseMapper select-* entry point. */
++@Mapper
++public interface CustomerMapper {
++    String COLUMNS = "id,username,display_name,status,email,phone,created_at,updated_at";
++    String FILTER = "<where>role='CUSTOMER'"
++            + "<if test='query.q.length() > 0'> AND username LIKE #{query.likePattern} ESCAPE '!'</if>"
++            + "<if test='query.status != \"ALL\"'> AND status=#{query.status}</if></where>";
++
++    @Select("<script>SELECT COUNT(*) FROM store_user " + FILTER + "</script>")
++    long count(@Param("query") CustomerQuery query);
++
++    @Select("<script>SELECT " + COLUMNS + " FROM store_user " + FILTER
++            + " ORDER BY id ASC LIMIT #{query.size} OFFSET #{query.offset}</script>")
++    List<CustomerProfile> selectPage(@Param("query") CustomerQuery query);
++
++    @Select("SELECT " + COLUMNS + " FROM store_user WHERE id=#{userId} AND role='CUSTOMER'")
++    CustomerProfile selectCustomer(@Param("userId") long userId);
++
++    @Select("SELECT id,role,status,updated_at FROM store_user WHERE id=#{userId} FOR UPDATE")
++    CustomerTarget selectTargetForUpdate(@Param("userId") long userId);
++
++    @Update("""
++            UPDATE store_user
++               SET status=#{targetStatus},updated_at=GREATEST(CURRENT_TIMESTAMP(6),updated_at+INTERVAL 1 MICROSECOND)
++             WHERE id=#{userId} AND role='CUSTOMER' AND status=#{previousStatus} AND updated_at=#{previousStamp}
++            """)
++    int changeStatus(@Param("userId") long userId, @Param("targetStatus") String targetStatus,
++                     @Param("previousStatus") String previousStatus, @Param("previousStamp") LocalDateTime previousStamp);
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerPage.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerPage.java
+new file mode 100644
+index 0000000..22dfda8
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerPage.java
+@@ -0,0 +1,18 @@
++package org.csucampuscraft.admin.customer;
++
++import java.util.List;
++
++public record CustomerPage(List<CustomerProfile> items, long totalCount, CustomerQuery query) {
++    public CustomerPage { items = List.copyOf(items); }
++    public List<CustomerProfile> getItems() { return items; }
++    public long getTotalCount() { return totalCount; }
++    public CustomerQuery getQuery() { return query; }
++    public long getPage() { return query.page(); }
++    public int getSize() { return query.size(); }
++    public long getTotalPages() { return totalCount / query.size() + (totalCount % query.size() == 0 ? 0 : 1); }
++    public long getFirstValidPage() { return Math.max(1, Math.min(query.page(), getTotalPages())); }
++    public boolean isEmpty() { return items.isEmpty(); }
++    public boolean isHasPrevious() { return query.page() > 1; }
++    public boolean isHasNext() { return query.page() < getTotalPages(); }
++    @Override public String toString() { return "CustomerPage[count=" + totalCount + ", customerDetails=REDACTED]"; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerProfile.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerProfile.java
+new file mode 100644
+index 0000000..a58f472
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerProfile.java
+@@ -0,0 +1,29 @@
++package org.csucampuscraft.admin.customer;
++
++import java.time.LocalDateTime;
++import java.time.ZoneOffset;
++import java.time.ZoneId;
++import java.time.format.DateTimeFormatter;
++
++/** Safe page projection: never contains a password, hash, or editable account fields. */
++public record CustomerProfile(long id, String username, String displayName, String status,
++                              String email, String phone, LocalDateTime createdAt, LocalDateTime updatedAt) {
++    private static final DateTimeFormatter DISPLAY = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
++    private static final ZoneId DISPLAY_ZONE = ZoneId.of("Asia/Shanghai");
++    public long getId() { return id; }
++    public String getUsername() { return username; }
++    public String getDisplayName() { return displayName; }
++    public String getStatus() { return status; }
++    public String getStatusLabel() { return CustomerStatus.valueOf(status).getLabel(); }
++    public String getEmail() { return email; }
++    public String getPhone() { return phone; }
++    public LocalDateTime getCreatedAt() { return createdAt; }
++    public LocalDateTime getUpdatedAt() { return updatedAt; }
++    public String getCreatedAtDisplay() { return display(createdAt); }
++    public String getUpdatedAtDisplay() { return display(updatedAt); }
++    public boolean isEnabled() { return "ENABLED".equals(status); }
++    private static String display(LocalDateTime value) {
++        return value == null ? null : value.atOffset(ZoneOffset.UTC).atZoneSameInstant(DISPLAY_ZONE).format(DISPLAY);
++    }
++    @Override public String toString() { return "CustomerProfile[id=" + id + ", details=REDACTED]"; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerQuery.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerQuery.java
+new file mode 100644
+index 0000000..764e579
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerQuery.java
+@@ -0,0 +1,34 @@
++package org.csucampuscraft.admin.customer;
++
++import org.csucampuscraft.admin.foundation.validation.InputChecks;
++
++public record CustomerQuery(String q, String status, long page, int size) {
++    public CustomerQuery {
++        if (q == null || status == null || page < 1 || size < 1 || size > 50) {
++            throw new IllegalArgumentException("Noncanonical customer query");
++        }
++    }
++    public static CustomerQuery bind(String q, String status, String page, String size) {
++        String keyword = InputChecks.text("q", q, 0, 50);
++        String state = status == null || "ALL".equals(status.strip()) ? "ALL"
++                : InputChecks.enumeration("status", status, CustomerStatus.class).name();
++        long requested = page == null ? 1 : InputChecks.longInteger("page", page, Long.MIN_VALUE, Long.MAX_VALUE);
++        int limit = size == null ? 10 : InputChecks.integer("size", size, 1, 50);
++        return new CustomerQuery(keyword, state, Math.max(1, requested), limit);
++    }
++    public String getQ() { return q; }
++    public String getStatus() { return status; }
++    public long getPage() { return page; }
++    public int getSize() { return size; }
++    public boolean isOffsetRepresentable() { return page - 1 <= Long.MAX_VALUE / size; }
++    public long offset() {
++        if (!isOffsetRepresentable()) throw new IllegalStateException("Customer offset is not representable");
++        return (page - 1) * size;
++    }
++    public long getOffset() { return offset(); }
++    /** ! is the explicit SQL escape: backslash itself is an ordinary literal. */
++    public String likePattern() {
++        return q.isEmpty() ? null : "%" + q.replace("!", "!!").replace("%", "!%").replace("_", "!_") + "%";
++    }
++    public String getLikePattern() { return likePattern(); }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerService.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerService.java
+new file mode 100644
+index 0000000..2ffbc52
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerService.java
+@@ -0,0 +1,67 @@
++package org.csucampuscraft.admin.customer;
++
++import java.util.List;
++import java.util.Map;
++import org.csucampuscraft.admin.auth.AdminWriteGuard;
++import org.csucampuscraft.admin.auth.SessionIdentity;
++import org.csucampuscraft.admin.foundation.validation.InputChecks;
++import org.csucampuscraft.admin.foundation.web.BusinessException;
++import org.springframework.dao.ConcurrencyFailureException;
++import org.springframework.dao.DataIntegrityViolationException;
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Service;
++import org.springframework.transaction.annotation.Isolation;
++import org.springframework.transaction.annotation.Transactional;
++
++@Service
++public class CustomerService {
++    private final AdminWriteGuard administrators;
++    private final CustomerMapper customers;
++    public CustomerService(AdminWriteGuard administrators, CustomerMapper customers) {
++        this.administrators = administrators;
++        this.customers = customers;
++    }
++    @Transactional(readOnly = true)
++    public CustomerPage page(CustomerQuery query) {
++        long count = customers.count(query);
++        List<CustomerProfile> rows = count == 0 || !query.isOffsetRepresentable() || query.offset() >= count
++                ? List.of() : customers.selectPage(query);
++        return new CustomerPage(rows, count, query);
++    }
++    @Transactional(readOnly = true)
++    public CustomerProfile detail(String userId) {
++        long id = InputChecks.longInteger("userId", userId, 1, Long.MAX_VALUE);
++        CustomerProfile customer = customers.selectCustomer(id);
++        if (customer == null) throw missing();
++        return customer;
++    }
++    @Transactional(isolation = Isolation.READ_COMMITTED)
++    public CustomerStatusResult changeStatus(SessionIdentity actor, String userId, List<String> targetStatuses) {
++        try {
++            // First database operation, even for malformed target input.
++            administrators.lock(actor);
++            long id = InputChecks.longInteger("userId", userId, 1, Long.MAX_VALUE);
++            CustomerTarget current = customers.selectTargetForUpdate(id);
++            if (current == null || !"CUSTOMER".equals(current.role())) throw missing();
++            if (targetStatuses == null || targetStatuses.size() != 1) throw invalidTarget();
++            CustomerStatus target = InputChecks.enumeration("targetStatus", targetStatuses.get(0), CustomerStatus.class);
++            if (target.name().equals(current.status())) return CustomerStatusResult.UNCHANGED;
++            if (customers.changeStatus(id, target.name(), current.status(), current.updatedAt()) != 1) throw writeConflict();
++            return CustomerStatusResult.CHANGED;
++        } catch (DataIntegrityViolationException | ConcurrencyFailureException failed) {
++            // Includes timestamp range rejection: rollback, no automatic write retry, no technical detail.
++            throw writeConflict();
++        }
++    }
++    private static BusinessException invalidTarget() {
++        return new BusinessException(HttpStatus.BAD_REQUEST, "INVALID_TARGET_STATUS", "请选择唯一的目标启停状态。",
++                Map.of("targetStatus", "只能提交一个启用或禁用状态。"));
++    }
++    private static BusinessException missing() {
++        return new BusinessException(HttpStatus.NOT_FOUND, "CUSTOMER_NOT_FOUND", "未找到该普通顾客。");
++    }
++    private static BusinessException writeConflict() {
++        return new BusinessException(HttpStatus.CONFLICT, "CUSTOMER_STATUS_WRITE_CONFLICT",
++                "顾客状态未能更新，请先查看当前状态，再决定是否重试。");
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerStatus.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerStatus.java
+new file mode 100644
+index 0000000..8760960
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerStatus.java
+@@ -0,0 +1,9 @@
++package org.csucampuscraft.admin.customer;
++
++public enum CustomerStatus {
++    ENABLED("启用"), DISABLED("禁用");
++    private final String label;
++    CustomerStatus(String label) { this.label = label; }
++    public String getValue() { return name(); }
++    public String getLabel() { return label; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerStatusResult.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerStatusResult.java
+new file mode 100644
+index 0000000..2860978
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerStatusResult.java
+@@ -0,0 +1,3 @@
++package org.csucampuscraft.admin.customer;
++
++public enum CustomerStatusResult { CHANGED, UNCHANGED }
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerTarget.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerTarget.java
+new file mode 100644
+index 0000000..d5899a2
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerTarget.java
+@@ -0,0 +1,8 @@
++package org.csucampuscraft.admin.customer;
++
++import java.time.LocalDateTime;
++
++/** Locked write-only safe projection; never placed in a page model. */
++public record CustomerTarget(long id, String role, String status, LocalDateTime updatedAt) {
++    @Override public String toString() { return "CustomerTarget[id=" + id + ", details=REDACTED]"; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardController.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardController.java
+new file mode 100644
+index 0000000..8cc153f
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardController.java
+@@ -0,0 +1,26 @@
++package org.csucampuscraft.admin.dashboard;
++
++import org.springframework.http.HttpStatus;
++import org.springframework.stereotype.Controller;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.servlet.ModelAndView;
++
++/** Replaces the initialization root reader; authorization remains in the existing AuthFilter. */
++@Controller
++public final class DashboardController {
++    private final DashboardService dashboard;
++    public DashboardController(DashboardService dashboard) { this.dashboard = dashboard; }
++    @GetMapping("/")
++    public ModelAndView home() {
++        try {
++            return new ModelAndView("home", "dashboardSummary", dashboard.summary());
++        } catch (RuntimeException unavailable) {
++            ModelAndView view = new ModelAndView("dashboard-error");
++            view.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
++            view.addObject("errorStatus", 500);
++            view.addObject("errorCode", "DASHBOARD_QUERY_FAILED");
++            view.addObject("errorMessage", "控制台暂时无法读取统计，请稍后重试。");
++            return view;
++        }
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardMapper.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardMapper.java
+new file mode 100644
+index 0000000..f3797c9
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardMapper.java
+@@ -0,0 +1,16 @@
++package org.csucampuscraft.admin.dashboard;
++
++import org.apache.ibatis.annotations.Mapper;
++import org.apache.ibatis.annotations.Select;
++
++@Mapper
++public interface DashboardMapper {
++    @Select("""
++            SELECT (SELECT COUNT(*) FROM product WHERE status='ON_SALE') AS on_sale_product_count,
++                   (SELECT COUNT(*) FROM product WHERE status='DRAFT') AS draft_product_count,
++                   (SELECT COUNT(*) FROM sales_order WHERE status='PAID') AS paid_order_count,
++                   (SELECT COUNT(*) FROM store_user WHERE role='CUSTOMER' AND status='ENABLED') AS enabled_customer_count,
++                   (SELECT COUNT(*) FROM store_user WHERE role='CUSTOMER' AND status='DISABLED') AS disabled_customer_count
++            """)
++    DashboardSummary selectSummary();
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardService.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardService.java
+new file mode 100644
+index 0000000..ce6b024
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardService.java
+@@ -0,0 +1,16 @@
++package org.csucampuscraft.admin.dashboard;
++
++import org.springframework.stereotype.Service;
++import org.springframework.transaction.annotation.Transactional;
++
++@Service
++public class DashboardService {
++    private final DashboardMapper dashboard;
++    public DashboardService(DashboardMapper dashboard) { this.dashboard = dashboard; }
++    @Transactional(readOnly = true)
++    public DashboardSummary summary() {
++        DashboardSummary result = dashboard.selectSummary();
++        if (result == null) throw new IllegalStateException("Dashboard statistics unavailable");
++        return result;
++    }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardSummary.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardSummary.java
+new file mode 100644
+index 0000000..3d8abc1
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardSummary.java
+@@ -0,0 +1,16 @@
++package org.csucampuscraft.admin.dashboard;
++
++public record DashboardSummary(long onSaleProductCount, long draftProductCount, long paidOrderCount,
++                               long enabledCustomerCount, long disabledCustomerCount) {
++    public DashboardSummary {
++        if (onSaleProductCount < 0 || draftProductCount < 0 || paidOrderCount < 0
++                || enabledCustomerCount < 0 || disabledCustomerCount < 0) {
++            throw new IllegalArgumentException("Invalid dashboard counts");
++        }
++    }
++    public long getOnSaleProductCount() { return onSaleProductCount; }
++    public long getDraftProductCount() { return draftProductCount; }
++    public long getPaidOrderCount() { return paidOrderCount; }
++    public long getEnabledCustomerCount() { return enabledCustomerCount; }
++    public long getDisabledCustomerCount() { return disabledCustomerCount; }
++}
+diff --git a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/HomeController.java b/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/HomeController.java
+deleted file mode 100644
+index c4987ea..0000000
+--- a/csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/HomeController.java
++++ /dev/null
+@@ -1,21 +0,0 @@
+-package org.csucampuscraft.admin.web;
+-
+-import org.csucampuscraft.admin.catalog.CategoryService;
+-import org.springframework.stereotype.Controller;
+-import org.springframework.ui.Model;
+-import org.springframework.web.bind.annotation.GetMapping;
+-
+-@Controller
+-public class HomeController {
+-    private final CategoryService categoryService;
+-
+-    public HomeController(CategoryService categoryService) {
+-        this.categoryService = categoryService;
+-    }
+-
+-    @GetMapping("/")
+-    public String home(Model model) {
+-        model.addAttribute("themes", categoryService.listTopLevelThemes());
+-        return "home";
+-    }
+-}
+diff --git a/csucampuscraft-admin/src/main/resources/static/css/app.css b/csucampuscraft-admin/src/main/resources/static/css/app.css
+index 7bd506f..404c7d9 100644
+--- a/csucampuscraft-admin/src/main/resources/static/css/app.css
++++ b/csucampuscraft-admin/src/main/resources/static/css/app.css
+@@ -359,3 +359,59 @@ tbody tr[aria-disabled="true"] { color: var(--color-muted); background: var(--co
+     [data-page-id="A06"] .admin-order-filter, [data-page-id="A07"] .admin-order-metadata, [data-page-id="A07"] .admin-order-payment-details, [data-page-id="A07"] .admin-order-detail-grid { grid-template-columns: 1fr; }
+     [data-page-id="A07"] .admin-order-items-table { min-width: 660px; }
+ }
++
++/* STEP12 A02/A08/A09 only: retain all existing component rules. */
++[data-page-id="A02"], [data-page-id="A08"], [data-page-id="A09"] { min-width: 0; }
++[data-page-id="A02"] .dashboard-section-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-3); margin-bottom: var(--space-4); }
++[data-page-id="A02"] .dashboard-count-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-4); }
++[data-page-id="A02"] .dashboard-count-card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-4); color: var(--color-text); text-decoration: none; min-width: 0; overflow-wrap: anywhere; }
++[data-page-id="A02"] .dashboard-count-card:hover { border-color: var(--color-primary); }
++[data-page-id="A02"] .dashboard-count-label { color: var(--color-primary); font-weight: 600; }
++[data-page-id="A02"] .dashboard-count-value { font-size: 32px; line-height: 1.3; color: var(--color-primary); }
++[data-page-id="A02"] .dashboard-card-action { margin-top: auto; padding-top: var(--space-2); color: var(--color-primary); font-size: var(--font-size-small); text-decoration: underline; text-underline-offset: 3px; }
++[data-page-id="A02"] .dashboard-count-note { margin-top: var(--space-4); }
++[data-page-id="A02"] .dashboard-module-panel { margin-top: var(--space-8); }
++[data-page-id="A02"] .dashboard-module-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
++[data-page-id="A02"] .dashboard-module-grid a { display: grid; gap: var(--space-2); padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius); text-decoration: none; }
++[data-page-id="A02"] .dashboard-module-grid a:hover { border-color: var(--color-primary); }
++[data-page-id="A02"] .dashboard-module-grid span { color: var(--color-muted); font-size: var(--font-size-small); }
++[data-page-id="A08"] .customer-breadcrumb, [data-page-id="A09"] .customer-breadcrumb { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); font-size: var(--font-size-small); }
++[data-page-id="A08"] .customer-heading, [data-page-id="A09"] .customer-heading { display: flex; align-items: start; justify-content: space-between; gap: var(--space-6); }
++[data-page-id="A08"] .customer-heading > div, [data-page-id="A09"] .customer-heading > div { min-width: 0; }
++[data-page-id="A08"] .customer-heading h1, [data-page-id="A09"] .customer-heading h1 { margin-block: var(--space-2); }
++[data-page-id="A09"] .customer-heading-actions { display: flex; flex-wrap: wrap; justify-content: end; gap: var(--space-3); }
++[data-page-id="A08"] .customer-filter { display: grid; grid-template-columns: minmax(220px, 2fr) minmax(150px, 1fr) 140px; gap: var(--space-4); align-items: start; }
++[data-page-id="A08"] .customer-filter .form-field { margin-bottom: 0; }
++[data-page-id="A08"] .customer-filter-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: var(--space-3); }
++[data-page-id="A08"] .customer-results-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-3); margin-block: var(--space-6) var(--space-3); }
++[data-page-id="A08"] .customer-table { table-layout: fixed; }
++[data-page-id="A08"] .customer-table th:nth-child(1) { width: 9%; }
++[data-page-id="A08"] .customer-table th:nth-child(2) { width: 24%; }
++[data-page-id="A08"] .customer-table th:nth-child(3) { width: 20%; }
++[data-page-id="A08"] .customer-table th:nth-child(4) { width: 13%; }
++[data-page-id="A08"] .customer-table th:nth-child(5) { width: 24%; }
++[data-page-id="A08"] .customer-table th:nth-child(6) { width: 10%; }
++[data-page-id="A08"] .customer-table td { overflow-wrap: anywhere; }
++[data-page-id="A08"] .customer-timezone { display: block; }
++[data-page-id="A08"] .customer-pagination { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--space-4); margin-top: var(--space-6); }
++[data-page-id="A08"] .empty-state .button { margin-top: var(--space-4); }
++[data-page-id="A08"] .customer-status, [data-page-id="A09"] .customer-status { display: inline-block; padding: var(--space-1) var(--space-2); border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-bg); color: var(--color-primary); font-size: var(--font-size-small); font-weight: 600; white-space: nowrap; }
++[data-page-id="A09"] .customer-profile-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: start; gap: var(--space-4); }
++[data-page-id="A09"] .customer-profile-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6); margin: var(--space-4) 0 0; }
++[data-page-id="A09"] .customer-profile-grid dt { color: var(--color-muted); font-size: var(--font-size-small); }
++[data-page-id="A09"] .customer-profile-grid dd { margin: var(--space-1) 0 0; overflow-wrap: anywhere; }
++[data-page-id="A09"] .customer-state-panel { margin-top: var(--space-6); }
++[data-page-id="A09"] .customer-disable-confirmation, [data-page-id="A09"] .customer-enable-form { margin-top: var(--space-4); }
++[data-page-id="A09"] .customer-disable-confirmation > summary { list-style: none; width: fit-content; }
++[data-page-id="A09"] .customer-disable-confirmation > summary::-webkit-details-marker { display: none; }
++[data-page-id="A09"] .customer-confirmation-content { margin-top: var(--space-3); padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-bg); overflow-wrap: anywhere; }
++[data-page-id="A09"] .customer-confirmation-content form { margin-top: var(--space-4); }
++@media (max-width: 900px) {
++    [data-page-id="A02"] .dashboard-count-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
++    [data-page-id="A08"] .customer-table { min-width: 880px; }
++}
++@media (max-width: 600px) {
++    [data-page-id="A02"] .dashboard-count-grid, [data-page-id="A02"] .dashboard-module-grid, [data-page-id="A08"] .customer-filter, [data-page-id="A09"] .customer-profile-grid { grid-template-columns: 1fr; }
++    [data-page-id="A08"] .customer-heading, [data-page-id="A09"] .customer-heading { flex-direction: column; }
++    [data-page-id="A09"] .customer-heading-actions { justify-content: start; }
++}
+diff --git a/csucampuscraft-admin/src/main/resources/templates/customers/action-conflict.html b/csucampuscraft-admin/src/main/resources/templates/customers/action-conflict.html
+new file mode 100644
+index 0000000..02d122f
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/customers/action-conflict.html
+@@ -0,0 +1,5 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: page('顾客状态操作提示 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>顾客状态操作提示</title></head><body>
++<section th:fragment="mainContent" class="panel error-page" data-page-id="A09" data-customer-action-conflict th:attr="data-error-status=${errorStatus},data-error-code=${errorCode}" aria-labelledby="customer-conflict-title"><p class="error-number" th:text="${errorStatus}">409</p><h1 id="customer-conflict-title">未能更新顾客状态</h1><p th:text="${errorMessage}">请重新查看该顾客的当前状态，再决定是否操作。</p><p class="muted">请先核对实际启停状态；本页不显示成功结果。</p><p class="error-code">错误代码：<span th:text="${errorCode}">CUSTOMER_STATUS_CONFLICT</span></p><div class="button-row"><a class="button" th:if="${userId != null}" th:href="@{/customers/{id}(id=${userId})}" data-return-customer>查看顾客详情</a><a class="button button-secondary" th:href="@{/customers}" data-return-customers>返回顾客列表</a></div></section>
++</body></html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/customers/detail.html b/csucampuscraft-admin/src/main/resources/templates/customers/detail.html
+new file mode 100644
+index 0000000..baad219
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/customers/detail.html
+@@ -0,0 +1,16 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: page('顾客详情 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>顾客详情</title></head><body>
++<div th:fragment="mainContent" data-page-id="A09" class="admin-customer-detail" th:attr="data-customer-id=${customer.id},data-customer-status=${customer.status}">
++    <nav class="customer-breadcrumb" aria-label="当前位置"><a th:href="@{/}">管理控制台</a><span aria-hidden="true">/</span><a th:href="@{/customers}">普通顾客管理</a><span aria-hidden="true">/</span><span aria-current="page">顾客详情</span></nav>
++    <header class="page-heading customer-heading"><div><p class="eyebrow">教学账号管理</p><h1>顾客详情</h1><p class="muted">查看普通顾客教学资料与当前启停状态。</p></div><div class="customer-heading-actions"><a class="button" th:href="@{/orders(userId=${customer.id})}" data-customer-orders-link>查看该顾客订单</a><a class="button button-secondary" th:href="@{/customers}">返回顾客列表</a></div></header>
++    <section class="panel customer-profile" aria-labelledby="customer-profile-title"><div class="customer-profile-heading"><h2 id="customer-profile-title">教学账号资料</h2><span class="customer-status" data-customer-status-label th:text="${customer.statusLabel}">启用</span></div>
++        <dl class="customer-profile-grid"><div><dt>顾客 ID</dt><dd data-customer-id-value th:text="${customer.id}">0</dd></div><div><dt>用户名</dt><dd data-customer-username th:text="${customer.username}">用户名</dd></div><div><dt>显示名</dt><dd data-customer-display-name th:text="${customer.displayName}">显示名</dd></div><div><dt>创建时间</dt><dd><time data-customer-created-at th:text="${customer.createdAtDisplay}">创建时间</time>（北京时间）</dd></div><div><dt>教学邮箱</dt><dd data-customer-contact="email" th:text="${customer.email == null or #strings.isEmpty(#strings.trim(customer.email)) ? '未填写' : customer.email}">[REDACTED-CONTACT]</dd></div><div><dt>教学电话</dt><dd data-customer-contact="phone" th:text="${customer.phone == null or #strings.isEmpty(#strings.trim(customer.phone)) ? '未填写' : customer.phone}">[REDACTED-CONTACT]</dd></div></dl>
++    </section>
++    <section class="panel customer-state-panel" aria-labelledby="customer-state-title"><h2 id="customer-state-title">启停管理</h2>
++        <th:block th:if="${customer.enabled}"><p>当前账号已启用。禁用前请核对用户名和对已有会话的影响。</p>
++            <details class="customer-disable-confirmation" data-disable-confirmation><summary class="button button-danger">禁用该顾客</summary><div class="customer-confirmation-content"><p id="customer-disable-help">将禁用普通顾客 <strong th:text="${customer.username}">用户名</strong>。该顾客后续保护请求需重新登录，已有购物车和订单保留；不会自动取消订单或返还库存。</p><form method="post" th:action="@{/customers/{id}/status(id=${customer.id})}" data-submit-state data-customer-status-form aria-describedby="customer-disable-help"><th:block th:replace="~{fragments/fields :: csrf}"></th:block><input type="hidden" name="targetStatus" value="DISABLED"><button type="submit" class="button-danger" data-confirm-disable data-submit-label="正在禁用…">确认禁用该顾客</button></form></div></details>
++        </th:block>
++        <th:block th:unless="${customer.enabled}"><p id="customer-enable-help">当前普通顾客 <strong th:text="${customer.username}">用户名</strong> 已禁用。启用后须正常重新登录，旧会话不会恢复；原有购物车、订单与成交快照保留。</p><form method="post" th:action="@{/customers/{id}/status(id=${customer.id})}" class="customer-enable-form" data-submit-state data-customer-status-form aria-describedby="customer-enable-help"><th:block th:replace="~{fragments/fields :: csrf}"></th:block><input type="hidden" name="targetStatus" value="ENABLED"><button type="submit" data-confirm-enable data-submit-label="正在启用…">启用该顾客</button></form></th:block>
++    </section>
++</div></body></html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/customers/index.html b/csucampuscraft-admin/src/main/resources/templates/customers/index.html
+new file mode 100644
+index 0000000..56d52cb
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/customers/index.html
+@@ -0,0 +1,26 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: page('普通顾客管理 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>普通顾客管理</title></head><body>
++<div th:fragment="mainContent" data-page-id="A08" class="admin-customers-page"
++     th:attr="data-customer-count=${customerPage.totalCount},data-result-count=${#lists.size(customerPage.items)},data-page=${customerPage.page},data-size=${customerPage.size},data-total-pages=${customerPage.totalPages}">
++    <nav class="customer-breadcrumb" aria-label="当前位置"><a th:href="@{/}">管理控制台</a><span aria-hidden="true">/</span><span aria-current="page">普通顾客管理</span></nav>
++    <header class="page-heading customer-heading"><div><p class="eyebrow">教学账号管理</p><h1>普通顾客管理</h1><p class="muted">按用户名与启停状态查询普通顾客，查看教学资料与关联订单。</p></div><a class="button button-secondary" th:href="@{/}">返回控制台</a></header>
++    <section class="panel customer-filter-panel" aria-labelledby="customer-filter-title"><h2 id="customer-filter-title">查询顾客</h2>
++        <form method="get" th:action="@{/customers}" class="customer-filter" data-customer-filter>
++            <div class="form-field customer-query-field"><label for="customers-q">用户名包含</label><input id="customers-q" type="search" name="q" th:value="${customerQuery.q}" aria-describedby="customers-q-help" placeholder="输入用户名的一部分"><p id="customers-q-help" class="field-help">最多 50 个字符；% 和 _ 按普通字符查询。</p></div>
++            <div class="form-field"><label for="customers-status">启停状态</label><select id="customers-status" name="status"><option value="ALL" th:selected="${customerQuery.status == 'ALL'}">全部状态</option><option th:each="state : ${customerStatuses}" th:value="${state.value}" th:selected="${customerQuery.status == state.value}" th:text="${state.label}">顾客状态</option></select></div>
++            <div class="form-field customer-size-field"><label for="customers-size">每页条数</label><input id="customers-size" type="number" name="size" min="1" max="50" step="1" th:value="${customerPage.size}"></div>
++            <input type="hidden" name="page" value="1"><div class="customer-filter-actions"><button type="submit">查询顾客</button><a class="button button-secondary" th:href="@{/customers(status='ALL',page=1,size=${customerPage.size})}" data-customer-clear>清除条件</a></div>
++        </form>
++    </section>
++    <div class="customer-results-heading"><p class="muted">共 <strong th:text="${customerPage.totalCount}">0</strong> 位普通顾客<span th:if="${customerPage.totalCount > 0}">，第 <span th:text="${customerPage.page}">1</span> 页 / 共 <span th:text="${customerPage.totalPages}">1</span> 页</span></p><p class="field-help">按顾客 ID 升序显示，仅包含普通顾客。</p></div>
++    <section class="empty-state" th:if="${customerPage.empty}" data-customers-empty>
++        <th:block th:if="${customerPage.page > (customerPage.totalPages > 0 ? customerPage.totalPages : 1)}"><h2>当前页超出顾客范围</h2><p>查询条件保持不变，请返回有效页继续查看。</p><a class="button button-secondary" th:href="@{/customers(q=${customerQuery.q},status=${customerQuery.status},page=${customerPage.firstValidPage},size=${customerPage.size})}" th:attr="data-page-link=${customerPage.firstValidPage}" th:text="${'返回第 ' + customerPage.firstValidPage + ' 页'}">返回有效页</a></th:block>
++        <th:block th:unless="${customerPage.page > (customerPage.totalPages > 0 ? customerPage.totalPages : 1)}"><h2 th:text="${customerQuery.q != '' or customerQuery.status != 'ALL' ? '暂无匹配顾客' : '暂无普通顾客'}">暂无普通顾客</h2><p>可调整用户名、启停状态，或清除条件重新查看。</p><a class="button button-secondary" th:href="@{/customers(status='ALL',page=1,size=${customerPage.size})}">清除条件</a></th:block>
++    </section>
++    <div class="table-container customer-table-container" th:unless="${customerPage.empty}"><table class="customer-table" data-customer-list>
++        <caption>普通顾客清单</caption><thead><tr><th scope="col">顾客 ID</th><th scope="col">用户名</th><th scope="col">显示名</th><th scope="col">启停状态</th><th scope="col">创建时间</th><th scope="col">操作</th></tr></thead>
++        <tbody><tr th:each="item : ${customerPage.items}" th:attr="data-customer-id=${item.id},data-customer-username=${item.username},data-customer-status=${item.status}"><td th:text="${item.id}">0</td><td><a th:href="@{/customers/{id}(id=${item.id})}" th:text="${item.username}">用户名</a></td><td th:text="${item.displayName}">显示名</td><td><span class="customer-status" th:text="${item.statusLabel}">启用</span></td><td><time th:text="${item.createdAtDisplay}">创建时间</time><span class="field-help customer-timezone">北京时间</span></td><td><a th:href="@{/customers/{id}(id=${item.id})}" data-customer-detail-link>查看详情</a></td></tr></tbody>
++    </table></div>
++    <nav class="customer-pagination" aria-label="顾客分页" th:if="${customerPage.totalCount > 0}"><a class="button button-secondary" th:if="${customerPage.hasPrevious}" th:href="@{/customers(q=${customerQuery.q},status=${customerQuery.status},page=${customerPage.page - 1},size=${customerPage.size})}" th:attr="data-page-link=${customerPage.page - 1}">上一页</a><span th:unless="${customerPage.hasPrevious}" aria-disabled="true">上一页</span><span>第 <strong th:text="${customerPage.page}">1</strong> 页 / 共 <span th:text="${customerPage.totalPages}">1</span> 页</span><a class="button button-secondary" th:if="${customerPage.hasNext}" th:href="@{/customers(q=${customerQuery.q},status=${customerQuery.status},page=${customerPage.page + 1},size=${customerPage.size})}" th:attr="data-page-link=${customerPage.page + 1}">下一页</a><span th:unless="${customerPage.hasNext}" aria-disabled="true">下一页</span></nav>
++</div></body></html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/dashboard-error.html b/csucampuscraft-admin/src/main/resources/templates/dashboard-error.html
+new file mode 100644
+index 0000000..d0e5bbe
+--- /dev/null
++++ b/csucampuscraft-admin/src/main/resources/templates/dashboard-error.html
+@@ -0,0 +1,9 @@
++<!DOCTYPE html>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: page('控制台暂不可用 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>控制台暂不可用</title></head><body>
++<section th:fragment="mainContent" class="panel error-page" data-page-id="A02" data-dashboard-unavailable data-error-status="500" aria-labelledby="dashboard-error-title">
++    <p class="error-number">500</p><h1 id="dashboard-error-title">控制台暂不可用</h1>
++    <p>当前无法读取统计，请稍后重试。</p><p class="muted">本页未展示数量，避免把读取失败当作没有数据。</p>
++    <p class="error-code">错误代码：<span>DASHBOARD_QUERY_FAILED</span></p>
++    <div class="button-row"><a class="button" th:href="@{/}" data-dashboard-retry>重新读取控制台</a><a class="button button-secondary" th:href="@{/customers}">前往顾客列表</a></div>
++</section></body></html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html b/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html
+index 73c088d..343b0b5 100644
+--- a/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html
++++ b/csucampuscraft-admin/src/main/resources/templates/fragments/layout.html
+@@ -20,6 +20,7 @@
+             <a th:if="${authenticated}" th:href="@{/categories}">分类管理</a>
+             <a th:if="${authenticated}" th:href="@{/products}">商品管理</a>
+             <a th:if="${authenticated}" th:href="@{/orders}" data-admin-orders-link>订单管理</a>
++            <a th:if="${authenticated}" th:href="@{/customers}" data-admin-customers-link>顾客管理</a>
+             <span class="app-label" th:text="${appId == 'admin' ? '管理端' : '用户端'}">用户端</span>
+             <span class="nav-placeholder" th:if="${appId == 'user'}"
+                   th:attr="aria-label=${'购物车，' + (cartQuantity ?: 0) + ' 件'}">
+diff --git a/csucampuscraft-admin/src/main/resources/templates/home.html b/csucampuscraft-admin/src/main/resources/templates/home.html
+index d60c245..a304317 100644
+--- a/csucampuscraft-admin/src/main/resources/templates/home.html
++++ b/csucampuscraft-admin/src/main/resources/templates/home.html
+@@ -1,24 +1,26 @@
+ <!DOCTYPE html>
+-<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+-      th:replace="~{fragments/layout :: page('CSUCampusCraft 管理端', ~{::mainContent})}">
+-<head><title>CSUCampusCraft 管理端</title></head>
++<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: page('管理控制台 · CSUCampusCraft', ~{::mainContent})}">
++<head><title>管理控制台</title></head>
+ <body>
+-<div th:fragment="mainContent">
+-    <header class="page-heading">
+-        <small class="eyebrow">校园文创商城 · 工程初始化</small>
+-        <h1>CSUCampusCraft 管理端</h1>
+-        <p class="muted">CSUCampusCraft 管理端工程已接入共享商品分类。当前展示数据库中的一级主题。</p>
+-    </header>
+-    <section class="panel" aria-labelledby="themes-heading">
+-        <h2 id="themes-heading">校园主题</h2>
+-        <p class="muted" th:attr="data-theme-count=${#lists.size(themes)}">
+-            共 <span th:text="${#lists.size(themes)}">0</span> 个一级主题
+-        </p>
+-        <p class="empty-state" th:if="${#lists.isEmpty(themes)}">暂无主题。请确认演示数据已导入。</p>
+-        <ul class="theme-list" th:unless="${#lists.isEmpty(themes)}">
+-            <li th:each="theme : ${themes}" th:attr="data-theme-code=${theme.code}" th:text="${theme.name}"></li>
+-        </ul>
++<div th:fragment="mainContent" data-page-id="A02" class="admin-dashboard"
++     th:attr="data-on-sale-count=${dashboardSummary.onSaleProductCount},data-draft-count=${dashboardSummary.draftProductCount},data-paid-order-count=${dashboardSummary.paidOrderCount},data-enabled-customer-count=${dashboardSummary.enabledCustomerCount},data-disabled-customer-count=${dashboardSummary.disabledCustomerCount}">
++    <header class="page-heading"><p class="eyebrow">CSUCampusCraft 管理端</p><h1>管理控制台</h1><p class="muted">当前管理员：<span th:text="${currentUser.displayName}">管理员</span>。查看当前业务数量，进入相应列表继续处理。</p></header>
++    <section aria-labelledby="dashboard-counts-title"><div class="dashboard-section-heading"><h2 id="dashboard-counts-title">当前数量</h2><a th:href="@{/}" data-dashboard-refresh>刷新统计</a></div>
++        <div class="dashboard-count-grid" data-dashboard-counts>
++            <a class="panel dashboard-count-card" th:href="@{/products(status='ON_SALE')}" data-dashboard-card="on-sale-products"><span class="dashboard-count-label">上架商品</span><strong class="dashboard-count-value" data-dashboard-count th:text="${dashboardSummary.onSaleProductCount}">—</strong><span class="field-help">包含售罄商品</span><span class="dashboard-card-action">查看上架商品 →</span></a>
++            <a class="panel dashboard-count-card" th:href="@{/products(status='DRAFT')}" data-dashboard-card="draft-products"><span class="dashboard-count-label">草稿商品</span><strong class="dashboard-count-value" data-dashboard-count th:text="${dashboardSummary.draftProductCount}">—</strong><span class="field-help">尚未上架或已下架</span><span class="dashboard-card-action">查看草稿商品 →</span></a>
++            <a class="panel dashboard-count-card" th:href="@{/orders(status='PAID')}" data-dashboard-card="paid-orders"><span class="dashboard-count-label">待发货订单</span><strong class="dashboard-count-value" data-dashboard-count th:text="${dashboardSummary.paidOrderCount}">—</strong><span class="field-help">已完成模拟支付</span><span class="dashboard-card-action">查看待发货订单 →</span></a>
++            <a class="panel dashboard-count-card" th:href="@{/customers(status='ENABLED')}" data-dashboard-card="enabled-customers"><span class="dashboard-count-label">启用普通顾客</span><strong class="dashboard-count-value" data-dashboard-count th:text="${dashboardSummary.enabledCustomerCount}">—</strong><span class="field-help">仅统计普通顾客</span><span class="dashboard-card-action">查看启用顾客 →</span></a>
++            <a class="panel dashboard-count-card" th:href="@{/customers(status='DISABLED')}" data-dashboard-card="disabled-customers"><span class="dashboard-count-label">禁用普通顾客</span><strong class="dashboard-count-value" data-dashboard-count th:text="${dashboardSummary.disabledCustomerCount}">—</strong><span class="field-help">原有历史数据保留</span><span class="dashboard-card-action">查看禁用顾客 →</span></a>
++        </div>
++        <p class="field-help dashboard-count-note">以上为本次读取时的当前数量。完成商品上下架、订单支付或发货、顾客启停后，可刷新核对。</p>
+     </section>
++    <section class="panel dashboard-module-panel" aria-labelledby="dashboard-modules-title"><h2 id="dashboard-modules-title">管理入口</h2><div class="dashboard-module-grid">
++        <a th:href="@{/categories}"><strong>分类管理</strong><span>维护校园主题与二级分类。</span></a>
++        <a th:href="@{/products}"><strong>商品与相册</strong><span>维护商品、上下架、增量补货；从商品进入相册。</span></a>
++        <a th:href="@{/orders}"><strong>订单管理</strong><span>查询成交快照，核对后模拟发货。</span></a>
++        <a th:href="@{/customers}"><strong>普通顾客管理</strong><span>查询教学账号、查看关联订单与启停状态。</span></a>
++    </div></section>
+ </div>
+ </body>
+ </html>
+diff --git a/csucampuscraft-admin/src/main/resources/templates/orders/detail.html b/csucampuscraft-admin/src/main/resources/templates/orders/detail.html
+index 1c65544..c0b7764 100644
+--- a/csucampuscraft-admin/src/main/resources/templates/orders/detail.html
++++ b/csucampuscraft-admin/src/main/resources/templates/orders/detail.html
+@@ -16,7 +16,7 @@
+             <div><dt>创建时间</dt><dd><time th:text="${order.createdAtDisplay}">创建时间</time>（北京时间）</dd></div>
+             <div><dt>订单金额</dt><dd class="admin-order-total" data-order-amount th:text="${'¥' + #numbers.formatDecimal(order.totalAmount,1,'NONE',2,'POINT')}">¥0.00</dd></div>
+             <div><dt>顾客</dt><dd><span th:text="${order.customerDisplayName}">顾客显示名</span> / <span th:text="${order.customerUsername}">用户名</span> / ID <span th:text="${order.userId}">0</span></dd></div>
+-            <div><dt>顾客资料</dt><dd class="field-help" data-customer-entry-pending>顾客详情入口将在 STEP12 接通。</dd></div>
++            <div><dt>顾客资料</dt><dd><a th:href="@{/customers/{id}(id=${order.userId})}" data-customer-detail-link>查看该顾客资料</a></dd></div>
+         </dl>
+         <p class="field-help" th:if="${order.status == 'PENDING_PAYMENT'}" data-shipping-gate>订单尚未支付，完成模拟支付后才可发货。</p>
+         <p class="field-help" th:if="${order.status == 'CANCELLED'}" data-shipping-gate>订单已取消，不能发货。保留原成交快照与取消时间。</p>

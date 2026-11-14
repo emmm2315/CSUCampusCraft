@@ -1,0 +1,104 @@
+{
+  "kind": "read-only pre-run tool audit",
+  "source_sha": "03384367c87147f1c29859c799f3c464b016b760",
+  "tool_sha256": {
+    "verify_step12.py": "414b3907f2609ba436cf1e1ae12bee4c0a968e38606f8755e247996a7106d44d",
+    "verify_browser.cjs": "7de4c4c82cfd780ac46ef90207d4f0ecf409fa069fc8f2bc309dad231872914b",
+    "privacy_checks.py": "3338845f343cd420ce29146e5e615b77ce637ed5c7a27a22f0e45a8c04a292d5",
+    "NativeCustomerDashboardProbe.java": "45177d1940e40ba80ee065c009794e9bbc7da017366c599be8d34dd3fd24c32a"
+  },
+  "production_source_edited_by_audit": false,
+  "tool_source_edited_by_audit": false,
+  "runtime_started_by_audit": false,
+  "observations": [
+    {
+      "id": 1,
+      "area": "raw-scan",
+      "observation": "Correct privacy_checks pattern and synthetic regression run before app startup; recorded Client and browser available raw text scanned before redaction. Unavailable redirect bodies explicitly lack scan observation.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 2,
+      "area": "feedback",
+      "observation": "Status helper follows the actual canonical numeric-ID Location and checks fixed complete feedback inside role=status, not a persistent page word. Browser uses exact fixed global feedback too.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 3,
+      "area": "redirect-get",
+      "observation": "Browser response fallback records un-routed document GET as AFTER_ONLY with before=None and automatic_audit=false; non-GET fallback fails. Routed POST retains real seven-table before/after.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 4,
+      "area": "seven-tables",
+      "observation": "snapshot hashes ordered full fields from all seven business tables. Safe state adds complete user fields with credential/contact SHA, so updates require only target status/original timestamp changes and other six tables unchanged.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 5,
+      "area": "microseconds",
+      "observation": "Actual raw LocalDateTime stamp parsed with full fractions; changes require at least1us, future stamp fixture makes exact+1us branch deterministic. Same-state requires complete seven-table and user-map equality.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 6,
+      "area": "old-confirmation",
+      "observation": "After reauthentication GET/cart supplies current CSRF without generating a new checkout; original old confirmation token is still submitted for409, separating CSRF from confirmation invalidity.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 7,
+      "area": "disabled-shipping",
+      "observation": "Existing pending→paid preparation now disables owner before actual admin shipment, checks stilldisabled+SHIPPED, then enables before taking status-only preservation baseline.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 8,
+      "area": "empty-database",
+      "observation": "Separate csucampuscraft_empty schema has all seven structures, one copied ADMIN login fixture, noCUSTOMER/no business rows. Records explicitly avoid calling this seven completely empty tables.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 9,
+      "area": "error-database",
+      "observation": "Separate denied app account has SELECT store_user only, same main schema and same JAR. Successful login precedes Dashboard500 checks; error page has no counts and a retry GET, followed by zero-write comparison.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 10,
+      "area": "isolation",
+      "observation": "Root SQL diagnostics use explicit current DATABASE, app starts use current DATABASE/APP_USERNAME. Empty/denied app stopped before next scenario, original main state compared after restoring selection.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 11,
+      "area": "native",
+      "observation": "Updated helper keeps actual actor param id separately from target param userId; all optional ParamMap reads guarded. Its reflected parameter-name structural checks, real Service RC sequence and scalar dashboard read are separate from HTTP.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 12,
+      "area": "scope",
+      "observation": "Sequential existing sessions and direct root fixtures are labelled; no race, concurrent lock waiting, fault injection or confirmation-restoration business behavior is falsely claimed.",
+      "result": "PASS_STATIC"
+    }
+  ],
+  "issues_identified_and_owner_fixed_before_first_live_round": [
+    {
+      "area": "native parameter name",
+      "original_native_source_sha256": "06cedf3b2b003de23aec5fbe5fd4cef8795cccb3ff8c9262821b44ae6da0b63d",
+      "observation": "Old helper lost actor @Param id and would fail actor numeric check. Owner corrected id/userId selection and actual Mapper reflection/ParamMap regression. No old helper live run."
+    },
+    {
+      "area": "old token with current CSRF",
+      "observation": "Draft resubmission reused old page CSRF after new login. Owner changed response argument to fresh GET/cart while keeping original confirmation token."
+    },
+    {
+      "area": "disabled owner shipping coverage",
+      "observation": "Draft only shipped before disable. Owner moved the existing actual shipment inside the disabled/enabled chain before status-only baseline; no new business feature or extra production code."
+    }
+  ],
+  "unresolved_actionable_findings": [],
+  "limits": "Static review of supplied external tool sources only; not a claim of real HTTP/SQL results, full network capture, lock behavior, race or fault rollback. Actual acceptance must be separately archived under its real date, attempt and source SHA."
+}

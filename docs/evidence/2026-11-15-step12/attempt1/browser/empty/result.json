@@ -1,0 +1,198 @@
+{
+  "overall": "PASS",
+  "completed": true,
+  "error": null,
+  "phase": "empty",
+  "checks": [
+    {
+      "name": "/-navigation-1366",
+      "passed": true
+    },
+    {
+      "name": "zero-business-five-cards-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-page-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-no-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-unique-ids-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-labels-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-all-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-images-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-no-session-url-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-new-PNG-1366",
+      "passed": true
+    },
+    {
+      "name": "/-navigation-1920",
+      "passed": true
+    },
+    {
+      "name": "zero-business-five-cards-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-page-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-no-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-unique-ids-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-labels-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-all-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-images-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-no-session-url-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-empty-business-ADMIN-kept-new-PNG-1920",
+      "passed": true
+    },
+    {
+      "name": "phase-screenshot-count",
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "a02-empty-business-ADMIN-kept-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 929,
+      "sha256": "bd6419291fcfed52ffb0ac3c72e0dd07dc1ce9d53cb6f60cf1ac4b6e63df0151",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A02",
+        "dashboardCounts": [
+          {
+            "key": "on-sale-products",
+            "count": "0"
+          },
+          {
+            "key": "draft-products",
+            "count": "0"
+          },
+          {
+            "key": "paid-orders",
+            "count": "0"
+          },
+          {
+            "key": "enabled-customers",
+            "count": "0"
+          },
+          {
+            "key": "disabled-customers",
+            "count": "0"
+          }
+        ],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "path": "a02-empty-business-ADMIN-kept-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "ee47d2f8a01921baf8db0fbfbb8df211cad698adc5023c365bf4de6f6b70c159",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A02",
+        "dashboardCounts": [
+          {
+            "key": "on-sale-products",
+            "count": "0"
+          },
+          {
+            "key": "draft-products",
+            "count": "0"
+          },
+          {
+            "key": "paid-orders",
+            "count": "0"
+          },
+          {
+            "key": "enabled-customers",
+            "count": "0"
+          },
+          {
+            "key": "disabled-customers",
+            "count": "0"
+          }
+        ],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true
+    }
+  ],
+  "browser": "Microsoft Edge via Playwright",
+  "transport": "Actual browser responses; routed requests before/after, redirect GET fallback explicitly after-only"
+}

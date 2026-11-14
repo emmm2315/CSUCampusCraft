@@ -1,0 +1,213 @@
+{
+  "kind": "author-static-self-review",
+  "tested_source_sha": "03384367c87147f1c29859c799f3c464b016b760",
+  "scope": "Author static inspection and offline compile/MyBatis binding only; not runtime acceptance, HTTP, real locks or concurrency proof.",
+  "candidate_publication": [
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerStatus.java",
+      "action": "write",
+      "published_matches": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerProfile.java",
+      "action": "write",
+      "published_matches": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerTarget.java",
+      "action": "write",
+      "published_matches": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerQuery.java",
+      "action": "write",
+      "published_matches": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerPage.java",
+      "action": "write",
+      "published_matches": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerStatusResult.java",
+      "action": "write",
+      "published_matches": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerMapper.java",
+      "action": "write",
+      "published_matches": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerService.java",
+      "action": "write",
+      "published_matches": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerController.java",
+      "action": "write",
+      "published_matches": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardSummary.java",
+      "action": "write",
+      "published_matches": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardMapper.java",
+      "action": "write",
+      "published_matches": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardService.java",
+      "action": "write",
+      "published_matches": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardController.java",
+      "action": "write",
+      "published_matches": true
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/HomeController.java",
+      "action": "delete",
+      "published_matches": true
+    }
+  ],
+  "private_compile": {
+    "exit_code": 0,
+    "new_java_files": 13,
+    "base_admin_jar_sha256": "b7f431e48e4c91d8f29320491e4f695ed0d7443d1b99c542f3e7dfc8b640d59b",
+    "scope": "Private Java compile only; no Wrapper or runtime claim"
+  },
+  "offline_binding_preflight": {
+    "checks": 13,
+    "overall": "PASS",
+    "database_connections": 0,
+    "http_requests": 0
+  },
+  "observations": [
+    {
+      "id": 1,
+      "area": "safe-models",
+      "observation": "CustomerProfile excludes password/role, redacts toString; CustomerTarget contains only ID/role/status/original time and never enters a view.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 2,
+      "area": "safe-sql",
+      "observation": "CustomerMapper has explicit safe SELECT columns and no BaseMapper select-star entry point; existing login authentication is unchanged.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 3,
+      "area": "filter",
+      "observation": "Count/list share CUSTOMER plus bound literal username/status filter; no request text enters ORDER BY.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 4,
+      "area": "escape",
+      "observation": "Explicit ESCAPE ! with literal !/%/_ handling and ordinary bound backslash; actual MyBatis annotation and parameter resolution privately observed.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 5,
+      "area": "paging",
+      "observation": "Long page values clamp minimum1; impossible offset short-circuited; exact offset()/likePattern() record accessors exist.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 6,
+      "area": "read-target",
+      "observation": "Read detail only SELECTs role=CUSTOMER, unknown/ADMIN404 and invalid pathID400.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 7,
+      "area": "guard",
+      "observation": "Status RC transaction first database operation is AdminWriteGuard.lock(actor), before target ID parsing/lookup.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 8,
+      "area": "lock",
+      "observation": "Target is safely projected by ID FOR UPDATE, then checked CUSTOMER; no target loaded before administrator lock.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 9,
+      "area": "parameter-order",
+      "observation": "Resource404 precedes targetStatus validation; valid resource requires exactly one enum value, otherwise400.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 10,
+      "area": "binding-scope",
+      "observation": "Status action ignores extra role/password/profile inputs; only targetStatus is read for updates.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 11,
+      "area": "noop",
+      "observation": "Same current status returns before all DML, retaining exact original updated_at.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 12,
+      "area": "monotonic",
+      "observation": "Conditional UPDATE restricts id/role/current status/original microsecond stamp, writes onlystatus and explicit GREATEST(now6,stamp+1micro), checks affected1.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 13,
+      "area": "rollback",
+      "observation": "DataIntegrityViolation/Concurrency failure becomes safe409 and rolls back, with no automatic write retry.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 14,
+      "area": "history",
+      "observation": "New status code has no cart/product/order/item mapper, never cancels orders or restocks.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 15,
+      "area": "feedback",
+      "observation": "Fixed flash messages and303 canonical positive-ID destination;400/409 local recovery view contains only safe fields.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 16,
+      "area": "dashboard",
+      "observation": "Single SELECT has five independent COUNT subqueries, excludes ADMIN customer counts and includes sold-out ON_SALE product rows.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 17,
+      "area": "dashboard-error",
+      "observation": "Query exceptions produce dedicated500 fixed retry view with no count model or technical message; null result also fails instead of fallback0.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 18,
+      "area": "root-route",
+      "observation": "Only new DashboardController owns GET/; old HomeController explicitly removed; Category classes remain.",
+      "result": "PASS_STATIC"
+    },
+    {
+      "id": 19,
+      "area": "scope",
+      "observation": "No user module, SQL/POM/Wrapper/dependency change, real logistics, customer account editing, password/role action, REST, concurrency or production fault hook introduced.",
+      "result": "PASS_STATIC"
+    }
+  ],
+  "actionable_findings": [],
+  "contract_choices": [
+    "Invalid pathID400; unknown/ADMIN404 before targetStatus validation.",
+    "Nonbound extra inputs ignored; duplicate/missing targetStatus400.",
+    "Literal backslash is ordinary because LIKE escape is!.",
+    "Dashboard root replaces initialization page, original M0 evidence remains historical.",
+    "Dedicated dashboard500 has no count values; session identity and CSRF filters unchanged."
+  ]
+}

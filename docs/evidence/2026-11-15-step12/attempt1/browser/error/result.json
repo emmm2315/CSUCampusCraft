@@ -1,0 +1,166 @@
+{
+  "overall": "PASS",
+  "completed": true,
+  "error": null,
+  "phase": "error",
+  "checks": [
+    {
+      "name": "/-navigation-1366",
+      "passed": true
+    },
+    {
+      "name": "error-not-zero-fallback-1366",
+      "passed": true
+    },
+    {
+      "name": "error-retry-available-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-page-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-no-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-unique-ids-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-labels-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-all-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-images-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-no-session-url-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-new-PNG-1366",
+      "passed": true
+    },
+    {
+      "name": "/-navigation-1920",
+      "passed": true
+    },
+    {
+      "name": "error-not-zero-fallback-1920",
+      "passed": true
+    },
+    {
+      "name": "error-retry-available-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-page-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-no-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-unique-ids-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-labels-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-all-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-images-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-no-session-url-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-natural-permission-error-retry-new-PNG-1920",
+      "passed": true
+    },
+    {
+      "name": "phase-screenshot-count",
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "a02-natural-permission-error-retry-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 768,
+      "sha256": "731c5c6273e6ebc826d838f8f0cf9c3a52eb8f2788bee87327cc2ed7acc4a433",
+      "status": 500,
+      "observation": {
+        "port": 8081,
+        "pageId": "A02",
+        "errorStatus": "500",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "path": "a02-natural-permission-error-retry-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "838bbd7a605c0f96eaa363210dad4208da20366057f030d0b0c3ba49b2d1b5dc",
+      "status": 500,
+      "observation": {
+        "port": 8081,
+        "pageId": "A02",
+        "errorStatus": "500",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true
+    }
+  ],
+  "browser": "Microsoft Edge via Playwright",
+  "transport": "Actual browser responses; routed requests before/after, redirect GET fallback explicitly after-only"
+}

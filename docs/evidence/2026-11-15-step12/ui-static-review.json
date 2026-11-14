@@ -1,0 +1,368 @@
+{
+  "overall": "PASS",
+  "scope": "Author static checks of staged resources, not a runtime acceptance claim",
+  "checks": [
+    {
+      "name": "manifest-SHA-csucampuscraft-admin/src/main/resources/templates/home.html",
+      "passed": true
+    },
+    {
+      "name": "admin-resources-only-csucampuscraft-admin/src/main/resources/templates/home.html",
+      "passed": true
+    },
+    {
+      "name": "unique-static-IDs-csucampuscraft-admin/src/main/resources/templates/home.html",
+      "passed": true
+    },
+    {
+      "name": "associated-labels-csucampuscraft-admin/src/main/resources/templates/home.html",
+      "passed": true
+    },
+    {
+      "name": "escaped-text-csucampuscraft-admin/src/main/resources/templates/home.html",
+      "passed": true
+    },
+    {
+      "name": "no-password-fields-csucampuscraft-admin/src/main/resources/templates/home.html",
+      "passed": true
+    },
+    {
+      "name": "no-contact-values-in-attrs-csucampuscraft-admin/src/main/resources/templates/home.html",
+      "passed": true
+    },
+    {
+      "name": "table-header-scope-csucampuscraft-admin/src/main/resources/templates/home.html",
+      "passed": true
+    },
+    {
+      "name": "manifest-SHA-csucampuscraft-admin/src/main/resources/templates/dashboard-error.html",
+      "passed": true
+    },
+    {
+      "name": "admin-resources-only-csucampuscraft-admin/src/main/resources/templates/dashboard-error.html",
+      "passed": true
+    },
+    {
+      "name": "unique-static-IDs-csucampuscraft-admin/src/main/resources/templates/dashboard-error.html",
+      "passed": true
+    },
+    {
+      "name": "associated-labels-csucampuscraft-admin/src/main/resources/templates/dashboard-error.html",
+      "passed": true
+    },
+    {
+      "name": "escaped-text-csucampuscraft-admin/src/main/resources/templates/dashboard-error.html",
+      "passed": true
+    },
+    {
+      "name": "no-password-fields-csucampuscraft-admin/src/main/resources/templates/dashboard-error.html",
+      "passed": true
+    },
+    {
+      "name": "no-contact-values-in-attrs-csucampuscraft-admin/src/main/resources/templates/dashboard-error.html",
+      "passed": true
+    },
+    {
+      "name": "table-header-scope-csucampuscraft-admin/src/main/resources/templates/dashboard-error.html",
+      "passed": true
+    },
+    {
+      "name": "manifest-SHA-csucampuscraft-admin/src/main/resources/templates/customers/index.html",
+      "passed": true
+    },
+    {
+      "name": "admin-resources-only-csucampuscraft-admin/src/main/resources/templates/customers/index.html",
+      "passed": true
+    },
+    {
+      "name": "unique-static-IDs-csucampuscraft-admin/src/main/resources/templates/customers/index.html",
+      "passed": true
+    },
+    {
+      "name": "associated-labels-csucampuscraft-admin/src/main/resources/templates/customers/index.html",
+      "passed": true
+    },
+    {
+      "name": "escaped-text-csucampuscraft-admin/src/main/resources/templates/customers/index.html",
+      "passed": true
+    },
+    {
+      "name": "no-password-fields-csucampuscraft-admin/src/main/resources/templates/customers/index.html",
+      "passed": true
+    },
+    {
+      "name": "no-contact-values-in-attrs-csucampuscraft-admin/src/main/resources/templates/customers/index.html",
+      "passed": true
+    },
+    {
+      "name": "table-header-scope-csucampuscraft-admin/src/main/resources/templates/customers/index.html",
+      "passed": true
+    },
+    {
+      "name": "manifest-SHA-csucampuscraft-admin/src/main/resources/templates/customers/detail.html",
+      "passed": true
+    },
+    {
+      "name": "admin-resources-only-csucampuscraft-admin/src/main/resources/templates/customers/detail.html",
+      "passed": true
+    },
+    {
+      "name": "unique-static-IDs-csucampuscraft-admin/src/main/resources/templates/customers/detail.html",
+      "passed": true
+    },
+    {
+      "name": "associated-labels-csucampuscraft-admin/src/main/resources/templates/customers/detail.html",
+      "passed": true
+    },
+    {
+      "name": "escaped-text-csucampuscraft-admin/src/main/resources/templates/customers/detail.html",
+      "passed": true
+    },
+    {
+      "name": "no-password-fields-csucampuscraft-admin/src/main/resources/templates/customers/detail.html",
+      "passed": true
+    },
+    {
+      "name": "no-contact-values-in-attrs-csucampuscraft-admin/src/main/resources/templates/customers/detail.html",
+      "passed": true
+    },
+    {
+      "name": "table-header-scope-csucampuscraft-admin/src/main/resources/templates/customers/detail.html",
+      "passed": true
+    },
+    {
+      "name": "manifest-SHA-csucampuscraft-admin/src/main/resources/templates/customers/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "admin-resources-only-csucampuscraft-admin/src/main/resources/templates/customers/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "unique-static-IDs-csucampuscraft-admin/src/main/resources/templates/customers/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "associated-labels-csucampuscraft-admin/src/main/resources/templates/customers/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "escaped-text-csucampuscraft-admin/src/main/resources/templates/customers/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "no-password-fields-csucampuscraft-admin/src/main/resources/templates/customers/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "no-contact-values-in-attrs-csucampuscraft-admin/src/main/resources/templates/customers/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "table-header-scope-csucampuscraft-admin/src/main/resources/templates/customers/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "manifest-SHA-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "admin-resources-only-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "unique-static-IDs-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "associated-labels-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "escaped-text-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "no-password-fields-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "no-contact-values-in-attrs-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "table-header-scope-csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "manifest-SHA-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "admin-resources-only-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "unique-static-IDs-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "associated-labels-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "escaped-text-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "no-password-fields-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "no-contact-values-in-attrs-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "table-header-scope-csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "manifest-SHA-csucampuscraft-admin/src/main/resources/static/css/app.css",
+      "passed": true
+    },
+    {
+      "name": "admin-resources-only-csucampuscraft-admin/src/main/resources/static/css/app.css",
+      "passed": true
+    },
+    {
+      "name": "A02-root-marker",
+      "passed": true
+    },
+    {
+      "name": "A02-no-initialization-theme-placeholder",
+      "passed": true
+    },
+    {
+      "name": "A02-five-data-cards",
+      "passed": true
+    },
+    {
+      "name": "A02-exact-card-state-links",
+      "passed": true
+    },
+    {
+      "name": "A02-five-server-count-properties",
+      "passed": true
+    },
+    {
+      "name": "A02-no-fallback-zero",
+      "passed": true
+    },
+    {
+      "name": "A02-no-business-write-form",
+      "passed": true
+    },
+    {
+      "name": "A02-module-entries",
+      "passed": true
+    },
+    {
+      "name": "A02-album-via-product",
+      "passed": true
+    },
+    {
+      "name": "A02-failure-500-retry-no-count",
+      "passed": true
+    },
+    {
+      "name": "A02-failure-fixed-safe-text",
+      "passed": true
+    },
+    {
+      "name": "A08-root-pagination-markers",
+      "passed": true
+    },
+    {
+      "name": "A08-read-only-filter",
+      "passed": true
+    },
+    {
+      "name": "A08-filter-fields-page-one",
+      "passed": true
+    },
+    {
+      "name": "A08-all-page-links-preserve-conditions",
+      "passed": true
+    },
+    {
+      "name": "A08-empty-clear-recovery",
+      "passed": true
+    },
+    {
+      "name": "A08-safe-list-columns",
+      "passed": true
+    },
+    {
+      "name": "A09-safe-profile-markers",
+      "passed": true
+    },
+    {
+      "name": "A09-contact-mask-targets",
+      "passed": true
+    },
+    {
+      "name": "A09-empty-contact-fallback",
+      "passed": true
+    },
+    {
+      "name": "A09-exact-customer-order-link",
+      "passed": true
+    },
+    {
+      "name": "A09-real-state-only-actions",
+      "passed": true
+    },
+    {
+      "name": "A09-two-status-forms-CSRF",
+      "passed": true
+    },
+    {
+      "name": "A09-only-target-status-fields",
+      "passed": true
+    },
+    {
+      "name": "A09-target-enumeration-values",
+      "passed": true
+    },
+    {
+      "name": "A09-disable-before-confirmation",
+      "passed": true
+    },
+    {
+      "name": "A09-auth-stamp-not-rendered",
+      "passed": true
+    },
+    {
+      "name": "A09-no-profile-editing",
+      "passed": true
+    },
+    {
+      "name": "A09-error-safe-recovery",
+      "passed": true
+    },
+    {
+      "name": "layout-only-customer-navigation",
+      "passed": true
+    },
+    {
+      "name": "A07-only-placeholder-to-customer-link",
+      "passed": true
+    },
+    {
+      "name": "CSS-retains-raw-existing-prefix",
+      "passed": true
+    }
+  ],
+  "total": 90,
+  "passed": 90
+}

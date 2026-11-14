@@ -1,0 +1,600 @@
+{
+  "schema_version": 1,
+  "overall": "PASS",
+  "scope": "STEP12 A02/A08/A09 与关联顾客订单、旧会话登录页面，本轮 24 张原始截图的 AI 视觉复核及原始元数据核对。",
+  "reviewer": "Codex AI；资源作者复核，不是姓名待填的组员交叉复核或人工签收。",
+  "review_completed_at": "2026-11-15T00:21:53.951926+08:00",
+  "tested_source_sha": "03384367c87147f1c29859c799f3c464b016b760",
+  "tested_admin_jar_sha256": "d724fcca643a556f595c97adbd117667921b19d120221d27d2d5ee7d71c25b55",
+  "tested_user_jar_sha256": "f4a98f81b86b67406010e5e0e381715484a77228b7b1a776e2984613253d84cc",
+  "attempt": "attempt1",
+  "evidence_date": "2026-11-15",
+  "browser_result_path": "verification/evidence/attempt1/browser/result.json",
+  "browser_result_sha256": "33c94c667449ca59d34ad386eded6a6699b74cc2cdf33cb9b72c9f3ac30e1d36",
+  "attempt_result_sha256": "20e32b64ce1b2a5732ffaa66d3b14925424f551879601a53f022e9fac0fcd270",
+  "browser_checks_from_saved_result": 243,
+  "method": [
+    "逐张通过 view_image 查看原始 24 PNG，未以联系表或缩略图代替原图。",
+    "读取 PNG IHDR 实际尺寸并计算原始 SHA-256，与冻结 browser/result.json 的每条记录逐项一致。",
+    "核对两种请求视口、fullPage 高度、页面安全反馈、可见文本换行、恢复入口以及不透明敏感字段遮罩。",
+    "报告只写入私有 stage，没有修改受测源码、JAR、冻结原始截图或 HTTP/数据库记录。"
+  ],
+  "phase_screenshot_counts": {
+    "main": 20,
+    "empty": 2,
+    "error": 2
+  },
+  "screenshot_count": 24,
+  "actual_original_images_viewed": 24,
+  "raw_sha_and_dimensions_match": 24,
+  "screenshots": [
+    {
+      "path": "verification/evidence/attempt1/browser/main/a02-live-five-metrics-1366.png",
+      "sha256": "284636bb69c428170f59b7a8a1a5047337f0685177870e0a1c3fd7890a1aab8e",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 929
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A02",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "实际看到五张统计卡为 54 / 6 / 2 / 8 / 4，卡片、管理入口及导航在两种桌面视口均清晰可读。",
+        "图中计数仅代表该主库捕获阶段；计数来源和正确性另以数据库及原生 SQL 证据核对。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/a08-CUSTOMER-only-list-1366.png",
+      "sha256": "0c34858762be17e973a35f0345c23b199667c78d619a6e94fedfca694dd03f0b",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 1680
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A08",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "列表 12 个顾客结果、每页 10 行、两页；用户名、显示名、状态、创建时间、详情入口清楚，未显示联系字段。",
+        "50 码点重复汉字用户名完整换行，短用户名与其他列仍对齐；未见文字遮挡或横向页面溢出。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/a08-percent-literal-filter-1366.png",
+      "sha256": "3acc1f68819bbcc4421fe505fcb328b954bbebd2e9cc5867b32babf4b0c41983",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 950
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A08",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "关键词 % 保留在筛选框，仅出现用户名含百分号的一个结果；清除条件、分页信息与详情入口可读。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/a09-disable-confirmation-1366.png",
+      "sha256": "3ef141876efbf1644893999024053eee83282280c06079f7f5f1ad86927c9b24",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 1022
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A09",
+      "contact_mask_targets_from_dom": 2,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "alice 的禁用确认已展开；确认按钮之前可见后续请求需重新登录、购物车和历史订单保留、不自动取消或返库的说明。",
+        "邮箱与电话的两个值被不透明灰色遮罩覆盖，页面其余安全资料和本人订单入口可读。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/journey-disabled-keeps-data-1366.png",
+      "sha256": "74ad22bae324046d3c2e871c4ec7e38f055fd02459ae0bdef471bea86a4b4302",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 990
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A09",
+      "contact_mask_targets_from_dom": 2,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "顾客状态为禁用，完整绿色状态更新提示可读，显示启用操作及旧会话不会自行恢复、历史数据保留说明。",
+        "两个联系字段被不透明遮罩覆盖；截图本身不能证明底层购物车或订单行没有变化。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/journey-old-session-login-required-1366.png",
+      "sha256": "915334fd6e3fa2ea77a78787511c0f9d3f3553c327518d02c5e11c5b17583881",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "U04",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "用户端显示需重新登录提示，用户名为空、密码输入区域遮罩，导航购物车徽标为游客 0。",
+        "图中没有原会话值、令牌值或已登录身份资料。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/journey-enabled-new-login-required-1366.png",
+      "sha256": "cc69ac97ce8a7c4a0da269115a288799673c1b68bf4d65f9143a5c74694847c7",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 990
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A09",
+      "contact_mask_targets_from_dom": 2,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "顾客状态为启用，完整绿色更新提示可读，禁用确认折叠；未出现禁用态的启用按钮。",
+        "两个联系字段被不透明遮罩覆盖；截图显示重新登录提示，不单独证明会话失效的服务端判断。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/a06-from-customer-orders-1366.png",
+      "sha256": "041870f1f9f3d343c3f302893427a8e05babcebcd0a581ca90bbb960cded12c7",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 1293
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A06",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "订单页保留 userId=1 的顾客筛选及 alice 标签，五条该顾客订单的订单号、金额、状态和详情入口清楚。",
+        "该图不代替未在画面内的 A07 顾客返回链接的 HTTP/DOM 验证。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/a08-empty-match-1366.png",
+      "sha256": "a55a59cecf6fbbf8839162daa639ca6932b4cb5e5aa2092eccb067f4adeb422c",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 886
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A08",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "无匹配关键词保留、结果数为 0，显示说明及清除条件入口，没有空白表格遮住恢复入口。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/a09-unknown-404-1366.png",
+      "sha256": "940cb3399b42b80f1ede8c21760a5a0a862f9069238d0a5239395dec626794af",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "phase": "main",
+      "http_status_from_record": 404,
+      "page_id_from_dom": null,
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "显示共享 404 与 CUSTOMER_NOT_FOUND，未回显目标顾客资料，导航和返回首页入口可读。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/a02-live-five-metrics-1920.png",
+      "sha256": "5764fc2acbb5fb874edbb25adeae35b90a3ebee3a141733fca3967b4b09b4eab",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A02",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "实际看到五张统计卡为 54 / 6 / 2 / 8 / 4，卡片、管理入口及导航在两种桌面视口均清晰可读。",
+        "图中计数仅代表该主库捕获阶段；计数来源和正确性另以数据库及原生 SQL 证据核对。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/a08-CUSTOMER-only-list-1920.png",
+      "sha256": "4f2e7a50589e399af0b1a952bc2b4cf0f8b6dd42e90783c11000e1a76ff74fc8",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1680
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A08",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "列表 12 个顾客结果、每页 10 行、两页；用户名、显示名、状态、创建时间、详情入口清楚，未显示联系字段。",
+        "50 码点重复汉字用户名完整换行，短用户名与其他列仍对齐；未见文字遮挡或横向页面溢出。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/a08-percent-literal-filter-1920.png",
+      "sha256": "6338c214f613b0a8fc6426ccff403fc8d3cf3b31f932172309edbbc847d5b326",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A08",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "关键词 % 保留在筛选框，仅出现用户名含百分号的一个结果；清除条件、分页信息与详情入口可读。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/a09-disable-confirmation-1920.png",
+      "sha256": "233652bbcd03e787631f895e01f7ef79645a8b0808795777e5d2c7eb4b5135fd",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A09",
+      "contact_mask_targets_from_dom": 2,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "alice 的禁用确认已展开；确认按钮之前可见后续请求需重新登录、购物车和历史订单保留、不自动取消或返库的说明。",
+        "邮箱与电话的两个值被不透明灰色遮罩覆盖，页面其余安全资料和本人订单入口可读。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/journey-disabled-keeps-data-1920.png",
+      "sha256": "2452744644db0ded25ed39958429d70762c3f1c4aec0ceedbe527f3f22a9837d",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A09",
+      "contact_mask_targets_from_dom": 2,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "顾客状态为禁用，完整绿色状态更新提示可读，显示启用操作及旧会话不会自行恢复、历史数据保留说明。",
+        "两个联系字段被不透明遮罩覆盖；截图本身不能证明底层购物车或订单行没有变化。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/journey-old-session-login-required-1920.png",
+      "sha256": "8a8584d30328fb664c6f8667e5acd2744b8dd0821a16351a7c3937561b602fcb",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "U04",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "用户端显示需重新登录提示，用户名为空、密码输入区域遮罩，导航购物车徽标为游客 0。",
+        "图中没有原会话值、令牌值或已登录身份资料。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/journey-enabled-new-login-required-1920.png",
+      "sha256": "692d7320d90e4befe0edb4acfd5fa670834019c1d1e651bf229bd98b4e0e0b42",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A09",
+      "contact_mask_targets_from_dom": 2,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "顾客状态为启用，完整绿色更新提示可读，禁用确认折叠；未出现禁用态的启用按钮。",
+        "两个联系字段被不透明遮罩覆盖；截图显示重新登录提示，不单独证明会话失效的服务端判断。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/a06-from-customer-orders-1920.png",
+      "sha256": "45f11e51fe927bb3cb6e8d6fdde98586fda9db05bb8a015f6b6df7ab4bc91f1f",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1293
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A06",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "订单页保留 userId=1 的顾客筛选及 alice 标签，五条该顾客订单的订单号、金额、状态和详情入口清楚。",
+        "该图不代替未在画面内的 A07 顾客返回链接的 HTTP/DOM 验证。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/a08-empty-match-1920.png",
+      "sha256": "d857d250293daa018dc8ab7d9e82eaeb85c22ff5da344b25aad1f0f1b5fb2a16",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "phase": "main",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A08",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "无匹配关键词保留、结果数为 0，显示说明及清除条件入口，没有空白表格遮住恢复入口。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/main/a09-unknown-404-1920.png",
+      "sha256": "0a1b431b430a3ec08d140ea58d5818cdb8a2cd3feb2920bb6dcf9dd9774083e7",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "phase": "main",
+      "http_status_from_record": 404,
+      "page_id_from_dom": null,
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "显示共享 404 与 CUSTOMER_NOT_FOUND，未回显目标顾客资料，导航和返回首页入口可读。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/empty/a02-empty-business-ADMIN-kept-1366.png",
+      "sha256": "bd6419291fcfed52ffb0ac3c72e0dd07dc1ce9d53cb6f60cf1ac4b6e63df0151",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 929
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "phase": "empty",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A02",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "五张统计卡实际显示 0，管理入口和导航仍可用；此阶段保留 ADMIN 用于登录，不是所有表完全空的库。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/empty/a02-empty-business-ADMIN-kept-1920.png",
+      "sha256": "ee47d2f8a01921baf8db0fbfbb8df211cad698adc5023c365bf4de6f6b70c159",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "phase": "empty",
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A02",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "五张统计卡实际显示 0，管理入口和导航仍可用；此阶段保留 ADMIN 用于登录，不是所有表完全空的库。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/error/a02-natural-permission-error-retry-1366.png",
+      "sha256": "731c5c6273e6ebc826d838f8f0cf9c3a52eb8f2788bee87327cc2ed7acc4a433",
+      "png_dimensions": {
+        "width": 1366,
+        "height": 768
+      },
+      "requested_viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "phase": "error",
+      "http_status_from_record": 500,
+      "page_id_from_dom": "A02",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "实际显示 500、DASHBOARD_QUERY_FAILED、固定通用说明及重新读取控制台入口。",
+        "画面无统计卡或伪造的 0，没有 SQL、堆栈或联系字段；错误来自受限 SELECT 账号阶段。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    },
+    {
+      "path": "verification/evidence/attempt1/browser/error/a02-natural-permission-error-retry-1920.png",
+      "sha256": "838bbd7a605c0f96eaa363210dad4208da20366057f030d0b0c3ba49b2d1b5dc",
+      "png_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "requested_viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "phase": "error",
+      "http_status_from_record": 500,
+      "page_id_from_dom": "A02",
+      "contact_mask_targets_from_dom": 0,
+      "actual_original_image_viewed": true,
+      "visual_review_result": "PASS",
+      "observations": [
+        "实际显示 500、DASHBOARD_QUERY_FAILED、固定通用说明及重新读取控制台入口。",
+        "画面无统计卡或伪造的 0，没有 SQL、堆栈或联系字段；错误来自受限 SELECT 账号阶段。"
+      ],
+      "limits": "截图是 fullPage，PNG 高度可超过视口；状态码来自对应 HTTP 记录，不从画面推断。联系方式被遮罩时不以图像核对原值或未填写文案。"
+    }
+  ],
+  "database_boundaries": "main=csucampuscraft; empty=csucampuscraft_empty with ADMIN fixture; error=main schema with restricted SELECT application account",
+  "redirect_get_boundary": "Fallback GET response capture is after-only, not an invented before snapshot; every POST requires genuine before/after.",
+  "saved_native_result_crosscheck": {
+    "method": "只读解析本轮实际运行后的 native-probe.log；没有自行重跑数据库或补写缺失证据。",
+    "path": "verification/evidence/attempt1/native-probe.log",
+    "sha256": "5c964f2856fbbad3ef0c64b41443252ef187e43571586d4d357d05e4b6d5346b",
+    "overall": "PASS",
+    "checks": 225,
+    "checks_passed": 225,
+    "sql_event_count": 31,
+    "sql_bearing_transaction_completion_count": 18,
+    "dashboard_observation_count": 3,
+    "limit": "null actor 分支无 SQL，不能编造其已观测 SQL 隔离级别或事务完成。该工具不做并发或故障注入。"
+  },
+  "limitations": [
+    "这是 AI 逐图复核，不代替组员姓名签署、M3 交叉复核或未开展的 STEP13 并发和故障注入。",
+    "PNG 只能证明捕获时的可见页面；HTTP 状态/303及302链、CSRF拒绝、锁顺序、隔离级别、影响行数、微秒单调时间、零写入由独立原始记录证明。",
+    "主库、空业务保留 ADMIN、受限 SELECT 错误阶段是不同数据库与授权边界，24 图不是同一连续数据库状态。",
+    "真实 POST 已有 before/after 数据库记录；重定向 GET 的响应补采可能只有 after，不补造 before。",
+    "联系方式及密码输入区域已遮罩，不从截图核对其原值；没有原会话值、CSRF 原值、明文密码、散列或完整收货信息写入本报告。",
+    "仅核对本轮指定两种桌面视口；未声称移动端或其他浏览器完整验收。"
+  ],
+  "unresolved_visual_defects": [],
+  "source_or_raw_evidence_modified": false
+}

@@ -1,0 +1,4 @@
+{"name": "A09-no-order-customer-valid", "http_sequence": 66, "parameters": {"userId": 5}, "total": 0, "ordered_ids": [], "page": 1, "size": 10}
+{"name": "A09-order-AND-CI", "http_sequence": 67, "parameters": {"userId": 1, "status": "PENDING_PAYMENT", "orderNo": "demo-202611-al-01", "size": 1}, "total": 1, "ordered_ids": [1], "page": 1, "size": 1}
+{"name": "A09-order-other-customer-intersection", "http_sequence": 68, "parameters": {"userId": 2, "orderNo": "DEMO-202611-AL-01"}, "total": 0, "ordered_ids": [], "page": 1, "size": 10}
+{"name": "disabled-CUSTOMER-orders-still-queryable", "http_sequence": 179, "parameters": {"userId": 1}, "total": 5, "ordered_ids": [1, 2, 5, 3, 4], "page": 1, "size": 10}

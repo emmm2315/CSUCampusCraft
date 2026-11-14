@@ -1,0 +1,20 @@
+{
+  "overall": "PASS",
+  "tested_code_sha": "03384367c87147f1c29859c799f3c464b016b760",
+  "jars": [
+    {
+      "module": "user",
+      "jar": "D:\\Github Projects\\CSUCampusCraft\\csucampuscraft-user\\target\\csucampuscraft-user-0.0.1-SNAPSHOT.jar",
+      "sha256": "f4a98f81b86b67406010e5e0e381715484a77228b7b1a776e2984613253d84cc",
+      "old_initialization_controller_present": false,
+      "new_dashboard_controller_present": false
+    },
+    {
+      "module": "admin",
+      "jar": "D:\\Github Projects\\CSUCampusCraft\\csucampuscraft-admin\\target\\csucampuscraft-admin-0.0.1-SNAPSHOT.jar",
+      "sha256": "d724fcca643a556f595c97adbd117667921b19d120221d27d2d5ee7d71c25b55",
+      "old_initialization_controller_present": false,
+      "new_dashboard_controller_present": true
+    }
+  ]
+}

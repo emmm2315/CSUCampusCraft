@@ -1,0 +1,6331 @@
+{
+  "overall": "PASS",
+  "tested_code_sha": "03384367c87147f1c29859c799f3c464b016b760",
+  "checks": [
+    {
+      "name": "actual completed PASS",
+      "passed": true
+    },
+    {
+      "name": "gzip lossless attempt1/commands.jsonl",
+      "passed": true
+    },
+    {
+      "name": "gzip lossless attempt1/database-writes.jsonl",
+      "passed": true
+    },
+    {
+      "name": "all tracked processes stopped attempt1",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/action-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/admin-detail-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/admin-list-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/application-grants.txt",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/badge-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/01311d56838639d3e9993d94.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/0178a72d5a597ed2ea36ad73.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/0447d721c71cb4182fd6f589.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/07900d503756f3946b13686b.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/07e0540acaff037b991703b4.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/0e7ee8a16f47ce61d88f4251.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/0f628a4e456f4d7000f1768a.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/116b11f1ce20f346f7888227.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/159dd8758218791f0a0cc406.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/179b008c51922f48885e9a65.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/183b28141a9842525b10e32e.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/1ba337a190afe4cf5e1b2da0.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/2be2c1233bfdef0314e82992.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/2d1275d287e3e69c19d905ec.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/2eb65f70af232346841f8e5f.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/310906e661e940c75e744e67.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/3252dcf5ae4e0506c05cd5bf.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/3694ce20f3caf98bcd60b075.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/47aee056449b661a606b795b.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/47e235118c1915fe889d487b.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/483bad9877a8851ffb9ca322.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/49b22583c3d4c4e4633f9b43.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/4d5369912f1f7f6dfed76748.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/4fc8492b7169074792a7cd6a.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/553c53735f66e26a3786b18b.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/5c206654e9262f84622e80c6.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/5eec2855cb6a9e1d4f9ecdba.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/5ef97389094e7e58b3bff3b5.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/62e01c52c08e98ff614183a1.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/66925b27f89443fb94f69052.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/6737c1f56a647f4b4405244a.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/6ad1dcfbf31bde4211714ff2.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/6bc0f807cc685d4cf6b95f75.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/6e450b761d55ca6dd9831afd.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/6ebe149be8be752b29a85b51.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/712b52004f68bc4ed8bcf512.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/757deeedad49e01604c11f67.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/7c75d85d216bd3d8d8fe24b9.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/8080e237de4a177361e154a2.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/81ed9c0381dc377493511e32.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/8258ebb4583cd708f1ddb046.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/8396668338d8471169c947db.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/8aecc06afcef231a4f8e3b2e.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/8b2ce02fa40fdf0730eef980.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/917edd72f1f76cf0e99210a8.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/92f981f0a88219765bce1a8e.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/942f744fc920a02dc1264705.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/97c2db0963e428edfedf4e86.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/9828eba1082664bc277e2ba3.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/9921a0cadbced6f5cb1c2384.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/9bf4bed627a28a72cc4f16cd.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/a135c2a9bdd9a54b8d8f50af.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/a5797e64a2fe0badc1390ad6.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/a8c424b52d90e7abc2a75f4f.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/aa062b20ef97765d479a1107.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/aa75f442c9475ebfc7110633.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/abca7a79d2e0f4055c6244a7.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/af2ea45bb730eb0afb889aea.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/b10eb734f460e39d9e68b77c.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/b7480c699d769249f4b458d8.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/ba6fdd2af6869bd5e551d104.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/be61f8f0f49d38665cec1079.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/c2d18ff801be47c96f58cdfe.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/c3c086369854e4f4298b34be.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/c5c059b1c58c976d6031dfbb.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/c6a8384194dc9c54c1cd9b9d.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/ca7b393766a60a859ebcea6c.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/d421a9d12e5db5c4eaf65fa6.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/dda7737fd3f8d61a7c2b4154.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/dde1b8b8bf55b55f908433ca.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/e1d83eb59846118a6b953c30.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/e3b0c44298fc1c149afbf4c8.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/e5a89795914985ca55a38322.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/ec55e5d9b4cc0a275b154dbf.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/ec809c67fbcd2d3571813e86.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/ecd48baec15993aea5892f6a.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/edfdf908ddcbeaf36af8e003.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/f18066471a9eb57055cf2385.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/f203a3930715eac7dc21635f.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/f2e40e67140737b922d0100c.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/f9a4a3f7f8ffbcbfc48c5c64.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/fc22f41d527b244cea66729a.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/fde35deb2d0a3db4f8df8900.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/fdf469e5ae1cef35a66cb5df.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/bodies/ff48a1051f187171eee865c0.body.gz",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/empty/a02-empty-business-ADMIN-kept-1366.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/empty/a02-empty-business-ADMIN-kept-1920.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/empty/result.json",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/error/a02-natural-permission-error-retry-1366.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/error/a02-natural-permission-error-retry-1920.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/error/result.json",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/a02-live-five-metrics-1366.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/a02-live-five-metrics-1920.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/a06-from-customer-orders-1366.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/a06-from-customer-orders-1920.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/a08-CUSTOMER-only-list-1366.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/a08-CUSTOMER-only-list-1920.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/a08-empty-match-1366.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/a08-empty-match-1920.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/a08-percent-literal-filter-1366.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/a08-percent-literal-filter-1920.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/a09-disable-confirmation-1366.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/a09-disable-confirmation-1920.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/a09-unknown-404-1366.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/a09-unknown-404-1920.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/journey-disabled-keeps-data-1366.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/journey-disabled-keeps-data-1920.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/journey-enabled-new-login-required-1366.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/journey-enabled-new-login-required-1920.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/journey-old-session-login-required-1366.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/journey-old-session-login-required-1920.png",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/main/result.json",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser/result.json",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser-empty.log",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser-error.log",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/browser-main.log",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/build-admin.log",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/build-exits.json",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/build-user.log",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/commands.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/confirmation-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/controlled-account-fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/csucampuscraft-admin-default-1.log",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/csucampuscraft-admin-default-2.log",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/csucampuscraft-admin-default-3.log",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/csucampuscraft-user-default-1.log",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/customer-detail-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/customer-feedback-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/customer-list-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/customer-status-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/dashboard-denied-grants.txt",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/dashboard-error-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/dashboard-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/database-identity.json",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/database-main-final.json",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/database-original.json",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/database-writes.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/detail-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/empty-business-identity.json",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/fixtures.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/git-input-status.txt",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/http.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/implementation-diff.patch",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/launches.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/list-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/listener-ownership.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/mysql-initialize.log",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/mysql-server.log",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/native-compile.log",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/native-probe.log",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/native-structural.log",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/NativeCustomerDashboardProbe.java",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/privacy_checks.py",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/raw-response-scanner-regression.json",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/result.json",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/runtime-inputs.sha256",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/sensitive-scan.json",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/ship-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/shipment-feedback-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/static-before.json",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/tool-identity.json",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/verify_browser.cjs",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/verify_step12.py",
+      "passed": true
+    },
+    {
+      "name": "original attempt byte SHA attempt1/versions.txt",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 1",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 2",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 3",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 4",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 5",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 6",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 7",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 8",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 9",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 10",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 11",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 12",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 13",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 14",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 15",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 16",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 17",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 18",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 19",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 20",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 21",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 22",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 23",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 24",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 25",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 26",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 27",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 28",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 29",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 30",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 31",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 32",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 33",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 34",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 35",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 36",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 37",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 38",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 39",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 40",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 41",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 42",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 43",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 44",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 45",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 46",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 47",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 48",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 49",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 50",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 51",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 52",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 53",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 54",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 55",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 56",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 57",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 58",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 59",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 60",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 61",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 62",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 63",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 64",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 65",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 66",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 67",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 68",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 69",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 70",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 71",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 72",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 73",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 74",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 75",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 76",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 77",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 78",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 79",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 80",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 81",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 82",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 83",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 84",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 85",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 86",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 87",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 88",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 89",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 90",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 91",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 92",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 93",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 94",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 95",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 96",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 97",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 98",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 99",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 100",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 101",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 102",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 103",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 104",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 105",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 106",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 107",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 108",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 109",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 110",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 111",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 112",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 113",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 114",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 115",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 116",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 117",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 118",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 119",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 120",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 121",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 122",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 123",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 124",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 125",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 126",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 127",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 128",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 129",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 130",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 131",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 132",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 133",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 134",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 135",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 136",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 137",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 138",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 139",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 140",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 141",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 142",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 143",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 144",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 145",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 146",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 147",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 148",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 149",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 150",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 151",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 152",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 153",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 154",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 155",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 156",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 157",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 158",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 159",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 160",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 161",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 162",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 163",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 164",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 165",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 166",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 167",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 168",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 169",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 170",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 171",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 172",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 173",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 174",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 175",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 176",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 177",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 178",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 179",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 180",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 181",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 182",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 183",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 184",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 185",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 186",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 187",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 188",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 189",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 190",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 191",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 192",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 193",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 194",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 195",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 196",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 197",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 198",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 199",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 200",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 201",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 202",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 203",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 204",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 205",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 206",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 207",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 208",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 209",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 210",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 211",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 212",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 213",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 214",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 215",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 216",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 217",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 218",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 219",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 220",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 221",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 222",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 223",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 224",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 225",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 226",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 227",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 228",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 229",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 230",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 231",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 232",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 233",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 234",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 235",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 236",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 237",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 238",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 239",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 240",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 241",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 242",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 243",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 244",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 245",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 246",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 247",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 248",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 249",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 250",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 251",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 252",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 253",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 254",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 255",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 256",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 257",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 258",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 259",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 260",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 261",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 262",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 263",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 264",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 265",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 266",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 267",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 268",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 269",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 270",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 271",
+      "passed": true
+    },
+    {
+      "name": "HTTP redacted body SHA attempt1 272",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/a02-live-five-metrics-1366.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/a08-CUSTOMER-only-list-1366.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/a08-percent-literal-filter-1366.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/a09-disable-confirmation-1366.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/journey-disabled-keeps-data-1366.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/journey-old-session-login-required-1366.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/journey-enabled-new-login-required-1366.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/a06-from-customer-orders-1366.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/a08-empty-match-1366.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/a09-unknown-404-1366.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/a02-live-five-metrics-1920.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/a08-CUSTOMER-only-list-1920.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/a08-percent-literal-filter-1920.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/a09-disable-confirmation-1920.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/journey-disabled-keeps-data-1920.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/journey-old-session-login-required-1920.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/journey-enabled-new-login-required-1920.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/a06-from-customer-orders-1920.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/a08-empty-match-1920.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/main/a09-unknown-404-1920.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/empty/a02-empty-business-ADMIN-kept-1366.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/empty/a02-empty-business-ADMIN-kept-1920.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/error/a02-natural-permission-error-retry-1366.png",
+      "passed": true
+    },
+    {
+      "name": "browser PNG SHA attempt1/browser/error/a02-natural-permission-error-retry-1920.png",
+      "passed": true
+    },
+    {
+      "name": "20 to 26 fresh direct PNGs",
+      "passed": true
+    },
+    {
+      "name": "all direct PNGs visually inspected",
+      "passed": true
+    },
+    {
+      "name": "independent observations PASS",
+      "passed": true
+    },
+    {
+      "name": "160 existing protected source files preserved",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement archive-tools/cleanup.py",
+      "passed": true
+    },
+    {
+      "name": "structural private scan archive-tools/cleanup.py",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement archive-tools/final_audit.py",
+      "passed": true
+    },
+    {
+      "name": "structural private scan archive-tools/final_audit.py",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement archive-tools/integrate.py",
+      "passed": true
+    },
+    {
+      "name": "structural private scan archive-tools/integrate.py",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement archive-tools/package_evidence.py",
+      "passed": true
+    },
+    {
+      "name": "structural private scan archive-tools/package_evidence.py",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement archive-tools/protected_sources.py",
+      "passed": true
+    },
+    {
+      "name": "structural private scan archive-tools/protected_sources.py",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement archive-tools/publish_final.py",
+      "passed": true
+    },
+    {
+      "name": "structural private scan archive-tools/publish_final.py",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement archive-tools/write_evidence_readme.py",
+      "passed": true
+    },
+    {
+      "name": "structural private scan archive-tools/write_evidence_readme.py",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement artifact-references.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan artifact-references.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/action-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/action-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/admin-detail-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/admin-detail-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/admin-list-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/admin-list-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/application-grants.txt",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/application-grants.txt",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/badge-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/badge-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/01311d56838639d3e9993d94.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/01311d56838639d3e9993d94.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/0178a72d5a597ed2ea36ad73.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/0178a72d5a597ed2ea36ad73.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/0447d721c71cb4182fd6f589.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/0447d721c71cb4182fd6f589.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/07900d503756f3946b13686b.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/07900d503756f3946b13686b.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/07e0540acaff037b991703b4.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/07e0540acaff037b991703b4.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/0e7ee8a16f47ce61d88f4251.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/0e7ee8a16f47ce61d88f4251.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/0f628a4e456f4d7000f1768a.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/0f628a4e456f4d7000f1768a.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/116b11f1ce20f346f7888227.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/116b11f1ce20f346f7888227.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/159dd8758218791f0a0cc406.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/159dd8758218791f0a0cc406.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/179b008c51922f48885e9a65.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/179b008c51922f48885e9a65.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/183b28141a9842525b10e32e.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/183b28141a9842525b10e32e.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/1ba337a190afe4cf5e1b2da0.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/1ba337a190afe4cf5e1b2da0.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/2be2c1233bfdef0314e82992.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/2be2c1233bfdef0314e82992.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/2d1275d287e3e69c19d905ec.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/2d1275d287e3e69c19d905ec.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/2eb65f70af232346841f8e5f.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/2eb65f70af232346841f8e5f.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/310906e661e940c75e744e67.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/310906e661e940c75e744e67.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/3252dcf5ae4e0506c05cd5bf.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/3252dcf5ae4e0506c05cd5bf.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/3694ce20f3caf98bcd60b075.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/3694ce20f3caf98bcd60b075.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/47aee056449b661a606b795b.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/47aee056449b661a606b795b.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/47e235118c1915fe889d487b.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/47e235118c1915fe889d487b.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/483bad9877a8851ffb9ca322.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/483bad9877a8851ffb9ca322.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/49b22583c3d4c4e4633f9b43.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/49b22583c3d4c4e4633f9b43.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/4d5369912f1f7f6dfed76748.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/4d5369912f1f7f6dfed76748.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/4fc8492b7169074792a7cd6a.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/4fc8492b7169074792a7cd6a.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/553c53735f66e26a3786b18b.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/553c53735f66e26a3786b18b.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/5c206654e9262f84622e80c6.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/5c206654e9262f84622e80c6.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/5eec2855cb6a9e1d4f9ecdba.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/5eec2855cb6a9e1d4f9ecdba.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/5ef97389094e7e58b3bff3b5.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/5ef97389094e7e58b3bff3b5.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/62e01c52c08e98ff614183a1.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/62e01c52c08e98ff614183a1.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/66925b27f89443fb94f69052.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/66925b27f89443fb94f69052.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/6737c1f56a647f4b4405244a.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/6737c1f56a647f4b4405244a.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/6ad1dcfbf31bde4211714ff2.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/6ad1dcfbf31bde4211714ff2.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/6bc0f807cc685d4cf6b95f75.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/6bc0f807cc685d4cf6b95f75.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/6e450b761d55ca6dd9831afd.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/6e450b761d55ca6dd9831afd.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/6ebe149be8be752b29a85b51.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/6ebe149be8be752b29a85b51.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/712b52004f68bc4ed8bcf512.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/712b52004f68bc4ed8bcf512.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/757deeedad49e01604c11f67.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/757deeedad49e01604c11f67.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/7c75d85d216bd3d8d8fe24b9.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/7c75d85d216bd3d8d8fe24b9.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/8080e237de4a177361e154a2.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/8080e237de4a177361e154a2.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/81ed9c0381dc377493511e32.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/81ed9c0381dc377493511e32.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/8258ebb4583cd708f1ddb046.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/8258ebb4583cd708f1ddb046.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/8396668338d8471169c947db.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/8396668338d8471169c947db.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/8aecc06afcef231a4f8e3b2e.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/8aecc06afcef231a4f8e3b2e.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/8b2ce02fa40fdf0730eef980.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/8b2ce02fa40fdf0730eef980.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/917edd72f1f76cf0e99210a8.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/917edd72f1f76cf0e99210a8.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/92f981f0a88219765bce1a8e.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/92f981f0a88219765bce1a8e.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/942f744fc920a02dc1264705.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/942f744fc920a02dc1264705.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/97c2db0963e428edfedf4e86.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/97c2db0963e428edfedf4e86.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/9828eba1082664bc277e2ba3.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/9828eba1082664bc277e2ba3.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/9921a0cadbced6f5cb1c2384.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/9921a0cadbced6f5cb1c2384.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/9bf4bed627a28a72cc4f16cd.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/9bf4bed627a28a72cc4f16cd.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/a135c2a9bdd9a54b8d8f50af.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/a135c2a9bdd9a54b8d8f50af.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/a5797e64a2fe0badc1390ad6.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/a5797e64a2fe0badc1390ad6.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/a8c424b52d90e7abc2a75f4f.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/a8c424b52d90e7abc2a75f4f.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/aa062b20ef97765d479a1107.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/aa062b20ef97765d479a1107.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/aa75f442c9475ebfc7110633.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/aa75f442c9475ebfc7110633.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/abca7a79d2e0f4055c6244a7.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/abca7a79d2e0f4055c6244a7.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/af2ea45bb730eb0afb889aea.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/af2ea45bb730eb0afb889aea.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/b10eb734f460e39d9e68b77c.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/b10eb734f460e39d9e68b77c.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/b7480c699d769249f4b458d8.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/b7480c699d769249f4b458d8.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/ba6fdd2af6869bd5e551d104.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/ba6fdd2af6869bd5e551d104.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/be61f8f0f49d38665cec1079.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/be61f8f0f49d38665cec1079.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/c2d18ff801be47c96f58cdfe.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/c2d18ff801be47c96f58cdfe.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/c3c086369854e4f4298b34be.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/c3c086369854e4f4298b34be.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/c5c059b1c58c976d6031dfbb.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/c5c059b1c58c976d6031dfbb.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/c6a8384194dc9c54c1cd9b9d.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/c6a8384194dc9c54c1cd9b9d.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/ca7b393766a60a859ebcea6c.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/ca7b393766a60a859ebcea6c.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/d421a9d12e5db5c4eaf65fa6.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/d421a9d12e5db5c4eaf65fa6.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/dda7737fd3f8d61a7c2b4154.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/dda7737fd3f8d61a7c2b4154.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/dde1b8b8bf55b55f908433ca.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/dde1b8b8bf55b55f908433ca.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/e1d83eb59846118a6b953c30.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/e1d83eb59846118a6b953c30.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/e3b0c44298fc1c149afbf4c8.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/e3b0c44298fc1c149afbf4c8.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/e5a89795914985ca55a38322.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/e5a89795914985ca55a38322.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/ec55e5d9b4cc0a275b154dbf.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/ec55e5d9b4cc0a275b154dbf.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/ec809c67fbcd2d3571813e86.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/ec809c67fbcd2d3571813e86.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/ecd48baec15993aea5892f6a.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/ecd48baec15993aea5892f6a.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/edfdf908ddcbeaf36af8e003.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/edfdf908ddcbeaf36af8e003.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/f18066471a9eb57055cf2385.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/f18066471a9eb57055cf2385.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/f203a3930715eac7dc21635f.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/f203a3930715eac7dc21635f.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/f2e40e67140737b922d0100c.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/f2e40e67140737b922d0100c.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/f9a4a3f7f8ffbcbfc48c5c64.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/f9a4a3f7f8ffbcbfc48c5c64.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/fc22f41d527b244cea66729a.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/fc22f41d527b244cea66729a.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/fde35deb2d0a3db4f8df8900.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/fde35deb2d0a3db4f8df8900.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/fdf469e5ae1cef35a66cb5df.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/fdf469e5ae1cef35a66cb5df.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/bodies/ff48a1051f187171eee865c0.body.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/bodies/ff48a1051f187171eee865c0.body.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/browser/empty/result.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/browser/empty/result.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/browser/error/result.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/browser/error/result.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/browser/main/result.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/browser/main/result.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/browser/result.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/browser/result.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/browser-empty.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/browser-empty.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/browser-error.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/browser-error.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/browser-main.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/browser-main.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/build-admin.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/build-admin.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/build-exits.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/build-exits.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/build-user.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/build-user.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/commands.jsonl.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/commands.jsonl.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/confirmation-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/confirmation-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/controlled-account-fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/controlled-account-fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/csucampuscraft-admin-default-1.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/csucampuscraft-admin-default-1.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/csucampuscraft-admin-default-2.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/csucampuscraft-admin-default-2.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/csucampuscraft-admin-default-3.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/csucampuscraft-admin-default-3.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/csucampuscraft-user-default-1.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/csucampuscraft-user-default-1.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/customer-detail-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/customer-detail-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/customer-feedback-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/customer-feedback-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/customer-list-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/customer-list-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/customer-status-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/customer-status-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/dashboard-denied-grants.txt",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/dashboard-denied-grants.txt",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/dashboard-error-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/dashboard-error-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/dashboard-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/dashboard-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/database-identity.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/database-identity.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/database-main-final.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/database-main-final.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/database-original.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/database-original.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/database-writes.jsonl.gz",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/database-writes.jsonl.gz",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/detail-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/detail-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/empty-business-identity.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/empty-business-identity.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/fixtures.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/fixtures.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/git-input-status.txt",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/git-input-status.txt",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/http.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/http.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/implementation-diff.patch",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/implementation-diff.patch",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/launches.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/launches.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/list-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/list-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/listener-ownership.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/listener-ownership.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/mysql-initialize.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/mysql-initialize.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/mysql-server.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/mysql-server.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/native-compile.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/native-compile.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/native-probe.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/native-probe.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/native-structural.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/native-structural.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/NativeCustomerDashboardProbe.java",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/NativeCustomerDashboardProbe.java",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/privacy_checks.py",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/privacy_checks.py",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/raw-response-scanner-regression.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/raw-response-scanner-regression.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/result.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/result.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/runtime-inputs.sha256",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/runtime-inputs.sha256",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/sensitive-scan.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/sensitive-scan.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/ship-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/ship-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/shipment-feedback-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/shipment-feedback-observations.jsonl",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/static-before.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/static-before.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/tool-identity.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/tool-identity.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/verify_browser.cjs",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/verify_browser.cjs",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/verify_step12.py",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/verify_step12.py",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempt1/versions.txt",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempt1/versions.txt",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement attempts-summary.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan attempts-summary.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement backend-preflight/binding-compile.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan backend-preflight/binding-compile.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement backend-preflight/binding-preflight.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan backend-preflight/binding-preflight.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement backend-preflight/compile.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan backend-preflight/compile.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement backend-preflight/compile.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan backend-preflight/compile.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement backend-preflight/MapperBindingPreflight.java",
+      "passed": true
+    },
+    {
+      "name": "structural private scan backend-preflight/MapperBindingPreflight.java",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement backend-review.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan backend-review.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement baseline-preservation.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan baseline-preservation.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement builds/build-admin.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan builds/build-admin.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement builds/build-admin.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan builds/build-admin.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement builds/build-exits.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan builds/build-exits.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement builds/build-fresh.ps1",
+      "passed": true
+    },
+    {
+      "name": "structural private scan builds/build-fresh.ps1",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement builds/build-user.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan builds/build-user.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement builds/build-user.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan builds/build-user.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement compressed-text-index.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan compressed-text-index.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement delivery-metadata.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan delivery-metadata.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement evidence-date.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan evidence-date.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement independent-observation-review.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan independent-observation-review.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement jar-root-route-review.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan jar-root-route-review.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement native-tools/NativeCustomerDashboardProbe.java",
+      "passed": true
+    },
+    {
+      "name": "structural private scan native-tools/NativeCustomerDashboardProbe.java",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement native-tools/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "structural private scan native-tools/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement native-tools/preflight1/compile.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan native-tools/preflight1/compile.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement native-tools/preflight1/metadata.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan native-tools/preflight1/metadata.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement native-tools/preflight1/NativeCustomerDashboardProbe.java",
+      "passed": true
+    },
+    {
+      "name": "structural private scan native-tools/preflight1/NativeCustomerDashboardProbe.java",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement native-tools/preflight1/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "structural private scan native-tools/preflight1/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement native-tools/preflight1/structural.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan native-tools/preflight1/structural.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement native-tools/preflight2/compile.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan native-tools/preflight2/compile.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement native-tools/preflight2/metadata.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan native-tools/preflight2/metadata.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement native-tools/preflight2/structural.log",
+      "passed": true
+    },
+    {
+      "name": "structural private scan native-tools/preflight2/structural.log",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement original-attempt-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan original-attempt-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement original-refs.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan original-refs.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement protected-source-preservation.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan protected-source-preservation.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement README.md",
+      "passed": true
+    },
+    {
+      "name": "structural private scan README.md",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement result.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan result.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement review_observations.py",
+      "passed": true
+    },
+    {
+      "name": "structural private scan review_observations.py",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement source-publication.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan source-publication.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement source-review.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan source-review.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement tool-final-freeze-review.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan tool-final-freeze-review.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement tool-preflight-review.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan tool-preflight-review.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement ui-static-review.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan ui-static-review.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement ui-visual-review.json",
+      "passed": true
+    },
+    {
+      "name": "structural private scan ui-visual-review.json",
+      "passed": true
+    },
+    {
+      "name": "UTF8 no replacement verification/privacy_checks.py",
+      "passed": true
+    },
+    {
+      "name": "structural private scan verification/privacy_checks.py",
+      "passed": true
+    },
+    {
+      "name": "manifest count",
+      "passed": true
+    },
+    {
+      "name": "manifest bytes SHA",
+      "passed": true
+    },
+    {
+      "name": "frozen source .mvn/wrapper/maven-wrapper.properties",
+      "passed": true
+    },
+    {
+      "name": "frozen source assets/images/catalog-placeholder.svg",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/pom.xml",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/CSUCampusCraftAdminApplication.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AdminWriteGuard.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthFilter.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/AuthUser.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/LoginController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionExpiredException.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionIdentity.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/SessionSupport.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUser.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/auth/StoreUserMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/Category.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryForm.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/CategoryService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/Product.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductCategoryChoice.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImage.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImageInput.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImageMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImagePage.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductImageService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductInput.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductPage.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductQuery.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/catalog/ProductStatus.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerPage.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerProfile.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerQuery.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerStatus.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerStatusResult.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/customer/CustomerTarget.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/dashboard/DashboardSummary.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/CsrfFilter.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/CsrfTokenService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/PasswordService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/security/ReturnUrlPolicy.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/validation/InputChecks.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/view/ImagePaths.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/BusinessException.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/GlobalExceptionHandler.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/HttpResponses.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/foundation/web/PageModelAdvice.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/AdminOrderController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/AdminOrderService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderCustomer.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderDetail.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderItemMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderPage.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderQuery.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/OrderStatus.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/SalesOrder.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/SalesOrderItem.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/order/ShipmentResult.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/verification/FoundationVerificationController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/CategoryController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/ProductController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/ProductImageController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/java/org/csucampuscraft/admin/web/ProductReturnUrls.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/application.yml",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/static/css/app.css",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/static/js/app.js",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/categories/form.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/categories/list.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/customers/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/customers/detail.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/customers/index.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/dashboard-error.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/error/400.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/error/403.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/error/404.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/error/409.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/error/500.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/fragments/fields.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/fragments/images.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/home.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/login.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/products/form.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/products/images.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/products/list.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-admin/src/main/resources/templates/verification/foundation.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/pom.xml",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/CSUCampusCraftUserApplication.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthFilter.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/AuthUser.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/CartRequestNavigation.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/CartRoleConfiguration.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/CustomerWriteGuard.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/LoginController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionExpiredException.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionIdentity.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/SessionSupport.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUser.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/auth/StoreUserMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartForm.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartItem.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartItemMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartLine.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartPage.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/cart/CartService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/CatalogPage.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/CatalogQuery.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/CatalogService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/Category.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/CategoryMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/CategoryService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/HomeCatalog.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/Product.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/ProductDetail.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/ProductImage.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/ProductImageMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/ProductMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/ProductSort.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/ProductType.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/ThemeNavigation.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/catalog/TypeLink.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutConfirmation.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutLine.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/CheckoutService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/checkout/ShippingForm.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/CsrfFilter.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/CsrfTokenService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/PasswordService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/security/ReturnUrlPolicy.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/validation/InputChecks.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/view/ImagePaths.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/BusinessException.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/GlobalExceptionHandler.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/HttpResponses.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/foundation/web/PageModelAdvice.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderDetail.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderItemMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderPage.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderQuery.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderStatus.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderSubmissionCoordinator.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/OrderSubmissionResult.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/SalesOrder.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/order/SalesOrderItem.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/payment/OrderActionMapper.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/payment/OrderActionResult.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/payment/PaymentController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/payment/PaymentResult.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/payment/PaymentService.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/verification/FoundationVerificationController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/web/CartController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/web/CatalogController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/java/org/csucampuscraft/storefront/web/HomeController.java",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/application.yml",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/static/css/app.css",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/static/js/app.js",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/cart/index.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/checkout/conflict.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/checkout/index.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/error/400.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/error/403.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/error/404.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/error/409.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/error/500.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/fragments/alerts.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/fragments/catalog.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/fragments/fields.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/fragments/images.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/fragments/layout.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/home.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/login.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/orders/action-conflict.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/orders/detail.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/orders/index.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/orders/payment.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/products/detail.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/products/list.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source csucampuscraft-user/src/main/resources/templates/verification/foundation.html",
+      "passed": true
+    },
+    {
+      "name": "frozen source database/01-schema.sql",
+      "passed": true
+    },
+    {
+      "name": "frozen source database/02-schema-with-demo.sql",
+      "passed": true
+    },
+    {
+      "name": "frozen source mvnw",
+      "passed": true
+    },
+    {
+      "name": "frozen source mvnw.cmd",
+      "passed": true
+    },
+    {
+      "name": "private runtime directories removed",
+      "passed": true
+    },
+    {
+      "name": "old doc original SHA README.md",
+      "passed": true
+    },
+    {
+      "name": "doc candidate SHA README.md",
+      "passed": true
+    },
+    {
+      "name": "old doc original SHA docs/开发计划与任务.md",
+      "passed": true
+    },
+    {
+      "name": "doc candidate SHA docs/开发计划与任务.md",
+      "passed": true
+    },
+    {
+      "name": "old doc original SHA docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "doc candidate SHA docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "old doc original SHA docs/页面清单与原型.md",
+      "passed": true
+    },
+    {
+      "name": "doc candidate SHA docs/页面清单与原型.md",
+      "passed": true
+    },
+    {
+      "name": "old doc original SHA docs/系统设计与路由.md",
+      "passed": true
+    },
+    {
+      "name": "doc candidate SHA docs/系统设计与路由.md",
+      "passed": true
+    },
+    {
+      "name": "STEP07 ledger unchanged pending review",
+      "passed": true
+    },
+    {
+      "name": "STEP08 ledger unchanged pending review",
+      "passed": true
+    },
+    {
+      "name": "STEP09 ledger unchanged pending review",
+      "passed": true
+    },
+    {
+      "name": "STEP10 ledger unchanged pending review",
+      "passed": true
+    },
+    {
+      "name": "STEP11 ledger unchanged pending review",
+      "passed": true
+    },
+    {
+      "name": "STEP12 actual SHA pending review",
+      "passed": true
+    },
+    {
+      "name": "all original business TST standards preserved",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md evidence-date.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md original-attempt-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md builds/build-fresh.ps1",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md builds/build-user.log",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md builds/build-admin.log",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md builds/build-exits.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md jar-root-route-review.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md protected-source-preservation.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md source-publication.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md source-review.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md backend-review.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md ui-static-review.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/runtime-inputs.sha256",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/versions.txt",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/database-identity.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md delivery-metadata.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/http.jsonl",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/database-writes.jsonl.gz",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md independent-observation-review.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md tool-preflight-review.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md tool-final-freeze-review.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md native-tools/preflight2/metadata.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md ui-visual-review.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/a02-live-five-metrics-1366.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/a08-CUSTOMER-only-list-1366.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/a08-percent-literal-filter-1366.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/a09-disable-confirmation-1366.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/journey-disabled-keeps-data-1366.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/journey-old-session-login-required-1366.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/journey-enabled-new-login-required-1366.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/a06-from-customer-orders-1366.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/a08-empty-match-1366.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/a09-unknown-404-1366.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/a02-live-five-metrics-1920.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/a08-CUSTOMER-only-list-1920.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/a08-percent-literal-filter-1920.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/a09-disable-confirmation-1920.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/journey-disabled-keeps-data-1920.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/journey-old-session-login-required-1920.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/journey-enabled-new-login-required-1920.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/a06-from-customer-orders-1920.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/a08-empty-match-1920.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/main/a09-unknown-404-1920.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/empty/a02-empty-business-ADMIN-kept-1366.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/empty/a02-empty-business-ADMIN-kept-1920.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/error/a02-natural-permission-error-retry-1366.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md attempt1/browser/error/a02-natural-permission-error-retry-1920.png",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md compressed-text-index.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md artifact-references.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md original-attempt-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/项目立项与范围.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/项目立项与范围.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/需求与业务规则.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/页面清单与原型.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/数据库设计.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/系统设计与路由.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/开发计划与任务.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/实验一 CSUCampusCraft 校园文创商店实验指导书.docx",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/evidence/2026-11-13-step03/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/evidence/2026-11-14-step04/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/evidence/2026-11-14-step05/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/evidence/2026-11-14-step06/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/evidence/2026-11-15-step07-merged/comparison.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/evidence/2026-11-14-step07/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/evidence/2026-11-14-step07-member/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/evidence/2026-11-15-step07-merged/member-import-review.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/evidence/2026-11-15-step07-merged/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/evidence/2026-11-14-step08/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/evidence/2026-11-14-step09/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/evidence/2026-11-14-step10/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/evidence/2026-11-14-step11/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link README.md docs/evidence/2026-11-15-step12/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 项目立项与范围.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 需求与业务规则.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 页面清单与原型.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 数据库设计.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 系统设计与路由.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md ../README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md evidence/2026-11-13-step03/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md evidence/2026-11-14-step04/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md evidence/2026-11-14-step05/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md evidence/2026-11-14-step06/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md evidence/2026-11-14-step07/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md evidence/2026-11-14-step07-member/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md evidence/2026-11-15-step07-merged/comparison.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md evidence/2026-11-14-step08/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md evidence/2026-11-14-step09/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md evidence/2026-11-14-step10/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md evidence/2026-11-14-step11/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 开发计划与任务.md evidence/2026-11-15-step12/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md 需求与业务规则.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md 页面清单与原型.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md 系统设计与路由.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md 数据库设计.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md ../README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md ../README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-11-m0/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-11-m0/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-11-m0/runtime-inputs.sha256",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md 开发计划与任务.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md ../README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-11-init/runtime-inputs.sha256",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-11-init/check-audit-result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-11-init/check-constraints.tsv",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-11-init/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-11-init/verify_init.py",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-11-init/run.log",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-11-init/versions.txt",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-11-init/first-attempt-result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-12-step02/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-12-step02/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-13-step03/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-13-step03/attempt3/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-13-step03/supplement-home-states/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step04/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step04/attempt4/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step05/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step05/attempt3/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step05/supplement-guest-rejections/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step06/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step07/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step07/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step07-member/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-15-step07-merged/member-import-review.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-15-step07-merged/comparison.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-15-step07-merged/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step08/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step08/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step09/attempt1/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step09/attempt2/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step09/final-source-fix-review.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step09/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step09/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step10/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step10/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step11/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-14-step11/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-15-step12/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md evidence/2026-11-15-step12/result.json",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md 系统设计与路由.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md 实验一 CSUCampusCraft 校园文创商店实验指导书.docx",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 测试与验收用例.md 开发计划与任务.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 页面清单与原型.md ../README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 页面清单与原型.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 页面清单与原型.md 系统设计与路由.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 页面清单与原型.md 需求与业务规则.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 页面清单与原型.md 需求与业务规则.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 页面清单与原型.md 需求与业务规则.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 页面清单与原型.md 系统设计与路由.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 页面清单与原型.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 页面清单与原型.md 开发计划与任务.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 页面清单与原型.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 页面清单与原型.md evidence/2026-11-15-step12/README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 系统设计与路由.md ../README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 系统设计与路由.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 系统设计与路由.md ../README.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 系统设计与路由.md 数据库设计.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 系统设计与路由.md 需求与业务规则.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 系统设计与路由.md 页面清单与原型.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 系统设计与路由.md 页面清单与原型.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 系统设计与路由.md 需求与业务规则.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 系统设计与路由.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 系统设计与路由.md 测试与验收用例.md",
+      "passed": true
+    },
+    {
+      "name": "local Markdown link 系统设计与路由.md evidence/2026-11-15-step12/README.md",
+      "passed": true
+    }
+  ],
+  "text_files_scanned": 196,
+  "gzip_files_decompressed": 87,
+  "scan": [
+    {
+      "path": "archive-tools/cleanup.py",
+      "bytes": 1353,
+      "sha256": "e9dc75272c8db7d696194c2b9e04363cb221df496ba914debf849aec43927002",
+      "findings": []
+    },
+    {
+      "path": "archive-tools/final_audit.py",
+      "bytes": 8142,
+      "sha256": "eb648f5d5772ee37da2332bd36a0d28d2e1127014b939df600bfe9747dcbd9cb",
+      "findings": []
+    },
+    {
+      "path": "archive-tools/integrate.py",
+      "bytes": 5382,
+      "sha256": "056035c9f3628803968d6c9f07cf60218a0fc259678d71fb78e6a70d6a29e2da",
+      "findings": []
+    },
+    {
+      "path": "archive-tools/package_evidence.py",
+      "bytes": 6912,
+      "sha256": "5b06fffc1fa69520d57a9d3b4f2f733d29234d3906f955dffab522d4c7e2fbb6",
+      "findings": []
+    },
+    {
+      "path": "archive-tools/protected_sources.py",
+      "bytes": 1719,
+      "sha256": "d31479861b9ededf2068ff6e0a51162390b49d39af21d0122f64232582f78bf0",
+      "findings": []
+    },
+    {
+      "path": "archive-tools/publish_final.py",
+      "bytes": 3362,
+      "sha256": "f4c9d64c2bf7449ee8e313450c9f81b7b13bdd6aa0bb70e51a70d0e1f8af216f",
+      "findings": []
+    },
+    {
+      "path": "archive-tools/write_evidence_readme.py",
+      "bytes": 10911,
+      "sha256": "3e67e7616e585ed8d2247ab487715bde7afe1c76a15d35ac0495b184f9864c9b",
+      "findings": []
+    },
+    {
+      "path": "artifact-references.json",
+      "bytes": 137,
+      "sha256": "fb84efdc31da5baf2bb2416dcaeed930c252a76568889002c1055b90db56e509",
+      "findings": []
+    },
+    {
+      "path": "attempt1/action-observations.jsonl",
+      "bytes": 1476,
+      "sha256": "ebb611ee40b1e12ec4d700c6bce2d4056d75ec3780bb6084e7a0fd37f2f81622",
+      "findings": []
+    },
+    {
+      "path": "attempt1/admin-detail-observations.jsonl",
+      "bytes": 1702,
+      "sha256": "f93c976a9339bc60bc1b883f0a9bac0e052578ca8db6c8a903352b8a0ae888b7",
+      "findings": []
+    },
+    {
+      "path": "attempt1/admin-list-observations.jsonl",
+      "bytes": 710,
+      "sha256": "caf6ca2130c91519079416e368a7b13af0a2b247ccdabf5d0178a9c5bc8709d5",
+      "findings": []
+    },
+    {
+      "path": "attempt1/application-grants.txt",
+      "bytes": 553,
+      "sha256": "725f603afcbd95114000a85a8645ec06139dccb67f672f92cc51ebf3cc30fedb",
+      "findings": []
+    },
+    {
+      "path": "attempt1/badge-observations.jsonl",
+      "bytes": 1244,
+      "sha256": "83c00131f3e7977c63bcc641cf0757054bbeb263e18972717d0837724a57d92b",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/01311d56838639d3e9993d94.body.gz",
+      "bytes": 8269,
+      "sha256": "01311d56838639d3e9993d94f79be0f6c4752ee28ae737f8efd5e10614417ce9",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/0178a72d5a597ed2ea36ad73.body.gz",
+      "bytes": 5578,
+      "sha256": "0178a72d5a597ed2ea36ad7394028e8bf890fdbf1192f365012e4c7e7f8cd3ea",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/0447d721c71cb4182fd6f589.body.gz",
+      "bytes": 8482,
+      "sha256": "0447d721c71cb4182fd6f58908b7787d065fee97805ac44440b6730a80de1ed9",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/07900d503756f3946b13686b.body.gz",
+      "bytes": 9221,
+      "sha256": "07900d503756f3946b13686b4f9598a72f520c184aa30caacc1035182425816b",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/07e0540acaff037b991703b4.body.gz",
+      "bytes": 4706,
+      "sha256": "07e0540acaff037b991703b4ae34a4594087896977a7553a5da791a4ec91c0e3",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/0e7ee8a16f47ce61d88f4251.body.gz",
+      "bytes": 7453,
+      "sha256": "0e7ee8a16f47ce61d88f425199971d5e2285c03d210e4e04b1b6260bcdbdee72",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/0f628a4e456f4d7000f1768a.body.gz",
+      "bytes": 2529,
+      "sha256": "0f628a4e456f4d7000f1768aa713fa35a6399378a12a6be4f63f44a9c0702e9d",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/116b11f1ce20f346f7888227.body.gz",
+      "bytes": 20765,
+      "sha256": "116b11f1ce20f346f7888227a753ede6df584fffb42ecca73ec9d9339d50121c",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/159dd8758218791f0a0cc406.body.gz",
+      "bytes": 5229,
+      "sha256": "159dd8758218791f0a0cc406d4a1d78520120c69738673f9a6b8c36bbe7d837f",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/179b008c51922f48885e9a65.body.gz",
+      "bytes": 5390,
+      "sha256": "179b008c51922f48885e9a65efbb209b184da23d353ac5d7775386797a44aa69",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/183b28141a9842525b10e32e.body.gz",
+      "bytes": 2534,
+      "sha256": "183b28141a9842525b10e32e9e472f389ee34048789e6d80108c58f79acab4d4",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/1ba337a190afe4cf5e1b2da0.body.gz",
+      "bytes": 8029,
+      "sha256": "1ba337a190afe4cf5e1b2da03dbed911bdf88376cf4cd181cb3be84c754bd2ab",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/2be2c1233bfdef0314e82992.body.gz",
+      "bytes": 2625,
+      "sha256": "2be2c1233bfdef0314e82992928f95164be3dd1f26a2dfb7094bff373ed5aac6",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/2d1275d287e3e69c19d905ec.body.gz",
+      "bytes": 14167,
+      "sha256": "2d1275d287e3e69c19d905eca7920f91846acd722d4e14f03a350f5490df23ee",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/2eb65f70af232346841f8e5f.body.gz",
+      "bytes": 8511,
+      "sha256": "2eb65f70af232346841f8e5f41aec9e426030710f9fbca5787503eadb962bee9",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/310906e661e940c75e744e67.body.gz",
+      "bytes": 9222,
+      "sha256": "310906e661e940c75e744e670db1db53fdae925d95cfab165647d7bd9e3a3b3a",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/3252dcf5ae4e0506c05cd5bf.body.gz",
+      "bytes": 13313,
+      "sha256": "3252dcf5ae4e0506c05cd5bf39a387332a47e75464bce51cf62c6d55161f0718",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/3694ce20f3caf98bcd60b075.body.gz",
+      "bytes": 12467,
+      "sha256": "3694ce20f3caf98bcd60b07572a07ab4c94ed0b189dd94993142539a191d0d5e",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/47aee056449b661a606b795b.body.gz",
+      "bytes": 5215,
+      "sha256": "47aee056449b661a606b795b3ec8f853872155323c3bc990d0d217e6956f23b1",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/47e235118c1915fe889d487b.body.gz",
+      "bytes": 5390,
+      "sha256": "47e235118c1915fe889d487b7b10d99cf99da42d3902ce0bd3a04f560f56fe6d",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/483bad9877a8851ffb9ca322.body.gz",
+      "bytes": 10384,
+      "sha256": "483bad9877a8851ffb9ca3229c979a8ede4a177f27cc90e53da64a67413bdfcd",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/49b22583c3d4c4e4633f9b43.body.gz",
+      "bytes": 5641,
+      "sha256": "49b22583c3d4c4e4633f9b4326f2dae491b2abd67e3406d6755ad780478db468",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/4d5369912f1f7f6dfed76748.body.gz",
+      "bytes": 20838,
+      "sha256": "4d5369912f1f7f6dfed76748e0c9c389c9c6d4b56cc443005aa3fc1da11fc6fd",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/4fc8492b7169074792a7cd6a.body.gz",
+      "bytes": 2595,
+      "sha256": "4fc8492b7169074792a7cd6a77edd59593e2b80e3ab6f32a29e18980dd0fc5a0",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/553c53735f66e26a3786b18b.body.gz",
+      "bytes": 14734,
+      "sha256": "553c53735f66e26a3786b18bbc8782fd2decc83e4941dc33747089306ed31f2d",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/5c206654e9262f84622e80c6.body.gz",
+      "bytes": 8462,
+      "sha256": "5c206654e9262f84622e80c6133168f911104ca3fd435bac7601879906b4c6d2",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/5eec2855cb6a9e1d4f9ecdba.body.gz",
+      "bytes": 5790,
+      "sha256": "5eec2855cb6a9e1d4f9ecdba2af7ed68a72e8decc553367cf45ee54acd879761",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/5ef97389094e7e58b3bff3b5.body.gz",
+      "bytes": 4563,
+      "sha256": "5ef97389094e7e58b3bff3b5accdd7b9b127b821859deba95ebde2613b61b453",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/62e01c52c08e98ff614183a1.body.gz",
+      "bytes": 2599,
+      "sha256": "62e01c52c08e98ff614183a1b0efbec1492407651284d713cc66fc27f6dd41e4",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/66925b27f89443fb94f69052.body.gz",
+      "bytes": 4267,
+      "sha256": "66925b27f89443fb94f69052b828ff15f9155c3cbf5feb81c4c68b237d021718",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/6737c1f56a647f4b4405244a.body.gz",
+      "bytes": 4896,
+      "sha256": "6737c1f56a647f4b4405244af54c5472df1d475cbee73a51da1a456be3a6b420",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/6ad1dcfbf31bde4211714ff2.body.gz",
+      "bytes": 7297,
+      "sha256": "6ad1dcfbf31bde4211714ff220db6d244d46c27b08772b75add2d0085ded4c66",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/6bc0f807cc685d4cf6b95f75.body.gz",
+      "bytes": 5700,
+      "sha256": "6bc0f807cc685d4cf6b95f755936a0f2a48c605d16338416c759d56dd0c59e74",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/6e450b761d55ca6dd9831afd.body.gz",
+      "bytes": 2830,
+      "sha256": "6e450b761d55ca6dd9831afdd613b0357610954c269e71bdd5b1ea04ea670f35",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/6ebe149be8be752b29a85b51.body.gz",
+      "bytes": 2353,
+      "sha256": "6ebe149be8be752b29a85b51cdb99492ba85b8cd5fa8d25b07c3e79d99f0508a",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/712b52004f68bc4ed8bcf512.body.gz",
+      "bytes": 4391,
+      "sha256": "712b52004f68bc4ed8bcf51269cef9db241a1ea1bf926a6783bf2ed543f08f1c",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/757deeedad49e01604c11f67.body.gz",
+      "bytes": 8474,
+      "sha256": "757deeedad49e01604c11f67971535f8e398b983e5180a9aef88f17a9ee60203",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/7c75d85d216bd3d8d8fe24b9.body.gz",
+      "bytes": 7387,
+      "sha256": "7c75d85d216bd3d8d8fe24b97413b2c52a80b25155e0ac38ea7e58af1ef55e23",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/8080e237de4a177361e154a2.body.gz",
+      "bytes": 6901,
+      "sha256": "8080e237de4a177361e154a2c956855977052e79945c802d482dda71cb7f6587",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/81ed9c0381dc377493511e32.body.gz",
+      "bytes": 2523,
+      "sha256": "81ed9c0381dc377493511e32a67cdea798576417b71a09d847a388d006e280af",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/8258ebb4583cd708f1ddb046.body.gz",
+      "bytes": 8401,
+      "sha256": "8258ebb4583cd708f1ddb046b8e85ff6a4e1a5dc19af98103bb0a0c444f8efdd",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/8396668338d8471169c947db.body.gz",
+      "bytes": 4748,
+      "sha256": "8396668338d8471169c947db9b7b48a15df5b37c8a7864db9d411d0f3365479f",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/8aecc06afcef231a4f8e3b2e.body.gz",
+      "bytes": 5228,
+      "sha256": "8aecc06afcef231a4f8e3b2e616e4ca0045c0a1e3aecb903c39ac8f67163436d",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/8b2ce02fa40fdf0730eef980.body.gz",
+      "bytes": 5215,
+      "sha256": "8b2ce02fa40fdf0730eef980dfbdc64bb29bfd8ba42ede7c83043f13c9ebb0e2",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/917edd72f1f76cf0e99210a8.body.gz",
+      "bytes": 7217,
+      "sha256": "917edd72f1f76cf0e99210a8ae4fc07dc812b7a98c46f2c5ff13bd573049008c",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/92f981f0a88219765bce1a8e.body.gz",
+      "bytes": 5208,
+      "sha256": "92f981f0a88219765bce1a8ef18db99a4a61c64e3783b7d9577f9596e36f53f3",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/942f744fc920a02dc1264705.body.gz",
+      "bytes": 5784,
+      "sha256": "942f744fc920a02dc12647055ee57fe43616f9153760c97b9b8e0bf2551b1313",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/97c2db0963e428edfedf4e86.body.gz",
+      "bytes": 2517,
+      "sha256": "97c2db0963e428edfedf4e86f186df9983275d43cde88ac1d8fc871dd3383f69",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/9828eba1082664bc277e2ba3.body.gz",
+      "bytes": 10851,
+      "sha256": "9828eba1082664bc277e2ba388e6ace73a1460835196fdbc18816327f039d1e0",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/9921a0cadbced6f5cb1c2384.body.gz",
+      "bytes": 6721,
+      "sha256": "9921a0cadbced6f5cb1c2384aee309277e3909dd29ef8be64fa4e407224d00f1",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/9bf4bed627a28a72cc4f16cd.body.gz",
+      "bytes": 5677,
+      "sha256": "9bf4bed627a28a72cc4f16cda8ae82b30a390093a3b631a758e052124e914b2a",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/a135c2a9bdd9a54b8d8f50af.body.gz",
+      "bytes": 8482,
+      "sha256": "a135c2a9bdd9a54b8d8f50af72d0c2416254e35762af9d9bf5e4d66236438708",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/a5797e64a2fe0badc1390ad6.body.gz",
+      "bytes": 10497,
+      "sha256": "a5797e64a2fe0badc1390ad6e1c26d962437957aeaf193dfba9f3bec179361ad",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/a8c424b52d90e7abc2a75f4f.body.gz",
+      "bytes": 20765,
+      "sha256": "a8c424b52d90e7abc2a75f4f7dc5f2c5cc1c0213834b30d98c27ff29a434ba8f",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/aa062b20ef97765d479a1107.body.gz",
+      "bytes": 7112,
+      "sha256": "aa062b20ef97765d479a1107d6431d81ad6131cdbdee908b4096eac270b0c607",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/aa75f442c9475ebfc7110633.body.gz",
+      "bytes": 14734,
+      "sha256": "aa75f442c9475ebfc711063302db44b0924605e43daa07693d2c94ca751d1d92",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/abca7a79d2e0f4055c6244a7.body.gz",
+      "bytes": 2818,
+      "sha256": "abca7a79d2e0f4055c6244a7fd75b46a623a5bb601c9eadf43e8ffd504db3257",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/af2ea45bb730eb0afb889aea.body.gz",
+      "bytes": 4274,
+      "sha256": "af2ea45bb730eb0afb889aeaa3f9e8530de4ccd8c081d7ab11aad50908d9c398",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/b10eb734f460e39d9e68b77c.body.gz",
+      "bytes": 8753,
+      "sha256": "b10eb734f460e39d9e68b77c7554bd37a554e8bfedb02b842555e74122b439f9",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/b7480c699d769249f4b458d8.body.gz",
+      "bytes": 13186,
+      "sha256": "b7480c699d769249f4b458d80af592f00f768bb214d5f854a022c73019a24171",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/ba6fdd2af6869bd5e551d104.body.gz",
+      "bytes": 4252,
+      "sha256": "ba6fdd2af6869bd5e551d104f3be44e7296e23dd50dffddd6043f8cd265ae5bf",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/be61f8f0f49d38665cec1079.body.gz",
+      "bytes": 5390,
+      "sha256": "be61f8f0f49d38665cec107973d122f68d3711e2efaaf2c19c08d0ba5b511e3a",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/c2d18ff801be47c96f58cdfe.body.gz",
+      "bytes": 4567,
+      "sha256": "c2d18ff801be47c96f58cdfe416c312b4900ca397005abc931d28e1149c45817",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/c3c086369854e4f4298b34be.body.gz",
+      "bytes": 2384,
+      "sha256": "c3c086369854e4f4298b34be7f180778bf85396eb50fb550b48d83baad1174d0",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/c5c059b1c58c976d6031dfbb.body.gz",
+      "bytes": 5216,
+      "sha256": "c5c059b1c58c976d6031dfbbdad537b336b9caf624182cd26153e88e7097eb8f",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/c6a8384194dc9c54c1cd9b9d.body.gz",
+      "bytes": 5390,
+      "sha256": "c6a8384194dc9c54c1cd9b9d33c9a7043a34403a39e86281b63fe6486f0cd48d",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/ca7b393766a60a859ebcea6c.body.gz",
+      "bytes": 5390,
+      "sha256": "ca7b393766a60a859ebcea6c55f43cb50993d41a26caed3430f464a987173230",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/d421a9d12e5db5c4eaf65fa6.body.gz",
+      "bytes": 7509,
+      "sha256": "d421a9d12e5db5c4eaf65fa68d9ae41d75724a7b8113cd62ee1ec0f3faf76091",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/dda7737fd3f8d61a7c2b4154.body.gz",
+      "bytes": 2502,
+      "sha256": "dda7737fd3f8d61a7c2b4154651b9d9a0d64def1ba4480c27ec483abaa11f1ad",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/dde1b8b8bf55b55f908433ca.body.gz",
+      "bytes": 2573,
+      "sha256": "dde1b8b8bf55b55f908433cac5d05a5e87904f6bdaa2622dbb7240d9be872e10",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/e1d83eb59846118a6b953c30.body.gz",
+      "bytes": 4433,
+      "sha256": "e1d83eb59846118a6b953c30cd44b36b665e6e357c23a51562bd0e0abd156174",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/e3b0c44298fc1c149afbf4c8.body.gz",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/e5a89795914985ca55a38322.body.gz",
+      "bytes": 17550,
+      "sha256": "e5a89795914985ca55a38322d7d2b6173a68727f22813b8936a5746619eab6e3",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/ec55e5d9b4cc0a275b154dbf.body.gz",
+      "bytes": 24102,
+      "sha256": "ec55e5d9b4cc0a275b154dbfa95cde03d02627a25ea88193726abbc844cca5b3",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/ec809c67fbcd2d3571813e86.body.gz",
+      "bytes": 9792,
+      "sha256": "ec809c67fbcd2d3571813e8669832f5ac1416a9760d17f5c62c797b834337646",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/ecd48baec15993aea5892f6a.body.gz",
+      "bytes": 4416,
+      "sha256": "ecd48baec15993aea5892f6a279e7811a50aca5f7931a23b707f0dcefa0d9413",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/edfdf908ddcbeaf36af8e003.body.gz",
+      "bytes": 5228,
+      "sha256": "edfdf908ddcbeaf36af8e0036710da222832788d372d58fc6d06687f082efea5",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/f18066471a9eb57055cf2385.body.gz",
+      "bytes": 8072,
+      "sha256": "f18066471a9eb57055cf2385646a2602a9ed6b023a032ea2847c9394ed6341c6",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/f203a3930715eac7dc21635f.body.gz",
+      "bytes": 5803,
+      "sha256": "f203a3930715eac7dc21635fad8d2da3dc575534dc2259bdb89be0ab7c3c7ada",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/f2e40e67140737b922d0100c.body.gz",
+      "bytes": 5276,
+      "sha256": "f2e40e67140737b922d0100c03341ff0a80ae25237e10e3f6a395ac5b49eb6b6",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/f9a4a3f7f8ffbcbfc48c5c64.body.gz",
+      "bytes": 5388,
+      "sha256": "f9a4a3f7f8ffbcbfc48c5c64dafd17242d449248992f868b162eee5d125a520f",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/fc22f41d527b244cea66729a.body.gz",
+      "bytes": 4427,
+      "sha256": "fc22f41d527b244cea66729ac88889d84ad17e893107ce270d941ed263ab0984",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/fde35deb2d0a3db4f8df8900.body.gz",
+      "bytes": 2822,
+      "sha256": "fde35deb2d0a3db4f8df8900b4df41608c1d423d3486f4b8e4a599a5c4e9fc61",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/fdf469e5ae1cef35a66cb5df.body.gz",
+      "bytes": 5216,
+      "sha256": "fdf469e5ae1cef35a66cb5df2c14bdce255d9dc4c4833217a616dff66b62f8b0",
+      "findings": []
+    },
+    {
+      "path": "attempt1/bodies/ff48a1051f187171eee865c0.body.gz",
+      "bytes": 5295,
+      "sha256": "ff48a1051f187171eee865c0b2970877d488459e53bcaa2d11bb1991a42c430b",
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/empty/result.json",
+      "bytes": 4582,
+      "sha256": "a87a851d9d43ae6982a5061240e7dd449f8c94125cc35de9f66d0a1645cfa24f",
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/error/result.json",
+      "bytes": 3988,
+      "sha256": "d60a8a791ea67502a5b0ef5d19454f013d6c21f415089c6f6a0049b66165a1fc",
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/main/result.json",
+      "bytes": 35792,
+      "sha256": "bae13a5f5ebf8e2f1cc402bf97867ff97d6dd2223d4e408b884810443f1d6aca",
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser/result.json",
+      "bytes": 52213,
+      "sha256": "33c94c667449ca59d34ad386eded6a6699b74cc2cdf33cb9b72c9f3ac30e1d36",
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser-empty.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser-error.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "findings": []
+    },
+    {
+      "path": "attempt1/browser-main.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "findings": []
+    },
+    {
+      "path": "attempt1/build-admin.log",
+      "bytes": 2330,
+      "sha256": "b4d3a8e0b07b3f31d38cbfcf1df7a28241230ef37879f52a03de006d50c264d1",
+      "findings": []
+    },
+    {
+      "path": "attempt1/build-exits.json",
+      "bytes": 23,
+      "sha256": "2c21387e88298ea2fddcf36e5e00de442858d1c42245df4f5a50e01e1ac5ade3",
+      "findings": []
+    },
+    {
+      "path": "attempt1/build-user.log",
+      "bytes": 2319,
+      "sha256": "6b3fc37ef212226eb0e2c9ce8852da58eaa58bbe23f282646ed3636b0035e70b",
+      "findings": []
+    },
+    {
+      "path": "attempt1/commands.jsonl.gz",
+      "bytes": 1490645,
+      "sha256": "1d6b11d7563a4d4f366f81ae3ad562e4a1f032a0bba08abb9169ebab45475fb8",
+      "findings": []
+    },
+    {
+      "path": "attempt1/confirmation-observations.jsonl",
+      "bytes": 485,
+      "sha256": "38438cb4b6ae1b154b1a129a011143daa6f929055d0b14634ef71862fe445a2d",
+      "findings": []
+    },
+    {
+      "path": "attempt1/controlled-account-fixtures.json",
+      "bytes": 770,
+      "sha256": "0b5a3cf6fa2e4df8ed2be5279bbc3033f038e11ff5c0dc43e1688649a099a4aa",
+      "findings": []
+    },
+    {
+      "path": "attempt1/csucampuscraft-admin-default-1.log",
+      "bytes": 3291,
+      "sha256": "289c3c524aeb0bd02afcae9023802b3e82a7bfe6e45aa263b0bd3d7ee8eaac03",
+      "findings": []
+    },
+    {
+      "path": "attempt1/csucampuscraft-admin-default-2.log",
+      "bytes": 3276,
+      "sha256": "f3f8db035b2a4660093d9186ea5b7aa45949ee8de4f05a0e16f88e3f698bb646",
+      "findings": []
+    },
+    {
+      "path": "attempt1/csucampuscraft-admin-default-3.log",
+      "bytes": 3291,
+      "sha256": "14e998f5af484af1f32c0e19b6b994012d291925ce5ac57a427196b1c6f9ddb8",
+      "findings": []
+    },
+    {
+      "path": "attempt1/csucampuscraft-user-default-1.log",
+      "bytes": 3273,
+      "sha256": "ffa6ab6569017e0911d17b0ea445e56925df9996239dc8ffddd44678cd5cb809",
+      "findings": []
+    },
+    {
+      "path": "attempt1/customer-detail-observations.jsonl",
+      "bytes": 7358,
+      "sha256": "0cefd7265be7167ceea6e51b3eff3d1cae7df96e720743776a170e2642027454",
+      "findings": []
+    },
+    {
+      "path": "attempt1/customer-feedback-observations.jsonl",
+      "bytes": 2940,
+      "sha256": "6249942765aa9f98e1f888537a58775c8489bc43dbc2a4756f9c0286e3491fc0",
+      "findings": []
+    },
+    {
+      "path": "attempt1/customer-list-observations.jsonl",
+      "bytes": 4714,
+      "sha256": "e80bbbf7aded66e02a3e441a663aa00e072a1659319e3318a7e0ccaee1763d2f",
+      "findings": []
+    },
+    {
+      "path": "attempt1/customer-status-observations.jsonl",
+      "bytes": 13239,
+      "sha256": "8fa5487ad933e28d00adba775a56e00565b94ee827a7545d4281b43c9695a9e2",
+      "findings": []
+    },
+    {
+      "path": "attempt1/dashboard-denied-grants.txt",
+      "bytes": 163,
+      "sha256": "b859d43990f2b1738f771d928dcf4a63b6f199e5757095951f270816e0b1543f",
+      "findings": []
+    },
+    {
+      "path": "attempt1/dashboard-error-observations.jsonl",
+      "bytes": 513,
+      "sha256": "46fa7969f5b12b40967ee1deaef8f43ef6e997e7989b7f209c87f89ea270ec22",
+      "findings": []
+    },
+    {
+      "path": "attempt1/dashboard-observations.jsonl",
+      "bytes": 3472,
+      "sha256": "207dcddab1717a5a9f5acc6530ea11863c5e5b16122eeb301ceeee01cb05ba18",
+      "findings": []
+    },
+    {
+      "path": "attempt1/database-identity.json",
+      "bytes": 196,
+      "sha256": "bf27a74935a0efc4dee310466adf51ece679accab335690c93651e465d4a9a8e",
+      "findings": []
+    },
+    {
+      "path": "attempt1/database-main-final.json",
+      "bytes": 846,
+      "sha256": "2c5f4aa543ff113b2736753d9b6a6ce8e3246ddf0732effbbd359de49aceb2e0",
+      "findings": []
+    },
+    {
+      "path": "attempt1/database-original.json",
+      "bytes": 846,
+      "sha256": "e2ccd9946bacd0dec8c73dd059fd19fabec156e762fb206dc797b4ed387f5603",
+      "findings": []
+    },
+    {
+      "path": "attempt1/database-writes.jsonl.gz",
+      "bytes": 30148643,
+      "sha256": "1d1f2f48678c7629cd05dcba362741ee10b3aae3dfa3bddde30fb12e376236dc",
+      "findings": []
+    },
+    {
+      "path": "attempt1/detail-observations.jsonl",
+      "bytes": 667,
+      "sha256": "d6de50ae386c90ef03f71157995d042c27ff025d14a8d1772958d490ce1cce0c",
+      "findings": []
+    },
+    {
+      "path": "attempt1/empty-business-identity.json",
+      "bytes": 214,
+      "sha256": "60e720e886403185c5611b9c723d6c6b12e11cae07ecef26e1acb3143ee9d182",
+      "findings": []
+    },
+    {
+      "path": "attempt1/fixtures.jsonl",
+      "bytes": 29255,
+      "sha256": "9f21b09b57098c28ec0afdd065af8ea305943d15ea0c9d27cb19158d645a28ab",
+      "findings": []
+    },
+    {
+      "path": "attempt1/git-input-status.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "findings": []
+    },
+    {
+      "path": "attempt1/http.jsonl",
+      "bytes": 180239,
+      "sha256": "3febc89016a8a631951dcfbeae655918fc7e90a6b15483333ceb812640ca9fdc",
+      "findings": []
+    },
+    {
+      "path": "attempt1/implementation-diff.patch",
+      "bytes": 53965,
+      "sha256": "97598f8ab89b19f301475188e07800040384ae28d3c1df310e255cdd01440e3d",
+      "findings": []
+    },
+    {
+      "path": "attempt1/launches.jsonl",
+      "bytes": 2020,
+      "sha256": "a50514092241b32f62bd127ef99188d494c8ea34ab417488886af414cb72e173",
+      "findings": []
+    },
+    {
+      "path": "attempt1/list-observations.jsonl",
+      "bytes": 334,
+      "sha256": "adc010fdcceb27333f0675565dd79b40e7397c24f9549ba581533f77582df22e",
+      "findings": []
+    },
+    {
+      "path": "attempt1/listener-ownership.jsonl",
+      "bytes": 441,
+      "sha256": "7b8240927e8bc88000bfae1ca23fe8aed7b9c1ac60767dc78c0aca0aca68c3b4",
+      "findings": []
+    },
+    {
+      "path": "attempt1/mysql-initialize.log",
+      "bytes": 707,
+      "sha256": "8668323e8fec2eedd19d101944d78b2f6b41b2b0a94aaed8775ffff08ab59a3b",
+      "findings": []
+    },
+    {
+      "path": "attempt1/mysql-server.log",
+      "bytes": 1077,
+      "sha256": "51121ae90020781fa15b5b23acf6e33e6cd06412d91f5f406ff5dc4c0ec3cd0a",
+      "findings": []
+    },
+    {
+      "path": "attempt1/native-compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "findings": []
+    },
+    {
+      "path": "attempt1/native-probe.log",
+      "bytes": 27842,
+      "sha256": "5c964f2856fbbad3ef0c64b41443252ef187e43571586d4d357d05e4b6d5346b",
+      "findings": []
+    },
+    {
+      "path": "attempt1/native-structural.log",
+      "bytes": 1083,
+      "sha256": "27b5007326bfadf1b920c1980a85506c2536953d8170de991021203b8e15d29a",
+      "findings": []
+    },
+    {
+      "path": "attempt1/NativeCustomerDashboardProbe.java",
+      "bytes": 24488,
+      "sha256": "45177d1940e40ba80ee065c009794e9bbc7da017366c599be8d34dd3fd24c32a",
+      "findings": []
+    },
+    {
+      "path": "attempt1/privacy_checks.py",
+      "bytes": 1016,
+      "sha256": "3338845f343cd420ce29146e5e615b77ce637ed5c7a27a22f0e45a8c04a292d5",
+      "findings": []
+    },
+    {
+      "path": "attempt1/raw-response-scanner-regression.json",
+      "bytes": 473,
+      "sha256": "4c24e7eecf71717abc9d0a4d70c8e5ac5f2fe53e5f2f8677438ea7c5870744b4",
+      "findings": []
+    },
+    {
+      "path": "attempt1/result.json",
+      "bytes": 262491,
+      "sha256": "20e32b64ce1b2a5732ffaa66d3b14925424f551879601a53f022e9fac0fcd270",
+      "findings": []
+    },
+    {
+      "path": "attempt1/runtime-inputs.sha256",
+      "bytes": 29477,
+      "sha256": "353ae2c704f160fcff7a7ad5ec624ad7e7a7b8a1ed7a41ef5b46dd10ca98a85f",
+      "findings": []
+    },
+    {
+      "path": "attempt1/sensitive-scan.json",
+      "bytes": 379,
+      "sha256": "42fd11a295650b8b8837483a0e60f8cacf1e7797cbe0ad3055adc25b645553b7",
+      "findings": []
+    },
+    {
+      "path": "attempt1/ship-observations.jsonl",
+      "bytes": 1526,
+      "sha256": "17ee6680b8ef049167fac7a66649d78e21545da00222f31914f79794abe64016",
+      "findings": []
+    },
+    {
+      "path": "attempt1/shipment-feedback-observations.jsonl",
+      "bytes": 374,
+      "sha256": "eef62e04b03bd7404a9d503a5de92947a2578d035bf14fe49b8b5fb50d9c22f9",
+      "findings": []
+    },
+    {
+      "path": "attempt1/static-before.json",
+      "bytes": 410,
+      "sha256": "dcdca2050370b241248ff31dcb5b150f17aada1f7fdea062fd804f73aa161973",
+      "findings": []
+    },
+    {
+      "path": "attempt1/tool-identity.json",
+      "bytes": 1195,
+      "sha256": "d9ba6c34e54645a8fc79d111cb257ffa06757fc76ea8ae28e92dc89c07e00529",
+      "findings": []
+    },
+    {
+      "path": "attempt1/verify_browser.cjs",
+      "bytes": 10604,
+      "sha256": "7de4c4c82cfd780ac46ef90207d4f0ecf409fa069fc8f2bc309dad231872914b",
+      "findings": []
+    },
+    {
+      "path": "attempt1/verify_step12.py",
+      "bytes": 94115,
+      "sha256": "8893cb434e6e8dbdfad5f1ef6de14164bc56c5d8f7ee33b516768cb53fe4b1f0",
+      "findings": []
+    },
+    {
+      "path": "attempt1/versions.txt",
+      "bytes": 709,
+      "sha256": "9d2e3e854453e28aaa5ebbdd2cded0104922d74f4fac2e51e7941eb2a549c5fc",
+      "findings": []
+    },
+    {
+      "path": "attempts-summary.json",
+      "bytes": 33176,
+      "sha256": "473cc9e5eee0a7c99be87db247c48b4d71c9d38b3594ba6efc620b5e2a7f8f2f",
+      "findings": []
+    },
+    {
+      "path": "backend-preflight/binding-compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "findings": []
+    },
+    {
+      "path": "backend-preflight/binding-preflight.log",
+      "bytes": 112,
+      "sha256": "05257a7fec07650b58103be807f8ee4d639b28b9ab8a16852eba33356f8214d5",
+      "findings": []
+    },
+    {
+      "path": "backend-preflight/compile.json",
+      "bytes": 215,
+      "sha256": "9eacc6f3b6d848103e3ea7f7127114d5fa55d3cc387e89429b1392e1df592bce",
+      "findings": []
+    },
+    {
+      "path": "backend-preflight/compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "findings": []
+    },
+    {
+      "path": "backend-preflight/MapperBindingPreflight.java",
+      "bytes": 2676,
+      "sha256": "ebc2d92246f7364d8bbc47422cedcbdfeb8a85164098d52bc28f310dcadaaec2",
+      "findings": []
+    },
+    {
+      "path": "backend-review.json",
+      "bytes": 8156,
+      "sha256": "1e61a06ad8a65cc4ff112f7dea5e6c57295497c6ce92f556296bc34ed0040ade",
+      "findings": []
+    },
+    {
+      "path": "baseline-preservation.json",
+      "bytes": 1442,
+      "sha256": "44f8ecc6520e88f9283681ea1d7df445582d038ce4a62eae8d031060a7097723",
+      "findings": []
+    },
+    {
+      "path": "builds/build-admin.json",
+      "bytes": 312,
+      "sha256": "7572f4bef505b06e2aae51648dc36578dc22e8760ad0c8b4dea1ec260b67c1b1",
+      "findings": []
+    },
+    {
+      "path": "builds/build-admin.log",
+      "bytes": 2369,
+      "sha256": "a2815ff0a83acad4dc573c803111a4b9286f627350fafea1e7be55396a6f025a",
+      "findings": []
+    },
+    {
+      "path": "builds/build-exits.json",
+      "bytes": 34,
+      "sha256": "a13e349edf18b954702b00d185090226673209278e2d4eea3b95c396d85247ac",
+      "findings": []
+    },
+    {
+      "path": "builds/build-fresh.ps1",
+      "bytes": 1498,
+      "sha256": "86a6320968ce95b4e7b205cc97d44cce4246acf8405a798ee0fa6fa12e43a3da",
+      "findings": []
+    },
+    {
+      "path": "builds/build-user.json",
+      "bytes": 310,
+      "sha256": "b3974dcd25784ab4ac7534fc90b0fe4ba61ab21a5861a5daa3a1ac5a0cf7d2e3",
+      "findings": []
+    },
+    {
+      "path": "builds/build-user.log",
+      "bytes": 2358,
+      "sha256": "8e294d16d8c81952911ec910ec8b33b4b417f535e07dead55aba50c147a9a925",
+      "findings": []
+    },
+    {
+      "path": "cleanup.json",
+      "bytes": 348,
+      "sha256": "ac8f88ceaaa009651e766d363d9077374b3cc70d983760917b60a133f18b2a6b",
+      "findings": []
+    },
+    {
+      "path": "compressed-text-index.json",
+      "bytes": 441,
+      "sha256": "3dbf405341845809d13f215f4e5e91ca7a1337d066b5fc47d269f20835bd80b7",
+      "findings": []
+    },
+    {
+      "path": "delivery-metadata.json",
+      "bytes": 31972,
+      "sha256": "c9751b4c870ce581ab3309b8f4a10bd6009be13ddca6d37350fab3a5469b8c74",
+      "findings": []
+    },
+    {
+      "path": "evidence-date.json",
+      "bytes": 365,
+      "sha256": "06d69d8fb5b0a970ff2601279cc6a3b3bca63c046a456698530afc917ce09588",
+      "findings": []
+    },
+    {
+      "path": "independent-observation-review.json",
+      "bytes": 279069,
+      "sha256": "fceffbd6a49a9bc33d3f87ae5fd7cc2aac104d8d3ca629923581897524ce2939",
+      "findings": []
+    },
+    {
+      "path": "jar-root-route-review.json",
+      "bytes": 815,
+      "sha256": "fc6f847353657db5c778ac6cda724fca5cfcd52a653dc2b7ed9d70e15cb68fed",
+      "findings": []
+    },
+    {
+      "path": "native-tools/NativeCustomerDashboardProbe.java",
+      "bytes": 24488,
+      "sha256": "45177d1940e40ba80ee065c009794e9bbc7da017366c599be8d34dd3fd24c32a",
+      "findings": []
+    },
+    {
+      "path": "native-tools/preflight.py",
+      "bytes": 2469,
+      "sha256": "00044a6b025bf12ee350a1c9dc7c785dffb225f11771b9af6708ccba6cc71245",
+      "findings": []
+    },
+    {
+      "path": "native-tools/preflight1/compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "findings": []
+    },
+    {
+      "path": "native-tools/preflight1/metadata.json",
+      "bytes": 542,
+      "sha256": "e525575d9f28c50d0527c7b72f240bc06a14b61e6531f3ef20fca35f217f2b21",
+      "findings": []
+    },
+    {
+      "path": "native-tools/preflight1/NativeCustomerDashboardProbe.java",
+      "bytes": 23231,
+      "sha256": "06cedf3b2b003de23aec5fbe5fd4cef8795cccb3ff8c9262821b44ae6da0b63d",
+      "findings": []
+    },
+    {
+      "path": "native-tools/preflight1/preflight.py",
+      "bytes": 2469,
+      "sha256": "2f6f328054b0bb19adea5c19cb2ea2cbb61c071bac5ff6b4909a047f15f36832",
+      "findings": []
+    },
+    {
+      "path": "native-tools/preflight1/structural.log",
+      "bytes": 760,
+      "sha256": "65f05d9eecb493e1b1dd4b0b1e746bb1c348ef9f953c65bcddc8bdfbf593b9ab",
+      "findings": []
+    },
+    {
+      "path": "native-tools/preflight2/compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "findings": []
+    },
+    {
+      "path": "native-tools/preflight2/metadata.json",
+      "bytes": 544,
+      "sha256": "0ba1180bc8ea738618d4ae2b90867d6472b8b37963c3aa997175642c264b2c7f",
+      "findings": []
+    },
+    {
+      "path": "native-tools/preflight2/structural.log",
+      "bytes": 1083,
+      "sha256": "16571524e80bf75042fd2fe8d8071fd2b6d53fa55546a4681cfdbae95df1d578",
+      "findings": []
+    },
+    {
+      "path": "original-attempt-inventory.json",
+      "bytes": 33252,
+      "sha256": "2890ceca4da3986471a44b6107a3afb13099d2aef30e676a8fe89518007edcdf",
+      "findings": []
+    },
+    {
+      "path": "original-refs.json",
+      "bytes": 2272,
+      "sha256": "bd65fe6b9f64e577331abf1dc31cdc97e71ab25069f5e8b2e96721876cf8f740",
+      "findings": []
+    },
+    {
+      "path": "protected-source-preservation.json",
+      "bytes": 34552,
+      "sha256": "9b8891154e7eac049e9ab58be2315f87730a59afbe4e2f117b063b7620c31bbf",
+      "findings": []
+    },
+    {
+      "path": "README.md",
+      "bytes": 12422,
+      "sha256": "a1f4c00938f50de1fb072dcf51d8e2948247f22a076f321bf738c5d48ab77ee4",
+      "findings": []
+    },
+    {
+      "path": "result.json",
+      "bytes": 27929,
+      "sha256": "6c133efd19fb555ba7af84178adc940996ea92176a4d61705e761d92f0d9ede9",
+      "findings": []
+    },
+    {
+      "path": "review_observations.py",
+      "bytes": 11893,
+      "sha256": "7207e2b4063dc1ee5419eec658bc8afa346502e2c08df256748179732a0a7450",
+      "findings": []
+    },
+    {
+      "path": "source-publication.json",
+      "bytes": 5942,
+      "sha256": "7513f73ab25c7ae5451b284d5cff3927d72bbaadb01b38a44d6185d9af762abf",
+      "findings": []
+    },
+    {
+      "path": "source-review.json",
+      "bytes": 8764,
+      "sha256": "35f77d08ec21ee0d71fd2e87defcd76eb96f2b2ae5fb8e98068d7314b86fb7f4",
+      "findings": []
+    },
+    {
+      "path": "tool-final-freeze-review.json",
+      "bytes": 525,
+      "sha256": "42b21cb2492fdfece9a5cd21763f3f85d29766e192d795b56e7a14b22a14ea26",
+      "findings": []
+    },
+    {
+      "path": "tool-preflight-review.json",
+      "bytes": 5776,
+      "sha256": "798ba393c838b9a4ac948f57407083215e1884aa70e47701dfcfc0c997f3a73c",
+      "findings": []
+    },
+    {
+      "path": "ui-static-review.json",
+      "bytes": 11150,
+      "sha256": "ad43eca870729a62b27eba0e3a52e85193a042c519ed32c18db9aeb54380f524",
+      "findings": []
+    },
+    {
+      "path": "ui-visual-review.json",
+      "bytes": 28688,
+      "sha256": "4f696f678b3f8180dac64db4d9b967d96dfef9731d735268e510ac9f83e2d617",
+      "findings": []
+    },
+    {
+      "path": "verification/privacy_checks.py",
+      "bytes": 1016,
+      "sha256": "3338845f343cd420ce29146e5e615b77ce637ed5c7a27a22f0e45a8c04a292d5",
+      "findings": []
+    }
+  ],
+  "boundaries": "Stored evidence/source/doc integrity checks, not new HTTP, logistics, concurrency or fault injection. Original per-attempt known-private-value scan retained separately."
+}

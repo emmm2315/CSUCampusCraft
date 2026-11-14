@@ -1,0 +1,1022 @@
+{
+  "attempt": "attempt1",
+  "overall": "PASS",
+  "source_sha": "03384367c87147f1c29859c799f3c464b016b760",
+  "baseline_sha": "a899cce263526926292afec8ed55d6757aed0597",
+  "started_at_local": "2026-11-15T00:10:11.677743+08:00",
+  "finished_at_utc": "2026-11-14T16:14:53.049644+00:00",
+  "finished_at_local": "2026-11-15T00:14:53.049644+08:00",
+  "mysql_port": 56528,
+  "main_assertions": 2688,
+  "main_assertion_failures": 0,
+  "http_records": 272,
+  "all_post_records": 59,
+  "all_POST_have_genuine_full_seven_before_after": true,
+  "automatic_database_audits": 264,
+  "database_records_including_semantic_repeats": 310,
+  "captured_after_only_counts": 8,
+  "action_post_records": 28,
+  "action_classification": {
+    "changed_DISABLED": 5,
+    "changed_ENABLED": 5,
+    "rejected_404": 2,
+    "rejected_400": 10,
+    "rejected_403": 2,
+    "rejected_302": 2,
+    "successful_NOOP": 2
+  },
+  "runtime_file_count": 199,
+  "runtime_manifest_sha256": "353ae2c704f160fcff7a7ad5ec624ad7e7a7b8a1ed7a41ef5b46dd10ca98a85f",
+  "native_checks": 225,
+  "native_check_failures": 0,
+  "native_sql_events": 31,
+  "native_phase_count": 18,
+  "browser_checks": 243,
+  "browser_captured_response_records": 38,
+  "browser_posts": 6,
+  "screenshots": 24,
+  "tracked_processes_stopped": true,
+  "sensitive_scan": {
+    "overall": "PASS",
+    "files_scanned": 143,
+    "gzip_decompressed_files": 85,
+    "known_values_checked": 55,
+    "secret_values_recorded": false,
+    "findings": [],
+    "shipping_redaction": "Receiver input/textarea and U08 data-shipping-value contents structurally redacted; SQL order state contains only per-field SHA; screenshots mask shipping; no request form values recorded."
+  },
+  "HTTP_and_native_counted_separately": true,
+  "raw_responses_scanned_before_redaction": 264,
+  "raw_bcrypt_scan_failures": 0,
+  "response_bodies_unavailable": 8,
+  "database_comparison_boundaries": {
+    "main_schema": "csucampuscraft",
+    "empty_business_schema": "csucampuscraft_empty; only ADMIN4 retained, other six tables and CUSTOMER empty",
+    "natural_error": "main schema with restricted application account SELECT store_user only; root observations still full permission",
+    "redirect_GET": "after-only capture has before=None; cannot prove a before observation that did not occur"
+  },
+  "screenshots_metadata": [
+    {
+      "path": "main/a02-live-five-metrics-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 929,
+      "sha256": "284636bb69c428170f59b7a8a1a5047337f0685177870e0a1c3fd7890a1aab8e",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A02",
+        "dashboardCounts": [
+          {
+            "key": "on-sale-products",
+            "count": "54"
+          },
+          {
+            "key": "draft-products",
+            "count": "6"
+          },
+          {
+            "key": "paid-orders",
+            "count": "2"
+          },
+          {
+            "key": "enabled-customers",
+            "count": "8"
+          },
+          {
+            "key": "disabled-customers",
+            "count": "4"
+          }
+        ],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/a08-CUSTOMER-only-list-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1680,
+      "sha256": "0c34858762be17e973a35f0345c23b199667c78d619a6e94fedfca694dd03f0b",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A08",
+        "customerCount": "12",
+        "page": "1",
+        "size": "10",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/a08-percent-literal-filter-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 950,
+      "sha256": "3acc1f68819bbcc4421fe505fcb328b954bbebd2e9cc5867b32babf4b0c41983",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A08",
+        "customerCount": "1",
+        "page": "1",
+        "size": "10",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/a09-disable-confirmation-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1022,
+      "sha256": "3ef141876efbf1644893999024053eee83282280c06079f7f5f1ad86927c9b24",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A09",
+        "customerId": "1",
+        "customerStatus": "ENABLED",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 2,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          },
+          {
+            "action": "/customers/1/status",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/journey-disabled-keeps-data-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 990,
+      "sha256": "74ad22bae324046d3c2e871c4ec7e38f055fd02459ae0bdef471bea86a4b4302",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A09",
+        "customerId": "1",
+        "customerStatus": "DISABLED",
+        "dashboardCounts": [],
+        "globalStatuses": [
+          "顾客状态已更新。真实切换后的既有会话需重新登录，购物车与历史订单保留。"
+        ],
+        "contactNodes": 2,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          },
+          {
+            "action": "/customers/1/status",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/journey-old-session-login-required-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 768,
+      "sha256": "915334fd6e3fa2ea77a78787511c0f9d3f3553c327518d02c5e11c5b17583881",
+      "status": 200,
+      "observation": {
+        "port": 8080,
+        "pageId": "U04",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/login",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/journey-enabled-new-login-required-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 990,
+      "sha256": "cc69ac97ce8a7c4a0da269115a288799673c1b68bf4d65f9143a5c74694847c7",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A09",
+        "customerId": "1",
+        "customerStatus": "ENABLED",
+        "dashboardCounts": [],
+        "globalStatuses": [
+          "顾客状态已更新。真实切换后的既有会话需重新登录，购物车与历史订单保留。"
+        ],
+        "contactNodes": 2,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          },
+          {
+            "action": "/customers/1/status",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/a06-from-customer-orders-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1293,
+      "sha256": "041870f1f9f3d343c3f302893427a8e05babcebcd0a581ca90bbb960cded12c7",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "page": "1",
+        "size": "10",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/a08-empty-match-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 886,
+      "sha256": "a55a59cecf6fbbf8839162daa639ca6932b4cb5e5aa2092eccb067f4adeb422c",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A08",
+        "customerCount": "0",
+        "page": "1",
+        "size": "10",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/a09-unknown-404-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 768,
+      "sha256": "940cb3399b42b80f1ede8c21760a5a0a862f9069238d0a5239395dec626794af",
+      "status": 404,
+      "observation": {
+        "port": 8081,
+        "errorStatus": "404",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/a02-live-five-metrics-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "5764fc2acbb5fb874edbb25adeae35b90a3ebee3a141733fca3967b4b09b4eab",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A02",
+        "dashboardCounts": [
+          {
+            "key": "on-sale-products",
+            "count": "54"
+          },
+          {
+            "key": "draft-products",
+            "count": "6"
+          },
+          {
+            "key": "paid-orders",
+            "count": "2"
+          },
+          {
+            "key": "enabled-customers",
+            "count": "8"
+          },
+          {
+            "key": "disabled-customers",
+            "count": "4"
+          }
+        ],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/a08-CUSTOMER-only-list-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1680,
+      "sha256": "4f2e7a50589e399af0b1a952bc2b4cf0f8b6dd42e90783c11000e1a76ff74fc8",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A08",
+        "customerCount": "12",
+        "page": "1",
+        "size": "10",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/a08-percent-literal-filter-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "6338c214f613b0a8fc6426ccff403fc8d3cf3b31f932172309edbbc847d5b326",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A08",
+        "customerCount": "1",
+        "page": "1",
+        "size": "10",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/a09-disable-confirmation-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "233652bbcd03e787631f895e01f7ef79645a8b0808795777e5d2c7eb4b5135fd",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A09",
+        "customerId": "1",
+        "customerStatus": "ENABLED",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 2,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          },
+          {
+            "action": "/customers/1/status",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/journey-disabled-keeps-data-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "2452744644db0ded25ed39958429d70762c3f1c4aec0ceedbe527f3f22a9837d",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A09",
+        "customerId": "1",
+        "customerStatus": "DISABLED",
+        "dashboardCounts": [],
+        "globalStatuses": [
+          "顾客状态已更新。真实切换后的既有会话需重新登录，购物车与历史订单保留。"
+        ],
+        "contactNodes": 2,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          },
+          {
+            "action": "/customers/1/status",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/journey-old-session-login-required-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "8a8584d30328fb664c6f8667e5acd2744b8dd0821a16351a7c3937561b602fcb",
+      "status": 200,
+      "observation": {
+        "port": 8080,
+        "pageId": "U04",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/login",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/journey-enabled-new-login-required-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "692d7320d90e4befe0edb4acfd5fa670834019c1d1e651bf229bd98b4e0e0b42",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A09",
+        "customerId": "1",
+        "customerStatus": "ENABLED",
+        "dashboardCounts": [],
+        "globalStatuses": [
+          "顾客状态已更新。真实切换后的既有会话需重新登录，购物车与历史订单保留。"
+        ],
+        "contactNodes": 2,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          },
+          {
+            "action": "/customers/1/status",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/a06-from-customer-orders-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1293,
+      "sha256": "45f11e51fe927bb3cb6e8d6fdde98586fda9db05bb8a015f6b6df7ab4bc91f1f",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A06",
+        "page": "1",
+        "size": "10",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/a08-empty-match-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "d857d250293daa018dc8ab7d9e82eaeb85c22ff5da344b25aad1f0f1b5fb2a16",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A08",
+        "customerCount": "0",
+        "page": "1",
+        "size": "10",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "main/a09-unknown-404-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "0a1b431b430a3ec08d140ea58d5818cdb8a2cd3feb2920bb6dcf9dd9774083e7",
+      "status": 404,
+      "observation": {
+        "port": 8081,
+        "errorStatus": "404",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "main"
+    },
+    {
+      "path": "empty/a02-empty-business-ADMIN-kept-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 929,
+      "sha256": "bd6419291fcfed52ffb0ac3c72e0dd07dc1ce9d53cb6f60cf1ac4b6e63df0151",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A02",
+        "dashboardCounts": [
+          {
+            "key": "on-sale-products",
+            "count": "0"
+          },
+          {
+            "key": "draft-products",
+            "count": "0"
+          },
+          {
+            "key": "paid-orders",
+            "count": "0"
+          },
+          {
+            "key": "enabled-customers",
+            "count": "0"
+          },
+          {
+            "key": "disabled-customers",
+            "count": "0"
+          }
+        ],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "empty"
+    },
+    {
+      "path": "empty/a02-empty-business-ADMIN-kept-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "ee47d2f8a01921baf8db0fbfbb8df211cad698adc5023c365bf4de6f6b70c159",
+      "status": 200,
+      "observation": {
+        "port": 8081,
+        "pageId": "A02",
+        "dashboardCounts": [
+          {
+            "key": "on-sale-products",
+            "count": "0"
+          },
+          {
+            "key": "draft-products",
+            "count": "0"
+          },
+          {
+            "key": "paid-orders",
+            "count": "0"
+          },
+          {
+            "key": "enabled-customers",
+            "count": "0"
+          },
+          {
+            "key": "disabled-customers",
+            "count": "0"
+          }
+        ],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "empty"
+    },
+    {
+      "path": "error/a02-natural-permission-error-retry-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 768,
+      "sha256": "731c5c6273e6ebc826d838f8f0cf9c3a52eb8f2788bee87327cc2ed7acc4a433",
+      "status": 500,
+      "observation": {
+        "port": 8081,
+        "pageId": "A02",
+        "errorStatus": "500",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "error"
+    },
+    {
+      "path": "error/a02-natural-permission-error-retry-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "838bbd7a605c0f96eaa363210dad4208da20366057f030d0b0c3ba49b2d1b5dc",
+      "status": 500,
+      "observation": {
+        "port": 8081,
+        "pageId": "A02",
+        "errorStatus": "500",
+        "dashboardCounts": [],
+        "globalStatuses": [],
+        "contactNodes": 0,
+        "overflow": false,
+        "uniqueIds": true,
+        "labels": true,
+        "forms": [
+          {
+            "action": "/logout",
+            "csrf": 1
+          }
+        ],
+        "images": true,
+        "sessionLinks": false
+      },
+      "contactAndShippingFieldsMasked": true,
+      "phase": "error"
+    }
+  ],
+  "browser_phase_results": {
+    "main": {
+      "result_file": "main/result.json",
+      "checks": 199,
+      "screenshots": 20,
+      "captured_responses": 34,
+      "redirect_GET_after_only": 8,
+      "all_POST_have_genuine_before_after": true
+    },
+    "empty": {
+      "result_file": "empty/result.json",
+      "checks": 21,
+      "screenshots": 2,
+      "captured_responses": 2,
+      "redirect_GET_after_only": 0,
+      "all_POST_have_genuine_before_after": true
+    },
+    "error": {
+      "result_file": "error/result.json",
+      "checks": 23,
+      "screenshots": 2,
+      "captured_responses": 2,
+      "redirect_GET_after_only": 0,
+      "all_POST_have_genuine_before_after": true
+    }
+  },
+  "account_fixture_counts": {
+    "original_seed_users": 4,
+    "fixture_CUSTOMERs": 9,
+    "current_total_users": 13,
+    "fixture_ids": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "fixture_usernames": [
+      "step12%literal",
+      "step12_literal",
+      "step12\\literal",
+      "step12literal",
+      "step12Alpha",
+      "step12Beta",
+      "界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界",
+      "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+      "<script>step12</script>"
+    ],
+    "no_business_account_create_route": true
+  },
+  "baseline_git_sha": "a899cce263526926292afec8ed55d6757aed0597",
+  "tested_code_sha": "03384367c87147f1c29859c799f3c464b016b760",
+  "branch": "feat/step12-admin-customers",
+  "successful_attempt": "attempt1",
+  "attempts": [
+    {
+      "path": "attempt1/result.json",
+      "overall": "PASS"
+    }
+  ],
+  "prior_attempt_review": "All original attempt identities preserved; final acceptance uses the latest actual complete passing run, with capture and configuration boundaries recorded.",
+  "team_review": "待复核；姓名待填，M3前完成；旧STEP07–11台账保持原样"
+}

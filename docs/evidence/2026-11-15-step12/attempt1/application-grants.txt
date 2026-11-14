@@ -1,0 +1,7 @@
+GRANT USAGE ON *.* TO `csucampuscraft`@`127.0.0.1`
+GRANT SELECT, LOCK TABLES ON `csucampuscraft`.* TO `csucampuscraft`@`127.0.0.1`
+GRANT INSERT, UPDATE, DELETE ON `csucampuscraft`.`cart_item` TO `csucampuscraft`@`127.0.0.1`
+GRANT UPDATE ON `csucampuscraft`.`product` TO `csucampuscraft`@`127.0.0.1`
+GRANT INSERT ON `csucampuscraft`.`sales_order_item` TO `csucampuscraft`@`127.0.0.1`
+GRANT INSERT, UPDATE ON `csucampuscraft`.`sales_order` TO `csucampuscraft`@`127.0.0.1`
+GRANT UPDATE ON `csucampuscraft`.`store_user` TO `csucampuscraft`@`127.0.0.1`

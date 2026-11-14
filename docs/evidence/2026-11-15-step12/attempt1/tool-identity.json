@@ -1,0 +1,27 @@
+{
+  "captured_at_utc": "2026-11-14T16:10:11.920777+00:00",
+  "timing": "Before private database initialization",
+  "files": [
+    {
+      "path": "verify_step12.py",
+      "actual_source_sha256": "8893cb434e6e8dbdfad5f1ef6de14164bc56c5d8f7ee33b516768cb53fe4b1f0",
+      "saved_source_sha256": "8893cb434e6e8dbdfad5f1ef6de14164bc56c5d8f7ee33b516768cb53fe4b1f0"
+    },
+    {
+      "path": "verify_browser.cjs",
+      "actual_source_sha256": "7de4c4c82cfd780ac46ef90207d4f0ecf409fa069fc8f2bc309dad231872914b",
+      "saved_source_sha256": "7de4c4c82cfd780ac46ef90207d4f0ecf409fa069fc8f2bc309dad231872914b"
+    },
+    {
+      "path": "NativeCustomerDashboardProbe.java",
+      "actual_source_sha256": "45177d1940e40ba80ee065c009794e9bbc7da017366c599be8d34dd3fd24c32a",
+      "saved_source_sha256": "45177d1940e40ba80ee065c009794e9bbc7da017366c599be8d34dd3fd24c32a"
+    },
+    {
+      "path": "privacy_checks.py",
+      "actual_source_sha256": "3338845f343cd420ce29146e5e615b77ce637ed5c7a27a22f0e45a8c04a292d5",
+      "saved_source_sha256": "3338845f343cd420ce29146e5e615b77ce637ed5c7a27a22f0e45a8c04a292d5"
+    }
+  ],
+  "privacy_import": "from privacy_checks import contains_bcrypt,run_regression"
+}
