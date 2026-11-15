@@ -1,0 +1,285 @@
+{
+  "started_at_utc": "2026-11-15T01:06:47.534571+00:00",
+  "finished_at_utc": "2026-11-15T01:06:49.233434+00:00",
+  "executor": "Codex AI preparation only; human seven-step check not begun",
+  "checkout_requested": false,
+  "business_actions_requested": false,
+  "login_precheck_requests": [
+    {
+      "executor": "AI setup precheck, not human step",
+      "side": "user",
+      "method": "GET",
+      "url": "http://127.0.0.1:8080/login",
+      "status": 200,
+      "csrf_present": true
+    },
+    {
+      "executor": "AI setup precheck, not human step",
+      "side": "user",
+      "method": "POST",
+      "url": "http://127.0.0.1:8080/login",
+      "request": {
+        "username": "alice",
+        "password": "[PUBLIC_SEED_PASSWORD_OMITTED]",
+        "_csrf": "[OMITTED]"
+      },
+      "status": 303,
+      "location": "/",
+      "cookie_names": [
+        "CSUCAMPUSCRAFT_USER_SESSION"
+      ]
+    },
+    {
+      "executor": "AI setup precheck, not human step",
+      "side": "user",
+      "method": "GET",
+      "url": "http://127.0.0.1:8080/cart",
+      "status": 200,
+      "authenticated_marker": true
+    },
+    {
+      "executor": "AI setup precheck, not human step",
+      "side": "admin",
+      "method": "GET",
+      "url": "http://127.0.0.1:8081/login",
+      "status": 200,
+      "csrf_present": true
+    },
+    {
+      "executor": "AI setup precheck, not human step",
+      "side": "admin",
+      "method": "POST",
+      "url": "http://127.0.0.1:8081/login",
+      "request": {
+        "username": "admin",
+        "password": "[PUBLIC_SEED_PASSWORD_OMITTED]",
+        "_csrf": "[OMITTED]"
+      },
+      "status": 303,
+      "location": "/",
+      "cookie_names": [
+        "CSUCAMPUSCRAFT_ADMIN_SESSION"
+      ]
+    },
+    {
+      "executor": "AI setup precheck, not human step",
+      "side": "admin",
+      "method": "GET",
+      "url": "http://127.0.0.1:8081/",
+      "status": 200,
+      "authenticated_marker": true
+    }
+  ],
+  "before_login": {
+    "store_user": {
+      "row_count": 4,
+      "full_ordered_rows_sha256": "df718abda02735e4f0fb749fcfe14252cb2aea57e493a9030e2070b8968fea4c"
+    },
+    "category": {
+      "row_count": 15,
+      "full_ordered_rows_sha256": "0b736a3793761738d8dfeb356b0bce64074c2949d0215772c6219e6cfed85f9a"
+    },
+    "product": {
+      "row_count": 60,
+      "full_ordered_rows_sha256": "5b37dd84c6116cc3a1c701fad1e1a2fc44aa7c6e4678981cb49b084ccff81047"
+    },
+    "product_image": {
+      "row_count": 100,
+      "full_ordered_rows_sha256": "71d50d87824e3788f70de71619ff9bb1c9b915a1eb4be73287b09b0cf6bb0561"
+    },
+    "cart_item": {
+      "row_count": 6,
+      "full_ordered_rows_sha256": "285a0a839f2210a6b238475f8339c93633e0a2d288e6cd3e9a64d1a07bb4be48"
+    },
+    "sales_order": {
+      "row_count": 10,
+      "full_ordered_rows_sha256": "eec222dcdbd4f06a2e3e7de903a1dd47237849ebed2f01243a4c50d568ba62b9"
+    },
+    "sales_order_item": {
+      "row_count": 20,
+      "full_ordered_rows_sha256": "1cddb87463bd812e664e130bb5e2d262770b4391de4ce96ee180fd37929a19b1"
+    }
+  },
+  "after_login": {
+    "store_user": {
+      "row_count": 4,
+      "full_ordered_rows_sha256": "df718abda02735e4f0fb749fcfe14252cb2aea57e493a9030e2070b8968fea4c"
+    },
+    "category": {
+      "row_count": 15,
+      "full_ordered_rows_sha256": "0b736a3793761738d8dfeb356b0bce64074c2949d0215772c6219e6cfed85f9a"
+    },
+    "product": {
+      "row_count": 60,
+      "full_ordered_rows_sha256": "5b37dd84c6116cc3a1c701fad1e1a2fc44aa7c6e4678981cb49b084ccff81047"
+    },
+    "product_image": {
+      "row_count": 100,
+      "full_ordered_rows_sha256": "71d50d87824e3788f70de71619ff9bb1c9b915a1eb4be73287b09b0cf6bb0561"
+    },
+    "cart_item": {
+      "row_count": 6,
+      "full_ordered_rows_sha256": "285a0a839f2210a6b238475f8339c93633e0a2d288e6cd3e9a64d1a07bb4be48"
+    },
+    "sales_order": {
+      "row_count": 10,
+      "full_ordered_rows_sha256": "eec222dcdbd4f06a2e3e7de903a1dd47237849ebed2f01243a4c50d568ba62b9"
+    },
+    "sales_order_item": {
+      "row_count": 20,
+      "full_ordered_rows_sha256": "1cddb87463bd812e664e130bb5e2d262770b4391de4ce96ee180fd37929a19b1"
+    }
+  },
+  "seven_tables_unchanged_by_login_precheck": true,
+  "fixture_kind": "root SQL fixture only; not human manual cart actions",
+  "fixture": [
+    {
+      "cart_item_id": "17",
+      "username": "alice",
+      "product_id": "1",
+      "sku": "CSU-LMK-NOTE-01",
+      "quantity": "2",
+      "cart_version": "0",
+      "product_version": "0",
+      "price": "18.00",
+      "stock": "10",
+      "status": "ON_SALE",
+      "subtotal": "36.00"
+    },
+    {
+      "cart_item_id": "16",
+      "username": "alice",
+      "product_id": "56",
+      "sku": "CSU-GRAD-BOX-01",
+      "quantity": "1",
+      "cart_version": "0",
+      "product_version": "1",
+      "price": "49.00",
+      "stock": "12",
+      "status": "ON_SALE",
+      "subtotal": "49.00"
+    }
+  ],
+  "fixture_totals": [
+    {
+      "sku_rows": "2",
+      "pieces": "3",
+      "total_amount": "85.00"
+    }
+  ],
+  "no_album_candidate_for_future_human_step7": [
+    {
+      "id": "5",
+      "sku": "CSU-LMK-NOTE-02",
+      "name": "玉带河横线本",
+      "status": "ON_SALE",
+      "version": "0"
+    }
+  ],
+  "result": "PREPARATION_FAILED",
+  "human_step_results_recorded": false,
+  "commands": [
+    {
+      "kind": "mysql",
+      "sql": "SELECT * FROM store_user ORDER BY id",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT * FROM category ORDER BY id",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT * FROM product ORDER BY id",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT * FROM product_image ORDER BY id",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT * FROM cart_item ORDER BY id",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT * FROM sales_order ORDER BY id",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT * FROM sales_order_item ORDER BY id",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT * FROM store_user ORDER BY id",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT * FROM category ORDER BY id",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT * FROM product ORDER BY id",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT * FROM product_image ORDER BY id",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT * FROM cart_item ORDER BY id",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT * FROM sales_order ORDER BY id",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT * FROM sales_order_item ORDER BY id",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT ci.id AS cart_item_id,u.username,p.id AS product_id,p.sku,ci.quantity,ci.version AS cart_version,p.version AS product_version,p.price,p.stock,p.status,p.price*ci.quantity AS subtotal FROM cart_item ci JOIN store_user u ON u.id=ci.user_id JOIN product p ON p.id=ci.product_id WHERE u.username='alice' ORDER BY p.id",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT COUNT(*) AS sku_rows,SUM(ci.quantity) AS pieces,SUM(ci.quantity*p.price) AS total_amount FROM cart_item ci JOIN store_user u ON u.id=ci.user_id JOIN product p ON p.id=ci.product_id WHERE u.username='alice'",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    },
+    {
+      "kind": "mysql",
+      "sql": "SELECT p.id,p.sku,p.name,p.status,p.version FROM product p WHERE p.status='ON_SALE' AND NOT EXISTS(SELECT 1 FROM product_image i WHERE i.product_id=p.id) ORDER BY p.id LIMIT 1",
+      "exit_code": 0,
+      "raw_rows_not_saved_for_private_tables": true
+    }
+  ]
+}

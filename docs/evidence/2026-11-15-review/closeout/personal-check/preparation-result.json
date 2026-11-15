@@ -1,0 +1,22 @@
+{
+  "branch": "fix/review-closeout",
+  "HEAD": "d9ed79c1546128beb8b5924e01f55970b44fa767",
+  "AI_preparation_result": "READY",
+  "human_step_results": [],
+  "human_signature": null,
+  "checkout_or_business_actions_run": false,
+  "protected_product_ledger_word_readme_diff_exit": 0,
+  "other_old_evidence_diff_exit": 0,
+  "services_running_for_human_handoff": true,
+  "cleanup_script_syntax": "PASS only; not executed",
+  "actual_command_exit_codes": {
+    "prepare_personal_ps1": 0,
+    "precheck_attempt1": 1,
+    "SQL_fixture_version_alignment": 0,
+    "precheck_attempt2": 0,
+    "capture_ownership": 0,
+    "cleanup_syntax_parse_only": 0
+  },
+  "retained_preparation_tool_error": "attempt1 required both product versions zero; actual seed gift product version 1; not a product or human-observed failure",
+  "script_warnings": "mysql printed password-option warning while root used --skip-password and defaults-file; random app password was not a command-line argument or archived value."
+}

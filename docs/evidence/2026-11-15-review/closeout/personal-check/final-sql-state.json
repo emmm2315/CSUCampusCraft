@@ -1,0 +1,208 @@
+{
+  "captured_at_local": "2026-11-15T12:16:33.784010+08:00",
+  "executor": "AI read-only corroboration after human confirmation; not additional human observations",
+  "queries": [
+    {
+      "sql": "SELECT @@port AS port,@@datadir AS datadir,@@server_uuid AS uuid,DATABASE() AS db,@@version AS version;",
+      "exit_code": 0,
+      "rows": [
+        {
+          "port": "50070",
+          "datadir": "C:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-personal-20261115-58417805e43049d8a80b1b1d96aad77f\\data\\",
+          "uuid": "9e69ebaa-e090-11f1-96eb-005056c00001",
+          "db": "csucampuscraft_personal_20261115",
+          "version": "8.4.9"
+        }
+      ]
+    },
+    {
+      "sql": "SELECT o.id,o.order_no,o.user_id,o.status,o.total_amount,o.payment_method,o.payment_no,o.created_at,o.paid_at,o.shipped_at,o.cancelled_at FROM sales_order o JOIN store_user u ON u.id=o.user_id WHERE u.username='alice' AND o.order_no NOT LIKE 'DEMO-%' ORDER BY o.id;",
+      "exit_code": 0,
+      "rows": [
+        {
+          "id": "16",
+          "order_no": "CSU-cd330329fee6ff92bb7963911a6a8fc4",
+          "user_id": "1",
+          "status": "SHIPPED",
+          "total_amount": "85.00",
+          "payment_method": "MOCK",
+          "payment_no": "CSUPAY-ec7705b1bcf0ca9f3a32a45366fed5aa",
+          "created_at": "2026-11-15 01:17:13.746729",
+          "paid_at": "2026-11-15 01:18:52.256886",
+          "shipped_at": "2026-11-15 01:22:04.862490",
+          "cancelled_at": "NULL"
+        }
+      ]
+    },
+    {
+      "sql": "SELECT product_id,sku_snapshot,product_name_snapshot,unit_price,quantity,line_amount FROM sales_order_item WHERE order_id=16 ORDER BY product_id;",
+      "exit_code": 0,
+      "rows": [
+        {
+          "product_id": "1",
+          "sku_snapshot": "CSU-LMK-NOTE-01",
+          "product_name_snapshot": "潇湘校区图书馆方格本",
+          "unit_price": "18.00",
+          "quantity": "2",
+          "line_amount": "36.00"
+        },
+        {
+          "product_id": "56",
+          "sku_snapshot": "CSU-GRAD-BOX-01",
+          "product_name_snapshot": "中南毕业纪念礼盒",
+          "unit_price": "49.00",
+          "quantity": "1",
+          "line_amount": "49.00"
+        }
+      ]
+    },
+    {
+      "sql": "SELECT id,username,role,status,updated_at FROM store_user WHERE username='alice';",
+      "exit_code": 0,
+      "rows": [
+        {
+          "id": "1",
+          "username": "alice",
+          "role": "CUSTOMER",
+          "status": "ENABLED",
+          "updated_at": "2026-11-15 01:24:39.402532"
+        }
+      ]
+    },
+    {
+      "sql": "SELECT COUNT(*) AS rows_,COALESCE(SUM(ci.quantity),0) AS quantity FROM cart_item ci JOIN store_user u ON u.id=ci.user_id WHERE u.username='alice';",
+      "exit_code": 0,
+      "rows": [
+        {
+          "rows_": "0",
+          "quantity": "0"
+        }
+      ]
+    },
+    {
+      "sql": "SELECT id,sku,stock,version,status FROM product WHERE sku IN ('CSU-LMK-NOTE-01','CSU-GRAD-BOX-01') ORDER BY id;",
+      "exit_code": 0,
+      "rows": [
+        {
+          "id": "1",
+          "sku": "CSU-LMK-NOTE-01",
+          "stock": "8",
+          "version": "1",
+          "status": "ON_SALE"
+        },
+        {
+          "id": "56",
+          "sku": "CSU-GRAD-BOX-01",
+          "stock": "11",
+          "version": "2",
+          "status": "ON_SALE"
+        }
+      ]
+    },
+    {
+      "sql": "SELECT (SELECT COUNT(*) FROM product WHERE status='ON_SALE') AS on_sale,(SELECT COUNT(*) FROM product WHERE status='DRAFT') AS draft,(SELECT COUNT(*) FROM sales_order WHERE status='PAID') AS paid,(SELECT COUNT(*) FROM store_user WHERE role='CUSTOMER' AND status='ENABLED') AS enabled_customers,(SELECT COUNT(*) FROM store_user WHERE role='CUSTOMER' AND status='DISABLED') AS disabled_customers;",
+      "exit_code": 0,
+      "rows": [
+        {
+          "on_sale": "54",
+          "draft": "6",
+          "paid": "2",
+          "enabled_customers": "2",
+          "disabled_customers": "1"
+        }
+      ]
+    },
+    {
+      "sql": "SELECT p.id,p.sku,p.version,COUNT(pi.id) AS image_count FROM product p LEFT JOIN product_image pi ON pi.product_id=p.id WHERE p.id=5 GROUP BY p.id,p.sku,p.version;",
+      "exit_code": 0,
+      "rows": [
+        {
+          "id": "5",
+          "sku": "CSU-LMK-NOTE-02",
+          "version": "0",
+          "image_count": "0"
+        }
+      ]
+    }
+  ],
+  "private_shipping_or_password_columns_selected": false,
+  "identity": {
+    "port": "50070",
+    "datadir": "C:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-personal-20261115-58417805e43049d8a80b1b1d96aad77f\\data\\",
+    "uuid": "9e69ebaa-e090-11f1-96eb-005056c00001",
+    "db": "csucampuscraft_personal_20261115",
+    "version": "8.4.9"
+  },
+  "new_order": {
+    "id": "16",
+    "order_no": "CSU-cd330329fee6ff92bb7963911a6a8fc4",
+    "user_id": "1",
+    "status": "SHIPPED",
+    "total_amount": "85.00",
+    "payment_method": "MOCK",
+    "payment_no": "CSUPAY-ec7705b1bcf0ca9f3a32a45366fed5aa",
+    "created_at": "2026-11-15 01:17:13.746729",
+    "paid_at": "2026-11-15 01:18:52.256886",
+    "shipped_at": "2026-11-15 01:22:04.862490",
+    "cancelled_at": "NULL"
+  },
+  "new_order_items": [
+    {
+      "product_id": "1",
+      "sku_snapshot": "CSU-LMK-NOTE-01",
+      "product_name_snapshot": "潇湘校区图书馆方格本",
+      "unit_price": "18.00",
+      "quantity": "2",
+      "line_amount": "36.00"
+    },
+    {
+      "product_id": "56",
+      "sku_snapshot": "CSU-GRAD-BOX-01",
+      "product_name_snapshot": "中南毕业纪念礼盒",
+      "unit_price": "49.00",
+      "quantity": "1",
+      "line_amount": "49.00"
+    }
+  ],
+  "alice": {
+    "id": "1",
+    "username": "alice",
+    "role": "CUSTOMER",
+    "status": "ENABLED",
+    "updated_at": "2026-11-15 01:24:39.402532"
+  },
+  "alice_cart": {
+    "rows_": "0",
+    "quantity": "0"
+  },
+  "main_products": [
+    {
+      "id": "1",
+      "sku": "CSU-LMK-NOTE-01",
+      "stock": "8",
+      "version": "1",
+      "status": "ON_SALE"
+    },
+    {
+      "id": "56",
+      "sku": "CSU-GRAD-BOX-01",
+      "stock": "11",
+      "version": "2",
+      "status": "ON_SALE"
+    }
+  ],
+  "dashboard": {
+    "on_sale": "54",
+    "draft": "6",
+    "paid": "2",
+    "enabled_customers": "2",
+    "disabled_customers": "1"
+  },
+  "album_product_5": {
+    "id": "5",
+    "sku": "CSU-LMK-NOTE-02",
+    "version": "0",
+    "image_count": "0"
+  },
+  "result": "CAPTURED"
+}

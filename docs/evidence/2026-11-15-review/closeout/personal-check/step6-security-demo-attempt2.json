@@ -1,0 +1,197 @@
+{
+  "step": 6,
+  "executor": "AI curl demonstration at user request",
+  "human_observation": "pending; user must confirm output before step7",
+  "prior_preparation_failure": "step6-security-demo.json: sandbox temp-directory access denied before any HTTP request; preserved unmodified",
+  "started_at_utc": "2026-11-15T01:29:44.383522+00:00",
+  "http": [
+    {
+      "at_utc": "2026-11-15T01:29:44.612932+00:00",
+      "label": "1. anonymous admin GET /",
+      "method": "GET",
+      "url": "http://127.0.0.1:8081/",
+      "curl_exit_code": 0,
+      "status": 302,
+      "expected": 302,
+      "location": "/login?returnUrl=%2F",
+      "form_fields": [],
+      "cookie_names_set": [],
+      "safe_error_code": null,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_body_and_headers_archived": false,
+      "executor": "AI curl demo; human observation pending"
+    },
+    {
+      "at_utc": "2026-11-15T01:29:44.633384+00:00",
+      "label": "2. public POST /login without CSRF",
+      "method": "POST",
+      "url": "http://127.0.0.1:8080/login",
+      "curl_exit_code": 0,
+      "status": 403,
+      "expected": 403,
+      "location": null,
+      "form_fields": [
+        "username"
+      ],
+      "cookie_names_set": [],
+      "safe_error_code": "CSRF_REJECTED",
+      "body_sha256": "57130b3a04a1c90d54d6ad877426f865a8c70e6974ee39f6bbc8633ec46f02ff",
+      "raw_body_and_headers_archived": false,
+      "executor": "AI curl demo; human observation pending"
+    },
+    {
+      "at_utc": "2026-11-15T01:29:44.649162+00:00",
+      "label": "setup: bob login form",
+      "method": "GET",
+      "url": "http://127.0.0.1:8080/login",
+      "curl_exit_code": 0,
+      "status": 200,
+      "expected": 200,
+      "location": null,
+      "form_fields": [],
+      "cookie_names_set": [
+        "CSUCAMPUSCRAFT_USER_SESSION"
+      ],
+      "safe_error_code": null,
+      "body_sha256": "99cc3598a8ff35a3d4892700010c205993cfc1e48d4d51667f928e335ab43509",
+      "raw_body_and_headers_archived": false,
+      "executor": "AI curl demo; human observation pending"
+    },
+    {
+      "at_utc": "2026-11-15T01:29:44.707988+00:00",
+      "label": "setup: bob login",
+      "method": "POST",
+      "url": "http://127.0.0.1:8080/login",
+      "curl_exit_code": 0,
+      "status": 303,
+      "expected": 303,
+      "location": "/",
+      "form_fields": [
+        "_csrf",
+        "password",
+        "username"
+      ],
+      "cookie_names_set": [
+        "CSUCAMPUSCRAFT_USER_SESSION"
+      ],
+      "safe_error_code": null,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_body_and_headers_archived": false,
+      "executor": "AI curl demo; human observation pending"
+    },
+    {
+      "at_utc": "2026-11-15T01:29:44.731360+00:00",
+      "label": "setup: bob protected orders",
+      "method": "GET",
+      "url": "http://127.0.0.1:8080/orders",
+      "curl_exit_code": 0,
+      "status": 200,
+      "expected": 200,
+      "location": null,
+      "form_fields": [],
+      "cookie_names_set": [],
+      "safe_error_code": null,
+      "body_sha256": "5adb8dc1515b574673a25476ed74fdc08181112352f697f13833599fcd154fed",
+      "raw_body_and_headers_archived": false,
+      "executor": "AI curl demo; human observation pending"
+    },
+    {
+      "at_utc": "2026-11-15T01:29:44.757665+00:00",
+      "label": "3. authenticated bob GET alice order",
+      "method": "GET",
+      "url": "http://127.0.0.1:8080/orders/CSU-cd330329fee6ff92bb7963911a6a8fc4",
+      "curl_exit_code": 0,
+      "status": 404,
+      "expected": 404,
+      "location": null,
+      "form_fields": [],
+      "cookie_names_set": [],
+      "safe_error_code": null,
+      "body_sha256": "00f68780b6a3d72f6b3d703085d107d6feda3d65e2bc623deb1e6297aa930328",
+      "raw_body_and_headers_archived": false,
+      "executor": "AI curl demo; human observation pending"
+    }
+  ],
+  "expected_main_statuses": [
+    302,
+    403,
+    404
+  ],
+  "isolated_identity": {
+    "port": 50070,
+    "datadir": "C:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-personal-20261115-58417805e43049d8a80b1b1d96aad77f\\data\\",
+    "uuid": "9e69ebaa-e090-11f1-96eb-005056c00001",
+    "database": "csucampuscraft_personal_20261115"
+  },
+  "target_order": {
+    "order_no": "CSU-cd330329fee6ff92bb7963911a6a8fc4",
+    "owner": "alice",
+    "status": "SHIPPED",
+    "amount": "85.00",
+    "source": "AI read-only SQL lookup of unique new order, not an added human observation"
+  },
+  "before": {
+    "store_user": {
+      "rows": 4,
+      "ordered_full_rows_sha256": "f8b1b9df34e3852b7d4dda6711df90a939c47a9236f07e8339eb8dd85ee6623c"
+    },
+    "category": {
+      "rows": 15,
+      "ordered_full_rows_sha256": "03354972e81a024d0a1a484a28e4e9f927441b37401851211ce5fcfa2b399091"
+    },
+    "product": {
+      "rows": 60,
+      "ordered_full_rows_sha256": "b41ec7b4b00218e89863a75c24edee2c7c0c456ab86b648806b7c50c2f80c682"
+    },
+    "product_image": {
+      "rows": 100,
+      "ordered_full_rows_sha256": "205a305b1bd487a4306c1fe342d214135e2d5ecad6f057b01d159935e4118c7b"
+    },
+    "cart_item": {
+      "rows": 4,
+      "ordered_full_rows_sha256": "e1a3992e3057878b4df97be4701192226a22fdd6c01a43434877833aba5c45fb"
+    },
+    "sales_order": {
+      "rows": 11,
+      "ordered_full_rows_sha256": "28a03f5a3bae35bd62769e415adcb3df93b69f42a09d9eb59acca9e7f45732e3"
+    },
+    "sales_order_item": {
+      "rows": 22,
+      "ordered_full_rows_sha256": "50f32c2c721a6442af8ba29583f221b649df2316d2e1b1d56b3ad004f4f1ffe0"
+    }
+  },
+  "temporary_cookie_header_body_directory_removed": true,
+  "after": {
+    "store_user": {
+      "rows": 4,
+      "ordered_full_rows_sha256": "f8b1b9df34e3852b7d4dda6711df90a939c47a9236f07e8339eb8dd85ee6623c"
+    },
+    "category": {
+      "rows": 15,
+      "ordered_full_rows_sha256": "03354972e81a024d0a1a484a28e4e9f927441b37401851211ce5fcfa2b399091"
+    },
+    "product": {
+      "rows": 60,
+      "ordered_full_rows_sha256": "b41ec7b4b00218e89863a75c24edee2c7c0c456ab86b648806b7c50c2f80c682"
+    },
+    "product_image": {
+      "rows": 100,
+      "ordered_full_rows_sha256": "205a305b1bd487a4306c1fe342d214135e2d5ecad6f057b01d159935e4118c7b"
+    },
+    "cart_item": {
+      "rows": 4,
+      "ordered_full_rows_sha256": "e1a3992e3057878b4df97be4701192226a22fdd6c01a43434877833aba5c45fb"
+    },
+    "sales_order": {
+      "rows": 11,
+      "ordered_full_rows_sha256": "28a03f5a3bae35bd62769e415adcb3df93b69f42a09d9eb59acca9e7f45732e3"
+    },
+    "sales_order_item": {
+      "rows": 22,
+      "ordered_full_rows_sha256": "50f32c2c721a6442af8ba29583f221b649df2316d2e1b1d56b3ad004f4f1ffe0"
+    }
+  },
+  "seven_tables_unchanged": true,
+  "AI_demo_result": "PASS",
+  "finished_at_utc": "2026-11-15T01:29:44.919767+00:00"
+}

@@ -1,0 +1,37 @@
+{
+  "remainingOwnedListeners": [],
+  "at": "2026-11-15T12:18:45.4965732+08:00",
+  "temporaryDirectoryDeleted": true,
+  "otherInstancesTouched": false,
+  "result": "PASS",
+  "mysqladminExitCode": 0,
+  "targetResolvedVerified": true,
+  "processExits": [
+    {
+      "pid": 16916,
+      "operation": "Stop-Process",
+      "waitForExit": true,
+      "actualProcessExitCode": -1
+    },
+    {
+      "pid": 18400,
+      "operation": "Stop-Process",
+      "waitForExit": true,
+      "actualProcessExitCode": -1
+    },
+    {
+      "pid": 15428,
+      "operation": "mysqladmin shutdown",
+      "waitForExit": true,
+      "actualProcessExitCode": 0
+    },
+    {
+      "pid": 7356,
+      "operation": "mysqladmin shutdown",
+      "waitForExit": true,
+      "actualProcessExitCode": 0
+    }
+  ],
+  "tempDirectory": "C:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-personal-20261115-58417805e43049d8a80b1b1d96aad77f",
+  "remainingReviewProcesses": []
+}

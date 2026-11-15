@@ -1,0 +1,12 @@
+{
+  "attempt": 1,
+  "executor": "AI setup only",
+  "native_exit": 1,
+  "cause": "The external precheck wrongly required both product versions to be zero. Original seed gift product version is 1. Both login prechecks succeeded and seven-table before/after hashes matched; no checkout or business actions were run.",
+  "fixture_alignment": "Parent instruction explicitly requested cart_version=product_version for this SQL fixture only; note0/0 and gift1/1. Product versions not modified.",
+  "original_outputs": [
+    "login-and-fixture-precheck-attempt1.json",
+    "precheck-personal-attempt1.log",
+    "precheck-personal-attempt1.py"
+  ]
+}

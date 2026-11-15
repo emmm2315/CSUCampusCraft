@@ -1,0 +1,159 @@
+{
+  "date": "2026-11-15",
+  "signer": "高宇弘",
+  "scope": "Personal seven-step spot check, not group cross-review or STEP13 full acceptance",
+  "human_result": "PASS; user reported no application anomaly",
+  "REV-01": "本人已抽验并签署（见执行记录）",
+  "REV-06": "待下一轮Word更新",
+  "checks": [
+    {
+      "name": "review README retains exact d9ed original byte prefix",
+      "passed": true,
+      "details": {
+        "original_bytes": 16844,
+        "append_bytes": 4649,
+        "original_sha256": "0d245458c6937f6084c65d7c0e84dba56d8c8cf24a5371b58d169791f5ab6628",
+        "current_prefix_sha256": "0d245458c6937f6084c65d7c0e84dba56d8c8cf24a5371b58d169791f5ab6628"
+      }
+    },
+    {
+      "name": "signed section occurs once with approved name and date",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "closeout README only changes REV01 row and appends",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "REV06 original deferred Word row untouched",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "seven human confirmations and explicit final authorization preserved",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "AI and human operation split explicit",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "only two authorized tracked documents changed",
+      "passed": true,
+      "details": [
+        "docs/evidence/2026-11-15-review/README.md",
+        "docs/evidence/2026-11-15-review/closeout/README.md"
+      ]
+    },
+    {
+      "name": "product ledger Word and current project docs unchanged",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "all other tracked old evidence unchanged",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "main and current branch HEAD not advanced",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "authorized cleanup and independent verification PASS",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no owned process listener directory or pointer remains",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "new captured records contain no raw token cookie or BCrypt patterns",
+      "passed": true,
+      "details": {
+        "files_scanned": 35,
+        "findings_without_values": [],
+        "scope_note": "No private shipping columns were queried in final SQL; exact random DB secret scan passed during preparation, secret deleted in cleanup."
+      }
+    },
+    {
+      "name": "new signed and cleanup evidence links exist",
+      "passed": true,
+      "details": {
+        "links": 12,
+        "missing": []
+      }
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--name-only",
+        "-z",
+        "d9ed79c1546128beb8b5924e01f55970b44fa767"
+      ],
+      "exit_code": 0,
+      "stdout": "docs/evidence/2026-11-15-review/README.md\u0000docs/evidence/2026-11-15-review/closeout/README.md\u0000",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--exit-code",
+        "d9ed79c1546128beb8b5924e01f55970b44fa767",
+        "--",
+        "csucampuscraft-user",
+        "csucampuscraft-admin",
+        "database",
+        "assets",
+        ".mvn",
+        "mvnw",
+        "mvnw.cmd",
+        ".gitattributes",
+        ".gitignore",
+        "README.md",
+        "docs/测试与验收用例.md",
+        "docs/系统设计与路由.md",
+        "docs/需求与业务规则.md",
+        "docs/页面清单与原型.md",
+        "docs/开发计划与任务.md",
+        "docs/实验一 CSUCampusCraft 校园文创商店实验指导书.docx"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--exit-code",
+        "d9ed79c1546128beb8b5924e01f55970b44fa767",
+        "--",
+        "docs/evidence",
+        ":(exclude)docs/evidence/2026-11-15-review/README.md",
+        ":(exclude)docs/evidence/2026-11-15-review/closeout/README.md",
+        ":(exclude)docs/evidence/2026-11-15-review/closeout/personal-check",
+        ":(exclude)docs/evidence/2026-11-15-review/closeout/个人抽验环境.md"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "result": "PASS",
+  "no_new_git_commit": true,
+  "no_push_or_merge": true,
+  "old_reports_not_rewritten": true,
+  "captured_at_local": "2026-11-15T12:22:05.943477+08:00"
+}

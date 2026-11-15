@@ -1,0 +1,442 @@
+{
+  "os": {
+    "Caption": "Microsoft Windows 11 家庭版 中文版",
+    "Version": "10.0.26200",
+    "BuildNumber": "26200",
+    "OSArchitecture": "64 位"
+  },
+  "jdbcQueryExitCode": 0,
+  "processes": [
+    {
+      "ProcessId": 15428,
+      "ParentProcessId": 37828,
+      "Name": "mysqld.exe",
+      "CommandLine": "\"D:\\MySQL\\bin\\mysqld.exe\" --no-defaults --basedir=D:\\MySQL --datadir=C:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-personal-20261115-58417805e43049d8a80b1b1d96aad77f\\data --bind-address=127.0.0.1 --port=50070 --mysqlx=0 --default-time-zone=+00:00 --console",
+      "ExecutablePath": "D:\\MySQL\\bin\\mysqld.exe",
+      "CreationDate": "2026-11-15T09:05:19.016309+08:00"
+    },
+    {
+      "ProcessId": 7356,
+      "ParentProcessId": 15428,
+      "Name": "mysqld.exe",
+      "CommandLine": "D:\\MySQL\\bin\\mysqld.exe --no-defaults --basedir=D:\\MySQL --datadir=C:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-personal-20261115-58417805e43049d8a80b1b1d96aad77f\\data --bind-address=127.0.0.1 --port=50070 --mysqlx=0 --default-time-zone=+00:00 --console",
+      "ExecutablePath": "D:\\MySQL\\bin\\mysqld.exe",
+      "CreationDate": "2026-11-15T09:05:19.053576+08:00"
+    },
+    {
+      "ProcessId": 16916,
+      "ParentProcessId": 37828,
+      "Name": "java.exe",
+      "CommandLine": "\"C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe\" -jar csucampuscraft-user/target/csucampuscraft-user-0.0.1-SNAPSHOT.jar --server.port=8080",
+      "ExecutablePath": "C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe",
+      "CreationDate": "2026-11-15T09:05:20.579097+08:00"
+    },
+    {
+      "ProcessId": 18400,
+      "ParentProcessId": 37828,
+      "Name": "java.exe",
+      "CommandLine": "\"C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe\" -jar csucampuscraft-admin/target/csucampuscraft-admin-0.0.1-SNAPSHOT.jar --server.port=8081",
+      "ExecutablePath": "C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe",
+      "CreationDate": "2026-11-15T09:05:20.590763+08:00"
+    }
+  ],
+  "jdbcSessions": [
+    {
+      "connectionId": "20",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62234,
+      "timeZone": "+00:00",
+      "javaPid": 16916,
+      "side": "user"
+    },
+    {
+      "connectionId": "21",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62235,
+      "timeZone": "+00:00",
+      "javaPid": 16916,
+      "side": "user"
+    },
+    {
+      "connectionId": "22",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62237,
+      "timeZone": "+00:00",
+      "javaPid": 16916,
+      "side": "user"
+    },
+    {
+      "connectionId": "23",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62238,
+      "timeZone": "+00:00",
+      "javaPid": 16916,
+      "side": "user"
+    },
+    {
+      "connectionId": "24",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62239,
+      "timeZone": "+00:00",
+      "javaPid": 18400,
+      "side": "admin"
+    },
+    {
+      "connectionId": "25",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62240,
+      "timeZone": "+00:00",
+      "javaPid": 16916,
+      "side": "user"
+    },
+    {
+      "connectionId": "26",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62241,
+      "timeZone": "+00:00",
+      "javaPid": 16916,
+      "side": "user"
+    },
+    {
+      "connectionId": "27",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62242,
+      "timeZone": "+00:00",
+      "javaPid": 16916,
+      "side": "user"
+    },
+    {
+      "connectionId": "28",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62243,
+      "timeZone": "+00:00",
+      "javaPid": 16916,
+      "side": "user"
+    },
+    {
+      "connectionId": "29",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62244,
+      "timeZone": "+00:00",
+      "javaPid": 16916,
+      "side": "user"
+    },
+    {
+      "connectionId": "30",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62245,
+      "timeZone": "+00:00",
+      "javaPid": 16916,
+      "side": "user"
+    },
+    {
+      "connectionId": "31",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62246,
+      "timeZone": "+00:00",
+      "javaPid": 18400,
+      "side": "admin"
+    },
+    {
+      "connectionId": "33",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62248,
+      "timeZone": "+00:00",
+      "javaPid": 18400,
+      "side": "admin"
+    },
+    {
+      "connectionId": "36",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62251,
+      "timeZone": "+00:00",
+      "javaPid": 18400,
+      "side": "admin"
+    },
+    {
+      "connectionId": "39",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62254,
+      "timeZone": "+00:00",
+      "javaPid": 18400,
+      "side": "admin"
+    },
+    {
+      "connectionId": "42",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62257,
+      "timeZone": "+00:00",
+      "javaPid": 18400,
+      "side": "admin"
+    },
+    {
+      "connectionId": "45",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62260,
+      "timeZone": "+00:00",
+      "javaPid": 18400,
+      "side": "admin"
+    },
+    {
+      "connectionId": "47",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62262,
+      "timeZone": "+00:00",
+      "javaPid": 18400,
+      "side": "admin"
+    },
+    {
+      "connectionId": "48",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62263,
+      "timeZone": "+00:00",
+      "javaPid": 18400,
+      "side": "admin"
+    },
+    {
+      "connectionId": "49",
+      "database": "csucampuscraft_personal_20261115",
+      "dbUser": "personal_check_app",
+      "clientPort": 62264,
+      "timeZone": "+00:00",
+      "javaPid": 18400,
+      "side": "admin"
+    }
+  ],
+  "executor": "AI setup observation, not human acceptance",
+  "note": "Processes are intentionally running while awaiting human steps. Null exit code does not mean success or failure.",
+  "jdbcUtcAll": true,
+  "osTimeZone": {
+    "Id": "China Standard Time",
+    "BaseUtcOffset": {
+      "Ticks": 288000000000,
+      "Days": 0,
+      "Hours": 8,
+      "Milliseconds": 0,
+      "Microseconds": 0,
+      "Nanoseconds": 0,
+      "Minutes": 0,
+      "Seconds": 0,
+      "TotalDays": 0.3333333333333333,
+      "TotalHours": 8.0,
+      "TotalMilliseconds": 28800000.0,
+      "TotalMicroseconds": 28800000000.0,
+      "TotalNanoseconds": 28800000000000.0,
+      "TotalMinutes": 480.0,
+      "TotalSeconds": 28800.0
+    },
+    "SupportsDaylightSavingTime": false
+  },
+  "capturedAt": "2026-11-15T09:09:51.7182143+08:00",
+  "serverProcessExitCodes": {
+    "admin": null,
+    "mysql": null,
+    "user": null
+  },
+  "jdbcSql": "SELECT p.ID,p.USER,p.DB,p.HOST,v.VARIABLE_VALUE AS time_zone FROM information_schema.PROCESSLIST p JOIN performance_schema.threads t ON t.PROCESSLIST_ID=p.ID JOIN performance_schema.variables_by_thread v ON v.THREAD_ID=t.THREAD_ID AND v.VARIABLE_NAME='time_zone' WHERE p.USER='personal_check_app' AND p.DB='csucampuscraft_personal_20261115' ORDER BY p.ID;",
+  "connections": [
+    {
+      "LocalAddress": "::",
+      "LocalPort": 8081,
+      "RemoteAddress": "::",
+      "RemotePort": 0,
+      "State": 2,
+      "OwningProcess": 18400
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 8080,
+      "RemoteAddress": "::",
+      "RemotePort": 0,
+      "State": 2,
+      "OwningProcess": 16916
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62264,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 18400
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62263,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 18400
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62262,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 18400
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62260,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 18400
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62257,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 18400
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62254,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 18400
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62251,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 18400
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62248,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 18400
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62246,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 18400
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62245,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 16916
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62244,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 16916
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62243,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 16916
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62242,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 16916
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62241,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 16916
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62240,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 16916
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62239,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 18400
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62238,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 16916
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62237,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 16916
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62235,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 16916
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 62234,
+      "RemoteAddress": "127.0.0.1",
+      "RemotePort": 50070,
+      "State": 5,
+      "OwningProcess": 16916
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 50070,
+      "RemoteAddress": "0.0.0.0",
+      "RemotePort": 0,
+      "State": 2,
+      "OwningProcess": 7356
+    }
+  ]
+}

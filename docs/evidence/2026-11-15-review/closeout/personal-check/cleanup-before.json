@@ -1,0 +1,42 @@
+{
+  "humanCompletionFlag": true,
+  "databaseIdentity": [
+    "50070\tC:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-personal-20261115-58417805e43049d8a80b1b1d96aad77f\\data\\\t9e69ebaa-e090-11f1-96eb-005056c00001"
+  ],
+  "processes": [
+    {
+      "ProcessId": 15428,
+      "ParentProcessId": 37828,
+      "Name": "mysqld.exe",
+      "CommandLine": "\"D:\\MySQL\\bin\\mysqld.exe\" --no-defaults --basedir=D:\\MySQL --datadir=C:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-personal-20261115-58417805e43049d8a80b1b1d96aad77f\\data --bind-address=127.0.0.1 --port=50070 --mysqlx=0 --default-time-zone=+00:00 --console",
+      "ExecutablePath": "D:\\MySQL\\bin\\mysqld.exe",
+      "CreationDate": "2026-11-15T09:05:19.016309+08:00"
+    },
+    {
+      "ProcessId": 7356,
+      "ParentProcessId": 15428,
+      "Name": "mysqld.exe",
+      "CommandLine": "D:\\MySQL\\bin\\mysqld.exe --no-defaults --basedir=D:\\MySQL --datadir=C:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-personal-20261115-58417805e43049d8a80b1b1d96aad77f\\data --bind-address=127.0.0.1 --port=50070 --mysqlx=0 --default-time-zone=+00:00 --console",
+      "ExecutablePath": "D:\\MySQL\\bin\\mysqld.exe",
+      "CreationDate": "2026-11-15T09:05:19.053576+08:00"
+    },
+    {
+      "ProcessId": 16916,
+      "ParentProcessId": 37828,
+      "Name": "java.exe",
+      "CommandLine": "\"C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe\" -jar csucampuscraft-user/target/csucampuscraft-user-0.0.1-SNAPSHOT.jar --server.port=8080",
+      "ExecutablePath": "C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe",
+      "CreationDate": "2026-11-15T09:05:20.579097+08:00"
+    },
+    {
+      "ProcessId": 18400,
+      "ParentProcessId": 37828,
+      "Name": "java.exe",
+      "CommandLine": "\"C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe\" -jar csucampuscraft-admin/target/csucampuscraft-admin-0.0.1-SNAPSHOT.jar --server.port=8081",
+      "ExecutablePath": "C:\\Users\\Starmetor\\.jdks\\ms-21.0.12.1\\bin\\java.exe",
+      "CreationDate": "2026-11-15T09:05:20.590763+08:00"
+    }
+  ],
+  "at": "2026-11-15T12:18:43.9094053+08:00",
+  "verifiedTarget": "C:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-personal-20261115-58417805e43049d8a80b1b1d96aad77f"
+}

@@ -1,0 +1,62 @@
+{
+  "phase": "human step7 pending",
+  "executor": "AI read-only SQL reference",
+  "A10_request_sent_by_AI": false,
+  "human_confirmation": null,
+  "captured_at_local": "2026-11-15T09:33:26.648588+08:00",
+  "queries": [
+    {
+      "sql": "SELECT @@port AS port,@@datadir AS datadir,@@server_uuid AS uuid,DATABASE() AS db;",
+      "exit_code": 0,
+      "rows": [
+        {
+          "port": "50070",
+          "datadir": "C:\\Users\\Starmetor\\AppData\\Local\\Temp\\csucampuscraft-personal-20261115-58417805e43049d8a80b1b1d96aad77f\\data\\",
+          "uuid": "9e69ebaa-e090-11f1-96eb-005056c00001",
+          "db": "csucampuscraft_personal_20261115"
+        }
+      ]
+    },
+    {
+      "sql": "SELECT (SELECT COUNT(*) FROM product WHERE status='ON_SALE') AS on_sale,(SELECT COUNT(*) FROM product WHERE status='DRAFT') AS draft,(SELECT COUNT(*) FROM sales_order WHERE status='PAID') AS paid,(SELECT COUNT(*) FROM store_user WHERE role='CUSTOMER' AND status='ENABLED') AS enabled_customers,(SELECT COUNT(*) FROM store_user WHERE role='CUSTOMER' AND status='DISABLED') AS disabled_customers;",
+      "exit_code": 0,
+      "rows": [
+        {
+          "on_sale": "54",
+          "draft": "6",
+          "paid": "2",
+          "enabled_customers": "2",
+          "disabled_customers": "1"
+        }
+      ]
+    },
+    {
+      "sql": "SELECT p.id,p.sku,p.name,p.version,0 AS image_count FROM product p WHERE p.status='ON_SALE' AND NOT EXISTS(SELECT 1 FROM product_image pi WHERE pi.product_id=p.id) ORDER BY p.id LIMIT 1;",
+      "exit_code": 0,
+      "rows": [
+        {
+          "id": "5",
+          "sku": "CSU-LMK-NOTE-02",
+          "name": "玉带河横线本",
+          "version": "0",
+          "image_count": "0"
+        }
+      ]
+    }
+  ],
+  "result": "READY_FOR_HUMAN_COMPARISON",
+  "dashboard": {
+    "on_sale": "54",
+    "draft": "6",
+    "paid": "2",
+    "enabled_customers": "2",
+    "disabled_customers": "1"
+  },
+  "album_candidate": {
+    "id": "5",
+    "sku": "CSU-LMK-NOTE-02",
+    "name": "玉带河横线本",
+    "version": "0",
+    "image_count": "0"
+  }
+}
