@@ -1,0 +1,57 @@
+{
+  "started_at_utc": "2026-11-15T11:24:45.464467+00:00",
+  "started_at_local": "2026-11-15T19:24:45.464467+08:00",
+  "tested_sha": "d22433c2abf87b1a996c6a18467fd7a9a5a43372",
+  "attempt": "attempt4",
+  "executor": "Codex AI, authorized fresh before/after UI acceptance",
+  "human_cross_reproduction": "not implemented this round; prior human review remains limited to its original scope",
+  "scope": "UI before/after visual and bounded business regression on the exact current SHA; no old verdict reuse",
+  "phase": "after",
+  "branch": "feat/ui-redesign",
+  "runtime_file_count": 209,
+  "runtime_manifest_sha256": "8c64c6f396d2c9ac703103aea7dca690df7d0e7f0947c6d8aa3a424c924392e4",
+  "user_jar_sha256": "b87bfd7a5e9eec981d053fbcc5ad471ca4a9f890e697f0cfccb621a90031e676",
+  "admin_jar_sha256": "47d8326f13e8b7facd537d6f7174bad3d9d1281138b15348f75cd74dfe602712",
+  "mysql_port": 57665,
+  "mysql_uuid": "297b982b-e0e7-11f1-823e-005056c00001",
+  "mysql_version": "8.4.9",
+  "screenshots": 92,
+  "browser_navigation_count": 144,
+  "after_only_supplemental_fullpage_images": 14,
+  "finished_at_utc": "2026-11-15T11:30:03.983606+00:00",
+  "finished_at_local": "2026-11-15T19:30:03.983606+08:00",
+  "checks": 678,
+  "checks_failed": 0,
+  "p0_matrix": [
+    {
+      "id": "UI-REGRESSION",
+      "required_segments": [
+        "functional",
+        "browser"
+      ],
+      "assertion_plan": "New isolated fixture +85 chain +HTTP/security/SQL cards; paired visual scenes and responsive observations.",
+      "result": "PASS",
+      "observed_segments": {
+        "functional": {
+          "passed": true,
+          "detail": {
+            "checks": 198
+          },
+          "at": "2026-11-15T11:25:47.244632+00:00"
+        },
+        "browser": {
+          "passed": true,
+          "detail": {
+            "checks": 467
+          },
+          "at": "2026-11-15T11:30:03.876284+00:00"
+        }
+      },
+      "tested_sha": "d22433c2abf87b1a996c6a18467fd7a9a5a43372"
+    }
+  ],
+  "tracked_processes_stopped": true,
+  "error": null,
+  "overall": "PASS",
+  "runtime_inputs_stable": true
+}

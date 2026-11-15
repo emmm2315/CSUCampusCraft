@@ -1,0 +1,859 @@
+{
+  "overall": "PASS",
+  "scope": "Static-only; real SSR/theme/browser/HTTP evidence is performed by the root verification workflow.",
+  "checks": 170,
+  "details": [
+    {
+      "name": "candidate-sha:csucampuscraft-user/src/main/resources/static/css/app.css",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-user/src/main/resources/static/js/app.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-user/src/main/resources/static/js/theme.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-user/src/main/resources/static/css/fonts/Saira.ttf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-user/src/main/resources/static/css/fonts/Saira-OFL.txt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-user/src/main/resources/static/css/contours/contour-a.svg",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-user/src/main/resources/static/css/contours/contour-b.svg",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-user/src/main/resources/templates/fragments/layout.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:16",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:17",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:18",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:19",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:20",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:21",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:22",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:23",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:24",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:25",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:26",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:27",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:28",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:29",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:30",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:31",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/layout.html:32",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-user/src/main/resources/templates/fragments/fields.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:16",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:17",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/fields.html:18",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "password-never-value:csucampuscraft-user/src/main/resources/templates/fragments/fields.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-user/src/main/resources/templates/fragments/alerts.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/alerts.html:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/alerts.html:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/alerts.html:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/alerts.html:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/alerts.html:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/alerts.html:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/alerts.html:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/alerts.html:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/alerts.html:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/alerts.html:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/alerts.html:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/alerts.html:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-user/src/main/resources/templates/fragments/images.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/images.html:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/images.html:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-user/src/main/resources/templates/fragments/images.html:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-admin/src/main/resources/static/css/app.css",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-admin/src/main/resources/static/js/app.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-admin/src/main/resources/static/js/theme.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-admin/src/main/resources/static/css/fonts/Saira.ttf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-admin/src/main/resources/static/css/fonts/Saira-OFL.txt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-admin/src/main/resources/static/css/contours/contour-a.svg",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-admin/src/main/resources/static/css/contours/contour-b.svg",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:16",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:17",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:18",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:19",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:20",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:21",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:22",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:23",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:24",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:25",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:26",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:27",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:28",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:29",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:30",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:31",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:32",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:33",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:34",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/layout.html:35",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "password-never-value:csucampuscraft-admin/src/main/resources/templates/fragments/fields.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "candidate-sha:csucampuscraft-admin/src/main/resources/templates/fragments/images.html",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/images.html:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/images.html:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fragment-contract:csucampuscraft-admin/src/main/resources/templates/fragments/images.html:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "original-js-byte-prefix:csucampuscraft-user",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "enhancement-no-network-or-submit-controls:csucampuscraft-user",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "font-and-license-unaltered:csucampuscraft-user:Saira.ttf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "font-and-license-unaltered:csucampuscraft-user:Saira-OFL.txt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "original-js-byte-prefix:csucampuscraft-admin",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "enhancement-no-network-or-submit-controls:csucampuscraft-admin",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "font-and-license-unaltered:csucampuscraft-admin:Saira.ttf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "font-and-license-unaltered:csucampuscraft-admin:Saira-OFL.txt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "css-blocks-balanced",
+      "passed": true,
+      "detail": "Lexical block validation only; actual CSSOM/computed presentation remains a real-browser check."
+    },
+    {
+      "name": "css-and-js-shared-identically",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "reduced-motion-stop-all",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "single-visual-tricolor-per-layout",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "theme-default-light-and-nojs-hidden",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "css_bytes": 77935,
+  "repository_writes": 0
+}

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\ui-redesign\verification\run_ui.py", line 91, in main
+    empty=browser_batch(h,f,phase,'empty',scenes(f,True));h.add(f['user'],f['note'],2);h.add(f['user'],f['gift'],1)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\ui-redesign\verification\run_ui.py", line 80, in browser_batch
+    result=json.loads((h.evidence/'browser'/kind/'result.json').read_text());h.check('browser '+kind+' batch no writes',before==after);h.check('no external browser network '+kind,not result['externalRequests']);return result
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\OpenAI.CodexPrimaryRuntime.v26-1112-611-0_26.1112.611.0_x64__3k8sg7r9htsxt\dependencies\python\Lib\pathlib.py", line 1028, in read_text
+    return f.read()
+           ^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xad in position 638: illegal multibyte sequence

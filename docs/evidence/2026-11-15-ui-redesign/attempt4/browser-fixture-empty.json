@@ -1,0 +1,35 @@
+{
+  "phase": "after",
+  "sourceSha": "d22433c2abf87b1a996c6a18467fd7a9a5a43372",
+  "bases": {
+    "u": "http://127.0.0.1:8080",
+    "a": "http://127.0.0.1:8081"
+  },
+  "scenes": [
+    {
+      "id": "U05-empty",
+      "end": "u",
+      "path": "/cart",
+      "status": 200
+    },
+    {
+      "id": "U06-empty-conflict",
+      "end": "u",
+      "path": "/checkout",
+      "status": 409
+    },
+    {
+      "id": "U02-empty-results",
+      "end": "u",
+      "path": "/products?q=UI_NO_MATCH_937421",
+      "status": 200
+    },
+    {
+      "id": "A04-empty-results",
+      "end": "a",
+      "path": "/products?q=UI_NO_MATCH_937421",
+      "status": 200
+    }
+  ],
+  "extraAudits": false
+}

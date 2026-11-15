@@ -1,0 +1,216 @@
+{
+  "started_at_utc": "2026-11-15T11:36:50.4542988Z",
+  "finished_at_utc": "2026-11-15T11:36:54.8283925Z",
+  "scope": "Only new UI-redesign verification/runtime attempt datadirs and residual private init SQL; evidence/scripts/original manifests untouched",
+  "overall": "PASS",
+  "records": [
+    {
+      "attempt": "attempt1",
+      "owned_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\ui-redesign\\verification\\runtime\\attempt1\\mysql-data",
+      "uuid": "afca0f83-e0e3-11f1-8397-005056c00001",
+      "guard_passed": true,
+      "process_checks": [
+        {
+          "creation_matches_owned": false,
+          "terminated_now": false,
+          "pid": 8472,
+          "command_matches_owned": false,
+          "kind": "csucampuscraft-user",
+          "unrelated_pid_reuse_preserved": false,
+          "found": false
+        },
+        {
+          "creation_matches_owned": false,
+          "terminated_now": false,
+          "pid": 31912,
+          "command_matches_owned": false,
+          "kind": "csucampuscraft-admin",
+          "unrelated_pid_reuse_preserved": false,
+          "found": false
+        },
+        {
+          "creation_matches_owned": false,
+          "terminated_now": false,
+          "pid": 35408,
+          "command_matches_owned": false,
+          "kind": "mysqld",
+          "unrelated_pid_reuse_preserved": false,
+          "found": false
+        }
+      ],
+      "stopped": true,
+      "deleted": true,
+      "private_configs": [],
+      "reason": null
+    },
+    {
+      "attempt": "attempt2",
+      "owned_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\ui-redesign\\verification\\runtime\\attempt2\\mysql-data",
+      "uuid": "1a32038f-e0e4-11f1-95b9-005056c00001",
+      "guard_passed": true,
+      "process_checks": [
+        {
+          "creation_matches_owned": false,
+          "terminated_now": false,
+          "pid": 33708,
+          "command_matches_owned": false,
+          "kind": "csucampuscraft-user",
+          "unrelated_pid_reuse_preserved": false,
+          "found": false
+        },
+        {
+          "creation_matches_owned": false,
+          "terminated_now": false,
+          "pid": 18340,
+          "command_matches_owned": false,
+          "kind": "csucampuscraft-admin",
+          "unrelated_pid_reuse_preserved": false,
+          "found": false
+        },
+        {
+          "creation_matches_owned": false,
+          "terminated_now": false,
+          "pid": 29904,
+          "command_matches_owned": false,
+          "kind": "mysqld",
+          "unrelated_pid_reuse_preserved": false,
+          "found": false
+        }
+      ],
+      "stopped": true,
+      "deleted": true,
+      "private_configs": [],
+      "reason": null
+    },
+    {
+      "attempt": "attempt3",
+      "owned_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\ui-redesign\\verification\\runtime\\attempt3\\mysql-data",
+      "uuid": "6cb631ce-e0e5-11f1-ad0a-005056c00001",
+      "guard_passed": true,
+      "process_checks": [
+        {
+          "creation_matches_owned": false,
+          "terminated_now": false,
+          "pid": 27612,
+          "command_matches_owned": false,
+          "kind": "csucampuscraft-user",
+          "unrelated_pid_reuse_preserved": false,
+          "found": false
+        },
+        {
+          "creation_matches_owned": false,
+          "terminated_now": false,
+          "pid": 32632,
+          "command_matches_owned": false,
+          "kind": "csucampuscraft-admin",
+          "unrelated_pid_reuse_preserved": false,
+          "found": false
+        },
+        {
+          "creation_matches_owned": false,
+          "terminated_now": false,
+          "pid": 6104,
+          "command_matches_owned": false,
+          "kind": "mysqld",
+          "unrelated_pid_reuse_preserved": false,
+          "found": false
+        }
+      ],
+      "stopped": true,
+      "deleted": true,
+      "private_configs": [],
+      "reason": null
+    },
+    {
+      "attempt": "attempt4",
+      "owned_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\ui-redesign\\verification\\runtime\\attempt4\\mysql-data",
+      "uuid": "297b982b-e0e7-11f1-823e-005056c00001",
+      "guard_passed": true,
+      "process_checks": [
+        {
+          "creation_matches_owned": false,
+          "terminated_now": false,
+          "pid": 26488,
+          "command_matches_owned": false,
+          "kind": "csucampuscraft-user",
+          "unrelated_pid_reuse_preserved": false,
+          "found": false
+        },
+        {
+          "creation_matches_owned": false,
+          "terminated_now": false,
+          "pid": 17008,
+          "command_matches_owned": false,
+          "kind": "csucampuscraft-admin",
+          "unrelated_pid_reuse_preserved": false,
+          "found": false
+        },
+        {
+          "creation_matches_owned": false,
+          "terminated_now": false,
+          "pid": 11916,
+          "command_matches_owned": false,
+          "kind": "mysqld",
+          "unrelated_pid_reuse_preserved": false,
+          "found": false
+        }
+      ],
+      "stopped": true,
+      "deleted": true,
+      "private_configs": [],
+      "reason": null
+    },
+    {
+      "attempt": "attempt5",
+      "owned_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\ui-redesign\\verification\\runtime\\attempt5\\mysql-data",
+      "uuid": "8a9a7765-e0e8-11f1-bc9f-005056c00001",
+      "guard_passed": true,
+      "process_checks": [
+        {
+          "creation_matches_owned": false,
+          "terminated_now": false,
+          "pid": 4912,
+          "command_matches_owned": false,
+          "kind": "csucampuscraft-user",
+          "unrelated_pid_reuse_preserved": false,
+          "found": false
+        },
+        {
+          "creation_matches_owned": false,
+          "terminated_now": false,
+          "pid": 31232,
+          "command_matches_owned": false,
+          "kind": "csucampuscraft-admin",
+          "unrelated_pid_reuse_preserved": false,
+          "found": false
+        },
+        {
+          "creation_matches_owned": false,
+          "terminated_now": false,
+          "pid": 5656,
+          "command_matches_owned": false,
+          "kind": "mysqld",
+          "unrelated_pid_reuse_preserved": false,
+          "found": false
+        }
+      ],
+      "stopped": true,
+      "deleted": true,
+      "private_configs": [],
+      "reason": null
+    }
+  ],
+  "ports_checked": [
+    50828,
+    8080,
+    8081,
+    55497,
+    50210,
+    57665,
+    58382
+  ],
+  "listener_query_succeeded": true,
+  "current_matching_listeners": [],
+  "blocked": [],
+  "secret_values_recorded": false
+}

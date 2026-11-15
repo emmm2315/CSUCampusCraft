@@ -1,0 +1,20 @@
+[
+  {
+    "id": "UI-THEME",
+    "required_segments": [
+      "visual"
+    ],
+    "assertion_plan": "Two actual dark U01/A02 images after button click, live same final JARs, genuine whole batch seven-table equality",
+    "result": "PASS",
+    "observed_segments": {
+      "visual": {
+        "passed": true,
+        "detail": {
+          "checks": 21
+        },
+        "at": "2026-11-15T11:34:57.996120+00:00"
+      }
+    },
+    "tested_sha": "d22433c2abf87b1a996c6a18467fd7a9a5a43372"
+  }
+]

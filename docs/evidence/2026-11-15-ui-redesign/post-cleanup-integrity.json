@@ -1,0 +1,35 @@
+{
+  "observed_at_utc": "2026-11-15T11:37:23.624583+00:00",
+  "cleanup_overall": "PASS",
+  "owned_datadirs": 5,
+  "all_owned_datadirs_deleted": true,
+  "matching_listener_count": 0,
+  "original_artifact_manifests": [
+    {
+      "attempt": "attempt1",
+      "original_manifest_entries": 66,
+      "all_original_artifacts_unchanged": true
+    },
+    {
+      "attempt": "attempt2",
+      "original_manifest_entries": 190,
+      "all_original_artifacts_unchanged": true
+    },
+    {
+      "attempt": "attempt3",
+      "original_manifest_entries": 192,
+      "all_original_artifacts_unchanged": true
+    },
+    {
+      "attempt": "attempt4",
+      "original_manifest_entries": 210,
+      "all_original_artifacts_unchanged": true
+    },
+    {
+      "attempt": "attempt5",
+      "original_manifest_entries": 33,
+      "all_original_artifacts_unchanged": true
+    }
+  ],
+  "all_original_bytes_preserved": true
+}

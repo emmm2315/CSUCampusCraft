@@ -1,0 +1,13 @@
+{
+  "scope": "UI redesign baseline and after regression only, not an all39 P0 re-run",
+  "cases": [
+    {
+      "id": "UI-REGRESSION",
+      "required_segments": [
+        "functional",
+        "browser"
+      ],
+      "assertion_plan": "New isolated fixture +85 chain +HTTP/security/SQL cards; paired visual scenes and responsive observations."
+    }
+  ]
+}

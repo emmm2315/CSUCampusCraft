@@ -1,0 +1,58 @@
+{
+  "started_at_utc": "2026-11-15T11:12:19.277063+00:00",
+  "started_at_local": "2026-11-15T19:12:19.277063+08:00",
+  "tested_sha": "a14df9dc9fc96ad5985edd5abdb1292a66fec0bc",
+  "attempt": "attempt3",
+  "executor": "Codex AI, authorized fresh before/after UI acceptance",
+  "human_cross_reproduction": "not implemented this round; prior human review remains limited to its original scope",
+  "scope": "UI before/after visual and bounded business regression on the exact current SHA; no old verdict reuse",
+  "phase": "after",
+  "branch": "feat/ui-redesign",
+  "runtime_file_count": 209,
+  "runtime_manifest_sha256": "0f9341b86064dbbf78fc4d36f4799cfac734d353bff4f5969fd356ab9c954baa",
+  "user_jar_sha256": "d1bbc707a123a369b9b991b950170e2bc1e36daaf4a503f897b7a5e0baff9247",
+  "admin_jar_sha256": "82b254ac5979bfbb86f4241eace9dc2b58eb5c5a8c7c21624c9062076e10f521",
+  "mysql_port": 50210,
+  "mysql_uuid": "6cb631ce-e0e5-11f1-ad0a-005056c00001",
+  "mysql_version": "8.4.9",
+  "screenshots": 92,
+  "browser_navigation_count": 144,
+  "finished_at_utc": "2026-11-15T11:17:33.313471+00:00",
+  "finished_at_local": "2026-11-15T19:17:33.313471+08:00",
+  "checks": 670,
+  "checks_failed": 1,
+  "p0_matrix": [
+    {
+      "id": "UI-REGRESSION",
+      "required_segments": [
+        "functional",
+        "browser"
+      ],
+      "assertion_plan": "New isolated fixture +85 chain +HTTP/security/SQL cards; paired visual scenes and responsive observations.",
+      "result": "FAIL",
+      "observed_segments": {
+        "functional": {
+          "passed": true,
+          "detail": {
+            "checks": 198
+          },
+          "at": "2026-11-15T11:13:20.626340+00:00"
+        },
+        "browser": {
+          "passed": false,
+          "detail": {
+            "exception": "AssertionError",
+            "message": "after dark media changes actual body background",
+            "checks": 459
+          },
+          "at": "2026-11-15T11:17:33.217504+00:00"
+        }
+      },
+      "tested_sha": "a14df9dc9fc96ad5985edd5abdb1292a66fec0bc"
+    }
+  ],
+  "tracked_processes_stopped": true,
+  "error": "after dark media changes actual body background",
+  "overall": "FAIL",
+  "runtime_inputs_stable": true
+}

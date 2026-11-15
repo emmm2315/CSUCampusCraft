@@ -1,0 +1,15 @@
+{
+  "state": "PROPOSAL_NOT_APPLIED",
+  "path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\ui-redesign\\shared-ui\\caption-patch.css",
+  "sha256": "10186e04403cfc9835e8464e854e256597ed09bec038fc5971bb454f0311291d",
+  "intended_base_css_sha256": "a728c3dfc5bda75bd2efb611578c55e8ae04075f09e9118db4804731f329371b",
+  "triggered_by": [
+    "verification/evidence/attempt3/browser/main/U05-cart-390.png",
+    "verification/evidence/attempt3/browser/main/U06-checkout-390.png"
+  ],
+  "observation": "Native table-caption remains intrinsically narrow after table becomes display:block, resulting in vertical single-character captions.",
+  "change": "Normal-flow block caption at <=600px; preserve caption element, text and all original attrs.",
+  "repository_modified": false,
+  "candidate_app_css_modified": false,
+  "validation": "Must be verified on actual new-SHA after4 390/430 captures; no post-fix runtime claim yet."
+}

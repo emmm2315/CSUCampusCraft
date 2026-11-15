@@ -1,0 +1,60 @@
+{
+  "overall": "PASS",
+  "baseline_sha": "e2bdeb9df9cc7888383ef7afa28d5fbe94f29696",
+  "tested_ui_sha": "d22433c2abf87b1a996c6a18467fd7a9a5a43372",
+  "documentation_commit": "This evidence is committed separately after the tested UI SHA; resolve archive commit from git history.",
+  "branch": "feat/ui-redesign",
+  "scope": "UI-only redesign; bounded UI regression, not a new full STEP13 concurrency/fault campaign.",
+  "before_attempt": "attempt2",
+  "final_after_attempt": "attempt4",
+  "dark_visual_supplement": "attempt5",
+  "before_checks": 662,
+  "after_checks": 678,
+  "before_http": 197,
+  "after_http": 197,
+  "no_js_checks": 13,
+  "no_js_post_statuses": [
+    303,
+    303
+  ],
+  "no_js_batch_seven_tables_unchanged": true,
+  "runtime_files": 209,
+  "runtime_manifest_sha256": "8c64c6f396d2c9ac703103aea7dca690df7d0e7f0947c6d8aa3a424c924392e4",
+  "user_jar_sha256": "b87bfd7a5e9eec981d053fbcc5ad471ca4a9f890e697f0cfccb621a90031e676",
+  "admin_jar_sha256": "47d8326f13e8b7facd537d6f7174bad3d9d1281138b15348f75cd74dfe602712",
+  "paired_screenshot_count": 92,
+  "after_supplemental_fullpage": 14,
+  "after_supplemental_dark": 2,
+  "selector_missing_or_changed": 0,
+  "original_business_text_missing": 0,
+  "jar_business_or_dependency_entries_changed": 0,
+  "normalized_business_equal": true,
+  "old_evidence_files_unchanged": 6971,
+  "cleanup": "cleanup.json",
+  "sensitive_scans": "Original attempt scans preserved; final archive scan separately recorded.",
+  "failures_retained": [
+    {
+      "attempt": "attempt1",
+      "classification": "TOOL_ERROR",
+      "cause": "Fresh harness decoded UTF8 result using Windows GBK default; corrected and whole before rerun in new private DB."
+    },
+    {
+      "attempt": "attempt3",
+      "classification": "TOOL_ASSUMPTION",
+      "cause": "Emulating OS dark does not activate explicit default-light/manual theme. Corrected probe in new after attempt."
+    },
+    {
+      "classification": "UI_DEFECT_FIXED",
+      "cause": "Mobile table-caption narrow vertical layout; fixed in CSS and checked in final4 fullpage images."
+    },
+    {
+      "classification": "UI_REQUIREMENT_COMPLETED",
+      "cause": "Added true current-page row sequence, compact dashboard and desktop filters; no business DOM changes."
+    }
+  ],
+  "limits": [
+    "No physical mobile device or full screen-reader certification.",
+    "Administrative wide tables scroll within their own containers; mobile price line-wrap remains a minor presentation follow-up.",
+    "P1/business expansion not part of this task; historical business acceptance remains frozen."
+  ]
+}

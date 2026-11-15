@@ -1,0 +1,247 @@
+{
+  "phase": "before",
+  "sourceSha": "e2bdeb9df9cc7888383ef7afa28d5fbe94f29696",
+  "bases": {
+    "u": "http://127.0.0.1:8080",
+    "a": "http://127.0.0.1:8081"
+  },
+  "scenes": [
+    {
+      "id": "U01-home",
+      "end": "u",
+      "path": "/",
+      "status": 200,
+      "mobile": true,
+      "auth": "u"
+    },
+    {
+      "id": "U02-products",
+      "end": "u",
+      "path": "/products",
+      "status": 200,
+      "mobile": true,
+      "auth": "u"
+    },
+    {
+      "id": "U02-graduation",
+      "end": "u",
+      "path": "/products?categoryId=5&type=ALL",
+      "status": 200,
+      "mobile": true,
+      "auth": "u"
+    },
+    {
+      "id": "U03-product",
+      "end": "u",
+      "path": "/products/56",
+      "status": 200,
+      "mobile": true,
+      "auth": "u"
+    },
+    {
+      "id": "U04-login",
+      "end": "u",
+      "path": "/login",
+      "status": 200,
+      "mobile": false,
+      "auth": "guest"
+    },
+    {
+      "id": "U05-cart",
+      "end": "u",
+      "path": "/cart",
+      "status": 200,
+      "mobile": true,
+      "auth": "u"
+    },
+    {
+      "id": "U06-checkout",
+      "end": "u",
+      "path": "/checkout",
+      "status": 200,
+      "mobile": true,
+      "auth": "u"
+    },
+    {
+      "id": "U07-orders",
+      "end": "u",
+      "path": "/orders",
+      "status": 200,
+      "mobile": false,
+      "auth": "u"
+    },
+    {
+      "id": "U08-order",
+      "end": "u",
+      "path": "/orders/CSU-fe0f2da6ae46a49652d8f6ce8203afb1",
+      "status": 200,
+      "mobile": true,
+      "auth": "u"
+    },
+    {
+      "id": "U09-payment",
+      "end": "u",
+      "path": "/orders/DEMO-202611-AL-01/payment",
+      "status": 200,
+      "mobile": false,
+      "auth": "u"
+    },
+    {
+      "id": "A01-login",
+      "end": "a",
+      "path": "/login",
+      "status": 200,
+      "mobile": false,
+      "auth": "guest"
+    },
+    {
+      "id": "A02-dashboard",
+      "end": "a",
+      "path": "/",
+      "status": 200,
+      "mobile": true,
+      "auth": "a"
+    },
+    {
+      "id": "A03-categories",
+      "end": "a",
+      "path": "/categories",
+      "status": 200,
+      "mobile": false,
+      "auth": "a"
+    },
+    {
+      "id": "A03-category-form",
+      "end": "a",
+      "path": "/categories/new",
+      "status": 200,
+      "mobile": false,
+      "auth": "a"
+    },
+    {
+      "id": "A04-products",
+      "end": "a",
+      "path": "/products",
+      "status": 200,
+      "mobile": true,
+      "auth": "a"
+    },
+    {
+      "id": "A05-product-form",
+      "end": "a",
+      "path": "/products/1/edit",
+      "status": 200,
+      "mobile": false,
+      "auth": "a"
+    },
+    {
+      "id": "A05-product-new",
+      "end": "a",
+      "path": "/products/new",
+      "status": 200,
+      "mobile": false,
+      "auth": "a"
+    },
+    {
+      "id": "A06-orders",
+      "end": "a",
+      "path": "/orders",
+      "status": 200,
+      "mobile": false,
+      "auth": "a"
+    },
+    {
+      "id": "A07-order",
+      "end": "a",
+      "path": "/orders/CSU-fe0f2da6ae46a49652d8f6ce8203afb1",
+      "status": 200,
+      "mobile": false,
+      "auth": "a"
+    },
+    {
+      "id": "A08-customers",
+      "end": "a",
+      "path": "/customers",
+      "status": 200,
+      "mobile": false,
+      "auth": "a"
+    },
+    {
+      "id": "A09-customer",
+      "end": "a",
+      "path": "/customers/1",
+      "status": 200,
+      "mobile": false,
+      "auth": "a"
+    },
+    {
+      "id": "A10-images",
+      "end": "a",
+      "path": "/products/1/images",
+      "status": 200,
+      "mobile": true,
+      "auth": "a"
+    },
+    {
+      "id": "u-error-400",
+      "end": "u",
+      "path": "/__verification/errors/400",
+      "status": 400
+    },
+    {
+      "id": "u-error-403",
+      "end": "u",
+      "path": "/__verification/errors/403",
+      "status": 403
+    },
+    {
+      "id": "u-error-404",
+      "end": "u",
+      "path": "/__verification/errors/404",
+      "status": 404
+    },
+    {
+      "id": "u-error-409",
+      "end": "u",
+      "path": "/__verification/errors/409",
+      "status": 409
+    },
+    {
+      "id": "u-error-500",
+      "end": "u",
+      "path": "/__verification/errors/500",
+      "status": 500
+    },
+    {
+      "id": "a-error-400",
+      "end": "a",
+      "path": "/__verification/errors/400",
+      "status": 400
+    },
+    {
+      "id": "a-error-403",
+      "end": "a",
+      "path": "/__verification/errors/403",
+      "status": 403
+    },
+    {
+      "id": "a-error-404",
+      "end": "a",
+      "path": "/__verification/errors/404",
+      "status": 404
+    },
+    {
+      "id": "a-error-409",
+      "end": "a",
+      "path": "/__verification/errors/409",
+      "status": 409
+    },
+    {
+      "id": "a-error-500",
+      "end": "a",
+      "path": "/__verification/errors/500",
+      "status": 500
+    }
+  ],
+  "extraAudits": true
+}

@@ -1,0 +1,7677 @@
+{
+  "csucampuscraft-admin/src/main/resources/templates/categories/form.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('分类表单 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "A03",
+          "th:attr": "data-category-id=${category == null ? null : category.id}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/categories}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${category == null ? '新增分类' : '编辑分类'}"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "th:text": "${category == null ? '新增分类' : '编辑分类'}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${category == null}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${category != null}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/alerts :: summary(${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "${category == null ? '/categories' : '/categories/' + category.id}",
+          "data-submit-state": null,
+          "data-category-form": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:if": "${category == null}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:with": "bad=${fieldErrors.containsKey('parentId')}"
+        }
+      },
+      {
+        "tag": "select",
+        "attrs": {
+          "id": "parentId",
+          "name": "parentId",
+          "th:attr": "aria-invalid=${bad},aria-describedby=${bad ? 'parentId-error' : 'parentId-help'}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${#strings.isEmpty(form.parentId)}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:each": "parent : ${parentThemes}",
+          "th:value": "${parent.id}",
+          "th:text": "${parent.name}",
+          "th:selected": "${form.parentId == parent.id.toString()}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "parentId-help"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${bad}",
+          "id": "parentId-error",
+          "th:text": "${fieldErrors.get('parentId')}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text('code','code','一级编码（创建一级时必填）',${form.code},${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:with": "bad=${fieldErrors.containsKey('type')}"
+        }
+      },
+      {
+        "tag": "select",
+        "attrs": {
+          "id": "type",
+          "name": "type",
+          "th:attr": "aria-invalid=${bad},aria-describedby=${bad ? 'type-error' : 'type-help'}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${form.type == 'STATIONERY'}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${form.type == 'SOUVENIR'}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "type-help"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${bad}",
+          "id": "type-error",
+          "th:text": "${fieldErrors.get('type')}"
+        }
+      },
+      {
+        "tag": "dl",
+        "attrs": {
+          "th:if": "${category != null}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${category.id}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${category.code}",
+          "data-readonly-code": null
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${category.parentId == null ? '无（一级主题）' : category.parentId}",
+          "data-readonly-parent": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text('name','name','分类名称',${form.name},${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: number('sortOrder','sortOrder','排序值',${form.sortOrder},0,2147483647,1,${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "button",
+        "attrs": {
+          "th:text": "${category == null ? '新增分类' : '保存分类'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/categories}"
+        }
+      }
+    ],
+    "text": [
+      "分类表单",
+      "分类列表",
+      "/",
+      "分类表单",
+      "分类表单",
+      "留空父级创建一级主题；选择一级父主题创建二级分类，编码由父编码和商品类型自动生成。",
+      "仅修改名称和排序，编码、父级和类型保持原值。",
+      "父级一级主题",
+      "无父级（创建一级）",
+      "校园主题",
+      "二级只能归入一级主题，不支持三级。",
+      "请检查父级。",
+      "一级编码最多 21 个字符，最长二级编码为 21 + 11 = 32；创建二级时忽略此输入并由服务端生成。",
+      "二级商品类型",
+      "文具",
+      "纪念周边",
+      "创建二级时必须选择；创建一级时不使用此字段。",
+      "请检查类型。",
+      "分类 ID",
+      "0",
+      "固定编码",
+      "CODE",
+      "固定父级 ID",
+      "无",
+      "名称为 1–50 个字符，同父级名称不重复。",
+      "非负整数，留空按 0 保存。",
+      "保存分类",
+      "返回分类列表"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/categories/list.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('分类管理 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "A03",
+          "th:attr": "data-category-count=${#lists.size(categories)},data-created-id=${createdCategory == null ? null : createdCategory.id}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/categories/new}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${createdCategory != null}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${createdCategory.name}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${createdCategory.id}",
+          "data-generated-id": null
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${#lists.isEmpty(categories)}",
+          "data-category-empty": null
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:unless": "${#lists.isEmpty(categories)}"
+        }
+      },
+      {
+        "tag": "tr",
+        "attrs": {
+          "th:each": "item : ${categories}",
+          "th:attr": "data-category-id=${item.id},data-category-code=${item.code},data-parent-id=${item.parentId == null ? '' : item.parentId}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${item.id}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${item.parentId == null ? '一级' : '二级'}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${item.name}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${item.code}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:if": "${item.parentId == null}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:if": "${item.parentId != null}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${parentNames.get(item.parentId)}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${#strings.endsWith(item.code, '_STATIONERY') ? '文具' : (#strings.endsWith(item.code, '_SOUVENIR') ? '纪念周边' : '其他')}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${item.sortOrder}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/categories/{id}/edit(id=${item.id})}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/categories/{id}/remove(id=${item.id})}",
+          "data-submit-state": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${'确认删除「' + item.name + '」？仅无子类、无商品引用的空分类可删除。'}"
+        }
+      }
+    ],
+    "text": [
+      "分类管理",
+      "管理端首页",
+      "/",
+      "分类管理",
+      "分类管理",
+      "一级校园主题包含文具或纪念周边二级分类。编码和父级创建后固定。",
+      "新增分类",
+      "商品列表",
+      "已定位分类：",
+      "分类",
+      "，ID",
+      "0",
+      "。",
+      "暂无分类",
+      "先新增一级校园主题，再为其新增文具或纪念周边。",
+      "校园主题及二级商品分类",
+      "ID / 层级",
+      "名称",
+      "编码",
+      "父级 / 类型",
+      "排序",
+      "操作",
+      "0",
+      "/",
+      "一级",
+      "校园主题",
+      "CODE",
+      "无父级 / 校园主题",
+      "父主题",
+      "/",
+      "文具",
+      "0",
+      "编辑名称和排序",
+      "仅空分类可删除。",
+      "确认删除空分类"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/customers/action-conflict.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('顾客状态操作提示 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "A09",
+          "data-customer-action-conflict": null,
+          "th:attr": "data-error-status=${errorStatus},data-error-code=${errorCode}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorStatus}"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "customer-conflict-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorMessage}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${errorCode}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${userId != null}",
+          "th:href": "@{/customers/{id}(id=${userId})}",
+          "data-return-customer": null
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/customers}",
+          "data-return-customers": null
+        }
+      }
+    ],
+    "text": [
+      "顾客状态操作提示",
+      "409",
+      "未能更新顾客状态",
+      "请重新查看该顾客的当前状态，再决定是否操作。",
+      "请先核对实际启停状态；本页不显示成功结果。",
+      "错误代码：",
+      "CUSTOMER_STATUS_CONFLICT",
+      "查看顾客详情",
+      "返回顾客列表"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/customers/detail.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('顾客详情 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "A09",
+          "th:attr": "data-customer-id=${customer.id},data-customer-status=${customer.status}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/customers}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders(userId=${customer.id})}",
+          "data-customer-orders-link": null
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/customers}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "customer-profile-title"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "data-customer-status-label": null,
+          "th:text": "${customer.statusLabel}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-customer-id-value": null,
+          "th:text": "${customer.id}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-customer-username": null,
+          "th:text": "${customer.username}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-customer-display-name": null,
+          "th:text": "${customer.displayName}"
+        }
+      },
+      {
+        "tag": "time",
+        "attrs": {
+          "data-customer-created-at": null,
+          "th:text": "${customer.createdAtDisplay}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-customer-contact": "email",
+          "th:text": "${customer.email == null or #strings.isEmpty(#strings.trim(customer.email)) ? '未填写' : customer.email}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-customer-contact": "phone",
+          "th:text": "${customer.phone == null or #strings.isEmpty(#strings.trim(customer.phone)) ? '未填写' : customer.phone}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "customer-state-title"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:if": "${customer.enabled}"
+        }
+      },
+      {
+        "tag": "details",
+        "attrs": {
+          "data-disable-confirmation": null
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "customer-disable-help"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${customer.username}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/customers/{id}/status(id=${customer.id})}",
+          "data-submit-state": null,
+          "data-customer-status-form": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "targetStatus"
+        }
+      },
+      {
+        "tag": "button",
+        "attrs": {
+          "data-confirm-disable": null,
+          "data-submit-label": "正在禁用…"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:unless": "${customer.enabled}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "customer-enable-help"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${customer.username}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/customers/{id}/status(id=${customer.id})}",
+          "data-submit-state": null,
+          "data-customer-status-form": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "targetStatus"
+        }
+      },
+      {
+        "tag": "button",
+        "attrs": {
+          "data-confirm-enable": null,
+          "data-submit-label": "正在启用…"
+        }
+      }
+    ],
+    "text": [
+      "顾客详情",
+      "管理控制台",
+      "/",
+      "普通顾客管理",
+      "/",
+      "顾客详情",
+      "教学账号管理",
+      "顾客详情",
+      "查看普通顾客教学资料与当前启停状态。",
+      "查看该顾客订单",
+      "返回顾客列表",
+      "教学账号资料",
+      "启用",
+      "顾客 ID",
+      "0",
+      "用户名",
+      "用户名",
+      "显示名",
+      "显示名",
+      "创建时间",
+      "创建时间",
+      "（北京时间）",
+      "教学邮箱",
+      "未填写",
+      "教学电话",
+      "未填写",
+      "启停管理",
+      "当前账号已启用。禁用前请核对用户名和对已有会话的影响。",
+      "禁用该顾客",
+      "将禁用普通顾客",
+      "用户名",
+      "。该顾客后续保护请求需重新登录，已有购物车和订单保留；不会自动取消订单或返还库存。",
+      "确认禁用该顾客",
+      "当前普通顾客",
+      "用户名",
+      "已禁用。启用后须正常重新登录，旧会话不会恢复；原有购物车、订单与成交快照保留。",
+      "启用该顾客"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/customers/index.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('普通顾客管理 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "A08",
+          "th:attr": "data-customer-count=${customerPage.totalCount},data-result-count=${#lists.size(customerPage.items)},data-page=${customerPage.page},data-size=${customerPage.size},data-total-pages=${customerPage.totalPages}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "customer-filter-title"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "get",
+          "th:action": "@{/customers}",
+          "data-customer-filter": null
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "id": "customers-q",
+          "name": "q",
+          "th:value": "${customerQuery.q}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "customers-q-help"
+        }
+      },
+      {
+        "tag": "select",
+        "attrs": {
+          "id": "customers-status",
+          "name": "status"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${customerQuery.status == 'ALL'}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:each": "state : ${customerStatuses}",
+          "th:value": "${state.value}",
+          "th:selected": "${customerQuery.status == state.value}",
+          "th:text": "${state.label}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "id": "customers-size",
+          "name": "size",
+          "th:value": "${customerPage.size}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "page"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/customers(status='ALL',page=1,size=${customerPage.size})}",
+          "data-customer-clear": null
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${customerPage.totalCount}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:if": "${customerPage.totalCount > 0}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${customerPage.page}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${customerPage.totalPages}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:if": "${customerPage.empty}",
+          "data-customers-empty": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:if": "${customerPage.page > (customerPage.totalPages > 0 ? customerPage.totalPages : 1)}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/customers(q=${customerQuery.q},status=${customerQuery.status},page=${customerPage.firstValidPage},size=${customerPage.size})}",
+          "th:attr": "data-page-link=${customerPage.firstValidPage}",
+          "th:text": "${'返回第 ' + customerPage.firstValidPage + ' 页'}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:unless": "${customerPage.page > (customerPage.totalPages > 0 ? customerPage.totalPages : 1)}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "th:text": "${customerQuery.q != '' or customerQuery.status != 'ALL' ? '暂无匹配顾客' : '暂无普通顾客'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/customers(status='ALL',page=1,size=${customerPage.size})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:unless": "${customerPage.empty}"
+        }
+      },
+      {
+        "tag": "table",
+        "attrs": {
+          "data-customer-list": null
+        }
+      },
+      {
+        "tag": "tr",
+        "attrs": {
+          "th:each": "item : ${customerPage.items}",
+          "th:attr": "data-customer-id=${item.id},data-customer-username=${item.username},data-customer-status=${item.status}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${item.id}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/customers/{id}(id=${item.id})}",
+          "th:text": "${item.username}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${item.displayName}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${item.statusLabel}"
+        }
+      },
+      {
+        "tag": "time",
+        "attrs": {
+          "th:text": "${item.createdAtDisplay}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/customers/{id}(id=${item.id})}",
+          "data-customer-detail-link": null
+        }
+      },
+      {
+        "tag": "nav",
+        "attrs": {
+          "th:if": "${customerPage.totalCount > 0}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${customerPage.hasPrevious}",
+          "th:href": "@{/customers(q=${customerQuery.q},status=${customerQuery.status},page=${customerPage.page - 1},size=${customerPage.size})}",
+          "th:attr": "data-page-link=${customerPage.page - 1}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:unless": "${customerPage.hasPrevious}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${customerPage.page}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${customerPage.totalPages}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${customerPage.hasNext}",
+          "th:href": "@{/customers(q=${customerQuery.q},status=${customerQuery.status},page=${customerPage.page + 1},size=${customerPage.size})}",
+          "th:attr": "data-page-link=${customerPage.page + 1}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:unless": "${customerPage.hasNext}"
+        }
+      }
+    ],
+    "text": [
+      "普通顾客管理",
+      "管理控制台",
+      "/",
+      "普通顾客管理",
+      "教学账号管理",
+      "普通顾客管理",
+      "按用户名与启停状态查询普通顾客，查看教学资料与关联订单。",
+      "返回控制台",
+      "查询顾客",
+      "用户名包含",
+      "最多 50 个字符；% 和 _ 按普通字符查询。",
+      "启停状态",
+      "全部状态",
+      "顾客状态",
+      "每页条数",
+      "查询顾客",
+      "清除条件",
+      "共",
+      "0",
+      "位普通顾客",
+      "，第",
+      "1",
+      "页 / 共",
+      "1",
+      "页",
+      "按顾客 ID 升序显示，仅包含普通顾客。",
+      "当前页超出顾客范围",
+      "查询条件保持不变，请返回有效页继续查看。",
+      "返回有效页",
+      "暂无普通顾客",
+      "可调整用户名、启停状态，或清除条件重新查看。",
+      "清除条件",
+      "普通顾客清单",
+      "顾客 ID",
+      "用户名",
+      "显示名",
+      "启停状态",
+      "创建时间",
+      "操作",
+      "0",
+      "用户名",
+      "显示名",
+      "启用",
+      "创建时间",
+      "北京时间",
+      "查看详情",
+      "上一页",
+      "上一页",
+      "第",
+      "1",
+      "页 / 共",
+      "1",
+      "页",
+      "下一页",
+      "下一页"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/dashboard-error.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('控制台暂不可用 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "A02",
+          "data-dashboard-unavailable": null,
+          "data-error-status": "500"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "dashboard-error-title"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}",
+          "data-dashboard-retry": null
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/customers}"
+        }
+      }
+    ],
+    "text": [
+      "控制台暂不可用",
+      "500",
+      "控制台暂不可用",
+      "当前无法读取统计，请稍后重试。",
+      "本页未展示数量，避免把读取失败当作没有数据。",
+      "错误代码：",
+      "DASHBOARD_QUERY_FAILED",
+      "重新读取控制台",
+      "前往顾客列表"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/error/400.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('请求参数有误', ~{::errorContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "errorContent",
+          "data-error-status": "400"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "error-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorMessage ?: '请检查输入内容后重新提交。'}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${errorCode ?: 'BAD_REQUEST'}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:if": "${fieldErrors != null and !fieldErrors.isEmpty()}"
+        }
+      },
+      {
+        "tag": "li",
+        "attrs": {
+          "th:each": "item : ${fieldErrors}",
+          "th:text": "${item.value}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      }
+    ],
+    "text": [
+      "请求参数有误",
+      "400",
+      "请求参数有误",
+      "请检查输入内容后重新提交。",
+      "返回原表单修正输入，或回到首页继续浏览。",
+      "错误代码：",
+      "BAD_REQUEST",
+      "请检查输入。",
+      "返回首页"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/error/403.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('请求未获允许', ~{::errorContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "errorContent",
+          "data-error-status": "403"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "error-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorMessage ?: '当前请求无法通过校验。'}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${errorCode ?: 'FORBIDDEN'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      }
+    ],
+    "text": [
+      "请求未获允许",
+      "403",
+      "请求未获允许",
+      "当前请求无法通过校验。",
+      "请刷新页面后重新操作，或回到首页。",
+      "错误代码：",
+      "FORBIDDEN",
+      "返回首页"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/error/404.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('页面未找到', ~{::errorContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "errorContent",
+          "data-error-status": "404"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "error-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorMessage ?: '没有找到你要访问的内容。'}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${errorCode ?: 'NOT_FOUND'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      }
+    ],
+    "text": [
+      "页面未找到",
+      "404",
+      "页面未找到",
+      "没有找到你要访问的内容。",
+      "请检查地址，或回到首页继续浏览。",
+      "错误代码：",
+      "NOT_FOUND",
+      "返回首页"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/error/409.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('当前数据已变化', ~{::errorContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "errorContent",
+          "data-error-status": "409"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "error-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorMessage ?: '当前操作与数据状态冲突。'}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${errorCode ?: 'CONFLICT'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      }
+    ],
+    "text": [
+      "当前数据已变化",
+      "409",
+      "当前数据已变化",
+      "当前操作与数据状态冲突。",
+      "请重新读取原页面的数据，确认后再次操作。",
+      "错误代码：",
+      "CONFLICT",
+      "返回首页"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/error/500.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('暂时无法完成请求', ~{::errorContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "errorContent",
+          "data-error-status": "500"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "error-title"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      }
+    ],
+    "text": [
+      "暂时无法完成请求",
+      "500",
+      "暂时无法完成请求",
+      "服务暂时不可用，请稍后重试。",
+      "请稍后重新访问，或回到首页。",
+      "错误代码：",
+      "INTERNAL_ERROR",
+      "返回首页"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html": {
+    "elements": [
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:fragment": "global"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${globalMessage != null}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${globalMessage}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${globalError != null}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${globalError}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "summary(errors)",
+          "th:if": "${errors != null and !errors.isEmpty()}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "error-summary-title"
+        }
+      },
+      {
+        "tag": "li",
+        "attrs": {
+          "th:each": "item : ${errors}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "${'#' + item.key}",
+          "th:text": "${item.value}"
+        }
+      }
+    ],
+    "text": [
+      "操作已完成。",
+      "请检查操作结果。",
+      "请修正以下输入",
+      "请检查输入。"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/fragments/fields.html": {
+    "elements": [
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "text(id, name, label, value, errors)",
+          "th:with": "hasError=${errors != null and errors.containsKey(name)}"
+        }
+      },
+      {
+        "tag": "label",
+        "attrs": {
+          "th:for": "${id}",
+          "th:text": "${label}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "th:id": "${id}",
+          "th:name": "${name}",
+          "th:value": "${value}",
+          "th:attr": "aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${hasError}",
+          "th:id": "${id + '-error'}",
+          "th:text": "${errors.get(name)}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "number(id, name, label, value, min, max, step, errors)",
+          "th:with": "hasError=${errors != null and errors.containsKey(name)}"
+        }
+      },
+      {
+        "tag": "label",
+        "attrs": {
+          "th:for": "${id}",
+          "th:text": "${label}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "th:id": "${id}",
+          "th:name": "${name}",
+          "th:value": "${value}",
+          "th:min": "${min}",
+          "th:max": "${max}",
+          "th:step": "${step}",
+          "th:attr": "aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${hasError}",
+          "th:id": "${id + '-error'}",
+          "th:text": "${errors.get(name)}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "password(id, name, label, errors)",
+          "th:with": "hasError=${errors != null and errors.containsKey(name)}"
+        }
+      },
+      {
+        "tag": "label",
+        "attrs": {
+          "th:for": "${id}",
+          "th:text": "${label}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "th:id": "${id}",
+          "th:name": "${name}",
+          "th:attr": "aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${hasError}",
+          "th:id": "${id + '-error'}",
+          "th:text": "${errors.get(name)}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "th:fragment": "csrf",
+          "name": "_csrf",
+          "th:value": "${csrfToken}"
+        }
+      }
+    ],
+    "text": [
+      "字段",
+      "请检查输入。",
+      "数量",
+      "请检查输入。",
+      "密码",
+      "请检查密码。"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/fragments/images.html": {
+    "elements": [
+      {
+        "tag": "img",
+        "attrs": {
+          "th:fragment": "image(path, altText)",
+          "th:with": "fallback=${defaultCoverImage ?: 'images/catalog-placeholder.svg'},safePath=${path != null and #strings.startsWith(path, 'images/') and !#strings.contains(path, '..') and !#strings.contains(path, ':') and !#strings.contains(path, '%') and !#strings.contains(path, '?') and !#strings.contains(path, '#') ? path : fallback}",
+          "th:src": "@{${'/' + safePath}}",
+          "th:alt": "${altText ?: '校园文创商品'}",
+          "th:attr": "data-image-fallback=@{${'/' + fallback}}"
+        }
+      }
+    ],
+    "text": []
+  },
+  "csucampuscraft-admin/src/main/resources/templates/fragments/layout.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:fragment": "page(pageTitle, pageContent)"
+        }
+      },
+      {
+        "tag": "head",
+        "attrs": {
+          "th:fragment": "head(pageTitle)"
+        }
+      },
+      {
+        "tag": "meta",
+        "attrs": {
+          "name": "viewport"
+        }
+      },
+      {
+        "tag": "title",
+        "attrs": {
+          "th:text": "${pageTitle}"
+        }
+      },
+      {
+        "tag": "link",
+        "attrs": {
+          "th:href": "@{/css/app.css}"
+        }
+      },
+      {
+        "tag": "script",
+        "attrs": {
+          "th:src": "@{/js/app.js}"
+        }
+      },
+      {
+        "tag": "body",
+        "attrs": {
+          "th:attr": "data-csucampuscraft-app=${appId},data-authenticated=${authenticated}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${siteName ?: 'CSUCampusCraft'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${authenticated}",
+          "th:href": "@{/categories}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${authenticated}",
+          "th:href": "@{/products}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${authenticated}",
+          "th:href": "@{/orders}",
+          "data-admin-orders-link": null
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${authenticated}",
+          "th:href": "@{/customers}",
+          "data-admin-customers-link": null
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${appId == 'admin' ? '管理端' : '用户端'}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:if": "${appId == 'user'}",
+          "th:attr": "aria-label=${'购物车，' + (cartQuantity ?: 0) + ' 件'}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "id": "cart-quantity",
+          "th:attr": "data-cart-quantity=${cartQuantity ?: 0}",
+          "th:text": "${cartQuantity ?: 0}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:unless": "${authenticated}",
+          "th:href": "@{/login}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:if": "${authenticated}",
+          "data-current-user": null,
+          "th:text": "${currentUser.displayName}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "th:if": "${authenticated}",
+          "method": "post",
+          "th:action": "@{/logout}",
+          "data-submit-state": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/alerts :: global}"
+        }
+      },
+      {
+        "tag": "main",
+        "attrs": {
+          "id": "main-content"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "${pageContent}"
+        }
+      }
+    ],
+    "text": [
+      "CSUCampusCraft",
+      "跳到主要内容",
+      "CSU",
+      "CSUCampusCraft",
+      "首页",
+      "分类管理",
+      "商品管理",
+      "订单管理",
+      "顾客管理",
+      "用户端",
+      "购物车",
+      "0",
+      "登录",
+      "当前账号",
+      "退出",
+      "CSUCampusCraft 校园文创商城",
+      "课程实验 · 教学模拟"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/home.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('管理控制台 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "A02",
+          "th:attr": "data-on-sale-count=${dashboardSummary.onSaleProductCount},data-draft-count=${dashboardSummary.draftProductCount},data-paid-order-count=${dashboardSummary.paidOrderCount},data-enabled-customer-count=${dashboardSummary.enabledCustomerCount},data-disabled-customer-count=${dashboardSummary.disabledCustomerCount}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${currentUser.displayName}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "dashboard-counts-title"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}",
+          "data-dashboard-refresh": null
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "data-dashboard-counts": null
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products(status='ON_SALE')}",
+          "data-dashboard-card": "on-sale-products"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "data-dashboard-count": null,
+          "th:text": "${dashboardSummary.onSaleProductCount}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products(status='DRAFT')}",
+          "data-dashboard-card": "draft-products"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "data-dashboard-count": null,
+          "th:text": "${dashboardSummary.draftProductCount}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders(status='PAID')}",
+          "data-dashboard-card": "paid-orders"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "data-dashboard-count": null,
+          "th:text": "${dashboardSummary.paidOrderCount}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/customers(status='ENABLED')}",
+          "data-dashboard-card": "enabled-customers"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "data-dashboard-count": null,
+          "th:text": "${dashboardSummary.enabledCustomerCount}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/customers(status='DISABLED')}",
+          "data-dashboard-card": "disabled-customers"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "data-dashboard-count": null,
+          "th:text": "${dashboardSummary.disabledCustomerCount}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "dashboard-modules-title"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/categories}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/customers}"
+        }
+      }
+    ],
+    "text": [
+      "管理控制台",
+      "CSUCampusCraft 管理端",
+      "管理控制台",
+      "当前管理员：",
+      "管理员",
+      "。查看当前业务数量，进入相应列表继续处理。",
+      "当前数量",
+      "刷新统计",
+      "上架商品",
+      "—",
+      "包含售罄商品",
+      "查看上架商品 →",
+      "草稿商品",
+      "—",
+      "尚未上架或已下架",
+      "查看草稿商品 →",
+      "待发货订单",
+      "—",
+      "已完成模拟支付",
+      "查看待发货订单 →",
+      "启用普通顾客",
+      "—",
+      "仅统计普通顾客",
+      "查看启用顾客 →",
+      "禁用普通顾客",
+      "—",
+      "原有历史数据保留",
+      "查看禁用顾客 →",
+      "以上为本次读取时的当前数量。完成商品上下架、订单支付或发货、顾客启停后，可刷新核对。",
+      "管理入口",
+      "分类管理",
+      "维护校园主题与二级分类。",
+      "商品与相册",
+      "维护商品、上下架、增量补货；从商品进入相册。",
+      "订单管理",
+      "查询成交快照，核对后模拟发货。",
+      "普通顾客管理",
+      "查询教学账号、查看关联订单与启停状态。"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/login.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('管理员登录 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "A01"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${loginError != null}",
+          "data-auth-error": null
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${loginError}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/alerts :: summary(${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/login}",
+          "data-submit-state": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "returnUrl",
+          "th:value": "${returnUrl}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text('username','username','用户名',${username},${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: password('password','password','密码',${fieldErrors})}"
+        }
+      }
+    ],
+    "text": [
+      "管理员登录",
+      "CSUCampusCraft 管理端",
+      "管理员登录",
+      "请使用已启用的管理员账号登录。",
+      "登录失败，请检查账号。",
+      "登录管理端",
+      "会话过期或退出后，请重新登录。用户端与管理端的登录状态相互独立。"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('发货操作提示 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "A07",
+          "data-order-action-conflict": null,
+          "th:attr": "data-error-status=${errorStatus},data-error-code=${errorCode},data-order-no=${orderNo}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorStatus}"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "order-action-conflict-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorMessage}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${errorCode}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${orderNo != null}",
+          "th:href": "@{/orders/{orderNo}(orderNo=${orderNo})}",
+          "data-return-order": null
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders}",
+          "data-return-orders": null
+        }
+      }
+    ],
+    "text": [
+      "发货操作提示",
+      "409",
+      "当前状态无法发货",
+      "请返回订单详情查看当前状态。",
+      "仅待发货订单可首次发货；请重新查看本单状态与时间记录。",
+      "错误代码：",
+      "ORDER_SHIPPING_STATE_CONFLICT",
+      "查看订单详情",
+      "返回订单列表"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/orders/detail.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('管理订单详情 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "A07",
+          "th:with": "order=${orderDetail.order}",
+          "th:attr": "data-order-id=${order.id},data-order-no=${order.orderNo},data-user-id=${order.userId},data-order-status=${order.status},data-order-total=${order.totalAmount},data-order-item-count=${#lists.size(orderDetail.items)}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders}",
+          "data-return-orders": null
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "order-overview-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "data-order-number": null,
+          "th:text": "${order.orderNo}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "data-order-status-label": null,
+          "th:text": "${order.statusLabel}"
+        }
+      },
+      {
+        "tag": "time",
+        "attrs": {
+          "th:text": "${order.createdAtDisplay}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-order-amount": null,
+          "th:text": "${'¥' + #numbers.formatDecimal(order.totalAmount,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${order.customerDisplayName}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${order.customerUsername}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${order.userId}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/customers/{id}(id=${order.userId})}",
+          "data-customer-detail-link": null
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${order.status == 'PENDING_PAYMENT'}",
+          "data-shipping-gate": null
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${order.status == 'CANCELLED'}",
+          "data-shipping-gate": null
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${order.status == 'PAID'}",
+          "data-shipping-gate": null
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${order.status == 'SHIPPED' or order.status == 'COMPLETED'}",
+          "data-shipping-gate": null
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${order.paymentNo != null}",
+          "data-payment-receipt": null
+        }
+      },
+      {
+        "tag": "h3",
+        "attrs": {
+          "id": "order-payment-title"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-payment-method": null,
+          "th:text": "${order.paymentMethod}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-payment-no": null,
+          "th:text": "${order.paymentNo}"
+        }
+      },
+      {
+        "tag": "time",
+        "attrs": {
+          "data-payment-time": null,
+          "th:text": "${order.paidAtDisplay}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "order-items-title"
+        }
+      },
+      {
+        "tag": "table",
+        "attrs": {
+          "data-order-items": null
+        }
+      },
+      {
+        "tag": "tr",
+        "attrs": {
+          "th:each": "line : ${orderDetail.items}",
+          "th:attr": "data-order-item-id=${line.id},data-order-product-id=${line.productId},data-unit-price=${line.unitPrice},data-quantity=${line.quantity},data-line-amount=${line.lineAmount},data-snapshot-sku=${line.skuSnapshot},data-snapshot-name=${line.productNameSnapshot},data-snapshot-cover=${line.coverImageSnapshot}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/images :: image(${line.coverImageSnapshot},${line.productNameSnapshot})}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${line.productNameSnapshot}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${line.skuSnapshot}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${'¥' + #numbers.formatDecimal(line.unitPrice,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${line.quantity}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${'¥' + #numbers.formatDecimal(line.lineAmount,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "order-shipping-title"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-shipping-value": "receiverName",
+          "data-shipping-name": null,
+          "th:text": "${order.receiverName}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-shipping-value": "receiverPhone",
+          "data-shipping-phone": null,
+          "th:text": "${order.receiverPhone}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-shipping-value": "receiverAddress",
+          "data-shipping-address": null,
+          "th:text": "${order.receiverAddress}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "order-timeline-title"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${order.createdAtDisplay}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${order.paidAtDisplay != null}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${order.paidAtDisplay}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${order.cancelledAtDisplay != null}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-cancelled-time": null,
+          "th:text": "${order.cancelledAtDisplay}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${order.shippedAtDisplay != null}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-shipped-time": null,
+          "th:text": "${order.shippedAtDisplay}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${order.completedAtDisplay != null}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${order.completedAtDisplay}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:if": "${order.status == 'PAID'}",
+          "data-order-ship-actions": null
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "order-ship-title"
+        }
+      },
+      {
+        "tag": "details",
+        "attrs": {
+          "data-ship-confirmation": null
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "order-ship-help"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${order.orderNo}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/orders/{orderNo}/ship(orderNo=${order.orderNo})}",
+          "data-submit-state": null,
+          "data-ship-order-form": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "button",
+        "attrs": {
+          "data-confirm-ship": null,
+          "data-submit-label": "正在发货…"
+        }
+      }
+    ],
+    "text": [
+      "管理订单详情",
+      "管理端首页",
+      "/",
+      "订单管理",
+      "/",
+      "订单详情",
+      "教学模拟履约",
+      "订单详情",
+      "核对本单成交、收货快照及已记录的状态时间。",
+      "返回订单列表",
+      "订单信息",
+      "订单号",
+      "待支付",
+      "创建时间",
+      "创建时间",
+      "（北京时间）",
+      "订单金额",
+      "¥0.00",
+      "顾客",
+      "顾客显示名",
+      "/",
+      "用户名",
+      "/ ID",
+      "0",
+      "顾客资料",
+      "查看该顾客资料",
+      "订单尚未支付，完成模拟支付后才可发货。",
+      "订单已取消，不能发货。保留原成交快照与取消时间。",
+      "订单待发货，请先核对下方收货快照，再确认模拟发货。",
+      "本单已完成发货操作，下方展示首次发货时间。",
+      "首次支付凭证",
+      "支付方式",
+      "MOCK",
+      "支付凭证",
+      "支付凭证",
+      "首次支付时间",
+      "支付时间",
+      "（北京时间）",
+      "成交商品",
+      "商品名称、SKU、封面与金额均为成交快照。",
+      "本单商品快照",
+      "商品",
+      "成交单价",
+      "数量",
+      "成交小计",
+      "成交商品名称",
+      "SKU：",
+      "SKU",
+      "¥0.00",
+      "0",
+      "¥0.00",
+      "收货信息",
+      "下单时保存的收货快照，用于教学模拟配送。",
+      "收货人",
+      "收货人",
+      "联系电话",
+      "联系电话",
+      "完整地址",
+      "收货地址",
+      "状态时间",
+      "仅展示已发生的状态时间，均为北京时间。",
+      "创建订单",
+      "创建时间",
+      "支付成功",
+      "支付时间",
+      "取消订单",
+      "取消时间",
+      "首次模拟发货",
+      "发货时间",
+      "确认收货",
+      "完成时间",
+      "模拟发货",
+      "仅处理当前待发货订单；这是教学模拟，不生成真实物流单。",
+      "模拟发货",
+      "将为订单",
+      "订单号",
+      "确认模拟发货。请先核对上方收货信息；发货不会再次扣减库存。",
+      "确认模拟发货"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/orders/index.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('订单管理 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "A06",
+          "th:attr": "data-order-count=${orderPage.totalCount},data-result-count=${#lists.size(orderPage.items)},data-page=${orderPage.page},data-size=${orderPage.size},data-total-pages=${orderPage.totalPages}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "orders-filter-title"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "get",
+          "th:action": "@{/orders}",
+          "data-order-filter": null
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "id": "orders-number",
+          "name": "orderNo",
+          "th:value": "${orderQuery.orderNo}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "orders-number-help"
+        }
+      },
+      {
+        "tag": "select",
+        "attrs": {
+          "id": "orders-status",
+          "name": "status"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${orderQuery.status == 'ALL'}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:each": "state : ${orderStatuses}",
+          "th:value": "${state.value}",
+          "th:selected": "${orderQuery.status == state.value}",
+          "th:text": "${state.label}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "id": "orders-user",
+          "name": "userId",
+          "th:value": "${orderQuery.userId}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "orders-user-help"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "id": "orders-size",
+          "name": "size",
+          "th:value": "${orderPage.size}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "page"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders(status='ALL',page=1,size=${orderPage.size})}",
+          "data-order-clear": null
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${selectedCustomer != null}",
+          "data-customer-filter": null,
+          "th:attr": "data-user-id=${selectedCustomer.id}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${selectedCustomer.id}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${selectedCustomer.username}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders(orderNo=${orderQuery.orderNo},status=${orderQuery.status},page=1,size=${orderPage.size})}",
+          "data-clear-customer": null
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${orderPage.totalCount}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:if": "${orderPage.totalCount > 0}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${orderPage.page}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${orderPage.totalPages}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:if": "${orderPage.empty}",
+          "data-orders-empty": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:if": "${orderPage.page > (orderPage.totalPages > 0 ? orderPage.totalPages : 1)}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders(orderNo=${orderQuery.orderNo},status=${orderQuery.status},userId=${orderQuery.userId},page=${orderPage.firstValidPage},size=${orderPage.size})}",
+          "th:attr": "data-page-link=${orderPage.firstValidPage}",
+          "th:text": "${'返回第 ' + orderPage.firstValidPage + ' 页'}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:unless": "${orderPage.page > (orderPage.totalPages > 0 ? orderPage.totalPages : 1)}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders(status='ALL',page=1,size=${orderPage.size})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:unless": "${orderPage.empty}"
+        }
+      },
+      {
+        "tag": "table",
+        "attrs": {
+          "data-order-list": null
+        }
+      },
+      {
+        "tag": "tr",
+        "attrs": {
+          "th:each": "item : ${orderPage.items}",
+          "th:attr": "data-order-id=${item.id},data-order-no=${item.orderNo},data-user-id=${item.userId},data-order-status=${item.status},data-order-total=${item.totalAmount}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders/{orderNo}(orderNo=${item.orderNo})}",
+          "th:text": "${item.orderNo}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${item.customerDisplayName}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${item.customerUsername}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${item.userId}"
+        }
+      },
+      {
+        "tag": "time",
+        "attrs": {
+          "th:text": "${item.createdAtDisplay}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${'¥' + #numbers.formatDecimal(item.totalAmount,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${item.statusLabel}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders/{orderNo}(orderNo=${item.orderNo})}",
+          "data-order-detail-link": null
+        }
+      },
+      {
+        "tag": "nav",
+        "attrs": {
+          "th:if": "${orderPage.totalCount > 0}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${orderPage.hasPrevious}",
+          "th:href": "@{/orders(orderNo=${orderQuery.orderNo},status=${orderQuery.status},userId=${orderQuery.userId},page=${orderPage.page - 1},size=${orderPage.size})}",
+          "th:attr": "data-page-link=${orderPage.page - 1}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:unless": "${orderPage.hasPrevious}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${orderPage.page}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${orderPage.totalPages}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${orderPage.hasNext}",
+          "th:href": "@{/orders(orderNo=${orderQuery.orderNo},status=${orderQuery.status},userId=${orderQuery.userId},page=${orderPage.page + 1},size=${orderPage.size})}",
+          "th:attr": "data-page-link=${orderPage.page + 1}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:unless": "${orderPage.hasNext}"
+        }
+      }
+    ],
+    "text": [
+      "订单管理",
+      "管理端首页",
+      "/",
+      "订单管理",
+      "教学模拟履约",
+      "订单管理",
+      "查询全站订单，核对成交快照与允许的发货操作。",
+      "商品管理",
+      "查询订单",
+      "完整订单号",
+      "最多 40 个字符，精确匹配，不区分大小写。",
+      "订单状态",
+      "全部状态",
+      "订单状态",
+      "顾客 ID",
+      "可留空；按已有普通顾客精确筛选。",
+      "每页条数",
+      "查询订单",
+      "清除条件",
+      "当前顾客：ID",
+      "0",
+      "/",
+      "用户名",
+      "清除顾客条件",
+      "共",
+      "0",
+      "张订单",
+      "，第",
+      "1",
+      "页 / 共",
+      "1",
+      "页",
+      "按创建时间、订单 ID 倒序显示。",
+      "当前页超出订单范围",
+      "筛选条件保持不变，可以返回有效页面继续查看。",
+      "返回有效页",
+      "暂无匹配订单",
+      "请核对完整订单号和顾客 ID，或清除条件查看全站订单。",
+      "清除条件",
+      "全站订单清单",
+      "订单号",
+      "顾客",
+      "创建时间",
+      "订单金额",
+      "状态",
+      "操作",
+      "订单号",
+      "顾客显示名",
+      "用户名",
+      "/ ID",
+      "0",
+      "创建时间",
+      "北京时间",
+      "¥0.00",
+      "待支付",
+      "查看详情",
+      "上一页",
+      "上一页",
+      "第",
+      "1",
+      "页 / 共",
+      "1",
+      "页",
+      "下一页",
+      "下一页"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/products/form.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page(${editing ? '编辑商品 · CSUCampusCraft' : '新建商品 · CSUCampusCraft'}, ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "A05",
+          "th:attr": "data-product-id=${product == null ? null : product.id},data-version=${product == null ? 0 : product.version}"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "th:text": "${editing ? '编辑商品' : '新建商品'}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${editing ? '修改资料时保留现有 SKU、库存和上架状态。' : '新商品先保存为草稿，检查后再上架。'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "${returnUrl}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${editing}",
+          "th:href": "@{/products/{id}/images(id=${product.id})}",
+          "data-album-link": null
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${editing}",
+          "th:href": "@{/products/{id}/edit(id=${product.id},returnUrl=${returnUrl})}",
+          "data-reload-product": null
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${#lists.isEmpty(categories)}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/categories/new}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/alerts :: summary(${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "${editing ? '/products/' + product.id : '/products'}",
+          "data-submit-state": null,
+          "data-product-form": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "returnUrl",
+          "th:value": "${returnUrl}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "th:if": "${editing}",
+          "name": "version",
+          "th:value": "${form.version}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "version",
+          "th:if": "${editing}",
+          "th:text": "${fieldErrors.containsKey('version') ? fieldErrors.get('version') : '保存时核对商品资料状态；提示过期时请重新载入。'}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:if": "${!editing}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text('sku','sku','SKU',${form.sku},${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${editing}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "id": "sku",
+          "th:value": "${product.sku}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:with": "hasError=${fieldErrors.containsKey('categoryId')}"
+        }
+      },
+      {
+        "tag": "select",
+        "attrs": {
+          "id": "categoryId",
+          "name": "categoryId",
+          "th:attr": "aria-invalid=${hasError},aria-describedby=${hasError ? 'categoryId-error' : null}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:each": "choice : ${categories}",
+          "th:value": "${choice.id}",
+          "th:selected": "${form.categoryId != null and form.categoryId.strip() == choice.id.toString()}",
+          "th:text": "${choice.label}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "categoryId-error",
+          "th:if": "${hasError}",
+          "th:text": "${fieldErrors.get('categoryId')}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text('name','name','商品名称',${form.name},${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text('price','price','售价（元）',${form.price},${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:if": "${!editing}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: number('stock','stock','初始库存',${form.stock},0,2147483647,1,${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${editing}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "id": "stock",
+          "th:value": "${product.stock}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: number('sortOrder','sortOrder','排序值',${form.sortOrder},0,2147483647,1,${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:with": "hasError=${fieldErrors.containsKey('summary')}"
+        }
+      },
+      {
+        "tag": "textarea",
+        "attrs": {
+          "id": "summary",
+          "name": "summary",
+          "th:text": "${form.summary}",
+          "th:attr": "aria-invalid=${hasError},aria-describedby=${hasError ? 'summary-error' : 'summary-help'}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "summary-help"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "summary-error",
+          "th:if": "${hasError}",
+          "th:text": "${fieldErrors.get('summary')}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:with": "hasError=${fieldErrors.containsKey('description')}"
+        }
+      },
+      {
+        "tag": "textarea",
+        "attrs": {
+          "id": "description",
+          "name": "description",
+          "th:text": "${form.description}",
+          "th:attr": "aria-invalid=${hasError},aria-describedby=${hasError ? 'description-error' : 'description-help'}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "description-help"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "description-error",
+          "th:if": "${hasError}",
+          "th:text": "${fieldErrors.get('description')}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text('coverImage','coverImage','封面路径',${form.coverImage},${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "button",
+        "attrs": {
+          "th:disabled": "${#lists.isEmpty(categories)}",
+          "th:text": "${editing ? '保存资料' : '保存草稿'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "${returnUrl}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:if": "${editing}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "status-heading"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${product.status == 'DRAFT' ? '草稿' : '上架'}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:if": "${product.status == 'ON_SALE' and product.stock == 0}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "th:if": "${product.status == 'DRAFT'}",
+          "method": "post",
+          "th:action": "@{/products/{id}/publish(id=${product.id})}",
+          "data-submit-state": null,
+          "data-product-action": "publish"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "returnUrl",
+          "th:value": "${returnUrl}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "version",
+          "th:value": "${product.version}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "th:if": "${product.status == 'ON_SALE'}",
+          "method": "post",
+          "th:action": "@{/products/{id}/unpublish(id=${product.id})}",
+          "data-submit-state": null,
+          "data-product-action": "unpublish"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "returnUrl",
+          "th:value": "${returnUrl}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "version",
+          "th:value": "${product.version}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:if": "${editing}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "restock-heading"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${product.stock}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/products/{id}/restock(id=${product.id})}",
+          "data-submit-state": null,
+          "data-restock-form": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "returnUrl",
+          "th:value": "${returnUrl}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: number('quantity','quantity','本次增加数量',${restockQuantity},1,2147483647,1,${fieldErrors})}"
+        }
+      }
+    ],
+    "text": [
+      "商品资料",
+      "商品资料",
+      "商品资料",
+      "商品说明",
+      "返回商品列表",
+      "管理商品相册",
+      "重新载入编辑页",
+      "还没有可用的二级分类，请先创建分类。",
+      "前往分类管理",
+      "资料状态",
+      "SKU（只读）",
+      "二级分类",
+      "请选择二级分类",
+      "二级分类",
+      "请选择分类。",
+      "当前库存（只读）",
+      "SKU 最多 40 个字符，名称最多 120 个字符。售价为 0.01–9,999,999,999.99 元，最多两位小数。",
+      "商品摘要",
+      "可选，最多 500 个字符。",
+      "摘要过长。",
+      "设计说明",
+      "可选，按普通文本保存；内容总量最多 65,535 字节。",
+      "设计说明过长。",
+      "可留空。填写时使用 images/ 下的站内相对路径，最多 255 个字符。",
+      "保存",
+      "取消",
+      "商品状态",
+      "当前为",
+      "草稿",
+      "（售罄）",
+      "上架商品",
+      "下架商品",
+      "增量补货",
+      "当前库存",
+      "0",
+      "件。提交一次表示增加一次指定数量。",
+      "确认补货"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/products/images.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('商品相册 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "A10",
+          "th:attr": "data-product-id=${product.id},data-product-version=${productVersion},data-image-count=${#lists.size(images)}"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "th:text": "${product.name}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products/{id}/edit(id=${product.id})}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "${reloadUrl}",
+          "data-reload-album": null
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "${userDetailUrl}",
+          "data-user-detail": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/alerts :: summary(${errorAnchors})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:if": "${formImageId != null and !formImagePresent}",
+          "th:with": "prefix=${'image-' + formImageId + '-'}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "album-failed-target-title"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${formImageId}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:id": "${prefix + 'productVersion'}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${imageForm.productVersion ?: '未填写'}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:if": "${fieldErrors.containsKey('productVersion')}",
+          "th:text": "${fieldErrors.get('productVersion')}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:id": "${prefix + 'sortOrder'}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${imageForm.sortOrder ?: '未填写'}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:if": "${fieldErrors.containsKey('sortOrder')}",
+          "th:text": "${fieldErrors.get('sortOrder')}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:id": "${prefix + 'imagePath'}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${imageForm.imagePath ?: '未填写'}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:if": "${fieldErrors.containsKey('imagePath')}",
+          "th:text": "${fieldErrors.get('imagePath')}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:id": "${prefix + 'altText'}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${imageForm.altText ?: '未填写'}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:if": "${fieldErrors.containsKey('altText')}",
+          "th:text": "${fieldErrors.get('altText')}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "${reloadUrl}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/images :: image(${product.coverImage},${product.name})}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "album-product-title"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${product.sku}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${productVersion}",
+          "data-current-version": null
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${product.status == 'ON_SALE' ? '已上架' : '草稿 / 下架'}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${product.coverImage}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${product.status != 'ON_SALE'}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:with": "addFailed=${formImageId == null and formAction == 'add'}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "album-add-title"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/products/{id}/images(id=${product.id})}",
+          "data-submit-state": null,
+          "data-image-action": "add"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "productVersion",
+          "th:value": "${addFailed ? imageForm.productVersion : productVersion}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "add-productVersion",
+          "th:text": "${addFailed and fieldErrors.containsKey('productVersion') ? fieldErrors.get('productVersion') : '提交时核对商品版本；提示过期时请重新载入相册。'}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text('add-imagePath','imagePath','图片路径',${addFailed ? imageForm.imagePath : ''},${addFailed ? fieldErrors : null})}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text('add-altText','altText','替代文本（可选）',${addFailed ? imageForm.altText : ''},${addFailed ? fieldErrors : null})}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text('add-sortOrder','sortOrder','排序值（非负整数）',${addFailed ? imageForm.sortOrder : '0'},${addFailed ? fieldErrors : null})}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "album-gallery-title"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${#lists.size(images)}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${#lists.isEmpty(images)}",
+          "data-image-empty": null
+        }
+      },
+      {
+        "tag": "article",
+        "attrs": {
+          "th:each": "image : ${images}",
+          "th:attr": "data-image-id=${image.id},data-sort-order=${image.sortOrder}",
+          "th:with": "prefix=${'image-' + image.id + '-'},editFailed=${formImageId != null and formImageId == image.id and formAction == 'edit'},removeFailed=${formImageId != null and formImageId == image.id and formAction == 'remove'}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/images :: image(${image.imagePath},${#strings.isEmpty(image.altText) ? product.name : image.altText})}"
+        }
+      },
+      {
+        "tag": "figcaption",
+        "attrs": {
+          "th:text": "${'图片编号 ' + image.id}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${image.imagePath}"
+        }
+      },
+      {
+        "tag": "h3",
+        "attrs": {
+          "th:text": "${'图片 ' + image.id}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:id": "${prefix + 'productVersion'}",
+          "th:text": "${(editFailed or removeFailed) and fieldErrors.containsKey('productVersion') ? fieldErrors.get('productVersion') : '排序值相同时按图片编号升序显示。'}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/products/{pid}/images/{iid}(pid=${product.id},iid=${image.id})}",
+          "data-submit-state": null,
+          "data-image-action": "edit",
+          "th:attr": "data-image-id=${image.id}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "productVersion",
+          "th:value": "${editFailed ? imageForm.productVersion : productVersion}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text(${prefix + 'imagePath'},'imagePath','图片路径',${editFailed ? imageForm.imagePath : image.imagePath},${editFailed ? fieldErrors : null})}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text(${prefix + 'altText'},'altText','替代文本（可选）',${editFailed ? imageForm.altText : image.altText},${editFailed ? fieldErrors : null})}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text(${prefix + 'sortOrder'},'sortOrder','排序值（非负整数）',${editFailed ? imageForm.sortOrder : image.sortOrder},${editFailed ? fieldErrors : null})}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/products/{pid}/images/{iid}/remove(pid=${product.id},iid=${image.id})}",
+          "data-submit-state": null,
+          "data-image-action": "remove",
+          "th:attr": "data-image-id=${image.id}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "productVersion",
+          "th:value": "${removeFailed ? imageForm.productVersion : productVersion}"
+        }
+      }
+    ],
+    "text": [
+      "商品相册",
+      "商品相册",
+      "商品名称",
+      "维护已有图片路径、替代文本和展示顺序。",
+      "返回商品列表",
+      "返回商品编辑",
+      "重新载入相册",
+      "查看用户端详情",
+      "核对未保存的提交",
+      "本次操作未保存，目标记录已不在当前相册。请重新载入后核对。",
+      "图片编号",
+      "图片编号",
+      "提交的商品版本",
+      "商品版本",
+      "请重新载入相册。",
+      "提交的排序值",
+      "排序值",
+      "请检查排序值。",
+      "提交的图片路径",
+      "图片路径",
+      "请检查图片路径。",
+      "提交的替代文本",
+      "替代文本",
+      "请检查替代文本。",
+      "重新载入相册，按当前记录继续",
+      "独立封面",
+      "商品与封面",
+      "SKU",
+      "SKU",
+      "商品版本",
+      "0",
+      "商品状态",
+      "商品状态",
+      "封面路径",
+      "images/catalog-placeholder.svg",
+      "封面独立维护；新增、编辑或移除相册记录都不会修改封面。",
+      "当前商品未上架，用户端详情暂不可浏览；上架后可从上方入口查看。",
+      "新增相册图片",
+      "填写项目已有的相对图片路径，无需上传文件。",
+      "商品版本",
+      "1–255 个字符，以 images/ 开头；不接受外部地址、斜杠开头、反斜杠、..、单独的 . 路径段、:、%、?、# 或控制字符。",
+      "最多 120 个字符；留空时使用商品名称。",
+      "留空按 0；先按排序值、再按图片编号升序显示。",
+      "新增图片记录",
+      "当前相册",
+      "共",
+      "0",
+      "张图片。保存后重新读取版本，其他表单以新版本继续操作。",
+      "相册为空，用户端详情回退封面；封面缺图时显示占位图。",
+      "可在上方新增相册图片，商品封面仍独立保留。",
+      "图片编号",
+      "图片路径",
+      "相册图片",
+      "相册顺序",
+      "保存此图片",
+      "内容未变时保存成功且不增加商品版本。",
+      "移除此图片记录",
+      "只移除相册记录，保留静态图片文件和独立封面。"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/products/list.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('商品管理 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "A04",
+          "th:attr": "data-product-count=${total},data-result-count=${#lists.size(products)},data-page=${page},data-size=${size}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products/new(returnUrl=${returnUrl})}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/categories}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "filter-heading"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "get",
+          "th:action": "@{/products}"
+        }
+      },
+      {
+        "tag": "select",
+        "attrs": {
+          "name": "categoryId",
+          "id": "categoryId"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${query.categoryId == null}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:each": "choice : ${categories}",
+          "th:value": "${choice.id}",
+          "th:selected": "${query.categoryId != null and query.categoryId == choice.id}",
+          "th:text": "${choice.label}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "id": "q",
+          "name": "q",
+          "th:value": "${query.q}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "q-help"
+        }
+      },
+      {
+        "tag": "select",
+        "attrs": {
+          "name": "status",
+          "id": "status"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${query.status.name() == 'ALL'}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${query.status.name() == 'DRAFT'}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${query.status.name() == 'ON_SALE'}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "id": "size",
+          "name": "size",
+          "th:value": "${size}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "page"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${total}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${#lists.isEmpty(products)}",
+          "data-product-empty": null
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${total > 0 ? '当前页没有商品，请返回有效页面。' : '暂无符合条件的商品，可调整筛选或新建草稿。'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "${query.path(1)}",
+          "data-page-link": "1"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:unless": "${#lists.isEmpty(products)}"
+        }
+      },
+      {
+        "tag": "tr",
+        "attrs": {
+          "th:each": "item : ${products}",
+          "th:attr": "data-product-id=${item.id},data-sku=${item.sku},data-stock=${item.stock},data-version=${item.version},data-status=${item.status}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${item.name}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${item.sku}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${item.categoryName}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${'¥' + #numbers.formatDecimal(item.price,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${item.stock}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${item.status == 'DRAFT' ? '草稿' : '上架'}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${item.status == 'ON_SALE' and item.stock == 0}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${item.sortOrder}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products/{id}/edit(id=${item.id},returnUrl=${returnUrl})}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "th:if": "${item.status == 'DRAFT'}",
+          "method": "post",
+          "th:action": "@{/products/{id}/publish(id=${item.id})}",
+          "data-submit-state": null,
+          "data-product-action": "publish"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "version",
+          "th:value": "${item.version}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "returnUrl",
+          "th:value": "${returnUrl}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "th:if": "${item.status == 'ON_SALE'}",
+          "method": "post",
+          "th:action": "@{/products/{id}/unpublish(id=${item.id})}",
+          "data-submit-state": null,
+          "data-product-action": "unpublish"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "version",
+          "th:value": "${item.version}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "returnUrl",
+          "th:value": "${returnUrl}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products/{id}/images(id=${item.id})}",
+          "data-album-link": null
+        }
+      },
+      {
+        "tag": "nav",
+        "attrs": {
+          "th:if": "${total > 0}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${hasPrevious}",
+          "th:href": "${query.path(previousPage)}",
+          "th:attr": "data-page-link=${previousPage}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:unless": "${hasPrevious}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${page}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${totalPages}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${hasNext}",
+          "th:href": "${query.path(nextPage)}",
+          "th:attr": "data-page-link=${nextPage}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:unless": "${hasNext}"
+        }
+      }
+    ],
+    "text": [
+      "商品管理",
+      "商品维护",
+      "商品管理",
+      "按主题或二级分类查找草稿与上架商品。",
+      "新建商品",
+      "分类管理",
+      "筛选商品",
+      "主题或分类",
+      "全部分类",
+      "分类",
+      "商品名称",
+      "名称包含查询，最多 120 个字符。",
+      "商品状态",
+      "全部",
+      "草稿",
+      "上架",
+      "每页条数",
+      "查询",
+      "清除筛选",
+      "共",
+      "0",
+      "件商品，默认按排序值和商品编号升序展示。",
+      "暂无商品。",
+      "返回第 1 页",
+      "商品列表",
+      "商品 / SKU",
+      "分类",
+      "售价",
+      "库存",
+      "状态",
+      "排序",
+      "操作",
+      "商品",
+      "SKU",
+      "分类",
+      "¥0.00",
+      "0",
+      "草稿",
+      "售罄",
+      "0",
+      "编辑",
+      "上架",
+      "下架",
+      "管理商品相册",
+      "上一页",
+      "上一页",
+      "第",
+      "1",
+      "页 / 共",
+      "1",
+      "页",
+      "下一页",
+      "下一页"
+    ]
+  },
+  "csucampuscraft-admin/src/main/resources/templates/verification/foundation.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('公共基础验证', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "mainContent"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "verification-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "escaped-text",
+          "th:text": "${echoText}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "data-submit-state": null,
+          "th:action": "@{/__verification/submit}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:replace": "~{fragments/alerts :: summary(${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text('probeText','probeText','文本验证',${echoText},${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: number('probeNumber','probeNumber','数量验证',1,0,99,1,${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:replace": "~{fragments/images :: image('images/verification-missing.svg','验证缺图回退')}"
+        }
+      }
+    ],
+    "text": [
+      "公共基础验证",
+      "此页面仅在 verification 配置启用，无业务数据写入。",
+      "普通文本",
+      "验证提交",
+      "不可用"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/cart/index.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('我的购物车 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "U05",
+          "th:attr": "data-cart-item-count=${cart.itemCount},data-cart-quantity=${cart.quantity},data-cart-invalid-count=${cart.invalidCount},data-cart-all-valid=${cart.allValid}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "${reloadUrl}",
+          "data-reload-cart": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/alerts :: summary(${errorAnchors})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:if": "${formItemId != null and !formItemPresent}",
+          "th:with": "prefix=${'item-' + formItemId + '-'}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "cart-failed-target-title"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:id": "${prefix + 'quantity'}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${cartForm.quantity ?: '未填写'}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:if": "${fieldErrors.containsKey('quantity')}",
+          "th:text": "${fieldErrors.get('quantity')}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:id": "${prefix + 'version'}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${cartForm.version ?: '未填写'}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:if": "${fieldErrors.containsKey('version')}",
+          "th:text": "${fieldErrors.get('version')}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "${reloadUrl}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:if": "${cart.empty}",
+          "data-cart-empty": null
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "cart-empty-title"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:if": "${!cart.empty}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${cart.hasInvalidItems}",
+          "data-cart-invalid-notice": null
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${cart.invalidCount}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${cart.itemCount}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${cart.quantity}"
+        }
+      },
+      {
+        "tag": "tr",
+        "attrs": {
+          "th:each": "line : ${cart.items}",
+          "th:with": "prefix=${'item-' + line.id + '-'},quantityFailed=${formItemId != null and formItemId == line.id and formAction == 'quantity'},removeFailed=${formItemId != null and formItemId == line.id and formAction == 'remove'}",
+          "th:attr": "data-cart-item-id=${line.id},data-product-id=${line.productId},data-quantity=${line.quantity},data-version=${line.version},data-cart-valid=${line.valid},data-invalid-reason=${line.invalidCode}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/images :: image(${line.coverImage},${line.name})}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${line.publicProduct}",
+          "th:href": "@{/products/{id}(id=${line.productId})}",
+          "th:text": "${line.name}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:if": "${!line.publicProduct}",
+          "th:text": "${line.name}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${line.sku}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${'当前库存：' + line.stock}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${line.valid ? '可购买' : line.invalidReason}",
+          "data-cart-line-state": null
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${'¥' + #numbers.formatDecimal(line.price,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/cart/items/{id}/quantity(id=${line.id})}",
+          "data-submit-state": null,
+          "data-cart-action": "quantity",
+          "th:attr": "data-cart-item-id=${line.id}",
+          "th:with": "quantityError=${quantityFailed and fieldErrors.containsKey('quantity')}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "version",
+          "th:value": "${quantityFailed ? cartForm.version : line.version}"
+        }
+      },
+      {
+        "tag": "label",
+        "attrs": {
+          "th:for": "${prefix + 'quantity'}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "quantity",
+          "th:id": "${prefix + 'quantity'}",
+          "th:type": "${quantityError ? 'text' : 'number'}",
+          "th:value": "${quantityFailed ? cartForm.quantity : line.quantity}",
+          "th:attr": "aria-invalid=${quantityError},aria-describedby=${quantityError ? prefix + 'quantity-error ' + prefix + 'quantity-help' : prefix + 'quantity-help'}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${quantityError}",
+          "th:id": "${prefix + 'quantity-error'}",
+          "th:text": "${fieldErrors.get('quantity')}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:id": "${prefix + 'quantity-help'}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:id": "${prefix + 'version'}",
+          "th:if": "${(quantityFailed or removeFailed) and fieldErrors.containsKey('version')}",
+          "th:text": "${fieldErrors.get('version')}",
+          "data-cart-version-feedback": null
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:if": "${line.valid}",
+          "th:text": "${'¥' + #numbers.formatDecimal(line.subtotal,1,'NONE',2,'POINT')}",
+          "th:attr": "data-line-subtotal=${line.subtotal}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:if": "${!line.valid}",
+          "data-line-subtotal-excluded": null
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/cart/items/{id}/remove(id=${line.id})}",
+          "data-submit-state": null,
+          "data-cart-action": "remove",
+          "th:attr": "data-cart-item-id=${line.id}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "version",
+          "th:value": "${removeFailed ? cartForm.version : line.version}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "cart-summary-title",
+          "th:text": "${cart.hasInvalidItems ? '有效条目小计' : '商品金额合计'}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${cart.hasInvalidItems}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${!cart.hasInvalidItems}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:attr": "data-cart-total=${cart.validSubtotal}",
+          "th:text": "${'¥' + #numbers.formatDecimal(cart.validSubtotal,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${cart.allValid}",
+          "th:href": "@{/checkout}",
+          "data-checkout-link": null
+        }
+      },
+      {
+        "tag": "button",
+        "attrs": {
+          "th:if": "${!cart.allValid}",
+          "data-checkout-unavailable": null
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "cart-checkout-help",
+          "th:text": "${cart.empty ? '请先选购商品。' : (cart.hasInvalidItems ? '请先处理失效商品后结算。' : '进入整车确认，核对当前价格与收货信息。')}"
+        }
+      }
+    ],
+    "text": [
+      "我的购物车",
+      "CSUCampusCraft",
+      "我的购物车",
+      "按当前商品价格与库存核对，购物车不预留库存。",
+      "继续选购",
+      "重新载入购物车",
+      "核对未保存的提交",
+      "本次操作未保存，目标记录已不在当前购物车。请重新载入后核对。",
+      "提交的数量",
+      "数量",
+      "请检查数量。",
+      "提交的购物车版本",
+      "版本",
+      "请重新载入购物车。",
+      "重新载入购物车，按当前记录继续",
+      "购物车还是空的",
+      "去挑选喜欢的校园文创，把心意放进购物车。",
+      "去逛逛",
+      "购物车中有",
+      "0",
+      "种失效商品，请调整数量或移除后再结算。",
+      "下架、售罄和超库存条目仍保留在车中，也计入导航件数。",
+      "共",
+      "0",
+      "种商品，",
+      "0",
+      "件",
+      "商品与库存",
+      "当前单价",
+      "数量",
+      "有效小计",
+      "操作",
+      "商品名称",
+      "商品名称",
+      "SKU：",
+      "SKU",
+      "当前库存",
+      "状态",
+      "¥0.00",
+      "购买数量",
+      "请检查数量。",
+      "每种 1–99 件，保存时核对库存。",
+      "更新数量",
+      "请重新载入购物车。",
+      "¥0.00",
+      "不计入小计",
+      "移除",
+      "失效商品也可移除。",
+      "商品金额合计",
+      "失效条目不计入小计，处理完毕后才能整车结算。",
+      "按当前单价计算，实际成交金额以确认时为准。",
+      "¥0.00",
+      "整车结算",
+      "整车结算",
+      "结算说明"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/checkout/conflict.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('结算提示 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "U06",
+          "data-checkout-conflict": null,
+          "th:attr": "data-error-status=${errorStatus},data-error-code=${errorCode}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorStatus}"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "checkout-conflict-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorMessage}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${errorCode}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/cart}",
+          "data-return-cart": null
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${canRetryConfirmation}",
+          "th:href": "@{/checkout}",
+          "data-retry-checkout": null
+        }
+      }
+    ],
+    "text": [
+      "结算提示",
+      "409",
+      "请重新核对购物车",
+      "当前确认已失效，请处理后重新确认。",
+      "购物车保持不变。请先查看购物车，处理商品或数量后再重新确认。",
+      "错误代码：",
+      "CHECKOUT_CONFLICT",
+      "返回购物车",
+      "重新确认整车"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/checkout/index.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('结算确认 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "U06",
+          "th:attr": "data-checkout-item-count=${checkout.itemCount},data-checkout-quantity=${checkout.quantity},data-checkout-total=${checkout.total},data-error-status=${errorStatus},data-error-code=${errorCode}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/cart}",
+          "data-return-cart": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/alerts :: summary(${errorAnchors})}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "checkout-items-title"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${checkout.itemCount + ' 种 · ' + checkout.quantity + ' 件'}"
+        }
+      },
+      {
+        "tag": "tr",
+        "attrs": {
+          "th:each": "line : ${checkout.items}",
+          "th:attr": "data-checkout-item-id=${line.itemId},data-product-id=${line.productId},data-quantity=${line.quantity},data-item-version=${line.itemVersion},data-unit-price=${line.unitPrice},data-line-subtotal=${line.subtotal}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/images :: image(${line.coverImage},${line.name})}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products/{id}(id=${line.productId})}",
+          "th:text": "${line.name}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${line.sku}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${'¥' + #numbers.formatDecimal(line.unitPrice,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${line.quantity}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${'¥' + #numbers.formatDecimal(line.subtotal,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "checkout-total-title"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "data-checkout-amount": null,
+          "th:text": "${'¥' + #numbers.formatDecimal(checkout.total,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "time",
+        "attrs": {
+          "data-confirmation-expires-at": null,
+          "th:datetime": "${checkout.expiresAt}",
+          "th:text": "${checkout.expiresAt}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "checkout-shipping-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "checkout-delivery-help"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/orders}",
+          "data-submit-state": null,
+          "data-checkout-form": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "confirmationToken",
+          "th:value": "${confirmationToken}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text('receiverName','receiverName','收货人（1–50 字符）',${checkoutForm.receiverName},${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text('receiverPhone','receiverPhone','联系电话（1–30 字符）',${checkoutForm.receiverPhone},${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: textarea('receiverAddress','receiverAddress','完整收货地址（1–255 字符）',${checkoutForm.receiverAddress},${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "checkout-stage-help"
+        }
+      },
+      {
+        "tag": "button",
+        "attrs": {
+          "data-submit-order": null,
+          "data-submit-label": "提交中…"
+        }
+      }
+    ],
+    "text": [
+      "结算确认",
+      "CSUCampusCraft",
+      "结算确认",
+      "核对整车商品与收货信息，金额由当前商品价格计算。",
+      "返回购物车",
+      "整车商品",
+      "0 种 · 0 件",
+      "本次确认的全部购物车条目",
+      "商品",
+      "当前单价",
+      "数量",
+      "小计",
+      "商品名称",
+      "SKU：",
+      "SKU",
+      "¥0.00",
+      "0",
+      "¥0.00",
+      "商品金额合计",
+      "人民币，包含整车全部商品；模拟配送不另计运费。",
+      "¥0.00",
+      "确认不预留库存。购物车内容、价格或可购状态变化后，需要重新确认。",
+      "重新打开本页会替换上一次确认。当前确认到期时间：",
+      "UTC",
+      "（UTC）。",
+      "收货信息",
+      "使用收货地址进行教学模拟配送。以下三项均为必填，去除首尾空白后核对长度。",
+      "提交后生成待支付订单，并扣减本次商品库存。提交前请再次核对收货信息。",
+      "提交订单"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/error/400.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('请求参数有误', ~{::errorContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "errorContent",
+          "data-error-status": "400"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "error-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorMessage ?: '请检查输入内容后重新提交。'}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${errorCode ?: 'BAD_REQUEST'}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:if": "${fieldErrors != null and !fieldErrors.isEmpty()}"
+        }
+      },
+      {
+        "tag": "li",
+        "attrs": {
+          "th:each": "item : ${fieldErrors}",
+          "th:text": "${item.value}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      }
+    ],
+    "text": [
+      "请求参数有误",
+      "400",
+      "请求参数有误",
+      "请检查输入内容后重新提交。",
+      "返回原表单修正输入，或回到首页继续浏览。",
+      "错误代码：",
+      "BAD_REQUEST",
+      "请检查输入。",
+      "返回首页"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/error/403.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('请求未获允许', ~{::errorContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "errorContent",
+          "data-error-status": "403"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "error-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorMessage ?: '当前请求无法通过校验。'}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${errorCode ?: 'FORBIDDEN'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      }
+    ],
+    "text": [
+      "请求未获允许",
+      "403",
+      "请求未获允许",
+      "当前请求无法通过校验。",
+      "请刷新页面后重新操作，或回到首页。",
+      "错误代码：",
+      "FORBIDDEN",
+      "返回首页"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/error/404.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('页面未找到', ~{::errorContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "errorContent",
+          "data-error-status": "404"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "error-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorMessage ?: '没有找到你要访问的内容。'}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${errorCode ?: 'NOT_FOUND'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      }
+    ],
+    "text": [
+      "页面未找到",
+      "404",
+      "页面未找到",
+      "没有找到你要访问的内容。",
+      "请检查地址，或回到首页继续浏览。",
+      "错误代码：",
+      "NOT_FOUND",
+      "返回首页"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/error/409.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('当前数据已变化', ~{::errorContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "errorContent",
+          "data-error-status": "409"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "error-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorMessage ?: '当前操作与数据状态冲突。'}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${errorCode ?: 'CONFLICT'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      }
+    ],
+    "text": [
+      "当前数据已变化",
+      "409",
+      "当前数据已变化",
+      "当前操作与数据状态冲突。",
+      "请重新读取原页面的数据，确认后再次操作。",
+      "错误代码：",
+      "CONFLICT",
+      "返回首页"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/error/500.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('暂时无法完成请求', ~{::errorContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "errorContent",
+          "data-error-status": "500"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "error-title"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      }
+    ],
+    "text": [
+      "暂时无法完成请求",
+      "500",
+      "暂时无法完成请求",
+      "服务暂时不可用，请稍后重试。",
+      "请稍后重新访问，或回到首页。",
+      "错误代码：",
+      "INTERNAL_ERROR",
+      "返回首页"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/fragments/alerts.html": {
+    "elements": [
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:fragment": "global"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${globalMessage != null}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${globalMessage}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${globalError != null}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${globalError}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "summary(errors)",
+          "th:if": "${errors != null and !errors.isEmpty()}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "error-summary-title"
+        }
+      },
+      {
+        "tag": "li",
+        "attrs": {
+          "th:each": "item : ${errors}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "${'#' + item.key}",
+          "th:text": "${item.value}"
+        }
+      }
+    ],
+    "text": [
+      "操作已完成。",
+      "请检查操作结果。",
+      "请修正以下输入",
+      "请检查输入。"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/fragments/catalog.html": {
+    "elements": [
+      {
+        "tag": "article",
+        "attrs": {
+          "th:fragment": "productCard(item)",
+          "th:attr": "data-product-id=${item.id},data-product-sku=${item.sku},data-product-price=${item.price},data-product-stock=${item.stock},data-price=${item.price},data-stock=${item.stock},data-sort-order=${item.sortOrder},data-created-at=${item.createdAt}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products/{id}(id=${item.id})}",
+          "th:attr": "aria-label=${'查看 ' + item.name}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/images :: image(${item.coverImage},${item.name})}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${item.sku}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products/{id}(id=${item.id})}",
+          "th:text": "${item.name}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${!#strings.isEmpty(item.summary)}",
+          "th:text": "${item.summary}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${'¥' + #numbers.formatDecimal(item.price,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${item.stock == 0 ? '售罄' : '库存 ' + item.stock}"
+        }
+      },
+      {
+        "tag": "nav",
+        "attrs": {
+          "th:fragment": "typeTabs(query)"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products(categoryId=${query.categoryId},type='ALL',q=${query.q},sort=${query.sort.name()},page=1,size=${query.size})}",
+          "th:attr": "aria-current=${query.type.name() == 'ALL' ? 'page' : null},data-type-link='ALL'"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products(categoryId=${query.categoryId},type='STATIONERY',q=${query.q},sort=${query.sort.name()},page=1,size=${query.size})}",
+          "th:attr": "aria-current=${query.type.name() == 'STATIONERY' ? 'page' : null},data-type-link='STATIONERY'"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products(categoryId=${query.categoryId},type='SOUVENIR',q=${query.q},sort=${query.sort.name()},page=1,size=${query.size})}",
+          "th:attr": "aria-current=${query.type.name() == 'SOUVENIR' ? 'page' : null},data-type-link='SOUVENIR'"
+        }
+      }
+    ],
+    "text": [
+      "SKU",
+      "校园文创商品",
+      "商品介绍",
+      "¥0.00",
+      "库存",
+      "全部",
+      "文具",
+      "纪念周边"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/fragments/fields.html": {
+    "elements": [
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "text(id, name, label, value, errors)",
+          "th:with": "hasError=${errors != null and errors.containsKey(name)}"
+        }
+      },
+      {
+        "tag": "label",
+        "attrs": {
+          "th:for": "${id}",
+          "th:text": "${label}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "th:id": "${id}",
+          "th:name": "${name}",
+          "th:value": "${value}",
+          "th:attr": "aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${hasError}",
+          "th:id": "${id + '-error'}",
+          "th:text": "${errors.get(name)}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "number(id, name, label, value, min, max, step, errors)",
+          "th:with": "hasError=${errors != null and errors.containsKey(name)}"
+        }
+      },
+      {
+        "tag": "label",
+        "attrs": {
+          "th:for": "${id}",
+          "th:text": "${label}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "th:id": "${id}",
+          "th:name": "${name}",
+          "th:value": "${value}",
+          "th:min": "${min}",
+          "th:max": "${max}",
+          "th:step": "${step}",
+          "th:attr": "aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${hasError}",
+          "th:id": "${id + '-error'}",
+          "th:text": "${errors.get(name)}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "th:fragment": "csrf",
+          "name": "_csrf",
+          "th:value": "${csrfToken}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "password(id, name, label, errors)",
+          "th:with": "hasError=${errors != null and errors.containsKey(name)}"
+        }
+      },
+      {
+        "tag": "label",
+        "attrs": {
+          "th:for": "${id}",
+          "th:text": "${label}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "th:id": "${id}",
+          "th:name": "${name}",
+          "th:attr": "aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${hasError}",
+          "th:id": "${id + '-error'}",
+          "th:text": "${errors.get(name)}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "textarea(id, name, label, value, errors)",
+          "th:with": "hasError=${errors != null and errors.containsKey(name)}"
+        }
+      },
+      {
+        "tag": "label",
+        "attrs": {
+          "th:for": "${id}",
+          "th:text": "${label}"
+        }
+      },
+      {
+        "tag": "textarea",
+        "attrs": {
+          "th:id": "${id}",
+          "th:name": "${name}",
+          "th:text": "${value}",
+          "th:attr": "aria-invalid=${hasError},aria-describedby=${hasError ? id + '-error' : null}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${hasError}",
+          "th:id": "${id + '-error'}",
+          "th:text": "${errors.get(name)}"
+        }
+      }
+    ],
+    "text": [
+      "字段",
+      "请检查输入。",
+      "数量",
+      "请检查输入。",
+      "密码",
+      "请检查输入。",
+      "字段",
+      "请检查输入。"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/fragments/images.html": {
+    "elements": [
+      {
+        "tag": "img",
+        "attrs": {
+          "th:fragment": "image(path, altText)",
+          "th:with": "fallback=${defaultCoverImage ?: 'images/catalog-placeholder.svg'},safePath=${path != null and #strings.startsWith(path, 'images/') and !#strings.contains(path, '..') and !#strings.contains(path, ':') and !#strings.contains(path, '%') and !#strings.contains(path, '?') and !#strings.contains(path, '#') ? path : fallback}",
+          "th:src": "@{${'/' + safePath}}",
+          "th:alt": "${altText ?: '校园文创商品'}",
+          "th:attr": "data-image-fallback=@{${'/' + fallback}}"
+        }
+      }
+    ],
+    "text": []
+  },
+  "csucampuscraft-user/src/main/resources/templates/fragments/layout.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:fragment": "page(pageTitle, pageContent)"
+        }
+      },
+      {
+        "tag": "head",
+        "attrs": {
+          "th:fragment": "head(pageTitle)"
+        }
+      },
+      {
+        "tag": "meta",
+        "attrs": {
+          "name": "viewport"
+        }
+      },
+      {
+        "tag": "title",
+        "attrs": {
+          "th:text": "${pageTitle}"
+        }
+      },
+      {
+        "tag": "link",
+        "attrs": {
+          "th:href": "@{/css/app.css}"
+        }
+      },
+      {
+        "tag": "script",
+        "attrs": {
+          "th:src": "@{/js/app.js}"
+        }
+      },
+      {
+        "tag": "body",
+        "attrs": {
+          "th:attr": "data-csucampuscraft-app=${appId},data-authenticated=${currentUser != null}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${siteName ?: 'CSUCampusCraft'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${appId == 'admin' ? '管理端' : '用户端'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${appId == 'user'}",
+          "th:href": "@{/cart}",
+          "data-cart-link": null,
+          "th:attr": "aria-label=${cartQuantityUnavailable == true ? '购物车数量暂不可用' : '购物车，' + (cartQuantity ?: 0) + ' 件'}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "id": "cart-quantity",
+          "th:attr": "data-cart-quantity=${cartQuantityUnavailable == true ? null : (cartQuantity ?: 0)},data-cart-quantity-unavailable=${cartQuantityUnavailable == true}",
+          "th:text": "${cartQuantityUnavailable == true ? '—' : (cartQuantity ?: 0)}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${appId == 'user'}",
+          "th:href": "@{/orders}",
+          "data-orders-link": null
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${currentUser == null}",
+          "th:href": "@{/login}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:if": "${currentUser != null}",
+          "data-current-user": null,
+          "th:text": "${currentUser.displayName}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "th:if": "${currentUser != null}",
+          "method": "post",
+          "th:action": "@{/logout}",
+          "data-submit-state": null,
+          "data-logout-form": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/alerts :: global}"
+        }
+      },
+      {
+        "tag": "main",
+        "attrs": {
+          "id": "main-content"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "${pageContent}"
+        }
+      }
+    ],
+    "text": [
+      "CSUCampusCraft",
+      "跳到主要内容",
+      "CSU",
+      "CSUCampusCraft",
+      "首页",
+      "用户端",
+      "购物车",
+      "0",
+      "我的订单",
+      "登录",
+      "当前用户",
+      "退出",
+      "CSUCampusCraft 校园文创商城",
+      "课程实验 · 教学模拟"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/home.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('CSUCampusCraft 用户端', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "U01"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "get",
+          "th:action": "@{/products}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "id": "home-query",
+          "name": "q"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "home-query-help"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:if": "${graduationTheme != null}",
+          "data-graduation-section": null
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "graduation-heading",
+          "th:text": "${graduationTheme.name + '专区'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products(categoryId=${graduationTheme.id},type='ALL',q='',sort='DEFAULT',page=1,size=6)}",
+          "data-graduation-link": null
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "themes-heading"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:attr": "data-theme-count=${#lists.size(themes)}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${#lists.size(themes)}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${#lists.isEmpty(themes)}"
+        }
+      },
+      {
+        "tag": "ul",
+        "attrs": {
+          "th:unless": "${#lists.isEmpty(themeNavigation)}"
+        }
+      },
+      {
+        "tag": "li",
+        "attrs": {
+          "th:each": "navigation : ${themeNavigation}",
+          "th:attr": "data-theme-code=${navigation.theme.code}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products(categoryId=${navigation.theme.id},type='ALL',q='',sort='DEFAULT',page=1,size=6)}",
+          "th:text": "${navigation.theme.name}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${!#lists.isEmpty(navigation.types)}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:each": "entry : ${navigation.types}",
+          "th:href": "@{/products(categoryId=${navigation.theme.id},type=${entry.type},q='',sort='DEFAULT',page=1,size=6)}",
+          "th:attr": "data-secondary-code=${entry.code},data-secondary-category-code=${entry.code}",
+          "th:text": "${entry.label}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "data-section": "newest"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "newest-heading"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products(type='ALL',sort='NEWEST',page=1,size=6)}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${#lists.isEmpty(newProducts)}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:unless": "${#lists.isEmpty(newProducts)}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:each": "item : ${newProducts}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/catalog :: productCard(${item})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "data-section": "featured"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "featured-heading"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products(type='ALL',sort='DEFAULT',page=1,size=6)}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${#lists.isEmpty(featuredProducts)}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:unless": "${#lists.isEmpty(featuredProducts)}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:each": "item : ${featuredProducts}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/catalog :: productCard(${item})}"
+        }
+      }
+    ],
+    "text": [
+      "CSUCampusCraft 用户端",
+      "中南大学校园文创",
+      "CSUCampusCraft 用户端",
+      "按校园主题发现文具和纪念周边。",
+      "搜索校园文创",
+      "搜索",
+      "最多 120 个字符",
+      "毕业专区",
+      "毕业纪念专区",
+      "毕业留言本、祝福卡片与独立成品礼盒。",
+      "浏览毕业纪念",
+      "校园主题",
+      "共",
+      "0",
+      "个一级主题",
+      "浏览全部商品",
+      "暂无主题，可先浏览全部商品。",
+      "校园主题",
+      "商品类型",
+      "校园新品",
+      "新品上架",
+      "查看全部新品",
+      "暂无可售商品，稍后再来看看。",
+      "日常文创",
+      "精选推荐",
+      "浏览全部商品",
+      "暂无可售商品，可稍后再来看看。"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/login.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('用户登录 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "U04"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${authError != null}",
+          "data-auth-error": null
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${authError}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/alerts :: summary(${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/login}",
+          "data-submit-state": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "returnUrl",
+          "th:value": "${returnUrl}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text('username','username','用户名',${username},${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: password('password','password','密码',${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      }
+    ],
+    "text": [
+      "用户登录",
+      "CSUCampusCraft 用户端",
+      "用户登录",
+      "使用本项目的普通顾客教学账号登录。",
+      "会话过期或退出后，请重新登录。",
+      "登录失败，请检查账号信息。",
+      "登录",
+      "返回首页浏览商品"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/orders/action-conflict.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('订单操作提示 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "U09",
+          "data-order-action-conflict": null,
+          "th:attr": "data-error-status=${errorStatus},data-error-code=${errorCode},data-order-no=${orderNo}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorStatus}"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "order-action-conflict-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${errorMessage}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${errorCode}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${orderNo != null}",
+          "th:href": "@{/orders/{orderNo}(orderNo=${orderNo})}",
+          "data-return-order": null
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders}",
+          "data-return-orders": null
+        }
+      }
+    ],
+    "text": [
+      "订单操作提示",
+      "409",
+      "当前状态无法完成此操作",
+      "请返回订单详情查看当前状态。",
+      "请先查看本单的状态、首次凭证或时间记录，再选择可用操作。",
+      "错误代码：",
+      "ORDER_ACTION_CONFLICT",
+      "查看订单详情",
+      "返回我的订单"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/orders/detail.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('订单详情 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "U08",
+          "th:with": "order=${orderDetail.order}",
+          "th:attr": "data-order-id=${order.id},data-order-no=${order.orderNo},data-order-status=${order.status},data-order-total=${order.totalAmount},data-order-item-count=${#lists.size(orderDetail.items)}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders}",
+          "data-return-orders": null
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "order-overview-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "data-order-number": null,
+          "th:text": "${order.orderNo}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "data-order-status-label": null,
+          "th:text": "${order.statusLabel}"
+        }
+      },
+      {
+        "tag": "time",
+        "attrs": {
+          "th:text": "${order.createdAtDisplay}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-order-amount": null,
+          "th:text": "${'¥' + #numbers.formatDecimal(order.totalAmount,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${order.status == 'PENDING_PAYMENT'}",
+          "data-order-pending-note": null
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${order.status == 'CANCELLED'}",
+          "data-order-cancelled-note": null
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${order.status != 'PENDING_PAYMENT' and order.status != 'CANCELLED'}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${order.paymentNo != null}",
+          "data-payment-receipt": null
+        }
+      },
+      {
+        "tag": "h3",
+        "attrs": {
+          "id": "order-payment-title"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-payment-method": null,
+          "th:text": "${order.paymentMethod}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-payment-no": null,
+          "th:text": "${order.paymentNo}"
+        }
+      },
+      {
+        "tag": "time",
+        "attrs": {
+          "data-payment-time": null,
+          "th:text": "${order.paidAtDisplay}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:if": "${order.status == 'PENDING_PAYMENT'}",
+          "data-order-pending-actions": null
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "order-actions-title"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders/{orderNo}/payment(orderNo=${order.orderNo})}",
+          "data-open-payment": null
+        }
+      },
+      {
+        "tag": "details",
+        "attrs": {
+          "data-cancel-confirmation": null
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "order-cancel-help"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${order.orderNo}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/orders/{orderNo}/cancel(orderNo=${order.orderNo})}",
+          "data-submit-state": null,
+          "data-cancel-order-form": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "button",
+        "attrs": {
+          "data-confirm-cancel": null,
+          "data-submit-label": "正在取消…"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "order-items-title"
+        }
+      },
+      {
+        "tag": "table",
+        "attrs": {
+          "data-order-items": null
+        }
+      },
+      {
+        "tag": "tr",
+        "attrs": {
+          "th:each": "line : ${orderDetail.items}",
+          "th:attr": "data-order-item-id=${line.id},data-order-product-id=${line.productId},data-unit-price=${line.unitPrice},data-quantity=${line.quantity},data-line-amount=${line.lineAmount},data-snapshot-sku=${line.skuSnapshot},data-snapshot-name=${line.productNameSnapshot},data-snapshot-cover=${line.coverImageSnapshot}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/images :: image(${line.coverImageSnapshot},${line.productNameSnapshot})}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${line.productNameSnapshot}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${line.skuSnapshot}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${'¥' + #numbers.formatDecimal(line.unitPrice,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${line.quantity}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${'¥' + #numbers.formatDecimal(line.lineAmount,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "order-shipping-title"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-shipping-value": "receiverName",
+          "data-shipping-name": null,
+          "th:text": "${order.receiverName}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-shipping-value": "receiverPhone",
+          "data-shipping-phone": null,
+          "th:text": "${order.receiverPhone}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-shipping-value": "receiverAddress",
+          "data-shipping-address": null,
+          "th:text": "${order.receiverAddress}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "order-timeline-title"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${order.createdAtDisplay}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${order.paidAtDisplay != null}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${order.paidAtDisplay}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${order.cancelledAtDisplay != null}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${order.cancelledAtDisplay}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${order.shippedAtDisplay != null}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${order.shippedAtDisplay}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${order.completedAtDisplay != null}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${order.completedAtDisplay}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products}"
+        }
+      }
+    ],
+    "text": [
+      "订单详情",
+      "首页",
+      "/",
+      "我的订单",
+      "/",
+      "订单详情",
+      "CSUCampusCraft",
+      "订单详情",
+      "查看本单成交时的商品、金额与收货信息。",
+      "返回我的订单",
+      "订单信息",
+      "订单号",
+      "待支付",
+      "创建时间",
+      "创建时间",
+      "（北京时间）",
+      "订单金额",
+      "¥0.00",
+      "当前订单待支付，可选择教学模拟支付，或取消订单释放库存。",
+      "订单已取消，库存已按本单数量返还，商品未放回购物车。",
+      "当前展示已记录的订单状态与历史信息。",
+      "首次支付凭证",
+      "支付方式",
+      "MOCK",
+      "支付凭证",
+      "支付凭证",
+      "首次支付时间",
+      "支付时间",
+      "（北京时间）",
+      "待支付操作",
+      "模拟支付使用本单成交金额；若不再购买，可取消并返还库存。",
+      "模拟支付",
+      "取消订单",
+      "将取消订单",
+      "订单号",
+      "。库存会返还，商品不会放回购物车。",
+      "确认取消订单",
+      "成交商品",
+      "商品名称、封面与金额保留成交时的内容。",
+      "本单商品快照",
+      "商品",
+      "成交单价",
+      "数量",
+      "成交小计",
+      "成交商品名称",
+      "SKU：",
+      "SKU",
+      "¥0.00",
+      "0",
+      "¥0.00",
+      "收货信息",
+      "下单时保存的收货快照，用于教学模拟配送。",
+      "收货人",
+      "收货人",
+      "联系电话",
+      "联系电话",
+      "完整地址",
+      "收货地址",
+      "状态时间",
+      "按已发生的状态记录显示，时间均为北京时间。",
+      "创建订单",
+      "创建时间",
+      "支付成功",
+      "支付时间",
+      "取消订单",
+      "取消时间",
+      "模拟发货",
+      "发货时间",
+      "确认收货",
+      "完成时间",
+      "继续选购"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/orders/index.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('我的订单 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "U07",
+          "th:attr": "data-order-count=${orderPage.totalCount},data-result-count=${#lists.size(orderPage.items)},data-page=${orderPage.page},data-size=${orderPage.size},data-total-pages=${orderPage.totalPages}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "orders-filter-title"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "get",
+          "th:action": "@{/orders}",
+          "data-order-filter": null
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "id": "orders-number",
+          "name": "orderNo",
+          "th:value": "${orderQuery.orderNo}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "orders-number-help"
+        }
+      },
+      {
+        "tag": "select",
+        "attrs": {
+          "id": "orders-status",
+          "name": "status"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${orderQuery.status == 'ALL'}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:each": "state : ${orderStatuses}",
+          "th:value": "${state.value}",
+          "th:selected": "${orderQuery.status == state.value}",
+          "th:text": "${state.label}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "id": "orders-size",
+          "name": "size",
+          "th:value": "${orderPage.size}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "page"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders(status='ALL',page=1,size=${orderPage.size})}",
+          "data-order-clear": null
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${orderPage.totalCount}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:if": "${orderPage.totalCount > 0}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${orderPage.page}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${orderPage.totalPages}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:if": "${orderPage.empty}",
+          "data-orders-empty": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:if": "${orderPage.page > (orderPage.totalPages > 0 ? orderPage.totalPages : 1)}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders(orderNo=${orderQuery.orderNo},status=${orderQuery.status},page=${orderPage.firstValidPage},size=${orderPage.size})}",
+          "th:attr": "data-page-link=${orderPage.firstValidPage}",
+          "th:text": "${'返回第 ' + orderPage.firstValidPage + ' 页'}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:unless": "${orderPage.page > (orderPage.totalPages > 0 ? orderPage.totalPages : 1)}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "th:text": "${orderQuery.orderNo != '' or orderQuery.status != 'ALL' ? '暂无匹配订单' : '暂无订单'}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${orderQuery.orderNo != '' or orderQuery.status != 'ALL' ? '请核对完整订单号，或清除筛选条件再试。' : '选好喜欢的校园文创后，可从购物车整车结算。'}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${orderQuery.orderNo != '' or orderQuery.status != 'ALL'}",
+          "th:href": "@{/orders(status='ALL',page=1,size=${orderPage.size})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:unless": "${orderPage.empty}"
+        }
+      },
+      {
+        "tag": "table",
+        "attrs": {
+          "data-order-list": null
+        }
+      },
+      {
+        "tag": "tr",
+        "attrs": {
+          "th:each": "item : ${orderPage.items}",
+          "th:attr": "data-order-id=${item.id},data-order-no=${item.orderNo},data-order-status=${item.status},data-order-total=${item.totalAmount}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders/{orderNo}(orderNo=${item.orderNo})}",
+          "th:text": "${item.orderNo}"
+        }
+      },
+      {
+        "tag": "time",
+        "attrs": {
+          "th:text": "${item.createdAtDisplay}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${item.statusLabel}"
+        }
+      },
+      {
+        "tag": "td",
+        "attrs": {
+          "th:text": "${'¥' + #numbers.formatDecimal(item.totalAmount,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders/{orderNo}(orderNo=${item.orderNo})}",
+          "data-order-detail-link": null
+        }
+      },
+      {
+        "tag": "nav",
+        "attrs": {
+          "th:if": "${orderPage.totalCount > 0}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${orderPage.hasPrevious}",
+          "th:href": "@{/orders(orderNo=${orderQuery.orderNo},status=${orderQuery.status},page=${orderPage.page - 1},size=${orderPage.size})}",
+          "th:attr": "data-page-link=${orderPage.page - 1}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:unless": "${orderPage.hasPrevious}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${orderPage.page}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${orderPage.totalPages}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${orderPage.hasNext}",
+          "th:href": "@{/orders(orderNo=${orderQuery.orderNo},status=${orderQuery.status},page=${orderPage.page + 1},size=${orderPage.size})}",
+          "th:attr": "data-page-link=${orderPage.page + 1}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:unless": "${orderPage.hasNext}"
+        }
+      }
+    ],
+    "text": [
+      "我的订单",
+      "CSUCampusCraft",
+      "我的订单",
+      "查看本人订单，按完整订单号或状态查询。",
+      "继续选购",
+      "查询订单",
+      "完整订单号",
+      "最多 40 个字符，精确匹配，不区分大小写。",
+      "订单状态",
+      "全部状态",
+      "订单状态",
+      "每页条数",
+      "查询订单",
+      "清除条件",
+      "共",
+      "0",
+      "张订单",
+      "，第",
+      "1",
+      "页 / 共",
+      "1",
+      "页",
+      "最近创建的订单显示在前。",
+      "当前页超出订单范围",
+      "筛选条件保持不变，可以返回有效页面继续查看。",
+      "返回有效页",
+      "暂无订单",
+      "暂无可显示的订单。",
+      "去逛逛",
+      "清除条件",
+      "本人订单清单",
+      "订单号",
+      "创建时间",
+      "状态",
+      "订单金额",
+      "操作",
+      "订单号",
+      "创建时间",
+      "北京时间",
+      "待支付",
+      "¥0.00",
+      "查看详情",
+      "上一页",
+      "上一页",
+      "第",
+      "1",
+      "页 / 共",
+      "1",
+      "页",
+      "下一页",
+      "下一页"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/orders/payment.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('模拟支付 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "U09",
+          "th:attr": "data-order-id=${paymentOrder.id},data-order-no=${paymentOrder.orderNo},data-order-status=${paymentOrder.status},data-order-total=${paymentOrder.totalAmount}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders/{orderNo}(orderNo=${paymentOrder.orderNo})}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/orders/{orderNo}(orderNo=${paymentOrder.orderNo})}",
+          "data-return-order": null
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "payment-order-title"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-payment-order-number": null,
+          "th:text": "${paymentOrder.orderNo}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "th:text": "${paymentOrder.statusLabel}"
+        }
+      },
+      {
+        "tag": "dd",
+        "attrs": {
+          "data-payment-amount": null,
+          "th:text": "${'¥' + #numbers.formatDecimal(paymentOrder.totalAmount,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "payment-choice-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "payment-simulation-help",
+          "data-payment-simulation": null
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/orders/{orderNo}/payment(orderNo=${paymentOrder.orderNo})}",
+          "data-submit-state": null,
+          "data-payment-form": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "button",
+        "attrs": {
+          "name": "result",
+          "data-payment-result": "SUCCESS",
+          "data-submit-label": "正在模拟…"
+        }
+      },
+      {
+        "tag": "button",
+        "attrs": {
+          "name": "result",
+          "data-payment-result": "FAILURE",
+          "data-submit-label": "正在模拟…"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "payment-result-help"
+        }
+      }
+    ],
+    "text": [
+      "模拟支付",
+      "我的订单",
+      "/",
+      "订单详情",
+      "/",
+      "模拟支付",
+      "CSUCampusCraft",
+      "模拟支付",
+      "选择本次教学模拟结果，订单金额以成交记录为准。",
+      "返回订单详情",
+      "本次订单",
+      "订单号",
+      "订单号",
+      "订单状态",
+      "待支付",
+      "成交金额",
+      "¥0.00",
+      "人民币；本页只使用已保存的订单金额。",
+      "教学模拟",
+      "本功能用于课程实验，不会发生真实付款，也无需输入银行卡或支付账号。",
+      "模拟支付成功",
+      "模拟支付失败",
+      "模拟失败后订单仍为待支付，可返回详情重试或取消；模拟成功后显示首次支付凭证。"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/products/detail.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page(${product.name + ' · CSUCampusCraft'}, ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "U03",
+          "th:attr": "data-product-id=${product.id},data-product-sku=${product.sku},data-price=${product.price},data-stock=${product.stock},data-gallery-count=${#lists.size(images)}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products(categoryId=${theme.id},type='ALL',q='',sort='DEFAULT',page=1,size=6)}",
+          "th:text": "${theme.name}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${category.name}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${product.name}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:if": "${purchaseFailure == true}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/alerts :: summary(${errorAnchors})}"
+        }
+      },
+      {
+        "tag": "figure",
+        "attrs": {
+          "data-cover-image": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/images :: image(${product.coverImage},${product.name})}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${theme.name + ' / ' + category.name}"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "product-heading",
+          "th:text": "${product.name}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${product.sku}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${!#strings.isEmpty(product.summary)}",
+          "th:text": "${product.summary}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${'¥' + #numbers.formatDecimal(product.price,1,'NONE',2,'POINT')}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:text": "${product.stock == 0 ? '售罄 · 库存 0' : '现货 · 库存 ' + product.stock}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "purchase-heading"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:if": "${currentUser != null}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "th:action": "@{/cart/items}",
+          "data-submit-state": null,
+          "data-add-cart": null,
+          "th:with": "quantityError=${fieldErrors != null and fieldErrors.containsKey('quantity')}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "productId",
+          "th:value": "${product.id}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "purchase-productId",
+          "th:if": "${fieldErrors != null and fieldErrors.containsKey('productId')}",
+          "th:text": "${fieldErrors.get('productId')}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "id": "purchase-quantity",
+          "name": "quantity",
+          "th:type": "${quantityError ? 'text' : 'number'}",
+          "th:value": "${purchaseFailure == true ? purchaseQuantity : '1'}",
+          "th:disabled": "${product.stock == 0}",
+          "th:attr": "aria-invalid=${quantityError},aria-describedby=${quantityError ? 'purchase-quantity-error purchase-help' : 'purchase-help'}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "purchase-quantity-error",
+          "th:if": "${quantityError}",
+          "th:text": "${fieldErrors.get('quantity')}"
+        }
+      },
+      {
+        "tag": "button",
+        "attrs": {
+          "th:disabled": "${product.stock == 0}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "purchase-help",
+          "th:text": "${product.stock == 0 ? '商品已售罄，暂不可购买。' : '单次可加 1–99 件，同一商品在购物车中最多 99 件；提交时核对当前库存。'}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${currentUser == null}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${purchaseFailure == true}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products/{id}(id=${product.id})}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/cart}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${currentUser == null}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${product.stock > 0}",
+          "data-login-to-add": null,
+          "th:href": "@{/login(returnUrl=${'/products/' + product.id})}"
+        }
+      },
+      {
+        "tag": "button",
+        "attrs": {
+          "th:if": "${product.stock == 0}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "guest-purchase-help",
+          "th:text": "${product.stock == 0 ? '商品已售罄，暂不可购买。' : '请先登录，返回本页后由本人选择数量并确认加购。'}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "description-heading"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${!#strings.isEmpty(product.description)}",
+          "th:text": "${product.description}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${#strings.isEmpty(product.description)}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "gallery-heading"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${#lists.size(images)}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "th:if": "${#lists.isEmpty(images)}",
+          "data-gallery-empty": null
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "data-product-gallery": null
+        }
+      },
+      {
+        "tag": "figure",
+        "attrs": {
+          "th:each": "imageItem : ${images}",
+          "th:attr": "data-image-id=${imageItem.id},data-image-sort=${imageItem.sortOrder}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/images :: image(${imageItem.imagePath},${imageItem.altText ?: product.name})}"
+        }
+      },
+      {
+        "tag": "figcaption",
+        "attrs": {
+          "th:text": "${imageItem.altText ?: product.name}"
+        }
+      }
+    ],
+    "text": [
+      "商品详情",
+      "首页",
+      "/",
+      "商品",
+      "/",
+      "一级主题",
+      "/",
+      "二级分类",
+      "/",
+      "商品名称",
+      "校园文创",
+      "商品名称",
+      "SKU：",
+      "SKU",
+      "商品简介",
+      "¥0.00",
+      "库存",
+      "选购",
+      "请重新载入商品详情。",
+      "数量",
+      "请检查数量。",
+      "加入购物车",
+      "购买数量说明",
+      "游客点击后先登录，返回本页后请重新确认加购。",
+      "重新载入商品详情",
+      "前往购物车核对数量",
+      "登录后加购",
+      "加入购物车",
+      "购买说明",
+      "设计说明",
+      "商品设计说明",
+      "暂无设计说明。",
+      "商品相册",
+      "共",
+      "0",
+      "张图片",
+      "暂无相册，当前显示商品封面。",
+      "商品图片"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/products/list.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('商品目录 · CSUCampusCraft', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:fragment": "mainContent",
+          "data-page-id": "U02",
+          "th:attr": "data-product-count=${total},data-result-count=${#lists.size(products)},data-page=${page},data-page-size=${size},data-size=${size},data-category-id=${query.categoryId == null ? '': query.categoryId},data-type=${query.type.name()},data-sort=${query.sort.name()}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/}"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "th:text": "${selectedTheme != null ? selectedTheme.name : '全部商品'}"
+        }
+      },
+      {
+        "tag": "h2",
+        "attrs": {
+          "id": "filter-heading"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "get",
+          "th:action": "@{/products}"
+        }
+      },
+      {
+        "tag": "select",
+        "attrs": {
+          "id": "catalog-theme",
+          "name": "categoryId"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${query.categoryId == null}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:each": "themeItem : ${themes}",
+          "th:value": "${themeItem.id}",
+          "th:selected": "${query.categoryId != null and query.categoryId == themeItem.id}",
+          "th:text": "${themeItem.name}"
+        }
+      },
+      {
+        "tag": "select",
+        "attrs": {
+          "id": "catalog-type",
+          "name": "type"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${query.type.name() == 'ALL'}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${query.type.name() == 'STATIONERY'}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${query.type.name() == 'SOUVENIR'}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "id": "catalog-query",
+          "name": "q",
+          "th:value": "${query.q}"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "catalog-query-help"
+        }
+      },
+      {
+        "tag": "select",
+        "attrs": {
+          "id": "catalog-sort",
+          "name": "sort"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${query.sort.name() == 'DEFAULT'}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${query.sort.name() == 'PRICE_ASC'}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${query.sort.name() == 'PRICE_DESC'}"
+        }
+      },
+      {
+        "tag": "option",
+        "attrs": {
+          "th:selected": "${query.sort.name() == 'NEWEST'}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "id": "catalog-size",
+          "name": "size",
+          "th:value": "${size}"
+        }
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "name": "page"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products(categoryId=${query.categoryId},type='ALL',q='',sort='DEFAULT',page=1,size=${size})}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${total}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:if": "${total > 0}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${page}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${totalPages}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/catalog :: typeTabs(${query})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:if": "${#lists.isEmpty(products)}",
+          "data-catalog-empty": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:if": "${page > (totalPages > 0 ? totalPages : 1)}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products(categoryId=${query.categoryId},type=${query.type.name()},q=${query.q},sort=${query.sort.name()},page=1,size=${size})}",
+          "data-page-link": "1"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:unless": "${page > (totalPages > 0 ? totalPages : 1)}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:href": "@{/products(categoryId=${query.categoryId},type='ALL',q='',sort='DEFAULT',page=1,size=${size})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "data-product-list": null
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:each": "item : ${products}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/catalog :: productCard(${item})}"
+        }
+      },
+      {
+        "tag": "nav",
+        "attrs": {
+          "th:if": "${total > 0}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${hasPrevious}",
+          "th:href": "@{/products(categoryId=${query.categoryId},type=${query.type.name()},q=${query.q},sort=${query.sort.name()},page=${previousPage},size=${size})}",
+          "th:attr": "data-page-link=${previousPage}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:unless": "${hasPrevious}"
+        }
+      },
+      {
+        "tag": "strong",
+        "attrs": {
+          "th:text": "${page}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:text": "${totalPages}"
+        }
+      },
+      {
+        "tag": "a",
+        "attrs": {
+          "th:if": "${hasNext}",
+          "th:href": "@{/products(categoryId=${query.categoryId},type=${query.type.name()},q=${query.q},sort=${query.sort.name()},page=${nextPage},size=${size})}",
+          "th:attr": "data-page-link=${nextPage}"
+        }
+      },
+      {
+        "tag": "span",
+        "attrs": {
+          "th:unless": "${hasNext}"
+        }
+      }
+    ],
+    "text": [
+      "商品目录",
+      "首页",
+      "/",
+      "商品目录",
+      "校园文创",
+      "全部商品",
+      "浏览文具与纪念周边，按主题、名称或类型筛选。",
+      "筛选商品",
+      "校园主题",
+      "全部主题",
+      "校园主题",
+      "商品类型",
+      "全部",
+      "文具",
+      "纪念周边",
+      "商品名称",
+      "最多 120 个字符",
+      "排序方式",
+      "默认",
+      "价格从低到高",
+      "价格从高到低",
+      "最新商品",
+      "每页条数",
+      "查询商品",
+      "清除名称和类型",
+      "共",
+      "0",
+      "件商品",
+      "，第",
+      "1",
+      "页 / 共",
+      "1",
+      "页",
+      "当前页超出商品范围",
+      "筛选条件保持不变，可以返回有效页面继续浏览。",
+      "返回第 1 页",
+      "暂无匹配商品",
+      "可尝试修改名称、类型或主题，再次查询。",
+      "清除名称和类型",
+      "上一页",
+      "上一页",
+      "第",
+      "1",
+      "页 / 共",
+      "1",
+      "页",
+      "下一页",
+      "下一页"
+    ]
+  },
+  "csucampuscraft-user/src/main/resources/templates/verification/foundation.html": {
+    "elements": [
+      {
+        "tag": "html",
+        "attrs": {
+          "th:replace": "~{fragments/layout :: page('公共基础验证', ~{::mainContent})}"
+        }
+      },
+      {
+        "tag": "section",
+        "attrs": {
+          "th:fragment": "mainContent"
+        }
+      },
+      {
+        "tag": "h1",
+        "attrs": {
+          "id": "verification-title"
+        }
+      },
+      {
+        "tag": "p",
+        "attrs": {
+          "id": "escaped-text",
+          "th:text": "${echoText}"
+        }
+      },
+      {
+        "tag": "form",
+        "attrs": {
+          "method": "post",
+          "data-submit-state": null,
+          "th:action": "@{/__verification/submit}"
+        }
+      },
+      {
+        "tag": "th:block",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: csrf}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:replace": "~{fragments/alerts :: summary(${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: text('probeText','probeText','文本验证',${echoText},${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:replace": "~{fragments/fields :: number('probeNumber','probeNumber','数量验证',1,0,99,1,${fieldErrors})}"
+        }
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "th:replace": "~{fragments/images :: image('images/verification-missing.svg','验证缺图回退')}"
+        }
+      }
+    ],
+    "text": [
+      "公共基础验证",
+      "此页面仅在 verification 配置启用，无业务数据写入。",
+      "普通文本",
+      "验证提交",
+      "不可用"
+    ]
+  }
+}

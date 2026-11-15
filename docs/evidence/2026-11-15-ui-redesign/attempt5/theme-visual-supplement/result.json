@@ -1,0 +1,60 @@
+{
+  "overall": "PASS",
+  "sourceSha": "d22433c2abf87b1a996c6a18467fd7a9a5a43372",
+  "scope": "Narrow real dark-theme button and two actual PNGs on fresh private demo; no business writes",
+  "screenshots": [
+    {
+      "end": "u",
+      "path": "U01-dark-1366.png",
+      "sha256": "9e5d347aa57f82fac3ee5bdce883ca4d90c17453cc71d2b788aeef2dcba0d4ac",
+      "bytes": 122283,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "scope": "After-only independent actual dark-theme screenshot; not a before/after paired image"
+    },
+    {
+      "end": "a",
+      "path": "A02-dark-1366.png",
+      "sha256": "21bc6134d7dfabdf80cae856c36533bb4d75ab40c9405e55369e4b50c388afc3",
+      "bytes": 98049,
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "scope": "After-only independent actual dark-theme screenshot; not a before/after paired image"
+    }
+  ],
+  "observations": [
+    {
+      "end": "u",
+      "path": "/",
+      "status": 200,
+      "raw_body_sha256": "4147f722270da4225a3db198a59cd2280fd3af4e2cb02ae5c200edd550ad5851",
+      "raw_body_bytes": 17287,
+      "raw_privacy_scan_passed": true,
+      "raw_body_not_archived": true,
+      "light": "rgb(244, 244, 242)",
+      "theme": "dark",
+      "background": "rgb(25, 25, 25)",
+      "pressed": "true",
+      "stored": "dark"
+    },
+    {
+      "end": "a",
+      "path": "/",
+      "status": 200,
+      "raw_body_sha256": "5f3622c9a44fb9607d7b68e4adb0f26ef0d153ed06daf88d1224daaa19e63693",
+      "raw_body_bytes": 6382,
+      "raw_privacy_scan_passed": true,
+      "raw_body_not_archived": true,
+      "light": "rgb(244, 244, 242)",
+      "theme": "dark",
+      "background": "rgb(25, 25, 25)",
+      "pressed": "true",
+      "stored": "dark"
+    }
+  ],
+  "externalRequests": []
+}

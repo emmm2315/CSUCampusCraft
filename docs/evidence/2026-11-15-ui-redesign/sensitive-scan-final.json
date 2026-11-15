@@ -1,0 +1,40 @@
+{
+  "overall": "PASS",
+  "text_files_scanned": 467,
+  "gzip_files_decompressed": 211,
+  "hidden_token_inputs_checked": 591,
+  "findings": [],
+  "original_known_value_scans": [
+    {
+      "attempt": "attempt1",
+      "overall": "PASS",
+      "known_values_checked_in_original_scan": 23,
+      "raw_values_archived": false
+    },
+    {
+      "attempt": "attempt2",
+      "overall": "PASS",
+      "known_values_checked_in_original_scan": 30,
+      "raw_values_archived": false
+    },
+    {
+      "attempt": "attempt3",
+      "overall": "PASS",
+      "known_values_checked_in_original_scan": 30,
+      "raw_values_archived": false
+    },
+    {
+      "attempt": "attempt4",
+      "overall": "PASS",
+      "known_values_checked_in_original_scan": 30,
+      "raw_values_archived": false
+    },
+    {
+      "attempt": "attempt5",
+      "overall": "PASS",
+      "known_values_checked_in_original_scan": 9,
+      "raw_values_archived": false
+    }
+  ],
+  "scope": "Final archived text/decompressed gzip structural scan; each original attempt already scanned known in-memory private values. Lossless packing preserves those sanitized original bytes. Screenshot receiver/login regions masked; no OCR/full privacy certification claimed."
+}

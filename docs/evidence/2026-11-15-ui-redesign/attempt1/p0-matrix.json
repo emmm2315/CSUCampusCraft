@@ -1,0 +1,30 @@
+[
+  {
+    "id": "UI-REGRESSION",
+    "required_segments": [
+      "functional",
+      "browser"
+    ],
+    "assertion_plan": "New isolated fixture +85 chain +HTTP/security/SQL cards; paired visual scenes and responsive observations.",
+    "result": "FAIL",
+    "observed_segments": {
+      "functional": {
+        "passed": true,
+        "detail": {
+          "checks": 197
+        },
+        "at": "2026-11-15T11:00:56.358070+00:00"
+      },
+      "browser": {
+        "passed": false,
+        "detail": {
+          "exception": "UnicodeDecodeError",
+          "message": "'gbk' codec can't decode byte 0xad in position 638: illegal multibyte sequence",
+          "checks": 49
+        },
+        "at": "2026-11-15T11:01:22.143496+00:00"
+      }
+    },
+    "tested_sha": "e2bdeb9df9cc7888383ef7afa28d5fbe94f29696"
+  }
+]

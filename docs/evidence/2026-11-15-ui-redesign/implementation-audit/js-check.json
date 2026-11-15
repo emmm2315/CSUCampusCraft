@@ -1,0 +1,56 @@
+{
+  "overall": "PASS",
+  "scope": "Offline JavaScript VM checks only; browser screenshots and HTTP are separate.",
+  "checks": 12,
+  "details": [
+    {
+      "name": "theme early load null",
+      "passed": true
+    },
+    {
+      "name": "theme early load dark",
+      "passed": true
+    },
+    {
+      "name": "theme early load light",
+      "passed": true
+    },
+    {
+      "name": "theme early load invalid",
+      "passed": true
+    },
+    {
+      "name": "theme early load storage unavailable",
+      "passed": true
+    },
+    {
+      "name": "theme button shown only after JS wiring",
+      "passed": true
+    },
+    {
+      "name": "existing error summary focused once",
+      "passed": true
+    },
+    {
+      "name": "detail route marks only orders nav",
+      "passed": true
+    },
+    {
+      "name": "toggle sets dark and persists visual preference",
+      "passed": true
+    },
+    {
+      "name": "toggle returns light",
+      "passed": true
+    },
+    {
+      "name": "cross-tab visual preference synchronized",
+      "passed": true
+    },
+    {
+      "name": "pageshow does not re-focus summary or replay forms",
+      "passed": true
+    }
+  ],
+  "enhancement_sha256": "97c137cbcba8ed9b577ae8a69283462268523d4001e94d11a76203347913c2b2"
+}

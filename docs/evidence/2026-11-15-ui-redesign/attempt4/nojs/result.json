@@ -1,0 +1,90 @@
+{
+  "javaScriptEnabled": false,
+  "checks": [
+    {
+      "name": "native-login-page",
+      "passed": true
+    },
+    {
+      "name": "server-rendered-csrf-without-js",
+      "passed": true
+    },
+    {
+      "name": "native-login-post-303",
+      "passed": true,
+      "status": 303,
+      "location": "/cart"
+    },
+    {
+      "name": "keyboard-login-without-js",
+      "passed": true
+    },
+    {
+      "name": "same-quantity-fixture-present",
+      "passed": true
+    },
+    {
+      "name": "native-quantity-fields",
+      "passed": true
+    },
+    {
+      "name": "native-cart-noop-post-303",
+      "passed": true,
+      "status": 303,
+      "location": "/cart"
+    },
+    {
+      "name": "keyboard-cart-form-without-js",
+      "passed": true
+    },
+    {
+      "name": "same-quantity-and-version-preserved",
+      "passed": true
+    },
+    {
+      "name": "no-js-mobile-no-document-overflow",
+      "passed": true,
+      "viewport": 390,
+      "document": 390
+    },
+    {
+      "name": "theme-button-hidden-without-js",
+      "passed": true
+    },
+    {
+      "name": "no-external-resource-request",
+      "passed": true
+    },
+    {
+      "name": "submitted-fields-preserved",
+      "passed": true
+    }
+  ],
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/login",
+      "status": 303,
+      "location": "/cart",
+      "fieldNames": [
+        "_csrf",
+        "password",
+        "returnUrl",
+        "username"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/cart/items/18/quantity",
+      "status": 303,
+      "location": "/cart",
+      "fieldNames": [
+        "_csrf",
+        "quantity",
+        "version"
+      ]
+    }
+  ],
+  "externalRequests": [],
+  "overall": "PASS"
+}

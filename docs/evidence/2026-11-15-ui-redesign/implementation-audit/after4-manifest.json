@@ -1,0 +1,40 @@
+{
+  "state": "PARENT_NORMALIZED_AND_PUBLISHED_FOR_FRESH_AFTER4",
+  "files": [
+    {
+      "path": "csucampuscraft-user/src/main/resources/static/css/app.css",
+      "original_sha256": "a728c3dfc5bda75bd2efb611578c55e8ae04075f09e9118db4804731f329371b",
+      "sha256": "649ae46738b027c2827633afb3689a8cffcf5bfb6b24d2c188a5dd4c3b62092e",
+      "candidate_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\ui-redesign\\candidate\\csucampuscraft-user\\src\\main\\resources\\static\\css\\app.css",
+      "prepared_candidate_sha256": "72ecc3db7d53580673968a41f74c9c7227368c2d56605ea0fbd36ce971f9d7b4"
+    },
+    {
+      "path": "csucampuscraft-admin/src/main/resources/static/css/app.css",
+      "original_sha256": "a728c3dfc5bda75bd2efb611578c55e8ae04075f09e9118db4804731f329371b",
+      "sha256": "649ae46738b027c2827633afb3689a8cffcf5bfb6b24d2c188a5dd4c3b62092e",
+      "candidate_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\ui-redesign\\candidate\\csucampuscraft-admin\\src\\main\\resources\\static\\css\\app.css",
+      "prepared_candidate_sha256": "72ecc3db7d53580673968a41f74c9c7227368c2d56605ea0fbd36ce971f9d7b4"
+    }
+  ],
+  "combined_patch": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\ui-redesign\\shared-ui\\combined-after4-patch.css",
+  "combined_patch_sha256": "9136637ebdb9a449931bdf5f5b1e74e4f90415dc92be58630c94aba6a814a1a1",
+  "base_css_sha256": "a728c3dfc5bda75bd2efb611578c55e8ae04075f09e9118db4804731f329371b",
+  "new_css_sha256": "649ae46738b027c2827633afb3689a8cffcf5bfb6b24d2c188a5dd4c3b62092e",
+  "new_css_bytes": 82925,
+  "changes": [
+    "current visible row sequence excluding colspan-only empty rows",
+    "normal-flow mobile captions",
+    "full-width four-column desktop A04 filters",
+    "compact asymmetric A02 five real counts; preserve all figures/help/action links"
+  ],
+  "templates_modified": false,
+  "javascript_modified": false,
+  "repository_modified": false,
+  "runtime_validation": "Pending fresh final-SHA after4 real runtime; no PASS claim from child yet.",
+  "prepared_candidate_css_sha256": "72ecc3db7d53580673968a41f74c9c7227368c2d56605ea0fbd36ce971f9d7b4",
+  "final_packaged_css_sha256": "649ae46738b027c2827633afb3689a8cffcf5bfb6b24d2c188a5dd4c3b62092e",
+  "prepared_candidate_css_bytes": 82926,
+  "source_commit": "d22433c2abf87b1a996c6a18467fd7a9a5a43372",
+  "parent_normalization_record": "../css-eof-normalization.json",
+  "final_eof_equivalence_record": "final-eof-byte-check.json"
+}

@@ -1,0 +1,45 @@
+{
+  "started_at_utc": "2026-11-15T11:34:37.884573+00:00",
+  "started_at_local": "2026-11-15T19:34:37.884573+08:00",
+  "tested_sha": "d22433c2abf87b1a996c6a18467fd7a9a5a43372",
+  "attempt": "attempt5",
+  "executor": "Codex AI, authorized fresh before/after UI acceptance",
+  "human_cross_reproduction": "not implemented this round; prior human review remains limited to its original scope",
+  "scope": "Narrow independent theme-visual-supplement: fresh private demo, two logins and two dark screenshots; not one of the92 paired or14 full-page captures.",
+  "branch": "feat/ui-redesign",
+  "runtime_file_count": 209,
+  "runtime_manifest_sha256": "8c64c6f396d2c9ac703103aea7dca690df7d0e7f0947c6d8aa3a424c924392e4",
+  "user_jar_sha256": "b87bfd7a5e9eec981d053fbcc5ad471ca4a9f890e697f0cfccb621a90031e676",
+  "admin_jar_sha256": "47d8326f13e8b7facd537d6f7174bad3d9d1281138b15348f75cd74dfe602712",
+  "mysql_port": 58382,
+  "mysql_uuid": "8a9a7765-e0e8-11f1-bc9f-005056c00001",
+  "mysql_version": "8.4.9",
+  "finished_at_utc": "2026-11-15T11:34:58.079165+00:00",
+  "finished_at_local": "2026-11-15T19:34:58.079165+08:00",
+  "checks": 34,
+  "checks_failed": 0,
+  "p0_matrix": [
+    {
+      "id": "UI-THEME",
+      "required_segments": [
+        "visual"
+      ],
+      "assertion_plan": "Two actual dark U01/A02 images after button click, live same final JARs, genuine whole batch seven-table equality",
+      "result": "PASS",
+      "observed_segments": {
+        "visual": {
+          "passed": true,
+          "detail": {
+            "checks": 21
+          },
+          "at": "2026-11-15T11:34:57.996120+00:00"
+        }
+      },
+      "tested_sha": "d22433c2abf87b1a996c6a18467fd7a9a5a43372"
+    }
+  ],
+  "tracked_processes_stopped": true,
+  "error": null,
+  "overall": "PASS",
+  "runtime_inputs_stable": true
+}

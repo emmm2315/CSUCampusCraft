@@ -1,0 +1,56 @@
+{
+  "started_at_utc": "2026-11-15T11:02:51.325828+00:00",
+  "started_at_local": "2026-11-15T19:02:51.325828+08:00",
+  "tested_sha": "e2bdeb9df9cc7888383ef7afa28d5fbe94f29696",
+  "attempt": "attempt2",
+  "executor": "Codex AI, authorized fresh before/after UI acceptance",
+  "human_cross_reproduction": "not implemented this round; prior human review remains limited to its original scope",
+  "scope": "UI before/after visual and bounded business regression on the exact current SHA; no old verdict reuse",
+  "phase": "before",
+  "branch": "feat/ui-redesign",
+  "runtime_file_count": 199,
+  "runtime_manifest_sha256": "e0f5ea7765eb1b97e889866f80d8af69f00b29004575235c21094735c3b0789a",
+  "user_jar_sha256": "659024dbf059f31b1e1812182f8122c2656af08545969ce52af2df13690fd8a2",
+  "admin_jar_sha256": "4cc43a01358fd8996b7f21db4f37bc9ff182e5d10e8deb8a081b63f5e7954dce",
+  "mysql_port": 55497,
+  "mysql_uuid": "1a32038f-e0e4-11f1-95b9-005056c00001",
+  "mysql_version": "8.4.9",
+  "screenshots": 92,
+  "browser_navigation_count": 144,
+  "finished_at_utc": "2026-11-15T11:08:00.018746+00:00",
+  "finished_at_local": "2026-11-15T19:08:00.018746+08:00",
+  "checks": 662,
+  "checks_failed": 0,
+  "p0_matrix": [
+    {
+      "id": "UI-REGRESSION",
+      "required_segments": [
+        "functional",
+        "browser"
+      ],
+      "assertion_plan": "New isolated fixture +85 chain +HTTP/security/SQL cards; paired visual scenes and responsive observations.",
+      "result": "PASS",
+      "observed_segments": {
+        "functional": {
+          "passed": true,
+          "detail": {
+            "checks": 197
+          },
+          "at": "2026-11-15T11:03:53.576196+00:00"
+        },
+        "browser": {
+          "passed": true,
+          "detail": {
+            "checks": 452
+          },
+          "at": "2026-11-15T11:07:59.914794+00:00"
+        }
+      },
+      "tested_sha": "e2bdeb9df9cc7888383ef7afa28d5fbe94f29696"
+    }
+  ],
+  "tracked_processes_stopped": true,
+  "error": null,
+  "overall": "PASS",
+  "runtime_inputs_stable": true
+}

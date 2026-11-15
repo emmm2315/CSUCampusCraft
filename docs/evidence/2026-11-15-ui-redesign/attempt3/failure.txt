@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\ui-redesign\verification\run_ui.py", line 125, in main
+    if phase=='after':after_gates(h,observations,main_result,norm)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\ui-redesign\verification\run_ui.py", line 94, in after_gates
+    h.check('after dark media changes actual body background',media['dark']['background']!=media['light'])
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\ui-redesign\verification\ui_harness.py", line 149, in check
+    if not passed:raise AssertionError(name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: after dark media changes actual body background

@@ -1,0 +1,146 @@
+{
+  "overall": "PASS",
+  "normalization": "Random order numbers, payment numbers, timestamps and private shipping values omitted; all state/money/stock/version/cart/snapshot/catalog/card fields retained",
+  "before": {
+    "status": "SHIPPED",
+    "amount": "85.00",
+    "paymentMethod": "MOCK",
+    "items": [
+      {
+        "quantity": 2,
+        "productId": 1,
+        "unitPrice": "18.00",
+        "lineAmount": "36.00",
+        "skuSnapshot": "CSU-LMK-NOTE-01",
+        "coverImageSnapshot": "images/catalog-placeholder.svg",
+        "productNameSnapshot": "潇湘校区图书馆方格本"
+      },
+      {
+        "quantity": 1,
+        "productId": 56,
+        "unitPrice": "49.00",
+        "lineAmount": "49.00",
+        "skuSnapshot": "CSU-GRAD-BOX-01",
+        "coverImageSnapshot": "images/catalog-placeholder.svg",
+        "productNameSnapshot": "中南毕业纪念礼盒"
+      }
+    ],
+    "products": {
+      "1": {
+        "sku": "CSU-LMK-NOTE-01",
+        "stock": 8,
+        "version": 1,
+        "price": "18.00",
+        "status": "ON_SALE"
+      },
+      "56": {
+        "sku": "CSU-GRAD-BOX-01",
+        "stock": 11,
+        "version": 2,
+        "price": "49.00",
+        "status": "ON_SALE"
+      }
+    },
+    "cart": [
+      {
+        "userId": 1,
+        "productId": 1,
+        "quantity": 2,
+        "version": 0
+      },
+      {
+        "userId": 1,
+        "productId": 56,
+        "quantity": 1,
+        "version": 0
+      }
+    ],
+    "dashboard": {
+      "paid": 2,
+      "draft": 6,
+      "onSale": 54,
+      "enabled": 2,
+      "disabled": 1
+    },
+    "finalSevenCounts": [
+      4,
+      15,
+      60,
+      100,
+      6,
+      11,
+      22
+    ]
+  },
+  "after": {
+    "status": "SHIPPED",
+    "amount": "85.00",
+    "paymentMethod": "MOCK",
+    "items": [
+      {
+        "quantity": 2,
+        "productId": 1,
+        "unitPrice": "18.00",
+        "lineAmount": "36.00",
+        "skuSnapshot": "CSU-LMK-NOTE-01",
+        "coverImageSnapshot": "images/catalog-placeholder.svg",
+        "productNameSnapshot": "潇湘校区图书馆方格本"
+      },
+      {
+        "quantity": 1,
+        "productId": 56,
+        "unitPrice": "49.00",
+        "lineAmount": "49.00",
+        "skuSnapshot": "CSU-GRAD-BOX-01",
+        "coverImageSnapshot": "images/catalog-placeholder.svg",
+        "productNameSnapshot": "中南毕业纪念礼盒"
+      }
+    ],
+    "products": {
+      "1": {
+        "sku": "CSU-LMK-NOTE-01",
+        "stock": 8,
+        "version": 1,
+        "price": "18.00",
+        "status": "ON_SALE"
+      },
+      "56": {
+        "sku": "CSU-GRAD-BOX-01",
+        "stock": 11,
+        "version": 2,
+        "price": "49.00",
+        "status": "ON_SALE"
+      }
+    },
+    "cart": [
+      {
+        "userId": 1,
+        "productId": 1,
+        "quantity": 2,
+        "version": 0
+      },
+      {
+        "userId": 1,
+        "productId": 56,
+        "quantity": 1,
+        "version": 0
+      }
+    ],
+    "dashboard": {
+      "paid": 2,
+      "draft": 6,
+      "onSale": 54,
+      "enabled": 2,
+      "disabled": 1
+    },
+    "finalSevenCounts": [
+      4,
+      15,
+      60,
+      100,
+      6,
+      11,
+      22
+    ]
+  }
+}

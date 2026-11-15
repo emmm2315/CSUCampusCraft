@@ -1,0 +1,30 @@
+[
+  {
+    "id": "UI-REGRESSION",
+    "required_segments": [
+      "functional",
+      "browser"
+    ],
+    "assertion_plan": "New isolated fixture +85 chain +HTTP/security/SQL cards; paired visual scenes and responsive observations.",
+    "result": "FAIL",
+    "observed_segments": {
+      "functional": {
+        "passed": true,
+        "detail": {
+          "checks": 198
+        },
+        "at": "2026-11-15T11:13:20.626340+00:00"
+      },
+      "browser": {
+        "passed": false,
+        "detail": {
+          "exception": "AssertionError",
+          "message": "after dark media changes actual body background",
+          "checks": 459
+        },
+        "at": "2026-11-15T11:17:33.217504+00:00"
+      }
+    },
+    "tested_sha": "a14df9dc9fc96ad5985edd5abdb1292a66fec0bc"
+  }
+]

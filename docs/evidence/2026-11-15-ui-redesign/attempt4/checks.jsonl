@@ -1,0 +1,678 @@
+{"at": "2026-11-15T11:24:45.506267+00:00", "name": "exact source", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T11:24:45.534427+00:00", "name": "feature branch", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T11:24:45.577554+00:00", "name": "clean start", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T11:24:45.634176+00:00", "name": "actual tool version exit", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T11:24:46.166141+00:00", "name": "actual tool version exit", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T11:24:46.211129+00:00", "name": "actual tool version exit", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T11:24:46.211129+00:00", "name": "actual JDK21/Maven3.9.16", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T11:24:46.241063+00:00", "name": "new clean Wrapper verify user", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T11:24:46.258572+00:00", "name": "new clean Wrapper verify admin", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T11:24:49.087716+00:00", "name": "private MySQL initialize", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T11:24:50.173626+00:00", "name": "private MySQL identity", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T11:24:54.468911+00:00", "name": "created listener owner u", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T11:24:58.129106+00:00", "name": "created listener owner a", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T11:24:58.253832+00:00", "name": "fresh SQL02 exact original seven counts", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:24:58.673817+00:00", "name": "raw response no credential/hash 1", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:24:58.674815+00:00", "name": "no URL session tracking 1", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:24:59.017569+00:00", "name": "/login?returnUrl=%2F seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 1}}
+{"at": "2026-11-15T11:24:59.018087+00:00", "name": "GET /login?returnUrl=%2F", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 1, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:24:59.738198+00:00", "name": "raw response no credential/hash 2", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:24:59.739202+00:00", "name": "no URL session tracking 2", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:00.168705+00:00", "name": "/login seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 2}}
+{"at": "2026-11-15T11:25:00.169252+00:00", "name": "POST /login", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 2, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:00.169797+00:00", "name": "login changes session ID without exposing it", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:00.571120+00:00", "name": "raw response no credential/hash 3", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:00.571120+00:00", "name": "no URL session tracking 3", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:01.014389+00:00", "name": "/login?returnUrl=%2F seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 3}}
+{"at": "2026-11-15T11:25:01.014389+00:00", "name": "GET /login?returnUrl=%2F", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 3, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:01.726676+00:00", "name": "raw response no credential/hash 4", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:01.726676+00:00", "name": "no URL session tracking 4", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:02.196491+00:00", "name": "/login seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 4}}
+{"at": "2026-11-15T11:25:02.197016+00:00", "name": "POST /login", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 4, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:02.197016+00:00", "name": "login changes session ID without exposing it", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:03.042629+00:00", "name": "85 fixture originals", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:03.999324+00:00", "name": "raw response no credential/hash 5", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:03.999324+00:00", "name": "no URL session tracking 5", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:04.416467+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 5}}
+{"at": "2026-11-15T11:25:04.416467+00:00", "name": "GET /cart", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 5, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:04.843037+00:00", "name": "raw response no credential/hash 6", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:04.843557+00:00", "name": "no URL session tracking 6", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:05.310461+00:00", "name": "POST /cart/items/1/remove", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 6, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:05.762316+00:00", "name": "raw response no credential/hash 7", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:05.762836+00:00", "name": "no URL session tracking 7", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:06.165303+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 7}}
+{"at": "2026-11-15T11:25:06.165303+00:00", "name": "GET /cart", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 7, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:06.654631+00:00", "name": "raw response no credential/hash 8", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:06.655135+00:00", "name": "no URL session tracking 8", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:07.070610+00:00", "name": "POST /cart/items/2/remove", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 8, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:07.538357+00:00", "name": "raw response no credential/hash 9", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:07.539356+00:00", "name": "no URL session tracking 9", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:07.988136+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 9}}
+{"at": "2026-11-15T11:25:07.988136+00:00", "name": "GET /cart", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 9, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:08.447723+00:00", "name": "raw response no credential/hash 10", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:08.448333+00:00", "name": "no URL session tracking 10", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:08.871046+00:00", "name": "POST /cart/items/3/remove", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 10, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:09.278467+00:00", "name": "raw response no credential/hash 11", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:09.278984+00:00", "name": "no URL session tracking 11", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:09.692025+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 11}}
+{"at": "2026-11-15T11:25:09.692025+00:00", "name": "GET /cart", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 11, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:10.137938+00:00", "name": "raw response no credential/hash 12", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:10.137938+00:00", "name": "no URL session tracking 12", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:10.588922+00:00", "name": "POST /cart/items/4/remove", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 12, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:10.997998+00:00", "name": "raw response no credential/hash 13", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:10.998518+00:00", "name": "no URL session tracking 13", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:11.424001+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 13}}
+{"at": "2026-11-15T11:25:11.425009+00:00", "name": "GET /cart", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 13, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:11.850790+00:00", "name": "raw response no credential/hash 14", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:11.851308+00:00", "name": "no URL session tracking 14", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:12.252064+00:00", "name": "POST /cart/items/5/remove", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 14, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:12.665606+00:00", "name": "raw response no credential/hash 15", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:12.665606+00:00", "name": "no URL session tracking 15", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:13.111850+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 15}}
+{"at": "2026-11-15T11:25:13.112381+00:00", "name": "GET /cart", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 15, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:13.514604+00:00", "name": "raw response no credential/hash 16", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:13.514604+00:00", "name": "no URL session tracking 16", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:13.963240+00:00", "name": "POST /cart/items/6/remove", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 16, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:14.508360+00:00", "name": "raw response no credential/hash 17", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:14.509366+00:00", "name": "no URL session tracking 17", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:14.933044+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 17}}
+{"at": "2026-11-15T11:25:14.933044+00:00", "name": "GET /cart", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 17, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:15.382836+00:00", "name": "raw response no credential/hash 18", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:15.382836+00:00", "name": "no URL session tracking 18", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:15.861841+00:00", "name": "POST /cart/items", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 18, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:16.371425+00:00", "name": "raw response no credential/hash 19", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:16.371947+00:00", "name": "no URL session tracking 19", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:16.782219+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 19}}
+{"at": "2026-11-15T11:25:16.782219+00:00", "name": "GET /cart", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 19, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:17.209858+00:00", "name": "raw response no credential/hash 20", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:17.209858+00:00", "name": "no URL session tracking 20", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:17.666739+00:00", "name": "POST /cart/items", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 20, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:18.162748+00:00", "name": "raw response no credential/hash 21", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:18.163747+00:00", "name": "no URL session tracking 21", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:18.596766+00:00", "name": "/checkout seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 21}}
+{"at": "2026-11-15T11:25:18.596766+00:00", "name": "GET /checkout", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 21, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:18.596766+00:00", "name": "fresh confirmation is 85", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:19.126223+00:00", "name": "raw response no credential/hash 22", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:19.126223+00:00", "name": "no URL session tracking 22", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:19.536243+00:00", "name": "POST /orders", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 22, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:19.892352+00:00", "name": "fresh order amount85", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:21.408287+00:00", "name": "85 stock/version deduction", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:21.753428+00:00", "name": "85 two immutable lines", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:22.091463+00:00", "name": "85 cart cleared and badge0", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:22.580664+00:00", "name": "raw response no credential/hash 23", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:22.580664+00:00", "name": "no URL session tracking 23", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:23.027000+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 23}}
+{"at": "2026-11-15T11:25:23.027000+00:00", "name": "GET /cart", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 23, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:23.551810+00:00", "name": "raw response no credential/hash 24", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:23.551810+00:00", "name": "no URL session tracking 24", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:24.019274+00:00", "name": "POST /orders/CSU-983ec2ae95eeb9dd91155d49bda8383c/payment", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 24, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:24.473471+00:00", "name": "raw response no credential/hash 25", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:24.473988+00:00", "name": "no URL session tracking 25", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:24.900786+00:00", "name": "/ seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 25}}
+{"at": "2026-11-15T11:25:24.901306+00:00", "name": "GET /", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 25, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:25.404645+00:00", "name": "raw response no credential/hash 26", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:25.404645+00:00", "name": "no URL session tracking 26", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:25.848500+00:00", "name": "POST /orders/CSU-983ec2ae95eeb9dd91155d49bda8383c/ship", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 26, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:26.250432+00:00", "name": "85 paid/shipped state and monotonic chain", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:26.719813+00:00", "name": "raw response no credential/hash 27", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:26.720325+00:00", "name": "no URL session tracking 27", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:27.098737+00:00", "name": "/orders/CSU-983ec2ae95eeb9dd91155d49bda8383c seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 27}}
+{"at": "2026-11-15T11:25:27.098737+00:00", "name": "GET /orders/CSU-983ec2ae95eeb9dd91155d49bda8383c", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 27, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:27.536783+00:00", "name": "raw response no credential/hash 28", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:27.537786+00:00", "name": "no URL session tracking 28", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:27.956374+00:00", "name": "/orders/CSU-983ec2ae95eeb9dd91155d49bda8383c seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 28}}
+{"at": "2026-11-15T11:25:27.956374+00:00", "name": "GET /orders/CSU-983ec2ae95eeb9dd91155d49bda8383c", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 28, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:27.957376+00:00", "name": "rendered order target badge0 after clear", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:28.435310+00:00", "name": "raw response no credential/hash 29", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:28.436311+00:00", "name": "no URL session tracking 29", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:28.902393+00:00", "name": "/login?returnUrl=%2F seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 29}}
+{"at": "2026-11-15T11:25:28.903400+00:00", "name": "GET /login?returnUrl=%2F", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 29, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:29.358642+00:00", "name": "raw response no credential/hash 30", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:29.359168+00:00", "name": "no URL session tracking 30", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:29.781786+00:00", "name": "/login seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 30}}
+{"at": "2026-11-15T11:25:29.782795+00:00", "name": "POST /login", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 30, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:29.782795+00:00", "name": "login changes session ID without exposing it", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:30.223544+00:00", "name": "raw response no credential/hash 31", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:30.224542+00:00", "name": "no URL session tracking 31", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:30.723979+00:00", "name": "/orders/CSU-983ec2ae95eeb9dd91155d49bda8383c seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 31}}
+{"at": "2026-11-15T11:25:30.724977+00:00", "name": "GET /orders/CSU-983ec2ae95eeb9dd91155d49bda8383c", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 31, "expected": 404, "observed": 404}}
+{"at": "2026-11-15T11:25:31.157813+00:00", "name": "raw response no credential/hash 32", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:31.158814+00:00", "name": "no URL session tracking 32", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:31.658930+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 32}}
+{"at": "2026-11-15T11:25:31.658930+00:00", "name": "GET /cart", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 32, "expected": 302, "observed": 302}}
+{"at": "2026-11-15T11:25:32.072223+00:00", "name": "raw response no credential/hash 33", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:32.072740+00:00", "name": "no URL session tracking 33", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:32.508205+00:00", "name": "/cart/items seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 33}}
+{"at": "2026-11-15T11:25:32.508724+00:00", "name": "POST /cart/items", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 33, "expected": 302, "observed": 302}}
+{"at": "2026-11-15T11:25:32.948090+00:00", "name": "raw response no credential/hash 34", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:32.948090+00:00", "name": "no URL session tracking 34", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:33.359460+00:00", "name": "/cart/items seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 34}}
+{"at": "2026-11-15T11:25:33.359460+00:00", "name": "POST /cart/items", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 34, "expected": 403, "observed": 403}}
+{"at": "2026-11-15T11:25:33.841140+00:00", "name": "raw response no credential/hash 35", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:33.841140+00:00", "name": "no URL session tracking 35", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:34.320469+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 35}}
+{"at": "2026-11-15T11:25:34.320469+00:00", "name": "GET /cart", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 35, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:34.796723+00:00", "name": "raw response no credential/hash 36", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:34.796723+00:00", "name": "no URL session tracking 36", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:35.248429+00:00", "name": "/cart/items seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 36}}
+{"at": "2026-11-15T11:25:35.249438+00:00", "name": "POST /cart/items", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 36, "expected": 400, "observed": 400}}
+{"at": "2026-11-15T11:25:35.660958+00:00", "name": "raw response no credential/hash 37", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:35.660958+00:00", "name": "no URL session tracking 37", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:36.120442+00:00", "name": "/ seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 37}}
+{"at": "2026-11-15T11:25:36.121229+00:00", "name": "GET /", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 37, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:36.582187+00:00", "name": "raw response no credential/hash 38", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:36.582187+00:00", "name": "no URL session tracking 38", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:37.079485+00:00", "name": "/products/1/images seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 38}}
+{"at": "2026-11-15T11:25:37.079485+00:00", "name": "POST /products/1/images", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 38, "expected": 409, "observed": 409}}
+{"at": "2026-11-15T11:25:37.592815+00:00", "name": "raw response no credential/hash 39", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:37.592815+00:00", "name": "no URL session tracking 39", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:38.040793+00:00", "name": "/login?returnUrl=%2F seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 39}}
+{"at": "2026-11-15T11:25:38.040793+00:00", "name": "GET /login?returnUrl=%2F", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 39, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:38.548028+00:00", "name": "raw response no credential/hash 40", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:38.548028+00:00", "name": "no URL session tracking 40", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:38.987704+00:00", "name": "/login seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 40}}
+{"at": "2026-11-15T11:25:38.988213+00:00", "name": "POST /login", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 40, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:38.988749+00:00", "name": "login changes session ID without exposing it", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:39.456037+00:00", "name": "raw response no credential/hash 41", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:39.456555+00:00", "name": "no URL session tracking 41", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:39.901569+00:00", "name": "/ seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 41}}
+{"at": "2026-11-15T11:25:39.901569+00:00", "name": "GET /", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 41, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:40.399470+00:00", "name": "raw response no credential/hash 42", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:40.400470+00:00", "name": "no URL session tracking 42", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:40.890483+00:00", "name": "POST /customers/1/status", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 42, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:41.353039+00:00", "name": "raw response no credential/hash 43", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:41.353039+00:00", "name": "no URL session tracking 43", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:41.785329+00:00", "name": "/orders seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 43}}
+{"at": "2026-11-15T11:25:41.785329+00:00", "name": "GET /orders", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 43, "expected": 302, "observed": 302}}
+{"at": "2026-11-15T11:25:42.239260+00:00", "name": "raw response no credential/hash 44", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:42.239260+00:00", "name": "no URL session tracking 44", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:42.661538+00:00", "name": "/ seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 44}}
+{"at": "2026-11-15T11:25:42.662526+00:00", "name": "GET /", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 44, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:43.128316+00:00", "name": "raw response no credential/hash 45", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:43.128316+00:00", "name": "no URL session tracking 45", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:43.530941+00:00", "name": "POST /customers/1/status", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 45, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:43.947711+00:00", "name": "raw response no credential/hash 46", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:43.948724+00:00", "name": "no URL session tracking 46", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:44.366083+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 46}}
+{"at": "2026-11-15T11:25:44.366606+00:00", "name": "GET /cart", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 46, "expected": 302, "observed": 302}}
+{"at": "2026-11-15T11:25:44.796614+00:00", "name": "raw response no credential/hash 47", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:44.798119+00:00", "name": "no URL session tracking 47", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:45.195527+00:00", "name": "/login?returnUrl=%2F seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 47}}
+{"at": "2026-11-15T11:25:45.195527+00:00", "name": "GET /login?returnUrl=%2F", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 47, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:45.738106+00:00", "name": "raw response no credential/hash 48", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:45.738106+00:00", "name": "no URL session tracking 48", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:46.221695+00:00", "name": "/login seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 48}}
+{"at": "2026-11-15T11:25:46.221695+00:00", "name": "POST /login", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 48, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:25:46.222223+00:00", "name": "login changes session ID without exposing it", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:46.686035+00:00", "name": "raw response no credential/hash 49", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:46.686035+00:00", "name": "no URL session tracking 49", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:47.083130+00:00", "name": "/ seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 49}}
+{"at": "2026-11-15T11:25:47.084169+00:00", "name": "GET /", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": {"http": 49, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:25:47.144574+00:00", "name": "A02 five current independent SQL counts", "passed": true, "case": "UI-REGRESSION", "segment": "functional", "detail": null}
+{"at": "2026-11-15T11:25:49.708625+00:00", "name": "raw response no credential/hash 50", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:49.709161+00:00", "name": "no URL session tracking 50", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:49.711816+00:00", "name": "browser GET seven-table no write U05-empty", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:51.254797+00:00", "name": "raw response no credential/hash 51", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:51.254797+00:00", "name": "no URL session tracking 51", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:51.257856+00:00", "name": "browser GET seven-table no write U05-empty", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:52.837743+00:00", "name": "raw response no credential/hash 52", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:52.837743+00:00", "name": "no URL session tracking 52", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:52.840752+00:00", "name": "browser GET seven-table no write U05-empty", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:54.306710+00:00", "name": "raw response no credential/hash 53", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:54.307226+00:00", "name": "no URL session tracking 53", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:54.309850+00:00", "name": "browser GET seven-table no write U05-empty", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:55.872220+00:00", "name": "raw response no credential/hash 54", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:55.872220+00:00", "name": "no URL session tracking 54", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:55.875975+00:00", "name": "browser GET seven-table no write U06-empty-conflict", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:57.445742+00:00", "name": "raw response no credential/hash 55", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:57.446742+00:00", "name": "no URL session tracking 55", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:57.448739+00:00", "name": "browser GET seven-table no write U06-empty-conflict", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:59.031809+00:00", "name": "raw response no credential/hash 56", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:59.032644+00:00", "name": "no URL session tracking 56", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:25:59.035579+00:00", "name": "browser GET seven-table no write U06-empty-conflict", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:00.549196+00:00", "name": "raw response no credential/hash 57", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:00.549196+00:00", "name": "no URL session tracking 57", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:00.552717+00:00", "name": "browser GET seven-table no write U06-empty-conflict", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:02.079645+00:00", "name": "raw response no credential/hash 58", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:02.079645+00:00", "name": "no URL session tracking 58", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:02.083789+00:00", "name": "browser GET seven-table no write U02-empty-results", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:03.648128+00:00", "name": "raw response no credential/hash 59", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:03.648128+00:00", "name": "no URL session tracking 59", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:03.651197+00:00", "name": "browser GET seven-table no write U02-empty-results", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:05.218802+00:00", "name": "raw response no credential/hash 60", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:05.218802+00:00", "name": "no URL session tracking 60", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:05.221972+00:00", "name": "browser GET seven-table no write U02-empty-results", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:06.716169+00:00", "name": "raw response no credential/hash 61", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:06.716169+00:00", "name": "no URL session tracking 61", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:06.719161+00:00", "name": "browser GET seven-table no write U02-empty-results", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:08.400463+00:00", "name": "raw response no credential/hash 62", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:08.401773+00:00", "name": "no URL session tracking 62", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:08.405036+00:00", "name": "browser GET seven-table no write A04-empty-results", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:09.873731+00:00", "name": "raw response no credential/hash 63", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:09.874255+00:00", "name": "no URL session tracking 63", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:09.876836+00:00", "name": "browser GET seven-table no write A04-empty-results", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:11.461322+00:00", "name": "raw response no credential/hash 64", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:11.461322+00:00", "name": "no URL session tracking 64", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:11.464528+00:00", "name": "browser GET seven-table no write A04-empty-results", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:12.978510+00:00", "name": "raw response no credential/hash 65", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:12.980013+00:00", "name": "no URL session tracking 65", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:12.982541+00:00", "name": "browser GET seven-table no write A04-empty-results", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:13.935509+00:00", "name": "browser empty helper success", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:13.936037+00:00", "name": "browser empty batch no writes", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:13.936037+00:00", "name": "no external browser network empty", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:14.313812+00:00", "name": "raw response no credential/hash 66", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:14.314325+00:00", "name": "no URL session tracking 66", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:14.719516+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": {"http": 66}}
+{"at": "2026-11-15T11:26:14.720061+00:00", "name": "GET /cart", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": {"http": 66, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:26:15.211251+00:00", "name": "raw response no credential/hash 67", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:15.212254+00:00", "name": "no URL session tracking 67", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:15.661679+00:00", "name": "POST /cart/items", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": {"http": 67, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:26:16.125209+00:00", "name": "raw response no credential/hash 68", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:16.126210+00:00", "name": "no URL session tracking 68", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:16.514120+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": {"http": 68}}
+{"at": "2026-11-15T11:26:16.514655+00:00", "name": "GET /cart", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": {"http": 68, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T11:26:16.952869+00:00", "name": "raw response no credential/hash 69", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:16.952869+00:00", "name": "no URL session tracking 69", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:17.328563+00:00", "name": "POST /cart/items", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": {"http": 69, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T11:26:19.727192+00:00", "name": "raw response no credential/hash 70", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:19.727707+00:00", "name": "no URL session tracking 70", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:19.731345+00:00", "name": "browser GET seven-table no write U01-home", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:22.723294+00:00", "name": "raw response no credential/hash 71", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:22.723840+00:00", "name": "no URL session tracking 71", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:22.727237+00:00", "name": "browser GET seven-table no write U01-home", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:24.292781+00:00", "name": "raw response no credential/hash 72", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:24.293314+00:00", "name": "no URL session tracking 72", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:24.296544+00:00", "name": "browser GET seven-table no write U01-home", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:27.378329+00:00", "name": "raw response no credential/hash 73", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:27.378872+00:00", "name": "no URL session tracking 73", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:27.381445+00:00", "name": "browser GET seven-table no write U01-home", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:30.544543+00:00", "name": "raw response no credential/hash 74", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:30.545058+00:00", "name": "no URL session tracking 74", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:30.548714+00:00", "name": "browser GET seven-table no write U02-products", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:32.055681+00:00", "name": "raw response no credential/hash 75", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:32.056190+00:00", "name": "no URL session tracking 75", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:32.059283+00:00", "name": "browser GET seven-table no write U02-products", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:33.624328+00:00", "name": "raw response no credential/hash 76", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:33.624849+00:00", "name": "no URL session tracking 76", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:33.627464+00:00", "name": "browser GET seven-table no write U02-products", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:36.671679+00:00", "name": "raw response no credential/hash 77", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:36.672201+00:00", "name": "no URL session tracking 77", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:36.675354+00:00", "name": "browser GET seven-table no write U02-products", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:39.829274+00:00", "name": "raw response no credential/hash 78", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:39.829274+00:00", "name": "no URL session tracking 78", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:39.833796+00:00", "name": "browser GET seven-table no write U02-graduation", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:41.268436+00:00", "name": "raw response no credential/hash 79", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:41.268436+00:00", "name": "no URL session tracking 79", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:41.271963+00:00", "name": "browser GET seven-table no write U02-graduation", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:42.882104+00:00", "name": "raw response no credential/hash 80", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:42.882623+00:00", "name": "no URL session tracking 80", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:42.885738+00:00", "name": "browser GET seven-table no write U02-graduation", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:45.890317+00:00", "name": "raw response no credential/hash 81", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:45.890317+00:00", "name": "no URL session tracking 81", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:45.893723+00:00", "name": "browser GET seven-table no write U02-graduation", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:48.952341+00:00", "name": "raw response no credential/hash 82", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:48.952341+00:00", "name": "no URL session tracking 82", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:48.955870+00:00", "name": "browser GET seven-table no write U03-product", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:50.420461+00:00", "name": "raw response no credential/hash 83", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:50.420461+00:00", "name": "no URL session tracking 83", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:50.423692+00:00", "name": "browser GET seven-table no write U03-product", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:51.947172+00:00", "name": "raw response no credential/hash 84", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:51.947172+00:00", "name": "no URL session tracking 84", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:51.950683+00:00", "name": "browser GET seven-table no write U03-product", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:54.959656+00:00", "name": "raw response no credential/hash 85", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:54.960277+00:00", "name": "no URL session tracking 85", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:54.963464+00:00", "name": "browser GET seven-table no write U03-product", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:57.989695+00:00", "name": "raw response no credential/hash 86", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:57.990211+00:00", "name": "no URL session tracking 86", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:57.992810+00:00", "name": "browser GET seven-table no write U04-login", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:59.565417+00:00", "name": "raw response no credential/hash 87", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:59.565417+00:00", "name": "no URL session tracking 87", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:26:59.568444+00:00", "name": "browser GET seven-table no write U04-login", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:01.078667+00:00", "name": "raw response no credential/hash 88", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:01.078667+00:00", "name": "no URL session tracking 88", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:01.081831+00:00", "name": "browser GET seven-table no write U04-login", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:02.552867+00:00", "name": "raw response no credential/hash 89", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:02.552867+00:00", "name": "no URL session tracking 89", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:02.556753+00:00", "name": "browser GET seven-table no write U04-login", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:04.161008+00:00", "name": "raw response no credential/hash 90", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:04.161008+00:00", "name": "no URL session tracking 90", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:04.164778+00:00", "name": "browser GET seven-table no write U05-cart", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:05.758175+00:00", "name": "raw response no credential/hash 91", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:05.758175+00:00", "name": "no URL session tracking 91", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:05.760681+00:00", "name": "browser GET seven-table no write U05-cart", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:07.367636+00:00", "name": "raw response no credential/hash 92", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:07.367636+00:00", "name": "no URL session tracking 92", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:07.371132+00:00", "name": "browser GET seven-table no write U05-cart", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:08.930897+00:00", "name": "raw response no credential/hash 93", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:08.930897+00:00", "name": "no URL session tracking 93", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:08.934169+00:00", "name": "browser GET seven-table no write U05-cart", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:10.501474+00:00", "name": "raw response no credential/hash 94", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:10.501998+00:00", "name": "no URL session tracking 94", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:10.505704+00:00", "name": "browser GET seven-table no write U06-checkout", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:12.188221+00:00", "name": "raw response no credential/hash 95", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:12.188221+00:00", "name": "no URL session tracking 95", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:12.192423+00:00", "name": "browser GET seven-table no write U06-checkout", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:13.756939+00:00", "name": "raw response no credential/hash 96", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:13.756939+00:00", "name": "no URL session tracking 96", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:13.760689+00:00", "name": "browser GET seven-table no write U06-checkout", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:15.380362+00:00", "name": "raw response no credential/hash 97", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:15.380876+00:00", "name": "no URL session tracking 97", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:15.384547+00:00", "name": "browser GET seven-table no write U06-checkout", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:16.909770+00:00", "name": "raw response no credential/hash 98", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:16.910287+00:00", "name": "no URL session tracking 98", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:16.913928+00:00", "name": "browser GET seven-table no write U07-orders", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:18.474756+00:00", "name": "raw response no credential/hash 99", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:18.474756+00:00", "name": "no URL session tracking 99", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:18.477942+00:00", "name": "browser GET seven-table no write U07-orders", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:20.059245+00:00", "name": "raw response no credential/hash 100", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:20.059774+00:00", "name": "no URL session tracking 100", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:20.063453+00:00", "name": "browser GET seven-table no write U07-orders", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:21.490934+00:00", "name": "raw response no credential/hash 101", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:21.490934+00:00", "name": "no URL session tracking 101", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:21.493940+00:00", "name": "browser GET seven-table no write U07-orders", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:23.021116+00:00", "name": "raw response no credential/hash 102", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:23.021648+00:00", "name": "no URL session tracking 102", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:23.025435+00:00", "name": "browser GET seven-table no write U08-order", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:24.624084+00:00", "name": "raw response no credential/hash 103", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:24.624084+00:00", "name": "no URL session tracking 103", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:24.627268+00:00", "name": "browser GET seven-table no write U08-order", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:26.144626+00:00", "name": "raw response no credential/hash 104", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:26.145633+00:00", "name": "no URL session tracking 104", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:26.148631+00:00", "name": "browser GET seven-table no write U08-order", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:27.662769+00:00", "name": "raw response no credential/hash 105", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:27.662769+00:00", "name": "no URL session tracking 105", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:27.666241+00:00", "name": "browser GET seven-table no write U08-order", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:29.258615+00:00", "name": "raw response no credential/hash 106", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:29.259123+00:00", "name": "no URL session tracking 106", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:29.269682+00:00", "name": "browser GET seven-table no write U09-payment", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:30.749714+00:00", "name": "raw response no credential/hash 107", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:30.750237+00:00", "name": "no URL session tracking 107", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:30.753330+00:00", "name": "browser GET seven-table no write U09-payment", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:32.131385+00:00", "name": "raw response no credential/hash 108", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:32.131385+00:00", "name": "no URL session tracking 108", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:32.135122+00:00", "name": "browser GET seven-table no write U09-payment", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:33.620662+00:00", "name": "raw response no credential/hash 109", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:33.621183+00:00", "name": "no URL session tracking 109", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:33.624415+00:00", "name": "browser GET seven-table no write U09-payment", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:35.133275+00:00", "name": "raw response no credential/hash 110", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:35.133275+00:00", "name": "no URL session tracking 110", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:35.136528+00:00", "name": "browser GET seven-table no write A01-login", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:36.660219+00:00", "name": "raw response no credential/hash 111", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:36.660737+00:00", "name": "no URL session tracking 111", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:36.663344+00:00", "name": "browser GET seven-table no write A01-login", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:38.131231+00:00", "name": "raw response no credential/hash 112", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:38.131766+00:00", "name": "no URL session tracking 112", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:38.134828+00:00", "name": "browser GET seven-table no write A01-login", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:39.474091+00:00", "name": "raw response no credential/hash 113", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:39.474091+00:00", "name": "no URL session tracking 113", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:39.477171+00:00", "name": "browser GET seven-table no write A01-login", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:41.046653+00:00", "name": "raw response no credential/hash 114", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:41.046653+00:00", "name": "no URL session tracking 114", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:41.049795+00:00", "name": "browser GET seven-table no write A02-dashboard", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:42.632438+00:00", "name": "raw response no credential/hash 115", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:42.632947+00:00", "name": "no URL session tracking 115", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:42.636724+00:00", "name": "browser GET seven-table no write A02-dashboard", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:44.127298+00:00", "name": "raw response no credential/hash 116", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:44.128302+00:00", "name": "no URL session tracking 116", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:44.131706+00:00", "name": "browser GET seven-table no write A02-dashboard", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:45.631264+00:00", "name": "raw response no credential/hash 117", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:45.631776+00:00", "name": "no URL session tracking 117", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:45.634909+00:00", "name": "browser GET seven-table no write A02-dashboard", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:47.177750+00:00", "name": "raw response no credential/hash 118", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:47.177750+00:00", "name": "no URL session tracking 118", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:47.182383+00:00", "name": "browser GET seven-table no write A03-categories", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:48.765416+00:00", "name": "raw response no credential/hash 119", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:48.765416+00:00", "name": "no URL session tracking 119", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:48.769022+00:00", "name": "browser GET seven-table no write A03-categories", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:50.286630+00:00", "name": "raw response no credential/hash 120", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:50.286630+00:00", "name": "no URL session tracking 120", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:50.289629+00:00", "name": "browser GET seven-table no write A03-categories", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:51.707802+00:00", "name": "raw response no credential/hash 121", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:51.708319+00:00", "name": "no URL session tracking 121", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:51.711512+00:00", "name": "browser GET seven-table no write A03-categories", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:53.300785+00:00", "name": "raw response no credential/hash 122", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:53.301292+00:00", "name": "no URL session tracking 122", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:53.305309+00:00", "name": "browser GET seven-table no write A03-category-form", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:54.820607+00:00", "name": "raw response no credential/hash 123", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:54.820607+00:00", "name": "no URL session tracking 123", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:54.824059+00:00", "name": "browser GET seven-table no write A03-category-form", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:56.261260+00:00", "name": "raw response no credential/hash 124", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:56.261260+00:00", "name": "no URL session tracking 124", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:56.264269+00:00", "name": "browser GET seven-table no write A03-category-form", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:57.670483+00:00", "name": "raw response no credential/hash 125", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:57.670999+00:00", "name": "no URL session tracking 125", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:57.674161+00:00", "name": "browser GET seven-table no write A03-category-form", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:59.188647+00:00", "name": "raw response no credential/hash 126", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:59.188647+00:00", "name": "no URL session tracking 126", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:27:59.193697+00:00", "name": "browser GET seven-table no write A04-products", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:00.798964+00:00", "name": "raw response no credential/hash 127", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:00.798964+00:00", "name": "no URL session tracking 127", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:00.804427+00:00", "name": "browser GET seven-table no write A04-products", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:02.459044+00:00", "name": "raw response no credential/hash 128", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:02.459044+00:00", "name": "no URL session tracking 128", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:02.462657+00:00", "name": "browser GET seven-table no write A04-products", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:04.077819+00:00", "name": "raw response no credential/hash 129", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:04.078332+00:00", "name": "no URL session tracking 129", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:04.081938+00:00", "name": "browser GET seven-table no write A04-products", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:05.739894+00:00", "name": "raw response no credential/hash 130", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:05.739894+00:00", "name": "no URL session tracking 130", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:05.744133+00:00", "name": "browser GET seven-table no write A05-product-form", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:07.329529+00:00", "name": "raw response no credential/hash 131", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:07.330529+00:00", "name": "no URL session tracking 131", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:07.333376+00:00", "name": "browser GET seven-table no write A05-product-form", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:08.970471+00:00", "name": "raw response no credential/hash 132", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:08.970471+00:00", "name": "no URL session tracking 132", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:08.973611+00:00", "name": "browser GET seven-table no write A05-product-form", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:10.467757+00:00", "name": "raw response no credential/hash 133", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:10.468303+00:00", "name": "no URL session tracking 133", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:10.470906+00:00", "name": "browser GET seven-table no write A05-product-form", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:11.938680+00:00", "name": "raw response no credential/hash 134", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:11.938680+00:00", "name": "no URL session tracking 134", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:11.942012+00:00", "name": "browser GET seven-table no write A05-product-new", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:13.454509+00:00", "name": "raw response no credential/hash 135", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:13.454509+00:00", "name": "no URL session tracking 135", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:13.460381+00:00", "name": "browser GET seven-table no write A05-product-new", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:15.010190+00:00", "name": "raw response no credential/hash 136", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:15.010705+00:00", "name": "no URL session tracking 136", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:15.014003+00:00", "name": "browser GET seven-table no write A05-product-new", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:16.435242+00:00", "name": "raw response no credential/hash 137", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:16.435766+00:00", "name": "no URL session tracking 137", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:16.438926+00:00", "name": "browser GET seven-table no write A05-product-new", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:17.968645+00:00", "name": "raw response no credential/hash 138", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:17.968645+00:00", "name": "no URL session tracking 138", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:17.973072+00:00", "name": "browser GET seven-table no write A06-orders", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:19.497124+00:00", "name": "raw response no credential/hash 139", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:19.497124+00:00", "name": "no URL session tracking 139", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:19.500328+00:00", "name": "browser GET seven-table no write A06-orders", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:21.057680+00:00", "name": "raw response no credential/hash 140", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:21.057680+00:00", "name": "no URL session tracking 140", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:21.060882+00:00", "name": "browser GET seven-table no write A06-orders", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:22.551192+00:00", "name": "raw response no credential/hash 141", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:22.551192+00:00", "name": "no URL session tracking 141", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:22.554192+00:00", "name": "browser GET seven-table no write A06-orders", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:24.125662+00:00", "name": "raw response no credential/hash 142", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:24.126178+00:00", "name": "no URL session tracking 142", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:24.129846+00:00", "name": "browser GET seven-table no write A07-order", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:25.691053+00:00", "name": "raw response no credential/hash 143", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:25.691053+00:00", "name": "no URL session tracking 143", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:25.693600+00:00", "name": "browser GET seven-table no write A07-order", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:27.252515+00:00", "name": "raw response no credential/hash 144", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:27.252515+00:00", "name": "no URL session tracking 144", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:27.255521+00:00", "name": "browser GET seven-table no write A07-order", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:28.708297+00:00", "name": "raw response no credential/hash 145", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:28.708851+00:00", "name": "no URL session tracking 145", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:28.711536+00:00", "name": "browser GET seven-table no write A07-order", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:30.271675+00:00", "name": "raw response no credential/hash 146", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:30.272681+00:00", "name": "no URL session tracking 146", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:30.276679+00:00", "name": "browser GET seven-table no write A08-customers", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:31.787701+00:00", "name": "raw response no credential/hash 147", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:31.787701+00:00", "name": "no URL session tracking 147", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:31.790728+00:00", "name": "browser GET seven-table no write A08-customers", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:33.390171+00:00", "name": "raw response no credential/hash 148", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:33.390700+00:00", "name": "no URL session tracking 148", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:33.395551+00:00", "name": "browser GET seven-table no write A08-customers", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:34.802971+00:00", "name": "raw response no credential/hash 149", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:34.803494+00:00", "name": "no URL session tracking 149", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:34.806630+00:00", "name": "browser GET seven-table no write A08-customers", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:36.336070+00:00", "name": "raw response no credential/hash 150", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:36.337070+00:00", "name": "no URL session tracking 150", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:36.340574+00:00", "name": "browser GET seven-table no write A09-customer", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:37.947978+00:00", "name": "raw response no credential/hash 151", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:37.947978+00:00", "name": "no URL session tracking 151", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:37.952996+00:00", "name": "browser GET seven-table no write A09-customer", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:39.523601+00:00", "name": "raw response no credential/hash 152", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:39.523601+00:00", "name": "no URL session tracking 152", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:39.526600+00:00", "name": "browser GET seven-table no write A09-customer", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:41.005478+00:00", "name": "raw response no credential/hash 153", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:41.006490+00:00", "name": "no URL session tracking 153", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:41.009367+00:00", "name": "browser GET seven-table no write A09-customer", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:42.626802+00:00", "name": "raw response no credential/hash 154", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:42.626802+00:00", "name": "no URL session tracking 154", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:42.631150+00:00", "name": "browser GET seven-table no write A10-images", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:45.789042+00:00", "name": "raw response no credential/hash 155", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:45.790546+00:00", "name": "no URL session tracking 155", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:45.793558+00:00", "name": "browser GET seven-table no write A10-images", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:48.844339+00:00", "name": "raw response no credential/hash 156", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:48.844866+00:00", "name": "no URL session tracking 156", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:48.848672+00:00", "name": "browser GET seven-table no write A10-images", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:51.920690+00:00", "name": "raw response no credential/hash 157", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:51.921203+00:00", "name": "no URL session tracking 157", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:51.924210+00:00", "name": "browser GET seven-table no write A10-images", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:55.010381+00:00", "name": "raw response no credential/hash 158", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:55.010901+00:00", "name": "no URL session tracking 158", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:55.015487+00:00", "name": "browser GET seven-table no write u-error-400", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:56.540730+00:00", "name": "raw response no credential/hash 159", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:56.540730+00:00", "name": "no URL session tracking 159", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:56.543735+00:00", "name": "browser GET seven-table no write u-error-400", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:58.010610+00:00", "name": "raw response no credential/hash 160", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:58.011119+00:00", "name": "no URL session tracking 160", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:58.014264+00:00", "name": "browser GET seven-table no write u-error-400", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:59.496801+00:00", "name": "raw response no credential/hash 161", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:59.496801+00:00", "name": "no URL session tracking 161", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:28:59.498808+00:00", "name": "browser GET seven-table no write u-error-400", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:00.938787+00:00", "name": "raw response no credential/hash 162", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:00.939290+00:00", "name": "no URL session tracking 162", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:00.942839+00:00", "name": "browser GET seven-table no write u-error-403", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:02.406637+00:00", "name": "raw response no credential/hash 163", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:02.408300+00:00", "name": "no URL session tracking 163", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:02.411892+00:00", "name": "browser GET seven-table no write u-error-403", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:03.956454+00:00", "name": "raw response no credential/hash 164", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:03.956454+00:00", "name": "no URL session tracking 164", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:03.959455+00:00", "name": "browser GET seven-table no write u-error-403", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:05.412299+00:00", "name": "raw response no credential/hash 165", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:05.412815+00:00", "name": "no URL session tracking 165", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:05.416000+00:00", "name": "browser GET seven-table no write u-error-403", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:06.959071+00:00", "name": "raw response no credential/hash 166", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:06.959071+00:00", "name": "no URL session tracking 166", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:06.962582+00:00", "name": "browser GET seven-table no write u-error-404", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:08.427537+00:00", "name": "raw response no credential/hash 167", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:08.428060+00:00", "name": "no URL session tracking 167", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:08.430667+00:00", "name": "browser GET seven-table no write u-error-404", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:09.982867+00:00", "name": "raw response no credential/hash 168", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:09.982867+00:00", "name": "no URL session tracking 168", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:09.986875+00:00", "name": "browser GET seven-table no write u-error-404", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:11.436242+00:00", "name": "raw response no credential/hash 169", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:11.437246+00:00", "name": "no URL session tracking 169", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:11.440316+00:00", "name": "browser GET seven-table no write u-error-404", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:12.964222+00:00", "name": "raw response no credential/hash 170", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:12.965223+00:00", "name": "no URL session tracking 170", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:12.968232+00:00", "name": "browser GET seven-table no write u-error-409", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:14.414285+00:00", "name": "raw response no credential/hash 171", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:14.414800+00:00", "name": "no URL session tracking 171", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:14.418040+00:00", "name": "browser GET seven-table no write u-error-409", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:15.896269+00:00", "name": "raw response no credential/hash 172", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:15.896269+00:00", "name": "no URL session tracking 172", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:15.900304+00:00", "name": "browser GET seven-table no write u-error-409", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:17.302600+00:00", "name": "raw response no credential/hash 173", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:17.303606+00:00", "name": "no URL session tracking 173", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:17.306677+00:00", "name": "browser GET seven-table no write u-error-409", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:18.868882+00:00", "name": "raw response no credential/hash 174", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:18.870386+00:00", "name": "no URL session tracking 174", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:18.881434+00:00", "name": "browser GET seven-table no write u-error-500", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:20.401089+00:00", "name": "raw response no credential/hash 175", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:20.401089+00:00", "name": "no URL session tracking 175", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:20.404831+00:00", "name": "browser GET seven-table no write u-error-500", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:21.904095+00:00", "name": "raw response no credential/hash 176", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:21.904605+00:00", "name": "no URL session tracking 176", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:21.907120+00:00", "name": "browser GET seven-table no write u-error-500", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:23.388914+00:00", "name": "raw response no credential/hash 177", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:23.389429+00:00", "name": "no URL session tracking 177", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:23.393130+00:00", "name": "browser GET seven-table no write u-error-500", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:24.899652+00:00", "name": "raw response no credential/hash 178", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:24.899652+00:00", "name": "no URL session tracking 178", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:24.903283+00:00", "name": "browser GET seven-table no write a-error-400", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:26.331961+00:00", "name": "raw response no credential/hash 179", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:26.332484+00:00", "name": "no URL session tracking 179", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:26.335526+00:00", "name": "browser GET seven-table no write a-error-400", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:27.808142+00:00", "name": "raw response no credential/hash 180", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:27.808142+00:00", "name": "no URL session tracking 180", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:27.811416+00:00", "name": "browser GET seven-table no write a-error-400", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:29.223260+00:00", "name": "raw response no credential/hash 181", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:29.223779+00:00", "name": "no URL session tracking 181", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:29.226984+00:00", "name": "browser GET seven-table no write a-error-400", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:30.783630+00:00", "name": "raw response no credential/hash 182", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:30.783630+00:00", "name": "no URL session tracking 182", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:30.787404+00:00", "name": "browser GET seven-table no write a-error-403", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:32.312033+00:00", "name": "raw response no credential/hash 183", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:32.312033+00:00", "name": "no URL session tracking 183", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:32.315242+00:00", "name": "browser GET seven-table no write a-error-403", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:33.843085+00:00", "name": "raw response no credential/hash 184", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:33.844085+00:00", "name": "no URL session tracking 184", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:33.848585+00:00", "name": "browser GET seven-table no write a-error-403", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:35.311753+00:00", "name": "raw response no credential/hash 185", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:35.311753+00:00", "name": "no URL session tracking 185", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:35.315280+00:00", "name": "browser GET seven-table no write a-error-403", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:36.812789+00:00", "name": "raw response no credential/hash 186", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:36.812789+00:00", "name": "no URL session tracking 186", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:36.826130+00:00", "name": "browser GET seven-table no write a-error-404", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:38.311710+00:00", "name": "raw response no credential/hash 187", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:38.311710+00:00", "name": "no URL session tracking 187", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:38.315228+00:00", "name": "browser GET seven-table no write a-error-404", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:39.803838+00:00", "name": "raw response no credential/hash 188", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:39.803838+00:00", "name": "no URL session tracking 188", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:39.807411+00:00", "name": "browser GET seven-table no write a-error-404", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:41.234703+00:00", "name": "raw response no credential/hash 189", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:41.234703+00:00", "name": "no URL session tracking 189", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:41.237930+00:00", "name": "browser GET seven-table no write a-error-404", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:42.765939+00:00", "name": "raw response no credential/hash 190", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:42.766453+00:00", "name": "no URL session tracking 190", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:42.768998+00:00", "name": "browser GET seven-table no write a-error-409", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:44.225529+00:00", "name": "raw response no credential/hash 191", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:44.226044+00:00", "name": "no URL session tracking 191", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:44.229252+00:00", "name": "browser GET seven-table no write a-error-409", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:45.765275+00:00", "name": "raw response no credential/hash 192", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:45.766126+00:00", "name": "no URL session tracking 192", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:45.768770+00:00", "name": "browser GET seven-table no write a-error-409", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:47.177492+00:00", "name": "raw response no credential/hash 193", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:47.177492+00:00", "name": "no URL session tracking 193", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:47.181516+00:00", "name": "browser GET seven-table no write a-error-409", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:48.628220+00:00", "name": "raw response no credential/hash 194", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:48.629218+00:00", "name": "no URL session tracking 194", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:48.632725+00:00", "name": "browser GET seven-table no write a-error-500", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:50.461678+00:00", "name": "raw response no credential/hash 195", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:50.462201+00:00", "name": "no URL session tracking 195", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:50.465420+00:00", "name": "browser GET seven-table no write a-error-500", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:51.987754+00:00", "name": "raw response no credential/hash 196", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:51.988754+00:00", "name": "no URL session tracking 196", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:51.991255+00:00", "name": "browser GET seven-table no write a-error-500", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:53.408890+00:00", "name": "raw response no credential/hash 197", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:53.409429+00:00", "name": "no URL session tracking 197", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:53.412120+00:00", "name": "browser GET seven-table no write a-error-500", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:55.504146+00:00", "name": "browser main helper success", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:55.506145+00:00", "name": "browser main batch no writes", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:29:55.506657+00:00", "name": "no external browser network main", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:30:00.850393+00:00", "name": "after all144 normal/error/empty viewport navigations recorded", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:30:00.850915+00:00", "name": "after every document within both desktop and mobile viewport widths", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:30:00.850915+00:00", "name": "after all visible fields have labels", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:30:00.851438+00:00", "name": "after no dangling aria labels or descriptions", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:30:00.851438+00:00", "name": "after every table retains a caption", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:30:00.851438+00:00", "name": "after visible captions do not collapse into narrow tall columns", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:30:00.852443+00:00", "name": "after each normal page keeps its expected page identity", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:30:00.852443+00:00", "name": "after actual theme button changes and persists dark preference", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:30:00.852443+00:00", "name": "after dark body text contrast at least4.5", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:30:00.853443+00:00", "name": "after reduced motion has no long transition or animation", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:30:00.853443+00:00", "name": "after keyboard focus is visible with at least2px outline", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:30:00.862067+00:00", "name": "before and after normalized business outcomes exactly match", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:30:03.874672+00:00", "name": "actual disabled-JavaScript native form helper succeeds", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:30:03.875744+00:00", "name": "noJS actual native login/cart303 checks pass", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}
+{"at": "2026-11-15T11:30:03.876284+00:00", "name": "noJS login and same-quantity post have no database writes", "passed": true, "case": "UI-REGRESSION", "segment": "browser", "detail": null}

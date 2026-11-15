@@ -1,0 +1,373 @@
+{
+  "baseline_sha": "e2bdeb9df9cc7888383ef7afa28d5fbe94f29696",
+  "templates": 46,
+  "missing_or_changed_count": 0,
+  "original_text_missing_count": 0,
+  "files": [
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/categories/form.html",
+      "original_contract_elements": 32,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/categories/list.html",
+      "original_contract_elements": 24,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/customers/action-conflict.html",
+      "original_contract_elements": 8,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/customers/detail.html",
+      "original_contract_elements": 30,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/customers/index.html",
+      "original_contract_elements": 40,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/dashboard-error.html",
+      "original_contract_elements": 5,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/error/400.html",
+      "original_contract_elements": 8,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/error/403.html",
+      "original_contract_elements": 6,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/error/404.html",
+      "original_contract_elements": 6,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/error/409.html",
+      "original_contract_elements": 6,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/error/500.html",
+      "original_contract_elements": 4,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/fragments/alerts.html",
+      "original_contract_elements": 9,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/fragments/fields.html",
+      "original_contract_elements": 13,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/fragments/images.html",
+      "original_contract_elements": 1,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/fragments/layout.html",
+      "original_contract_elements": 24,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [
+        {
+          "attrs": {
+            "data-ef-variant": "standard",
+            "data-theme": "light",
+            "th:fragment": "page(pageTitle, pageContent)"
+          },
+          "tag": "html"
+        },
+        {
+          "attrs": {
+            "th:src": "@{/js/theme.js}"
+          },
+          "tag": "script"
+        },
+        {
+          "attrs": {
+            "th:href": "@{/css/fonts/Saira.ttf}"
+          },
+          "tag": "link"
+        }
+      ],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/home.html",
+      "original_contract_elements": 21,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/login.html",
+      "original_contract_elements": 10,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/orders/action-conflict.html",
+      "original_contract_elements": 8,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/orders/detail.html",
+      "original_contract_elements": 54,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/orders/index.html",
+      "original_contract_elements": 47,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/products/form.html",
+      "original_contract_elements": 60,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/products/images.html",
+      "original_contract_elements": 58,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/products/list.html",
+      "original_contract_elements": 49,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-admin/src/main/resources/templates/verification/foundation.html",
+      "original_contract_elements": 10,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/cart/index.html",
+      "original_contract_elements": 50,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/checkout/conflict.html",
+      "original_contract_elements": 8,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/checkout/index.html",
+      "original_contract_elements": 26,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/error/400.html",
+      "original_contract_elements": 8,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/error/403.html",
+      "original_contract_elements": 6,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/error/404.html",
+      "original_contract_elements": 6,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/error/409.html",
+      "original_contract_elements": 6,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/error/500.html",
+      "original_contract_elements": 4,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/fragments/alerts.html",
+      "original_contract_elements": 9,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/fragments/catalog.html",
+      "original_contract_elements": 12,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/fragments/fields.html",
+      "original_contract_elements": 17,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/fragments/images.html",
+      "original_contract_elements": 1,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/fragments/layout.html",
+      "original_contract_elements": 21,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [
+        {
+          "attrs": {
+            "data-ef-variant": "standard",
+            "data-theme": "light",
+            "th:fragment": "page(pageTitle, pageContent)"
+          },
+          "tag": "html"
+        },
+        {
+          "attrs": {
+            "th:src": "@{/js/theme.js}"
+          },
+          "tag": "script"
+        },
+        {
+          "attrs": {
+            "th:href": "@{/css/fonts/Saira.ttf}"
+          },
+          "tag": "link"
+        }
+      ],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/home.html",
+      "original_contract_elements": 32,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/login.html",
+      "original_contract_elements": 11,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/orders/action-conflict.html",
+      "original_contract_elements": 8,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/orders/detail.html",
+      "original_contract_elements": 51,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/orders/index.html",
+      "original_contract_elements": 40,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/orders/payment.html",
+      "original_contract_elements": 16,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/products/detail.html",
+      "original_contract_elements": 45,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/products/list.html",
+      "original_contract_elements": 43,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    },
+    {
+      "file": "csucampuscraft-user/src/main/resources/templates/verification/foundation.html",
+      "original_contract_elements": 10,
+      "missing_or_changed": [],
+      "new_or_extended_elements": [],
+      "original_text_missing": {}
+    }
+  ],
+  "policy": "Preserve each original tag and all data/id/name/action/method/Thymeleaf bindings; additions limited to presentation or accessibility. New html data-ef-variant/data-theme are visual-only."
+}

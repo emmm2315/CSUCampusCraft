@@ -1,0 +1,56 @@
+{
+  "started_at_utc": "2026-11-15T10:59:52.813163+00:00",
+  "started_at_local": "2026-11-15T18:59:52.813163+08:00",
+  "tested_sha": "e2bdeb9df9cc7888383ef7afa28d5fbe94f29696",
+  "attempt": "attempt1",
+  "executor": "Codex AI, authorized fresh before/after UI acceptance",
+  "human_cross_reproduction": "not implemented this round; prior human review remains limited to its original scope",
+  "scope": "UI before/after visual and bounded business regression on the exact current SHA; no old verdict reuse",
+  "phase": "before",
+  "branch": "feat/ui-redesign",
+  "runtime_file_count": 199,
+  "runtime_manifest_sha256": "e0f5ea7765eb1b97e889866f80d8af69f00b29004575235c21094735c3b0789a",
+  "user_jar_sha256": "659024dbf059f31b1e1812182f8122c2656af08545969ce52af2df13690fd8a2",
+  "admin_jar_sha256": "4cc43a01358fd8996b7f21db4f37bc9ff182e5d10e8deb8a081b63f5e7954dce",
+  "mysql_port": 50828,
+  "mysql_uuid": "afca0f83-e0e3-11f1-8397-005056c00001",
+  "mysql_version": "8.4.9",
+  "finished_at_utc": "2026-11-15T11:01:22.244222+00:00",
+  "finished_at_local": "2026-11-15T19:01:22.244222+08:00",
+  "checks": 259,
+  "checks_failed": 0,
+  "p0_matrix": [
+    {
+      "id": "UI-REGRESSION",
+      "required_segments": [
+        "functional",
+        "browser"
+      ],
+      "assertion_plan": "New isolated fixture +85 chain +HTTP/security/SQL cards; paired visual scenes and responsive observations.",
+      "result": "FAIL",
+      "observed_segments": {
+        "functional": {
+          "passed": true,
+          "detail": {
+            "checks": 197
+          },
+          "at": "2026-11-15T11:00:56.358070+00:00"
+        },
+        "browser": {
+          "passed": false,
+          "detail": {
+            "exception": "UnicodeDecodeError",
+            "message": "'gbk' codec can't decode byte 0xad in position 638: illegal multibyte sequence",
+            "checks": 49
+          },
+          "at": "2026-11-15T11:01:22.143496+00:00"
+        }
+      },
+      "tested_sha": "e2bdeb9df9cc7888383ef7afa28d5fbe94f29696"
+    }
+  ],
+  "tracked_processes_stopped": true,
+  "error": "'gbk' codec can't decode byte 0xad in position 638: illegal multibyte sequence",
+  "overall": "FAIL",
+  "runtime_inputs_stable": true
+}

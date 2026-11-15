@@ -1,0 +1,88 @@
+{
+  "executor": "Codex root AI, not human sign-off",
+  "tested_ui_sha": "d22433c2abf87b1a996c6a18467fd7a9a5a43372",
+  "images_actually_opened": [
+    {
+      "path": "attempt4/browser/main/U01-home-1920.png",
+      "sha256": "f61b7ce048ae1a88d739069a98cf5d0c04defee2e48206559fcc968612c17282"
+    },
+    {
+      "path": "attempt4/browser/main/U01-home-390.png",
+      "sha256": "a6130b2f012eb46ecc28feb01ffef18b171a0e6c4a7963500ae24b6072c39e0a"
+    },
+    {
+      "path": "attempt4/browser/main/U03-product-390.png",
+      "sha256": "3889c97914b416e54091ddedc24d2e78134524b7a84fe8ce5bd53f180c82e522"
+    },
+    {
+      "path": "attempt4/browser/main/U04-login-1366.png",
+      "sha256": "e753ca91b479a49f407821570abb9bad4b202bdca090b2d129c992a978edf3a6"
+    },
+    {
+      "path": "attempt4/browser/main/U07-orders-1366.png",
+      "sha256": "1576474900c03b221d18a7a1228a995bf3fc4794921fdb2172d2e4c7e3aa0dd8"
+    },
+    {
+      "path": "attempt4/browser/main/U08-order-1366.png",
+      "sha256": "8c8c7f295bed1e36be80b7dd044b75a6ad926cf34a9b7effd844a09a524b247f"
+    },
+    {
+      "path": "attempt4/browser/main/extra-fullpage-U08-order-390.png",
+      "sha256": "e3e02b29305f280fd7bac2c97c01b590f40cb2cd598f8a026e99883b6f8c45b3"
+    },
+    {
+      "path": "attempt4/browser/main/U09-payment-1366.png",
+      "sha256": "ecff2faeaa7c4d20cd8272bb6997dadbe5d841099a0f763a3a5c12303a45180e"
+    },
+    {
+      "path": "attempt4/browser/main/u-error-403-1366.png",
+      "sha256": "d65601bf3ca16b86c95512996a7f73201a152b351ee287b0e452349891170597"
+    },
+    {
+      "path": "attempt4/browser/main/u-error-409-1366.png",
+      "sha256": "6efa5c373e26071358c32f80b7e3cdd522d4f0ec1369c56d6dfc5e36c0d6279b"
+    },
+    {
+      "path": "attempt4/browser/main/A01-login-1366.png",
+      "sha256": "a677a51ab260903c8d57b87bed9215a10005c83f2583ed8aa5e61e0a266f7111"
+    },
+    {
+      "path": "attempt4/browser/main/A03-categories-1366.png",
+      "sha256": "044bb41328b14f977b9d2079ba27768d30d6e0120f71ab4a058507a1fd9de746"
+    },
+    {
+      "path": "attempt4/browser/main/A03-category-form-1920.png",
+      "sha256": "d3b3a05a6a1a92fb1eccc6fe4b1f03be00121f8b47c68b141d8c5ccbabc42974"
+    },
+    {
+      "path": "attempt4/browser/main/u-error-400-1366.png",
+      "sha256": "9d4792d164704f2bbe87113a9953a01a2841ffe37dfc9c82591d914b896a0453"
+    },
+    {
+      "path": "attempt4/browser/main/u-error-404-1366.png",
+      "sha256": "48623dde5803fa68b3a69c46e8cc5cc831b22e5b753e7d6fd78dabd19c0ce604"
+    },
+    {
+      "path": "attempt4/browser/main/u-error-500-1366.png",
+      "sha256": "dcec1d8bd44b7634a7a516cd2654fb04f1b5b89a3b942cdd079e884acde6f73d"
+    },
+    {
+      "path": "attempt5/theme-visual-supplement/U01-dark-1366.png",
+      "sha256": "9e5d347aa57f82fac3ee5bdce883ca4d90c17453cc71d2b788aeef2dcba0d4ac"
+    },
+    {
+      "path": "attempt5/theme-visual-supplement/A02-dark-1366.png",
+      "sha256": "21bc6134d7dfabdf80cae856c36533bb4d75ab40c9405e55369e4b50c388afc3"
+    }
+  ],
+  "overall": "PASS_WITH_DOCUMENTED_LIMITS",
+  "observations": [
+    "Both themes remain readable; original Chinese business labels preserved.",
+    "U08 390 fullpage shows snapshot lines 36+49=85, original SHIPPED state and times; receipt/address privacy masks retained.",
+    "A01/A03 and both user login/error layouts show visible labels and recovery actions."
+  ],
+  "limits": [
+    "Representative images were inspected, not every captured PNG.",
+    "No physical-device or full assistive-technology certification."
+  ]
+}
