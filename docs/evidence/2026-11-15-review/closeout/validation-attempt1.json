@@ -1,0 +1,325 @@
+{
+  "date": "2026-11-15",
+  "branch": "fix/review-closeout",
+  "base_review_sha": "a4dc041b8e640246a068455b43b29fc0d059e6f1",
+  "main_expected": "0329c9810c4ad2719c4ae95190ff516d1d21a9ed",
+  "scope": "Documentation-only closeout; no product or business tests run; no human signature supplied.",
+  "result": "FAIL",
+  "checks": [
+    {
+      "name": "tracked modifications confined to five current docs plus append-only review README",
+      "passed": true,
+      "detail": [
+        "README.md",
+        "docs/evidence/2026-11-15-review/README.md",
+        "docs/测试与验收用例.md",
+        "docs/系统设计与路由.md",
+        "docs/需求与业务规则.md",
+        "docs/页面清单与原型.md"
+      ]
+    },
+    {
+      "name": "product source SQL POM Wrapper assets and root attributes unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "task ledger and Word unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Word binary SHA256 unchanged",
+      "passed": true,
+      "detail": {
+        "sha256": "1202242524c1e3947de820761b9a976376d8410615b43118202f1de69ff21f93"
+      }
+    },
+    {
+      "name": "review README original bytes retained as exact prefix and only appended",
+      "passed": true,
+      "detail": {
+        "original_bytes": 13313,
+        "appended_bytes": 3531,
+        "original_sha256": "137fe85bd5e61c4b9f4ca89e08f1300eb89653f7976623b95d61c15598b1f752",
+        "original_prefix_sha256": "137fe85bd5e61c4b9f4ca89e08f1300eb89653f7976623b95d61c15598b1f752"
+      }
+    },
+    {
+      "name": "all other tracked old evidence unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "607 original review files byte-preserved with README prefix exception",
+      "passed": true,
+      "detail": {
+        "files": 607,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "old artifact manifest still matches original archive (README uses base blob)",
+      "passed": true,
+      "detail": {
+        "entries": 606,
+        "mismatches": [],
+        "README_target": "a4dc041 Git blob / unchanged current prefix; old manifest not rewritten"
+      }
+    },
+    {
+      "name": "all 199 product runtime inputs unchanged",
+      "passed": true,
+      "detail": {
+        "entries": 199,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "all original INIT and STEP02-12 measured records retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "original STEP02-12 README handoffs retained apart from dated append",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "README stale current-state phrases absent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no ambiguous missing-version400 in active TST40 rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "only historical old-standard citation remains in test document",
+      "passed": true,
+      "detail": [
+        "226:- 旧 TST-40 字段边界行把「缺失/非法 productVersion」合写为 400；本轮明确要求缺失/空白版本为 409，故实现 409 并在上述实测中单列。非整数、负数、溢出格式或重复字段仍为 400。此差异不能被写成旧 TST-40 原条目已无条件全通过。"
+      ]
+    },
+    {
+      "name": "stale active implementation sentences removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "both active TST40 version rows explicitly distinguish409 and400",
+      "passed": true,
+      "detail": {
+        "total_TST40_rows": 4,
+        "version_rows": 2
+      }
+    },
+    {
+      "name": "cart semantics include idempotent no-write and original overstock recovery",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "U03 two specification rows name login link and absence of guest POST",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "STEP13 raw digest and final SHA gates present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "REV01 and REV06 explicitly deferred without flipping original verdict",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "new or changed Markdown links resolve locally including anchors",
+      "passed": false,
+      "detail": {
+        "count": 23,
+        "errors": [
+          {
+            "source": "docs/evidence/2026-11-15-review/README.md",
+            "target": "closeout/validation.json",
+            "error": "file missing"
+          }
+        ]
+      }
+    },
+    {
+      "name": "five editable current docs whitespace check",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "append and new closeout explanation inherit -text",
+      "passed": true,
+      "detail": [
+        "docs/evidence/2026-11-15-review/README.md: text: unset",
+        "docs/evidence/2026-11-15-review/closeout/README.md: text: unset",
+        "docs/evidence/2026-11-15-review/closeout/validation.json: text: unset"
+      ]
+    }
+  ],
+  "actual_commands": [
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--name-only",
+        "-z",
+        "a4dc041b8e640246a068455b43b29fc0d059e6f1"
+      ],
+      "exit_code": 0,
+      "stdout": "README.md\u0000docs/evidence/2026-11-15-review/README.md\u0000docs/测试与验收用例.md\u0000docs/系统设计与路由.md\u0000docs/需求与业务规则.md\u0000docs/页面清单与原型.md\u0000",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--exit-code",
+        "a4dc041b8e640246a068455b43b29fc0d059e6f1",
+        "--",
+        "csucampuscraft-user",
+        "csucampuscraft-admin",
+        "database",
+        "assets",
+        ".mvn",
+        "mvnw",
+        "mvnw.cmd",
+        ".gitattributes",
+        ".gitignore"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--exit-code",
+        "a4dc041b8e640246a068455b43b29fc0d059e6f1",
+        "--",
+        "docs/开发计划与任务.md",
+        "docs/实验一 CSUCampusCraft 校园文创商店实验指导书.docx"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--exit-code",
+        "a4dc041b8e640246a068455b43b29fc0d059e6f1",
+        "--",
+        "docs/evidence",
+        ":(exclude)docs/evidence/2026-11-15-review/README.md",
+        ":(exclude)docs/evidence/2026-11-15-review/closeout"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "rg",
+        "-n",
+        "下一步为 STEP08|下一步 STEP08|购物车和订单属于后续版本|M1 组员复核仍待补",
+        "README.md"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "rg",
+        "-n",
+        "^\\| TST-40 \\|.*(格式缺失\\s*400|缺失/非法)",
+        "docs/测试与验收用例.md"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "rg",
+        "-n",
+        "缺失/非法.*productVersion|格式缺失\\s*400",
+        "docs/测试与验收用例.md"
+      ],
+      "exit_code": 0,
+      "stdout": "226:- 旧 TST-40 字段边界行把「缺失/非法 productVersion」合写为 400；本轮明确要求缺失/空白版本为 409，故实现 409 并在上述实测中单列。非整数、负数、溢出格式或重复字段仍为 400。此差异不能被写成旧 TST-40 原条目已无条件全通过。\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "rg",
+        "-n",
+        "TST-39（STEP12）继续待实施|当前为主题读取页|当前为初始读页",
+        "README.md",
+        "docs/测试与验收用例.md",
+        "docs/系统设计与路由.md",
+        "docs/需求与业务规则.md",
+        "docs/页面清单与原型.md"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "a4dc041b8e640246a068455b43b29fc0d059e6f1",
+        "--",
+        "README.md",
+        "docs/测试与验收用例.md",
+        "docs/系统设计与路由.md",
+        "docs/需求与业务规则.md",
+        "docs/页面清单与原型.md"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "check-attr",
+        "text",
+        "--",
+        "docs/evidence/2026-11-15-review/README.md",
+        "docs/evidence/2026-11-15-review/closeout/README.md",
+        "docs/evidence/2026-11-15-review/closeout/validation.json"
+      ],
+      "exit_code": 0,
+      "stdout": "docs/evidence/2026-11-15-review/README.md: text: unset\ndocs/evidence/2026-11-15-review/closeout/README.md: text: unset\ndocs/evidence/2026-11-15-review/closeout/validation.json: text: unset\n",
+      "stderr": ""
+    }
+  ],
+  "document_sha256": {
+    "README.md": "b5c9e897819c7f369cdf202cbeeac100ae7d1158e06b5fadc40b572bc79d8def",
+    "docs/测试与验收用例.md": "fcdfcfbd9d362c416f7d925f293e75e1f429a22f8d0b2fd0067c5b2f6cca0fd1",
+    "docs/系统设计与路由.md": "d2925992d775d377e80b40aaf30861aaf3629fb07f88d47368669d97a203159d",
+    "docs/需求与业务规则.md": "434d659b2b8c922e1d4920e3fbf0076c3698f3fe4cd4d57c8dd4e53d3876c158",
+    "docs/页面清单与原型.md": "9b9d38aef18074786c2969602de98398e07a657d8855dff1ad45b8ec11a95d89",
+    "docs/evidence/2026-11-15-review/README.md": "0d245458c6937f6084c65d7c0e84dba56d8c8cf24a5371b58d169791f5ab6628",
+    "docs/evidence/2026-11-15-review/closeout/README.md": "959b1f3fb958d65b9581e369c62d39f4b2e03508cbc1319ed6ca326f2fd35d30"
+  },
+  "pending": [
+    "REV-01本人抽验与真实姓名签署",
+    "REV-06本人签署后Word更新",
+    "STEP13最终SHA业务整体验收（含并发/竞争/故障）"
+  ],
+  "preparation_errors_preserved_in": "closeout/README.md; no writes occurred during failed first path-resolution edit attempt"
+}
