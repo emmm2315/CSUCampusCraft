@@ -1,0 +1,102 @@
+{
+  "started_at_utc": "2026-11-15T06:19:10.995244+00:00",
+  "started_at_local": "2026-11-15T14:19:10.995244+08:00",
+  "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "attempt": "attempt1",
+  "executor": "Codex AI, user-authorized new STEP13 execution",
+  "human_cross_reproduction": "not implemented this round; prior human review remains limited to its original scope",
+  "scope": "Bounded TST13/20/21/29 state/token edges only; not full39 or full composite TST acceptance",
+  "branch": "feat/step13-acceptance",
+  "runtime_file_count": 199,
+  "runtime_manifest_sha256": "e0f5ea7765eb1b97e889866f80d8af69f00b29004575235c21094735c3b0789a",
+  "user_jar_sha256": "6b6027b67f381cfcc012cd3fc79bc940ad546c9acc2ae46fbf9ac13a71d42700",
+  "admin_jar_sha256": "1a8bf9ded1a535876a96b991659596fa82c01bf2bebccef45c755fe8e8820586",
+  "mysql_port": 62964,
+  "mysql_uuid": "7942bd4b-e0bc-11f1-ac5b-005056c00001",
+  "mysql_version": "8.4.9",
+  "finished_at_utc": "2026-11-15T06:20:42.876442+00:00",
+  "finished_at_local": "2026-11-15T14:20:42.876442+08:00",
+  "checks": 333,
+  "checks_failed": 0,
+  "p0_matrix": [
+    {
+      "id": "TST-13",
+      "title": "Cross-session/foreign confirmation rejection with current CSRF and original owner token retained",
+      "required_segments": [
+        "edge"
+      ],
+      "result": "PASS",
+      "observed_segments": {
+        "edge": {
+          "passed": true,
+          "detail": {
+            "checks": 146
+          },
+          "at": "2026-11-15T06:20:42.515309+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-20",
+      "title": "Historical paid/shipped/completed payment replay and U09 read boundaries",
+      "required_segments": [
+        "edge"
+      ],
+      "result": "PASS",
+      "observed_segments": {
+        "edge": {
+          "passed": true,
+          "detail": {
+            "checks": 95
+          },
+          "at": "2026-11-15T06:20:02.404028+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-21",
+      "title": "PAID cancellation and CANCELLED payment state rejection",
+      "required_segments": [
+        "edge"
+      ],
+      "result": "PASS",
+      "observed_segments": {
+        "edge": {
+          "passed": true,
+          "detail": {
+            "checks": 30
+          },
+          "at": "2026-11-15T06:19:44.362234+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-29",
+      "title": "COMPLETED shipment replay preserves complete seven-table state",
+      "required_segments": [
+        "edge"
+      ],
+      "result": "PASS",
+      "observed_segments": {
+        "edge": {
+          "passed": true,
+          "detail": {
+            "checks": 16
+          },
+          "at": "2026-11-15T06:19:37.266667+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    }
+  ],
+  "tracked_processes_stopped": true,
+  "error": null,
+  "overall": "FAIL",
+  "runtime_inputs_stable": true,
+  "cleanup_passed": false,
+  "private_runtime_removed": true,
+  "final_sensitive_scan_passed": true
+}

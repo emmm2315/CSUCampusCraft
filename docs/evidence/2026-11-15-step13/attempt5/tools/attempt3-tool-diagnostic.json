@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-15T05:54:18.281035+00:00",
+  "classification": "EXTERNAL_TOOL_QUERY_PARSER_ERROR",
+  "original_result": "FAIL retained unchanged",
+  "observed_original_HTTP": 66,
+  "actual_href_preserved_empty_q": true,
+  "root_cause": "parse_qs default omits blank fields; correct actual q= was misclassified",
+  "fix": "keep_blank_values=True in new catalog/order pagination parsers",
+  "offline_regression": {
+    "preserved_blank": true,
+    "old_default_dropped": true,
+    "nonblank_preserved": true,
+    "absent_not_fabricated": true
+  },
+  "old_artifacts_preserved": 109,
+  "source_unchanged": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+}

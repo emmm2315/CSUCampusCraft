@@ -1,0 +1,38 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "name": "Tests original history and all business standards preserved outside current intro/new STEP13 section",
+      "passed": true
+    },
+    {
+      "name": "Plan STEP01–12 full instructions and history preserved",
+      "passed": true
+    },
+    {
+      "name": "Plan STEP13 original five operations and gates preserved",
+      "passed": true
+    },
+    {
+      "name": "Plan STEP14 optional instructions preserved",
+      "passed": true
+    },
+    {
+      "name": "All prior claim/verification rows preserved byte text",
+      "passed": true
+    },
+    {
+      "name": "STEP13 status and new ledger row present",
+      "passed": true
+    },
+    {
+      "name": "P1 marked unselected",
+      "passed": true
+    },
+    {
+      "name": "README previous operational/handoff sections preserved",
+      "passed": true
+    }
+  ],
+  "scope": "Current status/STEP13 additions only; no requirement, rule, route, field or historical-result semantics changed"
+}

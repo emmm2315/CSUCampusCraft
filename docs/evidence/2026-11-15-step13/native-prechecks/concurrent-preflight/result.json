@@ -1,0 +1,15 @@
+{
+  "compile_exit_code": 0,
+  "source_sha256": {
+    "ConcurrentHttpRunner.java": "8d488027571dc599ad8ef467fa8cdfbb5bf939b375d7dde2c927dea40ccb8106",
+    "ConcurrentRunnerPrivacyPreflight.java": "d71d466f9df672afeced85766b3d0c81e634c43196ebbca33ae7bf47e2d7ed44"
+  },
+  "database_or_HTTP_started": false,
+  "privacy_exit_code": 0,
+  "privacy_result": {
+    "checks": 12,
+    "scope": "Offline actual runner redaction/BCrypt behavior only; no HTTP/JDBC/application action",
+    "overall": "PASS",
+    "synthetic_private_values_recorded": false
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "overall": "PASS",
+  "scope": "Offline actual new runner writeJson under default/GBK/UTF8 stdout; synthetic old-print negative control; no HTTP/JDBC/application action",
+  "product_source_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "compiler_exit": 0,
+  "python_AST_passed": true,
+  "wire_cases": [
+    {
+      "encoding_option": "default",
+      "mechanism": "old-print-control",
+      "exit_code": 0,
+      "strict_utf8_json": false,
+      "exact_chinese_emoji_roundtrip": false,
+      "stdout_bytes": 96,
+      "stdout_sha256": "84001a5de0ceee932c468272e82cb10fdd66cfa5595e1f1815818391387eb376",
+      "observed_stdout_charset": null
+    },
+    {
+      "encoding_option": "default",
+      "mechanism": "actual-writeJson",
+      "exit_code": 0,
+      "strict_utf8_json": true,
+      "exact_chinese_emoji_roundtrip": true,
+      "stdout_bytes": 112,
+      "stdout_sha256": "964310f25645ca3f2312f94819c88de6e22c1df3f7adef0ce456269929a9c3db",
+      "observed_stdout_charset": "GBK"
+    },
+    {
+      "encoding_option": "GBK",
+      "mechanism": "old-print-control",
+      "exit_code": 0,
+      "strict_utf8_json": false,
+      "exact_chinese_emoji_roundtrip": false,
+      "stdout_bytes": 96,
+      "stdout_sha256": "84001a5de0ceee932c468272e82cb10fdd66cfa5595e1f1815818391387eb376",
+      "observed_stdout_charset": null
+    },
+    {
+      "encoding_option": "GBK",
+      "mechanism": "actual-writeJson",
+      "exit_code": 0,
+      "strict_utf8_json": true,
+      "exact_chinese_emoji_roundtrip": true,
+      "stdout_bytes": 112,
+      "stdout_sha256": "964310f25645ca3f2312f94819c88de6e22c1df3f7adef0ce456269929a9c3db",
+      "observed_stdout_charset": "GBK"
+    },
+    {
+      "encoding_option": "UTF-8",
+      "mechanism": "old-print-control",
+      "exit_code": 0,
+      "strict_utf8_json": true,
+      "exact_chinese_emoji_roundtrip": true,
+      "stdout_bytes": 107,
+      "stdout_sha256": "988996d085b948ced8a5f09b7c93b40ea2ff8ca2866bbef2f4dd4de35f38d254",
+      "observed_stdout_charset": "UTF-8"
+    },
+    {
+      "encoding_option": "UTF-8",
+      "mechanism": "actual-writeJson",
+      "exit_code": 0,
+      "strict_utf8_json": true,
+      "exact_chinese_emoji_roundtrip": true,
+      "stdout_bytes": 114,
+      "stdout_sha256": "5d25f80fe2e8672cfd3980cf2d1d09dd72d67e16501caf887cece88b649a4de9",
+      "observed_stdout_charset": "UTF-8"
+    }
+  ],
+  "actual_runner_privacy_checks": 12,
+  "files": [
+    {
+      "path": "verification\\ConcurrentHttpRunner.java",
+      "sha256": "26f099835358222808c43d2559ee37515db1d137ab17df3c50e45c033501fdbd"
+    },
+    {
+      "path": "verification\\ConcurrentRunnerWirePreflight.java",
+      "sha256": "eaf6d40367db266d611e809ef76ef87f9f2caa7da3c8e8ef36af1d462d98612e"
+    },
+    {
+      "path": "verification\\ConcurrentRunnerPrivacyPreflight.java",
+      "sha256": "d71d466f9df672afeced85766b3d0c81e634c43196ebbca33ae7bf47e2d7ed44"
+    },
+    {
+      "path": "verification\\concurrency_faults.py",
+      "sha256": "c66469d569dcdc648be7d5dcbe3d0adabe5f484bbd87c374e4cfa4acd36eabb6"
+    }
+  ]
+}

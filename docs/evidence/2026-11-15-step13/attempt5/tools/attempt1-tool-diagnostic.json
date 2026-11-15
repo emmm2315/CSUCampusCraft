@@ -1,0 +1,19 @@
+{
+  "recorded_at_utc": "2026-11-15T05:41:22.423180+00:00",
+  "classification": "EXTERNAL_TOOL_ERROR",
+  "original_attempt_result": "FAIL",
+  "original_files_unchanged": true,
+  "root_cause": "information_schema utf8mb3_tolower_ci compared to helper explicit utf8mb4_0900_as_ci caused1267 before first business HTTP",
+  "observed_error_code1267": true,
+  "formal_business_http_records": 0,
+  "source_sha_unchanged": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "all_owned_processes_stopped": true,
+  "fix": "HEX CONVERT literal retains safety but drops unnecessary explicit COLLATE, letting column collation choose; next attempt primary8080/8081 unless observed conflict",
+  "first_attempt_ports": [
+    18080,
+    18081
+  ],
+  "first_attempt_port_conflict_not_claimed": true,
+  "old_tool_sha256": "3822d01848e7e9d57e0b124a8e831c2c3dc94092a883ad44f1b1c527de63747f",
+  "new_tool_sha256": "606819333ea105bf29647832401f521baa2cce2f3ff6b5434048e23eaed02b5b"
+}

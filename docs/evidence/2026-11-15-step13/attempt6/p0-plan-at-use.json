@@ -1,0 +1,88 @@
+{
+  "scope": "C/D-only same-SHA group: ten identifiers, thirteen required scenario segments. The parent resolves other segments from separately indexed same-round observations; this leaf does not claim all39.",
+  "cases": [
+    {
+      "id": "TST-16",
+      "required_segments": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments D1, D2, D3; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Real HTTP order transaction failures at item insert/product debit/cart delete all roll back every table."
+    },
+    {
+      "id": "TST-17",
+      "required_segments": [
+        "C3",
+        "C8"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments C3, C8; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Same confirmation race once only; same-user cart requests serialize without duplicate/lost rows and subsequent new row retained."
+    },
+    {
+      "id": "TST-20",
+      "required_segments": [
+        "D5"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments D5; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "FAILURE→SUCCESS→SUCCESS replay preserves first MOCK receipt/time; payment fault leaves no partial fields."
+    },
+    {
+      "id": "TST-23",
+      "required_segments": [
+        "D4"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments D4; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Second refund failure rolls back first refund, order still pending with null cancelled_at."
+    },
+    {
+      "id": "TST-24",
+      "required_segments": [
+        "C4"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments C4; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Independent HTTP pay/cancel synchronized race yields one legal winning transition/receipt/refund."
+    },
+    {
+      "id": "TST-28",
+      "required_segments": [
+        "C2"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments C2; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Restock parameter/overflow zero writes; buy2+restock3 concurrent from10ends11 and versions+2."
+    },
+    {
+      "id": "TST-29",
+      "required_segments": [
+        "C5"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments C5; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Pending/cancelled409, paid→shipped firsttime/replay stable; pay/ship race only legal ordering."
+    },
+    {
+      "id": "TST-35",
+      "required_segments": [
+        "C1"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments C1; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Two users confirmed stock1, synchronized HTTP creates exactly1order1item and loser409 retains cart."
+    },
+    {
+      "id": "TST-39",
+      "required_segments": [
+        "C7"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments C7; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Status+monotonic microstamp/same-state no-op,old sessions clear incl silent disable-enable; concurrent disable/write legal outcome."
+    },
+    {
+      "id": "TST-40",
+      "required_segments": [
+        "C6"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments C6; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Real album add/edit/order/noop/remove/fallback/version/path/ownership constraints+same-path bytes; concurrent edit/album one winner."
+    }
+  ]
+}

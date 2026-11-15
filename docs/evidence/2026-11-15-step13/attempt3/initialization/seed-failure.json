@@ -1,0 +1,196 @@
+{
+  "source_sql_sha256": "6871082e148e1aed9d0da74d4aa49d98de18d48960544a597bbc94fad96103bd",
+  "schema": "csu13_seed_failure",
+  "untouched_repository_sql": true,
+  "test_only_in_memory_dml_payload_sha256": "ca32bf416ef162d60837c3216c6bc4e15ff92e5e5fa73291f58ae95f8ee0d925",
+  "injection": "SIGNAL SQLSTATE '45000' immediately before source COMMIT",
+  "exit_code": 1,
+  "counts": {
+    "store_user": 0,
+    "category": 0,
+    "product": 0,
+    "product_image": 0,
+    "cart_item": 0,
+    "sales_order": 0,
+    "sales_order_item": 0
+  },
+  "checks": [
+    {
+      "name": "ck_cart_quantity",
+      "table": "cart_item",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_cart_version",
+      "table": "cart_item",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_category_code",
+      "table": "category",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_category_name",
+      "table": "category",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_category_sort",
+      "table": "category",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_product_cover",
+      "table": "product",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_product_name",
+      "table": "product",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_product_price",
+      "table": "product",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_product_sku",
+      "table": "product",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_product_sort",
+      "table": "product",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_product_status",
+      "table": "product",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_product_stock",
+      "table": "product",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_product_version",
+      "table": "product",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_image_path",
+      "table": "product_image",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_image_sort",
+      "table": "product_image",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_order_cancel_time",
+      "table": "sales_order",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_order_complete_time",
+      "table": "sales_order",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_order_no",
+      "table": "sales_order",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_order_payment_info",
+      "table": "sales_order",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_order_receiver",
+      "table": "sales_order",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_order_ship_time",
+      "table": "sales_order",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_order_status",
+      "table": "sales_order",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_order_time_sequence",
+      "table": "sales_order",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_order_total",
+      "table": "sales_order",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_order_item_amount",
+      "table": "sales_order_item",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_order_item_cover",
+      "table": "sales_order_item",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_order_item_name",
+      "table": "sales_order_item",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_order_item_price",
+      "table": "sales_order_item",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_order_item_quantity",
+      "table": "sales_order_item",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_order_item_sku",
+      "table": "sales_order_item",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_user_display_name",
+      "table": "store_user",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_user_password",
+      "table": "store_user",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_user_role",
+      "table": "store_user",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_user_status",
+      "table": "store_user",
+      "enforced": "YES"
+    },
+    {
+      "name": "ck_user_username",
+      "table": "store_user",
+      "enforced": "YES"
+    }
+  ],
+  "result": "PASS",
+  "seed_rows_or_credentials_recorded": false
+}

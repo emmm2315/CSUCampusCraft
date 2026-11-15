@@ -1,0 +1,148 @@
+{
+  "overall": "PASS",
+  "scope": "Read-only replay of existing actual attempt6 evidence. No live request, database query, product change or new business test.",
+  "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "attempt6_overall": "PASS",
+  "standalone_all39_claimed": false,
+  "original_attempt5_FAIL_not_changed": true,
+  "original_attempt5_C1_gap_not_reconstructed": true,
+  "C3_limit": "Two actual HTTP workers share one server session; Java monitor serializes business transaction entry. One JDBC waiter threshold only; no claim of two simultaneous business transactions.",
+  "rollback_limit": "Committed row data only; no claim to reverse auto-increment allocator gaps.",
+  "checks": 212,
+  "failed": 0,
+  "indexed_files_verified": 138,
+  "concurrency_windows": [
+    {
+      "case": "C1",
+      "statuses": [
+        303,
+        409
+      ],
+      "simultaneous_waiters": 2,
+      "minimum_waiters": 2,
+      "gate_table": "product"
+    },
+    {
+      "case": "C2",
+      "statuses": [
+        303,
+        303
+      ],
+      "simultaneous_waiters": 2,
+      "minimum_waiters": 2,
+      "gate_table": "product"
+    },
+    {
+      "case": "C3",
+      "statuses": [
+        409,
+        303
+      ],
+      "simultaneous_waiters": 1,
+      "minimum_waiters": 1,
+      "gate_table": "product"
+    },
+    {
+      "case": "C4",
+      "statuses": [
+        409,
+        303
+      ],
+      "simultaneous_waiters": 2,
+      "minimum_waiters": 2,
+      "gate_table": "store_user"
+    },
+    {
+      "case": "C5",
+      "statuses": [
+        303,
+        303
+      ],
+      "simultaneous_waiters": 2,
+      "minimum_waiters": 2,
+      "gate_table": "sales_order"
+    },
+    {
+      "case": "C6",
+      "statuses": [
+        303,
+        409
+      ],
+      "simultaneous_waiters": 2,
+      "minimum_waiters": 2,
+      "gate_table": "store_user"
+    },
+    {
+      "case": "C7",
+      "statuses": [
+        303,
+        303
+      ],
+      "simultaneous_waiters": 2,
+      "minimum_waiters": 2,
+      "gate_table": "store_user"
+    },
+    {
+      "case": "C8-add",
+      "statuses": [
+        303,
+        303
+      ],
+      "simultaneous_waiters": 2,
+      "minimum_waiters": 2,
+      "gate_table": "store_user"
+    },
+    {
+      "case": "C8-quantity",
+      "statuses": [
+        303,
+        409
+      ],
+      "simultaneous_waiters": 2,
+      "minimum_waiters": 2,
+      "gate_table": "store_user"
+    }
+  ],
+  "intermediate_executed_DML": {
+    "D1": {
+      "master_insert": 1,
+      "item_insert": 0,
+      "product_update": 0,
+      "cart_delete": 0
+    },
+    "D2": {
+      "master_insert": 1,
+      "item_insert": 2,
+      "product_update": 1,
+      "cart_delete": 0
+    },
+    "D3": {
+      "master_insert": 1,
+      "item_insert": 2,
+      "product_update": 2,
+      "cart_delete": 1
+    },
+    "D4": {
+      "master_insert": 0,
+      "item_insert": 0,
+      "product_update": 1,
+      "cart_delete": 0
+    },
+    "D5": {
+      "master_insert": 0,
+      "item_insert": 0,
+      "product_update": 0,
+      "cart_delete": 0
+    }
+  },
+  "sensitive_scan": {
+    "overall": "PASS",
+    "files_scanned": 136,
+    "gzip_decompressed": 41,
+    "known_values": 111,
+    "values_recorded": false,
+    "findings": []
+  },
+  "input_result_sha256": "d2f0e4968a45a3ed3681334b6773d5dd8f2e09c5e909614d649d62ebe3029769",
+  "at_utc": "2026-11-15T06:47:33.494699+00:00"
+}

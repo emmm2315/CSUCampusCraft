@@ -1,0 +1,1604 @@
+{
+  "overall": "PASS",
+  "startedAt": "2026-11-15T06:31:21.903Z",
+  "completedAt": "2026-11-15T06:31:46.586Z",
+  "tested_source_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "checks": [
+    {
+      "name": "explicit-current-fixture-path",
+      "passed": true
+    },
+    {
+      "name": "full-source-sha",
+      "passed": true
+    },
+    {
+      "name": "graduation-id",
+      "passed": true
+    },
+    {
+      "name": "gift-id",
+      "passed": true
+    },
+    {
+      "name": "customer-id",
+      "passed": true
+    },
+    {
+      "name": "admin-album-product-id",
+      "passed": true
+    },
+    {
+      "name": "missing-image-product-id",
+      "passed": true
+    },
+    {
+      "name": "no-gallery-product-id",
+      "passed": true
+    },
+    {
+      "name": "safe-order-number",
+      "passed": true
+    },
+    {
+      "name": "loopback-userBase",
+      "passed": true
+    },
+    {
+      "name": "loopback-adminBase",
+      "passed": true
+    },
+    {
+      "name": "ephemeral-user-cookie-present",
+      "passed": true
+    },
+    {
+      "name": "ephemeral-admin-cookie-present",
+      "passed": true
+    },
+    {
+      "name": "new-output-directory-required",
+      "passed": true
+    },
+    {
+      "name": "output-not-existing",
+      "passed": true
+    },
+    {
+      "name": "browser-executable-present",
+      "passed": true
+    },
+    {
+      "name": "u01-home-response-1366",
+      "passed": true
+    },
+    {
+      "name": "u01-home-status-1366",
+      "passed": true
+    },
+    {
+      "name": "u01-home-page-id-1366",
+      "passed": true
+    },
+    {
+      "name": "u01-home-no-page-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "u01-home-post-forms-have-one-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "u01-home-images-loaded-1366",
+      "passed": true
+    },
+    {
+      "name": "u01-home-cookie-only-links-1366",
+      "passed": true
+    },
+    {
+      "name": "u01-home-only-GET-browser-requests-1366",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-response-1366",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-status-1366",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-page-id-1366",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-no-page-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-post-forms-have-one-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-images-loaded-1366",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-cookie-only-links-1366",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-only-GET-browser-requests-1366",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-response-1366",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-status-1366",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-page-id-1366",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-no-page-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-post-forms-have-one-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-images-loaded-1366",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-cookie-only-links-1366",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-only-GET-browser-requests-1366",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-response-1366",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-status-1366",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-page-id-1366",
+      "passed": true
+    },
+    {
+      "name": "fresh-cart-quantity-three-1366",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-no-page-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-post-forms-have-one-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-images-loaded-1366",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-cookie-only-links-1366",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-only-GET-browser-requests-1366",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-response-1366",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-status-1366",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-page-id-1366",
+      "passed": true
+    },
+    {
+      "name": "server-confirmation-eighty-five-1366",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-no-page-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-post-forms-have-one-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-images-loaded-1366",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-cookie-only-links-1366",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-only-GET-browser-requests-1366",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-response-1366",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-status-1366",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-page-id-1366",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-shipped-1366",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-no-page-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-post-forms-have-one-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-images-loaded-1366",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-cookie-only-links-1366",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-only-GET-browser-requests-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-response-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-status-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-page-id-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-no-page-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-post-forms-have-one-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-images-loaded-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-cookie-only-links-1366",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-only-GET-browser-requests-1366",
+      "passed": true
+    },
+    {
+      "name": "five-live-dashboard-counts-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-response-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-status-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-page-id-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-shipped-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-no-page-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-post-forms-have-one-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-images-loaded-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-cookie-only-links-1366",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-only-GET-browser-requests-1366",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-response-1366",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-status-1366",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-enabled-warning-present-1366",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-warning-open-1366",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-page-id-1366",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-no-page-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-post-forms-have-one-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-images-loaded-1366",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-cookie-only-links-1366",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-only-GET-browser-requests-1366",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-response-1366",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-status-1366",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-page-id-1366",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-no-page-overflow-1366",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-post-forms-have-one-CSRF-1366",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-images-loaded-1366",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-cookie-only-links-1366",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-only-GET-browser-requests-1366",
+      "passed": true
+    },
+    {
+      "name": "missing-image-actual-fallback-200-1366",
+      "passed": true
+    },
+    {
+      "name": "missing-image-actual-fallback-detail-1366",
+      "passed": true
+    },
+    {
+      "name": "missing-image-actual-fallback-loaded-1366",
+      "passed": true
+    },
+    {
+      "name": "missing-image-actual-fallback-placeholder-really-loaded-1366",
+      "passed": true
+    },
+    {
+      "name": "no-gallery-cover-200-1366",
+      "passed": true
+    },
+    {
+      "name": "no-gallery-cover-detail-1366",
+      "passed": true
+    },
+    {
+      "name": "no-gallery-cover-loaded-1366",
+      "passed": true
+    },
+    {
+      "name": "no-gallery-cover-no-album-cover-visible-1366",
+      "passed": true
+    },
+    {
+      "name": "u01-home-response-1920",
+      "passed": true
+    },
+    {
+      "name": "u01-home-status-1920",
+      "passed": true
+    },
+    {
+      "name": "u01-home-page-id-1920",
+      "passed": true
+    },
+    {
+      "name": "u01-home-no-page-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "u01-home-post-forms-have-one-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "u01-home-images-loaded-1920",
+      "passed": true
+    },
+    {
+      "name": "u01-home-cookie-only-links-1920",
+      "passed": true
+    },
+    {
+      "name": "u01-home-only-GET-browser-requests-1920",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-response-1920",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-status-1920",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-page-id-1920",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-no-page-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-post-forms-have-one-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-images-loaded-1920",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-cookie-only-links-1920",
+      "passed": true
+    },
+    {
+      "name": "u02-graduation-only-GET-browser-requests-1920",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-response-1920",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-status-1920",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-page-id-1920",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-no-page-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-post-forms-have-one-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-images-loaded-1920",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-cookie-only-links-1920",
+      "passed": true
+    },
+    {
+      "name": "a08-customer-list-only-GET-browser-requests-1920",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-response-1920",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-status-1920",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-page-id-1920",
+      "passed": true
+    },
+    {
+      "name": "fresh-cart-quantity-three-1920",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-no-page-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-post-forms-have-one-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-images-loaded-1920",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-cookie-only-links-1920",
+      "passed": true
+    },
+    {
+      "name": "u05-persistent-cart-only-GET-browser-requests-1920",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-response-1920",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-status-1920",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-page-id-1920",
+      "passed": true
+    },
+    {
+      "name": "server-confirmation-eighty-five-1920",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-no-page-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-post-forms-have-one-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-images-loaded-1920",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-cookie-only-links-1920",
+      "passed": true
+    },
+    {
+      "name": "u06-85-confirmation-only-GET-browser-requests-1920",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-response-1920",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-status-1920",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-page-id-1920",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-shipped-1920",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-no-page-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-post-forms-have-one-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-images-loaded-1920",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-cookie-only-links-1920",
+      "passed": true
+    },
+    {
+      "name": "u08-shipped-snapshot-only-GET-browser-requests-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-response-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-status-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-page-id-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-no-page-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-post-forms-have-one-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-images-loaded-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-cookie-only-links-1920",
+      "passed": true
+    },
+    {
+      "name": "a02-real-dashboard-only-GET-browser-requests-1920",
+      "passed": true
+    },
+    {
+      "name": "five-live-dashboard-counts-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-response-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-status-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-page-id-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-shipped-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-no-page-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-post-forms-have-one-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-images-loaded-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-cookie-only-links-1920",
+      "passed": true
+    },
+    {
+      "name": "a07-same-shipped-order-only-GET-browser-requests-1920",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-response-1920",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-status-1920",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-enabled-warning-present-1920",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-warning-open-1920",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-page-id-1920",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-no-page-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-post-forms-have-one-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-images-loaded-1920",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-cookie-only-links-1920",
+      "passed": true
+    },
+    {
+      "name": "a09-disable-warning-only-GET-browser-requests-1920",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-response-1920",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-status-1920",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-page-id-1920",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-no-page-overflow-1920",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-post-forms-have-one-CSRF-1920",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-images-loaded-1920",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-cookie-only-links-1920",
+      "passed": true
+    },
+    {
+      "name": "a10-product-album-only-GET-browser-requests-1920",
+      "passed": true
+    },
+    {
+      "name": "missing-image-actual-fallback-200-1920",
+      "passed": true
+    },
+    {
+      "name": "missing-image-actual-fallback-detail-1920",
+      "passed": true
+    },
+    {
+      "name": "missing-image-actual-fallback-loaded-1920",
+      "passed": true
+    },
+    {
+      "name": "missing-image-actual-fallback-placeholder-really-loaded-1920",
+      "passed": true
+    },
+    {
+      "name": "no-gallery-cover-200-1920",
+      "passed": true
+    },
+    {
+      "name": "no-gallery-cover-detail-1920",
+      "passed": true
+    },
+    {
+      "name": "no-gallery-cover-loaded-1920",
+      "passed": true
+    },
+    {
+      "name": "no-gallery-cover-no-album-cover-visible-1920",
+      "passed": true
+    },
+    {
+      "name": "twenty-fresh-screenshots",
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "u01-home",
+      "path": "u01-home-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1958,
+      "sha256": "17d31646556bf2bf5bf876ed8821b420ea6fa39f81232c8418b8cb3138b578af",
+      "status": 200,
+      "side": "user",
+      "observation": {
+        "pageId": "U01",
+        "errorStatus": null,
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "u02-graduation",
+      "path": "u02-graduation-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1746,
+      "sha256": "53d5da2e4dcc5e4be9b94d3443b267a4d4eb5a53592c5e048fe456c9276ba78a",
+      "status": 200,
+      "side": "user",
+      "observation": {
+        "pageId": "U02",
+        "errorStatus": null,
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "a08-customer-list",
+      "path": "a08-customer-list-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1169,
+      "sha256": "f8ddf8e9db955dd771e986de9a3f293c69278ce0dae7f303fae045b77d4d64b2",
+      "status": 200,
+      "side": "admin",
+      "observation": {
+        "pageId": "A08",
+        "errorStatus": null,
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "u05-persistent-cart",
+      "path": "u05-persistent-cart-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1020,
+      "sha256": "5d9eae2e2369e4be79f505329129d86c0f8376796c4db5bdf7479648952ca7c4",
+      "status": 200,
+      "side": "user",
+      "observation": {
+        "pageId": "U05",
+        "errorStatus": null,
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": "3",
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "u06-85-confirmation",
+      "path": "u06-85-confirmation-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 971,
+      "sha256": "121a3905487240bd294f457fdc250408c2c276bf29c4cfb4351cbd73fe7b7b19",
+      "status": 200,
+      "side": "user",
+      "observation": {
+        "pageId": "U06",
+        "errorStatus": "0",
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": null,
+        "confirmationTotal": "85.00",
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 3,
+        "overflow": false,
+        "formCsrfCounts": [
+          1,
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "u08-shipped-snapshot",
+      "path": "u08-shipped-snapshot-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1678,
+      "sha256": "163d94365926987b78316d89a9f3493efbec00ccf0cdc3079fa93da253526b1f",
+      "status": 200,
+      "side": "user",
+      "observation": {
+        "pageId": "U08",
+        "errorStatus": null,
+        "orderStatus": "SHIPPED",
+        "orderTotal": "85.00",
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 3,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "a02-real-dashboard",
+      "path": "a02-real-dashboard-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 929,
+      "sha256": "47547da6c12d794095a1c942b37d66902693edcf2ae59abe9ba851ff1948689e",
+      "status": 200,
+      "side": "admin",
+      "observation": {
+        "pageId": "A02",
+        "errorStatus": null,
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [
+          {
+            "key": "on-sale-products",
+            "count": "55"
+          },
+          {
+            "key": "draft-products",
+            "count": "8"
+          },
+          {
+            "key": "paid-orders",
+            "count": "2"
+          },
+          {
+            "key": "enabled-customers",
+            "count": "3"
+          },
+          {
+            "key": "disabled-customers",
+            "count": "1"
+          }
+        ],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "a07-same-shipped-order",
+      "path": "a07-same-shipped-order-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1687,
+      "sha256": "a69802380ed56295c1ac3c5a49ba7f29ee5d0d092d90f0d2cee8c10e7f2f207e",
+      "status": 200,
+      "side": "admin",
+      "observation": {
+        "pageId": "A07",
+        "errorStatus": null,
+        "orderStatus": "SHIPPED",
+        "orderTotal": "85.00",
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 3,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "a09-disable-warning",
+      "path": "a09-disable-warning-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1022,
+      "sha256": "6c47ae88a9f34c69446f8a81fac755c11aa45f2a0acf1d2573aec6853fba6cfa",
+      "status": 200,
+      "side": "admin",
+      "observation": {
+        "pageId": "A09",
+        "errorStatus": null,
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 2,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1,
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "a10-product-album",
+      "path": "a10-product-album-1366.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "pngWidth": 1366,
+      "pngHeight": 1979,
+      "sha256": "b9a53927ff2e5a11d49e5040d7100ed6c25ea9d8b54a5b9ea5fa9d66e64fda3e",
+      "status": 200,
+      "side": "admin",
+      "observation": {
+        "pageId": "A10",
+        "errorStatus": null,
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "u01-home",
+      "path": "u01-home-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1958,
+      "sha256": "a6a31266fc593375048921f14a8e6cb9e2b859acc06a9dfd62c67cbe29235877",
+      "status": 200,
+      "side": "user",
+      "observation": {
+        "pageId": "U01",
+        "errorStatus": null,
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "u02-graduation",
+      "path": "u02-graduation-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1746,
+      "sha256": "721219c466ba4477229157076f4349358e85ff9efa2ba8c7cafe9896a812a226",
+      "status": 200,
+      "side": "user",
+      "observation": {
+        "pageId": "U02",
+        "errorStatus": null,
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "a08-customer-list",
+      "path": "a08-customer-list-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1169,
+      "sha256": "15671837ca2797277da67baa63e397c6c2b338b7ad00b58c6d37cbdcc3a26c7c",
+      "status": 200,
+      "side": "admin",
+      "observation": {
+        "pageId": "A08",
+        "errorStatus": null,
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "u05-persistent-cart",
+      "path": "u05-persistent-cart-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "b88e6848ec60b0649ce96612114b79f3322162d5f68f05f1d46d251a256f270f",
+      "status": 200,
+      "side": "user",
+      "observation": {
+        "pageId": "U05",
+        "errorStatus": null,
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": "3",
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "u06-85-confirmation",
+      "path": "u06-85-confirmation-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "a9b4fd15e79d12b476cc1040602f6c65907030c972deeba0faf3f2d92453bf3f",
+      "status": 200,
+      "side": "user",
+      "observation": {
+        "pageId": "U06",
+        "errorStatus": "0",
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": null,
+        "confirmationTotal": "85.00",
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 3,
+        "overflow": false,
+        "formCsrfCounts": [
+          1,
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "u08-shipped-snapshot",
+      "path": "u08-shipped-snapshot-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1678,
+      "sha256": "6606e3c9f549a517c743846da8b94804f8516ec80fb6a9243a98cbd4c2cf0bac",
+      "status": 200,
+      "side": "user",
+      "observation": {
+        "pageId": "U08",
+        "errorStatus": null,
+        "orderStatus": "SHIPPED",
+        "orderTotal": "85.00",
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 3,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "a02-real-dashboard",
+      "path": "a02-real-dashboard-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "53e4fe4f3d7a6688b0d6ca74e1a7b54a999669d359d2760777363be7dfb6d072",
+      "status": 200,
+      "side": "admin",
+      "observation": {
+        "pageId": "A02",
+        "errorStatus": null,
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [
+          {
+            "key": "on-sale-products",
+            "count": "55"
+          },
+          {
+            "key": "draft-products",
+            "count": "8"
+          },
+          {
+            "key": "paid-orders",
+            "count": "2"
+          },
+          {
+            "key": "enabled-customers",
+            "count": "3"
+          },
+          {
+            "key": "disabled-customers",
+            "count": "1"
+          }
+        ],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "a07-same-shipped-order",
+      "path": "a07-same-shipped-order-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1687,
+      "sha256": "37f7c187a76a62eb7bd6fc818c284f4ae5e195ded88b62e4d360302648703254",
+      "status": 200,
+      "side": "admin",
+      "observation": {
+        "pageId": "A07",
+        "errorStatus": null,
+        "orderStatus": "SHIPPED",
+        "orderTotal": "85.00",
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 3,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "a09-disable-warning",
+      "path": "a09-disable-warning-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1080,
+      "sha256": "cfc67d4d5ade2ba5796c50bb97208625146c2f1eb20bfab93c3970cadd1fbb52",
+      "status": 200,
+      "side": "admin",
+      "observation": {
+        "pageId": "A09",
+        "errorStatus": null,
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 2,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1,
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    },
+    {
+      "name": "a10-product-album",
+      "path": "a10-product-album-1920.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pngWidth": 1920,
+      "pngHeight": 1979,
+      "sha256": "4104ecdb51e0a8183815d06f720172f5808d7067a352a9de00f2a05ca992d659",
+      "status": 200,
+      "side": "admin",
+      "observation": {
+        "pageId": "A10",
+        "errorStatus": null,
+        "orderStatus": null,
+        "orderTotal": null,
+        "cartQuantity": null,
+        "confirmationTotal": null,
+        "dashboardCounts": [],
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0,
+        "overflow": false,
+        "formCsrfCounts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "imageFailures": 0,
+        "sessionUrlRewrite": false
+      },
+      "contactAndShippingFieldsMasked": true
+    }
+  ],
+  "imageFallbackObservations": [
+    {
+      "name": "missing-image-actual-fallback",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "productId": 36,
+      "pageId": "U03",
+      "galleryCount": "0",
+      "galleryEmpty": true,
+      "coverLoaded": true,
+      "coverPath": "/images/catalog-placeholder.svg",
+      "fallbackUsed": true
+    },
+    {
+      "name": "no-gallery-cover",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "productId": 5,
+      "pageId": "U03",
+      "galleryCount": "0",
+      "galleryEmpty": true,
+      "coverLoaded": true,
+      "coverPath": "/images/catalog-placeholder.svg",
+      "fallbackUsed": false
+    },
+    {
+      "name": "missing-image-actual-fallback",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "productId": 36,
+      "pageId": "U03",
+      "galleryCount": "0",
+      "galleryEmpty": true,
+      "coverLoaded": true,
+      "coverPath": "/images/catalog-placeholder.svg",
+      "fallbackUsed": true
+    },
+    {
+      "name": "no-gallery-cover",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "productId": 5,
+      "pageId": "U03",
+      "galleryCount": "0",
+      "galleryEmpty": true,
+      "coverLoaded": true,
+      "coverPath": "/images/catalog-placeholder.svg",
+      "fallbackUsed": false
+    }
+  ],
+  "failureClass": null,
+  "methods": "New STEP13-only Playwright reader, authenticated via ephemeral in-memory cookies; only real GET navigation; no business writes or old generators.",
+  "privacy": "Cookie/CSRF/confirmation values and raw bodies are never archived; shipping/contact/input fields are opaque-masked in PNG.",
+  "databaseBoundary": "Individual GETs are after-only at this layer. External orchestrator owns actual batch before/after snapshots; screenshot alone does not prove zero writes."
+}

@@ -1,0 +1,102 @@
+{
+  "at": "2026-11-15T05:46:53.618765+00:00",
+  "overall": "PASS",
+  "checks": {
+    "literal coercibility4": true,
+    "business case insensitive SKU column": true,
+    "business UTF8 name column": true,
+    "information_schema utf8mb3 column": true,
+    "performance_schema MESSAGE_TEXT comparison": true,
+    "JSON_OBJECT key": true,
+    "HEX roundtrip 0": true,
+    "HEX roundtrip 1": true,
+    "HEX roundtrip 2": true,
+    "HEX roundtrip 3": true
+  },
+  "observations": [
+    {
+      "name": "literal coercibility4",
+      "sql": "SELECT COERCIBILITY((_utf8mb4 X'6c69746572616c')),CHARSET((_utf8mb4 X'6c69746572616c')),COLLATION((_utf8mb4 X'6c69746572616c'));",
+      "exit_code": 0,
+      "output": "4\tutf8mb4\tutf8mb4_0900_ai_ci",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "business case insensitive SKU column",
+      "sql": "SELECT COUNT(*) FROM csu13_literal.t WHERE sku=(_utf8mb4 X'6d69786564');",
+      "exit_code": 0,
+      "output": "1",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "business UTF8 name column",
+      "sql": "SELECT COUNT(*) FROM csu13_literal.t WHERE name=(_utf8mb4 X'e4b8ade69687e7958cf09f9880');",
+      "exit_code": 0,
+      "output": "1",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "information_schema utf8mb3 column",
+      "sql": "SELECT COUNT(*) FROM information_schema.TABLES WHERE TABLE_SCHEMA=(_utf8mb4 X'63737531335f6c69746572616c') AND TABLE_NAME=(_utf8mb4 X'74');",
+      "exit_code": 0,
+      "output": "1",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "performance_schema MESSAGE_TEXT comparison",
+      "sql": "SELECT COUNT(*) FROM performance_schema.events_statements_history_long WHERE MESSAGE_TEXT=(_utf8mb4 X'5354455031335f4c49544552414c5f4d41524b4552');",
+      "exit_code": 0,
+      "output": "0",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "JSON_OBJECT key",
+      "sql": "SELECT JSON_OBJECT((_utf8mb4 X'736166654b6579'),1);",
+      "exit_code": 0,
+      "output": "{\"safeKey\": 1}",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "HEX roundtrip 0",
+      "sql": "SELECT HEX((_utf8mb4 X''));",
+      "exit_code": 0,
+      "output": "",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "HEX roundtrip 1",
+      "sql": "SELECT HEX((_utf8mb4 X'e4b8ade69687'));",
+      "exit_code": 0,
+      "output": "E4B8ADE69687",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "HEX roundtrip 2",
+      "sql": "SELECT HEX((_utf8mb4 X'f09f9880'));",
+      "exit_code": 0,
+      "output": "F09F9880",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "HEX roundtrip 3",
+      "sql": "SELECT HEX((_utf8mb4 X'6261636b5c736c6173682771756f746521255f'));",
+      "exit_code": 0,
+      "output": "6261636B5C736C6173682771756F746521255F",
+      "stderr": "",
+      "passed": true
+    }
+  ],
+  "private_port": 57872,
+  "server_stopped": true,
+  "scope": "External literal SQL tool preflight only; no HTTP/product/seed or formal P0 verdict",
+  "credentials_or_personal_values": false
+}

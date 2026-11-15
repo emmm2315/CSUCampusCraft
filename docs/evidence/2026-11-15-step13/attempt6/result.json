@@ -1,0 +1,245 @@
+{
+  "started_at_utc": "2026-11-15T06:37:33.521586+00:00",
+  "started_at_local": "2026-11-15T14:37:33.521586+08:00",
+  "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "attempt": "attempt6",
+  "executor": "Codex AI, user-authorized new STEP13 execution",
+  "human_cross_reproduction": "not implemented this round; prior human review remains limited to its original scope",
+  "scope": "C/D-only current-round group: eight concurrency and five trigger rollback scenarios; ten P0 identifiers, thirteen required segments; not standalone all39 acceptance",
+  "parent_acceptance_composition": "Root combines this new private-DB group with same-round attempt5 successful serial/empty/restart/browser segments and separately referenced supplements. Attempt5 original overall FAIL remains unchanged.",
+  "standalone_all39_claimed": false,
+  "required_scenarios": 13,
+  "required_p0_identifiers": 10,
+  "branch": "feat/step13-acceptance",
+  "runtime_file_count": 199,
+  "runtime_manifest_sha256": "e0f5ea7765eb1b97e889866f80d8af69f00b29004575235c21094735c3b0789a",
+  "user_jar_sha256": "6b6027b67f381cfcc012cd3fc79bc940ad546c9acc2ae46fbf9ac13a71d42700",
+  "admin_jar_sha256": "1a8bf9ded1a535876a96b991659596fa82c01bf2bebccef45c755fe8e8820586",
+  "mysql_port": 64927,
+  "mysql_uuid": "0a6d259a-e0bf-11f1-8f51-005056c00001",
+  "mysql_version": "8.4.9",
+  "finished_at_utc": "2026-11-15T06:44:58.235185+00:00",
+  "finished_at_local": "2026-11-15T14:44:58.235185+08:00",
+  "checks": 1260,
+  "checks_failed": 0,
+  "p0_matrix": [
+    {
+      "id": "TST-16",
+      "required_segments": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments D1, D2, D3; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Real HTTP order transaction failures at item insert/product debit/cart delete all roll back every table.",
+      "result": "PASS",
+      "observed_segments": {
+        "D1": {
+          "passed": true,
+          "detail": {
+            "checks": 83
+          },
+          "at": "2026-11-15T06:42:44.495026+00:00"
+        },
+        "D2": {
+          "passed": true,
+          "detail": {
+            "checks": 85
+          },
+          "at": "2026-11-15T06:43:14.516798+00:00"
+        },
+        "D3": {
+          "passed": true,
+          "detail": {
+            "checks": 86
+          },
+          "at": "2026-11-15T06:43:44.480872+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-17",
+      "required_segments": [
+        "C3",
+        "C8"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments C3, C8; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Same confirmation race once only; same-user cart requests serialize without duplicate/lost rows and subsequent new row retained.",
+      "result": "PASS",
+      "observed_segments": {
+        "C3": {
+          "passed": true,
+          "detail": {
+            "checks": 96
+          },
+          "at": "2026-11-15T06:39:28.277744+00:00"
+        },
+        "C8": {
+          "passed": true,
+          "detail": {
+            "checks": 100
+          },
+          "at": "2026-11-15T06:42:05.266337+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-20",
+      "required_segments": [
+        "D5"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments D5; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "FAILURE→SUCCESS→SUCCESS replay preserves first MOCK receipt/time; payment fault leaves no partial fields.",
+      "result": "PASS",
+      "observed_segments": {
+        "D5": {
+          "passed": true,
+          "detail": {
+            "checks": 92
+          },
+          "at": "2026-11-15T06:44:48.460115+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-23",
+      "required_segments": [
+        "D4"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments D4; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Second refund failure rolls back first refund, order still pending with null cancelled_at.",
+      "result": "PASS",
+      "observed_segments": {
+        "D4": {
+          "passed": true,
+          "detail": {
+            "checks": 93
+          },
+          "at": "2026-11-15T06:44:16.523053+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-24",
+      "required_segments": [
+        "C4"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments C4; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Independent HTTP pay/cancel synchronized race yields one legal winning transition/receipt/refund.",
+      "result": "PASS",
+      "observed_segments": {
+        "C4": {
+          "passed": true,
+          "detail": {
+            "checks": 109
+          },
+          "at": "2026-11-15T06:40:02.812191+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-28",
+      "required_segments": [
+        "C2"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments C2; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Restock parameter/overflow zero writes; buy2+restock3 concurrent from10ends11 and versions+2.",
+      "result": "PASS",
+      "observed_segments": {
+        "C2": {
+          "passed": true,
+          "detail": {
+            "checks": 95
+          },
+          "at": "2026-11-15T06:38:57.842628+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-29",
+      "required_segments": [
+        "C5"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments C5; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Pending/cancelled409, paid→shipped firsttime/replay stable; pay/ship race only legal ordering.",
+      "result": "PASS",
+      "observed_segments": {
+        "C5": {
+          "passed": true,
+          "detail": {
+            "checks": 106
+          },
+          "at": "2026-11-15T06:40:38.186509+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-35",
+      "required_segments": [
+        "C1"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments C1; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Two users confirmed stock1, synchronized HTTP creates exactly1order1item and loser409 retains cart.",
+      "result": "PASS",
+      "observed_segments": {
+        "C1": {
+          "passed": true,
+          "detail": {
+            "checks": 136
+          },
+          "at": "2026-11-15T06:38:27.165611+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-39",
+      "required_segments": [
+        "C7"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments C7; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Status+monotonic microstamp/same-state no-op,old sessions clear incl silent disable-enable; concurrent disable/write legal outcome.",
+      "result": "PASS",
+      "observed_segments": {
+        "C7": {
+          "passed": true,
+          "detail": {
+            "checks": 111
+          },
+          "at": "2026-11-15T06:41:32.103196+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-40",
+      "required_segments": [
+        "C6"
+      ],
+      "assertion_plan": "This leaf only asserts scenario segments C6; other requirement parts are outside this leaf.",
+      "parent_requirement_description": "Real album add/edit/order/noop/remove/fallback/version/path/ownership constraints+same-path bytes; concurrent edit/album one winner.",
+      "result": "PASS",
+      "observed_segments": {
+        "C6": {
+          "passed": true,
+          "detail": {
+            "checks": 42
+          },
+          "at": "2026-11-15T06:40:57.440378+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    }
+  ],
+  "tracked_processes_stopped": true,
+  "error": null,
+  "overall": "PASS",
+  "runtime_inputs_stable": true
+}

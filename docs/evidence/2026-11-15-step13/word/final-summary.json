@@ -1,0 +1,121 @@
+{
+  "overall": "PASS",
+  "source_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "observed_result_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\package\\result.json",
+  "p0_total": 39,
+  "p0_pass": 39,
+  "evidence_path": "docs/evidence/2026-11-15-step13",
+  "cd_evidence_subpath": "attempt6",
+  "demo_order_no": "CSU-3132fed968806dbdeb89e41063f992b9",
+  "peer_review_performed": false,
+  "p1_selected": false,
+  "concurrency": [
+    {
+      "id": "C1",
+      "name": "两账号争最后一件",
+      "status": "PASS",
+      "observed": "HTTP303/409；仅1张主单1条明细，库存1→0、version0→1；失败方车保留，旧确认再提交被拒。",
+      "evidence": "attempt6/concurrency/raw.jsonl"
+    },
+    {
+      "id": "C2",
+      "name": "购买2件与补货3件",
+      "status": "PASS",
+      "observed": "两请求均303；购买2件与补货3件后库存10→11，version0→2，购买车清空。",
+      "evidence": "attempt6/concurrency/raw.jsonl"
+    },
+    {
+      "id": "C3",
+      "name": "同一确认双提交",
+      "status": "PASS",
+      "observed": "HTTP409/303；仅1张36元订单，扣2件，version仅+1；同会话monitor串行入口，未声称两个同时在库内的事务。",
+      "evidence": "attempt6/concurrency/raw.jsonl"
+    },
+    {
+      "id": "C4",
+      "name": "模拟支付与取消",
+      "status": "PASS",
+      "observed": "支付409、取消303；最终CANCELLED，未落支付凭证，两个SKU按成交量返库各+1版本。",
+      "evidence": "attempt6/concurrency/raw.jsonl"
+    },
+    {
+      "id": "C5",
+      "name": "支付与发货",
+      "status": "PASS",
+      "observed": "支付303、发货303；最终SHIPPED，库存与明细不变，支付和发货时间链正确。",
+      "evidence": "attempt6/concurrency/raw.jsonl"
+    },
+    {
+      "id": "C6",
+      "name": "资料编辑与相册同版本",
+      "status": "PASS",
+      "observed": "资料编辑303、相册新增409；父版本0→1，失败相册无新增行，库存和原相册不变。",
+      "evidence": "attempt6/concurrency/raw.jsonl"
+    },
+    {
+      "id": "C7",
+      "name": "进行中下单与禁用",
+      "status": "PASS",
+      "observed": "下单303后禁用303；成单与扣库完整，库存10→9、version+1；后续旧会话302，重新启用不恢复旧会话。",
+      "evidence": "attempt6/concurrency/raw.jsonl"
+    },
+    {
+      "id": "C8",
+      "name": "同账号加购与改量",
+      "status": "PASS",
+      "observed": "两独立会话同步加购均303，合并为quantity3/version1；随后加2为303、旧版改量409，最终quantity5/version2。",
+      "evidence": "attempt6/concurrency/raw.jsonl"
+    }
+  ],
+  "faults": [
+    {
+      "id": "D1",
+      "name": "主单后明细插入失败",
+      "status": "PASS",
+      "observed": "已执行1次主单插入后SIGNAL；HTTP500，七表提交行数据前后完全相同。",
+      "evidence": "faults/results.jsonl"
+    },
+    {
+      "id": "D2",
+      "name": "第二个SKU扣库失败",
+      "status": "PASS",
+      "observed": "已执行主单、2明细及首SKU扣库后第二SKU触发SIGNAL；HTTP500，七表全回滚。",
+      "evidence": "faults/results.jsonl"
+    },
+    {
+      "id": "D3",
+      "name": "第二行清车失败",
+      "status": "PASS",
+      "observed": "已执行主单、2明细、两SKU扣库及首行清车后触发SIGNAL；HTTP500，七表全回滚。",
+      "evidence": "faults/results.jsonl"
+    },
+    {
+      "id": "D4",
+      "name": "取消第二个SKU返库失败",
+      "status": "PASS",
+      "observed": "取消已执行首SKU返库后第二SKU触发SIGNAL；HTTP500，待支付状态、空取消时间及库存版本全部恢复。",
+      "evidence": "faults/results.jsonl"
+    },
+    {
+      "id": "D5",
+      "name": "首次支付更新失败",
+      "status": "PASS",
+      "observed": "首次支付更新触发SIGNAL；HTTP500，仍待支付且支付三字段NULL，七表提交行数据不变。",
+      "evidence": "faults/results.jsonl"
+    }
+  ],
+  "environment_text": "JDK21.0.12.1、Maven Wrapper3.9.16、MySQL8.4.9 InnoDB；两端8080/8081；主5隔离MySQL端口56969，并发故障组64927，补验组56542/62964/57725；JDBC统一UTC，页面Asia/Shanghai",
+  "structure_empty_pass": true,
+  "admin_only_empty_pass": true,
+  "demo_initial_counts_pass": true,
+  "demo_85_pass": true,
+  "restart_pass": true,
+  "snapshot_pass": true,
+  "evidence_integrity_pass": true,
+  "sensitive_scan_pass": true,
+  "grouping_text": "父汇总采纳主5的串行、空库、重启、浏览器与新6的并发故障组及独立补验；主5整体FAIL保留，C1工具解码所缺原始输出不追认，状态补验清理FAIL与独立重试分列，不把原叶改写为整轮通过。",
+  "attempt_history_text": "最终结论来自5个同源码、同两端JAR和同199项运行输入的有效分组。主5已完成串行、空库、重启和20张新图，但其后C1工具stdout在Windows解码失败，原始输出未保存，故主5整体FAIL保留，C1不追认。全新私库的新6实际重跑8项并发与5项故障，原组PASS；主页/联合筛选/失效徽标、状态令牌、DDL元数据另有独立新补验。状态补验的4项业务有效段通过，但原组因临时目录清理PermissionError为FAIL，保留原结果并另列成功清理重试。此前工具失败与原重放工具误报均独立保留；父39矩阵每格回指实际源组，不把任何原叶FAIL改名为PASS。",
+  "cleanup_result_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\cleanup-all-runtime.json",
+  "cleanup_verification_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\cleanup-verification.json",
+  "cleanup_text": "统一运行临时目录清理已完成：删除9个已授权目录，1个此前已不存在；独立复核14个相关端口均无监听，0个本轮进程，1312份原证据和日志字节不变。没有终止或触碰非本轮 MySQL。"
+}

@@ -1,0 +1,154 @@
+PASS None exact source
+PASS None feature branch
+PASS None clean start
+PASS None actual tool version exit
+PASS None actual tool version exit
+PASS None actual tool version exit
+PASS None actual JDK21/Maven3.9.16
+PASS None new clean Wrapper verify user
+PASS None new clean Wrapper verify admin
+PASS None private MySQL initialize
+PASS None private MySQL identity
+PASS None created listener owner u
+PASS None created listener owner a
+PASS TST-02 raw response no credential/hash 1
+PASS TST-02 no URL session tracking 1
+PASS TST-02 / seven-table zero write
+PASS TST-02 GET /
+PASS TST-02 newest exact SQL list and bound
+PASS TST-02 featured exact SQL list and bound
+PASS TST-02 raw response no credential/hash 2
+PASS TST-02 no URL session tracking 2
+PASS TST-02 / seven-table zero write
+PASS TST-02 GET /
+PASS TST-02 newest exact SQL list and bound
+PASS TST-02 newest selected zero stock visibly soldout
+PASS TST-02 newest selected zero stock visibly soldout
+PASS TST-02 featured exact SQL list and bound
+PASS TST-02 featured selected zero stock visibly soldout
+PASS TST-02 featured selected zero stock visibly soldout
+PASS TST-02 raw response no credential/hash 3
+PASS TST-02 no URL session tracking 3
+PASS TST-02 / seven-table zero write
+PASS TST-02 GET /
+PASS TST-02 newest exact SQL list and bound
+PASS TST-02 featured exact SQL list and bound
+PASS TST-02 missing graduation code only omits banner
+PASS TST-02 raw response no credential/hash 4
+PASS TST-02 no URL session tracking 4
+PASS TST-02 / seven-table zero write
+PASS TST-02 GET /
+PASS TST-02 newest exact SQL list and bound
+PASS TST-02 featured exact SQL list and bound
+PASS TST-02 no-sale preserves all five themes and graduation search
+PASS TST-02 raw response no credential/hash 5
+PASS TST-02 no URL session tracking 5
+PASS TST-02 /products seven-table zero write
+PASS TST-02 GET /products
+PASS TST-02 U02 root
+PASS TST-02 catalog SQL count and stable row order
+PASS TST-02 canonical page size
+PASS TST-02 all home fixtures restored full seven-table bytes
+PASS TST-03 raw response no credential/hash 6
+PASS TST-03 no URL session tracking 6
+PASS TST-03 /products?categoryId=1&type=STATIONERY&q=%E6%BD%87%E6%B9%98&sort=PRICE_ASC&size=1&page=1 seven-table zero write
+PASS TST-03 GET /products?categoryId=1&type=STATIONERY&q=%E6%BD%87%E6%B9%98&sort=PRICE_ASC&size=1&page=1
+PASS TST-03 U02 root
+PASS TST-03 catalog SQL count and stable row order
+PASS TST-03 canonical page size
+PASS TST-03 pagination keeps categoryId
+PASS TST-03 pagination keeps type
+PASS TST-03 pagination keeps q
+PASS TST-03 pagination keeps sort
+PASS TST-03 pagination keeps size
+PASS TST-03 raw response no credential/hash 7
+PASS TST-03 no URL session tracking 7
+PASS TST-03 /products?categoryId=1&type=STATIONERY&q=%E6%BD%87%E6%B9%98&sort=PRICE_ASC&size=1&page=2 seven-table zero write
+PASS TST-03 GET /products?categoryId=1&type=STATIONERY&q=%E6%BD%87%E6%B9%98&sort=PRICE_ASC&size=1&page=2
+PASS TST-03 U02 root
+PASS TST-03 catalog SQL count and stable row order
+PASS TST-03 canonical page size
+PASS TST-03 pagination keeps categoryId
+PASS TST-03 pagination keeps type
+PASS TST-03 pagination keeps q
+PASS TST-03 pagination keeps sort
+PASS TST-03 pagination keeps size
+PASS TST-03 raw response no credential/hash 8
+PASS TST-03 no URL session tracking 8
+PASS TST-03 /products?categoryId=1&type=STATIONERY&q=__no_literal_match__&sort=NEWEST&size=1&page=1 seven-table zero write
+PASS TST-03 GET /products?categoryId=1&type=STATIONERY&q=__no_literal_match__&sort=NEWEST&size=1&page=1
+PASS TST-03 U02 root
+PASS TST-03 catalog SQL count and stable row order
+PASS TST-03 canonical page size
+PASS TST-03 combined filters and GETs no database writes
+PASS TST-09 raw response no credential/hash 9
+PASS TST-09 no URL session tracking 9
+PASS TST-09 /login?returnUrl=%2F seven-table zero write
+PASS TST-09 GET /login?returnUrl=%2F
+PASS TST-09 raw response no credential/hash 10
+PASS TST-09 no URL session tracking 10
+PASS TST-09 /login seven-table zero write
+PASS TST-09 POST /login
+PASS TST-09 login changes session ID without exposing it
+PASS TST-09 real initial cart contains invalid and valid rows
+PASS TST-09 raw response no credential/hash 11
+PASS TST-09 no URL session tracking 11
+PASS TST-09 / seven-table zero write
+PASS TST-09 GET /
+PASS TST-09 SUM quantity badge includes every row
+PASS TST-09 raw response no credential/hash 12
+PASS TST-09 no URL session tracking 12
+PASS TST-09 /products seven-table zero write
+PASS TST-09 GET /products
+PASS TST-09 SUM quantity badge includes every row
+PASS TST-09 raw response no credential/hash 13
+PASS TST-09 no URL session tracking 13
+PASS TST-09 /products/56 seven-table zero write
+PASS TST-09 GET /products/56
+PASS TST-09 SUM quantity badge includes every row
+PASS TST-09 raw response no credential/hash 14
+PASS TST-09 no URL session tracking 14
+PASS TST-09 /cart seven-table zero write
+PASS TST-09 GET /cart
+PASS TST-09 SUM quantity badge includes every row
+PASS TST-09 raw response no credential/hash 15
+PASS TST-09 no URL session tracking 15
+PASS TST-09 /orders seven-table zero write
+PASS TST-09 GET /orders
+PASS TST-09 SUM quantity badge includes every row
+PASS TST-09 raw response no credential/hash 16
+PASS TST-09 no URL session tracking 16
+PASS TST-09 /login seven-table zero write
+PASS TST-09 GET /login
+PASS TST-09 SUM quantity badge includes every row
+PASS TST-09 raw response no credential/hash 17
+PASS TST-09 no URL session tracking 17
+PASS TST-09 /products/999999 seven-table zero write
+PASS TST-09 GET /products/999999
+PASS TST-09 SUM quantity badge includes every row
+PASS TST-09 raw response no credential/hash 18
+PASS TST-09 no URL session tracking 18
+PASS TST-09 /checkout seven-table zero write
+PASS TST-09 GET /checkout
+PASS TST-09 SUM quantity badge includes every row
+PASS TST-09 raw response no credential/hash 19
+PASS TST-09 no URL session tracking 19
+PASS TST-09 /login?returnUrl=%2F seven-table zero write
+PASS TST-09 GET /login?returnUrl=%2F
+PASS TST-09 raw response no credential/hash 20
+PASS TST-09 no URL session tracking 20
+PASS TST-09 /login seven-table zero write
+PASS TST-09 POST /login
+PASS TST-09 login changes session ID without exposing it
+PASS TST-09 raw response no credential/hash 21
+PASS TST-09 no URL session tracking 21
+PASS TST-09 /cart seven-table zero write
+PASS TST-09 GET /cart
+PASS TST-09 SUM quantity badge includes every row
+PASS TST-09 raw response no credential/hash 22
+PASS TST-09 no URL session tracking 22
+PASS TST-09 / seven-table zero write
+PASS TST-09 GET /
+PASS TST-09 SUM quantity badge includes every row
+PASS TST-09 all mixed-cart badge pages and logins leave seven-table data intact
+SUPPLEMENT_RESULT PASS

@@ -1,0 +1,552 @@
+{
+  "empty": [
+    {
+      "index": "idx_cart_product",
+      "table": "cart_item",
+      "column": "product_id",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "PRIMARY",
+      "table": "cart_item",
+      "column": "id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_cart_user_product",
+      "table": "cart_item",
+      "column": "user_id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_cart_user_product",
+      "table": "cart_item",
+      "column": "product_id",
+      "sequence": 2,
+      "nonUnique": 0
+    },
+    {
+      "index": "idx_category_parent_sort",
+      "table": "category",
+      "column": "parent_id",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_category_parent_sort",
+      "table": "category",
+      "column": "sort_order",
+      "sequence": 2,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_category_parent_sort",
+      "table": "category",
+      "column": "id",
+      "sequence": 3,
+      "nonUnique": 1
+    },
+    {
+      "index": "PRIMARY",
+      "table": "category",
+      "column": "id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_category_code",
+      "table": "category",
+      "column": "code",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_category_sibling_name",
+      "table": "category",
+      "column": "parent_key",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_category_sibling_name",
+      "table": "category",
+      "column": "name",
+      "sequence": 2,
+      "nonUnique": 0
+    },
+    {
+      "index": "idx_product_category_status_sort",
+      "table": "product",
+      "column": "category_id",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_product_category_status_sort",
+      "table": "product",
+      "column": "status",
+      "sequence": 2,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_product_category_status_sort",
+      "table": "product",
+      "column": "sort_order",
+      "sequence": 3,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_product_category_status_sort",
+      "table": "product",
+      "column": "id",
+      "sequence": 4,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_product_status_sort",
+      "table": "product",
+      "column": "status",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_product_status_sort",
+      "table": "product",
+      "column": "sort_order",
+      "sequence": 2,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_product_status_sort",
+      "table": "product",
+      "column": "id",
+      "sequence": 3,
+      "nonUnique": 1
+    },
+    {
+      "index": "PRIMARY",
+      "table": "product",
+      "column": "id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_product_sku",
+      "table": "product",
+      "column": "sku",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "idx_image_product_sort",
+      "table": "product_image",
+      "column": "product_id",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_image_product_sort",
+      "table": "product_image",
+      "column": "sort_order",
+      "sequence": 2,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_image_product_sort",
+      "table": "product_image",
+      "column": "id",
+      "sequence": 3,
+      "nonUnique": 1
+    },
+    {
+      "index": "PRIMARY",
+      "table": "product_image",
+      "column": "id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "idx_order_status_created",
+      "table": "sales_order",
+      "column": "status",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_order_status_created",
+      "table": "sales_order",
+      "column": "created_at",
+      "sequence": 2,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_order_status_created",
+      "table": "sales_order",
+      "column": "id",
+      "sequence": 3,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_order_user_created",
+      "table": "sales_order",
+      "column": "user_id",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_order_user_created",
+      "table": "sales_order",
+      "column": "created_at",
+      "sequence": 2,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_order_user_created",
+      "table": "sales_order",
+      "column": "id",
+      "sequence": 3,
+      "nonUnique": 1
+    },
+    {
+      "index": "PRIMARY",
+      "table": "sales_order",
+      "column": "id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_order_no",
+      "table": "sales_order",
+      "column": "order_no",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_order_payment_no",
+      "table": "sales_order",
+      "column": "payment_no",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "idx_order_item_product",
+      "table": "sales_order_item",
+      "column": "product_id",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "PRIMARY",
+      "table": "sales_order_item",
+      "column": "id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_order_item_product",
+      "table": "sales_order_item",
+      "column": "order_id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_order_item_product",
+      "table": "sales_order_item",
+      "column": "product_id",
+      "sequence": 2,
+      "nonUnique": 0
+    },
+    {
+      "index": "PRIMARY",
+      "table": "store_user",
+      "column": "id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_user_username",
+      "table": "store_user",
+      "column": "username",
+      "sequence": 1,
+      "nonUnique": 0
+    }
+  ],
+  "demo": [
+    {
+      "index": "idx_cart_product",
+      "table": "cart_item",
+      "column": "product_id",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "PRIMARY",
+      "table": "cart_item",
+      "column": "id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_cart_user_product",
+      "table": "cart_item",
+      "column": "user_id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_cart_user_product",
+      "table": "cart_item",
+      "column": "product_id",
+      "sequence": 2,
+      "nonUnique": 0
+    },
+    {
+      "index": "idx_category_parent_sort",
+      "table": "category",
+      "column": "parent_id",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_category_parent_sort",
+      "table": "category",
+      "column": "sort_order",
+      "sequence": 2,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_category_parent_sort",
+      "table": "category",
+      "column": "id",
+      "sequence": 3,
+      "nonUnique": 1
+    },
+    {
+      "index": "PRIMARY",
+      "table": "category",
+      "column": "id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_category_code",
+      "table": "category",
+      "column": "code",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_category_sibling_name",
+      "table": "category",
+      "column": "parent_key",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_category_sibling_name",
+      "table": "category",
+      "column": "name",
+      "sequence": 2,
+      "nonUnique": 0
+    },
+    {
+      "index": "idx_product_category_status_sort",
+      "table": "product",
+      "column": "category_id",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_product_category_status_sort",
+      "table": "product",
+      "column": "status",
+      "sequence": 2,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_product_category_status_sort",
+      "table": "product",
+      "column": "sort_order",
+      "sequence": 3,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_product_category_status_sort",
+      "table": "product",
+      "column": "id",
+      "sequence": 4,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_product_status_sort",
+      "table": "product",
+      "column": "status",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_product_status_sort",
+      "table": "product",
+      "column": "sort_order",
+      "sequence": 2,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_product_status_sort",
+      "table": "product",
+      "column": "id",
+      "sequence": 3,
+      "nonUnique": 1
+    },
+    {
+      "index": "PRIMARY",
+      "table": "product",
+      "column": "id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_product_sku",
+      "table": "product",
+      "column": "sku",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "idx_image_product_sort",
+      "table": "product_image",
+      "column": "product_id",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_image_product_sort",
+      "table": "product_image",
+      "column": "sort_order",
+      "sequence": 2,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_image_product_sort",
+      "table": "product_image",
+      "column": "id",
+      "sequence": 3,
+      "nonUnique": 1
+    },
+    {
+      "index": "PRIMARY",
+      "table": "product_image",
+      "column": "id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "idx_order_status_created",
+      "table": "sales_order",
+      "column": "status",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_order_status_created",
+      "table": "sales_order",
+      "column": "created_at",
+      "sequence": 2,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_order_status_created",
+      "table": "sales_order",
+      "column": "id",
+      "sequence": 3,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_order_user_created",
+      "table": "sales_order",
+      "column": "user_id",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_order_user_created",
+      "table": "sales_order",
+      "column": "created_at",
+      "sequence": 2,
+      "nonUnique": 1
+    },
+    {
+      "index": "idx_order_user_created",
+      "table": "sales_order",
+      "column": "id",
+      "sequence": 3,
+      "nonUnique": 1
+    },
+    {
+      "index": "PRIMARY",
+      "table": "sales_order",
+      "column": "id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_order_no",
+      "table": "sales_order",
+      "column": "order_no",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_order_payment_no",
+      "table": "sales_order",
+      "column": "payment_no",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "idx_order_item_product",
+      "table": "sales_order_item",
+      "column": "product_id",
+      "sequence": 1,
+      "nonUnique": 1
+    },
+    {
+      "index": "PRIMARY",
+      "table": "sales_order_item",
+      "column": "id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_order_item_product",
+      "table": "sales_order_item",
+      "column": "order_id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_order_item_product",
+      "table": "sales_order_item",
+      "column": "product_id",
+      "sequence": 2,
+      "nonUnique": 0
+    },
+    {
+      "index": "PRIMARY",
+      "table": "store_user",
+      "column": "id",
+      "sequence": 1,
+      "nonUnique": 0
+    },
+    {
+      "index": "uk_user_username",
+      "table": "store_user",
+      "column": "username",
+      "sequence": 1,
+      "nonUnique": 0
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "store_user": {
+    "rows": 4,
+    "sha256": "ac5e4ad9997bfb39f4f23ab8742dd6387b1eeea486de9aea0d7ef09bfb935485",
+    "serialization": "ordered full-field JSON_ARRAY rows, UTC"
+  },
+  "category": {
+    "rows": 15,
+    "sha256": "1e2744e1d30c02697d330eb811fdcff32baf0f919d83049ad3d38bd770d0d928",
+    "serialization": "ordered full-field JSON_ARRAY rows, UTC"
+  },
+  "product": {
+    "rows": 60,
+    "sha256": "133fcfbcaaafba8b7544980914c7eae1a5901c7d1f03cc00f596449ff9b25f93",
+    "serialization": "ordered full-field JSON_ARRAY rows, UTC"
+  },
+  "product_image": {
+    "rows": 100,
+    "sha256": "41d27f329bd9f017633b3c64973fd4c2293804bf2be798ab3c192c1b71995c2f",
+    "serialization": "ordered full-field JSON_ARRAY rows, UTC"
+  },
+  "cart_item": {
+    "rows": 10,
+    "sha256": "92b85653840a32019352cedeb73667f66e38b56025dc8f18956dc115cf291a62",
+    "serialization": "ordered full-field JSON_ARRAY rows, UTC"
+  },
+  "sales_order": {
+    "rows": 10,
+    "sha256": "1b55a50d631a17bb9aa525773b94f8b6ac0ae9866efe272ac093e610bf5b6c64",
+    "serialization": "ordered full-field JSON_ARRAY rows, UTC"
+  },
+  "sales_order_item": {
+    "rows": 20,
+    "sha256": "ca8db5127232022d05b2ef16b016676a9d4ad3172caa8287c0dddf3b7c5601f0",
+    "serialization": "ordered full-field JSON_ARRAY rows, UTC"
+  }
+}

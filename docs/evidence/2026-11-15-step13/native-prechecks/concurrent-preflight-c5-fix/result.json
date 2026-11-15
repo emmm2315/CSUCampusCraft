@@ -1,0 +1,17 @@
+{
+  "compile_exit_code": 0,
+  "Python_AST": "PASS",
+  "database_or_HTTP_started": false,
+  "source_sha256": {
+    "ConcurrentHttpRunner.java": "22a321914cd6419f74d3e94f635e103d88e865f5f3c5c6cc88069c05706a1cac",
+    "ConcurrentRunnerPrivacyPreflight.java": "d71d466f9df672afeced85766b3d0c81e634c43196ebbca33ae7bf47e2d7ed44"
+  },
+  "module_sha256": "2acec7be9595264fe3e46a79004a209afdd153ee9998c8367ae5e103f368f16f",
+  "privacy_exit_code": 0,
+  "privacy_result": {
+    "checks": 12,
+    "scope": "Offline actual runner redaction/BCrypt behavior only; no HTTP/JDBC/application action",
+    "overall": "PASS",
+    "synthetic_private_values_recorded": false
+  }
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "TST-13",
+    "title": "Cross-session/foreign confirmation rejection with current CSRF and original owner token retained",
+    "required_segments": [
+      "edge"
+    ],
+    "result": "PASS",
+    "observed_segments": {
+      "edge": {
+        "passed": true,
+        "detail": {
+          "checks": 146
+        },
+        "at": "2026-11-15T06:20:42.515309+00:00"
+      }
+    },
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+  },
+  {
+    "id": "TST-20",
+    "title": "Historical paid/shipped/completed payment replay and U09 read boundaries",
+    "required_segments": [
+      "edge"
+    ],
+    "result": "PASS",
+    "observed_segments": {
+      "edge": {
+        "passed": true,
+        "detail": {
+          "checks": 95
+        },
+        "at": "2026-11-15T06:20:02.404028+00:00"
+      }
+    },
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+  },
+  {
+    "id": "TST-21",
+    "title": "PAID cancellation and CANCELLED payment state rejection",
+    "required_segments": [
+      "edge"
+    ],
+    "result": "PASS",
+    "observed_segments": {
+      "edge": {
+        "passed": true,
+        "detail": {
+          "checks": 30
+        },
+        "at": "2026-11-15T06:19:44.362234+00:00"
+      }
+    },
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+  },
+  {
+    "id": "TST-29",
+    "title": "COMPLETED shipment replay preserves complete seven-table state",
+    "required_segments": [
+      "edge"
+    ],
+    "result": "PASS",
+    "observed_segments": {
+      "edge": {
+        "passed": true,
+        "detail": {
+          "checks": 16
+        },
+        "at": "2026-11-15T06:19:37.266667+00:00"
+      }
+    },
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+  }
+]

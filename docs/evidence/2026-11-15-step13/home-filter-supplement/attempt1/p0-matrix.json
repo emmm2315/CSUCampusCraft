@@ -1,0 +1,56 @@
+[
+  {
+    "id": "TST-02",
+    "required_segments": [
+      "home-edges"
+    ],
+    "assertion_plan": "Selected home zero-stock, created/sort ties, five-theme no-sale, graduation missing",
+    "result": "PASS",
+    "observed_segments": {
+      "home-edges": {
+        "passed": true,
+        "detail": {
+          "checks": 38
+        },
+        "at": "2026-11-15T06:00:28.455908+00:00"
+      }
+    },
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+  },
+  {
+    "id": "TST-03",
+    "required_segments": [
+      "combined-filters"
+    ],
+    "assertion_plan": "Simultaneous root/type/name with pagination/count and retained conditions",
+    "result": "PASS",
+    "observed_segments": {
+      "combined-filters": {
+        "passed": true,
+        "detail": {
+          "checks": 32
+        },
+        "at": "2026-11-15T06:00:32.017780+00:00"
+      }
+    },
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+  },
+  {
+    "id": "TST-09",
+    "required_segments": [
+      "invalid-badges"
+    ],
+    "assertion_plan": "Initial mixed invalid cart SUM badge on all common page families",
+    "result": "PASS",
+    "observed_segments": {
+      "invalid-badges": {
+        "passed": true,
+        "detail": {
+          "checks": 70
+        },
+        "at": "2026-11-15T06:00:46.936770+00:00"
+      }
+    },
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+  }
+]

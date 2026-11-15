@@ -1,0 +1,80 @@
+{
+  "recorded_at_utc": "2026-11-15T05:09:23.075069+00:00",
+  "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "branch": "feat/step13-acceptance",
+  "initial_status": "",
+  "main": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "refs": [
+    "53125a539e2ecba4c24c7b5f6dc0384b760b152c refs/codex/turn-diffs/checkpoints/5a9ade7f3513a18238a0c108ee77f397/425f83837a12005c46dd6d7813a60e02/1794716547378/df1c36d1-4efb-4c2d-88cf-d7e355ce9605",
+    "a4dc041b8e640246a068455b43b29fc0d059e6f1 refs/heads/feat/review-2026-11-15",
+    "f9fd249b7a8c0a6ea6111133062d9e701096ef9d refs/heads/feat/step02-foundation",
+    "f5372631f24dc265abda7eeeb2711584417abfe9 refs/heads/feat/step03-catalog",
+    "a8438b72493fba108577e0ba4918e61b043b8916 refs/heads/feat/step04-auth",
+    "75e4339266968edc212f160b1119ac720965c408 refs/heads/feat/step05-admin-catalog",
+    "a1d4f3523f557af63fc77ea883986c099edcd93e refs/heads/feat/step06-admin-images",
+    "dda8f8254eec3f63e9c3bede397131cbe55c6179 refs/heads/feat/step07-cart",
+    "993b2ee184a1a05af40a1943970276ffb14cfac0 refs/heads/feat/step07-cart-merged",
+    "e3bfb2fe0c1087f915d838d0dff50ae0be3db0bf refs/heads/feat/step08-checkout",
+    "dc2033da0ee52eb478999031c4f6838d6434d70b refs/heads/feat/step09-orders",
+    "8dd7794e5b84fbc9a95069b76a74b761218e6d0a refs/heads/feat/step10-payment",
+    "a899cce263526926292afec8ed55d6757aed0597 refs/heads/feat/step11-admin-orders",
+    "0329c9810c4ad2719c4ae95190ff516d1d21a9ed refs/heads/feat/step12-admin-customers",
+    "d577179e4468354552d3f5f48d624a4296ee3cfb refs/heads/feat/step13-acceptance",
+    "d577179e4468354552d3f5f48d624a4296ee3cfb refs/heads/fix/review-closeout",
+    "d577179e4468354552d3f5f48d624a4296ee3cfb refs/heads/main",
+    "d577179e4468354552d3f5f48d624a4296ee3cfb refs/remotes/origin/HEAD",
+    "a4dc041b8e640246a068455b43b29fc0d059e6f1 refs/remotes/origin/feat/review-2026-11-15",
+    "f9fd249b7a8c0a6ea6111133062d9e701096ef9d refs/remotes/origin/feat/step02-foundation",
+    "f5372631f24dc265abda7eeeb2711584417abfe9 refs/remotes/origin/feat/step03-catalog",
+    "a8438b72493fba108577e0ba4918e61b043b8916 refs/remotes/origin/feat/step04-auth",
+    "75e4339266968edc212f160b1119ac720965c408 refs/remotes/origin/feat/step05-admin-catalog",
+    "a1d4f3523f557af63fc77ea883986c099edcd93e refs/remotes/origin/feat/step06-admin-images",
+    "221dfb6dfa4fe93d69ffe1eecda97e98705406e1 refs/remotes/origin/feat/step07-cart",
+    "993b2ee184a1a05af40a1943970276ffb14cfac0 refs/remotes/origin/feat/step07-cart-merged",
+    "e3bfb2fe0c1087f915d838d0dff50ae0be3db0bf refs/remotes/origin/feat/step08-checkout",
+    "dc2033da0ee52eb478999031c4f6838d6434d70b refs/remotes/origin/feat/step09-orders",
+    "8dd7794e5b84fbc9a95069b76a74b761218e6d0a refs/remotes/origin/feat/step10-payment",
+    "a899cce263526926292afec8ed55d6757aed0597 refs/remotes/origin/feat/step11-admin-orders",
+    "0329c9810c4ad2719c4ae95190ff516d1d21a9ed refs/remotes/origin/feat/step12-admin-customers",
+    "d577179e4468354552d3f5f48d624a4296ee3cfb refs/remotes/origin/fix/review-closeout",
+    "d577179e4468354552d3f5f48d624a4296ee3cfb refs/remotes/origin/main"
+  ],
+  "runtime_input_count": 199,
+  "runtime_inputs_json_sha256": "497ced107fc8e01c40f7392c8a2b2411041dbd53ddf95658499af4feb0c274ca",
+  "historical_evidence_files": 5506,
+  "historical_evidence_baseline_sha256": "63c68b5d1e5096d1054fbc96c8c03bfc5d3ef890c2a2f33616ebb0a67a49d6a5",
+  "jars": [
+    {
+      "module": "user",
+      "path": "D:\\Github Projects\\CSUCampusCraft\\csucampuscraft-user\\target\\csucampuscraft-user-0.0.1-SNAPSHOT.jar",
+      "sha256": "6b6027b67f381cfcc012cd3fc79bc940ad546c9acc2ae46fbf9ac13a71d42700",
+      "bytes": 30093096
+    },
+    {
+      "module": "admin",
+      "path": "D:\\Github Projects\\CSUCampusCraft\\csucampuscraft-admin\\target\\csucampuscraft-admin-0.0.1-SNAPSHOT.jar",
+      "sha256": "1a8bf9ded1a535876a96b991659596fa82c01bf2bebccef45c755fe8e8820586",
+      "bytes": 30095071
+    }
+  ],
+  "builds": {
+    "user": {
+      "java_home": "C:/Users/Starmetor/.jdks/ms-21.0.12.1",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-15T05:08:15.7034849Z",
+      "started_at_utc": "2026-11-15T05:08:10.6573463Z",
+      "maven_absent_from_path": true,
+      "command": ".\\mvnw.cmd -o -s <isolated settings> -Dmaven.repo.local=<isolated cache> -f csucampuscraft-user/pom.xml clean verify",
+      "module": "user"
+    },
+    "admin": {
+      "java_home": "C:/Users/Starmetor/.jdks/ms-21.0.12.1",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-15T05:08:32.8546056Z",
+      "started_at_utc": "2026-11-15T05:08:28.3735449Z",
+      "maven_absent_from_path": true,
+      "command": ".\\mvnw.cmd -o -s <isolated settings> -Dmaven.repo.local=<isolated cache> -f csucampuscraft-admin/pom.xml clean verify",
+      "module": "admin"
+    }
+  }
+}

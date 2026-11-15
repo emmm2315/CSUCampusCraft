@@ -1,0 +1,31 @@
+{
+  "files": [
+    {
+      "path": "ConcurrentHttpRunner.java",
+      "sha256": "26f099835358222808c43d2559ee37515db1d137ab17df3c50e45c033501fdbd"
+    },
+    {
+      "path": "ConcurrentRunnerPrivacyPreflight.java",
+      "sha256": "d71d466f9df672afeced85766b3d0c81e634c43196ebbca33ae7bf47e2d7ed44"
+    },
+    {
+      "path": "ConcurrentRunnerWirePreflight.java",
+      "sha256": "eaf6d40367db266d611e809ef76ef87f9f2caa7da3c8e8ef36af1d462d98612e"
+    },
+    {
+      "path": "concurrency_faults.py",
+      "sha256": "c66469d569dcdc648be7d5dcbe3d0adabe5f484bbd87c374e4cfa4acd36eabb6"
+    },
+    {
+      "path": "preflight_concurrent_wire.py",
+      "sha256": "5acb9f73596e2bb2890339e38a3b2cfe03771cab739329aacda24657e6a08243"
+    }
+  ],
+  "reason": "External JSON stdout protocol is explicitly UTF8 bytes after attempt5 C1 decode failure; same product SHA/JAR, old result and used tools preserved",
+  "initial_versions": [
+    "tool-versions/c5-gate-initial",
+    "tool-versions/utf8-stdout-initial"
+  ],
+  "formal_runtime_results": "Attempt5 whole FAIL preserved; no reconstructable C1 HTTP response outcome; next fresh C/D-only run pending",
+  "offline_preflight": "native/concurrent-preflight-utf8-fix/result.json"
+}

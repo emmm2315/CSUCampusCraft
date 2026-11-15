@@ -1,0 +1,153 @@
+{"at": "2026-11-15T05:59:59.584704+00:00", "name": "exact source", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:59:59.614682+00:00", "name": "feature branch", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:59:59.659924+00:00", "name": "clean start", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:59:59.715155+00:00", "name": "actual tool version exit", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:00:00.239835+00:00", "name": "actual tool version exit", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:00:00.278266+00:00", "name": "actual tool version exit", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:00:00.279166+00:00", "name": "actual JDK21/Maven3.9.16", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:00:00.305966+00:00", "name": "new clean Wrapper verify user", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:00:00.324599+00:00", "name": "new clean Wrapper verify admin", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:00:03.159546+00:00", "name": "private MySQL initialize", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:00:04.245733+00:00", "name": "private MySQL identity", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:00:10.330823+00:00", "name": "created listener owner u", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:00:15.735142+00:00", "name": "created listener owner a", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:00:16.984606+00:00", "name": "raw response no credential/hash 1", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:16.984606+00:00", "name": "no URL session tracking 1", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:17.360765+00:00", "name": "/ seven-table zero write", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": {"http": 1}}
+{"at": "2026-11-15T06:00:17.361304+00:00", "name": "GET /", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": {"http": 1, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:17.721872+00:00", "name": "newest exact SQL list and bound", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:17.722880+00:00", "name": "featured exact SQL list and bound", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:19.009360+00:00", "name": "raw response no credential/hash 2", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:19.009874+00:00", "name": "no URL session tracking 2", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:19.377337+00:00", "name": "/ seven-table zero write", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": {"http": 2}}
+{"at": "2026-11-15T06:00:19.377860+00:00", "name": "GET /", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": {"http": 2, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:19.748411+00:00", "name": "newest exact SQL list and bound", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:19.748714+00:00", "name": "newest selected zero stock visibly soldout", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": {"product_id": 2, "http": 2}}
+{"at": "2026-11-15T06:00:19.748714+00:00", "name": "newest selected zero stock visibly soldout", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": {"product_id": 1, "http": 2}}
+{"at": "2026-11-15T06:00:19.749219+00:00", "name": "featured exact SQL list and bound", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:19.749735+00:00", "name": "featured selected zero stock visibly soldout", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": {"product_id": 1, "http": 2}}
+{"at": "2026-11-15T06:00:19.749735+00:00", "name": "featured selected zero stock visibly soldout", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": {"product_id": 2, "http": 2}}
+{"at": "2026-11-15T06:00:22.698054+00:00", "name": "raw response no credential/hash 3", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:22.698569+00:00", "name": "no URL session tracking 3", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:23.204204+00:00", "name": "/ seven-table zero write", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": {"http": 3}}
+{"at": "2026-11-15T06:00:23.204204+00:00", "name": "GET /", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": {"http": 3, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:23.527453+00:00", "name": "newest exact SQL list and bound", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:23.527964+00:00", "name": "featured exact SQL list and bound", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:23.528483+00:00", "name": "missing graduation code only omits banner", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:25.672273+00:00", "name": "raw response no credential/hash 4", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:25.672783+00:00", "name": "no URL session tracking 4", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:26.105096+00:00", "name": "/ seven-table zero write", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": {"http": 4}}
+{"at": "2026-11-15T06:00:26.105096+00:00", "name": "GET /", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": {"http": 4, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:26.430993+00:00", "name": "newest exact SQL list and bound", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:26.431510+00:00", "name": "featured exact SQL list and bound", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:26.432023+00:00", "name": "no-sale preserves all five themes and graduation search", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:26.870735+00:00", "name": "raw response no credential/hash 5", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:26.871242+00:00", "name": "no URL session tracking 5", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:27.298966+00:00", "name": "/products seven-table zero write", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": {"http": 5}}
+{"at": "2026-11-15T06:00:27.299966+00:00", "name": "GET /products", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": {"http": 5, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:27.299966+00:00", "name": "U02 root", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:27.605760+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:27.605760+00:00", "name": "canonical page size", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:28.455908+00:00", "name": "all home fixtures restored full seven-table bytes", "passed": true, "case": "TST-02", "segment": "home-edges", "detail": null}
+{"at": "2026-11-15T06:00:28.904097+00:00", "name": "raw response no credential/hash 6", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:28.905096+00:00", "name": "no URL session tracking 6", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:29.321150+00:00", "name": "/products?categoryId=1&type=STATIONERY&q=%E6%BD%87%E6%B9%98&sort=PRICE_ASC&size=1&page=1 seven-table zero write", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": {"http": 6}}
+{"at": "2026-11-15T06:00:29.321667+00:00", "name": "GET /products?categoryId=1&type=STATIONERY&q=%E6%BD%87%E6%B9%98&sort=PRICE_ASC&size=1&page=1", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": {"http": 6, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:29.322186+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:29.608693+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:29.608693+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:29.609212+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:29.609730+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:29.610250+00:00", "name": "pagination keeps q", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:29.610250+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:29.610810+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:30.052581+00:00", "name": "raw response no credential/hash 7", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:30.053124+00:00", "name": "no URL session tracking 7", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:30.453732+00:00", "name": "/products?categoryId=1&type=STATIONERY&q=%E6%BD%87%E6%B9%98&sort=PRICE_ASC&size=1&page=2 seven-table zero write", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": {"http": 7}}
+{"at": "2026-11-15T06:00:30.453732+00:00", "name": "GET /products?categoryId=1&type=STATIONERY&q=%E6%BD%87%E6%B9%98&sort=PRICE_ASC&size=1&page=2", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": {"http": 7, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:30.454277+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:30.787897+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:30.788897+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:30.788897+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:30.788897+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:30.789898+00:00", "name": "pagination keeps q", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:30.790570+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:30.790570+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:31.223592+00:00", "name": "raw response no credential/hash 8", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:31.224109+00:00", "name": "no URL session tracking 8", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:31.642936+00:00", "name": "/products?categoryId=1&type=STATIONERY&q=__no_literal_match__&sort=NEWEST&size=1&page=1 seven-table zero write", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": {"http": 8}}
+{"at": "2026-11-15T06:00:31.642936+00:00", "name": "GET /products?categoryId=1&type=STATIONERY&q=__no_literal_match__&sort=NEWEST&size=1&page=1", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": {"http": 8, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:31.643456+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:31.953275+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:31.954279+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:32.017780+00:00", "name": "combined filters and GETs no database writes", "passed": true, "case": "TST-03", "segment": "combined-filters", "detail": null}
+{"at": "2026-11-15T06:00:32.386947+00:00", "name": "raw response no credential/hash 9", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:32.387458+00:00", "name": "no URL session tracking 9", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:32.752415+00:00", "name": "/login?returnUrl=%2F seven-table zero write", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 9}}
+{"at": "2026-11-15T06:00:32.752415+00:00", "name": "GET /login?returnUrl=%2F", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 9, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:33.144849+00:00", "name": "raw response no credential/hash 10", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:33.144849+00:00", "name": "no URL session tracking 10", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:33.497018+00:00", "name": "/login seven-table zero write", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 10}}
+{"at": "2026-11-15T06:00:33.497018+00:00", "name": "POST /login", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 10, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:00:33.497607+00:00", "name": "login changes session ID without exposing it", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:33.849884+00:00", "name": "real initial cart contains invalid and valid rows", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:34.277021+00:00", "name": "raw response no credential/hash 11", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:34.277021+00:00", "name": "no URL session tracking 11", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:34.633921+00:00", "name": "/ seven-table zero write", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 11}}
+{"at": "2026-11-15T06:00:34.633921+00:00", "name": "GET /", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 11, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:34.943429+00:00", "name": "SUM quantity badge includes every row", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:35.332647+00:00", "name": "raw response no credential/hash 12", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:35.333171+00:00", "name": "no URL session tracking 12", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:35.711111+00:00", "name": "/products seven-table zero write", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 12}}
+{"at": "2026-11-15T06:00:35.712195+00:00", "name": "GET /products", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 12, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:36.016209+00:00", "name": "SUM quantity badge includes every row", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:36.392624+00:00", "name": "raw response no credential/hash 13", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:36.393144+00:00", "name": "no URL session tracking 13", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:36.854100+00:00", "name": "/products/56 seven-table zero write", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 13}}
+{"at": "2026-11-15T06:00:36.855101+00:00", "name": "GET /products/56", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 13, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:37.238709+00:00", "name": "SUM quantity badge includes every row", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:37.633688+00:00", "name": "raw response no credential/hash 14", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:37.634223+00:00", "name": "no URL session tracking 14", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:38.006776+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 14}}
+{"at": "2026-11-15T06:00:38.007322+00:00", "name": "GET /cart", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 14, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:38.336945+00:00", "name": "SUM quantity badge includes every row", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:38.776856+00:00", "name": "raw response no credential/hash 15", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:38.776856+00:00", "name": "no URL session tracking 15", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:39.160427+00:00", "name": "/orders seven-table zero write", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 15}}
+{"at": "2026-11-15T06:00:39.160427+00:00", "name": "GET /orders", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 15, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:39.535188+00:00", "name": "SUM quantity badge includes every row", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:39.952382+00:00", "name": "raw response no credential/hash 16", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:39.952913+00:00", "name": "no URL session tracking 16", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:40.369168+00:00", "name": "/login seven-table zero write", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 16}}
+{"at": "2026-11-15T06:00:40.369671+00:00", "name": "GET /login", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 16, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:40.728549+00:00", "name": "SUM quantity badge includes every row", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:41.155778+00:00", "name": "raw response no credential/hash 17", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:41.155778+00:00", "name": "no URL session tracking 17", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:41.533794+00:00", "name": "/products/999999 seven-table zero write", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 17}}
+{"at": "2026-11-15T06:00:41.533794+00:00", "name": "GET /products/999999", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 17, "expected": 404, "observed": 404}}
+{"at": "2026-11-15T06:00:41.857161+00:00", "name": "SUM quantity badge includes every row", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:42.252299+00:00", "name": "raw response no credential/hash 18", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:42.252836+00:00", "name": "no URL session tracking 18", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:42.685866+00:00", "name": "/checkout seven-table zero write", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 18}}
+{"at": "2026-11-15T06:00:42.686592+00:00", "name": "GET /checkout", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 18, "expected": 409, "observed": 409}}
+{"at": "2026-11-15T06:00:43.030971+00:00", "name": "SUM quantity badge includes every row", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:43.433769+00:00", "name": "raw response no credential/hash 19", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:43.433769+00:00", "name": "no URL session tracking 19", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:43.783414+00:00", "name": "/login?returnUrl=%2F seven-table zero write", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 19}}
+{"at": "2026-11-15T06:00:43.784775+00:00", "name": "GET /login?returnUrl=%2F", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 19, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:44.236102+00:00", "name": "raw response no credential/hash 20", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:44.237113+00:00", "name": "no URL session tracking 20", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:44.738099+00:00", "name": "/login seven-table zero write", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 20}}
+{"at": "2026-11-15T06:00:44.738617+00:00", "name": "POST /login", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 20, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:00:44.738617+00:00", "name": "login changes session ID without exposing it", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:45.177019+00:00", "name": "raw response no credential/hash 21", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:45.178019+00:00", "name": "no URL session tracking 21", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:45.612770+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 21}}
+{"at": "2026-11-15T06:00:45.613293+00:00", "name": "GET /cart", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 21, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:46.014190+00:00", "name": "SUM quantity badge includes every row", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:46.432780+00:00", "name": "raw response no credential/hash 22", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:46.432780+00:00", "name": "no URL session tracking 22", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:46.874890+00:00", "name": "/ seven-table zero write", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 22}}
+{"at": "2026-11-15T06:00:46.875403+00:00", "name": "GET /", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": {"http": 22, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:00:46.875906+00:00", "name": "SUM quantity badge includes every row", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}
+{"at": "2026-11-15T06:00:46.936770+00:00", "name": "all mixed-cart badge pages and logins leave seven-table data intact", "passed": true, "case": "TST-09", "segment": "invalid-badges", "detail": null}

@@ -1,0 +1,45 @@
+{
+  "started_at_utc": "2026-11-15T06:23:24.443398+00:00",
+  "started_at_local": "2026-11-15T14:23:24.443398+08:00",
+  "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "attempt": "attempt1",
+  "executor": "Codex AI, user-authorized new STEP13 execution",
+  "human_cross_reproduction": "not implemented this round; prior human review remains limited to its original scope",
+  "scope": "Database-only full CHECK/index metadata; no HTTP or new39-P0 verdict",
+  "branch": "feat/step13-acceptance",
+  "runtime_file_count": 199,
+  "runtime_manifest_sha256": "e0f5ea7765eb1b97e889866f80d8af69f00b29004575235c21094735c3b0789a",
+  "user_jar_sha256": "6b6027b67f381cfcc012cd3fc79bc940ad546c9acc2ae46fbf9ac13a71d42700",
+  "admin_jar_sha256": "1a8bf9ded1a535876a96b991659596fa82c01bf2bebccef45c755fe8e8820586",
+  "mysql_port": 57725,
+  "mysql_uuid": "1065633b-e0bd-11f1-bd1c-005056c00001",
+  "mysql_version": "8.4.9",
+  "finished_at_utc": "2026-11-15T06:23:30.461534+00:00",
+  "finished_at_local": "2026-11-15T14:23:30.461534+08:00",
+  "checks": 17,
+  "checks_failed": 0,
+  "p0_matrix": [
+    {
+      "id": "INIT-02",
+      "required_segments": [
+        "metadata"
+      ],
+      "assertion_plan": "SQL01/02 live35 CHECK names/predicates/enforced and index columns match",
+      "result": "PASS",
+      "observed_segments": {
+        "metadata": {
+          "passed": true,
+          "detail": {
+            "checks": 6
+          },
+          "at": "2026-11-15T06:23:30.414800+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    }
+  ],
+  "tracked_processes_stopped": true,
+  "error": null,
+  "overall": "PASS",
+  "runtime_inputs_stable": true
+}

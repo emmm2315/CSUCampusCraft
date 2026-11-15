@@ -1,0 +1,58 @@
+{
+  "source_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "scope": "Bounded state/token edges for TST13/20/21/29; not39full or full composite TST coverage",
+  "business_verdict": "PASS",
+  "raw_attempt_overall": "FAIL",
+  "raw_failure_classification": "Tool cleanup PermissionError only; all business assertions and four bounded submatrix entries passed",
+  "raw_result_sha256": "5c18c285fd0a4424729888c5526f694966afb09fc46092bc62a0c01b6daf4427",
+  "business_checks": 333,
+  "business_checks_failed": 0,
+  "http_records": 69,
+  "POST_records": 28,
+  "bounded_matrix": [
+    {
+      "id": "TST-13",
+      "result": "PASS",
+      "title": "Cross-session/foreign confirmation rejection with current CSRF and original owner token retained"
+    },
+    {
+      "id": "TST-20",
+      "result": "PASS",
+      "title": "Historical paid/shipped/completed payment replay and U09 read boundaries"
+    },
+    {
+      "id": "TST-21",
+      "result": "PASS",
+      "title": "PAID cancellation and CANCELLED payment state rejection"
+    },
+    {
+      "id": "TST-29",
+      "result": "PASS",
+      "title": "COMPLETED shipment replay preserves complete seven-table state"
+    }
+  ],
+  "cleanup_retry_passed": true,
+  "raw_result_not_modified": true,
+  "private_runtime_removed": true,
+  "mysql_port": 62964,
+  "app_ports": {
+    "user": 18080,
+    "admin": 18081
+  },
+  "runtime_inputs": 199,
+  "runtime_manifest_sha256": "e0f5ea7765eb1b97e889866f80d8af69f00b29004575235c21094735c3b0789a",
+  "runtime_inputs_stable": true,
+  "sensitive_scan": {
+    "overall": "PASS",
+    "files_scanned": 64,
+    "gzip_decompressed": 34,
+    "known_values": 30,
+    "values_recorded": false,
+    "findings": []
+  },
+  "script": "run_state_token_edges.py",
+  "script_sha256": "dee520b6479687b5645b7b9a106ec4a06ed534181023f6efef203a88bc47de8a",
+  "evidence": "evidence/attempt1",
+  "cleanup_retry_file": "cleanup-retry.json",
+  "reproduction_scope": "Codex AI execution, no added human or peer signoff"
+}

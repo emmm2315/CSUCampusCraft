@@ -1,0 +1,629 @@
+{
+  "overall": "PASS",
+  "scope": "supplement",
+  "reviewer": "independent Codex saved-observation replay; not human signature",
+  "observed_at_utc": "2026-11-15T06:02:09.645849+00:00",
+  "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "checks": 122,
+  "failed": 0,
+  "http_records": 22,
+  "serial_http_audits": 22,
+  "concurrent_http_records": 0,
+  "serial_readonly_gets": 20,
+  "serial_rejected_posts": 0,
+  "observations": [
+    {
+      "name": "exactly expected distinct P0 identifiers",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P0 matrix all PASS",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "all P0 tied to tested SHA",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "all assertions observed and passing",
+      "passed": true,
+      "details": {
+        "recorded": 153,
+        "summary": 153
+      }
+    },
+    {
+      "name": "TST-02 home-edges contains own assertions",
+      "passed": true,
+      "details": 38
+    },
+    {
+      "name": "TST-03 combined-filters contains own assertions",
+      "passed": true,
+      "details": 32
+    },
+    {
+      "name": "TST-09 invalid-badges contains own assertions",
+      "passed": true,
+      "details": 70
+    },
+    {
+      "name": "HTTP unique sequence",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 1 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 1 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 1 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 1 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 1 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 2 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 2 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 2 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 2 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 2 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 3 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 3 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 3 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 3 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 3 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 4 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 4 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 4 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 4 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 4 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 5 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 5 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 5 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 5 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 5 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 6 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 6 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 6 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 6 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 6 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 7 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 7 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 7 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 7 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 7 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 8 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 8 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 8 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 8 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 8 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 9 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 9 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 9 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 9 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 9 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 10 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 10 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 10 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 10 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 10 successful /login modifies only allowed tables",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "HTTP 11 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 11 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 11 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 11 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 11 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 12 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 12 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 12 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 12 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 12 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 13 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 13 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 13 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 13 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 13 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 14 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 14 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 14 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 14 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 14 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 15 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 15 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 15 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 15 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 15 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 16 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 16 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 16 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 16 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 16 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 17 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 17 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 17 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 17 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 17 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 18 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 18 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 18 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 18 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 18 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 19 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 19 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 19 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 19 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 19 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 20 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 20 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 20 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 20 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 20 successful /login modifies only allowed tables",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "HTTP 21 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 21 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 21 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 21 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 21 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 22 actual archived bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 22 decompressed text hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 22 real audit linked",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 22 seven-table whole field envelope",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "HTTP 22 GET zero DB writes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "supplement does not impersonate concurrency",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "processes stopped",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "input stability independently repeated by orchestrator",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "attempt sensitive scan PASS",
+      "passed": true,
+      "details": null
+    }
+  ]
+}

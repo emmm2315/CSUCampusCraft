@@ -1,0 +1,12 @@
+{
+  "scope": "Database-only full CHECK/index metadata; no HTTP or new39-P0 verdict",
+  "cases": [
+    {
+      "id": "INIT-02",
+      "required_segments": [
+        "metadata"
+      ],
+      "assertion_plan": "SQL01/02 live35 CHECK names/predicates/enforced and index columns match"
+    }
+  ]
+}

@@ -1,0 +1,426 @@
+{
+  "empty": [
+    {
+      "name": "ck_cart_quantity",
+      "table": "cart_item",
+      "enforced": "YES",
+      "predicate": "(`quantity` between 1 and 99)"
+    },
+    {
+      "name": "ck_cart_version",
+      "table": "cart_item",
+      "enforced": "YES",
+      "predicate": "(`version` >= 0)"
+    },
+    {
+      "name": "ck_category_code",
+      "table": "category",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`code`)) > 0)"
+    },
+    {
+      "name": "ck_category_name",
+      "table": "category",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`name`)) > 0)"
+    },
+    {
+      "name": "ck_category_sort",
+      "table": "category",
+      "enforced": "YES",
+      "predicate": "(`sort_order` >= 0)"
+    },
+    {
+      "name": "ck_product_cover",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`cover_image`)) > 0)"
+    },
+    {
+      "name": "ck_product_name",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`name`)) > 0)"
+    },
+    {
+      "name": "ck_product_price",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(`price` > 0)"
+    },
+    {
+      "name": "ck_product_sku",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`sku`)) > 0)"
+    },
+    {
+      "name": "ck_product_sort",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(`sort_order` >= 0)"
+    },
+    {
+      "name": "ck_product_status",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(`status` in (_utf8mb4\\'DRAFT\\',_utf8mb4\\'ON_SALE\\'))"
+    },
+    {
+      "name": "ck_product_stock",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(`stock` >= 0)"
+    },
+    {
+      "name": "ck_product_version",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(`version` >= 0)"
+    },
+    {
+      "name": "ck_image_path",
+      "table": "product_image",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`image_path`)) > 0)"
+    },
+    {
+      "name": "ck_image_sort",
+      "table": "product_image",
+      "enforced": "YES",
+      "predicate": "(`sort_order` >= 0)"
+    },
+    {
+      "name": "ck_order_cancel_time",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(((`status` = _utf8mb4\\'CANCELLED\\') and (`cancelled_at` is not null)) or ((`status` <> _utf8mb4\\'CANCELLED\\') and (`cancelled_at` is null)))"
+    },
+    {
+      "name": "ck_order_complete_time",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(((`status` = _utf8mb4\\'COMPLETED\\') and (`completed_at` is not null)) or ((`status` <> _utf8mb4\\'COMPLETED\\') and (`completed_at` is null)))"
+    },
+    {
+      "name": "ck_order_no",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`order_no`)) > 0)"
+    },
+    {
+      "name": "ck_order_payment_info",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(((`status` in (_utf8mb4\\'PENDING_PAYMENT\\',_utf8mb4\\'CANCELLED\\')) and (`payment_method` is null) and (`payment_no` is null) and (`paid_at` is null)) or ((`status` in (_utf8mb4\\'PAID\\',_utf8mb4\\'SHIPPED\\',_utf8mb4\\'COMPLETED\\')) and (`payment_method` is not null) and (`payment_method` = _utf8mb4\\'MOCK\\') and (`payment_no` is not null) and (char_length(trim(`payment_no`)) > 0) and (`paid_at` is not null)))"
+    },
+    {
+      "name": "ck_order_receiver",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "((char_length(trim(`receiver_name`)) > 0) and (char_length(trim(`receiver_phone`)) > 0) and (char_length(trim(`receiver_address`)) > 0))"
+    },
+    {
+      "name": "ck_order_ship_time",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(((`status` in (_utf8mb4\\'SHIPPED\\',_utf8mb4\\'COMPLETED\\')) and (`shipped_at` is not null)) or ((`status` not in (_utf8mb4\\'SHIPPED\\',_utf8mb4\\'COMPLETED\\')) and (`shipped_at` is null)))"
+    },
+    {
+      "name": "ck_order_status",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(`status` in (_utf8mb4\\'PENDING_PAYMENT\\',_utf8mb4\\'PAID\\',_utf8mb4\\'SHIPPED\\',_utf8mb4\\'COMPLETED\\',_utf8mb4\\'CANCELLED\\'))"
+    },
+    {
+      "name": "ck_order_time_sequence",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(((`paid_at` is null) or (`paid_at` >= `created_at`)) and ((`cancelled_at` is null) or (`cancelled_at` >= `created_at`)) and ((`shipped_at` is null) or (`shipped_at` >= `paid_at`)) and ((`completed_at` is null) or (`completed_at` >= `shipped_at`)))"
+    },
+    {
+      "name": "ck_order_total",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(`total_amount` > 0)"
+    },
+    {
+      "name": "ck_order_item_amount",
+      "table": "sales_order_item",
+      "enforced": "YES",
+      "predicate": "((`line_amount` > 0) and (`line_amount` = (`unit_price` * `quantity`)))"
+    },
+    {
+      "name": "ck_order_item_cover",
+      "table": "sales_order_item",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`cover_image_snapshot`)) > 0)"
+    },
+    {
+      "name": "ck_order_item_name",
+      "table": "sales_order_item",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`product_name_snapshot`)) > 0)"
+    },
+    {
+      "name": "ck_order_item_price",
+      "table": "sales_order_item",
+      "enforced": "YES",
+      "predicate": "(`unit_price` > 0)"
+    },
+    {
+      "name": "ck_order_item_quantity",
+      "table": "sales_order_item",
+      "enforced": "YES",
+      "predicate": "(`quantity` between 1 and 99)"
+    },
+    {
+      "name": "ck_order_item_sku",
+      "table": "sales_order_item",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`sku_snapshot`)) > 0)"
+    },
+    {
+      "name": "ck_user_display_name",
+      "table": "store_user",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`display_name`)) > 0)"
+    },
+    {
+      "name": "ck_user_password",
+      "table": "store_user",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`password_hash`)) > 0)"
+    },
+    {
+      "name": "ck_user_role",
+      "table": "store_user",
+      "enforced": "YES",
+      "predicate": "(`role` in (_utf8mb4\\'CUSTOMER\\',_utf8mb4\\'ADMIN\\'))"
+    },
+    {
+      "name": "ck_user_status",
+      "table": "store_user",
+      "enforced": "YES",
+      "predicate": "(`status` in (_utf8mb4\\'ENABLED\\',_utf8mb4\\'DISABLED\\'))"
+    },
+    {
+      "name": "ck_user_username",
+      "table": "store_user",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`username`)) > 0)"
+    }
+  ],
+  "demo": [
+    {
+      "name": "ck_cart_quantity",
+      "table": "cart_item",
+      "enforced": "YES",
+      "predicate": "(`quantity` between 1 and 99)"
+    },
+    {
+      "name": "ck_cart_version",
+      "table": "cart_item",
+      "enforced": "YES",
+      "predicate": "(`version` >= 0)"
+    },
+    {
+      "name": "ck_category_code",
+      "table": "category",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`code`)) > 0)"
+    },
+    {
+      "name": "ck_category_name",
+      "table": "category",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`name`)) > 0)"
+    },
+    {
+      "name": "ck_category_sort",
+      "table": "category",
+      "enforced": "YES",
+      "predicate": "(`sort_order` >= 0)"
+    },
+    {
+      "name": "ck_product_cover",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`cover_image`)) > 0)"
+    },
+    {
+      "name": "ck_product_name",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`name`)) > 0)"
+    },
+    {
+      "name": "ck_product_price",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(`price` > 0)"
+    },
+    {
+      "name": "ck_product_sku",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`sku`)) > 0)"
+    },
+    {
+      "name": "ck_product_sort",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(`sort_order` >= 0)"
+    },
+    {
+      "name": "ck_product_status",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(`status` in (_utf8mb4\\'DRAFT\\',_utf8mb4\\'ON_SALE\\'))"
+    },
+    {
+      "name": "ck_product_stock",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(`stock` >= 0)"
+    },
+    {
+      "name": "ck_product_version",
+      "table": "product",
+      "enforced": "YES",
+      "predicate": "(`version` >= 0)"
+    },
+    {
+      "name": "ck_image_path",
+      "table": "product_image",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`image_path`)) > 0)"
+    },
+    {
+      "name": "ck_image_sort",
+      "table": "product_image",
+      "enforced": "YES",
+      "predicate": "(`sort_order` >= 0)"
+    },
+    {
+      "name": "ck_order_cancel_time",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(((`status` = _utf8mb4\\'CANCELLED\\') and (`cancelled_at` is not null)) or ((`status` <> _utf8mb4\\'CANCELLED\\') and (`cancelled_at` is null)))"
+    },
+    {
+      "name": "ck_order_complete_time",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(((`status` = _utf8mb4\\'COMPLETED\\') and (`completed_at` is not null)) or ((`status` <> _utf8mb4\\'COMPLETED\\') and (`completed_at` is null)))"
+    },
+    {
+      "name": "ck_order_no",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`order_no`)) > 0)"
+    },
+    {
+      "name": "ck_order_payment_info",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(((`status` in (_utf8mb4\\'PENDING_PAYMENT\\',_utf8mb4\\'CANCELLED\\')) and (`payment_method` is null) and (`payment_no` is null) and (`paid_at` is null)) or ((`status` in (_utf8mb4\\'PAID\\',_utf8mb4\\'SHIPPED\\',_utf8mb4\\'COMPLETED\\')) and (`payment_method` is not null) and (`payment_method` = _utf8mb4\\'MOCK\\') and (`payment_no` is not null) and (char_length(trim(`payment_no`)) > 0) and (`paid_at` is not null)))"
+    },
+    {
+      "name": "ck_order_receiver",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "((char_length(trim(`receiver_name`)) > 0) and (char_length(trim(`receiver_phone`)) > 0) and (char_length(trim(`receiver_address`)) > 0))"
+    },
+    {
+      "name": "ck_order_ship_time",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(((`status` in (_utf8mb4\\'SHIPPED\\',_utf8mb4\\'COMPLETED\\')) and (`shipped_at` is not null)) or ((`status` not in (_utf8mb4\\'SHIPPED\\',_utf8mb4\\'COMPLETED\\')) and (`shipped_at` is null)))"
+    },
+    {
+      "name": "ck_order_status",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(`status` in (_utf8mb4\\'PENDING_PAYMENT\\',_utf8mb4\\'PAID\\',_utf8mb4\\'SHIPPED\\',_utf8mb4\\'COMPLETED\\',_utf8mb4\\'CANCELLED\\'))"
+    },
+    {
+      "name": "ck_order_time_sequence",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(((`paid_at` is null) or (`paid_at` >= `created_at`)) and ((`cancelled_at` is null) or (`cancelled_at` >= `created_at`)) and ((`shipped_at` is null) or (`shipped_at` >= `paid_at`)) and ((`completed_at` is null) or (`completed_at` >= `shipped_at`)))"
+    },
+    {
+      "name": "ck_order_total",
+      "table": "sales_order",
+      "enforced": "YES",
+      "predicate": "(`total_amount` > 0)"
+    },
+    {
+      "name": "ck_order_item_amount",
+      "table": "sales_order_item",
+      "enforced": "YES",
+      "predicate": "((`line_amount` > 0) and (`line_amount` = (`unit_price` * `quantity`)))"
+    },
+    {
+      "name": "ck_order_item_cover",
+      "table": "sales_order_item",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`cover_image_snapshot`)) > 0)"
+    },
+    {
+      "name": "ck_order_item_name",
+      "table": "sales_order_item",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`product_name_snapshot`)) > 0)"
+    },
+    {
+      "name": "ck_order_item_price",
+      "table": "sales_order_item",
+      "enforced": "YES",
+      "predicate": "(`unit_price` > 0)"
+    },
+    {
+      "name": "ck_order_item_quantity",
+      "table": "sales_order_item",
+      "enforced": "YES",
+      "predicate": "(`quantity` between 1 and 99)"
+    },
+    {
+      "name": "ck_order_item_sku",
+      "table": "sales_order_item",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`sku_snapshot`)) > 0)"
+    },
+    {
+      "name": "ck_user_display_name",
+      "table": "store_user",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`display_name`)) > 0)"
+    },
+    {
+      "name": "ck_user_password",
+      "table": "store_user",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`password_hash`)) > 0)"
+    },
+    {
+      "name": "ck_user_role",
+      "table": "store_user",
+      "enforced": "YES",
+      "predicate": "(`role` in (_utf8mb4\\'CUSTOMER\\',_utf8mb4\\'ADMIN\\'))"
+    },
+    {
+      "name": "ck_user_status",
+      "table": "store_user",
+      "enforced": "YES",
+      "predicate": "(`status` in (_utf8mb4\\'ENABLED\\',_utf8mb4\\'DISABLED\\'))"
+    },
+    {
+      "name": "ck_user_username",
+      "table": "store_user",
+      "enforced": "YES",
+      "predicate": "(char_length(trim(`username`)) > 0)"
+    }
+  ]
+}

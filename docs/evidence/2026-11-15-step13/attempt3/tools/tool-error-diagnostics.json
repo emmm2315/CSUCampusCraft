@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-15T05:48:39.021148+00:00",
+  "classification": "EXTERNAL_TOOL_LITERAL_COLLATION_ERROR",
+  "old_attempts": [
+    {
+      "attempt": "attempt1",
+      "preserved_file_count": 37,
+      "all_saved_artifact_hashes_match": true,
+      "original_result": "FAIL"
+    },
+    {
+      "attempt": "attempt2",
+      "preserved_file_count": 71,
+      "all_saved_artifact_hashes_match": true,
+      "original_result": "FAIL"
+    }
+  ],
+  "new_literal_preflight": "PASS",
+  "new_literal": "charset introduced HEX literal, coercibility4",
+  "source_unchanged": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+}

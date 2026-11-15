@@ -1,0 +1,767 @@
+{
+  "started_at_utc": "2026-11-15T06:55:52.6838732Z",
+  "purpose": "Remove only explicitly authorized owned STEP13 runtime directories after all processes stopped; no business test, product or evidence mutation",
+  "stage_root": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance",
+  "authorization": "Root task explicitly names verification/runtime/attempt1..6, home and ddl supplement runtime/attempt1, already absent state runtime, and owned literal preflight MySQL datadir",
+  "overall": "FAIL",
+  "targets": [
+    {
+      "relative_path": "verification/runtime/attempt1",
+      "absolute_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\runtime\\attempt1",
+      "existed_before": true,
+      "source_result": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt1\\result.json",
+      "source_result_sha256": "4205415df986200456efe7c347045f777e3c82c595167e7ab5c87270cff2c3a2",
+      "source_overall_retained": "FAIL",
+      "tracked_processes_stopped": true,
+      "database_identity_source": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt1\\database-identity.json",
+      "database_identity_sha256": "0674387c67e1c776932df0dc7b17e41fb60980a3cfb99e25c60ae4322c4f5036",
+      "mysql_uuid": "b3f0973d-e0b6-11f1-9852-005056c00001",
+      "mysql_port": 56932,
+      "private_datadir": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\runtime\\attempt1\\mysql-data",
+      "recorded_app_pids": [
+        23052,
+        26284
+      ],
+      "resolved_under_stage": true,
+      "actual_mysql_uuid_matches": true,
+      "reparse_points": 0,
+      "recorded_mysql_pids": [
+        36524
+      ],
+      "runtime_logs_preserved_in_existing_evidence": [
+        {
+          "runtime_name": "csucampuscraft-admin-2.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt1\\csucampuscraft-admin-2.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-1.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt1\\csucampuscraft-user-1.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "mysql-initialize.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt1\\mysql-initialize.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "mysql-server.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt1\\mysql-server.log",
+          "archive_exists": true
+        }
+      ]
+    },
+    {
+      "relative_path": "verification/runtime/attempt2",
+      "absolute_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\runtime\\attempt2",
+      "existed_before": true,
+      "source_result": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt2\\result.json",
+      "source_result_sha256": "ec327461b15eb53bda794ab05ac3acd8ddd5de1ae01b781303f2336569118cb0",
+      "source_overall_retained": "FAIL",
+      "tracked_processes_stopped": true,
+      "database_identity_source": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt2\\database-identity.json",
+      "database_identity_sha256": "a727e5e3bb6a2fbfc1e84a3d533bc17888d9b6080f52092ada06cd30a6ebc3ef",
+      "mysql_uuid": "49a36c40-e0b7-11f1-a454-005056c00001",
+      "mysql_port": 61663,
+      "private_datadir": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\runtime\\attempt2\\mysql-data",
+      "recorded_app_pids": [
+        3296,
+        12912,
+        13560,
+        33216,
+        35784,
+        39208
+      ],
+      "resolved_under_stage": true,
+      "actual_mysql_uuid_matches": true,
+      "reparse_points": 0,
+      "recorded_mysql_pids": [
+        17908
+      ],
+      "runtime_logs_preserved_in_existing_evidence": [
+        {
+          "runtime_name": "csucampuscraft-admin-2.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt2\\csucampuscraft-admin-2.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-4.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt2\\csucampuscraft-admin-4.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-6.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt2\\csucampuscraft-admin-6.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-1.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt2\\csucampuscraft-user-1.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-3.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt2\\csucampuscraft-user-3.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-5.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt2\\csucampuscraft-user-5.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "mysql-initialize.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt2\\mysql-initialize.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "mysql-server.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt2\\mysql-server.log",
+          "archive_exists": true
+        }
+      ]
+    },
+    {
+      "relative_path": "verification/runtime/attempt3",
+      "absolute_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\runtime\\attempt3",
+      "existed_before": true,
+      "source_result": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt3\\result.json",
+      "source_result_sha256": "a7f2870197f2f2eb50d94803f4be4d4082276a0a7b471f6679440e111e3e281d",
+      "source_overall_retained": "FAIL",
+      "tracked_processes_stopped": true,
+      "database_identity_source": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt3\\database-identity.json",
+      "database_identity_sha256": "2a0af0315c2785cabf6e183c7585cdd3be50035ea79e789f0ecd3d46e9b33cb4",
+      "mysql_uuid": "527f37cb-e0b8-11f1-8c15-005056c00001",
+      "mysql_port": 51796,
+      "private_datadir": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\runtime\\attempt3\\mysql-data",
+      "recorded_app_pids": [
+        4148,
+        19608,
+        23576,
+        24020,
+        24336,
+        30028
+      ],
+      "resolved_under_stage": true,
+      "actual_mysql_uuid_matches": true,
+      "reparse_points": 0,
+      "recorded_mysql_pids": [
+        29476
+      ],
+      "runtime_logs_preserved_in_existing_evidence": [
+        {
+          "runtime_name": "csucampuscraft-admin-2.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt3\\csucampuscraft-admin-2.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-4.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt3\\csucampuscraft-admin-4.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-6.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt3\\csucampuscraft-admin-6.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-1.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt3\\csucampuscraft-user-1.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-3.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt3\\csucampuscraft-user-3.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-5.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt3\\csucampuscraft-user-5.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "mysql-initialize.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt3\\mysql-initialize.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "mysql-server.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt3\\mysql-server.log",
+          "archive_exists": true
+        }
+      ]
+    },
+    {
+      "relative_path": "verification/runtime/attempt4",
+      "absolute_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\runtime\\attempt4",
+      "existed_before": true,
+      "source_result": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\result.json",
+      "source_result_sha256": "9260120c05aa3883beb5862978d710b7a3f155a5a5433f36209e6f398cb2124e",
+      "source_overall_retained": "FAIL",
+      "tracked_processes_stopped": true,
+      "database_identity_source": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\database-identity.json",
+      "database_identity_sha256": "56d93536e4c378091ba8ac3f691443fb5c69ac9e99f63765ace52d1548ecbb08",
+      "mysql_uuid": "28e60518-e0b9-11f1-a316-005056c00001",
+      "mysql_port": 53759,
+      "private_datadir": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\runtime\\attempt4\\mysql-data",
+      "recorded_app_pids": [
+        7000,
+        8108,
+        12496,
+        20228,
+        21272,
+        22572,
+        22676,
+        23440,
+        25560,
+        28532,
+        29784,
+        29948,
+        32788,
+        35060
+      ],
+      "resolved_under_stage": true,
+      "actual_mysql_uuid_matches": true,
+      "reparse_points": 0,
+      "recorded_mysql_pids": [
+        38520
+      ],
+      "runtime_logs_preserved_in_existing_evidence": [
+        {
+          "runtime_name": "csucampuscraft-admin-10.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\csucampuscraft-admin-10.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-12.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\csucampuscraft-admin-12.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-14.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\csucampuscraft-admin-14.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-2.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\csucampuscraft-admin-2.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-4.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\csucampuscraft-admin-4.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-6.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\csucampuscraft-admin-6.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-8.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\csucampuscraft-admin-8.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-1.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\csucampuscraft-user-1.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-11.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\csucampuscraft-user-11.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-13.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\csucampuscraft-user-13.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-3.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\csucampuscraft-user-3.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-5.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\csucampuscraft-user-5.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-7.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\csucampuscraft-user-7.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-9.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\csucampuscraft-user-9.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "mysql-initialize.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\mysql-initialize.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "mysql-server.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt4\\mysql-server.log",
+          "archive_exists": true
+        }
+      ]
+    },
+    {
+      "relative_path": "verification/runtime/attempt5",
+      "absolute_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\runtime\\attempt5",
+      "existed_before": true,
+      "source_result": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\result.json",
+      "source_result_sha256": "184852980332c88a355263ae1516889f8a7653cae08307f2788b3444be6bd171",
+      "source_overall_retained": "FAIL",
+      "tracked_processes_stopped": true,
+      "database_identity_source": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\database-identity.json",
+      "database_identity_sha256": "442874c99e00715a3fd6fb63440fe69dfe761b4d1f00db6baa2ccea34e802d95",
+      "mysql_uuid": "2527c3e3-e0bc-11f1-b01a-005056c00001",
+      "mysql_port": 56969,
+      "private_datadir": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\runtime\\attempt5\\mysql-data",
+      "recorded_app_pids": [
+        1668,
+        5288,
+        6212,
+        7108,
+        9804,
+        11492,
+        12588,
+        13856,
+        14944,
+        18008,
+        19588,
+        20656,
+        26708,
+        29408,
+        29444,
+        32536,
+        37060,
+        38012
+      ],
+      "resolved_under_stage": true,
+      "actual_mysql_uuid_matches": true,
+      "reparse_points": 0,
+      "recorded_mysql_pids": [
+        28880
+      ],
+      "runtime_logs_preserved_in_existing_evidence": [
+        {
+          "runtime_name": "csucampuscraft-admin-10.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-admin-10.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-12.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-admin-12.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-14.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-admin-14.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-16.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-admin-16.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-18.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-admin-18.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-2.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-admin-2.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-4.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-admin-4.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-6.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-admin-6.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-8.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-admin-8.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-1.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-user-1.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-11.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-user-11.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-13.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-user-13.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-15.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-user-15.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-17.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-user-17.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-3.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-user-3.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-5.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-user-5.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-7.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-user-7.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-9.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\csucampuscraft-user-9.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "mysql-initialize.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\mysql-initialize.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "mysql-server.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt5\\mysql-server.log",
+          "archive_exists": true
+        }
+      ]
+    },
+    {
+      "relative_path": "verification/runtime/attempt6",
+      "absolute_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\runtime\\attempt6",
+      "existed_before": true,
+      "source_result": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\result.json",
+      "source_result_sha256": "d2f0e4968a45a3ed3681334b6773d5dd8f2e09c5e909614d649d62ebe3029769",
+      "source_overall_retained": "PASS",
+      "tracked_processes_stopped": true,
+      "database_identity_source": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\database-identity.json",
+      "database_identity_sha256": "55987730cd1da8b13d0984347205f81ba2ac8b44bd2b4d9f2c89870dcedb328b",
+      "mysql_uuid": "0a6d259a-e0bf-11f1-8f51-005056c00001",
+      "mysql_port": 64927,
+      "private_datadir": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\runtime\\attempt6\\mysql-data",
+      "recorded_app_pids": [
+        5012,
+        5840,
+        6160,
+        6848,
+        10212,
+        10540,
+        11232,
+        14224,
+        14472,
+        14888,
+        15212,
+        15424,
+        21876,
+        21884,
+        22256,
+        22680,
+        23052,
+        25192,
+        25516,
+        25808,
+        25860,
+        26400,
+        26648,
+        26908,
+        33324,
+        34852,
+        36264,
+        37372,
+        37660,
+        38512,
+        39240,
+        39288
+      ],
+      "resolved_under_stage": true,
+      "actual_mysql_uuid_matches": true,
+      "reparse_points": 0,
+      "recorded_mysql_pids": [
+        6580
+      ],
+      "runtime_logs_preserved_in_existing_evidence": [
+        {
+          "runtime_name": "csucampuscraft-admin-10.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-10.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-12.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-12.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-14.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-14.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-16.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-16.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-18.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-18.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-2.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-2.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-20.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-20.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-22.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-22.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-24.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-24.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-26.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-26.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-28.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-28.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-30.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-30.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-32.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-32.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-4.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-4.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-6.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-6.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-admin-8.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-admin-8.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-1.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-1.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-11.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-11.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-13.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-13.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-15.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-15.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-17.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-17.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-19.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-19.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-21.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-21.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-23.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-23.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-25.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-25.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-27.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-27.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-29.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-29.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-3.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-3.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-31.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-31.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-5.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-5.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-7.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-7.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-9.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\csucampuscraft-user-9.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "mysql-initialize.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\mysql-initialize.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "mysql-server.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\verification\\evidence\\attempt6\\mysql-server.log",
+          "archive_exists": true
+        }
+      ]
+    },
+    {
+      "relative_path": "home-filter-supplement/runtime/attempt1",
+      "absolute_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\home-filter-supplement\\runtime\\attempt1",
+      "existed_before": true,
+      "source_result": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\home-filter-supplement\\evidence\\attempt1\\result.json",
+      "source_result_sha256": "89a4136a86e9ef0d989e22740714c84839b77f2896591ad0b38aa03ec9f8ece2",
+      "source_overall_retained": "PASS",
+      "tracked_processes_stopped": true,
+      "database_identity_source": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\home-filter-supplement\\evidence\\attempt1\\database-identity.json",
+      "database_identity_sha256": "2e47988d9e22b1328101f14f3695d189253893f4a576d7554d47b29c645c42c2",
+      "mysql_uuid": "caf56c80-e0b9-11f1-acd6-005056c00001",
+      "mysql_port": 56542,
+      "private_datadir": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\home-filter-supplement\\runtime\\attempt1\\mysql-data",
+      "recorded_app_pids": [
+        18728,
+        27180
+      ],
+      "resolved_under_stage": true,
+      "actual_mysql_uuid_matches": true,
+      "reparse_points": 0,
+      "recorded_mysql_pids": [
+        32480
+      ],
+      "runtime_logs_preserved_in_existing_evidence": [
+        {
+          "runtime_name": "csucampuscraft-admin-2.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\home-filter-supplement\\evidence\\attempt1\\csucampuscraft-admin-2.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "csucampuscraft-user-1.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\home-filter-supplement\\evidence\\attempt1\\csucampuscraft-user-1.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "mysql-initialize.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\home-filter-supplement\\evidence\\attempt1\\mysql-initialize.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "mysql-server.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\home-filter-supplement\\evidence\\attempt1\\mysql-server.log",
+          "archive_exists": true
+        }
+      ]
+    },
+    {
+      "relative_path": "ddl-metadata-supplement/runtime/attempt1",
+      "absolute_path": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\ddl-metadata-supplement\\runtime\\attempt1",
+      "existed_before": true,
+      "source_result": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\ddl-metadata-supplement\\evidence\\attempt1\\result.json",
+      "source_result_sha256": "197f988db877b7bcf7a0b0f5bc68ee4374fcb4747382bd91da33ebd7b79ecf5c",
+      "source_overall_retained": "PASS",
+      "tracked_processes_stopped": true,
+      "database_identity_source": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\ddl-metadata-supplement\\evidence\\attempt1\\database-identity.json",
+      "database_identity_sha256": "b9591adcf27de4257c9bc58b8f860801a3d7456d06ea298f50dd3c6956a64cbf",
+      "mysql_uuid": "1065633b-e0bd-11f1-bd1c-005056c00001",
+      "mysql_port": 57725,
+      "private_datadir": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\ddl-metadata-supplement\\runtime\\attempt1\\mysql-data",
+      "recorded_app_pids": [],
+      "resolved_under_stage": true,
+      "actual_mysql_uuid_matches": true,
+      "reparse_points": 0,
+      "recorded_mysql_pids": [
+        38276
+      ],
+      "runtime_logs_preserved_in_existing_evidence": [
+        {
+          "runtime_name": "mysql-initialize.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\ddl-metadata-supplement\\evidence\\attempt1\\mysql-initialize.log",
+          "archive_exists": true
+        },
+        {
+          "runtime_name": "mysql-server.log",
+          "evidence_copy": "C:\\Users\\Starmetor\\.codex\\visualizations\\2026\\11\\10\\01a1c2de-c7a6-7290-8ee3-510d0f746abe\\step13-acceptance\\ddl-metadata-supplement\\evidence\\attempt1\\mysql-server.log",
+          "archive_exists": true
+        }
+      ]
+    }
+  ],
+  "removal_attempts": [],
+  "killed_any_process": false,
+  "source_results_modified": false,
+  "raw_password_or_command_line_recorded": false,
+  "failure_type": "System.Management.Automation.RuntimeException",
+  "failure_message": "Already absent state runtime cleanup retry is not PASS",
+  "finished_at_utc": "2026-11-15T06:55:52.9548083Z"
+}

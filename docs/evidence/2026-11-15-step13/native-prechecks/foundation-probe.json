@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "exit_code": 0,
+  "observed_at_utc": "2026-11-15T05:12:07.375145+00:00",
+  "source_sha256": "28d19af602f54435fe10a923b254efa12f3419c1f91bf8485cb4e411b23ef48c",
+  "extracted_classes": [
+    {
+      "module": "user",
+      "member": "BOOT-INF/classes/org/csucampuscraft/storefront/foundation/security/PasswordService.class",
+      "sha256": "e5178ad2e4593acf9bff6ce4e480b93e73db85da550181fc7e6c1a66a6337056"
+    },
+    {
+      "module": "admin",
+      "member": "BOOT-INF/classes/org/csucampuscraft/admin/foundation/security/PasswordService.class",
+      "sha256": "2d3fe30dd847f770e3515a1229e67983ef2c9891486cb1b821318732eb73ef33"
+    }
+  ],
+  "records": [
+    {
+      "module": "org.csucampuscraft.storefront",
+      "seed_count": 4,
+      "positive_negative_verified": true,
+      "cost": 10,
+      "secret_output": false
+    },
+    {
+      "module": "org.csucampuscraft.admin",
+      "seed_count": 4,
+      "positive_negative_verified": true,
+      "cost": 10,
+      "secret_output": false
+    },
+    {
+      "result": "PASS",
+      "checks": 28,
+      "source": "classes and libraries extracted from both fresh tested JARs"
+    }
+  ],
+  "secret_values_archived": false
+}

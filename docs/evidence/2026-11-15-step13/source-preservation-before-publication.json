@@ -1,0 +1,26 @@
+{
+  "overall": "PASS",
+  "recorded_at_utc": "2026-11-15T07:01:01.078619+00:00",
+  "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "current_head": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "main": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "branch": "feat/step13-acceptance",
+  "worktree_before_doc_publication": "",
+  "runtime_input_count": 199,
+  "runtime_input_drift": [],
+  "historical_evidence_count": 5506,
+  "historical_evidence_drift": [],
+  "all_preexisting_refs_unchanged": true,
+  "jars": [
+    {
+      "module": "user",
+      "sha256": "6b6027b67f381cfcc012cd3fc79bc940ad546c9acc2ae46fbf9ac13a71d42700",
+      "matches": true
+    },
+    {
+      "module": "admin",
+      "sha256": "1a8bf9ded1a535876a96b991659596fa82c01bf2bebccef45c755fe8e8820586",
+      "matches": true
+    }
+  ]
+}

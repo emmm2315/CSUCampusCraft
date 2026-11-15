@@ -1,0 +1,446 @@
+{
+  "started_at_utc": "2026-11-15T05:42:03.574562+00:00",
+  "started_at_local": "2026-11-15T13:42:03.574562+08:00",
+  "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "attempt": "attempt2",
+  "executor": "Codex AI, user-authorized new STEP13 execution",
+  "human_cross_reproduction": "not implemented this round; prior human review remains limited to its original scope",
+  "scope": "All 39 P0 identifiers on the current exact SHA; TST36 P1 not selected",
+  "branch": "feat/step13-acceptance",
+  "runtime_file_count": 199,
+  "runtime_manifest_sha256": "e0f5ea7765eb1b97e889866f80d8af69f00b29004575235c21094735c3b0789a",
+  "user_jar_sha256": "6b6027b67f381cfcc012cd3fc79bc940ad546c9acc2ae46fbf9ac13a71d42700",
+  "admin_jar_sha256": "1a8bf9ded1a535876a96b991659596fa82c01bf2bebccef45c755fe8e8820586",
+  "mysql_port": 61663,
+  "mysql_uuid": "49a36c40-e0b7-11f1-a454-005056c00001",
+  "mysql_version": "8.4.9",
+  "finished_at_utc": "2026-11-15T05:42:59.121566+00:00",
+  "finished_at_local": "2026-11-15T13:42:59.121566+08:00",
+  "checks": 125,
+  "checks_failed": 0,
+  "p0_matrix": [
+    {
+      "id": "TST-01",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Fresh public home/theme/product list/detail values match current SQL.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-02",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Home newest3/featured4 exact ON_SALE ordering including zero stock and ties.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-03",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Theme/type/literal q/four whitelisted sorts/page/count/retained filters and invalid cases.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-04",
+      "required_segments": [
+        "serial",
+        "browser"
+      ],
+      "assertion_plan": "Unknown/DRAFT404, soldout browse409add, no-album cover and actual browser image fallback/shared resource.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-05",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Dual-end enabled/disabled/wrong-role/unknown/wrong-password login; no usable failed session or raw credentials.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-06",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "One CookieJar independently logs both applications; each logout only ends own identity.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-07",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Logout/disabled/stale identity redirects before CSRF and refuses with zero DB changes.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-08",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Add merge and full400/403/404/409 matrix,1-99 and20/21SKU boundaries.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-09",
+      "required_segments": [
+        "serial",
+        "restart"
+      ],
+      "assertion_plan": "Cart and SUM badge per account/public/errors; logout/relogin/both-JAR restart persistence.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-10",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Foreign row403, missing404, old version409, same quantity valid-version no-op.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-11",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "DRAFT/soldout/lowstock invalid lines remain and block whole checkout, still removable, badge includes quantities.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-12",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Receiver bounds and script text400; valid fields plus tampered amounts/owner still server85.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-13",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Token replacement/expiry/other-session and cart/price/quantity changes409 retaining all rows.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-14",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Actual fresh85 POST:1master2items,10/12→8/11,versions+1,confirmed cart cleared/badge0.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-15",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Confirmed stock shortage or DRAFT fails entire order with seven-table equality and cart retained.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-16",
+      "required_segments": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "assertion_plan": "Real HTTP order transaction failures at item insert/product debit/cart delete all roll back every table.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-17",
+      "required_segments": [
+        "C3",
+        "C8"
+      ],
+      "assertion_plan": "Same confirmation race once only; same-user cart requests serialize without duplicate/lost rows and subsequent new row retained.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-18",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Other owner detail/payment/cancel404 despite forged user_id; no original detail exposure or writes.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-19",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "After actual85 change product name/price/cover/DRAFT; both details and later payment retain transaction snapshots.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-20",
+      "required_segments": [
+        "serial",
+        "D5"
+      ],
+      "assertion_plan": "FAILURE→SUCCESS→SUCCESS replay preserves first MOCK receipt/time; payment fault leaves no partial fields.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-21",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Two-line cancellation refunds exact quantities/version once, does not modify current cart, duplicate no-op.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-22",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "DRAFT products still refunded as DRAFT; cancelled payment/shipment conflict409 and no writes.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-23",
+      "required_segments": [
+        "D4"
+      ],
+      "assertion_plan": "Second refund failure rolls back first refund, order still pending with null cancelled_at.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-24",
+      "required_segments": [
+        "C4"
+      ],
+      "assertion_plan": "Independent HTTP pay/cancel synchronized race yields one legal winning transition/receipt/refund.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-25",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Real category/child/SKU create, generated ID readback,21+suffix32 and22rejection, bad hierarchy/duplicate conflicts.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-26",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Child or any product reference blocks deletion409; empty category can be deleted.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-27",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Old product edit after order/refund version changes409, sku/stock cannot be overwritten.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-28",
+      "required_segments": [
+        "serial",
+        "C2"
+      ],
+      "assertion_plan": "Restock parameter/overflow zero writes; buy2+restock3 concurrent from10ends11 and versions+2.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-29",
+      "required_segments": [
+        "serial",
+        "C5"
+      ],
+      "assertion_plan": "Pending/cancelled409, paid→shipped firsttime/replay stable; pay/ship race only legal ordering.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-30",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Both order lists exactCI/status/page; CUSTOMER userId AND, unknown/admin404 and no owner leak.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-31",
+      "required_segments": [
+        "serial",
+        "admin-security"
+      ],
+      "assertion_plan": "Text escaping plus missing/wrong/valid CSRF across cart/order/customer/album with statuses/no partial write.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-32",
+      "required_segments": [
+        "empty-demo",
+        "restart"
+      ],
+      "assertion_plan": "New empty/demo bootstrap,actual85payment/shipping,other-account cart and both-JAR restart; AI executed, new human cross reproduction explicitly not implemented.",
+      "result": "NOT_RUN",
+      "observed_segments": {
+        "empty-demo": {
+          "passed": true,
+          "detail": {
+            "checks": 87
+          },
+          "at": "2026-11-15T05:42:49.019301+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-33",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Graduation entry by code, type/search/page keep theme; independent gift SKU theme/type.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-34",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "Actual2gift98 order and cancel changes only gift inventory; component SKU quantities unaffected.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-35",
+      "required_segments": [
+        "C1"
+      ],
+      "assertion_plan": "Two users confirmed stock1, synchronized HTTP creates exactly1order1item and loser409 retains cart.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-37",
+      "required_segments": [
+        "serial",
+        "empty-demo"
+      ],
+      "assertion_plan": "Five SQL/card/list counts match after publish/pay/ship/status; zero-sale included; ADMIN-only empty=0; natural denied-query error not zero.",
+      "result": "NOT_RUN",
+      "observed_segments": {
+        "empty-demo": {
+          "passed": true,
+          "detail": {
+            "checks": 48
+          },
+          "at": "2026-11-15T05:42:40.877117+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-38",
+      "required_segments": [
+        "serial"
+      ],
+      "assertion_plan": "CUSTOMER-only q literals/status/pages/profile/linked orders; no-order valid and invalid/admin boundaries.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-39",
+      "required_segments": [
+        "serial",
+        "C7"
+      ],
+      "assertion_plan": "Status+monotonic microstamp/same-state no-op,old sessions clear incl silent disable-enable; concurrent disable/write legal outcome.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-40",
+      "required_segments": [
+        "serial",
+        "C6"
+      ],
+      "assertion_plan": "Real album add/edit/order/noop/remove/fallback/version/path/ownership constraints+same-path bytes; concurrent edit/album one winner.",
+      "result": "NOT_RUN",
+      "observed_segments": {},
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    }
+  ],
+  "tracked_processes_stopped": true,
+  "error": "Private SQL command failed",
+  "overall": "FAIL",
+  "runtime_inputs_stable": true
+}

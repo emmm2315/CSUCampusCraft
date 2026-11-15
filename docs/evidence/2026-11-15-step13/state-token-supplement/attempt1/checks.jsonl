@@ -1,0 +1,333 @@
+{"at": "2026-11-15T06:19:11.025491+00:00", "name": "exact source", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:11.053120+00:00", "name": "feature branch", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:11.097934+00:00", "name": "clean start", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:11.153362+00:00", "name": "actual tool version exit", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:11.671044+00:00", "name": "actual tool version exit", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:11.702654+00:00", "name": "actual tool version exit", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:11.703168+00:00", "name": "actual JDK21/Maven3.9.16", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:11.730042+00:00", "name": "new clean Wrapper verify user", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:11.748236+00:00", "name": "new clean Wrapper verify admin", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:14.558068+00:00", "name": "private MySQL initialize", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:15.618785+00:00", "name": "private MySQL identity", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:15.669803+00:00", "name": "bounded supplement binds final source reference", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:15.670322+00:00", "name": "bounded supplement matches already built user_jar_sha256", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:15.670322+00:00", "name": "bounded supplement matches already built admin_jar_sha256", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:21.311534+00:00", "name": "created listener owner u", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:26.484299+00:00", "name": "created listener owner a", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:26.932404+00:00", "name": "raw response no credential/hash 1", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:26.932914+00:00", "name": "no URL session tracking 1", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:27.363783+00:00", "name": "/login?returnUrl=%2F seven-table zero write", "passed": true, "case": null, "segment": null, "detail": {"http": 1}}
+{"at": "2026-11-15T06:19:27.363783+00:00", "name": "GET /login?returnUrl=%2F", "passed": true, "case": null, "segment": null, "detail": {"http": 1, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:19:28.072840+00:00", "name": "raw response no credential/hash 2", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:28.072840+00:00", "name": "no URL session tracking 2", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:28.475659+00:00", "name": "/login seven-table zero write", "passed": true, "case": null, "segment": null, "detail": {"http": 2}}
+{"at": "2026-11-15T06:19:28.475659+00:00", "name": "POST /login", "passed": true, "case": null, "segment": null, "detail": {"http": 2, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:19:28.476167+00:00", "name": "login changes session ID without exposing it", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:28.857542+00:00", "name": "raw response no credential/hash 3", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:28.858061+00:00", "name": "no URL session tracking 3", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:29.237417+00:00", "name": "/login?returnUrl=%2F seven-table zero write", "passed": true, "case": null, "segment": null, "detail": {"http": 3}}
+{"at": "2026-11-15T06:19:29.238417+00:00", "name": "GET /login?returnUrl=%2F", "passed": true, "case": null, "segment": null, "detail": {"http": 3, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:19:29.681421+00:00", "name": "raw response no credential/hash 4", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:29.682416+00:00", "name": "no URL session tracking 4", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:30.142745+00:00", "name": "/login seven-table zero write", "passed": true, "case": null, "segment": null, "detail": {"http": 4}}
+{"at": "2026-11-15T06:19:30.143744+00:00", "name": "POST /login", "passed": true, "case": null, "segment": null, "detail": {"http": 4, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:19:30.143744+00:00", "name": "login changes session ID without exposing it", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:30.509770+00:00", "name": "raw response no credential/hash 5", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:30.510768+00:00", "name": "no URL session tracking 5", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:30.882435+00:00", "name": "/login?returnUrl=%2F seven-table zero write", "passed": true, "case": null, "segment": null, "detail": {"http": 5}}
+{"at": "2026-11-15T06:19:30.882435+00:00", "name": "GET /login?returnUrl=%2F", "passed": true, "case": null, "segment": null, "detail": {"http": 5, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:19:31.574441+00:00", "name": "raw response no credential/hash 6", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:31.574441+00:00", "name": "no URL session tracking 6", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:31.992994+00:00", "name": "/login seven-table zero write", "passed": true, "case": null, "segment": null, "detail": {"http": 6}}
+{"at": "2026-11-15T06:19:31.992994+00:00", "name": "POST /login", "passed": true, "case": null, "segment": null, "detail": {"http": 6, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:19:31.993508+00:00", "name": "login changes session ID without exposing it", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:19:34.815136+00:00", "name": "raw response no credential/hash 7", "passed": true, "case": "TST-29", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:34.816126+00:00", "name": "no URL session tracking 7", "passed": true, "case": "TST-29", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:35.189333+00:00", "name": "/ seven-table zero write", "passed": true, "case": "TST-29", "segment": "edge", "detail": {"http": 7}}
+{"at": "2026-11-15T06:19:35.189861+00:00", "name": "GET /", "passed": true, "case": "TST-29", "segment": "edge", "detail": {"http": 7, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:19:35.652254+00:00", "name": "raw response no credential/hash 8", "passed": true, "case": "TST-29", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:35.652254+00:00", "name": "no URL session tracking 8", "passed": true, "case": "TST-29", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:36.043876+00:00", "name": "/orders/DEMO-202611-AL-04/ship seven-table zero write", "passed": true, "case": "TST-29", "segment": "edge", "detail": {"http": 8}}
+{"at": "2026-11-15T06:19:36.044625+00:00", "name": "POST /orders/DEMO-202611-AL-04/ship", "passed": true, "case": "TST-29", "segment": "edge", "detail": {"http": 8, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:19:36.445099+00:00", "name": "completed-shipment-replay complete seven tables and first values unchanged", "passed": true, "case": "TST-29", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:36.445099+00:00", "name": "completed-shipment-replay exact detail redirect", "passed": true, "case": "TST-29", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:36.445644+00:00", "name": "redirect is local GET", "passed": true, "case": "TST-29", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:36.860244+00:00", "name": "raw response no credential/hash 9", "passed": true, "case": "TST-29", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:36.860759+00:00", "name": "no URL session tracking 9", "passed": true, "case": "TST-29", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:37.265159+00:00", "name": "/orders/DEMO-202611-AL-04 seven-table zero write", "passed": true, "case": "TST-29", "segment": "edge", "detail": {"http": 9}}
+{"at": "2026-11-15T06:19:37.265159+00:00", "name": "GET /orders/DEMO-202611-AL-04", "passed": true, "case": "TST-29", "segment": "edge", "detail": {"http": 9, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:19:37.265159+00:00", "name": "completed-shipment-replay original receipt/time visible", "passed": true, "case": "TST-29", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:38.170335+00:00", "name": "raw response no credential/hash 10", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:38.170843+00:00", "name": "no URL session tracking 10", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:38.613484+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-21", "segment": "edge", "detail": {"http": 10}}
+{"at": "2026-11-15T06:19:38.613484+00:00", "name": "GET /cart", "passed": true, "case": "TST-21", "segment": "edge", "detail": {"http": 10, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:19:38.998279+00:00", "name": "raw response no credential/hash 11", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:38.998279+00:00", "name": "no URL session tracking 11", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:39.404065+00:00", "name": "/orders/DEMO-202611-AL-02/cancel seven-table zero write", "passed": true, "case": "TST-21", "segment": "edge", "detail": {"http": 11}}
+{"at": "2026-11-15T06:19:39.404582+00:00", "name": "POST /orders/DEMO-202611-AL-02/cancel", "passed": true, "case": "TST-21", "segment": "edge", "detail": {"http": 11, "expected": 409, "observed": 409}}
+{"at": "2026-11-15T06:19:39.792251+00:00", "name": "paid-cancel-rejected complete seven tables and first values unchanged", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:39.801020+00:00", "name": "stable error code CANCELLATION_STATE_CONFLICT", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:40.564072+00:00", "name": "raw response no credential/hash 12", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:40.564072+00:00", "name": "no URL session tracking 12", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:40.921305+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-21", "segment": "edge", "detail": {"http": 12}}
+{"at": "2026-11-15T06:19:40.922816+00:00", "name": "GET /cart", "passed": true, "case": "TST-21", "segment": "edge", "detail": {"http": 12, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:19:41.343848+00:00", "name": "raw response no credential/hash 13", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:41.344848+00:00", "name": "no URL session tracking 13", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:41.708429+00:00", "name": "/orders/DEMO-202611-AL-05/payment seven-table zero write", "passed": true, "case": "TST-21", "segment": "edge", "detail": {"http": 13}}
+{"at": "2026-11-15T06:19:41.708969+00:00", "name": "POST /orders/DEMO-202611-AL-05/payment", "passed": true, "case": "TST-21", "segment": "edge", "detail": {"http": 13, "expected": 409, "observed": 409}}
+{"at": "2026-11-15T06:19:42.057299+00:00", "name": "cancelled-payment-SUCCESS complete seven tables and first values unchanged", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:42.059473+00:00", "name": "stable error code PAYMENT_STATE_CONFLICT", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:42.804232+00:00", "name": "raw response no credential/hash 14", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:42.804232+00:00", "name": "no URL session tracking 14", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:43.222849+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-21", "segment": "edge", "detail": {"http": 14}}
+{"at": "2026-11-15T06:19:43.222849+00:00", "name": "GET /cart", "passed": true, "case": "TST-21", "segment": "edge", "detail": {"http": 14, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:19:43.644672+00:00", "name": "raw response no credential/hash 15", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:43.645185+00:00", "name": "no URL session tracking 15", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:44.010862+00:00", "name": "/orders/DEMO-202611-AL-05/payment seven-table zero write", "passed": true, "case": "TST-21", "segment": "edge", "detail": {"http": 15}}
+{"at": "2026-11-15T06:19:44.010862+00:00", "name": "POST /orders/DEMO-202611-AL-05/payment", "passed": true, "case": "TST-21", "segment": "edge", "detail": {"http": 15, "expected": 409, "observed": 409}}
+{"at": "2026-11-15T06:19:44.361201+00:00", "name": "cancelled-payment-FAILURE complete seven tables and first values unchanged", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:44.361719+00:00", "name": "stable error code PAYMENT_STATE_CONFLICT", "passed": true, "case": "TST-21", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:45.152027+00:00", "name": "raw response no credential/hash 16", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:45.152537+00:00", "name": "no URL session tracking 16", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:45.524151+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 16}}
+{"at": "2026-11-15T06:19:45.525146+00:00", "name": "GET /cart", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 16, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:19:46.046303+00:00", "name": "raw response no credential/hash 17", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:46.046819+00:00", "name": "no URL session tracking 17", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:46.444064+00:00", "name": "/orders/DEMO-202611-AL-03/payment seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 17}}
+{"at": "2026-11-15T06:19:46.445075+00:00", "name": "POST /orders/DEMO-202611-AL-03/payment", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 17, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:19:46.826483+00:00", "name": "shipped-successful-payment-replay complete seven tables and first values unchanged", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:46.826483+00:00", "name": "shipped-successful-payment-replay exact detail redirect", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:46.826483+00:00", "name": "redirect is local GET", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:47.248718+00:00", "name": "raw response no credential/hash 18", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:47.249744+00:00", "name": "no URL session tracking 18", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:47.677358+00:00", "name": "/orders/DEMO-202611-AL-03 seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 18}}
+{"at": "2026-11-15T06:19:47.677358+00:00", "name": "GET /orders/DEMO-202611-AL-03", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 18, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:19:47.677358+00:00", "name": "shipped-successful-payment-replay original receipt/time visible", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:48.481685+00:00", "name": "raw response no credential/hash 19", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:48.481685+00:00", "name": "no URL session tracking 19", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:48.876203+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 19}}
+{"at": "2026-11-15T06:19:48.877208+00:00", "name": "GET /cart", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 19, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:19:49.254719+00:00", "name": "raw response no credential/hash 20", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:49.256745+00:00", "name": "no URL session tracking 20", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:49.656686+00:00", "name": "/orders/DEMO-202611-AL-03/payment seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 20}}
+{"at": "2026-11-15T06:19:49.657691+00:00", "name": "POST /orders/DEMO-202611-AL-03/payment", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 20, "expected": 409, "observed": 409}}
+{"at": "2026-11-15T06:19:50.025174+00:00", "name": "shipped-failure-after-paid-rejected complete seven tables and first values unchanged", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:50.025704+00:00", "name": "stable error code PAYMENT_STATE_CONFLICT", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:50.870712+00:00", "name": "raw response no credential/hash 21", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:50.870712+00:00", "name": "no URL session tracking 21", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:51.250608+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 21}}
+{"at": "2026-11-15T06:19:51.251152+00:00", "name": "GET /cart", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 21, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:19:51.610161+00:00", "name": "raw response no credential/hash 22", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:51.611159+00:00", "name": "no URL session tracking 22", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:51.991949+00:00", "name": "/orders/DEMO-202611-AL-04/payment seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 22}}
+{"at": "2026-11-15T06:19:51.992460+00:00", "name": "POST /orders/DEMO-202611-AL-04/payment", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 22, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:19:52.393016+00:00", "name": "completed-successful-payment-replay complete seven tables and first values unchanged", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:52.393016+00:00", "name": "completed-successful-payment-replay exact detail redirect", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:52.393548+00:00", "name": "redirect is local GET", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:52.803200+00:00", "name": "raw response no credential/hash 23", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:52.803200+00:00", "name": "no URL session tracking 23", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:53.214318+00:00", "name": "/orders/DEMO-202611-AL-04 seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 23}}
+{"at": "2026-11-15T06:19:53.214318+00:00", "name": "GET /orders/DEMO-202611-AL-04", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 23, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:19:53.214850+00:00", "name": "completed-successful-payment-replay original receipt/time visible", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:54.044325+00:00", "name": "raw response no credential/hash 24", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:54.045325+00:00", "name": "no URL session tracking 24", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:54.449337+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 24}}
+{"at": "2026-11-15T06:19:54.450345+00:00", "name": "GET /cart", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 24, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:19:54.861828+00:00", "name": "raw response no credential/hash 25", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:54.862828+00:00", "name": "no URL session tracking 25", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:55.260539+00:00", "name": "/orders/DEMO-202611-AL-04/payment seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 25}}
+{"at": "2026-11-15T06:19:55.260539+00:00", "name": "POST /orders/DEMO-202611-AL-04/payment", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 25, "expected": 409, "observed": 409}}
+{"at": "2026-11-15T06:19:55.679886+00:00", "name": "completed-failure-after-paid-rejected complete seven tables and first values unchanged", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:55.679886+00:00", "name": "stable error code PAYMENT_STATE_CONFLICT", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:56.101969+00:00", "name": "raw response no credential/hash 26", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:56.102487+00:00", "name": "no URL session tracking 26", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:56.466380+00:00", "name": "/orders/DEMO-202611-AL-01/payment seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 26}}
+{"at": "2026-11-15T06:19:56.466884+00:00", "name": "GET /orders/DEMO-202611-AL-01/payment", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 26, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:19:56.505125+00:00", "name": "U09-owned-pending seven-table read unchanged", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:56.505125+00:00", "name": "U09-owned-pending U09 pending amount", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:56.506124+00:00", "name": "U09-owned-pending both teaching choices", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:57.058108+00:00", "name": "raw response no credential/hash 27", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:57.058108+00:00", "name": "no URL session tracking 27", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:57.443916+00:00", "name": "/orders/DEMO-202611-AL-02/payment seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 27}}
+{"at": "2026-11-15T06:19:57.444437+00:00", "name": "GET /orders/DEMO-202611-AL-02/payment", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 27, "expected": 409, "observed": 409}}
+{"at": "2026-11-15T06:19:57.487112+00:00", "name": "U09-owned-PAID seven-table read unchanged", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:57.487648+00:00", "name": "stable error code PAYMENT_STATE_CONFLICT", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:57.914501+00:00", "name": "raw response no credential/hash 28", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:57.915021+00:00", "name": "no URL session tracking 28", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:58.326862+00:00", "name": "/orders/DEMO-202611-AL-03/payment seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 28}}
+{"at": "2026-11-15T06:19:58.326862+00:00", "name": "GET /orders/DEMO-202611-AL-03/payment", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 28, "expected": 409, "observed": 409}}
+{"at": "2026-11-15T06:19:58.387524+00:00", "name": "U09-owned-SHIPPED seven-table read unchanged", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:58.387524+00:00", "name": "stable error code PAYMENT_STATE_CONFLICT", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:58.920785+00:00", "name": "raw response no credential/hash 29", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:58.921324+00:00", "name": "no URL session tracking 29", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:59.333190+00:00", "name": "/orders/DEMO-202611-AL-04/payment seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 29}}
+{"at": "2026-11-15T06:19:59.333190+00:00", "name": "GET /orders/DEMO-202611-AL-04/payment", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 29, "expected": 409, "observed": 409}}
+{"at": "2026-11-15T06:19:59.376365+00:00", "name": "U09-owned-COMPLETED seven-table read unchanged", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:59.376876+00:00", "name": "stable error code PAYMENT_STATE_CONFLICT", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:59.852040+00:00", "name": "raw response no credential/hash 30", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:19:59.852040+00:00", "name": "no URL session tracking 30", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:00.227273+00:00", "name": "/orders/DEMO-202611-AL-05/payment seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 30}}
+{"at": "2026-11-15T06:20:00.228776+00:00", "name": "GET /orders/DEMO-202611-AL-05/payment", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 30, "expected": 409, "observed": 409}}
+{"at": "2026-11-15T06:20:00.296364+00:00", "name": "U09-owned-CANCELLED seven-table read unchanged", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:00.296364+00:00", "name": "stable error code PAYMENT_STATE_CONFLICT", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:00.781862+00:00", "name": "raw response no credential/hash 31", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:00.781862+00:00", "name": "no URL session tracking 31", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:01.486950+00:00", "name": "/orders/DEMO-202611-AL-01/payment seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 31}}
+{"at": "2026-11-15T06:20:01.487955+00:00", "name": "GET /orders/DEMO-202611-AL-01/payment", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 31, "expected": 404, "observed": 404}}
+{"at": "2026-11-15T06:20:01.551224+00:00", "name": "U09-foreign-order seven-table read unchanged", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:01.551224+00:00", "name": "U09-foreign-order foreign/unknown not disclosed", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:02.015304+00:00", "name": "raw response no credential/hash 32", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:02.015825+00:00", "name": "no URL session tracking 32", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:02.352735+00:00", "name": "/orders/DEMO-202611-AL-01/payment seven-table zero write", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 32}}
+{"at": "2026-11-15T06:20:02.352735+00:00", "name": "GET /orders/DEMO-202611-AL-01/payment", "passed": true, "case": "TST-20", "segment": "edge", "detail": {"http": 32, "expected": 302, "observed": 302}}
+{"at": "2026-11-15T06:20:02.402964+00:00", "name": "U09-guest-protected seven-table read unchanged", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:02.403516+00:00", "name": "U09-guest-protected protected guest redirect", "passed": true, "case": "TST-20", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:02.464346+00:00", "name": "all state/page edges preserve entire demo seven tables", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:20:03.447620+00:00", "name": "raw response no credential/hash 33", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:03.447620+00:00", "name": "no URL session tracking 33", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:03.794132+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 33}}
+{"at": "2026-11-15T06:20:03.794132+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 33, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:04.829037+00:00", "name": "raw response no credential/hash 34", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:04.830035+00:00", "name": "no URL session tracking 34", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:05.265396+00:00", "name": "POST /cart/items/1/remove", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 34, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:20:05.815043+00:00", "name": "raw response no credential/hash 35", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:05.816054+00:00", "name": "no URL session tracking 35", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:06.478700+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 35}}
+{"at": "2026-11-15T06:20:06.479224+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 35, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:07.135981+00:00", "name": "raw response no credential/hash 36", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:07.136987+00:00", "name": "no URL session tracking 36", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:07.597689+00:00", "name": "POST /cart/items/2/remove", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 36, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:20:07.994813+00:00", "name": "raw response no credential/hash 37", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:07.995323+00:00", "name": "no URL session tracking 37", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:08.382437+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 37}}
+{"at": "2026-11-15T06:20:08.382961+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 37, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:08.859187+00:00", "name": "raw response no credential/hash 38", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:08.860700+00:00", "name": "no URL session tracking 38", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:09.311911+00:00", "name": "POST /cart/items/3/remove", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 38, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:20:10.106842+00:00", "name": "raw response no credential/hash 39", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:10.107849+00:00", "name": "no URL session tracking 39", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:10.505313+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 39}}
+{"at": "2026-11-15T06:20:10.505313+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 39, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:11.357214+00:00", "name": "raw response no credential/hash 40", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:11.357791+00:00", "name": "no URL session tracking 40", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:11.698058+00:00", "name": "POST /cart/items/4/remove", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 40, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:20:12.123026+00:00", "name": "raw response no credential/hash 41", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:12.123539+00:00", "name": "no URL session tracking 41", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:12.567953+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 41}}
+{"at": "2026-11-15T06:20:12.568960+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 41, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:13.275354+00:00", "name": "raw response no credential/hash 42", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:13.275354+00:00", "name": "no URL session tracking 42", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:13.639632+00:00", "name": "POST /cart/items/5/remove", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 42, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:20:14.042299+00:00", "name": "raw response no credential/hash 43", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:14.042299+00:00", "name": "no URL session tracking 43", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:14.476428+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 43}}
+{"at": "2026-11-15T06:20:14.477431+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 43, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:15.088711+00:00", "name": "raw response no credential/hash 44", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:15.089710+00:00", "name": "no URL session tracking 44", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:15.480128+00:00", "name": "POST /cart/items/6/remove", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 44, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:20:16.249469+00:00", "name": "raw response no credential/hash 45", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:16.249469+00:00", "name": "no URL session tracking 45", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:16.671783+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 45}}
+{"at": "2026-11-15T06:20:16.671783+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 45, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:17.148124+00:00", "name": "raw response no credential/hash 46", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:17.148663+00:00", "name": "no URL session tracking 46", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:17.516497+00:00", "name": "POST /cart/items/7/remove", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 46, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:20:18.536038+00:00", "name": "raw response no credential/hash 47", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:18.536038+00:00", "name": "no URL session tracking 47", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:18.904844+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 47}}
+{"at": "2026-11-15T06:20:18.906353+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 47, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:20.145178+00:00", "name": "raw response no credential/hash 48", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:20.145178+00:00", "name": "no URL session tracking 48", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:20.558279+00:00", "name": "POST /cart/items/8/remove", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 48, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:20:20.982653+00:00", "name": "raw response no credential/hash 49", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:20.983189+00:00", "name": "no URL session tracking 49", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:21.404320+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 49}}
+{"at": "2026-11-15T06:20:21.404320+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 49, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:22.210896+00:00", "name": "raw response no credential/hash 50", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:22.211493+00:00", "name": "no URL session tracking 50", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:22.615228+00:00", "name": "POST /cart/items/9/remove", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 50, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:20:23.281460+00:00", "name": "raw response no credential/hash 51", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:23.282461+00:00", "name": "no URL session tracking 51", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:23.693284+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 51}}
+{"at": "2026-11-15T06:20:23.693809+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 51, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:24.090011+00:00", "name": "raw response no credential/hash 52", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:24.090011+00:00", "name": "no URL session tracking 52", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:24.464233+00:00", "name": "POST /cart/items/10/remove", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 52, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:20:24.929564+00:00", "name": "raw response no credential/hash 53", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:24.929564+00:00", "name": "no URL session tracking 53", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:25.357046+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 53}}
+{"at": "2026-11-15T06:20:25.357046+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 53, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:26.257407+00:00", "name": "raw response no credential/hash 54", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:26.258411+00:00", "name": "no URL session tracking 54", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:26.693677+00:00", "name": "POST /cart/items", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 54, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:20:27.092216+00:00", "name": "raw response no credential/hash 55", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:27.092748+00:00", "name": "no URL session tracking 55", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:27.862146+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 55}}
+{"at": "2026-11-15T06:20:27.862755+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 55, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:28.682872+00:00", "name": "raw response no credential/hash 56", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:28.683401+00:00", "name": "no URL session tracking 56", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:29.057231+00:00", "name": "POST /cart/items", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 56, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:20:29.447972+00:00", "name": "raw response no credential/hash 57", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:29.447972+00:00", "name": "no URL session tracking 57", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:30.128644+00:00", "name": "/login?returnUrl=%2F seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 57}}
+{"at": "2026-11-15T06:20:30.129157+00:00", "name": "GET /login?returnUrl=%2F", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 57, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:30.602336+00:00", "name": "raw response no credential/hash 58", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:30.602845+00:00", "name": "no URL session tracking 58", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:31.035529+00:00", "name": "/login seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 58}}
+{"at": "2026-11-15T06:20:31.036032+00:00", "name": "POST /login", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 58, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T06:20:31.036032+00:00", "name": "login changes session ID without exposing it", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:32.047044+00:00", "name": "raw response no credential/hash 59", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:32.047647+00:00", "name": "no URL session tracking 59", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:32.475327+00:00", "name": "/checkout seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 59}}
+{"at": "2026-11-15T06:20:32.475327+00:00", "name": "GET /checkout", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 59, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:33.077444+00:00", "name": "raw response no credential/hash 60", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:33.077444+00:00", "name": "no URL session tracking 60", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:34.252189+00:00", "name": "/checkout seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 60}}
+{"at": "2026-11-15T06:20:34.252189+00:00", "name": "GET /checkout", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 60, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:34.671312+00:00", "name": "raw response no credential/hash 61", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:34.672312+00:00", "name": "no URL session tracking 61", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:35.100003+00:00", "name": "/checkout seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 61}}
+{"at": "2026-11-15T06:20:35.101024+00:00", "name": "GET /checkout", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 61, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:35.101550+00:00", "name": "three independent random confirmation tokens", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:35.102065+00:00", "name": "same account has distinct real sessions", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:36.117747+00:00", "name": "raw response no credential/hash 62", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:36.117747+00:00", "name": "no URL session tracking 62", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:36.487632+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 62}}
+{"at": "2026-11-15T06:20:36.488151+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 62, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:36.892617+00:00", "name": "raw response no credential/hash 63", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:36.892617+00:00", "name": "no URL session tracking 63", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:37.319398+00:00", "name": "/orders seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 63}}
+{"at": "2026-11-15T06:20:37.320907+00:00", "name": "POST /orders", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 63, "expected": 409, "observed": 409}}
+{"at": "2026-11-15T06:20:37.320907+00:00", "name": "stable error code CHECKOUT_CONFIRMATION_INVALID", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:37.696264+00:00", "name": "raw response no credential/hash 64", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:37.696264+00:00", "name": "no URL session tracking 64", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:38.062864+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 64}}
+{"at": "2026-11-15T06:20:38.062864+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 64, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:38.568340+00:00", "name": "raw response no credential/hash 65", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:38.568340+00:00", "name": "no URL session tracking 65", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:38.998425+00:00", "name": "/orders seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 65}}
+{"at": "2026-11-15T06:20:38.998425+00:00", "name": "POST /orders", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 65, "expected": 400, "observed": 400}}
+{"at": "2026-11-15T06:20:38.999424+00:00", "name": "owner-after-cross-session-attempt original owner reaches field validation with retained token", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:39.041156+00:00", "name": "owner-after-cross-session-attempt valid-token field400 no DB writes", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:39.470960+00:00", "name": "raw response no credential/hash 66", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:39.471965+00:00", "name": "no URL session tracking 66", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:39.901710+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 66}}
+{"at": "2026-11-15T06:20:39.901710+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 66, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:40.336140+00:00", "name": "raw response no credential/hash 67", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:40.336663+00:00", "name": "no URL session tracking 67", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:40.732959+00:00", "name": "/orders seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 67}}
+{"at": "2026-11-15T06:20:40.732959+00:00", "name": "POST /orders", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 67, "expected": 409, "observed": 409}}
+{"at": "2026-11-15T06:20:40.733473+00:00", "name": "stable error code CHECKOUT_CONFIRMATION_INVALID", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:41.168850+00:00", "name": "raw response no credential/hash 68", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:41.169359+00:00", "name": "no URL session tracking 68", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:41.534311+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 68}}
+{"at": "2026-11-15T06:20:41.534311+00:00", "name": "GET /cart", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 68, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T06:20:42.024362+00:00", "name": "raw response no credential/hash 69", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:42.024362+00:00", "name": "no URL session tracking 69", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:42.404377+00:00", "name": "/orders seven-table zero write", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 69}}
+{"at": "2026-11-15T06:20:42.404377+00:00", "name": "POST /orders", "passed": true, "case": "TST-13", "segment": "edge", "detail": {"http": 69, "expected": 400, "observed": 400}}
+{"at": "2026-11-15T06:20:42.405891+00:00", "name": "owner-after-other-account-attempt original owner reaches field validation with retained token", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:42.471272+00:00", "name": "owner-after-other-account-attempt valid-token field400 no DB writes", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:42.514696+00:00", "name": "all token attempts and field400 keep same seven-table state", "passed": true, "case": "TST-13", "segment": "edge", "detail": null}
+{"at": "2026-11-15T06:20:42.798032+00:00", "name": "no supplemental order/payment/inventory changes", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T06:20:42.964945+00:00", "name": "cleanup target is exact owned supplement runtime", "passed": true, "case": null, "segment": null, "detail": null}

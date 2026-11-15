@@ -1,0 +1,12 @@
+{
+  "overall": "PASS",
+  "observed_at_utc": "2026-11-15T07:21:39.523314+00:00",
+  "files_scanned": 1434,
+  "compressed_files_decoded": 820,
+  "html_bodies_checked": 792,
+  "docx_xml_parts_checked": 0,
+  "findings": [],
+  "values_recorded": false,
+  "scope": "Exact teaching credential, full BCrypt patterns, actual archived body token/password/contact/shipping elements; runtime child scans cover their generated known private values. PNG masking is checked in browser visual report.",
+  "historical_false_positive": "Raw attempt4 scan FAIL is preserved: its own source template contained one fixed fictional test phone; archived HTTP/SQL recipient values were redacted. No complete recipient or real credential is accepted by this scan."
+}

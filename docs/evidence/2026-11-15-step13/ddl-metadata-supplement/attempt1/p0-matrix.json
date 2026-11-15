@@ -1,0 +1,20 @@
+[
+  {
+    "id": "INIT-02",
+    "required_segments": [
+      "metadata"
+    ],
+    "assertion_plan": "SQL01/02 live35 CHECK names/predicates/enforced and index columns match",
+    "result": "PASS",
+    "observed_segments": {
+      "metadata": {
+        "passed": true,
+        "detail": {
+          "checks": 6
+        },
+        "at": "2026-11-15T06:23:30.414800+00:00"
+      }
+    },
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+  }
+]

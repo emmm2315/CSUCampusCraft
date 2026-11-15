@@ -1,0 +1,491 @@
+{"at": "2026-11-15T05:49:27.972391+00:00", "name": "new nine-case raw scanner self-test", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:49:28.024157+00:00", "name": "exact source", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:49:28.054194+00:00", "name": "feature branch", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:49:28.099555+00:00", "name": "clean start", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:49:28.158470+00:00", "name": "actual tool version exit", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:49:28.646721+00:00", "name": "actual tool version exit", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:49:28.675837+00:00", "name": "actual tool version exit", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:49:28.676852+00:00", "name": "actual JDK21/Maven3.9.16", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:49:28.702574+00:00", "name": "new clean Wrapper verify user", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:49:28.719885+00:00", "name": "new clean Wrapper verify admin", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:49:31.550905+00:00", "name": "private MySQL initialize", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:49:32.607456+00:00", "name": "private MySQL identity", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:49:36.851516+00:00", "name": "created listener owner u", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:40.607435+00:00", "name": "created listener owner a", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:40.713378+00:00", "name": "SQL01 seven tables literally empty", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:41.430046+00:00", "name": "raw response no credential/hash 1", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:41.430046+00:00", "name": "no URL session tracking 1", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:41.841798+00:00", "name": "/ seven-table zero write", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": {"http": 1}}
+{"at": "2026-11-15T05:49:41.841798+00:00", "name": "GET /", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": {"http": 1, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:49:41.841798+00:00", "name": "literal empty home theme0", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:42.370703+00:00", "name": "raw response no credential/hash 2", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:42.371702+00:00", "name": "no URL session tracking 2", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:42.752108+00:00", "name": "/products seven-table zero write", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": {"http": 2}}
+{"at": "2026-11-15T05:49:42.753119+00:00", "name": "GET /products", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": {"http": 2, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:49:42.753119+00:00", "name": "U02 root", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:43.109694+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:43.110206+00:00", "name": "canonical page size", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:43.531266+00:00", "name": "raw response no credential/hash 3", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:43.531783+00:00", "name": "no URL session tracking 3", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:43.988656+00:00", "name": "/products/1 seven-table zero write", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": {"http": 3}}
+{"at": "2026-11-15T05:49:43.988656+00:00", "name": "GET /products/1", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": {"http": 3, "expected": 404, "observed": 404}}
+{"at": "2026-11-15T05:49:44.487593+00:00", "name": "raw response no credential/hash 4", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:44.488592+00:00", "name": "no URL session tracking 4", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:44.902420+00:00", "name": "/login?returnUrl=%2F seven-table zero write", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": {"http": 4}}
+{"at": "2026-11-15T05:49:44.902420+00:00", "name": "GET /login?returnUrl=%2F", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": {"http": 4, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:49:45.595249+00:00", "name": "raw response no credential/hash 5", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:45.595752+00:00", "name": "no URL session tracking 5", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:46.004614+00:00", "name": "/login seven-table zero write", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": {"http": 5}}
+{"at": "2026-11-15T05:49:46.005130+00:00", "name": "POST /login", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": {"http": 5, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:49:46.497525+00:00", "name": "raw response no credential/hash 6", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:46.497525+00:00", "name": "no URL session tracking 6", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:46.963685+00:00", "name": "/ seven-table zero write", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": {"http": 6}}
+{"at": "2026-11-15T05:49:46.963685+00:00", "name": "GET /", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": {"http": 6, "expected": 302, "observed": 302}}
+{"at": "2026-11-15T05:49:47.025736+00:00", "name": "no account can log into literal empty schema", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:47.620372+00:00", "name": "SQL02 original demo rows", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:47.679616+00:00", "name": "35 enforced CHECK constraints", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:51.568404+00:00", "name": "created listener owner u", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:55.403038+00:00", "name": "created listener owner a", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:55.915946+00:00", "name": "raw response no credential/hash 7", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:55.916488+00:00", "name": "no URL session tracking 7", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:56.305749+00:00", "name": "/login?returnUrl=%2F seven-table zero write", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 7}}
+{"at": "2026-11-15T05:49:56.305749+00:00", "name": "GET /login?returnUrl=%2F", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 7, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:49:57.032907+00:00", "name": "raw response no credential/hash 8", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:57.032907+00:00", "name": "no URL session tracking 8", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:57.469583+00:00", "name": "/login seven-table zero write", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 8}}
+{"at": "2026-11-15T05:49:57.470108+00:00", "name": "POST /login", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 8, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T05:49:57.470108+00:00", "name": "login changes session ID without exposing it", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:58.021955+00:00", "name": "raw response no credential/hash 9", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:58.022955+00:00", "name": "no URL session tracking 9", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:58.463419+00:00", "name": "/ seven-table zero write", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 9}}
+{"at": "2026-11-15T05:49:58.464418+00:00", "name": "GET /", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 9, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:49:58.464418+00:00", "name": "ADMIN-only business-zero five cards", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:58.897673+00:00", "name": "raw response no credential/hash 10", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:58.898191+00:00", "name": "no URL session tracking 10", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:59.326264+00:00", "name": "/customers seven-table zero write", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 10}}
+{"at": "2026-11-15T05:49:59.327269+00:00", "name": "GET /customers", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 10, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:49:59.744145+00:00", "name": "raw response no credential/hash 11", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:49:59.744145+00:00", "name": "no URL session tracking 11", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:00.189782+00:00", "name": "/orders seven-table zero write", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 11}}
+{"at": "2026-11-15T05:50:00.190289+00:00", "name": "GET /orders", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 11, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:00.650049+00:00", "name": "raw response no credential/hash 12", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:00.650049+00:00", "name": "no URL session tracking 12", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:01.040379+00:00", "name": "/customers/1 seven-table zero write", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 12}}
+{"at": "2026-11-15T05:50:01.040379+00:00", "name": "GET /customers/1", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 12, "expected": 404, "observed": 404}}
+{"at": "2026-11-15T05:50:01.382791+00:00", "name": "empty schema retains only ADMIN fixture", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:01.859537+00:00", "name": "raw response no credential/hash 13", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:01.860548+00:00", "name": "no URL session tracking 13", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:02.281069+00:00", "name": "/products seven-table zero write", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 13}}
+{"at": "2026-11-15T05:50:02.281069+00:00", "name": "GET /products", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 13, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:02.281613+00:00", "name": "empty admin product list count0", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:02.703923+00:00", "name": "raw response no credential/hash 14", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:02.703923+00:00", "name": "no URL session tracking 14", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:03.118683+00:00", "name": "/categories seven-table zero write", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 14}}
+{"at": "2026-11-15T05:50:03.118683+00:00", "name": "GET /categories", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 14, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:03.561971+00:00", "name": "raw response no credential/hash 15", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:03.562495+00:00", "name": "no URL session tracking 15", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:03.987802+00:00", "name": "/products/1/edit seven-table zero write", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 15}}
+{"at": "2026-11-15T05:50:03.987802+00:00", "name": "GET /products/1/edit", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 15, "expected": 404, "observed": 404}}
+{"at": "2026-11-15T05:50:04.406902+00:00", "name": "raw response no credential/hash 16", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:04.407908+00:00", "name": "no URL session tracking 16", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:04.885737+00:00", "name": "/products/1/images seven-table zero write", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 16}}
+{"at": "2026-11-15T05:50:04.885737+00:00", "name": "GET /products/1/images", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 16, "expected": 404, "observed": 404}}
+{"at": "2026-11-15T05:50:05.342719+00:00", "name": "raw response no credential/hash 17", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:05.342719+00:00", "name": "no URL session tracking 17", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:05.711992+00:00", "name": "/orders/UNKNOWN seven-table zero write", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 17}}
+{"at": "2026-11-15T05:50:05.711992+00:00", "name": "GET /orders/UNKNOWN", "passed": true, "case": "TST-37", "segment": "empty-demo", "detail": {"http": 17, "expected": 404, "observed": 404}}
+{"at": "2026-11-15T05:50:09.692344+00:00", "name": "created listener owner u", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:13.639758+00:00", "name": "created listener owner a", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:13.701439+00:00", "name": "demo not touched by empty scenario", "passed": true, "case": "TST-32", "segment": "empty-demo", "detail": null}
+{"at": "2026-11-15T05:50:14.153762+00:00", "name": "fresh seed fixture client stops at deliberate precommit SIGNAL", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:14.575729+00:00", "name": "seed DML entire transaction rolled back while7DDL retained", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:14.639406+00:00", "name": "fresh empty schema35CHECK allENFORCED", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:15.301672+00:00", "name": "native actual Hikari context probe compile", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:17.290798+00:00", "name": "native actual Hikari context exit user", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:17.290798+00:00", "name": "actual Hikari UTC UUID schema user", "passed": true, "case": null, "segment": null, "detail": {"module": "user", "session_timezone": "+00:00", "mysql_uuid": "527f37cb-e0b8-11f1-8c15-005056c00001", "mysql_port": 51796, "schema": "csucampuscraft", "connection_id": 352, "source": "fresh tested application Spring context and Hikari DataSource", "writes": false}}
+{"at": "2026-11-15T05:50:19.261688+00:00", "name": "native actual Hikari context exit admin", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:19.262686+00:00", "name": "actual Hikari UTC UUID schema admin", "passed": true, "case": null, "segment": null, "detail": {"module": "admin", "session_timezone": "+00:00", "mysql_uuid": "527f37cb-e0b8-11f1-8c15-005056c00001", "mysql_port": 51796, "schema": "csucampuscraft", "connection_id": 353, "source": "fresh tested application Spring context and Hikari DataSource", "writes": false}}
+{"at": "2026-11-15T05:50:19.776028+00:00", "name": "raw response no credential/hash 18", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:19.777031+00:00", "name": "no URL session tracking 18", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:20.222722+00:00", "name": "/login?returnUrl=%2F seven-table zero write", "passed": true, "case": null, "segment": null, "detail": {"http": 18}}
+{"at": "2026-11-15T05:50:20.223235+00:00", "name": "GET /login?returnUrl=%2F", "passed": true, "case": null, "segment": null, "detail": {"http": 18, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:20.966535+00:00", "name": "raw response no credential/hash 19", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:20.967070+00:00", "name": "no URL session tracking 19", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:21.327217+00:00", "name": "/login seven-table zero write", "passed": true, "case": null, "segment": null, "detail": {"http": 19}}
+{"at": "2026-11-15T05:50:21.328215+00:00", "name": "POST /login", "passed": true, "case": null, "segment": null, "detail": {"http": 19, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T05:50:21.328215+00:00", "name": "login changes session ID without exposing it", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:21.751184+00:00", "name": "raw response no credential/hash 20", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:21.751733+00:00", "name": "no URL session tracking 20", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:22.135271+00:00", "name": "/login?returnUrl=%2F seven-table zero write", "passed": true, "case": null, "segment": null, "detail": {"http": 20}}
+{"at": "2026-11-15T05:50:22.135807+00:00", "name": "GET /login?returnUrl=%2F", "passed": true, "case": null, "segment": null, "detail": {"http": 20, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:22.825622+00:00", "name": "raw response no credential/hash 21", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:22.826164+00:00", "name": "no URL session tracking 21", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:23.254124+00:00", "name": "/login seven-table zero write", "passed": true, "case": null, "segment": null, "detail": {"http": 21}}
+{"at": "2026-11-15T05:50:23.254661+00:00", "name": "POST /login", "passed": true, "case": null, "segment": null, "detail": {"http": 21, "expected": 303, "observed": 303}}
+{"at": "2026-11-15T05:50:23.254661+00:00", "name": "login changes session ID without exposing it", "passed": true, "case": null, "segment": null, "detail": null}
+{"at": "2026-11-15T05:50:24.213135+00:00", "name": "raw response no credential/hash 22", "passed": true, "case": "TST-01", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:24.213135+00:00", "name": "no URL session tracking 22", "passed": true, "case": "TST-01", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:24.673432+00:00", "name": "/ seven-table zero write", "passed": true, "case": "TST-01", "segment": "serial", "detail": {"http": 22}}
+{"at": "2026-11-15T05:50:24.673976+00:00", "name": "GET /", "passed": true, "case": "TST-01", "segment": "serial", "detail": {"http": 22, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:24.673976+00:00", "name": "page U01", "passed": true, "case": "TST-01", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:24.674520+00:00", "name": "five theme roots", "passed": true, "case": "TST-01", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:25.213061+00:00", "name": "raw response no credential/hash 23", "passed": true, "case": "TST-01", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:25.213581+00:00", "name": "no URL session tracking 23", "passed": true, "case": "TST-01", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:25.631427+00:00", "name": "/products seven-table zero write", "passed": true, "case": "TST-01", "segment": "serial", "detail": {"http": 23}}
+{"at": "2026-11-15T05:50:25.631427+00:00", "name": "GET /products", "passed": true, "case": "TST-01", "segment": "serial", "detail": {"http": 23, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:25.631971+00:00", "name": "U02 root", "passed": true, "case": "TST-01", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:25.999217+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-01", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:25.999217+00:00", "name": "canonical page size", "passed": true, "case": "TST-01", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:26.462501+00:00", "name": "raw response no credential/hash 24", "passed": true, "case": "TST-01", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:26.463508+00:00", "name": "no URL session tracking 24", "passed": true, "case": "TST-01", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:26.855945+00:00", "name": "/products/56 seven-table zero write", "passed": true, "case": "TST-01", "segment": "serial", "detail": {"http": 24}}
+{"at": "2026-11-15T05:50:26.856847+00:00", "name": "GET /products/56", "passed": true, "case": "TST-01", "segment": "serial", "detail": {"http": 24, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:26.857350+00:00", "name": "page U03", "passed": true, "case": "TST-01", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:26.865373+00:00", "name": "public current SKU and price", "passed": true, "case": "TST-01", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:27.349853+00:00", "name": "raw response no credential/hash 25", "passed": true, "case": "TST-02", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:27.349853+00:00", "name": "no URL session tracking 25", "passed": true, "case": "TST-02", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:27.734733+00:00", "name": "/ seven-table zero write", "passed": true, "case": "TST-02", "segment": "serial", "detail": {"http": 25}}
+{"at": "2026-11-15T05:50:27.734733+00:00", "name": "GET /", "passed": true, "case": "TST-02", "segment": "serial", "detail": {"http": 25, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:27.735732+00:00", "name": "newest exact SQL ordering", "passed": true, "case": "TST-02", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:27.735732+00:00", "name": "featured exact SQL ordering", "passed": true, "case": "TST-02", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:28.210510+00:00", "name": "raw response no credential/hash 26", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:28.210510+00:00", "name": "no URL session tracking 26", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:28.646572+00:00", "name": "/products?categoryId=1&type=ALL&sort=DEFAULT&page=2&size=2 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 26}}
+{"at": "2026-11-15T05:50:28.647095+00:00", "name": "GET /products?categoryId=1&type=ALL&sort=DEFAULT&page=2&size=2", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 26, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:28.647640+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:28.998739+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:28.998739+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:28.999739+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:28.999739+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:28.999739+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:29.000747+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:29.000747+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:29.000747+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:29.001745+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:29.001745+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:29.458352+00:00", "name": "raw response no credential/hash 27", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:29.458352+00:00", "name": "no URL session tracking 27", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:29.885799+00:00", "name": "/products?categoryId=1&type=ALL&sort=PRICE_ASC&page=2&size=2 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 27}}
+{"at": "2026-11-15T05:50:29.886326+00:00", "name": "GET /products?categoryId=1&type=ALL&sort=PRICE_ASC&page=2&size=2", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 27, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:29.886326+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:30.214378+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:30.214896+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:30.214896+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:30.215413+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:30.215919+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:30.216443+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:30.216443+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:30.216977+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:30.216977+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:30.217521+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:30.661341+00:00", "name": "raw response no credential/hash 28", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:30.661341+00:00", "name": "no URL session tracking 28", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:31.121339+00:00", "name": "/products?categoryId=1&type=ALL&sort=PRICE_DESC&page=2&size=2 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 28}}
+{"at": "2026-11-15T05:50:31.121339+00:00", "name": "GET /products?categoryId=1&type=ALL&sort=PRICE_DESC&page=2&size=2", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 28, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:31.122338+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:31.490944+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:31.490944+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:31.491943+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:31.491943+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:31.491943+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:31.491943+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:31.492943+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:31.492943+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:31.492943+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:31.493943+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:31.936521+00:00", "name": "raw response no credential/hash 29", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:31.937036+00:00", "name": "no URL session tracking 29", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:32.386276+00:00", "name": "/products?categoryId=1&type=ALL&sort=NEWEST&page=2&size=2 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 29}}
+{"at": "2026-11-15T05:50:32.386799+00:00", "name": "GET /products?categoryId=1&type=ALL&sort=NEWEST&page=2&size=2", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 29, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:32.387325+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:32.752730+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:32.753245+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:32.753770+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:32.753770+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:32.754332+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:32.754332+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:32.754877+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:32.755416+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:32.755416+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:32.755926+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:33.202335+00:00", "name": "raw response no credential/hash 30", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:33.202856+00:00", "name": "no URL session tracking 30", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:33.672212+00:00", "name": "/products?categoryId=1&type=STATIONERY&sort=DEFAULT&page=2&size=2 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 30}}
+{"at": "2026-11-15T05:50:33.672212+00:00", "name": "GET /products?categoryId=1&type=STATIONERY&sort=DEFAULT&page=2&size=2", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 30, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:33.673224+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:33.999752+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:33.999752+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:34.000275+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:34.000797+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:34.000797+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:34.001340+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:34.001856+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:34.001856+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:34.002375+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:34.002375+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:34.416353+00:00", "name": "raw response no credential/hash 31", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:34.416353+00:00", "name": "no URL session tracking 31", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:34.889191+00:00", "name": "/products?categoryId=1&type=STATIONERY&sort=PRICE_ASC&page=2&size=2 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 31}}
+{"at": "2026-11-15T05:50:34.890197+00:00", "name": "GET /products?categoryId=1&type=STATIONERY&sort=PRICE_ASC&page=2&size=2", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 31, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:34.890197+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:35.275678+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:35.276682+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:35.276682+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:35.276682+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:35.277682+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:35.277682+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:35.278682+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:35.278682+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:35.278682+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:35.279682+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:35.751232+00:00", "name": "raw response no credential/hash 32", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:35.752736+00:00", "name": "no URL session tracking 32", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:36.144694+00:00", "name": "/products?categoryId=1&type=STATIONERY&sort=PRICE_DESC&page=2&size=2 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 32}}
+{"at": "2026-11-15T05:50:36.145221+00:00", "name": "GET /products?categoryId=1&type=STATIONERY&sort=PRICE_DESC&page=2&size=2", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 32, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:36.145734+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:36.541239+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:36.541239+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:36.542214+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:36.542717+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:36.543237+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:36.543237+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:36.543747+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:36.544262+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:36.544262+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:36.544803+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:37.048804+00:00", "name": "raw response no credential/hash 33", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:37.048804+00:00", "name": "no URL session tracking 33", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:37.452982+00:00", "name": "/products?categoryId=1&type=STATIONERY&sort=NEWEST&page=2&size=2 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 33}}
+{"at": "2026-11-15T05:50:37.453981+00:00", "name": "GET /products?categoryId=1&type=STATIONERY&sort=NEWEST&page=2&size=2", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 33, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:37.453981+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:37.807032+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:37.807032+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:37.807551+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:37.808064+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:37.808064+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:37.808581+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:37.809099+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:37.809099+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:37.809612+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:37.810125+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:38.193283+00:00", "name": "raw response no credential/hash 34", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:38.193283+00:00", "name": "no URL session tracking 34", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:38.649556+00:00", "name": "/products?categoryId=1&type=SOUVENIR&sort=DEFAULT&page=2&size=2 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 34}}
+{"at": "2026-11-15T05:50:38.650100+00:00", "name": "GET /products?categoryId=1&type=SOUVENIR&sort=DEFAULT&page=2&size=2", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 34, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:38.650644+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:38.987501+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:38.988032+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:38.988542+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:38.988542+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:38.989066+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:38.989610+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:38.989610+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:38.990153+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:38.990153+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:38.990683+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:39.442424+00:00", "name": "raw response no credential/hash 35", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:39.442424+00:00", "name": "no URL session tracking 35", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:39.870153+00:00", "name": "/products?categoryId=1&type=SOUVENIR&sort=PRICE_ASC&page=2&size=2 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 35}}
+{"at": "2026-11-15T05:50:39.871153+00:00", "name": "GET /products?categoryId=1&type=SOUVENIR&sort=PRICE_ASC&page=2&size=2", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 35, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:39.871153+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:40.281848+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:40.282850+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:40.283355+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:40.283355+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:40.283355+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:40.284360+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:40.284360+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:40.284360+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:40.284360+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:40.285863+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:40.686837+00:00", "name": "raw response no credential/hash 36", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:40.686837+00:00", "name": "no URL session tracking 36", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:41.144109+00:00", "name": "/products?categoryId=1&type=SOUVENIR&sort=PRICE_DESC&page=2&size=2 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 36}}
+{"at": "2026-11-15T05:50:41.144109+00:00", "name": "GET /products?categoryId=1&type=SOUVENIR&sort=PRICE_DESC&page=2&size=2", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 36, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:41.145621+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:41.497994+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:41.497994+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:41.497994+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:41.499351+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:41.499351+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:41.499854+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:41.499854+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:41.499854+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:41.500860+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:41.500860+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:41.991446+00:00", "name": "raw response no credential/hash 37", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:41.991968+00:00", "name": "no URL session tracking 37", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:42.496988+00:00", "name": "/products?categoryId=1&type=SOUVENIR&sort=NEWEST&page=2&size=2 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 37}}
+{"at": "2026-11-15T05:50:42.496988+00:00", "name": "GET /products?categoryId=1&type=SOUVENIR&sort=NEWEST&page=2&size=2", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 37, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:42.496988+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:42.850520+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:42.851031+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:42.851031+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:42.851031+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:42.852042+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:42.852042+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:42.852042+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:42.853043+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:42.853043+00:00", "name": "pagination keeps sort", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:42.853043+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:43.310133+00:00", "name": "raw response no credential/hash 38", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:43.310133+00:00", "name": "no URL session tracking 38", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:43.704197+00:00", "name": "/products?type=STATIONERY seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 38}}
+{"at": "2026-11-15T05:50:43.704197+00:00", "name": "GET /products?type=STATIONERY", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 38, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:43.704197+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:44.101119+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:44.102118+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:44.102118+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:44.591237+00:00", "name": "raw response no credential/hash 39", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:44.592238+00:00", "name": "no URL session tracking 39", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:45.011488+00:00", "name": "/products?type=SOUVENIR seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 39}}
+{"at": "2026-11-15T05:50:45.012496+00:00", "name": "GET /products?type=SOUVENIR", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 39, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:45.012496+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:45.392044+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:45.392044+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:45.392044+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:47.004479+00:00", "name": "raw response no credential/hash 40", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:47.004479+00:00", "name": "no URL session tracking 40", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:47.428703+00:00", "name": "/products?q=%25&size=50 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 40}}
+{"at": "2026-11-15T05:50:47.428703+00:00", "name": "GET /products?q=%25&size=50", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 40, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:47.429244+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:47.829750+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:47.830287+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:48.221840+00:00", "name": "raw response no credential/hash 41", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:48.222851+00:00", "name": "no URL session tracking 41", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:48.685957+00:00", "name": "/products?q=_&size=50 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 41}}
+{"at": "2026-11-15T05:50:48.686461+00:00", "name": "GET /products?q=_&size=50", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 41, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:48.686461+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:49.044602+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:49.045149+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:49.532338+00:00", "name": "raw response no credential/hash 42", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:49.533341+00:00", "name": "no URL session tracking 42", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:49.935896+00:00", "name": "/products?q=%5C&size=50 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 42}}
+{"at": "2026-11-15T05:50:49.935896+00:00", "name": "GET /products?q=%5C&size=50", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 42, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:49.936901+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:50.256769+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:50.257284+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:50.700918+00:00", "name": "raw response no credential/hash 43", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:50.701460+00:00", "name": "no URL session tracking 43", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:51.096030+00:00", "name": "/products?q=%21&size=50 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 43}}
+{"at": "2026-11-15T05:50:51.096557+00:00", "name": "GET /products?q=%21&size=50", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 43, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:51.096557+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:51.526985+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:51.527499+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:51.990303+00:00", "name": "raw response no credential/hash 44", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:51.991302+00:00", "name": "no URL session tracking 44", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:52.409890+00:00", "name": "/products?q=not-found&size=50 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 44}}
+{"at": "2026-11-15T05:50:52.409890+00:00", "name": "GET /products?q=not-found&size=50", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 44, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:52.409890+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:52.749219+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:52.749736+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:53.188176+00:00", "name": "raw response no credential/hash 45", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:53.188692+00:00", "name": "no URL session tracking 45", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:53.600674+00:00", "name": "/products?q=%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C&size=50 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 45}}
+{"at": "2026-11-15T05:50:53.601223+00:00", "name": "GET /products?q=%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C%E7%95%8C&size=50", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 45, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:53.601770+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:54.001713+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:54.001713+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:54.441827+00:00", "name": "raw response no credential/hash 46", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:54.442343+00:00", "name": "no URL session tracking 46", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:54.851677+00:00", "name": "/products?page=0 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 46}}
+{"at": "2026-11-15T05:50:54.851677+00:00", "name": "GET /products?page=0", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 46, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:54.852200+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:55.283656+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:55.284159+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:55.724937+00:00", "name": "raw response no credential/hash 47", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:55.724937+00:00", "name": "no URL session tracking 47", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:56.133908+00:00", "name": "/products?page=9999&size=2 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 47}}
+{"at": "2026-11-15T05:50:56.133908+00:00", "name": "GET /products?page=9999&size=2", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 47, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:50:56.133908+00:00", "name": "U02 root", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:56.503518+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:56.503518+00:00", "name": "canonical page size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:56.504517+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:56.504517+00:00", "name": "pagination keeps size", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:57.832376+00:00", "name": "raw response no credential/hash 48", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:57.832892+00:00", "name": "no URL session tracking 48", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:58.250989+00:00", "name": "/products?categoryId=999999 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 48}}
+{"at": "2026-11-15T05:50:58.250989+00:00", "name": "GET /products?categoryId=999999", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 48, "expected": 404, "observed": 404}}
+{"at": "2026-11-15T05:50:58.663654+00:00", "name": "raw response no credential/hash 49", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:58.664654+00:00", "name": "no URL session tracking 49", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:59.075076+00:00", "name": "/products?categoryId=101 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 49}}
+{"at": "2026-11-15T05:50:59.075076+00:00", "name": "GET /products?categoryId=101", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 49, "expected": 404, "observed": 404}}
+{"at": "2026-11-15T05:50:59.562807+00:00", "name": "raw response no credential/hash 50", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:59.563312+00:00", "name": "no URL session tracking 50", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:50:59.990249+00:00", "name": "/products?type=x seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 50}}
+{"at": "2026-11-15T05:50:59.990249+00:00", "name": "GET /products?type=x", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 50, "expected": 400, "observed": 400}}
+{"at": "2026-11-15T05:51:00.455701+00:00", "name": "raw response no credential/hash 51", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:00.455701+00:00", "name": "no URL session tracking 51", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:00.917859+00:00", "name": "/products?sort=price%3Bdrop seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 51}}
+{"at": "2026-11-15T05:51:00.917859+00:00", "name": "GET /products?sort=price%3Bdrop", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 51, "expected": 400, "observed": 400}}
+{"at": "2026-11-15T05:51:01.414234+00:00", "name": "raw response no credential/hash 52", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:01.414748+00:00", "name": "no URL session tracking 52", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:01.859242+00:00", "name": "/products?size=0 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 52}}
+{"at": "2026-11-15T05:51:01.859242+00:00", "name": "GET /products?size=0", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 52, "expected": 400, "observed": 400}}
+{"at": "2026-11-15T05:51:02.257113+00:00", "name": "raw response no credential/hash 53", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:02.257113+00:00", "name": "no URL session tracking 53", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:02.689425+00:00", "name": "/products?size=51 seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 53}}
+{"at": "2026-11-15T05:51:02.689959+00:00", "name": "GET /products?size=51", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 53, "expected": 400, "observed": 400}}
+{"at": "2026-11-15T05:51:03.127806+00:00", "name": "raw response no credential/hash 54", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:03.127806+00:00", "name": "no URL session tracking 54", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:03.621906+00:00", "name": "/products?page=x seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 54}}
+{"at": "2026-11-15T05:51:03.622449+00:00", "name": "GET /products?page=x", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 54, "expected": 400, "observed": 400}}
+{"at": "2026-11-15T05:51:04.039291+00:00", "name": "raw response no credential/hash 55", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:04.039291+00:00", "name": "no URL session tracking 55", "passed": true, "case": "TST-03", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:04.473214+00:00", "name": "/products?q=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx seven-table zero write", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 55}}
+{"at": "2026-11-15T05:51:04.473214+00:00", "name": "GET /products?q=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "passed": true, "case": "TST-03", "segment": "serial", "detail": {"http": 55, "expected": 400, "observed": 400}}
+{"at": "2026-11-15T05:51:04.920233+00:00", "name": "raw response no credential/hash 56", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:04.920780+00:00", "name": "no URL session tracking 56", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:05.319787+00:00", "name": "/products/30 seven-table zero write", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 56}}
+{"at": "2026-11-15T05:51:05.320329+00:00", "name": "GET /products/30", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 56, "expected": 404, "observed": 404}}
+{"at": "2026-11-15T05:51:05.828821+00:00", "name": "raw response no credential/hash 57", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:05.828821+00:00", "name": "no URL session tracking 57", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:06.200408+00:00", "name": "/products/47 seven-table zero write", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 57}}
+{"at": "2026-11-15T05:51:06.200919+00:00", "name": "GET /products/47", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 57, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:51:06.601275+00:00", "name": "raw response no credential/hash 58", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:06.601789+00:00", "name": "no URL session tracking 58", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:07.038443+00:00", "name": "/products/36 seven-table zero write", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 58}}
+{"at": "2026-11-15T05:51:07.038443+00:00", "name": "GET /products/36", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 58, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:51:07.504521+00:00", "name": "raw response no credential/hash 59", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:07.505048+00:00", "name": "no URL session tracking 59", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:07.943799+00:00", "name": "/products/999999 seven-table zero write", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 59}}
+{"at": "2026-11-15T05:51:07.944797+00:00", "name": "GET /products/999999", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 59, "expected": 404, "observed": 404}}
+{"at": "2026-11-15T05:51:08.430204+00:00", "name": "raw response no credential/hash 60", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:08.430729+00:00", "name": "no URL session tracking 60", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:08.843161+00:00", "name": "/cart seven-table zero write", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 60}}
+{"at": "2026-11-15T05:51:08.843681+00:00", "name": "GET /cart", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 60, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:51:09.280444+00:00", "name": "raw response no credential/hash 61", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:09.280444+00:00", "name": "no URL session tracking 61", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:09.783655+00:00", "name": "/cart/items seven-table zero write", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 61}}
+{"at": "2026-11-15T05:51:09.783655+00:00", "name": "POST /cart/items", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 61, "expected": 409, "observed": 409}}
+{"at": "2026-11-15T05:51:10.314961+00:00", "name": "raw response no credential/hash 62", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:10.315971+00:00", "name": "no URL session tracking 62", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:10.743207+00:00", "name": "/products/5 seven-table zero write", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 62}}
+{"at": "2026-11-15T05:51:10.743207+00:00", "name": "GET /products/5", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 62, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:51:10.743207+00:00", "name": "empty gallery falls back cover markup", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:11.216985+00:00", "name": "raw response no credential/hash 63", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:11.216985+00:00", "name": "no URL session tracking 63", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:11.614300+00:00", "name": "/images/catalog-placeholder.svg seven-table zero write", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 63}}
+{"at": "2026-11-15T05:51:11.614300+00:00", "name": "GET /images/catalog-placeholder.svg", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 63, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:51:11.615810+00:00", "name": "placeholder media type", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:12.065480+00:00", "name": "raw response no credential/hash 64", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:12.066486+00:00", "name": "no URL session tracking 64", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:12.507354+00:00", "name": "/images/catalog-placeholder.svg seven-table zero write", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 64}}
+{"at": "2026-11-15T05:51:12.507354+00:00", "name": "GET /images/catalog-placeholder.svg", "passed": true, "case": "TST-04", "segment": "serial", "detail": {"http": 64, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:51:12.508354+00:00", "name": "placeholder media type", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:12.508354+00:00", "name": "shared static identical source bytes", "passed": true, "case": "TST-04", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:12.950096+00:00", "name": "raw response no credential/hash 65", "passed": true, "case": "TST-33", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:12.951097+00:00", "name": "no URL session tracking 65", "passed": true, "case": "TST-33", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:13.347027+00:00", "name": "/ seven-table zero write", "passed": true, "case": "TST-33", "segment": "serial", "detail": {"http": 65}}
+{"at": "2026-11-15T05:51:13.347027+00:00", "name": "GET /", "passed": true, "case": "TST-33", "segment": "serial", "detail": {"http": 65, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:51:13.347027+00:00", "name": "graduation by code theme", "passed": true, "case": "TST-33", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:13.753530+00:00", "name": "raw response no credential/hash 66", "passed": true, "case": "TST-33", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:13.753530+00:00", "name": "no URL session tracking 66", "passed": true, "case": "TST-33", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:14.118975+00:00", "name": "/products?categoryId=5&type=ALL&q=&page=2&size=2 seven-table zero write", "passed": true, "case": "TST-33", "segment": "serial", "detail": {"http": 66}}
+{"at": "2026-11-15T05:51:14.119507+00:00", "name": "GET /products?categoryId=5&type=ALL&q=&page=2&size=2", "passed": true, "case": "TST-33", "segment": "serial", "detail": {"http": 66, "expected": 200, "observed": 200}}
+{"at": "2026-11-15T05:51:14.120052+00:00", "name": "U02 root", "passed": true, "case": "TST-33", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:14.517881+00:00", "name": "catalog SQL count and stable row order", "passed": true, "case": "TST-33", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:14.518399+00:00", "name": "canonical page size", "passed": true, "case": "TST-33", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:14.518922+00:00", "name": "pagination keeps categoryId", "passed": true, "case": "TST-33", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:14.518922+00:00", "name": "pagination keeps type", "passed": true, "case": "TST-33", "segment": "serial", "detail": null}
+{"at": "2026-11-15T05:51:14.519459+00:00", "name": "pagination keeps q", "passed": false, "case": "TST-33", "segment": "serial", "detail": null}

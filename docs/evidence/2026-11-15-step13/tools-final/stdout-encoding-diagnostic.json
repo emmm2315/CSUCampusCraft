@@ -1,0 +1,30 @@
+{
+  "product_source_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "classification": "External tool stdout encoding failure, not a product assertion result",
+  "original_attempt": "verification/evidence/attempt5",
+  "original_exception": {
+    "type": "UnicodeDecodeError",
+    "encoding": "utf-8",
+    "position": 2243,
+    "invalid_byte_hex": "bd"
+  },
+  "old_tools_preserved": "verification/tool-versions/utf8-stdout-initial",
+  "old_stdout_archived": false,
+  "C1_HTTP_outcomes_reconstructed": false,
+  "known_evidence_gap": "Concurrent common seven-table before/after exists but cannot replace unarchived response bytes or prove C1 status assertions",
+  "actual_environment_preflight": {
+    "default_stdout_charset": "GBK",
+    "old_print_control_strict_utf8": false,
+    "new_actual_writeJson_default_GBK_UTF8_exact_roundtrip": true,
+    "wire_cases": 6,
+    "privacy_checks": 12,
+    "compiler_exit": 0,
+    "HTTP_or_JDBC_actions": false,
+    "result": "native/concurrent-preflight-utf8-fix/result.json"
+  },
+  "minimal_fix": "ObjectMapper.writeValueAsBytes plus System.out.write(byte[]) and flush, instead of charset-encoded PrintStream.println(String)",
+  "next_wire_observation": "Before strict decode/JSON parsing, archive stdout/stderr byteCount/SHA and strictUTF8 validity; never private stdin or potentially unredacted raw diagnostics",
+  "product_changed": false,
+  "old_results_changed": false,
+  "new_scope": "Fresh independent MySQL C1-C8 and D1-D5 only, parent separately composes prior successful same-source serial evidence"
+}

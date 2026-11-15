@@ -1,0 +1,19 @@
+{
+  "probed_primary": [
+    {
+      "port": 8080,
+      "available": false,
+      "error_class": "OSError",
+      "error_number": 10048
+    },
+    {
+      "port": 8081,
+      "available": true
+    }
+  ],
+  "selected": {
+    "u": 18080,
+    "a": 18081
+  },
+  "fallback_only_if_observed_conflict": true
+}

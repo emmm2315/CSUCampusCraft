@@ -1,0 +1,568 @@
+{
+  "overall": "PASS",
+  "scope": "Only the 20 actually viewed STEP13 attempt5 browser captures, original PNG integrity and saved read-only DOM observations. Not the final39P0/M3 decision.",
+  "reviewer": "Codex AI visual review, not human or teammate sign-off",
+  "completed_at": "2026-11-15T14:36:28.204792+08:00",
+  "tested_source_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "tested_code_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "tested_jars": {
+    "user": "6b6027b67f381cfcc012cd3fc79bc940ad546c9acc2ae46fbf9ac13a71d42700",
+    "admin": "1a8bf9ded1a535876a96b991659596fa82c01bf2bebccef45c755fe8e8820586"
+  },
+  "browser_helper_sha256": "29a4ed8103210cc4448e0e9a785339035a689be3a355089246db874b0ab272f0",
+  "attempt": "attempt5",
+  "browser_result_path": "attempt5/browser/result.json",
+  "browser_result_sha256": "b94174426b8049aab3d102287eb456b05f4dd74566f401eb4655fc7f0ecfb3e4",
+  "containing_leaf_result": {
+    "path": "attempt5/result.json",
+    "sha256": "184852980332c88a355263ae1516889f8a7653cae08307f2788b3444be6bd171",
+    "overall": "FAIL",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "scope": "Browser component passed before a later C1 external stdout codec failure made this leaf overall FAIL. No C1 or final39P0 acceptance is inferred here."
+  },
+  "browser_checks": 207,
+  "screenshot_count": 20,
+  "actual_original_images_viewed": 20,
+  "raw_sha_and_dimensions_verified": 20,
+  "screenshots": [
+    {
+      "path": "attempt5/browser/u01-home-1366.png",
+      "sha256": "17d31646556bf2bf5bf876ed8821b420ea6fa39f81232c8418b8cb3138b578af",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 1958,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "U01",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "毕业横幅、主题导航、新品3张与精选4张均可读，卡片和顶部购物车徽标3未见遮挡。",
+        "本图是后台顺序验收后的可变主库，实际7个一级主题含测试主题，不冒充演示库初始5主题状态。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/u02-graduation-1366.png",
+      "sha256": "53d5da2e4dcc5e4be9b94d3443b267a4d4eb5a53592c5e048fe456c9276ba78a",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 1746,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "U02",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "毕业纪念筛选保留在主题框，显示10项结果、第1/2页和6张商品卡；类型、搜索、排序与分页入口清晰。",
+        "卡片与页脚无重叠；灰色上一页是第1页的禁用反馈。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/a08-customer-list-1366.png",
+      "sha256": "f8ddf8e9db955dd771e986de9a3f293c69278ce0dae7f303fae045b77d4d64b2",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 1169,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A08",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "顾客清单4行，ID1/2/3/5；未出现ADMIN ID4，启用/禁用徽标和创建时间可读，未展示联系字段。",
+        "带通配符的教学用户名按普通文字显示，筛选、清除条件和详情入口可见。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/u05-persistent-cart-1366.png",
+      "sha256": "5d9eae2e2369e4be79f505329129d86c0f8376796c4db5bdf7479648952ca7c4",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 1020,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "U05",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "购物车两种商品3件，数量2和1，小计36.00/49.00、总额85.00与导航徽标3可读。",
+        "当前库存8/11属于先前主线成交后又重新加回合法85元车的捕获时点，不是第一次下单前10/12状态；未点击写表单。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/u06-85-confirmation-1366.png",
+      "sha256": "121a3905487240bd294f457fdc250408c2c276bf29c4cfb4351cbd73fe7b7b19",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 971,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "U06",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "确认页显示两种3件与总额85.00，说明不预留库存和重开替换确认；UTC到期时间可读。",
+        "收货人、电话、地址三个输入区域均为不透明灰色遮罩，不能从图核对原值；浏览器没有提交订单。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 3
+      }
+    },
+    {
+      "path": "attempt5/browser/u08-shipped-snapshot-1366.png",
+      "sha256": "163d94365926987b78316d89a9f3493efbec00ccf0cdc3079fa93da253526b1f",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 1678,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "U08",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "订单详情显示已发货、85.00、MOCK首次支付凭证、时间线与两条成交快照18×2/49×1。",
+        "收货三个值完全遮罩；徽标3来自随后为截图重新加入的车，不将本图误说成下单后即时徽标0。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 3,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/a02-real-dashboard-1366.png",
+      "sha256": "47547da6c12d794095a1c942b37d66902693edcf2ae59abe9ba851ff1948689e",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 929,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A02",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "五卡实际可见55/8/2/3/1，管理入口、统计说明、刷新及导航清楚，未使用种子常量说明这些当前数值。",
+        "本图为顺序验收及教学夹具后的主库，不是演示初始54/6/2/2/1或ADMIN-only全0阶段。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/a07-same-shipped-order-1366.png",
+      "sha256": "a69802380ed56295c1ac3c5a49ba7f29ee5d0d092d90f0d2cee8c10e7f2f207e",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 1687,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A07",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "与U08同一订单显示已发货和85.00，成交两明细、MOCK凭证及首次时间一致，顾客资料入口清楚。",
+        "收货三个值不透明遮罩，已发货状态无首次发货按钮；仅凭图不证明数据库未写或链接目标归属。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 3,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/a09-disable-warning-1366.png",
+      "sha256": "6c47ae88a9f34c69446f8a81fac755c11aa45f2a0acf1d2573aec6853fba6cfa",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 1022,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A09",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "启用顾客alice的禁用确认已展开，明确后续受保护请求需重新登录、购物车与订单保留、不自动取消或返库；确认按钮前可读到说明。",
+        "邮箱和电话两个字段全部遮罩；此次只展开details，没有执行禁用POST，不能把它说成浏览器启停旅程。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 2,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/a10-product-album-1366.png",
+      "sha256": "b9a53927ff2e5a11d49e5040d7100ed6c25ea9d8b54a5b9ea5fa9d66e64fda3e",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "png_width": 1366,
+      "png_height": 1979,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A10",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "真实测试商品的A10展示独立封面、SKU、父版本19、上架状态和2张相册，按图片161/162顺序展示。",
+        "新增/编辑/移除表单及版本、只删记录不删文件、同值保存不增版说明清楚；相对图片路径正常换行，没有遮住控件。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/u01-home-1920.png",
+      "sha256": "a6a31266fc593375048921f14a8e6cb9e2b859acc06a9dfd62c67cbe29235877",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1958,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "U01",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "毕业横幅、主题导航、新品3张与精选4张均可读，卡片和顶部购物车徽标3未见遮挡。",
+        "本图是后台顺序验收后的可变主库，实际7个一级主题含测试主题，不冒充演示库初始5主题状态。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/u02-graduation-1920.png",
+      "sha256": "721219c466ba4477229157076f4349358e85ff9efa2ba8c7cafe9896a812a226",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1746,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "U02",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "毕业纪念筛选保留在主题框，显示10项结果、第1/2页和6张商品卡；类型、搜索、排序与分页入口清晰。",
+        "卡片与页脚无重叠；灰色上一页是第1页的禁用反馈。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/a08-customer-list-1920.png",
+      "sha256": "15671837ca2797277da67baa63e397c6c2b338b7ad00b58c6d37cbdcc3a26c7c",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1169,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A08",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "顾客清单4行，ID1/2/3/5；未出现ADMIN ID4，启用/禁用徽标和创建时间可读，未展示联系字段。",
+        "带通配符的教学用户名按普通文字显示，筛选、清除条件和详情入口可见。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/u05-persistent-cart-1920.png",
+      "sha256": "b88e6848ec60b0649ce96612114b79f3322162d5f68f05f1d46d251a256f270f",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1080,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "U05",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "购物车两种商品3件，数量2和1，小计36.00/49.00、总额85.00与导航徽标3可读。",
+        "当前库存8/11属于先前主线成交后又重新加回合法85元车的捕获时点，不是第一次下单前10/12状态；未点击写表单。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/u06-85-confirmation-1920.png",
+      "sha256": "a9b4fd15e79d12b476cc1040602f6c65907030c972deeba0faf3f2d92453bf3f",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1080,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "U06",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "确认页显示两种3件与总额85.00，说明不预留库存和重开替换确认；UTC到期时间可读。",
+        "收货人、电话、地址三个输入区域均为不透明灰色遮罩，不能从图核对原值；浏览器没有提交订单。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 3
+      }
+    },
+    {
+      "path": "attempt5/browser/u08-shipped-snapshot-1920.png",
+      "sha256": "6606e3c9f549a517c743846da8b94804f8516ec80fb6a9243a98cbd4c2cf0bac",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1678,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "U08",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "订单详情显示已发货、85.00、MOCK首次支付凭证、时间线与两条成交快照18×2/49×1。",
+        "收货三个值完全遮罩；徽标3来自随后为截图重新加入的车，不将本图误说成下单后即时徽标0。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 3,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/a02-real-dashboard-1920.png",
+      "sha256": "53e4fe4f3d7a6688b0d6ca74e1a7b54a999669d359d2760777363be7dfb6d072",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1080,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A02",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "五卡实际可见55/8/2/3/1，管理入口、统计说明、刷新及导航清楚，未使用种子常量说明这些当前数值。",
+        "本图为顺序验收及教学夹具后的主库，不是演示初始54/6/2/2/1或ADMIN-only全0阶段。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/a07-same-shipped-order-1920.png",
+      "sha256": "37f7c187a76a62eb7bd6fc818c284f4ae5e195ded88b62e4d360302648703254",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1687,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A07",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "与U08同一订单显示已发货和85.00，成交两明细、MOCK凭证及首次时间一致，顾客资料入口清楚。",
+        "收货三个值不透明遮罩，已发货状态无首次发货按钮；仅凭图不证明数据库未写或链接目标归属。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 3,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/a09-disable-warning-1920.png",
+      "sha256": "cfc67d4d5ade2ba5796c50bb97208625146c2f1eb20bfab93c3970cadd1fbb52",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1080,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A09",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "启用顾客alice的禁用确认已展开，明确后续受保护请求需重新登录、购物车与订单保留、不自动取消或返库；确认按钮前可读到说明。",
+        "邮箱和电话两个字段全部遮罩；此次只展开details，没有执行禁用POST，不能把它说成浏览器启停旅程。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 2,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0
+      }
+    },
+    {
+      "path": "attempt5/browser/a10-product-album-1920.png",
+      "sha256": "4104ecdb51e0a8183815d06f720172f5808d7067a352a9de00f2a05ca992d659",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "png_width": 1920,
+      "png_height": 1979,
+      "http_status_from_record": 200,
+      "page_id_from_dom": "A10",
+      "actual_original_image_viewed": true,
+      "visual_result": "PASS",
+      "notes": [
+        "真实测试商品的A10展示独立封面、SKU、父版本19、上架状态和2张相册，按图片161/162顺序展示。",
+        "新增/编辑/移除表单及版本、只删记录不删文件、同值保存不增版说明清楚；相对图片路径正常换行，没有遮住控件。"
+      ],
+      "mask_targets": {
+        "contactMaskTargets": 0,
+        "shippingMaskTargets": 0,
+        "maskedInputTargets": 0
+      }
+    }
+  ],
+  "actual_load_dom_crosscheck": {
+    "count": 4,
+    "source": "attempt5/browser/result.json/imageFallbackObservations",
+    "data": [
+      {
+        "name": "missing-image-actual-fallback",
+        "viewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "productId": 36,
+        "pageId": "U03",
+        "galleryCount": "0",
+        "galleryEmpty": true,
+        "coverLoaded": true,
+        "coverPath": "/images/catalog-placeholder.svg",
+        "fallbackUsed": true
+      },
+      {
+        "name": "no-gallery-cover",
+        "viewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "productId": 5,
+        "pageId": "U03",
+        "galleryCount": "0",
+        "galleryEmpty": true,
+        "coverLoaded": true,
+        "coverPath": "/images/catalog-placeholder.svg",
+        "fallbackUsed": false
+      },
+      {
+        "name": "missing-image-actual-fallback",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "productId": 36,
+        "pageId": "U03",
+        "galleryCount": "0",
+        "galleryEmpty": true,
+        "coverLoaded": true,
+        "coverPath": "/images/catalog-placeholder.svg",
+        "fallbackUsed": true
+      },
+      {
+        "name": "no-gallery-cover",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "productId": 5,
+        "pageId": "U03",
+        "galleryCount": "0",
+        "galleryEmpty": true,
+        "coverLoaded": true,
+        "coverPath": "/images/catalog-placeholder.svg",
+        "fallbackUsed": false
+      }
+    ],
+    "limit": "DOM load observations only; these four GETs did not add screenshots."
+  },
+  "method": [
+    "Each original PNG was actually opened with view_image at its native recorded resolution; no contact sheet or old screenshot substituted.",
+    "SHA256 and PNG IHDR dimensions independently recomputed for every raw PNG and matched against the frozen new browser result.",
+    "No production source, raw PNG, browser result or original HTTP/database evidence was edited by this review."
+  ],
+  "observed_visual_defects": [],
+  "limits": [
+    "20 fullPage PNGs came from requested1366×768 and1920×1080 viewports; PNG height may exceed viewport height.",
+    "This browser phase used GET only and in-memory preauthenticated cookies. It did not create, pay, ship or disable records through the browser.",
+    "Main database already includes controlled serial fixtures. Screenshot counts and cart3 are the later capture state, separate from initial demo rows and post-submission cart0.",
+    "Sensitive fields are opaque-masked. Their original values and empty-value fallback cannot be inferred from the masked images.",
+    "Per-navigation records are after-only; the orchestrator separately supplies a genuine whole-batch seven-table before/after comparison. This review did not rerun a database or invent per-GET before snapshots.",
+    "Screenshots do not prove303/302, CSRF ordering, isolation, row locks, rollback, first timestamps, zero DML or complete39P0 coverage; use corresponding HTTP/DB/concurrency/fault records.",
+    "Original attempts1–5 retain their original overall FAIL results. This report accepts only the actually observed browser component of main5; later C1 stdout decoding failed, its unavailable raw output is not reconstructed or accepted. Final same-SHA grouped acceptance is a separate parent result.",
+    "P1, teammate review, new human execution, performance, production security, actual payment and actual logistics are not established by this visual check."
+  ]
+}

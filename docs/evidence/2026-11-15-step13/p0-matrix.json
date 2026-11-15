@@ -1,0 +1,1042 @@
+[
+  {
+    "id": "TST-01",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "Fresh public home/theme/product list/detail values match current SQL.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 19
+        },
+        "at": "2026-11-15T06:17:47.735469+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-02",
+    "required_segments": [
+      "serial",
+      "home-filter-badge:home-edges"
+    ],
+    "assertion_plan": "Home newest3/featured4 exact ON_SALE ordering including zero stock and ties.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 6
+        },
+        "at": "2026-11-15T06:17:48.633830+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      },
+      "home-filter-badge:home-edges": {
+        "passed": true,
+        "detail": {
+          "checks": 38
+        },
+        "at": "2026-11-15T06:00:28.455908+00:00",
+        "source_group": "home-filter-badge",
+        "source_matrix_file": "home-filter-supplement/attempt1/p0-matrix.json",
+        "source_segment": "home-edges"
+      }
+    }
+  },
+  {
+    "id": "TST-03",
+    "required_segments": [
+      "serial",
+      "home-filter-badge:combined-filters"
+    ],
+    "assertion_plan": "Theme/type/literal q/four whitelisted sorts/page/count/retained filters and invalid cases.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 286
+        },
+        "at": "2026-11-15T06:18:24.546048+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      },
+      "home-filter-badge:combined-filters": {
+        "passed": true,
+        "detail": {
+          "checks": 32
+        },
+        "at": "2026-11-15T06:00:32.017780+00:00",
+        "source_group": "home-filter-badge",
+        "source_matrix_file": "home-filter-supplement/attempt1/p0-matrix.json",
+        "source_segment": "combined-filters"
+      }
+    }
+  },
+  {
+    "id": "TST-04",
+    "required_segments": [
+      "serial",
+      "browser"
+    ],
+    "assertion_plan": "Unknown/DRAFT404, soldout browse409add, no-album cover and actual browser image fallback/shared resource.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 40
+        },
+        "at": "2026-11-15T06:18:32.775247+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      },
+      "browser": {
+        "passed": true,
+        "detail": {
+          "evidence": "browser/result.json",
+          "scope": "Actual missing-image load/error fallback and no-gallery loaded cover; DOM assertions, no extra PNG"
+        },
+        "at": "2026-11-15T06:31:46.956667+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "browser"
+      }
+    }
+  },
+  {
+    "id": "TST-05",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "Dual-end enabled/disabled/wrong-role/unknown/wrong-password login; no usable failed session or raw credentials.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 126
+        },
+        "at": "2026-11-15T06:19:01.704476+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-06",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "One CookieJar independently logs both applications; each logout only ends own identity.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 58
+        },
+        "at": "2026-11-15T06:19:14.129430+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-07",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "Logout/disabled/stale identity redirects before CSRF and refuses with zero DB changes.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 17
+        },
+        "at": "2026-11-15T06:19:19.109208+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-08",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "Add merge and full400/403/404/409 matrix,1-99 and20/21SKU boundaries.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 445
+        },
+        "at": "2026-11-15T06:21:28.245307+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-09",
+    "required_segments": [
+      "serial",
+      "restart",
+      "home-filter-badge:invalid-badges"
+    ],
+    "assertion_plan": "Cart and SUM badge per account/public/errors; logout/relogin/both-JAR restart persistence.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 99
+        },
+        "at": "2026-11-15T06:25:45.447890+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      },
+      "restart": {
+        "passed": true,
+        "detail": {
+          "checks": 30
+        },
+        "at": "2026-11-15T06:32:03.584197+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "restart"
+      },
+      "home-filter-badge:invalid-badges": {
+        "passed": true,
+        "detail": {
+          "checks": 70
+        },
+        "at": "2026-11-15T06:00:46.936770+00:00",
+        "source_group": "home-filter-badge",
+        "source_matrix_file": "home-filter-supplement/attempt1/p0-matrix.json",
+        "source_segment": "invalid-badges"
+      }
+    }
+  },
+  {
+    "id": "TST-10",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "Foreign row403, missing404, old version409, same quantity valid-version no-op.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 70
+        },
+        "at": "2026-11-15T06:21:44.649626+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-11",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "DRAFT/soldout/lowstock invalid lines remain and block whole checkout, still removable, badge includes quantities.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 124
+        },
+        "at": "2026-11-15T06:22:20.616503+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-12",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "Receiver bounds and script text400; valid fields plus tampered amounts/owner still server85.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 52
+        },
+        "at": "2026-11-15T06:22:35.407321+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-13",
+    "required_segments": [
+      "serial",
+      "state-token:edge"
+    ],
+    "assertion_plan": "Token replacement/expiry/other-session and cart/price/quantity changes409 retaining all rows.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 122
+        },
+        "at": "2026-11-15T06:23:31.922579+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      },
+      "state-token:edge": {
+        "passed": true,
+        "detail": {
+          "checks": 146
+        },
+        "at": "2026-11-15T06:20:42.515309+00:00",
+        "source_group": "state-token",
+        "source_matrix_file": "state-token-supplement/attempt1/p0-matrix.json",
+        "source_segment": "edge"
+      }
+    }
+  },
+  {
+    "id": "TST-14",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "Actual fresh85 POST:1master2items,10/12→8/11,versions+1,confirmed cart cleared/badge0.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 51
+        },
+        "at": "2026-11-15T06:23:52.789379+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-15",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "Confirmed stock shortage or DRAFT fails entire order with seven-table equality and cart retained.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 18
+        },
+        "at": "2026-11-15T06:23:40.144289+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-16",
+    "required_segments": [
+      "D1",
+      "D2",
+      "D3"
+    ],
+    "assertion_plan": "Real HTTP order transaction failures at item insert/product debit/cart delete all roll back every table.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "D1": {
+        "passed": true,
+        "detail": {
+          "checks": 83
+        },
+        "at": "2026-11-15T06:42:44.495026+00:00",
+        "source_group": "cd-retest6",
+        "source_matrix_file": "attempt6/p0-matrix.json",
+        "source_segment": "D1"
+      },
+      "D2": {
+        "passed": true,
+        "detail": {
+          "checks": 85
+        },
+        "at": "2026-11-15T06:43:14.516798+00:00",
+        "source_group": "cd-retest6",
+        "source_matrix_file": "attempt6/p0-matrix.json",
+        "source_segment": "D2"
+      },
+      "D3": {
+        "passed": true,
+        "detail": {
+          "checks": 86
+        },
+        "at": "2026-11-15T06:43:44.480872+00:00",
+        "source_group": "cd-retest6",
+        "source_matrix_file": "attempt6/p0-matrix.json",
+        "source_segment": "D3"
+      }
+    }
+  },
+  {
+    "id": "TST-17",
+    "required_segments": [
+      "C3",
+      "C8"
+    ],
+    "assertion_plan": "Same confirmation race once only; same-user cart requests serialize without duplicate/lost rows and subsequent new row retained.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "C3": {
+        "passed": true,
+        "detail": {
+          "checks": 96
+        },
+        "at": "2026-11-15T06:39:28.277744+00:00",
+        "source_group": "cd-retest6",
+        "source_matrix_file": "attempt6/p0-matrix.json",
+        "source_segment": "C3"
+      },
+      "C8": {
+        "passed": true,
+        "detail": {
+          "checks": 100
+        },
+        "at": "2026-11-15T06:42:05.266337+00:00",
+        "source_group": "cd-retest6",
+        "source_matrix_file": "attempt6/p0-matrix.json",
+        "source_segment": "C8"
+      }
+    }
+  },
+  {
+    "id": "TST-18",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "Other owner detail/payment/cancel404 despite forged user_id; no original detail exposure or writes.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 30
+        },
+        "at": "2026-11-15T06:23:58.784620+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-19",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "After actual85 change product name/price/cover/DRAFT; both details and later payment retain transaction snapshots.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 79
+        },
+        "at": "2026-11-15T06:24:16.863070+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-20",
+    "required_segments": [
+      "serial",
+      "D5",
+      "state-token:edge"
+    ],
+    "assertion_plan": "FAILURE→SUCCESS→SUCCESS replay preserves first MOCK receipt/time; payment fault leaves no partial fields.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 34
+        },
+        "at": "2026-11-15T06:24:12.705962+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      },
+      "D5": {
+        "passed": true,
+        "detail": {
+          "checks": 92
+        },
+        "at": "2026-11-15T06:44:48.460115+00:00",
+        "source_group": "cd-retest6",
+        "source_matrix_file": "attempt6/p0-matrix.json",
+        "source_segment": "D5"
+      },
+      "state-token:edge": {
+        "passed": true,
+        "detail": {
+          "checks": 95
+        },
+        "at": "2026-11-15T06:20:02.404028+00:00",
+        "source_group": "state-token",
+        "source_matrix_file": "state-token-supplement/attempt1/p0-matrix.json",
+        "source_segment": "edge"
+      }
+    }
+  },
+  {
+    "id": "TST-21",
+    "required_segments": [
+      "serial",
+      "state-token:edge"
+    ],
+    "assertion_plan": "Two-line cancellation refunds exact quantities/version once, does not modify current cart, duplicate no-op.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 67
+        },
+        "at": "2026-11-15T06:24:46.376458+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      },
+      "state-token:edge": {
+        "passed": true,
+        "detail": {
+          "checks": 30
+        },
+        "at": "2026-11-15T06:19:44.362234+00:00",
+        "source_group": "state-token",
+        "source_matrix_file": "state-token-supplement/attempt1/p0-matrix.json",
+        "source_segment": "edge"
+      }
+    }
+  },
+  {
+    "id": "TST-22",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "DRAFT products still refunded as DRAFT; cancelled payment/shipment conflict409 and no writes.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 25
+        },
+        "at": "2026-11-15T06:24:43.043111+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-23",
+    "required_segments": [
+      "D4"
+    ],
+    "assertion_plan": "Second refund failure rolls back first refund, order still pending with null cancelled_at.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "D4": {
+        "passed": true,
+        "detail": {
+          "checks": 93
+        },
+        "at": "2026-11-15T06:44:16.523053+00:00",
+        "source_group": "cd-retest6",
+        "source_matrix_file": "attempt6/p0-matrix.json",
+        "source_segment": "D4"
+      }
+    }
+  },
+  {
+    "id": "TST-24",
+    "required_segments": [
+      "C4"
+    ],
+    "assertion_plan": "Independent HTTP pay/cancel synchronized race yields one legal winning transition/receipt/refund.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "C4": {
+        "passed": true,
+        "detail": {
+          "checks": 109
+        },
+        "at": "2026-11-15T06:40:02.812191+00:00",
+        "source_group": "cd-retest6",
+        "source_matrix_file": "attempt6/p0-matrix.json",
+        "source_segment": "C4"
+      }
+    }
+  },
+  {
+    "id": "TST-25",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "Real category/child/SKU create, generated ID readback,21+suffix32 and22rejection, bad hierarchy/duplicate conflicts.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 297
+        },
+        "at": "2026-11-15T06:26:58.249001+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-26",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "Child or any product reference blocks deletion409; empty category can be deleted.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 32
+        },
+        "at": "2026-11-15T06:27:05.819010+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-27",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "Old product edit after order/refund version changes409, sku/stock cannot be overwritten.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 76
+        },
+        "at": "2026-11-15T06:27:47.123260+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-28",
+    "required_segments": [
+      "serial",
+      "C2"
+    ],
+    "assertion_plan": "Restock parameter/overflow zero writes; buy2+restock3 concurrent from10ends11 and versions+2.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 72
+        },
+        "at": "2026-11-15T06:27:26.302266+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      },
+      "C2": {
+        "passed": true,
+        "detail": {
+          "checks": 95
+        },
+        "at": "2026-11-15T06:38:57.842628+00:00",
+        "source_group": "cd-retest6",
+        "source_matrix_file": "attempt6/p0-matrix.json",
+        "source_segment": "C2"
+      }
+    }
+  },
+  {
+    "id": "TST-29",
+    "required_segments": [
+      "serial",
+      "C5",
+      "state-token:edge"
+    ],
+    "assertion_plan": "Pending/cancelled409, paid→shipped firsttime/replay stable; pay/ship race only legal ordering.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 55
+        },
+        "at": "2026-11-15T06:24:28.204006+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      },
+      "C5": {
+        "passed": true,
+        "detail": {
+          "checks": 106
+        },
+        "at": "2026-11-15T06:40:38.186509+00:00",
+        "source_group": "cd-retest6",
+        "source_matrix_file": "attempt6/p0-matrix.json",
+        "source_segment": "C5"
+      },
+      "state-token:edge": {
+        "passed": true,
+        "detail": {
+          "checks": 16
+        },
+        "at": "2026-11-15T06:19:37.266667+00:00",
+        "source_group": "state-token",
+        "source_matrix_file": "state-token-supplement/attempt1/p0-matrix.json",
+        "source_segment": "edge"
+      }
+    }
+  },
+  {
+    "id": "TST-30",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "Both order lists exactCI/status/page; CUSTOMER userId AND, unknown/admin404 and no owner leak.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 115
+        },
+        "at": "2026-11-15T06:25:20.382313+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-31",
+    "required_segments": [
+      "serial",
+      "admin-security"
+    ],
+    "assertion_plan": "Text escaping plus missing/wrong/valid CSRF across cart/order/customer/album with statuses/no partial write.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 25
+        },
+        "at": "2026-11-15T06:22:40.790069+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      },
+      "admin-security": {
+        "passed": true,
+        "detail": {
+          "checks": 49
+        },
+        "at": "2026-11-15T06:30:10.503868+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "admin-security"
+      }
+    }
+  },
+  {
+    "id": "TST-32",
+    "required_segments": [
+      "empty-demo",
+      "restart"
+    ],
+    "assertion_plan": "New empty/demo bootstrap,actual85payment/shipping,other-account cart and both-JAR restart; AI executed, new human cross reproduction explicitly not implemented.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "empty-demo": {
+        "passed": true,
+        "detail": {
+          "checks": 87
+        },
+        "at": "2026-11-15T06:17:34.372567+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "empty-demo"
+      },
+      "restart": {
+        "passed": true,
+        "detail": {
+          "checks": 43
+        },
+        "at": "2026-11-15T06:32:11.277766+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "restart"
+      }
+    }
+  },
+  {
+    "id": "TST-33",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "Graduation entry by code, type/search/page keep theme; independent gift SKU theme/type.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 51
+        },
+        "at": "2026-11-15T06:18:37.333104+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-34",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "Actual2gift98 order and cancel changes only gift inventory; component SKU quantities unaffected.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 31
+        },
+        "at": "2026-11-15T06:24:55.300640+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-35",
+    "required_segments": [
+      "C1"
+    ],
+    "assertion_plan": "Two users confirmed stock1, synchronized HTTP creates exactly1order1item and loser409 retains cart.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "C1": {
+        "passed": true,
+        "detail": {
+          "checks": 136
+        },
+        "at": "2026-11-15T06:38:27.165611+00:00",
+        "source_group": "cd-retest6",
+        "source_matrix_file": "attempt6/p0-matrix.json",
+        "source_segment": "C1"
+      }
+    }
+  },
+  {
+    "id": "TST-37",
+    "required_segments": [
+      "serial",
+      "empty-demo"
+    ],
+    "assertion_plan": "Five SQL/card/list counts match after publish/pay/ship/status; zero-sale included; ADMIN-only empty=0; natural denied-query error not zero.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 206
+        },
+        "at": "2026-11-15T06:31:13.659728+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      },
+      "empty-demo": {
+        "passed": true,
+        "detail": {
+          "checks": 48
+        },
+        "at": "2026-11-15T06:17:26.367953+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "empty-demo"
+      }
+    }
+  },
+  {
+    "id": "TST-38",
+    "required_segments": [
+      "serial"
+    ],
+    "assertion_plan": "CUSTOMER-only q literals/status/pages/profile/linked orders; no-order valid and invalid/admin boundaries.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 102
+        },
+        "at": "2026-11-15T06:28:11.706153+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      }
+    }
+  },
+  {
+    "id": "TST-39",
+    "required_segments": [
+      "serial",
+      "C7"
+    ],
+    "assertion_plan": "Status+monotonic microstamp/same-state no-op,old sessions clear incl silent disable-enable; concurrent disable/write legal outcome.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 170
+        },
+        "at": "2026-11-15T06:28:49.882110+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      },
+      "C7": {
+        "passed": true,
+        "detail": {
+          "checks": 111
+        },
+        "at": "2026-11-15T06:41:32.103196+00:00",
+        "source_group": "cd-retest6",
+        "source_matrix_file": "attempt6/p0-matrix.json",
+        "source_segment": "C7"
+      }
+    }
+  },
+  {
+    "id": "TST-40",
+    "required_segments": [
+      "serial",
+      "C6"
+    ],
+    "assertion_plan": "Real album add/edit/order/noop/remove/fallback/version/path/ownership constraints+same-path bytes; concurrent edit/album one winner.",
+    "result": "PASS",
+    "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "observed_segments": {
+      "serial": {
+        "passed": true,
+        "detail": {
+          "checks": 257
+        },
+        "at": "2026-11-15T06:29:58.007214+00:00",
+        "source_group": "serial-main5",
+        "source_matrix_file": "attempt5/p0-matrix.json",
+        "source_segment": "serial"
+      },
+      "C6": {
+        "passed": true,
+        "detail": {
+          "checks": 42
+        },
+        "at": "2026-11-15T06:40:57.440378+00:00",
+        "source_group": "cd-retest6",
+        "source_matrix_file": "attempt6/p0-matrix.json",
+        "source_segment": "C6"
+      }
+    }
+  }
+]

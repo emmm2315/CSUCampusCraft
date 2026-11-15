@@ -1,0 +1,10 @@
+{
+  "source_sha256": "26f099835358222808c43d2559ee37515db1d137ab17df3c50e45c033501fdbd",
+  "module_sha256": "c66469d569dcdc648be7d5dcbe3d0adabe5f484bbd87c374e4cfa4acd36eabb6",
+  "initial_version_retained": [
+    "verification/tool-versions/c5-gate-initial",
+    "verification/tool-versions/utf8-stdout-initial"
+  ],
+  "reason": "Same-index C5 gate retained; explicit UTF8 JSON bytes after attempt5 external stdout decode failure, with old attempt/tool identities preserved; product SHA/JAR unchanged",
+  "actual_tool_version_saved_at_compile": true
+}

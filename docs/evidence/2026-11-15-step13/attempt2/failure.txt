@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step13-acceptance\verification\run_step13.py", line 61, in main
+    fixtures=serial_user.run(h,user,admin);user,admin=serial_admin.run(h,fixtures['user'],fixtures['admin']);browser(h,fixtures);restart(h,fixtures)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step13-acceptance\verification\serial_user.py", line 47, in run
+    guest=h.Client('public');data=h.state();note=h.pid('CSU-LMK-NOTE-01');gift=h.pid('CSU-GRAD-BOX-01');alt=next(x['id'] for x in data['product'].values() if x['status']=='ON_SALE' and x['stock']>=5 and x['id'] not in [note,gift])
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step13-acceptance\verification\harness.py", line 233, in pid
+    def pid(self,sku):return int(self.rows('SELECT id FROM product WHERE sku='+self.literal(sku)))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step13-acceptance\verification\harness.py", line 167, in rows
+    def rows(self,q,db=None):return self.sql(q,db).stdout.decode('utf-8').strip()
+                                    ^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step13-acceptance\verification\harness.py", line 165, in sql
+    self.save('sql-error-'+str(self.cn)+'.json',json.dumps(dict(query=q,exit_code=p.returncode,stderr=p.stderr.decode('utf-8',errors='replace')),ensure_ascii=False));raise RuntimeError('Private SQL command failed')
+                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Private SQL command failed

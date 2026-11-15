@@ -1,0 +1,18 @@
+PASS None exact source
+PASS None feature branch
+PASS None clean start
+PASS None actual tool version exit
+PASS None actual tool version exit
+PASS None actual tool version exit
+PASS None actual JDK21/Maven3.9.16
+PASS None new clean Wrapper verify user
+PASS None new clean Wrapper verify admin
+PASS None private MySQL initialize
+PASS None private MySQL identity
+PASS INIT-02 LLD enumerates35 named CHECK constraints
+PASS INIT-02 empty35 live CHECK names match LLD and allENFORCED
+PASS INIT-02 demo35 live CHECK names match LLD and allENFORCED
+PASS INIT-02 both source scripts produce identical full normalized predicates
+PASS INIT-02 both source scripts produce identical index columns/order/uniqueness
+PASS INIT-02 structure7zero and demoexpected7counts
+DDL_METADATA_RESULT PASS

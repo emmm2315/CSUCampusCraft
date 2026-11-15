@@ -1,0 +1,81 @@
+{
+  "started_at_utc": "2026-11-15T05:59:59.552128+00:00",
+  "started_at_local": "2026-11-15T13:59:59.552128+08:00",
+  "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "attempt": "attempt1",
+  "executor": "Codex AI, user-authorized new STEP13 execution",
+  "human_cross_reproduction": "not implemented this round; prior human review remains limited to its original scope",
+  "scope": "Three supplementary final-SHA home/filter/badge identifiers, not a separate39-P0 full run",
+  "branch": "feat/step13-acceptance",
+  "runtime_file_count": 199,
+  "runtime_manifest_sha256": "e0f5ea7765eb1b97e889866f80d8af69f00b29004575235c21094735c3b0789a",
+  "user_jar_sha256": "6b6027b67f381cfcc012cd3fc79bc940ad546c9acc2ae46fbf9ac13a71d42700",
+  "admin_jar_sha256": "1a8bf9ded1a535876a96b991659596fa82c01bf2bebccef45c755fe8e8820586",
+  "mysql_port": 56542,
+  "mysql_uuid": "caf56c80-e0b9-11f1-acd6-005056c00001",
+  "mysql_version": "8.4.9",
+  "finished_at_utc": "2026-11-15T06:00:47.036061+00:00",
+  "finished_at_local": "2026-11-15T14:00:47.036061+08:00",
+  "checks": 153,
+  "checks_failed": 0,
+  "p0_matrix": [
+    {
+      "id": "TST-02",
+      "required_segments": [
+        "home-edges"
+      ],
+      "assertion_plan": "Selected home zero-stock, created/sort ties, five-theme no-sale, graduation missing",
+      "result": "PASS",
+      "observed_segments": {
+        "home-edges": {
+          "passed": true,
+          "detail": {
+            "checks": 38
+          },
+          "at": "2026-11-15T06:00:28.455908+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-03",
+      "required_segments": [
+        "combined-filters"
+      ],
+      "assertion_plan": "Simultaneous root/type/name with pagination/count and retained conditions",
+      "result": "PASS",
+      "observed_segments": {
+        "combined-filters": {
+          "passed": true,
+          "detail": {
+            "checks": 32
+          },
+          "at": "2026-11-15T06:00:32.017780+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    },
+    {
+      "id": "TST-09",
+      "required_segments": [
+        "invalid-badges"
+      ],
+      "assertion_plan": "Initial mixed invalid cart SUM badge on all common page families",
+      "result": "PASS",
+      "observed_segments": {
+        "invalid-badges": {
+          "passed": true,
+          "detail": {
+            "checks": 70
+          },
+          "at": "2026-11-15T06:00:46.936770+00:00"
+        }
+      },
+      "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+    }
+  ],
+  "tracked_processes_stopped": true,
+  "error": null,
+  "overall": "PASS",
+  "runtime_inputs_stable": true
+}

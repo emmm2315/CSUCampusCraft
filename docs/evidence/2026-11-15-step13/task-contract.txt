@@ -1,0 +1,23 @@
+STEP13 本轮验收工作契约（原用户要求整理，所有结论新跑）
+最终基线 main=d577179e4468354552d3f5f48d624a4296ee3cfb；已建feat/step13-acceptance。main/远端不动，不push/force，不重跑旧生成脚本、不改旧证据。最终受测SHA代码/SQL/POM/Wrapper保持不变除非真实P0缺陷必须修复后新库复测。全P0实际为39条：TST01–35 +37–40（35+4）；TST36 P1未选做。先读计划STEP13/交付M3，测试全TST和REV07/08，全部BR/arch锁幂等/DB七表35CHECK，review README及closeout/owner-review-docs/README，Word报告/交付/演示节。
+环境：全新隔离MySQL独立datadir/UUID/端口；两端JDK21根Wrapper clean verify；主双端8080/8081或18080/18081，记录PID监听/JDBC UTC/页面AsiaShanghai。root负责build，verify agent单一编排运行。记录完整199+运行输入/摘要、完整SHA/起末工作区、JARsha。文档证据另提交。
+A 复现：SQL01结构全空两端可启动，user空态，admin无账号不可登录。再ADMIN-only空业务库验证控制台5计数0/列表空/详情404。SQL02独立demo初始七表4/15/60/100/10/10/20。85主线真实HTTP清alice车→2本CSU-LMK-NOTE-01×18+1CSU-GRAD-BOX-01×49→确认85→下单1主2明细/10,12→8,11/两个version+1/车清/徽标0/303→支付成功→admin筛选查单发货→U08SHIPPED，A02计数相应变化。重启双端订单支付发货/另一账号非空车/相册/计数保持。成交后改商品名价封面DRAFT，U08/A07仍成交快照，SQL订单两表不变。
+B TST01–35/37–40逐条独立断言映射最终SHA，可复用同夹具但不可只引旧结果；每条结果/证据/备注。字段通配符/错误/权限CSRF/输入边界按现行文档。未选做/未实现明确TST36、真实支付物流、REST。另一位真人复现未实施如实，不可伪造签署。2026-11-15本人复核已存在仅原抽验范围，STEP13为本人授权AI自动实测。
+C 8真实并发场景，每案独立连接/线程与CyclicBarrier或CountDownLatch，同步起点/实际起止/HTTP结果。不得顺序点击替代。外部Java latch HTTP进入真实Service，独立JDBC探针可收集performance_schema.data_lock_waits证明；底层探针不能替代HTTP业务。
+C1 两账号争stock1，各车1和有效确认，只1成功/另一409，stock0/version+1/1主1明细；失败车留确认失效。
+C2 买2 vs admin补3初始10，两成功终11，两次version正确，购买清车无丢更新。
+C3 同一确认双POSTorders，只1主单，另一409/确认失效，无重复扣库。
+C4 两同账号独立会话支付vs取消同pending，只一状态生效，失败方409；PAID不返库凭证正确/CANCELLED只返一次无凭证，首次时间。
+C5 admin发货vs用户支付并发pending，串行状态可解释（支付先→均成功，发货先→409pending再支付成功）。
+C6 后台同商品编辑/相册用同version并发，一409一成功，商品version恰+1，失败方无写。
+C7 admin禁用vs用户进行中写，以用户锁/authStamp，只能写先完成或拒绝，无部分写，禁用后旧会话后续302。
+C8 同用户车并发加购/改量用户锁串行，最终数量/version符合合法请求，无丢失更新。
+D 5触发器故障，每案隔离schema CREATE触发器→真实HTTP/Service→七表前后全字段摘要相同→DROP核无残留，归档语句/条件/HTTP结果/注入点，不移schema，不改产品。优先SIGNAL SQLSTATE，工具故障单独记。
+D1 BEFORE INSERT sales_order_item（主单已插后）失败全部回滚。
+D2 BEFORE UPDATE product指定商品/条件扣库失败→主明细/库存/version/车全回滚。
+D3 BEFORE DELETE cart_item指定条目清车失败→全部回滚。
+D4 取消两项时第二件返库前失败→首件返库亦回滚，pending/取消时间NULL/库存version原值。
+D5 BEFORE UPDATE sales_order markPaid失败→状态凭证时间无部分写。
+E 最终docs：测试新增STEP13全39P0矩阵/并发故障/失败复测/SHA环境；计划M3按实际全部P0+空库+证据完整才通过，STEP13行/台账/P1未选做，历史句不改；README最终阶段SHA演示；Word局部更新STEP13/M3结果/演示/复核AI声明保留全部操作指引；实验报告md或docx项目范围/分层会话/事务锁序/真实85请求校验快照事务/一真实并发故障/AI与人工分工，组员互评未实施，未验证标未验证。可选答辩脚本。
+F docs/evidence/2026-11-15-step13/：attemptN/result/http.jsonl/db-writes/并发raw/故障摘要/emptydemo/P0matrix/12–20截图(1366及1920)/敏感扫描/artifacts.sha256真实写盘字节/cleanup；建议<=10MB；只新目录-text。不得保存密码/散列/CookieCSRF确认原值/完整收货信息。需要压缩可gzip JSONL raw证据，清晰索引，保留失败。owned进程临时datadir清理并记录。最终本地提交，不改main/远端。
+失败处理：P0 FAIL记录→修复→新私库最终SHA全验；任何未跑/失败未修复M3仍进行中。工具错误不是产品缺陷，保留归类，不能伪装成功。并发故障部分完成就列未完成，不以顺序代替。

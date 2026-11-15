@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step13-acceptance\verification\run_step13.py", line 61, in main
+    fixtures=serial_user.run(h,user,admin);user,admin=serial_admin.run(h,fixtures['user'],fixtures['admin']);browser(h,fixtures);restart(h,fixtures)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step13-acceptance\verification\serial_user.py", line 76, in run
+    for kind in ['ALL','STATIONERY','SOUVENIR']:product_list(h,guest,{'categoryId':graduation['id'],'type':kind,'q':'','page':2,'size':2})
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step13-acceptance\verification\serial_user.py", line 20, in product_list
+    if k in p:h.check('pagination keeps '+k,query.get(k)==[str(p[k]).strip()])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Starmetor\.codex\visualizations\2026\11\10\01a1c2de-c7a6-7290-8ee3-510d0f746abe\step13-acceptance\verification\harness.py", line 149, in check
+    if not passed:raise AssertionError(name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: pagination keeps q

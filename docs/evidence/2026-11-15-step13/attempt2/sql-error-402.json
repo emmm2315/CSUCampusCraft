@@ -1,0 +1,1 @@
+{"query": "SELECT id FROM product WHERE sku=(CONVERT(0x4353552d4c4d4b2d4e4f54452d3031 USING utf8mb4))", "exit_code": 1, "stderr": "ERROR 1267 (HY000) at line 1: Illegal mix of collations (utf8mb4_0900_as_ci,IMPLICIT) and (utf8mb4_0900_ai_ci,IMPLICIT) for operation '='\r\n"}

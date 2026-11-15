@@ -1,0 +1,338 @@
+{
+  "overall": "PASS",
+  "scope": "Final STEP13 guide v3 all21 original rendered pages, narrow document structure and actual renderer; AI layout QA, not group/human acceptance",
+  "tested_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+  "input_docx_sha256": "4666ee6b7d412b507b46a979b026f3a6a803a71b71dc9a731214314eca13141a",
+  "actual_renderer": "Microsoft Word COM16.0 ExportAsFixedFormat read-only, then bundled pypdfium2 at144dpi",
+  "canonical_renderer": {
+    "path": "canonical-final-v3.log",
+    "exit_code": 1,
+    "diagnosis": "Packaged render_docx.py attempted on final candidate; LibreOffice soffice.exe not found on PATH"
+  },
+  "word_com_log": "final-v3-word-com.log",
+  "actual_rendered_page_count": 21,
+  "actual_original_pages_viewed": 21,
+  "pages": [
+    {
+      "page": 1,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "4127277bd7ce7d5e23a0cb0f0bfc20b729cd9b60760d237e0f59946276b72845",
+      "path": "page-01.png",
+      "png_sha256": "d5e241b2b7ef4b9264046bd18cf4c71e79ec865b5026303b51531ce3c0079175",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "缩短状态导语后原页末换页重新留在第1页，原第2空白页已消除；原目标和使用指引完整。"
+    },
+    {
+      "page": 2,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "8ebfe93e16fb50497cb12eaf3fa829a8f8dcdfc6a232dec6b3134908e89210af",
+      "path": "page-02.png",
+      "png_sha256": "a12beb0fd142b7cfba508f62fe9d144a9779809d214374cac3115345f58f867e",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "STEP01–14路线表完整，分工与实际AI/本人范围说明可读，无截断。"
+    },
+    {
+      "page": 3,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "4491547a00fde3e80ec7e400701938a55e45c2a640332f3f012a129e5bb7750b",
+      "path": "page-03.png",
+      "png_sha256": "3aee9d6c03d4d141ef93ef8e0bf475ba351bb426e8229a04e1771409a7c0fe3b",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "Wrapper命令、PowerShell SOURCE引号、现行管理根页登录/A02和已替换教学口令说明均可读。"
+    },
+    {
+      "page": 4,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "7761040d1d47315554b58c2c9102718b10840afad177d07422eedc18232e8174",
+      "path": "page-04.png",
+      "png_sha256": "65b91e9ccf1ed8c868f5b1b74b0a3fdf849e9ae1f13d08db4a66cab2be41d189",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "M0历史主题复现指引保留；当前状态指向最终附录，页末文字完整。"
+    },
+    {
+      "page": 5,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "dd524d48763172897a8240adafb4dab01ce9919db866886ea986fabdfd600e1c",
+      "path": "page-05.png",
+      "png_sha256": "ca3ccb8735e02813fc33d5dbacbc96b7d1849a25796c9e0a7f6e66c3bfbf511c",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "保留的开发操作指引、编号、标题、正文、页眉页脚均可读，未见新增裁切、重叠或缺字。"
+    },
+    {
+      "page": 6,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "8f6cce29921513c9c68ef367cfd6cd65584db5ea8751f80714c26d8f254e33c1",
+      "path": "page-06.png",
+      "png_sha256": "b94a0cc8e7c1be52d57a30ed70388ca01ca2a4da9bb921638b23b16298d7cbc4",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "保留的开发操作指引、编号、标题、正文、页眉页脚均可读，未见新增裁切、重叠或缺字。"
+    },
+    {
+      "page": 7,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "4d40acff12f81dbacf4f495447960c3709ea8924f590ac62bd3850631f8aac64",
+      "path": "page-07.png",
+      "png_sha256": "718d605f8aac45d76a3eaf5222884886e116eaf0b24470cfcb50de0a055c810d",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "保留的开发操作指引、编号、标题、正文、页眉页脚均可读，未见新增裁切、重叠或缺字。"
+    },
+    {
+      "page": 8,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "7da4e14d7fd6407b767f660d89de44196fcb6b43628ba5ae7688ea82772bc045",
+      "path": "page-08.png",
+      "png_sha256": "70de0a94cd45dcc17c7690580d6e42860a7aee6972b5d5b36c121168814983ee",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "保留的开发操作指引、编号、标题、正文、页眉页脚均可读，未见新增裁切、重叠或缺字。"
+    },
+    {
+      "page": 9,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "e8319c3288f701a53b2a57568fe3fe96f837faaf2bcd57f0d33c9f15a0e51a4b",
+      "path": "page-09.png",
+      "png_sha256": "ac97e0606032ee7d50ca2184e861fcc9b3e8d6ab8ee37966a6b23c6e8f5914ed",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "保留的开发操作指引、编号、标题、正文、页眉页脚均可读，未见新增裁切、重叠或缺字。"
+    },
+    {
+      "page": 10,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "e3173adc6dcc782101097b50aab450d664da7f4a42669cb0c806df539bf1d3f8",
+      "path": "page-10.png",
+      "png_sha256": "1e613a43be11f65b0b8b5963995e246e130319e780b009e1cdba27ae6100958a",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "保留的开发操作指引、编号、标题、正文、页眉页脚均可读，未见新增裁切、重叠或缺字。"
+    },
+    {
+      "page": 11,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "46b81ed9c6b8054cb12a6261dcddbaf803b1a81f34401bd7cc631a2a3b5adec3",
+      "path": "page-11.png",
+      "png_sha256": "3ae9b14f6ce7c4e4eb717e25cd325c802eaa939f96429388471439c1996f5780",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "保留的开发操作指引、编号、标题、正文、页眉页脚均可读，未见新增裁切、重叠或缺字。"
+    },
+    {
+      "page": 12,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "8a948914e4c97b0fd0fd05d4d8b2fa84a64e4b132bddeedc13199fd7a73a2a3e",
+      "path": "page-12.png",
+      "png_sha256": "bbe1050c0015ae0b1d0b1d13532c2ab3b300cd324b4f0b82b782c637b45200a1",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "保留的开发操作指引、编号、标题、正文、页眉页脚均可读，未见新增裁切、重叠或缺字。"
+    },
+    {
+      "page": 13,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "c8230698f4c91500f3d402cb97bdfcb81183689826245d4160acb45efaa47aef",
+      "path": "page-13.png",
+      "png_sha256": "e1e2a400649cf5bb7b18ca8a4d15ae05f8a51d2ff178486aa2473bcfde5e7d0b",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "保留的开发操作指引、编号、标题、正文、页眉页脚均可读，未见新增裁切、重叠或缺字。"
+    },
+    {
+      "page": 14,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "ea5399bedc7f7e93fd29338ec7bd0fc0fed3baf151ca006ccd0519c50080943c",
+      "path": "page-14.png",
+      "png_sha256": "c1500305918c189ddfe437362877bda84f9c1453f44aac931322988d31b4765e",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "保留的开发操作指引、编号、标题、正文、页眉页脚均可读，未见新增裁切、重叠或缺字。"
+    },
+    {
+      "page": 15,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "a22794bb425089cabfbed3fdf54e81faef8d579f79b44381962dff3c4c9002d4",
+      "path": "page-15.png",
+      "png_sha256": "cb482e1c6595cf1a7960bc877c8548814a328633f42ac31ff93c086a31d55344",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "保留的开发操作指引、编号、标题、正文、页眉页脚均可读，未见新增裁切、重叠或缺字。"
+    },
+    {
+      "page": 16,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "cf4ee296afb194257c8754f596094bc88656033a1094e003bc67365764de88ae",
+      "path": "page-16.png",
+      "png_sha256": "c3c9c3511b0afec24a826eb0abc31e1e73fa819d61534ad86a8d801f80d6eb4a",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "保留的开发操作指引、编号、标题、正文、页眉页脚均可读，未见新增裁切、重叠或缺字。"
+    },
+    {
+      "page": 17,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "2673eb016129f5550a94725a4067491d0c526c12c465c8182efa0048e37fc801",
+      "path": "page-17.png",
+      "png_sha256": "cc86b89f871ee74142237ec771d7488d6fa569632a7c5d53b3c2b67ec4801d1e",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "保留的开发操作指引、编号、标题、正文、页眉页脚均可读，未见新增裁切、重叠或缺字。"
+    },
+    {
+      "page": 18,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "80ea4b7499b840d66b829dcf84fd864cdf383fb3051b3e6de36c9b5e8b229826",
+      "path": "page-18.png",
+      "png_sha256": "3e372681615b6fcbcbed3cb52027513284e1296c0db063623eb010788ae0d86c",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "85元主线、独立异常与资源冲突说明保留，实际自动执行与未实施真人互评边界明确。"
+    },
+    {
+      "page": 19,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "95a7413836b8ed155121cff2ad9571f590be57193986561031e71331d3432ca2",
+      "path": "page-19.png",
+      "png_sha256": "90842b4c255579fee0491915c646b9a543007da9460d34696ca6f0470015733a",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "原执行记录表、交付核对与报告建议完整；模板复核条目保留为指引，不冒充事实。"
+    },
+    {
+      "page": 20,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "ce29ec8d8194fa53b451250568c727106579b489d7d1a3b933bfd448e8cc6621",
+      "path": "page-20.png",
+      "png_sha256": "9a724b098bd315f86e998a39e5371abee93ebedfc3ae04ab24a63d7e8aa6fc6d",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "新增实测附录起独立页；SHA、端口、初值、真实85元订单、8C/5D及分组口径可读；段落自然续至21。"
+    },
+    {
+      "page": 21,
+      "width": 1191,
+      "height": 1684,
+      "pixel_sha256": "f9c4d54e54d92b2208797646f31636e8c3a8c942f7f4bfa649e893fba468f37d",
+      "path": "page-21.png",
+      "png_sha256": "74b7a8976de170be78c986ef744aba916c32054937eb374241d5ec309698e587",
+      "actual_original_page_viewed": true,
+      "visual_result": "PASS",
+      "observation": "延续原叶FAIL/缺stdout不追认，原INIT03历史身份及统一清理/人工P1边界完整；末页为空白余量，没有独立空白页。"
+    }
+  ],
+  "baseline_page_count": 19,
+  "original_pages_pixel_identical": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    19
+  ],
+  "intentionally_changed_original_pages": [
+    1,
+    2,
+    3,
+    4,
+    18
+  ],
+  "appended_pages": [
+    20,
+    21
+  ],
+  "structure": {
+    "overall": "PASS",
+    "source_sha256": "85d3e052f82c3a79f1bd7259b84ceb229ed4c8fd5526d980c0412e4c0cae7c4d",
+    "output_sha256": "4666ee6b7d412b507b46a979b026f3a6a803a71b71dc9a731214314eca13141a",
+    "source_bytes": 57753,
+    "output_bytes": 60029,
+    "original_paragraphs": 319,
+    "new_paragraphs": 334,
+    "tables_unchanged": 2,
+    "only_changed_package_part": "word/document.xml",
+    "retained_original_paragraphs_unchanged_except": [
+      3,
+      19,
+      25,
+      26,
+      29,
+      35,
+      37,
+      51,
+      292
+    ],
+    "appended_paragraph_count": 15,
+    "old_teaching_credential_not_recorded": true,
+    "original_source_unmodified": true,
+    "tested_source_sha": "d577179e4468354552d3f5f48d624a4296ee3cfb",
+    "human_scope_not_expanded": true
+  },
+  "marker": {
+    "successful_invocation_count": 1,
+    "operation_kind": "edit",
+    "expected_docx_output_count": 1,
+    "exit_code": 0,
+    "log": "artifact-operation-marker.log",
+    "log_bytes": 0
+  },
+  "iteration_history": [
+    {
+      "iteration": 1,
+      "docx_sha256": "4526b5e97a027b0d85f39348958d7bdc56571d04b781310b7de73b1eba34039b",
+      "pages": 22,
+      "review_not_completed": true
+    },
+    {
+      "iteration": 2,
+      "docx_sha256": "44e07959794de62b713a2b18119d5e1d5bd503e7e23c7cd36dbde76f8596896d",
+      "pages": 22,
+      "observed_issue": "Longer front status pushed existing manual page break to an empty page2; original pages1/2 actually inspected, full QA not claimed"
+    },
+    {
+      "iteration": 3,
+      "docx_sha256": "4666ee6b7d412b507b46a979b026f3a6a803a71b71dc9a731214314eca13141a",
+      "pages": 21,
+      "resolution": "Shortened only authorized status paragraph3; retained full factual detail in appendix; all21 pages actually inspected"
+    }
+  ],
+  "limits": [
+    "AI visual review does not substitute new human actions or teammate sign-off.",
+    "Canonical packaged renderer failed; do not describe LibreOffice rendering as successful.",
+    "Original source Word input was read-only and unchanged during build/render; candidate changes only9 authorized body slots and appends15 paragraphs.",
+    "QA PDF/PNGs are private intermediates, not additional requested deliverables. Baseline PDF was deleted after pixel-metadata capture to avoid retaining its old teaching credential."
+  ],
+  "completed_at": "2026-11-15T15:09:23.564620+08:00"
+}

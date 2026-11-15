@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-15T06:16:11.616117+00:00",
+  "classification": "EXTERNAL_TOOL_UI_FIXTURE_INTERFACE_AND_PUBLIC_FIXTURE_SCAN",
+  "original_result": "FAIL",
+  "actual_http_records": 776,
+  "browser_helper_stdout": {
+    "overall": "FAIL",
+    "screenshotCount": 0,
+    "checks": 1,
+    "failureClass": "ENOENT"
+  },
+  "root_cause": "Caller supplied public JSON content where the fresh CJS explicitly required a JSON file path; ENOENT before browser launch",
+  "fix": "Public fixture now saved at attempt root/browser-public-fixture.json; only its absolute path enters STEP13_UI_FIXTURE. browser output dir remains nonexistent until helper creates it. Cookie values stay in environment only.",
+  "secondary_scan": "Fixed clearly synthetic phone string was registered private and matched only its own source template. Original scanFAIL retained; generator now randomizes phone per request. Actual responses and safe DB state were already structurally masked/hashed.",
+  "CD_never_imported_or_compiled": true,
+  "new_C5_probe": "Before any C/D execution, author corrected same-index gate and recompiled/privacy-regressed; actual tools-at-use hashes will be archived in new run",
+  "old_saved_artifacts_verified": 384,
+  "owned_processes_stopped": true,
+  "source_unchanged": "d577179e4468354552d3f5f48d624a4296ee3cfb"
+}
