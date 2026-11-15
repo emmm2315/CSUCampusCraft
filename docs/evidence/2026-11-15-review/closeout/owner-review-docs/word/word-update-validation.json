@@ -1,0 +1,104 @@
+{
+  "source": "D:\\Github Projects\\CSUCampusCraft\\docs\\实验一 CSUCampusCraft 校园文创商店实验指导书.docx",
+  "method": "ZIP-preserving text-only OOXML replacement; python-docx reopen validation",
+  "before_sha256": "1202242524c1e3947de820761b9a976376d8410615b43118202f1de69ff21f93",
+  "after_sha256": "85d3e052f82c3a79f1bd7259b84ceb229ed4c8fd5526d980c0412e4c0cae7c4d",
+  "before_bytes": 57480,
+  "after_bytes": 57753,
+  "body_paragraphs_before_after": [
+    319,
+    319
+  ],
+  "tables_before_after": [
+    2,
+    2
+  ],
+  "changes": [
+    {
+      "paragraph_index_zero_based": 3,
+      "before": "M0 工程初始化已完成，M1 业务开发尚未开工。已在本地独立目录和隔离 MySQL 自动复现双端构建、独立启动、同库读取、重启保留与共享图片，记录见《测试与验收用例》。以下业务步骤为待开工计划，预期结果是完成标准。",
+      "after": "当前状态：STEP01–12 已交付；M0/M1/M2 完成；M2 已完成 2026-11-15 本人复核（高宇弘；组员互评未实施，AI 辅助实测）；STEP13 整体验收待执行；P1 未选做。M0 曾在独立目录和隔离 MySQL 自动复现双端构建、启动、同库读取、重启保留与共享图片，记录见《测试与验收用例》。以下步骤的操作指引保留；STEP01–12 已按本指导书实现并通过本人复核，STEP13 按本指导书执行整体验收。"
+    },
+    {
+      "paragraph_index_zero_based": 19,
+      "before": "A 为用户端，B 为管理端，C 为共享数据与联调。每步登记真实负责人和另一位复核人；两人组可以分担 C。建议先看立项范围，再看需求业务，随后按本步查看页面 数据库 系统路由和测试文档。",
+      "after": "A 为用户端，B 为管理端，C 为共享数据与联调。每步登记真实负责人和另一位复核人；两人组可以分担 C。实际执行说明：本项目由本人高宇弘执行（AI 辅助），复核由本人于 2026-11-15 完成；课程模板分工未按三人组实施，组员互评未实施。建议先看立项范围，再看需求业务，随后按本步查看页面 数据库 系统路由和测试文档。"
+    },
+    {
+      "paragraph_index_zero_based": 37,
+      "before": "演示版包含 alice bob disabled admin，教学密码 CSUCampusCraft123!。前三者为普通顾客，disabled 已禁用；admin 为管理员。商城账号与 MySQL 应用连接账号各有用途。M0 尚无登录页面，账号用于 STEP04 及以后。",
+      "after": "演示版包含 alice bob disabled admin，教学密码 CSUCampusCraft123!。前三者为普通顾客，disabled 已禁用；admin 为管理员。商城账号与 MySQL 应用连接账号各有用途。M0 阶段尚无登录页面（历史状态）；当前 STEP04 登录已交付并通过本人复核，账号用于 STEP04 及以后。"
+    },
+    {
+      "paragraph_index_zero_based": 51,
+      "before": "M0 已独立复现双端单独及同时运行、同库改名、重启保留和共享图片。本步保留给新成员复现；当前实现仅到主题读取与初始化，规划页面待开发。",
+      "after": "M0 已独立复现双端单独及同时运行、同库改名、重启保留和共享图片。本步保留给新成员复现；“仅到主题读取与初始化”为 M0 历史状态；当前 STEP01–12 已交付并通过本人复核，STEP13 整体验收待执行。"
+    },
+    {
+      "paragraph_index_zero_based": 292,
+      "before": "本页在 P0 功能开发后使用。M0 仅完成初始化，尚不具备完整交易页面；不能把以下步骤写成已演示。所有分支使用隔离测试库恢复初值，前一分支的变更不得隐含成为后一分支的夹具。",
+      "after": "本页在 P0 功能开发后使用。STEP01–12 已交付并通过 2026-11-15 本人复核；以下操作指引保留，未实际执行的完整演示与 STEP13 整体验收仍须另行记录。所有分支使用隔离测试库恢复初值，前一分支的变更不得隐含成为后一分支的夹具。"
+    }
+  ],
+  "only_changed_package_members": [
+    "word/document.xml"
+  ],
+  "formatting_xml_skeleton_unchanged": true,
+  "all_other_package_members_byte_identical": true,
+  "table_xml_byte_identical": true,
+  "all_xml_and_relationships_parse": true,
+  "zip_test": "PASS",
+  "python_docx_reopen": "PASS",
+  "STEP01_through_STEP14_present": true,
+  "status": "PASS",
+  "visual_review": {
+    "all_pages_opened_at_original_png_size": true,
+    "pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "word_closeout_agent_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      18
+    ],
+    "root_agent_pages": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      19
+    ],
+    "result": "PASS: no clipping, overlap, broken tables, missing glyphs or header/footer defects",
+    "reviewer_type": "AI document layout verification; not new human spot-check"
+  },
+  "remaining_scope": "STEP13 full P0/concurrency/fault acceptance pending; P1 not selected"
+}
