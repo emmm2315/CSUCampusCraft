@@ -4,13 +4,15 @@
 <head><title>CSUCampusCraft 用户端</title></head>
 <body>
 <div th:fragment="mainContent" class="catalog-home" data-page-id="U01">
-    <header class="catalog-home-heading page-heading">
-        <div>
+    <header class="catalog-home-heading page-heading ef-page-head ef-hero">
+        <div class="ef-hero-copy">
             <p class="eyebrow">中南大学校园文创</p>
+            <p class="ef-eyebrow">CAMPUS COLLECTION</p>
+            <p class="ef-wordmark" aria-hidden="true">CAMPUS<br><span>CRAFT.</span></p>
             <h1>CSUCampusCraft 用户端</h1>
             <p class="muted">按校园主题发现文具和纪念周边。</p>
         </div>
-        <form class="catalog-search" method="get" th:action="@{/products}" role="search">
+        <form class="catalog-search ef-hero-search" method="get" th:action="@{/products}" role="search">
             <label for="home-query">搜索校园文创</label>
             <div class="catalog-search-controls">
                 <input id="home-query" type="search" name="q" placeholder="输入商品名称" aria-describedby="home-query-help">
@@ -20,7 +22,7 @@
         </form>
     </header>
 
-    <section class="graduation-banner" th:if="${graduationTheme != null}"
+    <section class="graduation-banner ef-graduation" th:if="${graduationTheme != null}"
              aria-labelledby="graduation-heading" data-graduation-section>
         <div>
             <p class="eyebrow">毕业专区</p>
@@ -33,16 +35,16 @@
     </section>
 
     <section class="panel catalog-section" aria-labelledby="themes-heading">
-        <div class="section-heading">
+        <div class="section-heading ef-section-head">
             <div>
-                <h2 id="themes-heading">校园主题</h2>
+                <p class="ef-eyebrow">CAMPUS THEMES</p><h2 id="themes-heading">校园主题</h2>
                 <p class="muted" th:attr="data-theme-count=${#lists.size(themes)}">
                     共 <span th:text="${#lists.size(themes)}">0</span> 个一级主题
                 </p>
             </div>
             <a th:href="@{/products}">浏览全部商品</a>
         </div>
-        <p class="empty-state" th:if="${#lists.isEmpty(themes)}">暂无主题，可先浏览全部商品。</p>
+        <p class="empty-state ef-empty" th:if="${#lists.isEmpty(themes)}">暂无主题，可先浏览全部商品。</p>
         <ul class="theme-list catalog-themes" th:unless="${#lists.isEmpty(themeNavigation)}">
             <li th:each="navigation : ${themeNavigation}" th:attr="data-theme-code=${navigation.theme.code}">
                 <a class="theme-primary"
@@ -59,22 +61,22 @@
     </section>
 
     <section class="catalog-section" aria-labelledby="newest-heading" data-section="newest">
-        <div class="section-heading">
-            <div><p class="eyebrow">校园新品</p><h2 id="newest-heading">新品上架</h2></div>
+        <div class="section-heading ef-section-head">
+            <div><p class="eyebrow">校园新品</p><p class="ef-eyebrow">NEW ARRIVALS</p><h2 id="newest-heading">新品上架</h2></div>
             <a th:href="@{/products(type='ALL',sort='NEWEST',page=1,size=6)}">查看全部新品</a>
         </div>
-        <p class="empty-state" th:if="${#lists.isEmpty(newProducts)}">暂无可售商品，稍后再来看看。</p>
+        <p class="empty-state ef-empty" th:if="${#lists.isEmpty(newProducts)}">暂无可售商品，稍后再来看看。</p>
         <div class="catalog-grid" th:unless="${#lists.isEmpty(newProducts)}">
             <th:block th:each="item : ${newProducts}"><th:block th:replace="~{fragments/catalog :: productCard(${item})}"></th:block></th:block>
         </div>
     </section>
 
     <section class="catalog-section" aria-labelledby="featured-heading" data-section="featured">
-        <div class="section-heading">
-            <div><p class="eyebrow">日常文创</p><h2 id="featured-heading">精选推荐</h2></div>
+        <div class="section-heading ef-section-head">
+            <div><p class="eyebrow">日常文创</p><p class="ef-eyebrow">FEATURED COLLECTION</p><h2 id="featured-heading">精选推荐</h2></div>
             <a th:href="@{/products(type='ALL',sort='DEFAULT',page=1,size=6)}">浏览全部商品</a>
         </div>
-        <p class="empty-state" th:if="${#lists.isEmpty(featuredProducts)}">暂无可售商品，可稍后再来看看。</p>
+        <p class="empty-state ef-empty" th:if="${#lists.isEmpty(featuredProducts)}">暂无可售商品，可稍后再来看看。</p>
         <div class="catalog-grid catalog-grid-featured" th:unless="${#lists.isEmpty(featuredProducts)}">
             <th:block th:each="item : ${featuredProducts}"><th:block th:replace="~{fragments/catalog :: productCard(${item})}"></th:block></th:block>
         </div>

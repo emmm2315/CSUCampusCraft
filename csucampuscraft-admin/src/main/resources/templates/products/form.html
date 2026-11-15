@@ -4,30 +4,30 @@
 <head><title>商品资料</title></head>
 <body>
 <div th:fragment="mainContent" data-page-id="A05"
-     th:attr="data-product-id=${product == null ? null : product.id},data-version=${product == null ? 0 : product.version}">
-    <header class="page-heading admin-toolbar">
-        <div><p class="eyebrow">商品资料</p><h1 th:text="${editing ? '编辑商品' : '新建商品'}">商品资料</h1>
+     th:attr="data-product-id=${product == null ? null : product.id},data-version=${product == null ? 0 : product.version}" class="ef-admin-page">
+    <header class="page-heading admin-toolbar ef-page-head">
+        <div><p class="eyebrow">商品资料</p><p class="ef-eyebrow" aria-hidden="true">PRODUCT DETAILS</p><h1 th:text="${editing ? '编辑商品' : '新建商品'}" class="ef-page-title">商品资料</h1>
             <p class="muted" th:text="${editing ? '修改资料时保留现有 SKU、库存和上架状态。' : '新商品先保存为草稿，检查后再上架。'}">商品说明</p></div>
-        <div class="button-row">
-            <a class="button button-secondary" th:href="${returnUrl}">返回商品列表</a>
-            <a class="button button-secondary" th:if="${editing}"
+        <div class="button-row ef-actions">
+            <a class="button button-secondary ef-btn" th:href="${returnUrl}">返回商品列表</a>
+            <a class="button button-secondary ef-btn" th:if="${editing}"
                th:href="@{/products/{id}/images(id=${product.id})}" data-album-link>管理商品相册</a>
-            <a class="button button-secondary" th:if="${editing}"
+            <a class="button button-secondary ef-btn" th:if="${editing}"
                th:href="@{/products/{id}/edit(id=${product.id},returnUrl=${returnUrl})}" data-reload-product>重新载入编辑页</a>
         </div>
     </header>
-    <div class="empty-state" th:if="${#lists.isEmpty(categories)}">
+    <div class="empty-state ef-empty" th:if="${#lists.isEmpty(categories)}">
         <p>还没有可用的二级分类，请先创建分类。</p><a th:href="@{/categories/new}">前往分类管理</a>
     </div>
     <th:block th:replace="~{fragments/alerts :: summary(${fieldErrors})}"></th:block>
-    <section class="panel">
-        <form method="post" th:action="${editing ? '/products/' + product.id : '/products'}" data-submit-state data-product-form>
+    <section class="panel ef-form-section">
+        <form method="post" th:action="${editing ? '/products/' + product.id : '/products'}" data-submit-state data-product-form class="ef-form">
             <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
             <input type="hidden" name="returnUrl" th:value="${returnUrl}">
             <input th:if="${editing}" type="hidden" name="version" th:value="${form.version}">
             <p id="version" class="field-help" th:if="${editing}" th:classappend="${fieldErrors.containsKey('version') ? 'field-error' : ''}"
                th:text="${fieldErrors.containsKey('version') ? fieldErrors.get('version') : '保存时核对商品资料状态；提示过期时请重新载入。'}">资料状态</p>
-            <div class="form-grid">
+            <div class="form-grid ef-editor-grid">
                 <th:block th:if="${!editing}"><th:block th:replace="~{fragments/fields :: text('sku','sku','SKU',${form.sku},${fieldErrors})}"></th:block></th:block>
                 <div class="form-field" th:if="${editing}">
                     <label for="sku">SKU（只读）</label>
@@ -70,41 +70,41 @@
             </div>
             <th:block th:replace="~{fragments/fields :: text('coverImage','coverImage','封面路径',${form.coverImage},${fieldErrors})}"></th:block>
             <p class="field-help">可留空。填写时使用 images/ 下的站内相对路径，最多 255 个字符。</p>
-            <div class="button-row">
-                <button type="submit" th:disabled="${#lists.isEmpty(categories)}" th:text="${editing ? '保存资料' : '保存草稿'}">保存</button>
-                <a class="button button-secondary" th:href="${returnUrl}">取消</a>
+            <div class="button-row ef-actions">
+                <button type="submit" th:disabled="${#lists.isEmpty(categories)}" th:text="${editing ? '保存资料' : '保存草稿'}" class="ef-btn go">保存</button>
+                <a class="button button-secondary ef-btn" th:href="${returnUrl}">取消</a>
             </div>
         </form>
     </section>
-    <section class="panel" th:if="${editing}" aria-labelledby="status-heading">
-        <h2 id="status-heading">商品状态</h2>
+    <section class="panel ef-form-section" th:if="${editing}" aria-labelledby="status-heading">
+        <h2 id="status-heading" class="ef-section-head">商品状态</h2>
         <p>当前为 <strong th:text="${product.status == 'DRAFT' ? '草稿' : '上架'}">草稿</strong>
             <span th:if="${product.status == 'ON_SALE' and product.stock == 0}">（售罄）</span></p>
-        <div class="button-row">
+        <div class="button-row ef-actions">
             <form th:if="${product.status == 'DRAFT'}" method="post" th:action="@{/products/{id}/publish(id=${product.id})}"
-                  data-submit-state data-product-action="publish">
+                  data-submit-state data-product-action="publish" class="ef-form">
                 <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
                 <input type="hidden" name="returnUrl" th:value="${returnUrl}">
                 <input type="hidden" name="version" th:value="${product.version}">
-                <button type="submit">上架商品</button>
+                <button type="submit" class="ef-btn go">上架商品</button>
             </form>
             <form th:if="${product.status == 'ON_SALE'}" method="post" th:action="@{/products/{id}/unpublish(id=${product.id})}"
-                  data-submit-state data-product-action="unpublish">
+                  data-submit-state data-product-action="unpublish" class="ef-form">
                 <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
                 <input type="hidden" name="returnUrl" th:value="${returnUrl}">
                 <input type="hidden" name="version" th:value="${product.version}">
-                <button type="submit" class="button-secondary">下架商品</button>
+                <button type="submit" class="button-secondary ef-btn">下架商品</button>
             </form>
         </div>
     </section>
-    <section class="panel" th:if="${editing}" aria-labelledby="restock-heading">
-        <h2 id="restock-heading">增量补货</h2>
-        <p>当前库存 <strong th:text="${product.stock}">0</strong> 件。提交一次表示增加一次指定数量。</p>
-        <form method="post" th:action="@{/products/{id}/restock(id=${product.id})}" data-submit-state data-restock-form>
+    <section class="panel ef-form-section" th:if="${editing}" aria-labelledby="restock-heading">
+        <h2 id="restock-heading" class="ef-section-head">增量补货</h2>
+        <p>当前库存 <strong th:text="${product.stock}" class="ef-number">0</strong> 件。提交一次表示增加一次指定数量。</p>
+        <form method="post" th:action="@{/products/{id}/restock(id=${product.id})}" data-submit-state data-restock-form class="ef-form">
             <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
             <input type="hidden" name="returnUrl" th:value="${returnUrl}">
             <th:block th:replace="~{fragments/fields :: number('quantity','quantity','本次增加数量',${restockQuantity},1,2147483647,1,${fieldErrors})}"></th:block>
-            <button type="submit">确认补货</button>
+            <button type="submit" class="ef-btn go">确认补货</button>
         </form>
     </section>
 </div>

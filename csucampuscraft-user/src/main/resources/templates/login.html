@@ -3,12 +3,14 @@
       th:replace="~{fragments/layout :: page('用户登录 · CSUCampusCraft', ~{::mainContent})}">
 <head><title>用户登录</title></head>
 <body>
-<section th:fragment="mainContent" class="panel auth-panel" data-page-id="U04">
-    <header class="page-heading">
+<section th:fragment="mainContent" class="panel auth-panel ef-auth" data-page-id="U04">
+    <header class="page-heading ef-page-head">
         <p class="eyebrow">CSUCampusCraft 用户端</p>
-        <h1>用户登录</h1>
+        <p class="ef-eyebrow">CUSTOMER SIGN IN</p>
+        <h1 class="ef-auth-title">用户登录</h1>
         <p class="muted">使用本项目的普通顾客教学账号登录。</p>
     </header>
+    <div class="ef-auth-body">
     <p class="field-help">会话过期或退出后，请重新登录。</p>
     <div class="alert alert-danger" role="alert" th:if="${authError != null}" data-auth-error>
         <p th:text="${authError}">登录失败，请检查账号信息。</p>
@@ -22,6 +24,7 @@
         <button type="submit">登录</button>
     </form>
     <p><a th:href="@{/}">返回首页浏览商品</a></p>
+    </div>
 </section>
 </body>
 </html>

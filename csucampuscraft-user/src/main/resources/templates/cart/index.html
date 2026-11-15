@@ -5,13 +5,14 @@
 <body>
 <div th:fragment="mainContent" class="cart-page" data-page-id="U05"
      th:attr="data-cart-item-count=${cart.itemCount},data-cart-quantity=${cart.quantity},data-cart-invalid-count=${cart.invalidCount},data-cart-all-valid=${cart.allValid}">
-    <header class="page-heading cart-heading">
+    <header class="page-heading cart-heading ef-page-head">
         <div>
             <p class="eyebrow">CSUCampusCraft</p>
+            <p class="ef-eyebrow">SHOPPING CART</p>
             <h1>我的购物车</h1>
             <p class="muted">按当前商品价格与库存核对，购物车不预留库存。</p>
         </div>
-        <div class="button-row">
+        <div class="button-row ef-actions">
             <a class="button button-secondary" th:href="@{/products}">继续选购</a>
             <a class="button button-secondary" th:href="${reloadUrl}" data-reload-cart>重新载入购物车</a>
         </div>
@@ -36,7 +37,7 @@
         <a th:href="${reloadUrl}">重新载入购物车，按当前记录继续</a>
     </section>
 
-    <section class="empty-state cart-empty" th:if="${cart.empty}" data-cart-empty aria-labelledby="cart-empty-title">
+    <section class="empty-state cart-empty ef-empty" th:if="${cart.empty}" data-cart-empty aria-labelledby="cart-empty-title">
         <h2 id="cart-empty-title">购物车还是空的</h2>
         <p>去挑选喜欢的校园文创，把心意放进购物车。</p>
         <a class="button" th:href="@{/products}">去逛逛</a>
@@ -47,8 +48,8 @@
             <p>购物车中有 <strong th:text="${cart.invalidCount}">0</strong> 种失效商品，请调整数量或移除后再结算。</p>
             <p>下架、售罄和超库存条目仍保留在车中，也计入导航件数。</p>
         </div>
-        <div class="table-container cart-table-container">
-            <table class="cart-table">
+        <div class="table-container cart-table-container ef-table-wrap" tabindex="0" role="region" aria-label="商品与订单数据表，可横向滚动">
+            <table class="cart-table" role="table">
                 <caption>共 <span th:text="${cart.itemCount}">0</span> 种商品，<span th:text="${cart.quantity}">0</span> 件</caption>
                 <thead>
                 <tr><th scope="col">商品与库存</th><th scope="col">当前单价</th><th scope="col">数量</th><th scope="col">有效小计</th><th scope="col">操作</th></tr>
@@ -119,7 +120,7 @@
         </div>
     </th:block>
 
-    <section class="panel cart-summary" aria-labelledby="cart-summary-title">
+    <section class="panel cart-summary ef-summary" aria-labelledby="cart-summary-title">
         <div>
             <h2 id="cart-summary-title" th:text="${cart.hasInvalidItems ? '有效条目小计' : '商品金额合计'}">商品金额合计</h2>
             <p class="field-help" th:if="${cart.hasInvalidItems}">失效条目不计入小计，处理完毕后才能整车结算。</p>

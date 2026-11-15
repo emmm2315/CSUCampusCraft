@@ -5,9 +5,10 @@
 <body>
 <div th:fragment="mainContent" class="checkout-page" data-page-id="U06"
      th:attr="data-checkout-item-count=${checkout.itemCount},data-checkout-quantity=${checkout.quantity},data-checkout-total=${checkout.total},data-error-status=${errorStatus},data-error-code=${errorCode}">
-    <header class="page-heading checkout-heading">
+    <header class="page-heading checkout-heading ef-page-head">
         <div>
             <p class="eyebrow">CSUCampusCraft</p>
+            <p class="ef-eyebrow">CHECKOUT CONFIRMATION</p>
             <h1>结算确认</h1>
             <p class="muted">核对整车商品与收货信息，金额由当前商品价格计算。</p>
         </div>
@@ -22,8 +23,8 @@
                 <h2 id="checkout-items-title">整车商品</h2>
                 <span class="muted" th:text="${checkout.itemCount + ' 种 · ' + checkout.quantity + ' 件'}">0 种 · 0 件</span>
             </div>
-            <div class="table-container">
-                <table class="checkout-table">
+            <div class="table-container ef-table-wrap" tabindex="0" role="region" aria-label="商品与订单数据表，可横向滚动">
+                <table class="checkout-table" role="table">
                     <caption class="small">本次确认的全部购物车条目</caption>
                     <thead>
                     <tr><th scope="col">商品</th><th scope="col">当前单价</th><th scope="col">数量</th><th scope="col">小计</th></tr>
@@ -50,7 +51,7 @@
                 </table>
             </div>
 
-            <div class="panel checkout-total-panel" aria-labelledby="checkout-total-title">
+            <div class="panel checkout-total-panel ef-summary" aria-labelledby="checkout-total-title">
                 <div>
                     <h2 id="checkout-total-title">商品金额合计</h2>
                     <p class="field-help">人民币，包含整车全部商品；模拟配送不另计运费。</p>
@@ -76,7 +77,7 @@
                 <th:block th:replace="~{fragments/fields :: text('receiverPhone','receiverPhone','联系电话（1–30 字符）',${checkoutForm.receiverPhone},${fieldErrors})}"></th:block>
                 <th:block th:replace="~{fragments/fields :: textarea('receiverAddress','receiverAddress','完整收货地址（1–255 字符）',${checkoutForm.receiverAddress},${fieldErrors})}"></th:block>
                 <p id="checkout-stage-help" class="field-help">提交后生成待支付订单，并扣减本次商品库存。提交前请再次核对收货信息。</p>
-                <div class="button-row">
+                <div class="button-row ef-actions">
                     <button type="submit" data-submit-order data-submit-label="提交中…">提交订单</button>
                 </div>
             </form>

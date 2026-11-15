@@ -4,18 +4,18 @@
 <head><title>商品管理</title></head>
 <body>
 <div th:fragment="mainContent" data-page-id="A04"
-     th:attr="data-product-count=${total},data-result-count=${#lists.size(products)},data-page=${page},data-size=${size}">
-    <header class="page-heading admin-toolbar">
-        <div><p class="eyebrow">商品维护</p><h1>商品管理</h1><p class="muted">按主题或二级分类查找草稿与上架商品。</p></div>
-        <div class="button-row">
-            <a class="button" th:href="@{/products/new(returnUrl=${returnUrl})}">新建商品</a>
-            <a class="button button-secondary" th:href="@{/categories}">分类管理</a>
+     th:attr="data-product-count=${total},data-result-count=${#lists.size(products)},data-page=${page},data-size=${size}" class="ef-admin-page">
+    <header class="page-heading admin-toolbar ef-page-head">
+        <div><p class="eyebrow">商品维护</p><p class="ef-eyebrow" aria-hidden="true">PRODUCT MANAGEMENT</p><h1 class="ef-page-title">商品管理</h1><p class="muted">按主题或二级分类查找草稿与上架商品。</p></div>
+        <div class="button-row ef-actions">
+            <a class="button ef-btn go" th:href="@{/products/new(returnUrl=${returnUrl})}">新建商品</a>
+            <a class="button button-secondary ef-btn" th:href="@{/categories}">分类管理</a>
         </div>
     </header>
-    <section class="panel" aria-labelledby="filter-heading">
-        <h2 id="filter-heading">筛选商品</h2>
-        <form method="get" th:action="@{/products}" class="admin-filter-form">
-            <div class="form-grid">
+    <section class="panel ef-form-section" aria-labelledby="filter-heading">
+        <h2 id="filter-heading" class="ef-section-head">筛选商品</h2>
+        <form method="get" th:action="@{/products}" class="admin-filter-form ef-form">
+            <div class="form-grid ef-editor-grid">
                 <div class="form-field">
                     <label for="categoryId">主题或分类</label>
                     <select name="categoryId" id="categoryId">
@@ -44,45 +44,45 @@
                 </div>
             </div>
             <input type="hidden" name="page" value="1">
-            <button type="submit">查询</button>
-            <a class="button button-secondary" th:href="@{/products}">清除筛选</a>
+            <button type="submit" class="ef-btn go">查询</button>
+            <a class="button button-secondary ef-btn" th:href="@{/products}">清除筛选</a>
         </form>
     </section>
     <p class="field-help">共 <strong th:text="${total}">0</strong> 件商品，默认按排序值和商品编号升序展示。</p>
-    <div class="empty-state" th:if="${#lists.isEmpty(products)}" data-product-empty>
+    <div class="empty-state ef-empty" th:if="${#lists.isEmpty(products)}" data-product-empty>
         <p th:text="${total > 0 ? '当前页没有商品，请返回有效页面。' : '暂无符合条件的商品，可调整筛选或新建草稿。'}">暂无商品。</p>
         <a th:href="${query.path(1)}" data-page-link="1">返回第 1 页</a>
     </div>
-    <div class="table-container" th:unless="${#lists.isEmpty(products)}">
-        <table>
-            <caption>商品列表</caption>
+    <div class="table-container ef-table-wrap" th:unless="${#lists.isEmpty(products)}" role="region" tabindex="0" aria-label="商品列表，可横向滚动">
+        <table class="ef-table">
+            <caption class="ef-table-caption">商品列表</caption>
             <thead><tr><th scope="col">商品 / SKU</th><th scope="col">分类</th><th scope="col">售价</th><th scope="col">库存</th><th scope="col">状态</th><th scope="col">排序</th><th scope="col">操作</th></tr></thead>
             <tbody>
             <tr th:each="item : ${products}"
                 th:attr="data-product-id=${item.id},data-sku=${item.sku},data-stock=${item.stock},data-version=${item.version},data-status=${item.status}">
                 <td><strong th:text="${item.name}">商品</strong><p class="field-help" th:text="${item.sku}">SKU</p></td>
                 <td th:text="${item.categoryName}">分类</td>
-                <td th:text="${'¥' + #numbers.formatDecimal(item.price,1,'NONE',2,'POINT')}">¥0.00</td>
-                <td th:text="${item.stock}">0</td>
+                <td th:text="${'¥' + #numbers.formatDecimal(item.price,1,'NONE',2,'POINT')}" class="ef-number">¥0.00</td>
+                <td th:text="${item.stock}" class="ef-number">0</td>
                 <td><span th:text="${item.status == 'DRAFT' ? '草稿' : '上架'}">草稿</span>
                     <p class="field-help" th:if="${item.status == 'ON_SALE' and item.stock == 0}">售罄</p></td>
-                <td th:text="${item.sortOrder}">0</td>
+                <td th:text="${item.sortOrder}" class="ef-number">0</td>
                 <td>
-                    <div class="admin-row-actions">
-                        <a class="button button-secondary" th:href="@{/products/{id}/edit(id=${item.id},returnUrl=${returnUrl})}">编辑</a>
+                    <div class="admin-row-actions ef-actions">
+                        <a class="button button-secondary ef-btn" th:href="@{/products/{id}/edit(id=${item.id},returnUrl=${returnUrl})}">编辑</a>
                         <form th:if="${item.status == 'DRAFT'}" method="post"
-                              th:action="@{/products/{id}/publish(id=${item.id})}" data-submit-state data-product-action="publish">
+                              th:action="@{/products/{id}/publish(id=${item.id})}" data-submit-state data-product-action="publish" class="ef-form">
                             <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
                             <input type="hidden" name="version" th:value="${item.version}">
                             <input type="hidden" name="returnUrl" th:value="${returnUrl}">
-                            <button type="submit">上架</button>
+                            <button type="submit" class="ef-btn go">上架</button>
                         </form>
                         <form th:if="${item.status == 'ON_SALE'}" method="post"
-                              th:action="@{/products/{id}/unpublish(id=${item.id})}" data-submit-state data-product-action="unpublish">
+                              th:action="@{/products/{id}/unpublish(id=${item.id})}" data-submit-state data-product-action="unpublish" class="ef-form">
                             <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
                             <input type="hidden" name="version" th:value="${item.version}">
                             <input type="hidden" name="returnUrl" th:value="${returnUrl}">
-                            <button type="submit" class="button-secondary">下架</button>
+                            <button type="submit" class="button-secondary ef-btn">下架</button>
                         </form>
                     </div>
                     <p class="field-help"><a th:href="@{/products/{id}/images(id=${item.id})}" data-album-link>管理商品相册</a></p>
@@ -91,11 +91,11 @@
             </tbody>
         </table>
     </div>
-    <nav class="admin-pagination button-row" aria-label="商品分页" th:if="${total > 0}">
-        <a class="button button-secondary" th:if="${hasPrevious}" th:href="${query.path(previousPage)}" th:attr="data-page-link=${previousPage}">上一页</a>
+    <nav class="admin-pagination button-row ef-pagination ef-actions" aria-label="商品分页" th:if="${total > 0}">
+        <a class="button button-secondary ef-btn" th:if="${hasPrevious}" th:href="${query.path(previousPage)}" th:attr="data-page-link=${previousPage}">上一页</a>
         <span th:unless="${hasPrevious}" aria-disabled="true">上一页</span>
         <span>第 <strong th:text="${page}">1</strong> 页 / 共 <span th:text="${totalPages}">1</span> 页</span>
-        <a class="button button-secondary" th:if="${hasNext}" th:href="${query.path(nextPage)}" th:attr="data-page-link=${nextPage}">下一页</a>
+        <a class="button button-secondary ef-btn" th:if="${hasNext}" th:href="${query.path(nextPage)}" th:attr="data-page-link=${nextPage}">下一页</a>
         <span th:unless="${hasNext}" aria-disabled="true">下一页</span>
     </nav>
 </div>

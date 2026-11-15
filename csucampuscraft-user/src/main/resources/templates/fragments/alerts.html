@@ -2,15 +2,15 @@
 <html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <body>
 <th:block th:fragment="global">
-    <div th:if="${globalMessage != null}" class="alert alert-success" role="status">
+    <div th:if="${globalMessage != null}" class="alert alert-success ef-notice" role="status">
         <p th:text="${globalMessage}">操作已完成。</p>
     </div>
-    <div th:if="${globalError != null}" class="alert alert-danger" role="alert">
+    <div th:if="${globalError != null}" class="alert alert-danger ef-notice" role="alert">
         <p th:text="${globalError}">请检查操作结果。</p>
     </div>
 </th:block>
 <section th:fragment="summary(errors)" th:if="${errors != null and !errors.isEmpty()}"
-         class="alert alert-danger error-summary" role="alert" aria-labelledby="error-summary-title" tabindex="-1">
+         class="alert alert-danger error-summary ef-notice" role="alert" aria-labelledby="error-summary-title" tabindex="-1">
     <h2 id="error-summary-title">请修正以下输入</h2>
     <ul>
         <li th:each="item : ${errors}">

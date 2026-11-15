@@ -62,3 +62,56 @@
         checkImages();
     });
 })();
+
+
+/* Pure presentation enhancement. The original form and fallback IIFE above is unchanged. */
+(() => {
+    "use strict";
+    const key = "csucampuscraft.theme";
+    const root = document.documentElement;
+    const buttons = document.querySelectorAll(".ef-theme-toggle");
+
+    function syncThemeButtons() {
+        const dark = root.dataset.theme === "dark";
+        buttons.forEach((button) => {
+            button.setAttribute("aria-pressed", String(dark));
+            button.setAttribute("aria-label", dark ? "切换为浅色外观" : "切换为深色外观");
+            const label = button.querySelector(".ef-theme-label");
+            if (label) label.textContent = dark ? "浅色外观" : "深色外观";
+            button.hidden = false;
+        });
+    }
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const next = root.dataset.theme === "dark" ? "light" : "dark";
+            root.dataset.theme = next;
+            try { localStorage.setItem(key, next); } catch (_) { /* Optional persistence. */ }
+            syncThemeButtons();
+        });
+    });
+
+    document.querySelectorAll(".site-nav > a[href]").forEach((link) => {
+        const target = new URL(link.href, window.location.href);
+        if (target.origin !== window.location.origin) return;
+        const current = window.location.pathname;
+        if (target.pathname === current || (target.pathname !== "/" && current.startsWith(target.pathname + "/"))) {
+            link.setAttribute("aria-current", "page");
+        }
+    });
+
+    window.addEventListener("storage", (event) => {
+        if (event.key !== key) return;
+        root.dataset.theme = event.newValue === "dark" ? "dark" : "light";
+        syncThemeButtons();
+    });
+    window.addEventListener("pageshow", syncThemeButtons);
+    syncThemeButtons();
+
+    function focusErrorSummary() {
+        const summary = document.querySelector(".error-summary[tabindex='-1']");
+        if (summary instanceof HTMLElement) summary.focus();
+    }
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", focusErrorSummary, { once: true });
+    else focusErrorSummary();
+})();

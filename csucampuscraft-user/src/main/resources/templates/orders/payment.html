@@ -5,14 +5,15 @@
 <body>
 <div th:fragment="mainContent" class="payment-page" data-page-id="U09"
      th:attr="data-order-id=${paymentOrder.id},data-order-no=${paymentOrder.orderNo},data-order-status=${paymentOrder.status},data-order-total=${paymentOrder.totalAmount}">
-    <nav class="catalog-breadcrumb" aria-label="当前位置">
+    <nav class="catalog-breadcrumb ef-metadata" aria-label="当前位置">
         <a th:href="@{/orders}">我的订单</a><span aria-hidden="true">/</span>
         <a th:href="@{/orders/{orderNo}(orderNo=${paymentOrder.orderNo})}">订单详情</a><span aria-hidden="true">/</span>
         <span aria-current="page">模拟支付</span>
     </nav>
-    <header class="page-heading payment-heading">
+    <header class="page-heading payment-heading ef-page-head">
         <div>
             <p class="eyebrow">CSUCampusCraft</p>
+            <p class="ef-eyebrow">SIMULATED PAYMENT</p>
             <h1>模拟支付</h1>
             <p class="muted">选择本次教学模拟结果，订单金额以成交记录为准。</p>
         </div>

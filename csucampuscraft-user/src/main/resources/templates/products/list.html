@@ -5,16 +5,17 @@
 <body>
 <div th:fragment="mainContent" class="catalog-list-page" data-page-id="U02"
      th:attr="data-product-count=${total},data-result-count=${#lists.size(products)},data-page=${page},data-page-size=${size},data-size=${size},data-category-id=${query.categoryId == null ? '': query.categoryId},data-type=${query.type.name()},data-sort=${query.sort.name()}">
-    <nav class="catalog-breadcrumb" aria-label="当前位置">
+    <nav class="catalog-breadcrumb ef-metadata" aria-label="当前位置">
         <a th:href="@{/}">首页</a><span aria-hidden="true">/</span><span aria-current="page">商品目录</span>
     </nav>
-    <header class="page-heading">
+    <header class="page-heading ef-page-head">
         <p class="eyebrow">校园文创</p>
+        <p class="ef-eyebrow">PRODUCT CATALOGUE</p>
         <h1 th:text="${selectedTheme != null ? selectedTheme.name : '全部商品'}">全部商品</h1>
         <p class="muted">浏览文具与纪念周边，按主题、名称或类型筛选。</p>
     </header>
 
-    <section class="panel catalog-filter-panel" aria-labelledby="filter-heading">
+    <section class="panel catalog-filter-panel ef-filter-panel" aria-labelledby="filter-heading">
         <h2 id="filter-heading">筛选商品</h2>
         <form class="catalog-filter-form" method="get" th:action="@{/products}">
             <div class="form-field">
@@ -66,7 +67,7 @@
         <th:block th:replace="~{fragments/catalog :: typeTabs(${query})}"></th:block>
     </div>
 
-    <div th:if="${#lists.isEmpty(products)}" class="empty-state" data-catalog-empty>
+    <div th:if="${#lists.isEmpty(products)}" class="empty-state ef-empty" data-catalog-empty>
         <th:block th:if="${page > (totalPages > 0 ? totalPages : 1)}">
             <h2>当前页超出商品范围</h2>
             <p>筛选条件保持不变，可以返回有效页面继续浏览。</p>
@@ -80,7 +81,7 @@
             <a th:href="@{/products(categoryId=${query.categoryId},type='ALL',q='',sort='DEFAULT',page=1,size=${size})}">清除名称和类型</a>
         </th:block>
     </div>
-    <div class="catalog-grid" data-product-list>
+    <div class="catalog-grid ef-records" data-product-list>
         <th:block th:each="item : ${products}"><th:block th:replace="~{fragments/catalog :: productCard(${item})}"></th:block></th:block>
     </div>
 

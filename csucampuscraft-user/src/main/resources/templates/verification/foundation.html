@@ -2,6 +2,7 @@
 <html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
       th:replace="~{fragments/layout :: page('公共基础验证', ~{::mainContent})}">
 <body><section th:fragment="mainContent" class="panel" aria-labelledby="verification-title">
+<p class="ef-eyebrow">FOUNDATION CHECK</p>
 <h1 id="verification-title">公共基础验证</h1>
 <p>此页面仅在 verification 配置启用，无业务数据写入。</p>
 <p id="escaped-text" th:text="${echoText}">普通文本</p>

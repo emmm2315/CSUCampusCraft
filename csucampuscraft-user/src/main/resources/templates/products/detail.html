@@ -5,7 +5,7 @@
 <body>
 <div th:fragment="mainContent" class="catalog-detail-page" data-page-id="U03"
      th:attr="data-product-id=${product.id},data-product-sku=${product.sku},data-price=${product.price},data-stock=${product.stock},data-gallery-count=${#lists.size(images)}">
-    <nav class="catalog-breadcrumb" aria-label="当前位置">
+    <nav class="catalog-breadcrumb ef-metadata" aria-label="当前位置">
         <a th:href="@{/}">首页</a><span aria-hidden="true">/</span>
         <a th:href="@{/products}">商品</a><span aria-hidden="true">/</span>
         <a th:href="@{/products(categoryId=${theme.id},type='ALL',q='',sort='DEFAULT',page=1,size=6)}" th:text="${theme.name}">一级主题</a>
@@ -17,17 +17,18 @@
         <th:block th:replace="~{fragments/alerts :: summary(${errorAnchors})}"></th:block>
     </th:block>
 
-    <section class="catalog-detail-main" aria-labelledby="product-heading">
+    <section class="catalog-detail-main ef-feature" aria-labelledby="product-heading">
         <figure class="catalog-cover" data-cover-image>
             <th:block th:replace="~{fragments/images :: image(${product.coverImage},${product.name})}"></th:block>
         </figure>
-        <div class="catalog-detail-info">
+        <div class="catalog-detail-info ef-detail-copy">
             <p class="eyebrow" th:text="${theme.name + ' / ' + category.name}">校园文创</p>
+            <p class="ef-eyebrow">PRODUCT DETAILS</p>
             <h1 id="product-heading" th:text="${product.name}">商品名称</h1>
-            <p class="muted catalog-sku">SKU：<span th:text="${product.sku}">SKU</span></p>
+            <p class="muted catalog-sku ef-metadata">SKU：<span th:text="${product.sku}">SKU</span></p>
             <p class="catalog-detail-summary muted" th:if="${!#strings.isEmpty(product.summary)}" th:text="${product.summary}">商品简介</p>
             <p class="product-price detail-price" th:text="${'¥' + #numbers.formatDecimal(product.price,1,'NONE',2,'POINT')}">¥0.00</p>
-            <p class="stock-badge" th:classappend="${product.stock == 0 ? 'stock-sold-out' : ''}"
+            <p class="stock-badge ef-state" th:classappend="${product.stock == 0 ? 'stock-sold-out' : ''}"
                th:text="${product.stock == 0 ? '售罄 · 库存 0' : '现货 · 库存 ' + product.stock}">库存</p>
             <section class="catalog-purchase" aria-labelledby="purchase-heading">
                 <h2 id="purchase-heading">选购</h2>
@@ -79,10 +80,10 @@
     </section>
 
     <section class="catalog-section" aria-labelledby="gallery-heading">
-        <div class="section-heading">
+        <div class="section-heading ef-section-head">
             <div><h2 id="gallery-heading">商品相册</h2><p class="muted">共 <span th:text="${#lists.size(images)}">0</span> 张图片</p></div>
         </div>
-        <p class="empty-state" th:if="${#lists.isEmpty(images)}" data-gallery-empty>暂无相册，当前显示商品封面。</p>
+        <p class="empty-state ef-empty" th:if="${#lists.isEmpty(images)}" data-gallery-empty>暂无相册，当前显示商品封面。</p>
         <div class="catalog-gallery" data-product-gallery>
             <figure th:each="imageItem : ${images}"
                     th:attr="data-image-id=${imageItem.id},data-image-sort=${imageItem.sortOrder}">

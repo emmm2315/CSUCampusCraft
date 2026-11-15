@@ -3,14 +3,15 @@
       th:replace="~{fragments/layout :: page('结算提示 · CSUCampusCraft', ~{::mainContent})}">
 <head><title>结算提示</title></head>
 <body>
-<section th:fragment="mainContent" class="panel error-page checkout-conflict" data-page-id="U06" data-checkout-conflict
+<section th:fragment="mainContent" class="panel error-page checkout-conflict ef-error" data-page-id="U06" data-checkout-conflict
          th:attr="data-error-status=${errorStatus},data-error-code=${errorCode}" aria-labelledby="checkout-conflict-title">
     <p class="error-number" th:text="${errorStatus}">409</p>
+    <p class="ef-eyebrow">CHECKOUT NOTICE</p>
     <h1 id="checkout-conflict-title">请重新核对购物车</h1>
     <p th:text="${errorMessage}">当前确认已失效，请处理后重新确认。</p>
     <p class="muted">购物车保持不变。请先查看购物车，处理商品或数量后再重新确认。</p>
     <p class="error-code">错误代码：<span th:text="${errorCode}">CHECKOUT_CONFLICT</span></p>
-    <div class="button-row">
+    <div class="button-row ef-actions">
         <a class="button" th:href="@{/cart}" data-return-cart>返回购物车</a>
         <a class="button button-secondary" th:if="${canRetryConfirmation}" th:href="@{/checkout}" data-retry-checkout>重新确认整车</a>
     </div>

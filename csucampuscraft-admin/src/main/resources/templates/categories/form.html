@@ -3,18 +3,18 @@
       th:replace="~{fragments/layout :: page('分类表单 · CSUCampusCraft', ~{::mainContent})}">
 <head><title>分类表单</title></head>
 <body>
-<section th:fragment="mainContent" data-page-id="A03" class="admin-category-form"
+<section th:fragment="mainContent" data-page-id="A03" class="admin-category-form ef-admin-page"
          th:attr="data-category-id=${category == null ? null : category.id}">
-    <nav aria-label="当前位置"><a th:href="@{/categories}">分类列表</a> / <span aria-current="page" th:text="${category == null ? '新增分类' : '编辑分类'}">分类表单</span></nav>
-    <header class="page-heading">
-        <h1 th:text="${category == null ? '新增分类' : '编辑分类'}">分类表单</h1>
+    <nav aria-label="当前位置" class="ef-breadcrumb"><a th:href="@{/categories}">分类列表</a> / <span aria-current="page" th:text="${category == null ? '新增分类' : '编辑分类'}">分类表单</span></nav>
+    <header class="page-heading ef-page-head">
+        <p class="ef-eyebrow" aria-hidden="true">CATEGORY FORM</p><h1 th:text="${category == null ? '新增分类' : '编辑分类'}" class="ef-page-title">分类表单</h1>
         <p class="muted" th:if="${category == null}">留空父级创建一级主题；选择一级父主题创建二级分类，编码由父编码和商品类型自动生成。</p>
         <p class="muted" th:if="${category != null}">仅修改名称和排序，编码、父级和类型保持原值。</p>
     </header>
     <div class="panel">
         <th:block th:replace="~{fragments/alerts :: summary(${fieldErrors})}"></th:block>
         <form method="post" th:action="${category == null ? '/categories' : '/categories/' + category.id}"
-              data-submit-state data-category-form>
+              data-submit-state data-category-form class="ef-form">
             <th:block th:replace="~{fragments/fields :: csrf}"></th:block>
             <th:block th:if="${category == null}">
                 <div class="form-field" th:with="bad=${fieldErrors.containsKey('parentId')}">
@@ -40,8 +40,8 @@
                     <p th:if="${bad}" id="type-error" class="field-error" th:text="${fieldErrors.get('type')}">请检查类型。</p>
                 </div>
             </th:block>
-            <dl th:if="${category != null}">
-                <dt>分类 ID</dt><dd th:text="${category.id}">0</dd>
+            <dl th:if="${category != null}" class="ef-ledger">
+                <dt>分类 ID</dt><dd th:text="${category.id}" class="ef-number">0</dd>
                 <dt>固定编码</dt><dd th:text="${category.code}" data-readonly-code>CODE</dd>
                 <dt>固定父级 ID</dt><dd th:text="${category.parentId == null ? '无（一级主题）' : category.parentId}" data-readonly-parent>无</dd>
             </dl>
@@ -49,8 +49,8 @@
             <p class="field-help">名称为 1–50 个字符，同父级名称不重复。</p>
             <th:block th:replace="~{fragments/fields :: number('sortOrder','sortOrder','排序值',${form.sortOrder},0,2147483647,1,${fieldErrors})}"></th:block>
             <p class="field-help">非负整数，留空按 0 保存。</p>
-            <button type="submit" th:text="${category == null ? '新增分类' : '保存分类'}">保存分类</button>
-            <a class="button button-secondary" th:href="@{/categories}">返回分类列表</a>
+            <button type="submit" th:text="${category == null ? '新增分类' : '保存分类'}" class="ef-btn go">保存分类</button>
+            <a class="button button-secondary ef-btn" th:href="@{/categories}">返回分类列表</a>
         </form>
     </div>
 </section>

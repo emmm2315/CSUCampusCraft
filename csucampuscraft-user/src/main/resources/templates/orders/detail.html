@@ -5,12 +5,13 @@
 <body>
 <div th:fragment="mainContent" class="order-detail-page" data-page-id="U08" th:with="order=${orderDetail.order}"
      th:attr="data-order-id=${order.id},data-order-no=${order.orderNo},data-order-status=${order.status},data-order-total=${order.totalAmount},data-order-item-count=${#lists.size(orderDetail.items)}">
-    <nav class="catalog-breadcrumb" aria-label="当前位置">
+    <nav class="catalog-breadcrumb ef-metadata" aria-label="当前位置">
         <a th:href="@{/}">首页</a><span aria-hidden="true">/</span><a th:href="@{/orders}">我的订单</a><span aria-hidden="true">/</span><span aria-current="page">订单详情</span>
     </nav>
-    <header class="page-heading order-detail-heading">
+    <header class="page-heading order-detail-heading ef-page-head">
         <div>
             <p class="eyebrow">CSUCampusCraft</p>
+            <p class="ef-eyebrow">ORDER DETAILS</p>
             <h1>订单详情</h1>
             <p class="muted">查看本单成交时的商品、金额与收货信息。</p>
         </div>
@@ -23,7 +24,7 @@
                 <h2 id="order-overview-title">订单信息</h2>
                 <p class="order-number" data-order-number th:text="${order.orderNo}">订单号</p>
             </div>
-            <span class="order-status" data-order-status-label th:text="${order.statusLabel}">待支付</span>
+            <span class="order-status ef-state" data-order-status-label th:text="${order.statusLabel}">待支付</span>
         </div>
         <dl class="order-metadata">
             <div><dt>创建时间</dt><dd><time th:text="${order.createdAtDisplay}">创建时间</time>（北京时间）</dd></div>
@@ -66,8 +67,8 @@
             <h2 id="order-items-title">成交商品</h2>
             <p class="field-help">商品名称、封面与金额保留成交时的内容。</p>
         </div>
-        <div class="table-container">
-            <table class="order-items-table" data-order-items>
+        <div class="table-container ef-table-wrap" tabindex="0" role="region" aria-label="商品与订单数据表，可横向滚动">
+            <table class="order-items-table" data-order-items role="table">
                 <caption class="small">本单商品快照</caption>
                 <thead><tr><th scope="col">商品</th><th scope="col">成交单价</th><th scope="col">数量</th><th scope="col">成交小计</th></tr></thead>
                 <tbody>
@@ -113,7 +114,7 @@
             </dl>
         </section>
     </div>
-    <div class="button-row"><a class="button button-secondary" th:href="@{/products}">继续选购</a></div>
+    <div class="button-row ef-actions"><a class="button button-secondary" th:href="@{/products}">继续选购</a></div>
 </div>
 </body>
 </html>
